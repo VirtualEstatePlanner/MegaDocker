@@ -15,5 +15,6 @@ export const emptyManikinWithVariables: IManikinWithVariables = {
   isSelected: false,
   name: 'unnamed Manikin object with variables',
   serviceYML: 'empty Manikin service',
+  subfolders: [''],
   variables: [emptyManikinVariable]
 };
