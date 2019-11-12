@@ -53,13 +53,13 @@
     "postdist-w": "yarn move-w"
   },
   "build": {
-    "appId": "com.YOUR_GITHUB_USER.YOUR_PRODUCT_NAME",
+    "appId": "com.VirtualEstatePlanner.MEGADocker",
     "asar": true,
     "files": [
       "node_modules/node-notifier/vendor/snoreToast/SnoreToast.exe"
     ],
     "dmg": {
-      "title": "YOUR_PRODUCT_NAME",
+      "title": "MEGADocker",
       "contents": [
         {
           "x": 400,
@@ -95,21 +95,22 @@
       "category": "Development"
     }
   },
-  "name": "your-package-name",
-  "productName": "YOUR_PRODUCT_NAME",
+  "name": "megadocker",
+  "productName": "MEGADocker",
   "description": "YOUR_APPLICATION_DESCRIPTON",
   "keywords": [
-    "typescript",
-    "react",
-    "electron",
-    "boilerplate",
-    "electron-builder",
-    "cross-platform"
+    "ci/cd",
+    "docker",
+    "kubernetes",
+    "portainer",
+    "rocketchat",
+    "swarmpit",
+    "traefik"
   ],
   "version": "0.1.0",
   "buildVersion": "0.1.0",
-  "author": "YOUR_NAME <YOUR_EMAIL_ADDRESS> (https://github.com/YOUR_GITHUB_USER)",
-  "copyright": "© 2019 YOUR_NAME",
+  "author": "George Georgulas IV <georgegeorgulas@gmail.com> (https://github.com/VirtualEstatePlanner)",
+  "copyright": "© 2019 The MEGADocker Group",
   "private": true,
   "dependencies": {
     "react": "latest",

@@ -6,7 +6,9 @@
 
 # MegaDocker v0.2.3
 
-## Magically makes microservices for the masses
+Modular Enterprise-Grade Automated Docker
+
+## Magically make microservices for the masses
 
 Most recent change:
 rebuilt and fixed buildchain, simplified package.json scripts
@@ -17,19 +19,15 @@ rebuilt and fixed buildchain, simplified package.json scripts
 
 ## Table of Contents
 
-[](#mites)
-[](#memories)
-[](#manikins)
-[](#included-manikins)
-[](#mobs)
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
 1. [About MEGADocker](#about-megadocker 'Learn about MEGADocker')
 2. [Mites](#mites 'AKA snippets')
 3. [Memories](#memories 'AKA Microservice Settings')
 4. [Manikins](#manikins 'AKA Microservices')
-   1. [Included Manikins](#included-manikins 'AKA Microservices we wrote for you')
-   2. [Custom Manikins](#custom-manikins 'AKA Microservices you write yourself')
+   1. [Core Manikins](#core-manikins 'AKA Microservices you have to have')
+   2. [Included Manikins](#included-manikins 'AKA Microservices we wrote for you')
+   3. [Custom Manikins](#custom-manikins 'AKA Microservices you write yourself')
 5. [Mobs](#mobs 'AKA docker-compose files')
 
 [](#about-megadocker)
@@ -66,7 +64,7 @@ You can also write your own Mites and use them to make custom Manikins and add t
 
 ## Memories
 
-**Memories** represent the choices a user needs to make to configure a **Mob**. **Memories** can contain any kind of data, and their values will modify the output of a **Mite** (or of multiple **Mites**) in your **Mob**. For instance, if your **Manikin** needs to know where a volume is on your host to save data, when you add that Manikin to your **Mob**, the **Memories** table will add a row to request the location of that folder. If another **Manikin** also needs access to that **Memory\*\***, it will automatically have that information.
+**Memories** represent the choices a user needs to make to configure a **Mob**. **Memories** can contain any kind of data, and their values will modify the output of a **Mite** (or of multiple **Mites**) in your **Mob**. For instance, if your **Manikin** needs to know where a volume is on your host to save data, when you add that Manikin to your **Mob**, the _Memories Table_ will add a row to request the location of that folder. If another **Manikin** also needs access to that **Memory\*\***, it will automatically have that information.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
@@ -78,11 +76,19 @@ You can also write your own Mites and use them to make custom Manikins and add t
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
+[](#core-manikins)
+
+#### Core Manikins
+
+MEGADocker **Mobs** require a minimal core of **Manikins** to run services that are necessary for the **Mob** to function. When you generate a new **Mob**, these **Manikins** will already be in it, and their **Memories** will be in the _Memories Table_ waiting for you to populate them.
+
+[TOC](#table-of-contents 'Jump back to the Table of Contents')
+
 [](#included-manikins)
 
 #### Included Manikins
 
-MEGADocker includes Manikins for a number of common uses, and we add more all the time.
+MEGADocker includes Manikins for a number of common uses, and we add more all the time. These **Manikins** are optional, strictly speaking, but you'll probably want a few to do something useful for you.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
@@ -90,10 +96,14 @@ MEGADocker includes Manikins for a number of common uses, and we add more all th
 
 #### Custom Manikins
 
+While MEGADocker includes many **Manikins**, we can't do everything… yet. If you find that we are missing that one **Manikin** you need, you can write it yourself and build a custom version of MEGADocker for yourself. Of course, we'd love it if you added those **Manikins** to [this repo](https://github.com/VirtualEstatePlanner/MD), but you don't have to. Because MEGADocker is open source, you can look at any of the source code for existing **Manikins** and **Mites** to see how we do it.
+
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
 [](#mobs)
 
 ### Mobs
+
+**Mobs** represent a full stack of microservices (**Manikins**) deployed across a cluster or swarm of hosts. **Mobs** are saved as `.megadocker` files, and can exported a `docker-compose.yml` file to be used in KLubernetes or Docker swarm mode.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
