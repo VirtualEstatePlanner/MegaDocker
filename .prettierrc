@@ -1,0 +1,6 @@
+{
+  "singleQuote": true,
+  "jsxBracketSameLine": true,
+  "arrowParens": "always",
+  "jsxSingleQuote": true
+}

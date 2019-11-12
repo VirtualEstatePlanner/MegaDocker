@@ -129,6 +129,7 @@
     "electron-devtools-installer": "latest",
     "electron-is-dev": "latest",
     "npm-run-all": "latest",
+    "prettier": "latest",
     "typescript": "latest",
     "wait-on": "latest"
   },
