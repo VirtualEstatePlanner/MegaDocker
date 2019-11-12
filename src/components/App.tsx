@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import mdlogo from "../images/icons/icon.png";
+import { tableManikins } from '../classes/TableManikins';
 
 function buttonClicked() {
   console.log("Button was clicked!");

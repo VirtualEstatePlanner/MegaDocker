@@ -11,7 +11,7 @@ Modular Enterprise-Grade Automated Docker
 ## Magically make microservices for the masses
 
 Most recent change:
-rebuilt and fixed buildchain, simplified package.json scripts
+moved project to CRATE boilerplate
 
 ![alt text](./src/images/icons/icon.png 'MegaDockerLogo')
 

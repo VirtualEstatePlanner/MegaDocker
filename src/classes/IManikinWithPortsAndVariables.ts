@@ -4,10 +4,10 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { emptyManikinPort } from '@renderer/components/IManikinPort';
-import { emptyManikinVariable } from '@renderer/components/IManikinVariable';
-import { IManikinWithPorts } from '@renderer/components/IManikinWithPorts';
-import { IManikinWithVariables } from '@renderer/components/IManikinWithVariables';
+import { emptyManikinPort } from './IManikinPort';
+import { emptyManikinVariable } from './IManikinVariable';
+import { IManikinWithPorts } from './IManikinWithPorts';
+import { IManikinWithVariables } from './IManikinWithVariables';
 
 export interface IManikinWithPortsAndVariables
   extends IManikinWithPorts,

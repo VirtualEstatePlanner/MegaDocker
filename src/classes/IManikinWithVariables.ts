@@ -4,11 +4,8 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from '@renderer/components/IManikin';
-import {
-  emptyManikinVariable,
-  IManikinVariable
-} from '@renderer/components/IManikinVariable';
+import { IManikin } from './IManikin';
+import { emptyManikinVariable, IManikinVariable } from './IManikinVariable';
 
 export interface IManikinWithVariables extends IManikin {
   variables: IManikinVariable[];

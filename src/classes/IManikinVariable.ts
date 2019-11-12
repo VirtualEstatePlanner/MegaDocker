@@ -6,10 +6,12 @@
 
 export interface IManikinVariable {
   name: string;
+  tooltip: string;
   value: string;
 }
 
 export const emptyManikinVariable: IManikinVariable = {
   name: 'empty Manikin Variable name',
+  tooltip: 'empty Manikin Variable tooltip',
   value: 'empty Manikin Variable value'
 };

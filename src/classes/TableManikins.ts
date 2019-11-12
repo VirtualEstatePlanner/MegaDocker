@@ -1,18 +1,15 @@
 // import * as react from 'react';
 
-import { emptyManikin, IManikin } from '@renderer/components/IManikin';
-import {
-  emptyManikinWithPorts,
-  IManikinWithPorts
-} from '@renderer/components/IManikinWithPorts';
+import { emptyManikin, IManikin } from './IManikin';
+import { emptyManikinWithPorts, IManikinWithPorts } from './IManikinWithPorts';
 import {
   emptyManikinWithPortsAndVariables,
   IManikinWithPortsAndVariables
-} from '@renderer/components/IManikinWithPortsAndVariables';
+} from './IManikinWithPortsAndVariables';
 import {
   emptyManikinWithVariables,
   IManikinWithVariables
-} from '@renderer/components/IManikinWithVariables';
+} from './IManikinWithVariables';
 
 export const tableManikins:
   | IManikin[]
