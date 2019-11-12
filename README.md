@@ -28,8 +28,8 @@ rebuilt and fixed buildchain, simplified package.json scripts
 2. [Mites](#mites 'AKA snippets')
 3. [Memories](#memories 'AKA Microservice Settings')
 4. [Manikins](#manikins 'AKA Microservices')
-   4a. [Included Manikins](#included-manikins 'AKA Microservices we wrote for you')
-   4b. [Custom Manikins](#custom-manikins 'AKA Microservices you write yourself')
+   1. [Included Manikins](#included-manikins 'AKA Microservices we wrote for you')
+   2. [Custom Manikins](#custom-manikins 'AKA Microservices you write yourself')
 5. [Mobs](#mobs 'AKA docker-compose files')
 
 [](#about-megadocker)
