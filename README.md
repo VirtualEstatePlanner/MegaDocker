@@ -46,9 +46,9 @@ rebuilt and fixed buildchain, simplified package.json scripts
 
 MEGADocker uses 4 fundamental building blocks:
 
-1. Mites: magical wooden chunks that look like arms and legs that want to do your bidding
-2. Memories: things a manikin has to remember to do your bidding
-3. Manikins: little wooden automatons that do your bidding
+1. Mites: magical doodads that bring a manikin to life to do your bidding
+2. Memories: how a manikin remembers your bidding
+3. Manikins: little wooden dolls that want do your bidding
 4. Mobs: an armada of manikins running around doing your bidding
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
