@@ -1,0 +1,13 @@
+/build
+/dist
+/binaries
+/node_modules
+/out
+/cache
+**/*.js
+!public/preload.js
+**/*/.DS_Store
+**/*/.env
+yarn-debug.log*
+yarn-error.log
+yarn.lock
