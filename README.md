@@ -46,11 +46,12 @@ MEGADocker uses 4 fundamental building blocks:
 
 > **_Mobs_**: an armada of manikins running around doing your bidding
 >
-> > -- which are composed of
-> >
+> -- which are composed of
+>
 > > **_Manikins_**: little wooden dolls that want do your bidding
 > >
-> > > -- which are composed of
+> > -- which are composed of
+> >
 > > > **_Mites_**: magical doodads that bring a manikin to life to do your bidding
 > > >
 > > > and
