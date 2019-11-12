@@ -53,7 +53,9 @@ MEGADocker uses 4 fundamental building blocks:
 > > > -- which are composed of
 > > > **_Mites_**: magical doodads that bring a manikin to life to do your bidding
 > > >
-> > > and **_Memories_**: how a manikin remembers what your bidding is.
+> > > and
+> > >
+> > > **_Memories_**: how a manikin remembers what your bidding is.
 
 You'll use MEGADocker to create your Mob of Manikins. We'll handle the Mites, and tell you what Memories they need. Then you give them their Memories and tell them to March out and do your bidding.
 
