@@ -12,6 +12,7 @@ export interface IManikin {
   name: string;
   manikinIcon: ImageBitmapSource;
   description: string;
+  isCore: Boolean;
   isSelected: Boolean;
   mites: IMite[];
   ports?: IManikinPort[];

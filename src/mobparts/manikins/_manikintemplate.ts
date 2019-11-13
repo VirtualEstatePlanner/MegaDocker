@@ -7,15 +7,17 @@
 import { IManikin } from '../../classes/IManikin';
 import { serviceMite } from '../mites/service/_servicemitetemplate';
 import { networkMite } from '../mites/network/_networkmitetemplate';
+import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
 
 export const $SOMEAPPLICATIONManikin: IManikin = {
   name: ``,
-  manikinIcon: 
   description: ``,
+  isCore: false,
   isSelected: false,
-  mites: [],
+  mites: [serviceMite, networkMite],
   ports: [],
   folder: ``,
   subfolders: [],
-  memories: []
+  memories: [],
+  manikinIcon: defaultIcon
 };

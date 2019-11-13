@@ -21,6 +21,7 @@ export const traefikManikin: IManikin = {
   manikinIcon: traefikIcon,
   description: `A modern reverse proxy with Let's Encrypt support`,
   isSelected: true,
+  isCore: true,
   mites: [traefikServiceMite, traefikNetworkMite],
   ports: [httpPort, httpsPort],
   folder: `Traefik`,
