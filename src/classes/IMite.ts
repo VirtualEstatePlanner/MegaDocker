@@ -7,11 +7,6 @@ import { StringLiteral } from '@babel/types';
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 export interface IMite {
-  type: `Empty` | `Generic` | `Network` | `Service` | `Other`;
+  type: `Network` | `Service` | `Custom`;
   miteString: string;
 }
-
-export const emptyMite: IMite = {
-  type: `Generic`,
-  miteString: ``
-};

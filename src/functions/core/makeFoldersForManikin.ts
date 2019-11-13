@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IManikin } from '../../classes/IManikin';
-import { userMegaDockerFolder } from '../../objects/miscellaneous';
+import { userMegaDockerFolder } from '../../globals/_globals';
 import { makeFolder } from './makeFolder';
 
 /**
@@ -15,11 +15,13 @@ import { makeFolder } from './makeFolder';
  * creates Manikin folder and subfolders for a given Manikin
  */
 export function makeFoldersForManikin(aManikin: IManikin): void {
-  makeFolder(userMegaDockerFolder, aManikin.name);
-  if (aManikin.subfolders.length !== 0) {
-    makeFolder(
-      `${userMegaDockerFolder.toString()}/${aManikin.name}`,
-      `${aManikin.subfolders.forEach}`
-    );
+  if (aManikin.subfolders && aManikin.folder) {
+    makeFolder(userMegaDockerFolder, aManikin.folder);
+    if (aManikin.subfolders.length !== 0) {
+      makeFolder(
+        `${userMegaDockerFolder.toString()}/${aManikin.name}`,
+        `${aManikin.subfolders.forEach}`
+      );
+    }
   }
 }

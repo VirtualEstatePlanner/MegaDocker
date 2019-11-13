@@ -10,7 +10,7 @@ import { IManikin } from '../../classes/IManikin';
 import { makeMobFolder } from '../core/makeMobFolder';
 import { makeFoldersForManikin } from '../core/makeFoldersForManikin';
 import { homedir } from 'os';
-import { userMob } from '../../objects/miscellaneous';
+import { userMob } from '../../globals/_globals';
 
 /**
  * saves a YML file to disk and runs the Mob that file describes

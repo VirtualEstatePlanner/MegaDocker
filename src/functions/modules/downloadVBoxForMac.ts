@@ -7,7 +7,7 @@
 import {
   downloadsFolder,
   macVirtualBoxInstallerFileURL
-} from '../../objects/miscellaneous';
+} from '../../globals/_globals';
 import { getFile } from '../core/getFile';
 
 /**

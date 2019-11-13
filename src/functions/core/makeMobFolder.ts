@@ -4,9 +4,8 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { documentsFolder } from '../../objects/miscellaneous'
-import { userMob } from '../../objects/runtime'
-import { makeFolder } from './makeFolder'
+import { documentsFolder, userMob } from '../../globals/_globals';
+import { makeFolder } from './makeFolder';
 
 /**
  * @mobName - the name of the Mob we are creating a storage
@@ -15,5 +14,5 @@ import { makeFolder } from './makeFolder'
  * creates the main folder for a Mob
  */
 export function makeMobFolder(): void {
-  makeFolder(documentsFolder, userMob.mobName)
+  makeFolder(documentsFolder, userMob.mobName);
 }
