@@ -1,6 +1,6 @@
-//  drupal.ts
+//  rocketchat.ts
 //  MegaDocker
-//  A Manikin to generate a Drupal blogging service
+//  A Manikin to generate a RocketChat team chat service
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
@@ -11,17 +11,18 @@ import { networkMite } from '../mites/network/_networkmitetemplate';
 import defaultIcon from '../images/manikin-icons/defaultIcon.png';
 
 /**
- * drupal Manikin
+ * rocketchat Manikin
+ * replace MVOs
  */
-export let drupalManikin: IManikin = {
-  name: `Drupal`,
-  description: `Blogging platform`,
+export let rocketChatManikin: IManikin = {
+  name: `RocketChat`,
+  description: `Team text chat server`,
   isCore: false,
   isSelected: false,
   mites: [serviceMite, networkMite],
   ports: [],
-  folder: `Drupal`,
-  subfolders: [`modules`, `profiles`, `themes`, `sites`],
+  folder: `RocketChat`,
+  subfolders: [`database`, `dump`, `hubot`, `uploads`],
   memories: [],
   manikinIcon: defaultIcon
 };

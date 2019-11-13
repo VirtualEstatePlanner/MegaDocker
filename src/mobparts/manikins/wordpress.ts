@@ -1,6 +1,6 @@
-//  wordpress/manikin.ts
+//  wordpress.ts
 //  MegaDocker
-//  Network Mite for Traefik
+//  A Manikin to generate a WordPress blogging service
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
@@ -13,6 +13,7 @@ export const wordpressManikin: IManikin = {
   name: ``,
   manikinIcon: wordpressIcon,
   description: ``,
+  isCore: false,
   isSelected: false,
   mites: [wordpressServiceMite, wordpressNetworkMite],
   ports: [],
