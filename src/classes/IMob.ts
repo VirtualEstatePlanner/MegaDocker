@@ -6,7 +6,10 @@
 
 import { IManikin } from './IManikin';
 import { IMemory } from './IMemory';
-import { traefikManikin, swarmpitManikin } from '../globals/_manikins';
+import {
+  traefikManikin,
+  swarmpitManikin
+} from '../mobparts/manikins/_manikins';
 
 export interface IMob {
   mobManikins: IManikin[];

@@ -1,6 +1,6 @@
-//  skopos.ts
+//  nginx.ts
 //  MegaDocker
-//  A Manikin to generate a Skopos CI/CD service
+//  A Manikin to generate a Nginx webpage hosting service
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
@@ -11,17 +11,17 @@ import { networkMite } from '../mites/network/_networkmitetemplate';
 import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
 
 /**
- * skopos Manikin
+ * nginx Manikin
  */
-export let skoposManikin: IManikin = {
-  name: `Skopos`,
+export let nginxManikin: IManikin = {
+  name: `Nginx`,
+  description: `Nginx http server`,
+  isCore: false,
+  isSelected: false,
   mites: [serviceMite, networkMite],
-  folder: `Skopos`,
-  subfolders: [],
-  description: `Continuous Integraion/Continuous Deployment service`,
   ports: [],
-  isSelected: true,
-  isCore: true,
-  manikinIcon: defaultIcon,
-  memories: []
+  folder: `Nginx`,
+  subfolders: [`conf`, `pages`, `log`],
+  memories: [],
+  manikinIcon: defaultIcon
 };

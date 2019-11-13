@@ -9,7 +9,7 @@ import { homedir, tmpdir } from 'os';
 import {
   drupalManikin,
   ghostManikin,
-  gitManikin,
+  gitlabManikin,
   myELKManikin,
   nginxManikin,
   owncloudManikin,
@@ -18,8 +18,8 @@ import {
   rocketChatManikin,
   visualizerManikin,
   webdavManikin,
-  wordPressManikin
-} from './_manikins';
+  wordpressManikin
+} from '../mobparts/manikins/_manikins';
 
 import { IManikin } from '../classes/IManikin';
 import { IMemory } from '../classes/IMemory';
@@ -36,14 +36,14 @@ import { mobName } from '../mobparts/memories/mobName';
 import { primaryDomain } from '../mobparts/memories/primaryDomain';
 import { secondaryDomain } from '../mobparts/memories/secondaryDomain';
 import {
-  myLDAPManikin,
+  ldapManikin,
   skoposManikin,
   traefikManikin,
   swarmpitManikin
-} from './_manikins';
+} from '../mobparts/manikins/_manikins';
 
 export let coreManikins: IManikin[] = [
-  myLDAPManikin,
+  ldapManikin,
   traefikManikin,
   skoposManikin
 ];
@@ -77,14 +77,14 @@ export const allManikins: IManikin[] = [
   visualizerManikin,
   ghostManikin,
   nginxManikin,
-  myLDAPManikin,
+  ldapManikin,
   rocketChatManikin,
   drupalManikin,
   owncloudManikin,
-  gitManikin,
+  gitlabManikin,
   portalManikin,
   webdavManikin,
-  wordPressManikin
+  wordpressManikin
 ];
 
 // Installer constants

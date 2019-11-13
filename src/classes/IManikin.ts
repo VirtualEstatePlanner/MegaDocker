@@ -15,8 +15,8 @@ export interface IManikin {
   isCore: Boolean;
   isSelected: Boolean;
   mites: IMite[];
-  ports?: IManikinPort[];
-  folder?: string;
-  subfolders?: string[];
-  memories?: IMemory[];
+  ports: IManikinPort[];
+  folder: string;
+  subfolders: string[];
+  memories: IMemory[];
 }
