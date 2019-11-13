@@ -1,4 +1,4 @@
-//  $SOMEMANIKINServiceMite.ts
+//  drupal/serviceMite.ts
 //  MegaDocker
 //  Network Mite for $SOMEMANIKIN
 //  Created by George Georgulas IV on 1/26/19.
@@ -10,12 +10,15 @@ export const serviceMite: IMite = {
   type: 'Service',
   miteString: `
 
-#Begin $SOMEMANIKIN Service Section
+#Begin Drupal Service Section
   
- $SOMEMANIKIN:
-  driver: overlay
+ drupal:
+   image: 
+   ports:
+   volumes:
+   deploy:
   
-#End $SOMEMANIKIN Service Section
+#End Drupal Service Section
   
   `
 };
