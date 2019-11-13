@@ -1,18 +1,13 @@
-import { IMite } from './IMite';
-
 //  IMite.ts
 //  MegaDocker
 //  an interface that represents a non-YML Mite
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-interface ICustomMiteFile {
-  fileExtension: string;
-  fileContents: string;
-}
+import { IMite } from './IMite';
 
 export interface ICustomMite extends IMite {
   type: `Custom`;
   miteString: string;
-  miteFiles: ICustomMiteFile[];
+  miteFiles: { name: string; extension: string; contents: string }[];
 }

@@ -4,7 +4,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite, emptyMite } from './IMite';
+import { IMite } from './IMite';
 import { IMemory } from './IMemory';
 import { IManikinPort } from './IManikinPort';
 

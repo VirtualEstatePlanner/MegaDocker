@@ -5,14 +5,16 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IManikin } from '../../classes/IManikin';
-import { serviceMite } from './serviceMite';
-import { networkMite } from './networkMite';
+import { wordpressServiceMite } from '../mites/service/wordpressServiceMite';
+import { wordpressNetworkMite } from '../mites/network/wordpressNetworkMite';
+import wordpressIcon from '../../images/manikin-icons/wordpressIcon.png';
 
 export const wordpressManikin: IManikin = {
   name: ``,
+  manikinIcon: wordpressIcon,
   description: ``,
   isSelected: false,
-  mites: [serviceMite, networkMite],
+  mites: [wordpressServiceMite, wordpressNetworkMite],
   ports: [],
   folder: ``,
   subfolders: [],

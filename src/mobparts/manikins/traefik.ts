@@ -13,6 +13,8 @@ import { cloudflareEmail } from '../memories/cloudflareEmail';
 import { primaryDomain } from '../memories/primaryDomain';
 import { secondaryDomain } from '../memories/secondaryDomain';
 import traefikIcon from './traefikIcon.png';
+import { httpPort } from '../manikinports/httpPort';
+import { httpsPort } from '../manikinports/httpsPort';
 
 export const traefikManikin: IManikin = {
   name: `Traefik`,
@@ -20,7 +22,7 @@ export const traefikManikin: IManikin = {
   description: `A modern reverse proxy with Let's Encrypt support`,
   isSelected: true,
   mites: [traefikServiceMite, traefikNetworkMite],
-  ports: [],
+  ports: [httpPort, httpsPort],
   folder: `Traefik`,
   subfolders: [`certs`, `pem`, `private`],
   memories: [

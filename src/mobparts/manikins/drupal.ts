@@ -5,14 +5,17 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IManikin } from '../../classes/IManikin';
-import { serviceMite } from './serviceMite';
-import { networkMite } from './networkMite';
+import { drupalServiceMite } from '../mites/service/drupalServiceMite';
+import { drupalNetworkMite } from '../mites/network/drupalNetworkMite';
+//TODO: ADD ICON
+import drupalIcon from '../../images/manikin-icons/drupalIcon.png';
 
 export const drupalManikin: IManikin = {
   name: ``,
+  manikinIcon: drupalIcon,
   description: ``,
   isSelected: false,
-  mites: [serviceMite, networkMite],
+  mites: [drupalServiceMite, drupalNetworkMite],
   ports: [],
   folder: ``,
   subfolders: [],
