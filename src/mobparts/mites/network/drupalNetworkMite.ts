@@ -12,8 +12,8 @@ export const drupalNetworkMite: IMite = {
 
 #Begin $SOMEMANIKIN Network Section
  
- $SOMEMANIKIN:
-  image: 
+ drupal:
+  image: drupal
   ports:
   volumes:
   deploy:

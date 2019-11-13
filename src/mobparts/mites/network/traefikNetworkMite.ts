@@ -12,9 +12,11 @@ export const traefikNetworkMite: IMite = {
 
 #Begin $SOMEMANIKIN Network Section
  
- $SOMEMANIKIN:
-  image: 
+ traefik:
+  image: traefik:latest
   ports:
+   - 80:80
+   - 443:443
   volumes:
   deploy:
   

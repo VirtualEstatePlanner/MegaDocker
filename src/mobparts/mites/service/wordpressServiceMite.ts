@@ -12,7 +12,7 @@ export const wordpressServiceMite: IMite = {
 
 #Begin $SOMEMANIKIN Service Section
   
-  $SOMEMANIKIN:
+  wordpress:
    image: 
    networks:
     - 

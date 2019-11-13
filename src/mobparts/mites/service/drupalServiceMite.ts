@@ -12,7 +12,7 @@ export const drupalServiceMite: IMite = {
 
 #Begin $SOMEMANIKIN Service Section
   
-  $SOMEMANIKIN:
+  drupal:
    image: 
    networks:
     - 

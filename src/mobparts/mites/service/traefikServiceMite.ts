@@ -12,7 +12,7 @@ export const traefikServiceMite: IMite = {
 
 #Begin $SOMEMANIKIN Service Section
   
-  $SOMEMANIKIN:
+  traefik:
    image: 
    networks:
     - 

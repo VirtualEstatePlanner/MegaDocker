@@ -12,8 +12,8 @@ export const wordpressNetworkMite: IMite = {
 
 #Begin $SOMEMANIKIN Network Section
  
- $SOMEMANIKIN:
-  image: 
+ wordpress:
+  image: wordpress:latest
   ports:
   volumes:
   deploy:
