@@ -6,7 +6,7 @@
 
 import { IMite } from '../../../classes/IMite';
 
-export const $SOMEMANIKINNetwork: IMite = {
+export const networkMite: IMite = {
   type: 'Network',
   miteString: `
 

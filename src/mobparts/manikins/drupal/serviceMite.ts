@@ -6,7 +6,7 @@
 
 import { IMite } from '../../../classes/IMite';
 
-export const $SOMEMANIKINService: IMite = {
+export const serviceMite: IMite = {
   type: 'Service',
   miteString: `
 

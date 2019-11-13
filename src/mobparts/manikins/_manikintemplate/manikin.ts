@@ -5,14 +5,14 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IManikin } from '../../../classes/IManikin';
-import { $SOMEMANIKINService } from './serviceMite';
-import { $SOMEMANIKINNetwork } from './networkMite';
+import { serviceMite } from './serviceMite';
+import { networkMite } from './networkMite';
 
 export const $SOMEAPPLICATIONManikin: IManikin = {
   name: ``,
   description: ``,
   isSelected: false,
-  mites: [],
+  mites: [serviceMite, networkMite],
   ports: [],
   folder: ``,
   subfolders: [],
