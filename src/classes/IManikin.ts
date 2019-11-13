@@ -18,8 +18,12 @@ export interface IManikin {
 }
 
 export const emptyManikin: IManikin = {
-  description: '',
+  name: ``,
+  description: ``,
   isSelected: false,
-  name: '',
-  mites: [emptyMite]
+  mites: [],
+  ports: [],
+  folder: ``,
+  subfolders: [],
+  variables: []
 };
