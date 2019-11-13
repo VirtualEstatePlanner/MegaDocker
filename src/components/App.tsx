@@ -16,7 +16,7 @@ export const App: React.FC = () => {
       line...
         </p>
         <p></p>
-        <img src={mdlogo} className="App-logo" alt="logo" />
+        <img src={mdlogo.toString()} className="App-logo" alt="logo" />
         <p>
           Edit <code style={{ color: "yellow" }}>src/App.tsx</code> and save to
           hot reload, or run <code style={{ color: "yellow" }}>yarn build</code>{" "}

@@ -14,7 +14,7 @@ import defaultIcon from '../images/manikin-icons/defaultIcon.png';
  * rocketchat Manikin
  * replace MVOs
  */
-export let rocketChatManikin: IManikin = {
+export let rocketchatManikin: IManikin = {
   name: `RocketChat`,
   description: `Team text chat server`,
   isCore: false,

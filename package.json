@@ -14,7 +14,7 @@
     "clean": "run-s -l unbinaries uncache undist unelectron unerror && echo && echo 'clean: all artifacts deleted' && echo",
     "purge": "run-s -l unbinaries uncache undist unelectron unerror uninstall && echo && echo 'purge: all modules and artifacts deleted' && echo",
     "tsc-build": "tsc public/electron.ts && echo && echo 'tsc-build: transpiled public/electron.js'",
-    "tsc-dev": "cp public/preload.js . && tsc public/electron.ts -w --incremental --outDir . && echo && echo 'tsc-dev: watching and transpiling electron.js'",
+    "tsc-dev": "cp public/preload.js . && tsc public/electron.ts -w --outDir . && echo && echo 'tsc-dev: watching and transpiling electron.js'",
     "reinstall": "yarn purge && yarn && echo && echo 'reinstall: rebuilt node_modules && echo'",
     "react-start": "react-scripts start",
     "react-dev": "cross-env BROWSER=none yarn react-start",
@@ -128,6 +128,7 @@
     "electron-builder": "latest",
     "electron-devtools-installer": "latest",
     "electron-is-dev": "latest",
+    "jest": "latest",
     "npm-run-all": "latest",
     "prettier": "latest",
     "typescript": "latest",
@@ -149,6 +150,6 @@
     ]
   },
   "main": "electron.js",
-  "license": "The Unlicense",
+  "license": "Unlicense",
   "homepage": "."
 }

@@ -5,42 +5,36 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 // tslint:disable: max-line-length
-import { homedir, tmpdir } from 'os';
-import {
-  drupalManikin,
-  ghostManikin,
-  gitlabManikin,
-  myELKManikin,
-  nginxManikin,
-  owncloudManikin,
-  portainerManikin,
-  portalManikin,
-  rocketChatManikin,
-  visualizerManikin,
-  webdavManikin,
-  wordpressManikin
-} from '../mobparts/manikins/_manikins';
 
+//import libraries
+import { homedir, tmpdir } from 'os';
+
+// import classes
 import { IManikin } from '../classes/IManikin';
 import { IMemory } from '../classes/IMemory';
 import { IMite } from '../classes/IMite';
 import { IMob } from '../classes/IMob';
 
-import { cloudflareAPIKey } from '../mobparts/memories/cloudflareAPIKey';
-import { cloudflareEmail } from '../mobparts/memories/cloudflareEmail';
-import { letsEncryptEmail } from '../mobparts/memories/letsEncryptEmail';
-import { ldapAdminPassword } from '../mobparts/memories/ldapAdminPassword';
-import { ldapAdminUsername } from '../mobparts/memories/ldapAdminUsername';
-import { ldapConfigurationPassword } from '../mobparts/memories/ldapConfigurationPassword';
+// import manikins
+import { drupalManikin } from '../mobparts/manikins/drupal';
+import { ghostManikin } from '../mobparts/manikins/ghost';
+import { gitlabManikin } from '../mobparts/manikins/gitlab';
+import { elkManikin } from '../mobparts/manikins/elk';
+import { ldapManikin } from '../mobparts/manikins/ldap';
+import { nginxManikin } from '../mobparts/manikins/nginx';
+import { owncloudManikin } from '../mobparts/manikins/owncloud';
+import { portainerManikin } from '../mobparts/manikins/portainer';
+import { portalManikin } from '../mobparts/manikins/portal';
+import { rocketchatManikin } from '../mobparts/manikins/rocketchat';
+import { skoposManikin } from '../mobparts/manikins/skopos';
+import { swarmpitManikin } from '../mobparts/manikins/swarmpit';
+import { traefikManikin } from '../mobparts/manikins/traefik';
+import { visualizerManikin } from '../mobparts/manikins/visualizer';
+import { webdavManikin } from '../mobparts/manikins/webdav';
+import { wordpressManikin } from '../mobparts/manikins/wordpress';
+
+// import memories
 import { mobName } from '../mobparts/memories/mobName';
-import { primaryDomain } from '../mobparts/memories/primaryDomain';
-import { secondaryDomain } from '../mobparts/memories/secondaryDomain';
-import {
-  ldapManikin,
-  skoposManikin,
-  traefikManikin,
-  swarmpitManikin
-} from '../mobparts/manikins/_manikins';
 
 export let coreManikins: IManikin[] = [
   ldapManikin,
@@ -73,12 +67,12 @@ export const allManikins: IManikin[] = [
   skoposManikin,
   swarmpitManikin,
   portainerManikin,
-  myELKManikin,
+  elkManikin,
   visualizerManikin,
   ghostManikin,
   nginxManikin,
   ldapManikin,
-  rocketChatManikin,
+  rocketchatManikin,
   drupalManikin,
   owncloudManikin,
   gitlabManikin,

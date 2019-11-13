@@ -4,7 +4,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { userManikins, userMob } from '../../objects/runtime';
+import { coreManikins, userMob } from '../../globals/_globals';
 import { makeFoldersForManikin } from './makeFoldersForManikin';
 import { makeMobFolder } from './makeMobFolder';
 
@@ -13,7 +13,7 @@ import { makeMobFolder } from './makeMobFolder';
  */
 export function makeMobFolderStructure(): void {
   makeMobFolder();
-  for (const eachManikin of userManikins) {
+  for (const eachManikin of coreManikins) {
     if (userMob.mobManikins.length !== 0) {
       makeFoldersForManikin(eachManikin);
     }
