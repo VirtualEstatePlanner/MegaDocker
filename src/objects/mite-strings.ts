@@ -22,7 +22,7 @@ import {
   wordpressMariaDBPassword,
   wordpressMariaDBRootPassword,
   wordpressMariaDBUser
-} from './manikin-variables';
+} from '../mobparts/variables/_manikinvariable-template';
 
 export const mobFileHeaderString: string = `
 # MegaDocker YML File

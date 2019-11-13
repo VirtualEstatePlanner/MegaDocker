@@ -4,26 +4,64 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
+// tslint:disable: max-line-length
 import { homedir, tmpdir } from 'os';
-import { IManikin } from '../classes/IManikin';
 import {
   drupalManikin,
   ghostManikin,
   gitManikin,
   myELKManikin,
-  myLDAPManikin,
   nginxManikin,
   owncloudManikin,
   portainerManikin,
   portalManikin,
   rocketChatManikin,
-  skoposManikin,
-  swarmpitManikin,
-  traefikManikin,
   visualizerManikin,
   webdavManikin,
   wordPressManikin
 } from './manikins';
+
+import { IManikin } from '../classes/IManikin';
+import { IManikinVariable } from '../classes/IManikinVariable';
+import { IMite } from '../classes/IMite';
+import { IMob, coreMob } from '../classes/IMob';
+
+import {
+  cloudFlareAPIKey,
+  cloudFlareEmail,
+  letsEncryptEmail,
+  primaryDomain,
+  secondaryDomain
+} from '../mobparts/variables/_manikinvariable-template';
+import {
+  myLDAPManikin,
+  skoposManikin,
+  traefikManikin,
+  swarmpitManikin
+} from './manikins';
+
+export let userManikins: IManikin[] = [
+  myLDAPManikin,
+  traefikManikin,
+  skoposManikin
+];
+
+export let userVariables: IManikinVariable[] = [
+  primaryDomain,
+  secondaryDomain,
+  cloudFlareAPIKey,
+  cloudFlareEmail,
+  letsEncryptEmail
+];
+
+const userMobMites: IMite[] = [];
+const myYMLOutputString: string = userMobMites.concat.toString();
+
+export let userMob: IMob = {
+  mobManikins: userManikins,
+  mobName: 'unnamed Mob',
+  mobVariables: [emptyManikinVariable]
+};
 
 // permissions stuff
 //
@@ -60,12 +98,12 @@ export const allManikins: IManikin[] = [
 // mac
 export const macVirtualBoxInstallerFileName: string =
   'MacOSVirtualBoxInstaller.dmg';
-// tslint:disable-next-line: max-line-length
 export const macVirtualBoxInstallerFileURL: URL = new URL(
   // tslint:disable-next-line: max-line-length
   'https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0.4-128413-OSX.dmg'
 );
 export const macDockerBinaryPath: string = '/usr/local/bin/docker';
+
 export const macDockerInstallerFileURL: URL = new URL(
   'https://download.docker.com/mac/stable/Docker.dmg'
 );

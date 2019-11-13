@@ -6,55 +6,21 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IManikin } from '../classes/IManikin'
-import {IManikinWithPorts} from '../classes/IManikinWithPorts'
-import {IManikinWithVariables} from '../classes/IManikinWithVariables'
-import {IManikinWithPortsAndVariables} from '../classes/IManikinWithPortsAndVariables'
+import { IManikinVariable } from '../classes/IManikinVariable'
 
-import {
-  cloudFlareAPIKey,
-  cloudFlareEmail,
-  letsEncryptEmail,
-  myLDAPAdminPassword,
-  myLDAPAdminUsername,
-  myLDAPConfigurationPassword,
-  primaryDomain,
-  secondaryDomain
-} from './manikin-variables'
-import {
-  drupalNetworkString,
-  drupalServiceString,
-  ghostNetworkString,
-  ghostServiceString,
-  gitNetworkString,
-  gitServiceString,
-  myELKNetworkString,
-  myELKServiceString,
-  myLDAPNetworkString,
-  myLDAPServiceString,
-  nextcloudNetworkString,
-  nginxServiceString,
-  noNetworkString,
-  owncloudNetworkString,
-  owncloudServiceString,
-  portainerServiceString,
-  portalServiceString,
-  rocketChatNetworkString,
-  rocketChatServiceString,
-  skoposServiceString,
-  swarmpitNetworkString,
-  swarmpitServiceString,
-  traefikNetworkString,
-  traefikServiceString,
-  visualizerServiceString,
-  webdavNetworkString,
-  webdavServiceString,
-  wordPressNetworkString,
-  wordPressServiceString
-} from './mite-strings'
+import { cloudflareAPIKey } from '../mobparts/variables/cloudflareAPIKey'
+import { cloudflareEmail } from '../mobparts/variables/cloudflareEmail'
+import { letsEncryptEmail } from '../mobparts/variables/letsEncryptEmail'
+import { ldapAdminPassword } from '../mobparts/variables/ldapAdminPassword'
+import { ldapAdminUsername } from '../mobparts/variables/ldapAdminUsername'
+import { ldapConfigurationPassword } from '../mobparts/variables/ldapConfigurationPassword'
+import { primaryDomain } from '../mobparts/variables/primaryDomain'
+import { secondaryDomain } from '../mobparts/variables/secondaryDomain'
+
 /**
  * traefik Manikin
  */
-export let traefikManikin: IManikinWithPortsAndVariables = {
+export let traefikManikin: IManikin = {
   name: `Traefik`,
   serviceYML: traefikServiceString,
   networkYML: traefikNetworkString,
@@ -65,8 +31,8 @@ variables: [
     primaryDomain,
     secondaryDomain,
     letsEncryptEmail,
-    cloudFlareEmail,
-    cloudFlareAPIKey
+    cloudflareEmail,
+    cloudflareAPIKey
   ],
   isSelected: true
 );
@@ -74,7 +40,7 @@ variables: [
 /**
  * skopos Manikin
  */
-export let skoposManikin: IManikinWithVariables = {
+export let skoposManikin: IManikin = {
   `Skopos`,
   skoposServiceString,
   noNetworkString,
@@ -88,7 +54,7 @@ export let skoposManikin: IManikinWithVariables = {
 /**
  * swarmpit Manikin
  */
-export let swarmpitManikin: IManikinWithVariables = {
+export let swarmpitManikin: IManikin = {
   `Swarmpit`,
   swarmpitServiceString,
   swarmpitNetworkString,
@@ -102,7 +68,7 @@ export let swarmpitManikin: IManikinWithVariables = {
 /**
  * portainer Manikin
  */
-export let portainerManikin: IManikinWithVariables = {
+export let portainerManikin: IManikin = {
   `Portainer`,
   portainerServiceString,
   noNetworkString,
@@ -116,7 +82,7 @@ export let portainerManikin: IManikinWithVariables = {
 /**
  * elk Manikin
  */
-export let myELKManikin: IManikinWithVariables = {
+export let myELKManikin: IManikin = {
   `ELK`,
   myELKServiceString,
   myELKNetworkString,
@@ -181,7 +147,7 @@ export let myLDAPManikin: IManikin = {
   `LDAP`,
   [`conf`, `pages`, `log`],
   `Lightweight Directory Authentication Protocol Authentication server`,
-  [myLDAPAdminUsername, myLDAPAdminPassword, myLDAPConfigurationPassword],
+[ldapAdminUsername, ldapAdminPassword, ldapConfigurationPassword],
   false
 );
 

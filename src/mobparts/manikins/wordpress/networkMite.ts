@@ -1,4 +1,4 @@
-//  $SOMEMANIKINNetworkMite.ts
+//  wordpress/networkMite.ts
 //  MegaDocker
 //  Network Mite for $SOMEMANIKIN
 //  Created by George Georgulas IV on 1/26/19.
@@ -6,7 +6,7 @@
 
 import { IMite } from '../../../classes/IMite';
 
-export const $SOMEMANIKINNetwork: IMite = {
+export const networkMite: IMite = {
   type: 'Network',
   miteString: `
 

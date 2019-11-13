@@ -1,6 +1,6 @@
 //  IMob.ts
 //  MegaDocker
-//  an interface for a MEGADocker Mob
+//  an interface that represents a MEGADocker Mob
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 

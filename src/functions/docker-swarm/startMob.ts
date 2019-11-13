@@ -9,9 +9,8 @@ import { run } from '../core/run';
 import { IManikin } from '../../classes/IManikin';
 import { makeMobFolder } from '../core/makeMobFolder';
 import { makeFoldersForManikin } from '../core/makeFoldersForManikin';
-import { mobName } from '../../objects/manikin-variables';
 import { homedir } from 'os';
-import { userMob } from '../../objects/runtime';
+import { userMob } from '../../objects/miscellaneous';
 
 /**
  * saves a YML file to disk and runs the Mob that file describes

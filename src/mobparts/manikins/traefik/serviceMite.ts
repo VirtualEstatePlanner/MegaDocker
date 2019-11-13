@@ -5,13 +5,11 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../classes/IMite';
-import {
-  mobFolderPath,
-  cloudFlareAPIKey,
-  cloudFlareEmail,
-  primaryDomain,
-  secondaryDomain
-} from '../../../objects/manikin-variables';
+import { mobFolderPath } from '../../variables/mobFolderPath';
+import { cloudflareAPIKey } from '../../variables/cloudflareAPIKey';
+import { cloudflareEmail } from '../../variables/cloudflareEmail';
+import { primaryDomain } from '../../variables/primaryDomain';
+import { secondaryDomain } from '../../variables/secondaryDomain';
 
 export const serviceMite: IMite = {
   type: 'Service',
@@ -37,8 +35,8 @@ export const serviceMite: IMite = {
        - ${mobFolderPath}/Traefik/traefik.toml:/traefik.toml
        - ${mobFolderPath}/Traefik/acme.json:/acme.json
       environment:
-       - "CLOUDFLARE_API_KEY=${cloudFlareAPIKey.value}"
-    - "CLOUDFLARE_EMAIL=${cloudFlareEmail.value}"
+       - "CLOUDFLARE_API_KEY=${cloudflareAPIKey.value}"
+    - "CLOUDFLARE_EMAIL=${cloudflareEmail.value}"
       deploy:
        replicas: 1
        placement:
