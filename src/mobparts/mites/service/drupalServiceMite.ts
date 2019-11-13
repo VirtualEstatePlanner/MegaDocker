@@ -10,7 +10,7 @@ export const drupalServiceMite: IMite = {
   type: 'Service',
   miteString: `
 
-#Begin $SOMEMANIKIN Service Section
+#Begin Drupal Service Section
   
   drupal:
    image: 

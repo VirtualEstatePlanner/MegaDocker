@@ -10,7 +10,7 @@ export const traefikNetworkMite: IMite = {
   type: 'Network',
   miteString: `
 
-#Begin $SOMEMANIKIN Network Section
+#Begin Traefik Network Section
  
  traefik:
   image: traefik:latest

@@ -10,7 +10,7 @@ export const wordpressServiceMite: IMite = {
   type: 'Service',
   miteString: `
 
-#Begin $SOMEMANIKIN Service Section
+#Begin WordPress Service Section
   
   wordpress:
    image: 

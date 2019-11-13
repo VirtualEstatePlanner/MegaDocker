@@ -10,7 +10,7 @@ export const wordpressNetworkMite: IMite = {
   type: 'Network',
   miteString: `
 
-#Begin $SOMEMANIKIN Network Section
+#Begin WordPress Network Section
  
  wordpress:
   image: wordpress:latest

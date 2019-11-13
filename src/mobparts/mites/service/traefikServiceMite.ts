@@ -10,7 +10,7 @@ export const traefikServiceMite: IMite = {
   type: 'Service',
   miteString: `
 
-#Begin $SOMEMANIKIN Service Section
+#Begin Traefik Service Section
   
   traefik:
    image: 

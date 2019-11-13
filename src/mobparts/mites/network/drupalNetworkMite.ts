@@ -10,7 +10,7 @@ export const drupalNetworkMite: IMite = {
   type: 'Network',
   miteString: `
 
-#Begin $SOMEMANIKIN Network Section
+#Begin Drupal Network Section
  
  drupal:
   image: drupal
