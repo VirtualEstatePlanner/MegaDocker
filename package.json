@@ -1,4 +1,12 @@
 {
+  "version": "0.1.0",
+  "buildVersion": "0.1.0",
+  "author": "George Georgulas IV <georgegeorgulas@gmail.com> (https://github.com/VirtualEstatePlanner)",
+  "copyright": "© 2019 The MEGADocker Group",
+  "private": true,
+  "main": "electron.js",
+  "license": "Unlicense",
+  "homepage": ".",
   "scripts": {
     "postinstall": "yarn build-transpile && electron-builder install-app-deps && echo && echo 'yarn install: environment updated and prepared for build' && echo",
     "install-homebrew": "/usr/bin/ruby -e $(curl -fsSl https://raw.githubusercontent.com/Homebrew/install/master/install)",
@@ -20,7 +28,7 @@
     "react-dev": "cross-env BROWSER=none yarn react-start",
     "electron-dev": "sleep 15 && wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .",
     "develop": "cross-env NODE_ENV=development run-p -l tsc-dev react-dev electron-dev",
-    "react-test": "react-scripts test --env=jsdom && echo && echo 'react-test: testing complete' && echo",
+    "react-test": "react-scripts test --coverage --env=jsdom && echo && echo 'react-test: testing complete' && echo",
     "react-eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                             react-scripts eject' && echo && echo",
     "react-build": "react-scripts build && echo && echo 'react-build: built artifacts in build/' && echo",
     "macos-warning": "echo && echo 'macos-warning: This npm script will only function on macos' && echo",
@@ -107,11 +115,6 @@
     "swarmpit",
     "traefik"
   ],
-  "version": "0.1.0",
-  "buildVersion": "0.1.0",
-  "author": "George Georgulas IV <georgegeorgulas@gmail.com> (https://github.com/VirtualEstatePlanner)",
-  "copyright": "© 2019 The MEGADocker Group",
-  "private": true,
   "dependencies": {
     "react": "latest",
     "react-dom": "latest",
@@ -131,6 +134,7 @@
     "jest": "latest",
     "npm-run-all": "latest",
     "prettier": "latest",
+    "ts-jest": "latest",
     "typescript": "latest",
     "wait-on": "latest"
   },
@@ -148,8 +152,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "main": "electron.js",
-  "license": "Unlicense",
-  "homepage": "."
+  }
 }
