@@ -6,6 +6,7 @@ binaries
 node_modules
 out
 **/*.js
+**/*/testfile*.*
 !public/preload.js
 **/*/.DS_Store
 **/*/.env

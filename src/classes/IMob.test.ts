@@ -15,7 +15,7 @@ export const testMob: IMob = {
   mobMemories: [letsEncryptEmail]
 };
 
-it('has all 3 values', () => {
+it('should have all 3 values', () => {
   expect(testMob.mobName).toStrictEqual(`someMobName`);
   expect(testMob.mobManikins.length).toStrictEqual(2);
   expect(testMob.mobMemories.length).toStrictEqual(1);
