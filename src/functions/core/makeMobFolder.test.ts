@@ -4,15 +4,16 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { documentsFolder, userMob } from '../../globals/_globals';
 import { makeFolder } from './makeFolder';
+import { removeFolder } from './removeFolder';
+import { checkForFile } from './checkForFile';
 
-/**
- * @mobName - the name of the Mob we are creating a storage
- * location for (folder will have this name)
- * @pathTo - the directory where that folder will be created
- * creates the main folder for a Mob
- */
-export function makeMobFolder(): void {
-  makeFolder(documentsFolder, userMob.mobName);
-}
+it(`should create an example mob folder`, () => {
+  const pathTo: string = `./`;
+  const folderName: string = `sometestfolder`;
+  expect(checkForFile(pathTo, folderName)).toBeFalsy;
+  makeFolder(pathTo, folderName);
+  expect(checkForFile(pathTo, folderName)).toBeTruthy;
+  removeFolder(pathTo, folderName);
+  expect(checkForFile(pathTo, folderName)).toBeFalsy;
+});

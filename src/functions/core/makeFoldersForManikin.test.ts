@@ -4,24 +4,53 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
+import { makeFoldersForManikin } from './makeFoldersForManikin';
+import { checkForFile } from './checkForFile';
 import { IManikin } from '../../classes/IManikin';
-import { userMegaDockerFolder } from '../../globals/_globals';
-import { makeFolder } from './makeFolder';
+import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
+import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
 
-/**
- * @aManikin - the Manikin to create a folder for (folder will have this name)
- * @subfolders - the folders to be created inside the Manikin
- * folder (subfolders will have these names)
- * creates Manikin folder and subfolders for a given Manikin
- */
-export function makeFoldersForManikin(aManikin: IManikin): void {
-  if (aManikin.subfolders && aManikin.folder) {
-    makeFolder(userMegaDockerFolder, aManikin.folder);
-    if (aManikin.subfolders.length !== 0) {
-      makeFolder(
-        `${userMegaDockerFolder.toString()}/${aManikin.name}`,
-        `${aManikin.subfolders.forEach}`
-      );
-    }
-  }
-}
+const myTestManikin: IManikin = {
+  name: `my subfolder testing manikin`,
+  manikinIcon: defaultIcon,
+  description: `it has multiple folders`,
+  isCore: false,
+  isSelected: false,
+  mites: [],
+  ports: [],
+  folder: `my-test-manikin`,
+  subfolders: [
+    `my-first-subfolder`,
+    `my-second-subfolder`,
+    `my-third-subfolder`
+  ],
+  memories: []
+};
+
+it(`should find a folder with three folders inside of it`, () => {
+  expect(
+    checkForFile(`${userMegaDockerFolder.toString()}`, myTestManikin.folder)
+  ).toBeFalsy;
+  makeFoldersForManikin(myTestManikin);
+  expect(
+    checkForFile(`${userMegaDockerFolder.toString()}`, myTestManikin.folder)
+  ).toBeTruthy;
+  expect(
+    checkForFile(
+      `${userMegaDockerFolder.toString()}/${myTestManikin.folder}`,
+      myTestManikin.subfolders[0]
+    )
+  ).toBeTruthy;
+  expect(
+    checkForFile(
+      `${userMegaDockerFolder.toString()}/${myTestManikin.folder}`,
+      myTestManikin.subfolders[1]
+    )
+  ).toBeTruthy;
+  expect(
+    checkForFile(
+      `${userMegaDockerFolder.toString()}/${myTestManikin.folder}`,
+      myTestManikin.subfolders[2]
+    )
+  ).toBeTruthy;
+});

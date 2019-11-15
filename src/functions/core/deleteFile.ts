@@ -11,7 +11,7 @@ import { unlinkSync } from 'fs';
  * @pathTo - the directory where that file exists
  * removes a file from the hard drive - !! - USE WITH EXTREME CAUTION - !!
  */
-export function deleteFile(fileName: string, pathTo: string): void {
-  const filePath: string = `${pathTo}.${fileName}`;
+export function deleteFile(pathTo: string, fileName: string): void {
+  const filePath: string = `${pathTo}/${fileName}`;
   unlinkSync(filePath);
 }

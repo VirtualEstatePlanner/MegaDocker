@@ -4,14 +4,14 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { unlinkSync } from 'fs';
+import { deleteFile } from './deleteFile';
+import { saveFile } from './saveFile';
+import { checkForFile } from './checkForFile';
 
-/**
- * @fileName - the name of the file to be deleted
- * @pathTo - the directory where that file exists
- * removes a file from the hard drive - !! - USE WITH EXTREME CAUTION - !!
- */
-export function deleteFile(fileName: string, pathTo: string): void {
-  const filePath: string = `${pathTo}.${fileName}`;
-  unlinkSync(filePath);
-}
+it(`should delete a file`, () => {
+  expect(checkForFile(`./`, `sometestfile.txt`)).toBeFalsy;
+  saveFile(`./`, `sometestfile`, `txt`, `sometestfile needs contents`);
+  expect(checkForFile(`./`, `sometestfile.txt`)).toBeTruthy;
+  deleteFile(`./`, `./sometestfile.txt`);
+  expect(checkForFile(`./`, `sometestfile.txt`)).toBeFalsy;
+});
