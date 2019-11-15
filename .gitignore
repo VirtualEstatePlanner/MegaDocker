@@ -1,10 +1,10 @@
-build
-cache
-coverage
-dist
-binaries
-node_modules
-out
+/build
+/cache
+/coverage/*
+/dist
+/binaries
+/node_modules
+/out
 **/*.js
 **/*/testfile*.*
 !public/preload.js

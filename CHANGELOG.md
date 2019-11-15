@@ -4,7 +4,8 @@
 
 The line in **bold** is the current version
 
-- `v0.2.3-pre-alpha` : **fixed buildchain**
+- `v0.2.4-pre-alpha` : **added unit test**
+- `v0.2.3-pre-alpha` : fixed buildchain
 - `v0.2.2-pre-alpha` : created a working `React` interface, cleaned some cruff out
 - `v0.2.1-pre-alpha` : added tsx files for React components, added `livetest` script & related devDependencies
 - `v0.2.0-pre-alpha` : split functions into individual files to add tests
