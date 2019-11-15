@@ -116,6 +116,6 @@ While MEGADocker includes many **Manikins**, we can't do everything… yet. If y
 
 ### Mobs
 
-**Mobs** represent a full stack of microservices (**Manikins**) deployed across a cluster or swarm of hosts. **Mobs** are saved as `.megadocker` files, and can exported a `docker-compose.yml` file to be used in KLubernetes or Docker swarm mode.
+**Mobs** represent a full stack of microservices (**Manikins**) deployed across a cluster or swarm of hosts. **Mobs** are saved as `.megadocker` files, and can exported a `docker-compose.yml` file to be used in Kubernetes or Docker swarm mode.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
