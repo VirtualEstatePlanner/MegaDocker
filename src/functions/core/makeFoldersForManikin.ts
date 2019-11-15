@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IManikin } from '../../classes/IManikin';
-import { userMegaDockerFolder } from '../../globals/_globals';
+import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
 import { makeFolder } from './makeFolder';
 
 /**
