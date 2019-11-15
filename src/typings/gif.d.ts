@@ -1,4 +1,4 @@
 declare module '*.gif' {
   const value: ImageBitmapSource;
-  export = value;
+  export default value;
 }

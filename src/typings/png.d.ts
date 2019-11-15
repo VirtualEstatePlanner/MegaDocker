@@ -1,4 +1,4 @@
 declare module '*.png' {
-  const value: ImageBitmapSource;
-  export = value;
+  const value: ImageBitmap;
+  export default value;
 }
