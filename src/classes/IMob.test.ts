@@ -7,10 +7,10 @@
 import { IMob } from './IMob';
 import { letsEncryptEmail } from '../mobparts/memories/letsEncryptEmail';
 import { swarmpitManikin } from '../mobparts/manikins/swarmpit';
-import { traefikManikin } from '../mobparts/manikins/traefik';
+import { someTestManikin } from './IManikin.test';
 
 export const testMob: IMob = {
-  mobManikins: [swarmpitManikin, traefikManikin],
+  mobManikins: [swarmpitManikin, someTestManikin],
   mobName: `someMobName`,
   mobMemories: [letsEncryptEmail]
 };

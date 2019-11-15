@@ -10,7 +10,7 @@ import { mobName } from '../mobparts/memories/mobName';
 import { traefikNetworkMite } from '../mobparts/mites/network/traefikNetworkMite';
 import defaultIcon from '../images/manikin-icons/defaultIcon.png';
 
-const someTestManikin: IManikin = {
+export const someTestManikin: IManikin = {
   name: `someManikinName`,
   manikinIcon: defaultIcon,
   description: `it does something that is your bidding`,
@@ -22,3 +22,18 @@ const someTestManikin: IManikin = {
   subfolders: [`subA`, `subB`, `subC`],
   memories: [mobName]
 };
+
+it(`should have a name, icon, description, 2 booleans, mite array, ports array, folder, subfolders array, and memories array`, () => {
+  expect(someTestManikin).toBeDefined();
+  expect(someTestManikin.manikinIcon).toStrictEqual(defaultIcon);
+  expect(someTestManikin.description).toStrictEqual(
+    `it does something that is your bidding`
+  );
+  expect(someTestManikin.isCore).toBeTruthy;
+  expect(someTestManikin.isSelected).toBeTruthy;
+  expect(someTestManikin.mites).toStrictEqual([traefikNetworkMite]);
+  expect(someTestManikin.ports).toStrictEqual([httpPort]);
+  expect(someTestManikin.folder).toStrictEqual(`mainFolder`);
+  expect(someTestManikin.subfolders).toStrictEqual([`subA`, `subB`, `subC`]);
+  expect(someTestManikin.memories).toStrictEqual(mobName);
+});
