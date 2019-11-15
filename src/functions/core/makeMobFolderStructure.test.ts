@@ -4,19 +4,10 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { coreManikins } from '../../globals/coreManikins';
-import { userMob } from '../../globals/userMob';
-import { makeFoldersForManikin } from './makeFoldersForManikin';
-import { makeMobFolder } from './makeMobFolder';
+import { makeMobFolderStructure } from './makeMobFolderStructure';
+import { checkForFile } from './checkForFile';
+import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
 
-/**
- * creates all folders for the Mob and it's Manikins
- */
-export function makeMobFolderStructure(): void {
-  makeMobFolder();
-  for (const eachManikin of coreManikins) {
-    if (userMob.mobManikins.length !== 0) {
-      makeFoldersForManikin(eachManikin);
-    }
-  }
-}
+it(`should make the folder for all manikins in a mob at once`, () => {
+  expect(checkForFile(userMegaDockerFolder, ``)).toBeTruthy;
+});

@@ -19,7 +19,7 @@ export function makeFoldersForManikin(aManikin: IManikin): void {
     makeFolder(userMegaDockerFolder, aManikin.folder);
     if (aManikin.subfolders.length !== 0) {
       makeFolder(
-        `${userMegaDockerFolder.toString()}/${aManikin.name}`,
+        `${userMegaDockerFolder}/${aManikin.name}`,
         `${aManikin.subfolders.forEach}`
       );
     }

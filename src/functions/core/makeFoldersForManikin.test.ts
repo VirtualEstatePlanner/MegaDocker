@@ -28,28 +28,26 @@ const myTestManikin: IManikin = {
 };
 
 it(`should find a folder with three folders inside of it`, () => {
-  expect(
-    checkForFile(`${userMegaDockerFolder.toString()}`, myTestManikin.folder)
-  ).toBeFalsy;
+  expect(checkForFile(`${userMegaDockerFolder}`, myTestManikin.folder))
+    .toBeFalsy;
   makeFoldersForManikin(myTestManikin);
-  expect(
-    checkForFile(`${userMegaDockerFolder.toString()}`, myTestManikin.folder)
-  ).toBeTruthy;
+  expect(checkForFile(`${userMegaDockerFolder}`, myTestManikin.folder))
+    .toBeTruthy;
   expect(
     checkForFile(
-      `${userMegaDockerFolder.toString()}/${myTestManikin.folder}`,
+      `${userMegaDockerFolder}/${myTestManikin.folder}`,
       myTestManikin.subfolders[0]
     )
   ).toBeTruthy;
   expect(
     checkForFile(
-      `${userMegaDockerFolder.toString()}/${myTestManikin.folder}`,
+      `${userMegaDockerFolder}/${myTestManikin.folder}`,
       myTestManikin.subfolders[1]
     )
   ).toBeTruthy;
   expect(
     checkForFile(
-      `${userMegaDockerFolder.toString()}/${myTestManikin.folder}`,
+      `${userMegaDockerFolder}/${myTestManikin.folder}`,
       myTestManikin.subfolders[2]
     )
   ).toBeTruthy;

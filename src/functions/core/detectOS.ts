@@ -14,7 +14,7 @@ import { arch, type } from 'os';
  * detects operating system and CPU architecture to enable
  * platform-specific implementations
  */
-export function detectOS(): [string, string] {
+export function detectOS(): string[] {
   const operatingSystem: string = type();
   const hostArchitecture: string = arch();
 
