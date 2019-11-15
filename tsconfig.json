@@ -15,7 +15,7 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es5",
-    "typeRoots": ["typings"]
+    "typeRoots": ["**/*/node_modules/@types", "src/typings"]
   },
-  "include": ["src", "public", "typings"]
+  "include": ["src", "public", "typings", "node_modules"]
 }

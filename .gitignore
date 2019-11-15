@@ -1,9 +1,10 @@
 /build
+/cache
+/coverage/**/*
 /dist
 /binaries
 /node_modules
 /out
-/cache
 **/*.js
 !public/preload.js
 **/*/.DS_Store

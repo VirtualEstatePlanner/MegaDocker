@@ -4,34 +4,19 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from './IManikin';
-import { IMemory } from './IMemory';
-// import manikins
-import { drupalManikin } from '../mobparts/manikins/drupal';
-import { ghostManikin } from '../mobparts/manikins/ghost';
-import { gitlabManikin } from '../mobparts/manikins/gitlab';
-import { elkManikin } from '../mobparts/manikins/elk';
-import { ldapManikin } from '../mobparts/manikins/ldap';
-import { nginxManikin } from '../mobparts/manikins/nginx';
-import { owncloudManikin } from '../mobparts/manikins/owncloud';
-import { portainerManikin } from '../mobparts/manikins/portainer';
-import { portalManikin } from '../mobparts/manikins/portal';
-import { rocketchatManikin } from '../mobparts/manikins/rocketchat';
-import { skoposManikin } from '../mobparts/manikins/skopos';
+import { IMob } from './IMob';
+import { letsEncryptEmail } from '../mobparts/memories/letsEncryptEmail';
 import { swarmpitManikin } from '../mobparts/manikins/swarmpit';
 import { traefikManikin } from '../mobparts/manikins/traefik';
-import { visualizerManikin } from '../mobparts/manikins/visualizer';
-import { webdavManikin } from '../mobparts/manikins/webdav';
-import { wordpressManikin } from '../mobparts/manikins/wordpress';
 
-export interface IMob {
-  mobManikins: IManikin[];
-  mobName: string;
-  mobMemories: IMemory[];
-}
-
-export const coreMob: IMob = {
+export const testMob: IMob = {
   mobManikins: [swarmpitManikin, traefikManikin],
-  mobName: '',
-  mobMemories: []
+  mobName: `someMobName`,
+  mobMemories: [letsEncryptEmail]
 };
+
+it('has all 3 values', () => {
+  expect(testMob.mobName).toStrictEqual(`someMobName`);
+  expect(testMob.mobManikins.length).toStrictEqual(2);
+  expect(testMob.mobManikins.length).toStrictEqual(1);
+});
