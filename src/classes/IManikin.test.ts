@@ -35,5 +35,5 @@ it(`should have a name, icon, description, 2 booleans, mite array, ports array, 
   expect(someTestManikin.ports).toStrictEqual([httpPort]);
   expect(someTestManikin.folder).toStrictEqual(`mainFolder`);
   expect(someTestManikin.subfolders).toStrictEqual([`subA`, `subB`, `subC`]);
-  expect(someTestManikin.memories).toStrictEqual(mobName);
+  expect(someTestManikin.memories).toStrictEqual([mobName]);
 });

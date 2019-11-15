@@ -18,5 +18,5 @@ export const testMob: IMob = {
 it('has all 3 values', () => {
   expect(testMob.mobName).toStrictEqual(`someMobName`);
   expect(testMob.mobManikins.length).toStrictEqual(2);
-  expect(testMob.mobManikins.length).toStrictEqual(1);
+  expect(testMob.mobMemories.length).toStrictEqual(1);
 });
