@@ -11,7 +11,11 @@ import { ChildProcess, spawn } from 'child_process';
  * @param opt: array of strings describing the arguments passed to a cli command
  * runs a shell command with the appended array of command-line parameters
  */
-export function run(command: string, opt?: string[]): void {
-  const child: ChildProcess = spawn(`${command} ${opt}`);
+export function run(command: string, opt?: string[]): any {
+  const child: ChildProcess = spawn(`'${command}', ['${opt}'], ['']`);
+  child.on('error', (err) => {
+    console.log(`an error occurred with message: ${err}`);
+  });
+  // console.log(child.stdout);
   child.unref();
 }

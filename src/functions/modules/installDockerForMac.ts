@@ -4,7 +4,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { downloadsFolder } from '../../globals/_globals';
+import { downloadsFolder } from '../../globals/downloadFolder';
 import { checkForFile } from '../core/checkForFile';
 import { configureDockerForMac } from '../docker/configureDockerForMac';
 import { downloadDockerForMac } from './downloadDockerForMac';

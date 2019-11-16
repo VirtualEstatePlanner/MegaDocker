@@ -4,10 +4,8 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import {
-  downloadsFolder,
-  macVirtualBoxInstallerFileURL
-} from '../../globals/_globals';
+import { downloadsFolder } from '../../globals/downloadFolder';
+import { macVirtualBoxInstallerFileURL } from '../../globals/_globals';
 import { getFile } from '../core/getFile';
 
 /**

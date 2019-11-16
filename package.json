@@ -14,7 +14,7 @@
     "homebrew-gettext": "run-s install-homebrew brew-install-gettext",
     "unbinaries": "rm -rf binaries && mkdir binaries && echo && echo 'unbinaries: binary artifacts deleted' && echo",
     "uncache": "rm -rf cache/electron/* && rm -rf cache/electron-builder/* && echo && echo 'uncache: removed electron end elctron-builder for windows caches' && echo",
-    "unbuild": "rm -rf build && mkdir build && echo && echo 'unout: build artifacts deleted' && echo",
+    "unbuild": "rm -rf build && mkdir build && echo && echo 'unbuild: build artifacts deleted' && echo",
     "undist": "rm -rf dist && mkdir dist && echo && echo 'undist: distribution artifacts deleted' && echo",
     "unerror": "rm -rf yarn-error.log && echo && echo 'unerror: yarn error log deleted' && echo",
     "unelectron": "rm -rf public/electron.js && rm -rf electron.js && rm -rf preload.js && echo && echo 'unelectron: electron.js artifacts deleted' && echo",
@@ -117,6 +117,7 @@
     "traefik"
   ],
   "dependencies": {
+    "execa": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "latest"

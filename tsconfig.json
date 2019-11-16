@@ -21,5 +21,6 @@
       "src/typings"
     ]
   },
-  "include": ["src", "public", "typings"]
+  "include": ["src", "public", "typings"],
+  "exclude": ["**/*/*.test.ts*"]
 }

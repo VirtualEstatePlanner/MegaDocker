@@ -11,7 +11,9 @@ import { run } from '../core/run';
  * runs 'docker ps' and returns that information to the
  * calling function as a JSON object or string
  */
-export function dockerPS(): void {
-  run('/usr/local/bin/docker', ['ps']);
+export function dockerPS(): string {
+  let output = run('/usr/local/bin/docker', ['ps']);
+  console.log(output);
+  return output as string;
   // IMPLEMENT needs a return of a JSON object, maybe?
 }
