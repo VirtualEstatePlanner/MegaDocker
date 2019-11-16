@@ -13,7 +13,7 @@ import { run } from '../core/run';
  */
 export function getSwarmToken(isManager: boolean): string {
   let mytype: string = 'worker';
-  if (isManager === true) {
+  if (isManager === false) {
     mytype = 'manager';
   }
   run('/usr/local/bin/docker', ['swarm', 'join-token', mytype]);

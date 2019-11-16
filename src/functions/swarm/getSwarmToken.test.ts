@@ -1,10 +1,10 @@
+import { run } from '../core/run';
+
 //  getSwarmToken.ts
 //  MegaDocker
 //  retrieves a swarm token as a string
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
-
-import { run } from '../core/run';
 
 /**
  * @isManager - boolean value of whether or not we want
@@ -13,7 +13,7 @@ import { run } from '../core/run';
  */
 export function getSwarmToken(isManager: boolean): string {
   let mytype: string = 'worker';
-  if (isManager === true) {
+  if (isManager === false) {
     mytype = 'manager';
   }
   run('/usr/local/bin/docker', ['swarm', 'join-token', mytype]);

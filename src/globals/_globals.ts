@@ -4,6 +4,8 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
+export const hostUserName: string = ``;
+
 // Installer constants
 // mac
 export const macVirtualBoxInstallerFileName: string =
