@@ -4,7 +4,8 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { downloadsFolder, hostUserName } from '../../globals/_globals';
+import { downloadsFolder } from '../../globals/downloadFolder';
+import { hostUserName } from '../../globals/_globals';
 import { checkForFile } from '../core/checkForFile';
 import { runOrdered } from '../core/runOrdered';
 import { runPrivilegedOrdered } from '../core/runPrivilegedOrdered';

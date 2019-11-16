@@ -1,14 +1,8 @@
-//  makeFoldersForManikin.ts
-//  megadocker
-//  creates Manikin folder and subfolders for a given Manikin
-//  Created by George Georgulas IV on 1/26/19.
-//  Copyright © 2019 The MegaDocker Group. All rights reserved.
-
-import { makeFoldersForManikin } from './makeFoldersForManikin';
 import { checkForFile } from './checkForFile';
+import { makeFoldersForManikin } from './makeFoldersForManikin';
 import { IManikin } from '../../classes/IManikin';
-import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
 import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
+import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
 
 const myTestManikin: IManikin = {
   name: `my subfolder testing manikin`,
