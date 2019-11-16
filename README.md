@@ -68,7 +68,7 @@ You can also write your own Mites and use them to make custom Manikins and add t
 
 ## Mites
 
-**Mites** represent snippets of text files (represented as [TypeScript](https://www.typescriptlang.org) objects, usually of type `ServiceMite` or `NetworkMite`, both of which inherit from type `Mite`) that contain part of a **Manikin**. This is almost always a snippet of [YAML](https://yaml.org) (we prefer the .yml extension) used to create a **Manikin** in a `docker-compose.yml` file, although a **Mite** can contain any kind of snippet necessary to make a configuration file for any application you can think of.
+**Mites** represent snippets of text files (represented as [TypeScript](https://www.typescriptlang.org) objects, (of type `Mite`) that contain part of a **Manikin**. This is almost always a snippet of [YAML](https://yaml.org) (we prefer the .yml extension) used to create a **Manikin** in a `docker-compose.yml` file, although a **Mite** can contain any kind of snippet necessary to make a configuration file for any application you can think of.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
@@ -76,7 +76,7 @@ You can also write your own Mites and use them to make custom Manikins and add t
 
 ## Memories
 
-**Memories** represent the choices a user needs to make to configure a **Mob**. **Memories** can contain any kind of data, and their values will modify the output of a **Mite** (or of multiple **Mites**) in your **Mob**. For instance, if your **Manikin** needs to know where a volume is on your host to save data, when you add that Manikin to your **Mob**, the _Memories Table_ will add a row to request the location of that folder. If another **Manikin** also needs access to that **Memory\*\***, it will automatically have that information.
+**Memories** represent the choices a user needs to make to configure a **Mob**. **Memories** can contain any kind of data, and their values will modify the output of a **Mite** (or of multiple **Mites**) in your **Mob**. For instance, if your **Manikin** needs to know where a volume is on your host to save data, when you add that Manikin to your **Mob**, the _Memories Table_ will add a row to request the location of that folder. If another **Manikin** also needs access to that **Memory**, it will automatically have that information.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
