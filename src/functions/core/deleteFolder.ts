@@ -8,8 +8,8 @@ import { rmdir } from 'fs';
 import { checkForFile } from './checkForFile';
 
 /**
- * @pathTo - the location to make the folder
- * @folderName - the folder to make
+ * @pathTo - the location to delete the folder
+ * @folderName - the folder to delete
  * deletes a folder at a given path
  */
 export function deleteFolder(pathTo: string, folderName: string): void {

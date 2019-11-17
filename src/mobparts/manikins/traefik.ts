@@ -26,7 +26,7 @@ export let traefikManikin: IManikin = {
   isSelected: true,
   mites: [traefikServiceMite, traefikNetworkMite],
   ports: [],
-  folder: ``,
+  folder: `Traefik`,
   subfolders: [`certs`, `private`, `pem`],
   memories: [
     primaryDomain,

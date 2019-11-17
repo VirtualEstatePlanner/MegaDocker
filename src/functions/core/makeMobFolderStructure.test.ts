@@ -3,17 +3,67 @@ import { checkForFile } from './checkForFile';
 import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
 import { IMob } from '../../classes/IMob';
 import { allManikins } from '../../globals/allManikins';
-import { run } from './run';
+import { deleteFolder } from './deleteFolder';
 
 it(`should make the folder for all manikins in a mob at once`, () => {
-  const pathTo: string = userMegaDockerFolder;
-  const folderName: string = `sometestfolder`;
   const testMob: IMob = {
     mobName: `someTestMob`,
     mobMemories: [],
     mobManikins: allManikins
   };
-  expect(checkForFile(pathTo, folderName)).toBeFalsy;
+  // check that mob folder isn't there
+  expect(checkForFile(userMegaDockerFolder, testMob.mobName)).toBeFalsy;
+  // make folder structure
   makeMobFolderStructure(testMob);
-  run(`rm -rf ${testMob.mobName}`, ['']);
+  // check that mob folder is there
+  expect(checkForFile(userMegaDockerFolder, testMob.mobName)).toBeTruthy;
+  for (const eachManikin of testMob.mobManikins) {
+    if (testMob.mobManikins !== []) {
+      for (const eachSubfolder of eachManikin.subfolders) {
+        // check that each manikin subfolder is there
+        expect(
+          checkForFile(
+            `${userMegaDockerFolder}/${testMob.mobName}/${eachManikin.folder}`,
+            `${eachSubfolder}`
+          )
+        ).toBeTruthy;
+      }
+    }
+  }
+  // delete test folders
+  for (const eachManikin of testMob.mobManikins) {
+    if (testMob.mobManikins !== []) {
+      for (const eachSubfolder of eachManikin.subfolders) {
+        // delete each manikin subfolder
+        deleteFolder(
+          `${userMegaDockerFolder}/${testMob.mobName}/${eachManikin.folder}`,
+          `${eachSubfolder}`
+        );
+      }
+    }
+    for (const eachManikin of testMob.mobManikins) {
+      if (testMob.mobManikins !== []) {
+        for (const eachSubfolder of eachManikin.subfolders) {
+          // check that each subfolder was deleted
+          expect(
+            checkForFile(
+              `${userMegaDockerFolder}/${testMob.mobName}/${eachManikin.folder}`,
+              `${eachSubfolder}`
+            )
+          ).toBeFalsy;
+        }
+      }
+    }
+    for (const eachManikin of testMob.mobManikins) {
+      if (testMob.mobManikins !== []) {
+        // delete each manikin folder
+        deleteFolder(
+          `${userMegaDockerFolder}/${testMob.mobName}`,
+          `${eachManikin.folder}`
+        );
+      }
+    }
+    // delete mob folder
+    deleteFolder(userMegaDockerFolder, testMob.mobName);
+  }
 });

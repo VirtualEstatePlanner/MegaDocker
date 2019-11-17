@@ -17,7 +17,6 @@ export function makeFolder(pathTo: string, folderName: string): void {
   if (checkForFile(pathTo, folderName) !== true) {
     mkdir(filePath, (err: NodeJS.ErrnoException | null) => {
       if (err !== null) {
-        console.log(err);
         throw err;
       }
     });
