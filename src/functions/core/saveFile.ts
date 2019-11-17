@@ -25,7 +25,6 @@ export function saveFile(
     fileContents,
     (err: NodeJS.ErrnoException | null) => {
       if (err !== null) {
-        // tslint:disable-next-line: no-console
         console.log(err);
       }
     }
