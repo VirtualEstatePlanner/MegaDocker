@@ -14,10 +14,10 @@ import { IMob } from '../../classes/IMob';
  * creates all folders for the Mob and it's Manikins
  */
 export function makeMobFolderStructure(mob: IMob): void {
-  makeMobFolder();
+  makeMobFolder(mob);
   for (const eachManikin of mob.mobManikins) {
-    if (userMob.mobManikins.length !== 0) {
-      makeFoldersForManikin(eachManikin);
+    if (userMob.mobManikins !== []) {
+      makeFoldersForManikin(mob, eachManikin);
     }
   }
 }

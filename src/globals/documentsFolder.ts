@@ -1,3 +1,3 @@
 import { homeFolder } from './homeFolder';
 
-export const documentsFolder: string = `${homeFolder.toString()}/Documents`;
+export const documentsFolder: string = `${homeFolder}/Documents`;

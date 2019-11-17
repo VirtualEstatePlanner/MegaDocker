@@ -1,3 +1,3 @@
-import homedir from 'os';
+import { homedir } from 'os';
 
-export const homeFolder: string = homedir.toString();
+export const homeFolder = homedir;

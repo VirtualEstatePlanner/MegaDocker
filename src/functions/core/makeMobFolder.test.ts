@@ -3,6 +3,7 @@ import { makeFolder } from './makeFolder';
 import { deleteFolder } from './deleteFolder';
 import { IMob } from '../../classes/IMob';
 import { allManikins } from '../../globals/allManikins';
+import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
 
 it(`should create an example mob folder`, () => {
   const testMob: IMob = {
@@ -10,19 +11,10 @@ it(`should create an example mob folder`, () => {
     mobName: `Our Testing Mob`,
     mobMemories: []
   };
-  const pathTo: string = `${process.env.PWD}`;
-  const folderName: string = `sometestfolder`;
-  console.log(`checking for folder '${folderName}' in directory '${pathTo}'`);
-  console.log(checkForFile(pathTo, folderName));
-  expect(checkForFile(pathTo, folderName)).toBeFalsy;
-  console.log(`making folder '${folderName}' in directory '${pathTo}'`);
-  makeFolder(pathTo, folderName);
-  console.log(`checking for folder '${folderName}' in directory '${pathTo}'`);
-  console.log(checkForFile(pathTo, folderName));
-  expect(checkForFile(pathTo, folderName)).toBeTruthy;
-  console.log(`deleting folder '${folderName}' from directory '${pathTo}'`);
-  deleteFolder(pathTo, folderName);
-  console.log(`checking for folder '${folderName}' in directory '${pathTo}'`);
-  console.log(checkForFile(pathTo, folderName));
-  expect(checkForFile(pathTo, folderName)).toBeFalsy;
+  const folderName: string = `${testMob.mobName}`;
+  expect(checkForFile(userMegaDockerFolder, folderName)).toBeFalsy;
+  makeFolder(userMegaDockerFolder, folderName);
+  expect(checkForFile(userMegaDockerFolder, folderName)).toBeTruthy;
+  deleteFolder(userMegaDockerFolder, folderName);
+  expect(checkForFile(userMegaDockerFolder, folderName)).toBeFalsy;
 });
