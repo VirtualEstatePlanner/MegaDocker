@@ -11,16 +11,12 @@ it(`should make the folder for all manikins in a mob at once`, () => {
     mobMemories: [],
     mobManikins: allManikins
   };
-  // check that mob folder isn't there
   expect(checkForFile(userMegaDockerFolder, testMob.mobName)).toBeFalsy;
-  // make folder structure
   makeMobFolderStructure(testMob);
-  // check that mob folder is there
   expect(checkForFile(userMegaDockerFolder, testMob.mobName)).toBeTruthy;
   for (const eachManikin of testMob.mobManikins) {
     if (testMob.mobManikins !== []) {
       for (const eachSubfolder of eachManikin.subfolders) {
-        // check that each manikin subfolder is there
         expect(
           checkForFile(
             `${userMegaDockerFolder}/${testMob.mobName}/${eachManikin.folder}`,
@@ -30,11 +26,9 @@ it(`should make the folder for all manikins in a mob at once`, () => {
       }
     }
   }
-  // delete test folders
   for (const eachManikin of testMob.mobManikins) {
     if (testMob.mobManikins !== []) {
       for (const eachSubfolder of eachManikin.subfolders) {
-        // delete each manikin subfolder
         deleteFolder(
           `${userMegaDockerFolder}/${testMob.mobName}/${eachManikin.folder}`,
           `${eachSubfolder}`
@@ -44,7 +38,6 @@ it(`should make the folder for all manikins in a mob at once`, () => {
     for (const eachManikin of testMob.mobManikins) {
       if (testMob.mobManikins !== []) {
         for (const eachSubfolder of eachManikin.subfolders) {
-          // check that each subfolder was deleted
           expect(
             checkForFile(
               `${userMegaDockerFolder}/${testMob.mobName}/${eachManikin.folder}`,
@@ -56,14 +49,12 @@ it(`should make the folder for all manikins in a mob at once`, () => {
     }
     for (const eachManikin of testMob.mobManikins) {
       if (testMob.mobManikins !== []) {
-        // delete each manikin folder
         deleteFolder(
           `${userMegaDockerFolder}/${testMob.mobName}`,
           `${eachManikin.folder}`
         );
       }
     }
-    // delete mob folder
     deleteFolder(userMegaDockerFolder, testMob.mobName);
   }
 });
