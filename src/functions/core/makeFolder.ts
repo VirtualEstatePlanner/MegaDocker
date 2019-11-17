@@ -15,14 +15,11 @@ import { checkForFile } from './checkForFile';
 export function makeFolder(pathTo: string, folderName: string): void {
   const filePath: string = `${pathTo}/${folderName}`;
   if (checkForFile(pathTo, folderName) !== true) {
-    mkdir(
-      filePath,
-      { recursive: true },
-      (err: NodeJS.ErrnoException | null) => {
-        if (err !== undefined) {
-          throw err;
-        }
+    mkdir(filePath, (err: NodeJS.ErrnoException | null) => {
+      if (err !== null) {
+        console.log(err);
+        throw err;
       }
-    );
+    });
   }
 }

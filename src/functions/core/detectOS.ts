@@ -17,6 +17,5 @@ import { arch, type } from 'os';
 export function detectOS(): string[] {
   const operatingSystem: string = type();
   const hostArchitecture: string = arch();
-
   return [operatingSystem, hostArchitecture];
 }

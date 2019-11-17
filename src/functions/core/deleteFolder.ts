@@ -14,15 +14,11 @@ import { checkForFile } from './checkForFile';
  */
 export function deleteFolder(pathTo: string, folderName: string): void {
   const filePath: string = `${pathTo}/${folderName}`;
-  if (checkForFile(pathTo, folderName) !== true) {
-    rmdir(
-      filePath,
-      { recursive: true },
-      (err: NodeJS.ErrnoException | null) => {
-        if (err !== undefined) {
-          throw err;
-        }
+  if (checkForFile(pathTo, `${folderName}/*`) !== true) {
+    rmdir(filePath, (err: NodeJS.ErrnoException | null) => {
+      if (err !== null) {
+        throw err;
       }
-    );
+    });
   }
 }

@@ -19,5 +19,5 @@ export function getFile(
   fileExtension: string,
   url: URL
 ): void {
-  run(`curl --output ${pathTo}/${fileName}.${fileExtension} ${url}`);
+  run(`curl -q ${url} --output ${pathTo}/${fileName}.${fileExtension}`, ['']);
 }

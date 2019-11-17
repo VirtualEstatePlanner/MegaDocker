@@ -8,13 +8,14 @@ import { coreManikins } from '../../globals/coreManikins';
 import { userMob } from '../../globals/userMob';
 import { makeFoldersForManikin } from './makeFoldersForManikin';
 import { makeMobFolder } from './makeMobFolder';
+import { IMob } from '../../classes/IMob';
 
 /**
  * creates all folders for the Mob and it's Manikins
  */
-export function makeMobFolderStructure(): void {
+export function makeMobFolderStructure(mob: IMob): void {
   makeMobFolder();
-  for (const eachManikin of coreManikins) {
+  for (const eachManikin of mob.mobManikins) {
     if (userMob.mobManikins.length !== 0) {
       makeFoldersForManikin(eachManikin);
     }
