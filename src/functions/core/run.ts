@@ -12,10 +12,9 @@ import { ChildProcess, spawn } from 'child_process';
  * runs a shell command with the appended array of command-line parameters
  */
 export function run(command: string, opt?: string[]): any {
-  const child: ChildProcess = spawn(`'${command}', ['${opt}'], ['']`);
+  const child: ChildProcess = spawn(`'${command}', ['${opt}']`);
   child.on('error', (err) => {
-    console.log(`an error occurred with message: ${err}`);
+    console.log(`an error occurred with message: ${err.message}`);
   });
-  // console.log(child.stdout);
   child.unref();
 }
