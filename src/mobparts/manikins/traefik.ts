@@ -13,7 +13,7 @@ import { primaryDomain } from '../memories/primaryDomain';
 import { secondaryDomain } from '../memories/secondaryDomain';
 import { traefikServiceMite } from '../mites/service/traefikServiceMite';
 import { traefikNetworkMite } from '../mites/network/traefikNetworkMite';
-import traefikIcon from '../images/manikin-icons/traefikIcon.png';
+import traefikIcon from '../../images/manikin-icons/traefikIcon.png';
 
 /**
  * traefik Manikin
