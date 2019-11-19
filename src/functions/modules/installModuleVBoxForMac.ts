@@ -4,7 +4,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { downloadsFolder } from '../../globals/downloadFolder';
+import { downloadFolder } from '../../globals/downloadFolder';
 import { checkForFile } from '../core/checkForFile';
 import { downloadVBoxForMac } from './downloadVBoxForMac';
 
@@ -12,10 +12,10 @@ import { downloadVBoxForMac } from './downloadVBoxForMac';
  * downloads and installs VirtualBox for macOS
  */
 export function installModuleVBoxForMac(): void {
-  if (checkForFile(downloadsFolder, 'VirtualBox.dmg') === false) {
+  if (checkForFile(downloadFolder, 'VirtualBox.dmg') === false) {
     downloadVBoxForMac();
   }
-  if (checkForFile(downloadsFolder, 'VirtualBox.dmg') === true) {
+  if (checkForFile(downloadFolder, 'VirtualBox.dmg') === true) {
     installModuleVBoxForMac();
   }
   // TODO needs a return that states whether or not it succeeded

@@ -4,7 +4,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { downloadsFolder } from '../../globals/downloadFolder';
+import { downloadFolder } from '../../globals/downloadFolder';
 import { hostUserName } from '../../globals/_globals';
 import { checkForFile } from '../core/checkForFile';
 import { runOrdered } from '../core/runOrdered';
@@ -14,11 +14,11 @@ import { runPrivilegedOrdered } from '../core/runPrivilegedOrdered';
  * copys Docker to /Applications, adds current user to docker group on macOS
  */
 export function configureDockerForMac(): void {
-  if (checkForFile(downloadsFolder, 'Docker.dmg')) {
+  if (checkForFile(downloadFolder, 'Docker.dmg')) {
     runOrdered('/usr/bin/hdiutil', [
       'attach',
       '-nobrowse',
-      `${downloadsFolder}/Docker.dmg`
+      `${downloadFolder}/Docker.dmg`
     ]);
     runOrdered('/usr/bin/rsync', [
       '-qaE',

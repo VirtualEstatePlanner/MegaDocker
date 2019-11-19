@@ -4,7 +4,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { downloadsFolder } from '../../globals/downloadFolder';
+import { downloadFolder } from '../../globals/downloadFolder';
 import { checkForFile } from '../core/checkForFile';
 import { runOrdered } from '../core/runOrdered';
 import { runPrivilegedOrdered } from '../core/runPrivilegedOrdered';
@@ -12,7 +12,7 @@ import { runPrivilegedOrdered } from '../core/runPrivilegedOrdered';
  * installs VirtualBox for Mac from the .dmg file
  */
 export function installVBoxForMac(): void {
-  if (checkForFile(downloadsFolder, 'VirtualBox.dmg') === true) {
+  if (checkForFile(downloadFolder, 'VirtualBox.dmg') === true) {
     runPrivilegedOrdered('/usr/bin/hdiutil', ['attach', '/tmp/VirtualBox.dmg']);
     runOrdered(`sleep(30)`);
     runPrivilegedOrdered('/usr/sbin/installer', [
