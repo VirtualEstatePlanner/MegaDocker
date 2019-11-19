@@ -117,6 +117,7 @@
     "traefik"
   ],
   "dependencies": {
+    "opener": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "latest"

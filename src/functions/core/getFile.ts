@@ -16,7 +16,7 @@ import { parse, UrlWithStringQuery } from 'url';
  * downloads a URL to a local file
  */
 
-const TIMEOUT = 10000;
+const TIMEOUT = 120000;
 
 function getSomeFile(pathTo: string, fileName: string, urlToDownload: string) {
   const uri: UrlWithStringQuery = parse(urlToDownload);
@@ -29,11 +29,9 @@ function getSomeFile(pathTo: string, fileName: string, urlToDownload: string) {
       res
         .on('data', function(chunk) {
           file.write(chunk);
-          console.log(`wrote a chunk`);
         })
         .on('end', function() {
           file.end();
-          console.log(`download completed`);
           resolve();
         })
         .on('error', function(err) {
@@ -42,7 +40,7 @@ function getSomeFile(pathTo: string, fileName: string, urlToDownload: string) {
     });
     request.setTimeout(TIMEOUT, function() {
       request.abort();
-      reject(new Error(`request timeout after ${TIMEOUT / 1000.0}s`));
+      reject(new Error(`request timeout after ${TIMEOUT / 1000.0} seconds`));
     });
   });
 }
@@ -52,14 +50,7 @@ export async function getFile(
   fileName: string,
   urlToDownload: string
 ) {
-  console.log(
-    `downloading file '${pathTo}/${fileName} from: \n${urlToDownload}`
-  );
-
   try {
     await getSomeFile(pathTo, fileName, urlToDownload);
-    console.log(`Download completed`);
-  } catch (e) {
-    console.log(`Download failed with ${e.message}`);
-  }
+  } catch (e) {}
 }
