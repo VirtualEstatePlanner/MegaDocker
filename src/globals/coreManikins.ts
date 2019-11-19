@@ -1,3 +1,8 @@
 import { allManikins } from './allManikins';
 
-export const coreManikins = allManikins.filter((isCore) => false);
+/**
+ * an array containing all MEGADocker's Core Manikins
+ */
+export const coreManikins = allManikins.filter(
+  (eachManikin) => eachManikin.isCore === false
+);

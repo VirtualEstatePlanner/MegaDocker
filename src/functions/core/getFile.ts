@@ -10,10 +10,10 @@ import { get } from 'https';
 import { parse, UrlWithStringQuery } from 'url';
 
 /**
+ * downloads a URL to a local file
  * @param pathTo: string containing the path to the saved file
  * @param fileName: string containing the name and extension of the file
  * @param url: URL to be downloaded
- * downloads a URL to a local file
  */
 
 const TIMEOUT = 120000;

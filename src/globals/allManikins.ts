@@ -16,6 +16,10 @@ import { traefikManikin } from '../mobparts/manikins/traefik';
 import { visualizerManikin } from '../mobparts/manikins/visualizer';
 import { webdavManikin } from '../mobparts/manikins/webdav';
 import { wordpressManikin } from '../mobparts/manikins/wordpress';
+
+/**
+ * an array containing all Manikins available in MEGADocker
+ */
 export const allManikins: IManikin[] = [
   traefikManikin,
   skoposManikin,

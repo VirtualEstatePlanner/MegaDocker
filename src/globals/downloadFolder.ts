@@ -1,3 +1,6 @@
 import { homeFolder } from './homeFolder';
 
-export const downloadsFolder: string = `${homeFolder.toString()}/Downloads`;
+/**
+ * shortcut to the "Downloads" folder
+ */
+export const downloadFolder: string = `${homeFolder}/Downloads`;
