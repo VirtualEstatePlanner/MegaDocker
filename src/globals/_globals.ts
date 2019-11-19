@@ -10,41 +10,28 @@ export const hostUserName: string = ``;
 // mac
 export const macVirtualBoxInstallerFileName: string =
   'MacOSVirtualBoxInstaller.dmg';
-export const macVirtualBoxInstallerFileURL: URL = new URL(
-  // tslint:disable-next-line: max-line-length
-  'https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0.4-128413-OSX.dmg'
-);
+export const macVirtualBoxInstallerFileURL: string =
+  'https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0.4-128413-OSX.dmg';
 export const macDockerBinaryPath: string = '/usr/local/bin/docker';
 
-export const macDockerInstallerFileURL: URL = new URL(
-  'https://download.docker.com/mac/stable/Docker.dmg'
-);
+export const macDockerInstallerFileURL: string =
+  'https://download.docker.com/mac/stable/Docker.dmg';
 
 // windows
 export const winVirtualBoxInstallerFileName: string =
   'WindowsVirtualBoxInstaller.exe';
-// tslint:disable-next-line: max-line-length
-export const winVirtualBoxInstallerFileURL: URL = new URL(
-  // tslint:disable-next-line: max-line-length
-  'https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0.4-128413-Win.exe'
-);
-// tslint:disable-next-line: max-line-length
-export const winDockerInstallerFileURL: URL = new URL(
-  // tslint:disable-next-line: max-line-length
-  'https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe'
-);
+export const winVirtualBoxInstallerFileURL: string =
+  'https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0.4-128413-Win.exe';
+export const winDockerInstallerFileURL: string =
+  'https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe';
 
 // linux
 export const linuxVirtualBoxInstallerFileName: string =
   'LinuxVirtualBoxInstaller.run';
-// tslint:disable-next-line: max-line-length
-export const linuxVirtualBoxInstallerFileURL: URL = new URL(
-  // tslint:disable-next-line: max-line-length
-  'https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0.4-128413-Linux_amd64.run'
-);
-export const linuxDockerInstallerFileURL: URL = new URL(
-  'https://get.docker.com/'
-);
+export const linuxVirtualBoxInstallerFileURL: string =
+  'https://download.virtualbox.org/virtualbox/6.0.4/VirtualBox-6.0.4-128413-Linux_amd64.run';
+
+export const linuxDockerInstallerFileURL: string = 'https://get.docker.com/';
 
 // alert reasons
 export const dockerInstallationReasonString: string =
