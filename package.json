@@ -126,6 +126,7 @@
     "@types/electron-devtools-installer": "latest",
     "@types/jest": "latest",
     "@types/node": "latest",
+    "@types/opener": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "cross-env": "latest",
