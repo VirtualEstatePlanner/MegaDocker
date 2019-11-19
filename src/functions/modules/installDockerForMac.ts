@@ -21,5 +21,5 @@ export function installDockerForMac(): void {
   if (checkForFile(downloadsFolder, 'Docker.dmg') === true) {
     configureDockerForMac();
   }
-  // IMPLEMENT needs a return that states whether or not it succeeded
+  // TODO needs a return that states whether or not it succeeded
 }
