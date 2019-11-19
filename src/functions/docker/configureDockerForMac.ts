@@ -46,6 +46,6 @@ export function configureDockerForMac(): void {
       'docker'
     ]);
     runOrdered('/usr/sbin/diskutil', ['eject', '/Volumes/Docker']);
-    // IMPLEMENT needs a return that states whether or not it succeeded
+    // TODO needs a return that states whether or not it succeeded
   }
 }

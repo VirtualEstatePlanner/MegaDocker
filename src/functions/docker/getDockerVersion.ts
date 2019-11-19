@@ -13,5 +13,5 @@ import { run } from '../core/run';
  */
 export function getDockerVersion(): void {
   run('/usr/local/bin/docker', ['version']);
-  // IMPLEMENT needs a return of just the docker version number as a string
+  // TODO needs a return of just the docker version number as a string
 }

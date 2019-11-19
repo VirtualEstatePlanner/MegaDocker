@@ -12,6 +12,6 @@ import { run } from '../core/run'
 export function hasHostOnlyIFs(): boolean {
   run('/usr/local/bin/VBoxManage', ['list', 'hostonlyifs'])
 
-  // IMPLEMENT needs logic to determine what to return
+  // TODO needs logic to determine what to return
   return true
 }

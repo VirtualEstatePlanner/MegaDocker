@@ -18,5 +18,5 @@ export function installModuleVBoxForMac(): void {
   if (checkForFile(downloadsFolder, 'VirtualBox.dmg') === true) {
     installModuleVBoxForMac();
   }
-  // IMPLEMENT needs a return that states whether or not it succeeded
+  // TODO needs a return that states whether or not it succeeded
 }

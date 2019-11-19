@@ -11,9 +11,9 @@ import { IManikin } from '../../classes/IManikin';
  */
 
 export function startMob(): void {
-  // IMPLEMENT
+  // TODO
   // tslint:disable-next-line: no-console
-  console.log(`IMPLEMENT THIS FUNCTION: startMob`);
+  console.log(`TODO THIS FUNCTION: startMob`);
   const chosenManikins: IManikin[] = [];
 
   /*

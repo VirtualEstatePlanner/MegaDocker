@@ -13,5 +13,5 @@ import { createSwarmWithTokens } from './createSwarmWithTokens';
 export function createRemoteSwarm(virtualMachine: string): void {
   useRemoteDockerDaemon(virtualMachine);
   createSwarmWithTokens();
-  // IMPLEMENT needs a return that states whether or not it succeeded
+  // TODO needs a return that states whether or not it succeeded
 }

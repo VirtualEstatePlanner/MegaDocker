@@ -5,7 +5,7 @@
 The line in **bold** is the current version
 
 - `v0.1.0-pre-alpha` : Build and distribution framework in place, code is pure TypeScript 3.3
-- `v0.1.5-pre-alpha` : imported `swift`, ported lots of it, marked `IMPLEMENT` program holes
+- `v0.1.5-pre-alpha` : imported `swift`, ported lots of it, marked `TODO` program holes
 - `v0.2.0-pre-alpha` : **import and translate all `swift` and `javascript` code to `typescript`**
 - `v0.2.5-pre-alpha` : build user interface prototype, start UI
 - `v0.3.0-pre-alpha` : create missing types for other required `node` libraries, add and implement `Manikin` management interface URL

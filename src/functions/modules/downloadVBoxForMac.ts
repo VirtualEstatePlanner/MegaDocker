@@ -12,10 +12,5 @@ import { getFile } from '../core/getFile';
  * downloads VirtualBox for macOS .dmg
  */
 export function downloadVBoxForMac(): void {
-  getFile(
-    'VirtualBox',
-    'dmg',
-    `${downloadsFolder.toString()}`,
-    macVirtualBoxInstallerFileURL
-  );
+  getFile(downloadsFolder, `VirtualBox.dmg`, macVirtualBoxInstallerFileURL);
 }

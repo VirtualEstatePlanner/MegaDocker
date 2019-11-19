@@ -17,7 +17,7 @@ import { userMob } from '../../globals/userMob';
  */
 
 export function startMob(): void {
-  // IMPLEMENT
+  // TODO
   const chosenManikins: IManikin[] = [];
   const stackFileName: string = `${userMob.mobName}.yml`;
 

@@ -14,7 +14,7 @@ import { run } from '../core/run';
  */
 export function dockerStackPS(mobName: string): void {
   run('/usr/local/bin/docker', ['stack', mobName, 'ps']);
-  // IMPLEMENT needs a return of a JSON object, maybe?
+  // TODO needs a return of a JSON object, maybe?
   // UNSURE whether we need this data for application
   // functionality, or if user needs swarmpit
 }

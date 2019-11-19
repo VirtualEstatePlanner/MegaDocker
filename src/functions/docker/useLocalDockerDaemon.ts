@@ -11,5 +11,5 @@ import { run } from '../core/run';
  */
 export function useLocalDockerDaemon(): void {
   run('/usr/local/bin/docker', ['eval', '$(docker-machine env -u)']);
-  // IMPLEMENT needs a return that states whether or not it succeeded
+  // TODO needs a return that states whether or not it succeeded
 }

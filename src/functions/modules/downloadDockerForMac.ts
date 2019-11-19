@@ -15,5 +15,5 @@ export function downloadDockerForMac(): void {
   // use node library for file downloading
   getFile(downloadsFolder, `Docker.dmg`, macDockerInstallerFileURL);
 
-  // IMPLEMENT needs a return that states whether or not it succeeded
+  // TODO needs a return that states whether or not it succeeded
 }

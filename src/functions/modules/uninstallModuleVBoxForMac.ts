@@ -14,5 +14,5 @@ import { removeVBoxHostOnlyAdapters } from '../vbox/removeVBoxHostAdapters';
 export function uninstallModuleVBoxForMac(): void {
   removeVBoxHostOnlyAdapters();
   runPrivileged('src/shells/removeMacVBox.sh', [' ']);
-  // IMPLEMENT needs a return that states whether or not it succeeded
+  // TODO needs a return that states whether or not it succeeded
 }

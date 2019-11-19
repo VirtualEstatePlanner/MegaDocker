@@ -20,6 +20,6 @@ export function joinSwarmAsManager(
 ): void {
   useRemoteDockerDaemon(virtualMachine);
   run('/usr/local/bin/docker', ['swarm', 'join', '--token', token]);
-  // IMPLEMENT needs a return that states whether or not it succeeded
+  // TODO needs a return that states whether or not it succeeded
   // probably has serious issues with joining local docker demon
 }

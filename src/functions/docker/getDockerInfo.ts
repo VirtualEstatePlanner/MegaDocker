@@ -13,5 +13,5 @@ import { run } from '../core/run';
  */
 export function getDockerInfo(): void {
   run('/usr/local/bin/docker', ['info']);
-  // IMPLEMENT needs a return of docker info as a JSON object, probably
+  // TODO needs a return of docker info as a JSON object, probably
 }

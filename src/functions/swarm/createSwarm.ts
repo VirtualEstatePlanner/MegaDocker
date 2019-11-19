@@ -11,5 +11,5 @@ import { run } from '../core/run';
  */
 export function createSwarm(): void {
   run('/usr/local/bin/docker', ['swarm', 'init', '--advertise-addr']);
-  // IMPLEMENT needs a return that states whether or not it succeeded
+  // TODO needs a return that states whether or not it succeeded
 }

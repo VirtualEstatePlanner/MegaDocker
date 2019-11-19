@@ -24,6 +24,6 @@ export function uninstallDockerForMac(): void {
     '-f',
     '/usr/local/bin/docker-credential-osxkeychain'
   ]);
-  // IMPLEMENT needs a return that states whether or not it succeeded
+  // TODO needs a return that states whether or not it succeeded
   // probably REPLACE with deleteFile commands
 }
