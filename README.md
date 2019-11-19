@@ -4,14 +4,14 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019 The MegaDocker Group. All rights reserved.'
 
-# MegaDocker v0.2.4-alpha
+# MegaDocker v0.2.5-alpha
 
 Modular Enterprise-Grade Automated Docker
 
 ## Magically make microservices for the masses
 
 Most recent change:
-started writing tests
+completed functions/core tests
 
 ![alt text](./src/images/icons/icon.png 'MegaDockerLogo')
 
