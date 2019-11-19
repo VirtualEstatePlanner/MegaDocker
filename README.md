@@ -68,7 +68,7 @@ You can also write your own Mites and use them to make custom Manikins and add t
 
 ## Mites
 
-**Mites** represent snippets of text files (in the form of [TypeScript](https://www.typescriptlang.org) objects that conform to the `IMite` interface) that contain part of a **Manikin**. This is almost always a snippet of [YAML](https://yaml.org) (we prefer the .yml extension) used to create a **Manikin** in a `docker-compose.yml` file, although a **Mite** can contain any kind of snippet necessary to make a configuration file for any application you can think of.
+**Mites** represent snippets of plain text (in the form of [TypeScript](https://www.typescriptlang.org) objects that conform to the `IMite` interface) that contain part of a **Manikin**'s file. This is almost always a snippet of [YAML](https://yaml.org) (we prefer the .yml extension) used to create a **Manikin** in a `docker-compose.yml` file, although a **Mite** can contain any kind of snippet necessary to make a configuration file for any application you can think of.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
