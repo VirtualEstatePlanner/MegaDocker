@@ -88,13 +88,35 @@ For a moment, The Mad Doctor meditated on what dreadful monstrosities might deri
 
 Minutes metamorphosed into hours, and before The Mad Doctor knew it the, the next day had dawned, and the seemingly measureless mound of Mites had been depleted. Surroiunding The Mad Doctor was a mighty Mob of Manikins, mutely mimicking The Mad Doctor. The Mad Doctor desisted, dropping his making-mallet by his side. He was drained; the demands of the Manikin's magic had debiltated him. The Mad Doctor grew dizzy. He reached in vain for the edge of the making-table, but fainted, descending to the floor, and knocking over his making-mallet with a final muted "ding".
 
-The Manikins looked down at The Mad Doctor from the mantle, from the making-table, and from the many places they had dispositioned themsleves. They looked at each other, and their mumbled music took on a questioning tone as they debated their next move. The Mad Doctor had helped them, and so they decided to help him mutually. The Mob moved, disciplined, as one. They lifted The Mad Doctor and moved him back to his bed to rest.
+The Manikins looked down at The Mad Doctor from the mantle, from the making-table, and from the many places they had dispositioned themsleves. They looked at each other, and their mumbled music took on a questioning tone as they debated their next move. The Mad Doctor had helped them, and so they decided to help him mutually. The Mob moved, disciplined, as one magnanimously motivated dedicated division. They lifted The Mad Doctor and moved him back to his bed to rest.
 
-The Mad Doctor drowsed, his delusional dreams distressing him. He mumbled to himself, but the Manikins did not soothe him. The Manikins moved back to The Mad Doctor's making-table, and together they lifted his making-mallet. Ding! the Manikins' ditty drilled into his head with measure of the making-mallet. Ding! Sometimes they sang a depressing dirge, others they hummed a militarstic marching song. Ding! Ding! Ding!
+As The Mad Doctor drowsed, his delusional dreams distressed him. He mumbled to himself, but the Manikins did not mitigate it. They marched back to The Mad Doctor's making-table, and together they manipulated his making-mallet. Ding! the Manikins' ditty drilled into his head with measure of the making-mallet. Ding! Sometimes their ditty devolved into a depressing dirge, others it morphed into a militarstic marching song. Ding! Ding! Ding!
 
-When The Mad Doctor awoke
+The Mad Doctor awoke alone in his den. No moonlight made it through his dusky drapes. The making-mallet was distant and muffled, but still he discovered it amidst the music of the Manikins. The Mad Doctor stumbled to the door, but it seemed more distant than in his memory. How long had he dreamt?
 
-"MEGADocker is the most magnificent method to make modern microservices manageable with minimal misery." - The Mad Doctor of MEGADocker
+The dulcet Ding of the making-mallet grew more distinct, and maybe most disturbingly The Mad Doctor's door handle was different. Was this a dream?
+
+He delicately opened the door and looked down. This was not the mere dirt floor of his meager home. The Manikins had definitely detained him deep in some dungeon. Dismayed, he descended the stairs he discovered outside the doorway. With each meter into the depths, the making-mallet's Ding was more deafening.
+
+As he neared a massive marble door near the bottom of the stairs, The Mad Doctor discerned a marvelous scent. As he stopped to smell it, the mirthful music of the Manikins suddenly ceased. Did he dare open the door?
+
+As The Mad Doctor debated, a Manikin opened the door, carrying a dish full of delectable muffins and doughnuts. The Manikin dutifully delivered the dish to him, but The Mad Doctor barely paid it mind.
+
+His making-table and making-mallet were there, but this was most definitely not The Mad Doctor's workshop. His dirt floors were now metal, his modest drapes replaced with decorative dossers, his demure wood stove made into a much more majestic model, and everywhere he looked, the Mob of Manikins milled about his majorly developed manufactory.
+
+The Mad Doctor was dumbstruck. "Did you Manikins do all this?", he muttered. The Mob looked at him and nodded in unison. A Manikin brought him a cup of matcha tea and handed him a muffin from the dish, then dispensed a modicum of margarine on it, which melted directly.
+
+The Mad Doctor decided that the Manikins were defintely a dynamic and mighty magic. As he plopped down at his making-table in disbelief, he marvelled at the myriad duties the Manikins had done so masterfully. What were the maximum margins of this delightful development?
+
+"Could I maybe have a doily?", The Mad Doctor asked the Mob. Ding! A Manikin brought him one. "Would you do my dishes?" Ding! A Manikin departed with his dirty plate and decanter. "Did the daily paper arrive?" Ding! Another Manikin brought him a news magazine. "Might I have a manicure?" Ding! Half a dozen Manikins started to massage his hand and clean the detritus from under his nails.
+
+The Mad Doctor's requests turned to demands. "Bring that document to me." Ding! "Make me some marmalade." Ding! "Dig me a deep ditch." Ding! The Manikins danced at his commands, desperate to meet his desires.
+
+Eventually, The Mad Doctor's demands became demonstrations of his power. "Design me a modern dock made of decoupage!" Ding! "Move that mountain to the moon!" Ding! "Massacre a million mosquitos!" Ding! "Dedicate a dozen demonstrations to my majesty!" Ding!
+
+And every time The Mad Doctor made a decision, the Mob devotedly discharged The Mad Doctor's missions. Day and night, the Manikins marched down from his mansion to do whatever The Mad Doctor decreed.
+
+And The Mad Doctor lived (mostly) happily ever after.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
