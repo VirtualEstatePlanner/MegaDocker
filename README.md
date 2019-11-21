@@ -131,7 +131,7 @@ Hey, you asked.
 
 ## Mites, Manikins, Memories, and Mobs
 
-MEGADocker uses 4 fundamental building blocks:
+MEGADocker makes microservices using 4 fundamental building blocks:
 
 > **_Mobs_**: an armada of manikins running around doing your bidding
 >
@@ -157,7 +157,7 @@ You can also make your own **Mites** and mold them into all manner of **Manikins
 
 ## Mites
 
-**Mites** represent snippets of plain text (in the form of [TypeScript](https://www.typescriptlang.org) objects that conform to the `IMite` interface) that contain part of a **Manikin**'s file. This is almost always a snippet of [YAML](https://yaml.org) used to create a **Manikin** in a `pod.yml` or `docker-compose.yml` file, although a **Mite** can contain any kind of snippet necessary to make a configuration file for any application you can think of.
+**Mites** contain snippets of plain text (in the form of [TypeScript](https://www.typescriptlang.org) objects that conform to the `IMite` [interface](https://github.com/VirtualEstatePlanner/MD/blob/master/src/classes/IMite.ts) or the `ICustomMite` [interface](https://github.com/VirtualEstatePlanner/MD/blob/master/src/classes/ICustomMite.ts)) that contain part of a **Manikin**'s file. This is almost always a snippet of [YAML](https://yaml.org) used to create a **Manikin** in a `pod.yml` or `docker-compose.yml` file, although a **Mite** may contain any kind of snippet necessary to make a required file (such as a `.conf` file) for any application you can think of.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
@@ -165,7 +165,7 @@ You can also make your own **Mites** and mold them into all manner of **Manikins
 
 ## Memories
 
-**Memories** represent the choices a user needs to make to configure a **Mob**. **Memories** can contain any kind of data, and their values will modify the output of one or more **Mites** in your **Mob**. For instance, if your **Manikin** needs to know where a volume is on your host to save data, when you add that Manikin to your **Mob**, the _Memories Table_ will add a row to request the location of that folder. If another **Manikin** also needs access to that **Memory**, it will automatically have that information.
+**Memories** are the choices a user needs to make to configure a **Mob**. **Memories** can contain any kind of data, and their values will modify the output of one or more **Mites** in your **Mob**. For instance, if your **Manikin** needs to know where a volume is on your host to save data, when you add that Manikin to your **Mob**, the _Memories Table_ will add a **Memory** to request the location of that folder. If another **Manikin** in your **Mob** also needs access to that **Memory**, it will automatically have access to that information.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
@@ -173,7 +173,7 @@ You can also make your own **Mites** and mold them into all manner of **Manikins
 
 ### Manikins
 
-**Manikins** represent a given microservice running in your [Docker](https://www.docker.com) swarm or [Kubernetes](https://kubernetes.io) cluster.
+**Manikins** are microservices running in your [Docker](https://www.docker.com) swarm or [Kubernetes](https://kubernetes.io) cluster.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
