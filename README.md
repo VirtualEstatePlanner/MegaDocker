@@ -11,8 +11,8 @@ Modular Enterprise-Grade Automated Docker
 ## Magically make microservices for the masses
 
 Most recent changes:
-Added "about" section to README
-completed functions/core tests
+• Added "about" section to README
+• completed functions/core tests
 
 ![alt text](./src/images/icons/icon.png 'MegaDockerLogo')
 
