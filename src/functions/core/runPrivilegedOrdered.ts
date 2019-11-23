@@ -5,7 +5,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { exec } from 'child_process';
+import { ChildProcess, exec } from 'child_process';
 
 /**
  * @param command: string describing a cli command
@@ -16,5 +16,19 @@ import { exec } from 'child_process';
  * prompting the user repeatedly
  */
 export function runPrivilegedOrdered(command: string, opt?: string[]): void {
-  exec(`${command} ${opt} & wait`);
+  let options: string[] | undefined = opt;
+  if (options === undefined) {
+    options = [];
+  }
+  options = [...options, `& wait`];
+  const child: ChildProcess = exec(`${command} ${options}`);
+  child.on(`error`, (err) => {
+    console.log(`an error occurred with message: ${err.message}`);
+  });
+  child.on(`exit`, (code) => {
+    console.log(`Child process ${command} exited with code ${code}`);
+  });
+  child.on(`data`, (data) => {
+    console.log(`stdout: ${data}`);
+  });
 }

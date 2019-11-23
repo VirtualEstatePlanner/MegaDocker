@@ -22,8 +22,5 @@ export function run(command: string, opt?: string[]): any {
   child.on(`data`, (data) => {
     console.log(`stdout: ${data}`);
   });
-  child.on(`error`, (error) => {
-    console.log(`stdout: ${error}`);
-  });
   child.unref();
 }
