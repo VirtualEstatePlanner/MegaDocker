@@ -7,16 +7,17 @@
 import { downloadFolder } from '../../globals/downloadFolder';
 import { checkForFile } from '../core/checkForFile';
 import { downloadVBoxForMac } from './downloadVBoxForMac';
+import { installVBoxForMac } from './installVBoxForMac';
 
 /**
  * downloads and installs VirtualBox for macOS
  */
 export function installModuleVBoxForMac(): void {
-  if (checkForFile(downloadFolder, 'VirtualBox.dmg') === false) {
+  if (checkForFile(downloadFolder, `VirtualBox.dmg`) === false) {
     downloadVBoxForMac();
   }
-  if (checkForFile(downloadFolder, 'VirtualBox.dmg') === true) {
-    installModuleVBoxForMac();
+  if (checkForFile(downloadFolder, `VirtualBox.dmg`) === true) {
+    installVBoxForMac();
   }
   // TODO needs a return that states whether or not it succeeded
 }
