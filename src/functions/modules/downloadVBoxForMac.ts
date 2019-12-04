@@ -12,6 +12,7 @@ import { getFile } from '../core/getFile';
  * downloads VirtualBox for macOS .dmg
  */
 export async function downloadVBoxForMac(): Promise<void> {
+  console.log(`downloading VirtualBox.dmg`);
   await getFile(
     downloadFolder,
     `VirtualBox.dmg`,

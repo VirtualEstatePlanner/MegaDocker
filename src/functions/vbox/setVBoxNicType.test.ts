@@ -1,1 +1,0 @@
-import { setNicType } from './setNicType';

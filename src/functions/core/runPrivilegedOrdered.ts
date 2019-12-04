@@ -20,7 +20,7 @@ export function runPrivilegedOrdered(command: string, opt?: string[]): void {
   if (options === undefined) {
     options = [];
   }
-  options = [...options, `&`, `wait`];
+  options = [...options, `& wait`];
   const child: ChildProcess = exec(`${command} ${options}`);
   child.on(`error`, (err) => {
     console.log(`an error occurred with message: ${err.message}`);
