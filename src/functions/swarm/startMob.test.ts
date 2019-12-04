@@ -1,1 +1,0 @@
-import { startMob } from './startMob';

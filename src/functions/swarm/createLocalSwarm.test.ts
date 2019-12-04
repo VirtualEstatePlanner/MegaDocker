@@ -1,1 +1,0 @@
-import { createLocalSwarm } from './createLocalSwarm';

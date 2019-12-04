@@ -1,1 +1,0 @@
-import { joinSwarmAsManager } from './joinSwarmAsManager';
