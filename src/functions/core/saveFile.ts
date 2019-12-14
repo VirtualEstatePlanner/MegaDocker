@@ -5,7 +5,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { writeFile } from 'fs';
+import { writeFile, NoParamCallback } from 'fs';
 
 /**
  * @pathTo - the directory where that file will be saved
@@ -23,7 +23,7 @@ export function saveFile(
   writeFile(
     `${pathTo}/${fileName}.${fileType}`,
     fileContents,
-    (err: NodeJS.ErrnoException | null) => {
+    (err: NodeJS.ErrnoException | null | NoParamCallback) => {
       if (err !== null) {
         console.log(err);
       }

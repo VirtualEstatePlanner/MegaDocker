@@ -1,13 +1,22 @@
 import React from "react";
+import { userMegaDockerFolder } from '../globals/userMegaDockerFolder'
+import { mobName } from '../mobparts/memories/mobName'
+import { userMob } from '../globals/userMob'
+import { saveFile } from '../functions/core/saveFile'
 
 function buttonClicked() {
-    console.log(".yml file should be exported!");
+    //saveFile(userMegaDockerFolder, mobName.value, `yml`, userMob.mobManikins.toString())
+    console.log("pressed export!");
+    saveFile(
+        `${process.env.PWD}`,
+        `testfilename`,
+        `yml`,
+        `so what the hell does this yml even say?`
+    );
 }
 
 export const ButtonExportYML: React.FC = () => {
     return (
-        <div className="Button">
-            <button onClick={buttonClicked}>Export YML</button>
-        </div>
+        <button onClick={buttonClicked}>Export YML</button>
     );
 };
