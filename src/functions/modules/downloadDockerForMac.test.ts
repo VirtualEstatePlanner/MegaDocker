@@ -7,7 +7,7 @@ import opener from 'opener';
 import { run } from '../core/run';
 
 it(`should download the Docker.dmg`, async () => {
-  jest.setTimeout(120000);
+  jest.setTimeout(270000);
   expect(checkForFile(downloadFolder, `Docker.dmg`)).toBeFalsy;
   try {
     await downloadDockerForMac();

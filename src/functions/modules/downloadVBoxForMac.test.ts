@@ -5,8 +5,9 @@ import { downloadVBoxForMac } from './downloadVBoxForMac';
 import { downloadFolder } from '../../globals/downloadFolder';
 import opener from 'opener';
 
-it(`should download the VirtualBox.dmg`, async () => {
-  jest.setTimeout(120000);
+it(`should download 
+the VirtualBox.dmg`, async () => {
+  jest.setTimeout(210000);
   expect(checkForFile(downloadFolder, `VirtualBox.dmg`)).toBeFalsy;
   try {
     await downloadVBoxForMac();

@@ -11,6 +11,6 @@ it(`should delete a file`, () => {
     `sometestfile needs contents`
   );
   expect(checkForFile(`${process.env.PWD}`, `sometestfile.txt`)).toBeTruthy;
-  deleteFile(`${process.env.PWD}`, `./sometestfile.txt`);
+  deleteFile(`${process.env.PWD}`, `sometestfile.txt`);
   expect(checkForFile(`${process.env.PWD}`, `sometestfile.txt`)).toBeFalsy;
 });

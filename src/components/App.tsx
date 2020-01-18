@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import { ButtonRow } from './ButtonRow'
-import { InfoPane } from './InfoPane'
+import { ButtonRow } from './ContainerButtonRow'
+import { InfoPane } from './ContainerInfoPane'
 import { ManikinRow } from './ManikinRow'
 import { ManikinTable } from './ManikinTable'
 
