@@ -4,7 +4,6 @@ import { detectOS } from '../core/detectOS';
 import { downloadDockerForMac } from './downloadDockerForMac';
 import { downloadFolder } from '../../globals/downloadFolder';
 import opener from 'opener';
-import { run } from '../core/run';
 
 it(`should download the Docker.dmg`, async () => {
   jest.setTimeout(270000);
