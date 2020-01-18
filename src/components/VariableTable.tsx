@@ -1,6 +1,7 @@
 import React from "react";
 
-export const MemoryTable: React.FC = () => {
+export const VariableTable: React.FC = () => {
     return (
-        <div className="ButtonRow"></div>)
+        <div className="VariableTable">
+        </div>)
 }

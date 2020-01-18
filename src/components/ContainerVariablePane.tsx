@@ -1,15 +1,10 @@
 import React from "react";
-import { ButtonExportYML } from './ButtonExportYML'
-import { ButtonLaunchMob } from './ButtonLaunchMob'
-import { ButtonSaveMob } from './ButtonSaveMob'
+import { VariableTable } from './VariableTable'
 
-export const ButtonRow: React.FC = () => {
+export const VariablePane: React.FC = () => {
     return (
-        <div className="VariablePane
-        ">
-            <ButtonExportYML />
-            <ButtonSaveMob />
-            <ButtonLaunchMob />
+        <div className="VariablePane">
+            <VariableTable />
         </div>
     );
 };

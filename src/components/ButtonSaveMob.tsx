@@ -7,7 +7,7 @@ function buttonClicked() {
         `${process.env.PWD}`,
         `testfilename`,
         `megamob`,
-        `so what the hell does this mob even say?`
+        `so what the hell does this mob even do?`
     );
 }
 

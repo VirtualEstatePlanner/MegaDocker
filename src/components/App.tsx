@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import { ButtonRow } from './ContainerButtonRow'
+import { ButtonPane } from './ContainerButtonPane'
 import { InfoPane } from './ContainerInfoPane'
-import { ManikinRow } from './ManikinRow'
-import { ManikinTable } from './ManikinTable'
+import { VariablePane } from './ContainerVariablePane'
+import { ManikinPane } from './ContainerManikinPane'
 
 export const App: React.FC = () => {
   return (
@@ -11,10 +11,10 @@ export const App: React.FC = () => {
       <header className="App-header">
         <p style={{ color: "gray" }}>
         </p>
-        <ButtonRow />
-        <ManikinRow />
-        <ManikinTable />
+        <ButtonPane />
+        <ManikinPane />
         <InfoPane />
+        <VariablePane />
       </header>
     </div>
   );

@@ -1,14 +1,10 @@
 import React from "react";
-import { ButtonExportYML } from './ButtonExportYML'
-import { ButtonLaunchMob } from './ButtonLaunchMob'
-import { ButtonSaveMob } from './ButtonSaveMob'
+import { ManikinTable } from "./ManikinTable";
 
-export const ButtonRow: React.FC = () => {
+export const ManikinPane: React.FC = () => {
     return (
-        <div className="ButtonRow">
-            <ButtonExportYML />
-            <ButtonSaveMob />
-            <ButtonLaunchMob />
+        <div className="ManikinPane">
+            <ManikinTable />
         </div>
     );
 };

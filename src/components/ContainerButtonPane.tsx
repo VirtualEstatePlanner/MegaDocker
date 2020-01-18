@@ -3,9 +3,9 @@ import { ButtonExportYML } from './ButtonExportYML'
 import { ButtonLaunchMob } from './ButtonLaunchMob'
 import { ButtonSaveMob } from './ButtonSaveMob'
 
-export const ButtonRow: React.FC = () => {
+export const ButtonPane: React.FC = () => {
     return (
-        <div className="ButtonRow">
+        <div className="ButtonPane">
             <ButtonExportYML />
             <ButtonSaveMob />
             <ButtonLaunchMob />
