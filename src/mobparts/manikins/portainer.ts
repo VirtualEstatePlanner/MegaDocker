@@ -21,7 +21,7 @@ export let portainerManikin: IManikin = {
   description: `Portainer Docker Host web GUI`,
   ports: [],
   isSelected: false,
-  isCore: true,
+  isCore: false,
   manikinIcon: portainerIcon,
   memories: []
 };

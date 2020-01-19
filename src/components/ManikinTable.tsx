@@ -1,4 +1,5 @@
 import React from "react";
+import Switch from "@material-ui/core/Switch";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
@@ -44,9 +45,8 @@ export const ManikinTable: React.FC = () => {
                                 height="15"
                                 width="15" />
                         </TableCell>
-                        <TableCell><ManikinSwitch /></TableCell>
-                    </TableRow>
-                ))}
+                        <TableCell><Switch checked={eachManikin.isSelected ? true : false} disabled={eachManikin.isCore ? true : false} /></TableCell>
+                    </TableRow>))}
             </TableBody>
         </Table>)
 }
