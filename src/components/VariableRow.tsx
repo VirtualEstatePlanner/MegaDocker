@@ -1,6 +1,11 @@
 import React from "react";
-
-export const MemoryRow: React.FC = () => {
+import TableRow from "@material-ui/core/TableRow"
+import TableCell from "@material-ui/core/TableCell"
+export const VariableRow: React.FC = () => {
     return (
-        <div className="VariableRow"></div>)
+        <TableRow className="VariableRow">
+            <TableCell>Description</TableCell>
+            <TableCell>Value</TableCell>
+            <TableCell>Help</TableCell>
+        </TableRow>)
 }

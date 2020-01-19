@@ -3,7 +3,7 @@ import { VariableTable } from './VariableTable'
 
 export const VariablePane: React.FC = () => {
     return (
-        <div className="VariablePane" >VariablePane
+        <div className="VariablePane" >
             <VariableTable />
         </div>
     );
