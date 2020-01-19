@@ -8,7 +8,7 @@ import { IManikin } from '../../classes/IManikin';
 
 import { serviceMite } from '../mites/service/_servicemitetemplate';
 import { networkMite } from '../mites/network/_networkmitetemplate';
-import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
+import webdavIcon from '../../images/manikin-icons/webdavIcon.png';
 
 /**
  * webdav Manikin
@@ -23,5 +23,5 @@ export let webdavManikin: IManikin = {
   folder: `WebDAV`,
   subfolders: [],
   memories: [],
-  manikinIcon: defaultIcon
+  manikinIcon: webdavIcon
 };

@@ -8,7 +8,7 @@ import { IManikin } from '../../classes/IManikin';
 
 import { serviceMite } from '../mites/service/_servicemitetemplate';
 import { networkMite } from '../mites/network/_networkmitetemplate';
-import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
+import ghostIcon from '../../images/manikin-icons/ghostIcon.png';
 
 /**
  * ghost Manikin
@@ -24,5 +24,5 @@ export let ghostManikin: IManikin = {
   folder: `Ghost`,
   subfolders: [],
   memories: [],
-  manikinIcon: defaultIcon
+  manikinIcon: ghostIcon
 };

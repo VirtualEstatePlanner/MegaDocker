@@ -8,7 +8,7 @@ import { IManikin } from '../../classes/IManikin';
 
 import { serviceMite } from '../mites/service/_servicemitetemplate';
 import { networkMite } from '../mites/network/_networkmitetemplate';
-import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
+import portalIcon from '../../images/manikin-icons/portalIcon.png';
 
 /**
  * portal Manikin
@@ -23,5 +23,5 @@ export let portalManikin: IManikin = {
   folder: `Portal`,
   subfolders: [`bitnami`, `html`],
   memories: [],
-  manikinIcon: defaultIcon
+  manikinIcon: portalIcon
 };

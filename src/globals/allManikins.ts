@@ -21,20 +21,20 @@ import { wordpressManikin } from '../mobparts/manikins/wordpress';
  * an array containing all Manikins available in MEGADocker
  */
 export const allManikins: IManikin[] = [
-  traefikManikin,
+  drupalManikin,
+  elkManikin,
+  ghostManikin,
+  gitlabManikin,
+  ldapManikin,
+  nginxManikin,
+  owncloudManikin,
+  portainerManikin,
+  portalManikin,
+  rocketchatManikin,
   skoposManikin,
   swarmpitManikin,
-  portainerManikin,
-  elkManikin,
+  traefikManikin,
   visualizerManikin,
-  ghostManikin,
-  nginxManikin,
-  ldapManikin,
-  rocketchatManikin,
-  drupalManikin,
-  owncloudManikin,
-  gitlabManikin,
-  portalManikin,
   webdavManikin,
   wordpressManikin
 ];

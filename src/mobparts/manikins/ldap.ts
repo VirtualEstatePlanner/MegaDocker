@@ -11,7 +11,7 @@ import { ldapAdminUsername } from '../memories/ldapAdminUsername';
 import { ldapConfigurationPassword } from '../memories/ldapConfigurationPassword';
 import { serviceMite } from '../mites/service/_servicemitetemplate';
 import { networkMite } from '../mites/network/_networkmitetemplate';
-import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
+import ldapIcon from '../../images/manikin-icons/ldapIcon.png';
 
 /**
  * ldap Manikin
@@ -26,5 +26,5 @@ export let ldapManikin: IManikin = {
   folder: `LDAP`,
   subfolders: [`conf`, `pages`, `log`],
   memories: [ldapAdminUsername, ldapAdminPassword, ldapConfigurationPassword],
-  manikinIcon: defaultIcon
+  manikinIcon: ldapIcon
 };

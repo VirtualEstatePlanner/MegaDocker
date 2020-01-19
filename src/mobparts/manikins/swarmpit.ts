@@ -8,13 +8,13 @@ import { IManikin } from '../../classes/IManikin';
 
 import { serviceMite } from '../mites/service/_servicemitetemplate';
 import { networkMite } from '../mites/network/_networkmitetemplate';
-import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
+import swarmpitIcon from '../../images/manikin-icons/swarmpitIcon.png';
 
 /**
  * swarmpit Manikin
  */
 export let swarmpitManikin: IManikin = {
-  manikinIcon: defaultIcon,
+  manikinIcon: swarmpitIcon,
   isCore: true,
   isSelected: true,
   mites: [serviceMite, networkMite],

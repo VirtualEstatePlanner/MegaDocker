@@ -8,7 +8,7 @@ import { IManikin } from '../../classes/IManikin';
 
 import { serviceMite } from '../mites/service/_servicemitetemplate';
 import { networkMite } from '../mites/network/_networkmitetemplate';
-import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
+import nginxIcon from '../../images/manikin-icons/nginxIcon.png';
 
 /**
  * nginx Manikin
@@ -23,5 +23,5 @@ export let nginxManikin: IManikin = {
   folder: `Nginx`,
   subfolders: [`conf`, `pages`, `log`],
   memories: [],
-  manikinIcon: defaultIcon
+  manikinIcon: nginxIcon
 };

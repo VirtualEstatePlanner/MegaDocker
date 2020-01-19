@@ -10,7 +10,7 @@ import { IManikinPort } from './IManikinPort';
 
 export interface IManikin {
   name: string;
-  manikinIcon: ImageBitmapSource | string;
+  manikinIcon: string;
   description: string;
   isCore: Boolean;
   isSelected: Boolean;

@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
+import { Store } from "../components/Store";
 
 export const ManikinInfo: React.FC = () => {
     return (

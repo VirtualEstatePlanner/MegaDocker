@@ -6,6 +6,8 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import { VariableRow } from './VariableRow';
 
+// import { Store } from "../components/Store";
+
 export const VariableTable: React.FC = () => {
     return (
         <Table className="VariableTable" size="small" stickyHeader>

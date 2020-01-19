@@ -8,7 +8,7 @@ import { IManikin } from '../../classes/IManikin';
 
 import { serviceMite } from '../mites/service/_servicemitetemplate';
 import { networkMite } from '../mites/network/_networkmitetemplate';
-import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
+import gitlabIcon from '../../images/manikin-icons/gitlabIcon.png';
 
 /**
  * git Manikin
@@ -23,5 +23,5 @@ export let gitlabManikin: IManikin = {
   folder: `GitLab`,
   subfolders: [],
   memories: [],
-  manikinIcon: defaultIcon
+  manikinIcon: gitlabIcon
 };

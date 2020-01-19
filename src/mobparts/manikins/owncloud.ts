@@ -8,7 +8,7 @@ import { IManikin } from '../../classes/IManikin';
 
 import { serviceMite } from '../mites/service/_servicemitetemplate';
 import { networkMite } from '../mites/network/_networkmitetemplate';
-import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
+import owncloudIcon from '../../images/manikin-icons/owncloudIcon.png';
 
 /**
  * owncloud Manikin
@@ -23,5 +23,5 @@ export let owncloudManikin: IManikin = {
   folder: `Owncloud`,
   subfolders: [`apps`, `config`, `data`, `postgres`, `redis`, `mariadb`],
   memories: [],
-  manikinIcon: defaultIcon
+  manikinIcon: owncloudIcon
 };

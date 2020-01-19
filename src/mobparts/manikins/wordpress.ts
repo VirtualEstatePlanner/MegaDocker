@@ -7,10 +7,10 @@
 import { IManikin } from '../../classes/IManikin';
 import { wordpressServiceMite } from '../mites/service/wordpressServiceMite';
 import { wordpressNetworkMite } from '../mites/network/wordpressNetworkMite';
-import wordpressIcon from '../../images/manikin-icons/wordpressIcon.png';
+import * as wordpressIcon from '../../images/manikin-icons/wordpressIcon.png';
 
 export const wordpressManikin: IManikin = {
-  name: ``,
+  name: `WordPress`,
   manikinIcon: wordpressIcon,
   description: ``,
   isCore: false,
