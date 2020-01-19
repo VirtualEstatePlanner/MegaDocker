@@ -1,33 +1,58 @@
-.App {
+* {
   text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 3s linear;
-  height: 55vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  font-family: 'Asap';
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  flex-direction: row;
+  margin: 0 auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.MainArea {
+  background-color: paleturquoise;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.VariablePane {
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: row;
+  height: 75vh;
+  width: 75vw;
+}
+
+.ButtonPane {
+  background-color: dodgerblue;
+  display: flex;
+  flex-direction: row;
+  height: 5vh;
+  width: 75vw;
+  justify-content: space-around;
+}
+
+.InfoPane {
+  background-color: cyan;
+  display: flex;
+  flex-direction: row;
+  height: 20vh;
+  width: 75vw;
+}
+
+.ManikinPane {
+  background-color: cadetblue;
+  flex-direction: column;
+  display: flex;
+  height: 100vh;
+  width: 40vw;
+  justify-content: flex-start;
 }

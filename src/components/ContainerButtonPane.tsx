@@ -5,7 +5,7 @@ import { ButtonSaveMob } from './ButtonSaveMob'
 
 export const ButtonPane: React.FC = () => {
     return (
-        <div className="ButtonPane">
+        <div className="ButtonPane" style={{ backgroundColor: "dodgerblue" }}>
             <ButtonExportYML />
             <ButtonSaveMob />
             <ButtonLaunchMob />
