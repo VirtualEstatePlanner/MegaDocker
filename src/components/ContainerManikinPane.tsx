@@ -3,7 +3,7 @@ import { ManikinTable } from "./ManikinTable";
 
 export const ManikinPane: React.FC = () => {
     return (
-        <div className="ManikinPane" >ManikinPane
+        <div className="ManikinPane" >
             <ManikinTable />
         </div>
     );

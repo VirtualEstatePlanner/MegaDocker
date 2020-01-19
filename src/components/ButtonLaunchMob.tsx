@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "@material-ui/core/Button"
 
 function buttonClicked() {
     console.log("pressed launch!");
@@ -6,6 +7,6 @@ function buttonClicked() {
 
 export const ButtonLaunchMob: React.FC = () => {
     return (
-        <button onClick={buttonClicked}>Launch Mob</button>
+        <Button variant="contained" onClick={buttonClicked}>Launch Mob</Button>
     );
 };

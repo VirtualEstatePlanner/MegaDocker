@@ -27,7 +27,7 @@
   background-color: aquamarine;
   display: flex;
   flex-direction: row;
-  height: 75vh;
+  height: 70vh;
   width: 75vw;
 }
 
@@ -35,9 +35,13 @@
   background-color: dodgerblue;
   display: flex;
   flex-direction: row;
-  height: 5vh;
+  height: 10vh;
   width: 75vw;
   justify-content: space-around;
+}
+.Card {
+  width: 30vw;
+  font-size: smaller;
 }
 
 .InfoPane {

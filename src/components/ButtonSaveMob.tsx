@@ -1,7 +1,8 @@
 import React from "react";
 import { saveFile } from "../functions/core/saveFile";
+import Button from "@material-ui/core/Button"
 
-function buttonClicked() {
+function saveButtonClicked() {
     console.log("pressed save!");
     saveFile(
         `${process.env.PWD}`,
@@ -13,6 +14,6 @@ function buttonClicked() {
 
 export const ButtonSaveMob: React.FC = () => {
     return (
-        <button onClick={buttonClicked}>Save Mob</button>
+        <Button variant="contained" onClick={saveButtonClicked}>Save Mob</Button>
     );
 };
