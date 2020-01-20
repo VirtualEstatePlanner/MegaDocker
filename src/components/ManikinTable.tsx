@@ -37,9 +37,6 @@ export const ManikinTable: React.FC = () => {
                 </TableHead>
                 <TableBody className="ManikinTableBody">
                     {tableData.map(eachManikin => (
-
-
-
                         <TableRow
                             key={eachManikin.name}
                             className={eachManikin.isCore ? "CoreManikinRow" : "ManikinRow"}
