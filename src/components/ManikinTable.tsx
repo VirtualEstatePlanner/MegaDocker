@@ -37,7 +37,7 @@ export const ManikinTable: React.FC = () => {
                 </TableHead>
                 <TableBody className="ManikinTableBody">
                     {tableData.map(eachManikin => (
-                        <TableRow key={eachManikin.name}>
+                        <TableRow key={eachManikin.name} hover >
                             <TableCell key={eachManikin.name}>{eachManikin.name}</TableCell>
                             <TableCell key={eachManikin.manikinIcon}>
                                 <img alt={eachManikin.name}
@@ -53,6 +53,6 @@ export const ManikinTable: React.FC = () => {
                         </TableRow>))}
                 </TableBody>
             </Table>
-        </React.Suspense>
+        </React.Suspense >
     )
 }

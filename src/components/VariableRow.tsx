@@ -10,7 +10,7 @@ import * as xmarkIcon from "../images/indicators/xmarkIcon.png"
 export const VariableRow: React.FC = () => {
     const [variableValue, setVariableValue] = React.useState();
     return (
-        <TableRow className="VariableRow">
+        <TableRow className="VariableRow" hover>
             <TableCell>IMemory.name</TableCell>
             <TableCell><input value={variableValue} placeholder="Imemory.value" onChange={e => setVariableValue(e.target.value)} size={50} /></TableCell>
             <TableCell>IMemory.tooltip</TableCell>
