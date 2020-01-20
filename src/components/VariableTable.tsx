@@ -16,6 +16,7 @@ export const VariableTable: React.FC = () => {
                         <TableCell>Variable Description</TableCell>
                         <TableCell>Value</TableCell>
                         <TableCell>Information</TableCell>
+                        <TableCell>Ready</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>

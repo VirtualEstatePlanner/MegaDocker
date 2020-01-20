@@ -6,8 +6,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
-//import { manikinToggleReducer } from "../functions/reducers/manikinToggleReducer";
-import { StoreProvider } from "./Store";
+import { manikinToggleReducer } from "../functions/reducers/manikinToggleReducer";
 
 import { allManikins } from "../globals/allManikins"
 import { IManikin } from "../classes/IManikin";
@@ -19,7 +18,7 @@ interface IColumn {
 export const ManikinTable: React.FC = () => {
     const tableData: IManikin[] = allManikins
     const columns: IColumn[] = [
-        { name: "name", label: "Manikin Name" },
+        { name: "name", label: "Manikin" },
         { name: "icon", label: "" },
         { name: "isSelected", label: "Choose" }
     ]
@@ -36,15 +35,15 @@ export const ManikinTable: React.FC = () => {
                         ))}
                     </TableRow>
                 </TableHead>
-                <TableBody>
+                <TableBody className="ManikinTableBody">
                     {tableData.map(eachManikin => (
                         <TableRow key={eachManikin.name}>
                             <TableCell key={eachManikin.name}>{eachManikin.name}</TableCell>
                             <TableCell key={eachManikin.manikinIcon}>
                                 <img alt={eachManikin.name}
                                     src={eachManikin.manikinIcon}
-                                    height="15"
-                                    width="15" />
+                                    height="20"
+                                    width="20" />
                             </TableCell>
                             <TableCell key={eachManikin.description}><Switch
                                 defaultChecked={eachManikin.isCore ? true : false}

@@ -8,7 +8,6 @@ export const App: React.FC = (props) => {
   return (
     <StoreProvider>
       {console.log(Store)}
-      {props.children}
       <div className="App">
         <ManikinPane />
         <MainArea />

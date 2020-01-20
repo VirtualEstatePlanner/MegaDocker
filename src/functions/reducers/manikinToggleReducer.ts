@@ -1,10 +1,10 @@
 import { IMegaDockerState } from '../../classes/IMegaDockerState';
-import { IManikinToggleAction } from '../../classes/IReducerActions';
+import { IManikinTableActions } from '../../classes/IManikinTableActions';
 
 export const manikinToggleReducer: React.Reducer<
   IMegaDockerState,
-  IManikinToggleAction
-> = (state: IMegaDockerState, action: IManikinToggleAction) => {
+  IManikinTableActions
+> = (state: IMegaDockerState, action: IManikinTableActions) => {
   const prevState: IMegaDockerState = state;
 
   switch (action.type) {

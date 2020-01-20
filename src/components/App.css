@@ -14,10 +14,6 @@
   margin: 0 auto;
 }
 
-.TableHead {
-  position: sticky;
-}
-
 .MainArea {
   display: flex;
   height: 100vh;
@@ -69,4 +65,7 @@
 
 .ManikinTable {
   overflow: scroll;
+}
+
+.ManikinTableBody {
 }

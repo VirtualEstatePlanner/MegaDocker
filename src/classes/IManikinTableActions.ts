@@ -2,18 +2,18 @@ import React from 'react';
 import { IMegaDockerState } from './IMegaDockerState';
 import { IManikin } from './IManikin';
 
-export interface IManikinToggleAction {
+export interface IManikinTableActions {
   type: `ADD_MANIKIN` | `REMOVE_MANIKIN`;
   payload: IManikin[];
 }
 
-export const toggleManikinAction = (
+export const manikinTableActions = (
   state: IMegaDockerState,
-  dispatch: React.Dispatch<IManikinToggleAction>,
+  dispatch: React.Dispatch<IManikinTableActions>,
   manikin: IManikin
 ): void => {
   const manikinIsSelected = state.manikinTableContents.includes(manikin);
-  var dispatchObject: IManikinToggleAction = {
+  var dispatchObject: IManikinTableActions = {
     type: `ADD_MANIKIN`,
     payload: [...state.manikinTableContents, manikin]
   };
