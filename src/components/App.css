@@ -67,6 +67,6 @@
   overflow: scroll;
 }
 
-.ManikinTableBody {
-  text-align: center;
+.CoreManikinRow {
+  background-color: lightgray;
 }

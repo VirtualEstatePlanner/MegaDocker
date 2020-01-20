@@ -50,6 +50,22 @@ export const VariableTable: React.FC = () => {
                     <VariableRow />
                     <VariableRow />
                     <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
+                    <VariableRow />
                 </TableBody>
             </Table>
         </React.Suspense>)

@@ -4,9 +4,6 @@ import TableCell from "@material-ui/core/TableCell"
 import * as checkmarkIcon from "../images/indicators/checkmarkIcon.png"
 import * as xmarkIcon from "../images/indicators/xmarkIcon.png"
 
-//import { IMemory } from "../classes/IMemory"
-
-
 export const VariableRow: React.FC = () => {
     const [variableValue, setVariableValue] = React.useState();
     return (

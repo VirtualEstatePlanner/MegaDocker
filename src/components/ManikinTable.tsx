@@ -6,7 +6,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 
-import { manikinToggleReducer } from "../functions/reducers/manikinToggleReducer";
+//import { manikinToggleReducer } from "../functions/reducers/manikinToggleReducer";
 
 import { allManikins } from "../globals/allManikins"
 import { IManikin } from "../classes/IManikin";
@@ -37,7 +37,13 @@ export const ManikinTable: React.FC = () => {
                 </TableHead>
                 <TableBody className="ManikinTableBody">
                     {tableData.map(eachManikin => (
-                        <TableRow key={eachManikin.name} hover >
+
+
+
+                        <TableRow
+                            key={eachManikin.name}
+                            className={eachManikin.isCore ? "CoreManikinRow" : "ManikinRow"}
+                            hover={eachManikin.isCore ? false : true} >
                             <TableCell key={eachManikin.name}>{eachManikin.name}</TableCell>
                             <TableCell key={eachManikin.manikinIcon}>
                                 <img alt={eachManikin.name}
