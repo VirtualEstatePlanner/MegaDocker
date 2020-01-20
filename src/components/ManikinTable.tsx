@@ -5,9 +5,9 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import { ManikinSwitch } from "./ManikinSwitch";
 
-// import { Store } from "../components/Store";
+//import { manikinToggleReducer } from "../functions/reducers/manikinToggleReducer";
+import { StoreProvider } from "./Store";
 
 import { allManikins } from "../globals/allManikins"
 import { IManikin } from "../classes/IManikin";
@@ -24,29 +24,36 @@ export const ManikinTable: React.FC = () => {
         { name: "isSelected", label: "Choose" }
     ]
     return (
-        <Table className="ManikinTable" size="small" stickyHeader>
-            <TableHead className="ManikinTableHeader">
-                <TableRow>
-                    {columns.map(column => (
-                        <TableCell
-                            key={column.name}>
-                            {column.label}
-                        </TableCell>
-                    ))}
-                </TableRow>
-            </TableHead>
-            <TableBody>
-                {tableData.map(eachManikin => (
-                    <TableRow key={eachManikin.name}>
-                        <TableCell key={eachManikin.name}>{eachManikin.name}</TableCell>
-                        <TableCell key={eachManikin.name}>
-                            <img alt={eachManikin.name}
-                                src={eachManikin.manikinIcon}
-                                height="15"
-                                width="15" />
-                        </TableCell>
-                        <TableCell><Switch checked={eachManikin.isSelected ? true : false} disabled={eachManikin.isCore ? true : false} /></TableCell>
-                    </TableRow>))}
-            </TableBody>
-        </Table>)
+        <React.Suspense fallback={<div>...loading</div>}>
+            <Table className="ManikinTable" size="small" stickyHeader>
+                <TableHead className="ManikinTableHeader">
+                    <TableRow>
+                        {columns.map(column => (
+                            <TableCell
+                                key={column.name}>
+                                {column.label}
+                            </TableCell>
+                        ))}
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {tableData.map(eachManikin => (
+                        <TableRow key={eachManikin.name}>
+                            <TableCell key={eachManikin.name}>{eachManikin.name}</TableCell>
+                            <TableCell key={eachManikin.manikinIcon}>
+                                <img alt={eachManikin.name}
+                                    src={eachManikin.manikinIcon}
+                                    height="15"
+                                    width="15" />
+                            </TableCell>
+                            <TableCell key={eachManikin.description}><Switch
+                                defaultChecked={eachManikin.isCore ? true : false}
+                                value={eachManikin.isSelected}
+                                disabled={eachManikin.isCore ? true : false} />
+                            </TableCell>
+                        </TableRow>))}
+                </TableBody>
+            </Table>
+        </React.Suspense>
+    )
 }
