@@ -14,27 +14,6 @@
   margin: 0 auto;
 }
 
-.MainArea {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
-
-.MemoryPane {
-  display: flex;
-  flex-direction: row;
-  height: 70vh;
-  overflow: auto;
-  width: 75vw;
-}
-
-.MemoryTable {
-  height: 60vw;
-  overflow: scroll;
-}
-
 .ButtonPane {
   display: flex;
   flex-direction: row;
@@ -42,9 +21,14 @@
   width: 75vw;
   justify-content: space-around;
 }
+
 .Card {
   width: 30vw;
   font-size: smaller;
+}
+
+.CoreManikinRow {
+  background-color: #f5f5f5;
 }
 
 .InfoPane {
@@ -52,6 +36,14 @@
   flex-direction: row;
   height: 20vh;
   width: 75vw;
+}
+
+.MainArea {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .ManikinPane {
@@ -67,8 +59,22 @@
   overflow: scroll;
 }
 
-.CoreManikinRow {
-  background-color: #f5f5f5;
+.MemoryPane {
+  /*  background-color: pink; */
+  display: flex;
+  flex-direction: row;
+  overflow: auto;
+  height: 70vh;
+  width: 75vw;
+  flex-grow: 1;
+}
+
+.MemoryTable {
+  display: flex;
+  background-color: white;
+  height: 100%;
+  overflow: scroll;
+  flex-grow: 1;
 }
 
 .MemoryTableBody {
