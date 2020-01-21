@@ -68,5 +68,9 @@
 }
 
 .CoreManikinRow {
-  background-color: lightgray;
+  background-color: #f5f5f5;
+}
+
+.MemoryTableBody {
+  padding: 0 !important;
 }
