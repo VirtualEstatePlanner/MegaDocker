@@ -22,7 +22,7 @@
   justify-content: space-evenly;
 }
 
-.VariablePane {
+.MemoryPane {
   display: flex;
   flex-direction: row;
   height: 70vh;
@@ -30,8 +30,8 @@
   width: 75vw;
 }
 
-.VariableTable {
-  height: 65vw;
+.MemoryTable {
+  height: 60vw;
   overflow: scroll;
 }
 

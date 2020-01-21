@@ -10,6 +10,7 @@ import TableRow from "@material-ui/core/TableRow";
 
 import { allManikins } from "../globals/allManikins"
 import { IManikin } from "../classes/IManikin";
+import { StoreProvider } from "../components/Store";
 
 interface IColumn {
     name: string,
@@ -23,39 +24,41 @@ export const ManikinTable: React.FC = () => {
         { name: "isSelected", label: "Choose" }
     ]
     return (
-        <React.Suspense fallback={<div>...loading</div>}>
-            <Table className="ManikinTable" size="small" stickyHeader>
-                <TableHead className="ManikinTableHeader">
-                    <TableRow>
-                        {columns.map(column => (
-                            <TableCell
-                                key={column.name}>
-                                {column.label}
-                            </TableCell>
-                        ))}
-                    </TableRow>
-                </TableHead>
-                <TableBody className="ManikinTableBody">
-                    {tableData.map(eachManikin => (
-                        <TableRow
-                            key={eachManikin.name}
-                            className={eachManikin.isCore ? "CoreManikinRow" : "ManikinRow"}
-                            hover={eachManikin.isCore ? false : true} >
-                            <TableCell key={eachManikin.name}>{eachManikin.name}</TableCell>
-                            <TableCell key={eachManikin.manikinIcon}>
-                                <img alt={eachManikin.name}
-                                    src={eachManikin.manikinIcon}
-                                    height="20"
-                                    width="20" />
-                            </TableCell>
-                            <TableCell key={eachManikin.description}><Switch
-                                defaultChecked={eachManikin.isCore ? true : false}
-                                value={eachManikin.isSelected}
-                                disabled={eachManikin.isCore ? true : false} />
-                            </TableCell>
-                        </TableRow>))}
-                </TableBody>
-            </Table>
-        </React.Suspense >
+        <StoreProvider>
+            <React.Suspense fallback={<div>...loading</div>}>
+                <Table className="ManikinTable" size="small" stickyHeader>
+                    <TableHead className="ManikinTableHeader">
+                        <TableRow>
+                            {columns.map(column => (
+                                <TableCell
+                                    key={column.name}>
+                                    {column.label}
+                                </TableCell>
+                            ))}
+                        </TableRow>
+                    </TableHead>
+                    <TableBody className="ManikinTableBody">
+                        {tableData.map(eachManikin => (
+                            <TableRow
+                                key={eachManikin.name}
+                                className={eachManikin.isCore ? "CoreManikinRow" : "ManikinRow"}
+                                hover={eachManikin.isCore ? false : true} >
+                                <TableCell key={eachManikin.name}>{eachManikin.name}</TableCell>
+                                <TableCell key={eachManikin.manikinIcon}>
+                                    <img alt={eachManikin.name}
+                                        src={eachManikin.manikinIcon}
+                                        height="20"
+                                        width="20" />
+                                </TableCell>
+                                <TableCell key={eachManikin.description}><Switch
+                                    defaultChecked={eachManikin.isCore ? true : false}
+                                    value={eachManikin.isSelected}
+                                    disabled={eachManikin.isCore ? true : false} />
+                                </TableCell>
+                            </TableRow>))}
+                    </TableBody>
+                </Table>
+            </React.Suspense >
+        </StoreProvider>
     )
 }

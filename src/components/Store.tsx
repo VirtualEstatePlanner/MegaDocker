@@ -1,13 +1,15 @@
 import React from 'react'
 import { allManikins } from "../globals/allManikins";
+import { coreMemories } from '../globals/coreMemories';
 import { IMegaDockerState } from '../classes/IMegaDockerState';
 
 const initialState: IMegaDockerState = {
     manikinTableContents: [...allManikins],
-    variableTableContents: [],
-    allMites: [],
+    variableTableContents: [...coreMemories],
+    allMobMites: [],
     mobServiceMites: [],
     mobNetworkMites: [],
+    infoContent: 'Read information about your selection here.',
     ymlOutput: ``
 }
 

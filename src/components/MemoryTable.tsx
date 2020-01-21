@@ -21,8 +21,8 @@ var tableMemories: IMemory[] = allManikins.filter(eachManikin => (
 tableMemories = [mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, ...tableMemories]
 console.log(tableMemories)
 
-export const VariableTable: React.FC = () => {
-    const [variableValue, setVariableValue] = React.useState();
+export const MemoryTable: React.FC = () => {
+    const [memoryValue, setMemoryValue] = React.useState();
     return (
         <React.Suspense fallback={<div>...loading</div>}>
             <Table className="VariableTable" size="small" stickyHeader>
@@ -41,13 +41,13 @@ export const VariableTable: React.FC = () => {
                                 <Tooltip title={eachMemory.tooltip}>
                                     <Input
                                         fullWidth
-                                        value={eachMemory.value}
+                                        value={memoryValue}
                                         placeholder="input data here"
-                                        onChange={event => setVariableValue(event.target.value)}
+                                        onChange={event => setMemoryValue(event.target.value)}
                                     />
                                 </Tooltip>
                             </TableCell>
-                            <TableCell ><img alt='ready indicator' height={20} width={20} src={eachMemory.value ? checkmarkIcon : xmarkIcon} /></TableCell>
+                            <TableCell ><img alt='ready indicator' height={20} width={20} src={memoryValue ? checkmarkIcon : xmarkIcon} /></TableCell>
                         </TableRow>))}
                 </TableBody>
             </Table>

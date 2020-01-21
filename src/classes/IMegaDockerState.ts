@@ -5,8 +5,9 @@ import { IMite } from './IMite';
 export interface IMegaDockerState {
   manikinTableContents: IManikin[];
   variableTableContents: IMemory[];
-  allMites: IMite[];
+  allMobMites: IMite[];
   mobServiceMites: IMite[];
   mobNetworkMites: IMite[];
+  infoContent: String;
   ymlOutput: String;
 }
