@@ -23,10 +23,10 @@ export const MemoryTable: React.FC = () => {
     const [memoryValue, setMemoryValue] = React.useState();
     return (
         <React.Suspense fallback={<div>...loading</div>}>
-            <Table className="VariableTable" size="small" stickyHeader>
-                <TableHead className="VariableTableHeader" >
+            <Table className="MemoryTable" size="small" stickyHeader>
+                <TableHead className="MemoryTableHeader" >
                     <TableRow>
-                        <TableCell >Description</TableCell>
+                        <TableCell>Memory Description</TableCell>
                         <TableCell>Value</TableCell>
                         <TableCell>Ready</TableCell>
                     </TableRow>
