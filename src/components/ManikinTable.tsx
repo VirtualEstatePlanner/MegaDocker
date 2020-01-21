@@ -11,6 +11,7 @@ import TableRow from "@material-ui/core/TableRow";
 import { allManikins } from "../globals/allManikins"
 import { IManikin } from "../classes/IManikin";
 import { StoreProvider } from "../components/Store";
+import { Tooltip } from "@material-ui/core";
 
 interface IColumn {
     name: string,
@@ -43,7 +44,9 @@ export const ManikinTable: React.FC = () => {
                                 key={eachManikin.name}
                                 className={eachManikin.isCore ? "CoreManikinRow" : "ManikinRow"}
                                 hover={eachManikin.isCore ? false : true} >
-                                <TableCell key={eachManikin.name}>{eachManikin.name}</TableCell>
+                                <Tooltip title={eachManikin.description}>
+                                    <TableCell key={eachManikin.name}>{eachManikin.name}</TableCell>
+                                </Tooltip>
                                 <TableCell key={eachManikin.manikinIcon}>
                                     <img alt={eachManikin.name}
                                         src={eachManikin.manikinIcon}
