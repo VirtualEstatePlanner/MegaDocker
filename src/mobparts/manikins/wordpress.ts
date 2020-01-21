@@ -12,7 +12,7 @@ import * as wordpressIcon from '../../images/manikin-icons/wordpressIcon.png';
 export const wordpressManikin: IManikin = {
   name: `WordPress`,
   manikinIcon: wordpressIcon,
-  description: ``,
+  description: `Wordpress Blogging Platform`,
   isCore: false,
   isSelected: false,
   mites: [wordpressServiceMite, wordpressNetworkMite],

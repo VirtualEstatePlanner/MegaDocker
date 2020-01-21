@@ -16,7 +16,7 @@ import ghostIcon from '../../images/manikin-icons/ghostIcon.png';
  */
 export let ghostManikin: IManikin = {
   name: `Ghost`,
-  description: `Ghost Blogging platform`,
+  description: `Ghost blog service`,
   isCore: false,
   isSelected: false,
   mites: [serviceMite, networkMite],

@@ -18,7 +18,7 @@ export let skoposManikin: IManikin = {
   mites: [serviceMite, networkMite],
   folder: `Skopos`,
   subfolders: [],
-  description: `Continuous Integraion/Continuous Deployment service`,
+  description: `Skopos Continuous Integraion/Continuous Deployment service`,
   ports: [],
   isSelected: true,
   isCore: true,

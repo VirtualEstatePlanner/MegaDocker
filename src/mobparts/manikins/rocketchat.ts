@@ -16,7 +16,7 @@ import rocketchatIcon from '../../images/manikin-icons/rocketchatIcon.png';
  */
 export let rocketchatManikin: IManikin = {
   name: `RocketChat`,
-  description: `Team text chat server`,
+  description: `Team chat and collaboration service`,
   isCore: false,
   isSelected: false,
   mites: [serviceMite, networkMite],

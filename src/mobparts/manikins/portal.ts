@@ -15,7 +15,7 @@ import portalIcon from '../../images/manikin-icons/portalIcon.png';
  */
 export let portalManikin: IManikin = {
   name: `Portal`,
-  description: `Web portal for MegaDocker services quick access`,
+  description: `Web portal with links to running services`,
   isCore: false,
   isSelected: false,
   mites: [serviceMite, networkMite],

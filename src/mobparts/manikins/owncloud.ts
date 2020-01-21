@@ -15,7 +15,7 @@ import owncloudIcon from '../../images/manikin-icons/owncloudIcon.png';
  */
 export let owncloudManikin: IManikin = {
   name: `Owncloud`,
-  description: `File-sharing server`,
+  description: `Owncloud file-sharing service`,
   isCore: false,
   isSelected: false,
   mites: [serviceMite, networkMite],

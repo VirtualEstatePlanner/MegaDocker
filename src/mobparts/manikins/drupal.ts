@@ -15,7 +15,7 @@ import * as drupalIcon from '../../images/manikin-icons/drupalIcon.png';
  */
 export let drupalManikin: IManikin = {
   name: `Drupal`,
-  description: `Blogging platform`,
+  description: `Drupal blog service`,
   isCore: false,
   isSelected: false,
   mites: [serviceMite, networkMite],

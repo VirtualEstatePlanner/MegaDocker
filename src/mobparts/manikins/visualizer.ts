@@ -15,7 +15,7 @@ import visualizerIcon from '../../images/manikin-icons/visualizerIcon.png';
  */
 export let visualizerManikin: IManikin = {
   name: `Visualizer`,
-  description: `Docker Swarm container placement visualizer`,
+  description: `Docker swarm mode container placement visualization service`,
   isCore: false,
   isSelected: false,
   mites: [serviceMite, networkMite],

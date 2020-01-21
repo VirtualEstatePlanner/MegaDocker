@@ -18,7 +18,7 @@ export let portainerManikin: IManikin = {
   mites: [serviceMite, networkMite],
   folder: `Portainer`,
   subfolders: [],
-  description: `Portainer Docker Host web GUI`,
+  description: `Portainer docker host web GUI service`,
   ports: [],
   isSelected: false,
   isCore: false,

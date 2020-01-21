@@ -15,7 +15,7 @@ import webdavIcon from '../../images/manikin-icons/webdavIcon.png';
  */
 export let webdavManikin: IManikin = {
   name: `WebDAV`,
-  description: `File-sharing server`,
+  description: `WebDAV file-sharing service`,
   isCore: false,
   isSelected: false,
   mites: [serviceMite, networkMite],

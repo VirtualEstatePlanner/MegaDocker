@@ -15,7 +15,7 @@ import nginxIcon from '../../images/manikin-icons/nginxIcon.png';
  */
 export let nginxManikin: IManikin = {
   name: `Nginx`,
-  description: `Nginx http server`,
+  description: `Nginx http service`,
   isCore: false,
   isSelected: false,
   mites: [serviceMite, networkMite],

@@ -23,5 +23,5 @@ export let swarmpitManikin: IManikin = {
   name: `Swarmpit`,
   folder: `Swarmpit`,
   subfolders: [`database`],
-  description: `Docker Swarm GUI`
+  description: `Swarmpit Docker swarm mode GUI service`
 };

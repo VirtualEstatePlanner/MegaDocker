@@ -15,7 +15,7 @@ import gitlabIcon from '../../images/manikin-icons/gitlabIcon.png';
  */
 export let gitlabManikin: IManikin = {
   name: `GitLab`,
-  description: `GitLab version control server`,
+  description: `GitLab version control service`,
   isCore: false,
   isSelected: false,
   mites: [serviceMite, networkMite],

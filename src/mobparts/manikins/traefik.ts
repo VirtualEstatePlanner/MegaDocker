@@ -22,7 +22,7 @@ import { mobName } from '../memories/mobName';
 export let traefikManikin: IManikin = {
   name: `Traefik`,
   manikinIcon: traefikIcon,
-  description: `Reverse Proxy Service`,
+  description: `Traefik reverse proxy service`,
   isCore: true,
   isSelected: true,
   mites: [traefikServiceMite, traefikNetworkMite],
