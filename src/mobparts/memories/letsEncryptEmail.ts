@@ -7,7 +7,7 @@
 import { IMemory } from '../../classes/IMemory';
 
 export let letsEncryptEmail: IMemory = {
-  name: 'Let`s Encrypt Email Address',
+  name: `Let'sEncrypt Email`,
   tooltip: `The email address used to register your domains`,
   value: ``
 };

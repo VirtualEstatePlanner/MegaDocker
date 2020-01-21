@@ -14,6 +14,7 @@ import { secondaryDomain } from '../memories/secondaryDomain';
 import { traefikServiceMite } from '../mites/service/traefikServiceMite';
 import { traefikNetworkMite } from '../mites/network/traefikNetworkMite';
 import traefikIcon from '../../images/manikin-icons/traefikIcon.png';
+import { mobName } from '../memories/mobName';
 
 /**
  * traefik Manikin
@@ -29,10 +30,11 @@ export let traefikManikin: IManikin = {
   folder: `Traefik`,
   subfolders: [`certs`, `private`, `pem`],
   memories: [
-    primaryDomain,
-    secondaryDomain,
+    mobName,
     letsEncryptEmail,
     cloudflareEmail,
-    cloudflareAPIKey
+    cloudflareAPIKey,
+    primaryDomain,
+    secondaryDomain
   ]
 };

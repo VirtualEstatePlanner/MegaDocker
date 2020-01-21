@@ -8,7 +8,6 @@ import TableRow from "@material-ui/core/TableRow";
 import Tooltip from "@material-ui/core/Tooltip";
 import { IMemory } from '../classes/IMemory';
 import { allManikins } from '../globals/allManikins';
-import { mobName } from '../mobparts/memories/mobName'
 import * as checkmarkIcon from "../images/indicators/checkmarkIcon.png"
 import * as xmarkIcon from "../images/indicators/xmarkIcon.png"//import { mobName } from "../mobparts/memories/mobName"
 
@@ -18,7 +17,6 @@ var tableMemories: IMemory[] = allManikins.filter(eachManikin => (
             return value.length !== 0
         }).flat()
 
-tableMemories = [mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, mobName, ...tableMemories]
 console.log(tableMemories)
 
 export const MemoryTable: React.FC = () => {
