@@ -17,8 +17,6 @@ var tableMemories: IMemory[] = allManikins.filter(eachManikin => (
             return value.length !== 0
         }).flat()
 
-console.log(tableMemories)
-
 export const MemoryTable: React.FC = () => {
     const [memoryValue, setMemoryValue] = React.useState();
     return (
