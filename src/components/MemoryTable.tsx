@@ -31,7 +31,7 @@ export const MemoryTable: React.FC = () => {
                 </TableHead>
                 <TableBody className="MemoryTableBody">
                     {tableMemories.map(eachMemory => (
-                        <TableRow key={eachMemory.name}>
+                        <TableRow hover key={eachMemory.name}>
                             <TableCell padding='checkbox'>{eachMemory.name}</TableCell>
                             <TableCell >
                                 <Tooltip title={eachMemory.tooltip}>
