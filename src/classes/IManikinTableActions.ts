@@ -13,6 +13,7 @@ export const manikinTableActions = (
   manikin: IManikin
 ): void => {
   const manikinIsSelected = state.manikinTableContents.includes(manikin);
+
   var dispatchObject: IManikinTableActions = {
     type: `ADD_MANIKIN`,
     payload: [...state.manikinTableContents, manikin]

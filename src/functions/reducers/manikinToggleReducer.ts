@@ -10,11 +10,18 @@ export const manikinToggleReducer: React.Reducer<
   switch (action.type) {
     // selected a manikin
     case 'ADD_MANIKIN':
-      const newState: IMegaDockerState = prevState;
-      return newState;
+      const manikinAddedState: IMegaDockerState = {
+        ...prevState,
+        manikinTableContents: action.payload
+      };
+      return manikinAddedState;
     // deselected a manikin
     case 'REMOVE_MANIKIN':
-      return state;
+      const manikinRemovedState: IMegaDockerState = {
+        ...prevState,
+        manikinTableContents: action.payload
+      };
+      return manikinRemovedState;
     // default
     default:
       throw new Error('passed a bad action.type to manikinToggleReducer');
