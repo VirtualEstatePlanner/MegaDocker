@@ -5,7 +5,8 @@ import { StoreProvider } from "./Store";
 
 const info: string = ``
 
-export const ManikinInfo: React.FC = () => {
+export const InfoCard: React.FC = () => {
+    React.useState()
     return (
         <StoreProvider>
             <React.Suspense fallback={<div>...loading</div>}>

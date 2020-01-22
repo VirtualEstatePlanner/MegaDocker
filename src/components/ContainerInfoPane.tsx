@@ -1,9 +1,9 @@
 import React from "react";
-import { ManikinInfo } from "./ManikinInfo";
+import { InfoCard } from "./InfoCard"
 
 export const InfoPane: React.FC = () => {
     return (
         <div className="InfoPane" >
-            <ManikinInfo />
+            <InfoCard />
         </div>)
 }
