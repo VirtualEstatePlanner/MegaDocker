@@ -5,7 +5,7 @@ import { StoreProvider } from "./Store";
 
 const info: string = ``
 
-export const InfoCard: React.FC = () => {
+export const InfoCard: React.FC = (): React.ReactElement => {
     React.useState()
     return (
         <StoreProvider>

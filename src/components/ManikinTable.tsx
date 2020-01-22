@@ -17,7 +17,7 @@ interface IColumn {
     name: string,
     label: string,
 }
-export const ManikinTable: React.FC = () => {
+export const ManikinTable: React.FC = (): React.ReactElement => {
     const tableData: IManikin[] = allManikins
     const columns: IColumn[] = [
         { name: "name", label: "Manikin" },

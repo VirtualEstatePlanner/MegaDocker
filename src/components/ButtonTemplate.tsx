@@ -4,7 +4,7 @@ function buttonClicked() {
     console.log("Button was clicked!");
 }
 
-export const Button: React.FC = () => {
+export const Button: React.FC = (): React.ReactElement => {
     return (
         <div className="Button">
             <button onClick={buttonClicked}>Button</button>

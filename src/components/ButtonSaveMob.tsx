@@ -12,7 +12,7 @@ function saveButtonClicked() {
     );
 }
 
-export const ButtonSaveMob: React.FC = () => {
+export const ButtonSaveMob: React.FC = (): React.ReactElement => {
     return (
         <Button variant="contained" onClick={saveButtonClicked}>Save Mob</Button>
     );

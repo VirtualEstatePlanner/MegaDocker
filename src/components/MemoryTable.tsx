@@ -17,7 +17,7 @@ var tableMemories: IMemory[] = allManikins.filter(eachManikin => (
             return value.length !== 0
         }).flat()
 
-export const MemoryTable: React.FC = () => {
+export const MemoryTable: React.FC = (): React.ReactElement => {
     const [memoryValue, setMemoryValue] = React.useState();
     return (
         <React.Suspense fallback={<div>...loading</div>}>

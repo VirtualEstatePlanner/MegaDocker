@@ -4,7 +4,7 @@ import TableCell from "@material-ui/core/TableCell"
 import * as checkmarkIcon from "../images/indicators/checkmarkIcon.png"
 import * as xmarkIcon from "../images/indicators/xmarkIcon.png"
 
-export const MemoryRow: React.FC = () => {
+export const MemoryRow: React.FC = (): React.ReactElement => {
     const [memoryValue, setMemoryValue] = React.useState();
     return (
         <TableRow className="MemoryRow" hover>
