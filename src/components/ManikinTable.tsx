@@ -5,6 +5,8 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
+import { defaultReducer } from "../functions/reducers/defaultReducer";
+import { IMegaDockerState } from "../classes/IMegaDockerState";
 import { Store } from "../components/Store";
 import { Tooltip } from "@material-ui/core";
 
@@ -13,14 +15,12 @@ interface IColumn {
     label: string,
 }
 export const ManikinTable: React.FC = (props: any): React.ReactElement => {
-    //    const tableData: IManikin[] = allManikins
     const columns: IColumn[] = [
         { name: "name", label: "Manikin" },
         { name: "icon", label: "" },
         { name: "isSelected", label: "Choose" }
     ]
-    const store = React.useContext(Store)
-
+    const store: IMegaDockerState = React.useContext(Store)
     return (
         <Store.Provider value={store}>{props.children}
             <React.Suspense fallback={<div>...loading</div>}>
@@ -40,9 +40,10 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                             <TableRow
                                 key={eachManikin.name}
                                 className={eachManikin.isCore ? "CoreManikinRow" : "ManikinRow"}
-                                hover={eachManikin.isCore ? false : true} >
+                                hover={eachManikin.isCore ? false : true}>
                                 <Tooltip title={eachManikin.description}>
-                                    <TableCell key={eachManikin.name}>{eachManikin.name}</TableCell>
+                                    <TableCell key={eachManikin.name}>
+                                        {eachManikin.name}</TableCell>
                                 </Tooltip>
                                 <TableCell key={eachManikin.manikinIcon}>
                                     <img alt={eachManikin.name}
@@ -59,6 +60,6 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                     </TableBody>
                 </Table>
             </React.Suspense >
-        </Store.Provider>
+        </Store.Provider >
     )
 }
