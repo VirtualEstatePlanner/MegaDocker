@@ -4,20 +4,23 @@ import { IMemory } from './IMemory';
 interface ManikinAction {
   type: string;
   payload: IManikin;
+  dispatch: React.Dispatch<IMegaDockerAction>;
 }
 
 export type IManikinAction = ManikinAction;
 
-interface ManikinArrayAction {
+/*interface ManikinArrayAction {
   type: string;
   payload: IManikin[];
-}
+  dispatch: React.Dispatch<IMegaDockerAction>;
+}*/
 
-export type IManikinArrayAction = ManikinArrayAction;
+//export type IManikinArrayAction = ManikinArrayAction;
 
 interface StringAction {
   type: string;
   payload: string;
+  dispatch: React.Dispatch<IMegaDockerAction>;
 }
 
 export type IStringAction = StringAction;
@@ -25,20 +28,22 @@ export type IStringAction = StringAction;
 interface MemoryAction {
   type: string;
   payload: IMemory;
+  dispatch: React.Dispatch<IMegaDockerAction>;
 }
 
 export type IMemoryAction = MemoryAction;
 
-interface MemoryArrayAction {
+/*interface MemoryArrayAction {
   type: string;
+  dispatch: React.Dispatch<IMegaDockerAction>;
   payload: IMemory[];
-}
+}*/
 
-export type IMemoryArrayAction = MemoryArrayAction;
+// export type IMemoryArrayAction = MemoryArrayAction;
 
 export type IMegaDockerAction =
   | IManikinAction
-  | IManikinArrayAction
+  //  | IManikinArrayAction
   | IMemoryAction
-  | IMemoryArrayAction
+  //  | IMemoryArrayAction
   | IStringAction;
