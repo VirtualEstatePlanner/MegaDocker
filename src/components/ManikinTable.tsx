@@ -5,27 +5,24 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-
-//import { manikinToggleReducer } from "../functions/reducers/manikinToggleReducer";
-
-import { allManikins } from "../globals/allManikins"
-import { IManikin } from "../classes/IManikin";
-import { StoreProvider } from "../components/Store";
+import { Store } from "../components/Store";
 import { Tooltip } from "@material-ui/core";
 
 interface IColumn {
     name: string,
     label: string,
 }
-export const ManikinTable: React.FC = (): React.ReactElement => {
-    const tableData: IManikin[] = allManikins
+export const ManikinTable: React.FC = (props: any): React.ReactElement => {
+    //    const tableData: IManikin[] = allManikins
     const columns: IColumn[] = [
         { name: "name", label: "Manikin" },
         { name: "icon", label: "" },
         { name: "isSelected", label: "Choose" }
     ]
+    const store = React.useContext(Store)
+
     return (
-        <StoreProvider>
+        <Store.Provider value={store}>{props.children}
             <React.Suspense fallback={<div>...loading</div>}>
                 <Table className="ManikinTable" size="small" stickyHeader>
                     <TableHead className="ManikinTableHeader">
@@ -39,7 +36,7 @@ export const ManikinTable: React.FC = (): React.ReactElement => {
                         </TableRow>
                     </TableHead>
                     <TableBody className="ManikinTableBody">
-                        {tableData.map(eachManikin => (
+                        {store.manikinTableContents.map(eachManikin => (
                             <TableRow
                                 key={eachManikin.name}
                                 className={eachManikin.isCore ? "CoreManikinRow" : "ManikinRow"}
@@ -62,6 +59,6 @@ export const ManikinTable: React.FC = (): React.ReactElement => {
                     </TableBody>
                 </Table>
             </React.Suspense >
-        </StoreProvider>
+        </Store.Provider>
     )
 }

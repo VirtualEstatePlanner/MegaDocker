@@ -1,18 +1,18 @@
 import React from "react";
+
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
-import { StoreProvider } from "./Store";
+import { Store } from "./Store";
 
-const info: string = ``
-
-export const InfoCard: React.FC = (): React.ReactElement => {
-    React.useState()
+export const InfoCard: React.FC = (props: any): React.ReactElement => {
+    const store = React.useContext(Store)
     return (
-        <StoreProvider>
+        <Store.Provider value={store}>{props.children}
             <React.Suspense fallback={<div>...loading</div>}>
                 <Card className="ManikinInfo">
-                    <CardContent>{info}</CardContent>
+                    <CardContent>{store.infoContent}</CardContent>
                 </Card>
             </React.Suspense>
-        </StoreProvider>)
+        </Store.Provider >
+    )
 }

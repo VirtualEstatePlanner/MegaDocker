@@ -2,15 +2,19 @@ import React from "react";
 import "./App.css";
 import { ManikinPane } from './ContainerManikinPane'
 import { MainArea } from "./ContainerMainArea";
-import { StoreProvider } from "./Store";
+import { Store } from "./Store";
+// import { IMegaDockerState } from "../classes/IMegaDockerState";
 
-export const App: React.FC = (): React.ReactElement => {
+export const App: React.FC = (props: any): React.ReactElement => {
+  const store = React.useContext(Store)
+
+  console.log(store)
   return (
-    <StoreProvider>
+    <Store.Provider value={store}>{props.children}
       <div className="App">
         <ManikinPane />
         <MainArea />
       </div>
-    </StoreProvider>
+    </Store.Provider>
   );
 };

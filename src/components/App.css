@@ -73,10 +73,10 @@
   display: flex;
   background-color: white;
   height: 100%;
-  overflow: scroll;
   flex-grow: 1;
 }
 
 .MemoryTableBody {
   padding: 0 !important;
+  overflow: scroll;
 }
