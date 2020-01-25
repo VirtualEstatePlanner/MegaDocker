@@ -1,5 +1,5 @@
 import React from 'react'
-import { defaultReducer } from '../functions/reducers/defaultReducer'
+import { megaReducer } from '../functions/reducers/megaReducer'
 import { IMegaDockerState, initialMegaDockerState } from '../classes/IMegaDockerState';
 import { IMegaDockerAction } from '../classes/IMegaDockerAction';
 
@@ -10,7 +10,8 @@ export const useStore = (): IMegaDockerState => {
 }
 
 export const StoreProvider: React.FC = (props: any): React.ReactElement => {
-    const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(defaultReducer, initialMegaDockerState)
+    const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] =
+        React.useReducer(megaReducer, initialMegaDockerState)
     return (
         <Store.Provider value={state}>
             {props.children}

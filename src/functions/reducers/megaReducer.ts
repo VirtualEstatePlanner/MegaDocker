@@ -13,6 +13,7 @@ import { IMemory } from '../../classes/IMemory';
 const isManikinAction: Function = (
   checkMe: IMegaDockerAction
 ): checkMe is IManikinAction => {
+  console.log(checkMe);
   return true;
 };
 
@@ -23,6 +24,7 @@ const isManikinAction: Function = (
 const isMemoryAction: Function = (
   checkMe: IMegaDockerAction
 ): checkMe is IMemoryAction => {
+  console.log(checkMe);
   return true;
 };
 
@@ -33,10 +35,11 @@ const isMemoryAction: Function = (
 const isStringAction: Function = (
   checkMe: IMegaDockerAction
 ): checkMe is IStringAction => {
+  console.log(checkMe);
   return true;
 };
 
-export const defaultReducer = (
+export const megaReducer = (
   state: IMegaDockerState,
   action: IMegaDockerAction
 ): IMegaDockerState => {

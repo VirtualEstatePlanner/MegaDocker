@@ -5,7 +5,7 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-// import { defaultReducer } from "../functions/reducers/defaultReducer";
+// import { megaReducer } from "../functions/reducers/megaReducer";
 import { IMegaDockerState } from "../classes/IMegaDockerState";
 import { Store } from "../components/Store";
 import { Tooltip } from "@material-ui/core";
