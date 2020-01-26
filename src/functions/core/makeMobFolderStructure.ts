@@ -4,8 +4,10 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-/**
 import { makeFoldersForManikin } from './makeFoldersForManikin';
+// following line is trash
+export default makeFoldersForManikin;
+/**
 import { makeMobFolder } from './makeMobFolder';
 import { IMob } from '../../interfaces/IMob';
 
