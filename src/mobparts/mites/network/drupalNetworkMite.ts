@@ -8,6 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const drupalNetworkMite: IMite = {
   type: 'Network',
+  miteIndex: 0,
   miteString: `
 
 #Begin Drupal Network Section

@@ -8,6 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const serviceMite: IMite = {
   type: 'Service',
+  miteIndex: 998,
   miteString: `
 
 #Begin $SOMEMANIKIN Service Section

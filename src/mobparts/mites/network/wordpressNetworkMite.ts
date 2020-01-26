@@ -8,6 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const wordpressNetworkMite: IMite = {
   type: 'Network',
+  miteIndex: 2,
   miteString: `
 
 #Begin WordPress Network Section

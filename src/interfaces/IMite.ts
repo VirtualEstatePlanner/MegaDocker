@@ -1,5 +1,3 @@
-import { StringLiteral } from '@babel/types';
-
 //  IMite.ts
 //  MegaDocker
 //  an interface that represents a Mite
@@ -8,5 +6,6 @@ import { StringLiteral } from '@babel/types';
 
 export interface IMite {
   type: `Network` | `Service` | `Custom`;
+  miteIndex: number;
   miteString: string;
 }

@@ -25,7 +25,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                 </TableHead>
                 <TableBody className="MemoryTableBody">
                     {store.memoryTableContents.map(eachMemory => (
-                        <TableRow hover key={eachMemory.name}>
+                        <TableRow hover key={eachMemory.memoryIndex}>
                             <TableCell padding='checkbox'>{eachMemory.name}</TableCell>
                             <TableCell >
                                 <Tooltip title={eachMemory.tooltip}>

@@ -8,6 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const networkMite: IMite = {
   type: 'Network',
+  miteIndex: 999,
   miteString: `
 
 #Begin $SOMEMANIKIN Network Section

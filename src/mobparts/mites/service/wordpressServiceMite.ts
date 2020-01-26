@@ -8,6 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const wordpressServiceMite: IMite = {
   type: 'Service',
+  miteIndex: 5,
   miteString: `
 
 #Begin WordPress Service Section

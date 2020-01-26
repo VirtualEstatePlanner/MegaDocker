@@ -8,6 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const traefikServiceMite: IMite = {
   type: 'Service',
+  miteIndex: 4,
   miteString: `
 
 #Begin Traefik Service Section

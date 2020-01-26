@@ -22,8 +22,8 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
     ]
     const store: IMegaDockerState = React.useContext(Store)
 
-    const handleCheckboxChange = (firstValue: boolean): boolean => {
-        let outputValue: boolean = !firstValue
+    const handleCheckboxChange = (inputValue: boolean): boolean => {
+        let outputValue: boolean = !inputValue
         return outputValue
     }
     return (
@@ -43,7 +43,7 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                     <TableBody className="ManikinTableBody">
                         {store.manikinTableContents.map(eachManikin => (
                             <TableRow
-                                key={eachManikin.name}
+                                key={eachManikin.manikinIndex}
                                 className={eachManikin.isCore ? "CoreManikinRow" : "ManikinRow"}
                                 hover={eachManikin.isCore ? false : true}>
                                 <Tooltip title={eachManikin.description}>

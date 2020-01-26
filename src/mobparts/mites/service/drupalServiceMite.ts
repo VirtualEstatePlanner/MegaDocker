@@ -8,6 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const drupalServiceMite: IMite = {
   type: 'Service',
+  miteIndex: 3,
   miteString: `
 
 #Begin Drupal Service Section
