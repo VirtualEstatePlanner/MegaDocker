@@ -6,13 +6,5 @@ export const Store = React.createContext<IMegaDockerState>(initialMegaDockerStat
 
 export const StoreProvider = (props: any): React.ReactElement => {
     const [state, dispatch] = React.useReducer(megaReducer, initialMegaDockerState)
-    return (<Store.Provider value={{ ...state, ...dispatch }}> {props.children}</Store.Provider >)
-}
-
-export const StoreConsumer: React.FC = (props: any): React.ReactElement => {
-    return (
-        <Store.Consumer>
-            {props.children}
-        </Store.Consumer>
-    )
+    return (<Store.Provider value={{ ...state, ...dispatch }}>{props.children}</Store.Provider >)
 }
