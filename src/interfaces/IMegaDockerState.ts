@@ -37,6 +37,6 @@ export const initialMegaDockerState: IMegaDockerState = {
   mobServiceMites: mobMites.filter((eachMite) => eachMite.type === `Service`),
   mobNetworkMites: mobMites.filter((eachMite) => eachMite.type === `Network`),
   mobCustomMites: mobMites.filter((eachMite) => eachMite.type === `Custom`),
-  infoContent: `Learn more about the object you last clicked on by reading the text in this part of the window.`,
+  infoContent: `Learn more about something by clicking it and reading the information here.`,
   ymlOutput: ``
 };
