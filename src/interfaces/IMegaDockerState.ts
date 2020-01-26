@@ -31,7 +31,7 @@ const mobMites = allManikins.flatMap((eachManikin) =>
 );
 
 export const initialMegaDockerState: IMegaDockerState = {
-  manikinTableContents: [...allManikins],
+  manikinTableContents: allManikins,
   memoryTableContents: coreMems,
   allMobMites: mobMites,
   mobServiceMites: mobMites.filter((eachMite) => eachMite.type === `Service`),
