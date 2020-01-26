@@ -1,4 +1,5 @@
-import { makeMobFolderStructure } from './makeMobFolderStructure';
+// import { makeMobFolderStructure } from './makeMobFolderStructure';
+/*
 import { checkForFile } from './checkForFile';
 import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
 import { IMob } from '../../interfaces/IMob';
@@ -58,3 +59,4 @@ it(`should make the folder for all manikins in a mob at once`, () => {
     deleteFolder(userMegaDockerFolder, testMob.mobName);
   }
 });
+*/
