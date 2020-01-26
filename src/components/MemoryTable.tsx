@@ -18,7 +18,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
             <Table className="MemoryTable" size="small" stickyHeader>
                 <TableHead className="MemoryTableHeader" >
                     <TableRow>
-                        <TableCell>Memory Description</TableCell>
+                        <TableCell>Description</TableCell>
                         <TableCell>Value</TableCell>
                         <TableCell>Ready</TableCell>
                     </TableRow>

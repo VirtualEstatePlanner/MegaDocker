@@ -16,8 +16,8 @@ export interface IMegaDockerState {
   mobServiceMites: IMite[];
   mobNetworkMites: IMite[];
   mobCustomMites: IMite[];
-  infoContent: String;
-  ymlOutput: String;
+  infoContent: string;
+  ymlOutput: string;
 }
 
 export const initialMegaDockerState: IMegaDockerState = {
@@ -28,5 +28,5 @@ export const initialMegaDockerState: IMegaDockerState = {
   mobNetworkMites: [...startingNetworkMites],
   mobCustomMites: [...startingCustomMites],
   infoContent: `Learn more about the object you last clicked on by reading the text in this part of the window.`,
-  ymlOutput: `some YML string`
+  ymlOutput: ``
 };
