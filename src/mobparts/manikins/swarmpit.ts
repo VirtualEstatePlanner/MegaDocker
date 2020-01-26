@@ -14,14 +14,15 @@ import swarmpitIcon from '../../images/manikin-icons/swarmpitIcon.png';
  * swarmpit Manikin
  */
 export let swarmpitManikin: IManikin = {
-  manikinIcon: swarmpitIcon,
+  description: `Swarmpit Docker swarm mode GUI service`,
   isCore: true,
   isSelected: true,
-  mites: [serviceMite, networkMite],
-  ports: [],
+  folder: `Swarmpit`,
+  manikinIcon: swarmpitIcon,
+  manikinIndex: 11,
   memories: [],
   name: `Swarmpit`,
-  folder: `Swarmpit`,
-  subfolders: [`database`],
-  description: `Swarmpit Docker swarm mode GUI service`
+  mites: [serviceMite, networkMite],
+  ports: [],
+  subfolders: [`database`]
 };

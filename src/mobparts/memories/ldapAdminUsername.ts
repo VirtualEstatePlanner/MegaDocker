@@ -7,6 +7,7 @@
 import { IMemory } from '../../interfaces/IMemory';
 
 export let ldapAdminUsername: IMemory = {
+  memoryIndex: 12,
   name: `LDAP Administrator account user name`,
   tooltip: `Choose the administrator username for your LDAP server.`,
   value: ``

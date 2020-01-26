@@ -5,6 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 export interface IMemory {
+  memoryIndex: number;
   name: string;
   tooltip: string;
   value: string;

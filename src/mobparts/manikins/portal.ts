@@ -14,14 +14,15 @@ import portalIcon from '../../images/manikin-icons/portalIcon.png';
  * portal Manikin
  */
 export let portalManikin: IManikin = {
-  name: `Portal`,
   description: `Web portal with links to running services`,
+  folder: `Portal`,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
-  folder: `Portal`,
-  subfolders: [`bitnami`, `html`],
+  manikinIcon: portalIcon,
+  manikinIndex: 8,
   memories: [],
-  manikinIcon: portalIcon
+  mites: [serviceMite, networkMite],
+  name: `Portal`,
+  ports: [],
+  subfolders: [`bitnami`, `html`]
 };

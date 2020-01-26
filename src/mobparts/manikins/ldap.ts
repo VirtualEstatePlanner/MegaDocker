@@ -17,14 +17,15 @@ import ldapIcon from '../../images/manikin-icons/ldapIcon.png';
  * ldap Manikin
  */
 export let ldapManikin: IManikin = {
-  name: `LDAP`,
   description: `Lightweight Directory Authentication Protocol authentication service`,
+  folder: `LDAP`,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
-  folder: `LDAP`,
-  subfolders: [`conf`, `pages`, `log`],
+  manikinIcon: ldapIcon,
+  manikinIndex: 4,
   memories: [ldapAdminUsername, ldapAdminPassword, ldapConfigurationPassword],
-  manikinIcon: ldapIcon
+  mites: [serviceMite, networkMite],
+  name: `LDAP`,
+  ports: [],
+  subfolders: [`conf`, `pages`, `log`]
 };

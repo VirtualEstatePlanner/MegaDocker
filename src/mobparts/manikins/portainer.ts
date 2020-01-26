@@ -14,14 +14,15 @@ import portainerIcon from '../../images/manikin-icons/portainerIcon.png';
  * portainer Manikin
  */
 export let portainerManikin: IManikin = {
-  name: `Portainer`,
-  mites: [serviceMite, networkMite],
-  folder: `Portainer`,
-  subfolders: [],
   description: `Portainer docker host web GUI service`,
-  ports: [],
+  folder: `Portainer`,
   isSelected: false,
   isCore: false,
   manikinIcon: portainerIcon,
-  memories: []
+  manikinIndex: 7,
+  memories: [],
+  mites: [serviceMite, networkMite],
+  name: `Portainer`,
+  ports: [],
+  subfolders: []
 };

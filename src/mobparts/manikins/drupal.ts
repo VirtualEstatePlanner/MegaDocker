@@ -14,14 +14,15 @@ import * as drupalIcon from '../../images/manikin-icons/drupalIcon.png';
  * drupal Manikin
  */
 export let drupalManikin: IManikin = {
-  name: `Drupal`,
   description: `Drupal blog service`,
+  folder: `Drupal`,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
-  folder: `Drupal`,
-  subfolders: [`modules`, `profiles`, `themes`, `sites`],
+  manikinIcon: drupalIcon,
+  manikinIndex: 0,
   memories: [],
-  manikinIcon: drupalIcon
+  mites: [serviceMite, networkMite],
+  name: `Drupal`,
+  ports: [],
+  subfolders: [`modules`, `profiles`, `themes`, `sites`]
 };

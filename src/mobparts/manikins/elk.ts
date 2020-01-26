@@ -14,14 +14,15 @@ import elkIcon from '../../images/manikin-icons/elkIcon.png';
  * elk Manikin
  */
 export let elkManikin: IManikin = {
-  name: `ELK`,
   description: `ElasticSearch/Logstash/Kibana Monitoring service`,
+  folder: `ELK`,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
-  folder: `ELK`,
-  subfolders: [`Elasticsearch`, `Logstash`, `Kibana`],
+  manikinIcon: elkIcon,
+  manikinIndex: 1,
   memories: [],
-  manikinIcon: elkIcon
+  mites: [serviceMite, networkMite],
+  name: `ELK`,
+  ports: [],
+  subfolders: [`Elasticsearch`, `Logstash`, `Kibana`]
 };

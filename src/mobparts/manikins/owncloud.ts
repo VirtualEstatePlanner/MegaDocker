@@ -14,14 +14,15 @@ import owncloudIcon from '../../images/manikin-icons/owncloudIcon.png';
  * owncloud Manikin
  */
 export let owncloudManikin: IManikin = {
-  name: `Owncloud`,
   description: `Owncloud file-sharing service`,
+  folder: `Owncloud`,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
-  folder: `Owncloud`,
-  subfolders: [`apps`, `config`, `data`, `postgres`, `redis`, `mariadb`],
+  manikinIcon: owncloudIcon,
+  manikinIndex: 6,
   memories: [],
-  manikinIcon: owncloudIcon
+  mites: [serviceMite, networkMite],
+  name: `Owncloud`,
+  ports: [],
+  subfolders: [`apps`, `config`, `data`, `postgres`, `redis`, `mariadb`]
 };

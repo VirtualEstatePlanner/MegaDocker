@@ -15,14 +15,15 @@ import rocketchatIcon from '../../images/manikin-icons/rocketchatIcon.png';
  * replace MVOs
  */
 export let rocketchatManikin: IManikin = {
-  name: `RocketChat`,
   description: `Team chat and collaboration service`,
+  folder: `RocketChat`,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
-  folder: `RocketChat`,
-  subfolders: [`database`, `dump`, `hubot`, `uploads`],
+  manikinIcon: rocketchatIcon,
+  manikinIndex: 9,
   memories: [],
-  manikinIcon: rocketchatIcon
+  mites: [serviceMite, networkMite],
+  name: `RocketChat`,
+  ports: [],
+  subfolders: [`database`, `dump`, `hubot`, `uploads`]
 };

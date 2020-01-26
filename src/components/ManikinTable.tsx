@@ -22,6 +22,10 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
     ]
     const store: IMegaDockerState = React.useContext(Store)
 
+    const handleCheckboxChange = (firstValue: boolean): boolean => {
+        let outputValue: boolean = !firstValue
+        return outputValue
+    }
     return (
         <Store.Provider value={store}>{props.children}
             <React.Suspense fallback={<div>...loading</div>}>
@@ -52,11 +56,10 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                                         height="20"
                                         width="20" />
                                 </TableCell>
-                                <TableCell key={eachManikin.description}><Switch
-                                    defaultChecked={eachManikin.isCore ? true : false}
-                                    value={eachManikin.isSelected}
+                                <TableCell key={`${eachManikin.name} checkbox`}><Switch
+                                    checked={eachManikin.isSelected}
                                     disabled={eachManikin.isCore ? true : false}
-                                    onChange={event => event.target.value} />
+                                    onChange={(): boolean => handleCheckboxChange(eachManikin.isSelected)} />
                                 </TableCell>
                             </TableRow>))}
                     </TableBody>
@@ -65,3 +68,4 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         </Store.Provider >
     )
 }
+// contentEditable={eachManikin.isCore ? false : true}

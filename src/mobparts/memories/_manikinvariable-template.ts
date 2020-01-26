@@ -7,6 +7,7 @@
 import { IMemory } from '../../interfaces/IMemory';
 
 export let VARIABLENAME: IMemory = {
+  memoryIndex: 99,
   name: ``,
   tooltip: ``,
   value: ``

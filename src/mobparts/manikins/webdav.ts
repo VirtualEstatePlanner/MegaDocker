@@ -14,14 +14,15 @@ import webdavIcon from '../../images/manikin-icons/webdavIcon.png';
  * webdav Manikin
  */
 export let webdavManikin: IManikin = {
-  name: `WebDAV`,
   description: `WebDAV file-sharing service`,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
   folder: `WebDAV`,
-  subfolders: [],
+  manikinIcon: webdavIcon,
+  manikinIndex: 14,
   memories: [],
-  manikinIcon: webdavIcon
+  mites: [serviceMite, networkMite],
+  name: `WebDAV`,
+  ports: [],
+  subfolders: []
 };

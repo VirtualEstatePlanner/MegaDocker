@@ -7,6 +7,7 @@
 import { IMemory } from '../../interfaces/IMemory';
 
 export let cloudflareEmail: IMemory = {
+  memoryIndex: 17,
   name: `CloudFlare Email`,
   tooltip: `The email address of your CloudFlare account`,
   value: ``

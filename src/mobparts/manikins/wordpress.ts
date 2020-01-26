@@ -10,14 +10,15 @@ import { wordpressNetworkMite } from '../mites/network/wordpressNetworkMite';
 import * as wordpressIcon from '../../images/manikin-icons/wordpressIcon.png';
 
 export const wordpressManikin: IManikin = {
-  name: `WordPress`,
-  manikinIcon: wordpressIcon,
   description: `Wordpress Blogging Platform`,
+  folder: `WordPress`,
   isCore: false,
   isSelected: false,
+  manikinIcon: wordpressIcon,
+  manikinIndex: 15,
+  memories: [],
   mites: [wordpressServiceMite, wordpressNetworkMite],
+  name: `WordPress`,
   ports: [],
-  folder: `WordPress`,
-  subfolders: [`mariadb`, `wordpress`],
-  memories: []
+  subfolders: [`mariadb`, `wordpress`]
 };

@@ -7,6 +7,7 @@
 import { IMemory } from '../../interfaces/IMemory';
 
 export let drupalPostgresPassword: IMemory = {
+  memoryIndex: 16,
   name: `Drupal Postgres Password`,
   tooltip: `Choose a password for Drupal to connect to it's PostgreSQL database.`,
   value: ``

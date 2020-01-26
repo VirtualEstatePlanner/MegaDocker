@@ -14,14 +14,15 @@ import nginxIcon from '../../images/manikin-icons/nginxIcon.png';
  * nginx Manikin
  */
 export let nginxManikin: IManikin = {
-  name: `Nginx`,
   description: `Nginx http service`,
+  folder: `Nginx`,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
-  folder: `Nginx`,
-  subfolders: [`conf`, `pages`, `log`],
+  manikinIcon: nginxIcon,
+  manikinIndex: 5,
   memories: [],
-  manikinIcon: nginxIcon
+  mites: [serviceMite, networkMite],
+  name: `Nginx`,
+  ports: [],
+  subfolders: [`conf`, `pages`, `log`]
 };

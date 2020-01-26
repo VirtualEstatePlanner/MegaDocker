@@ -7,6 +7,7 @@
 import { IMemory } from '../../interfaces/IMemory';
 
 export let ghostRootMariaDBPassword: IMemory = {
+  memoryIndex: 14,
   name: `Ghost MariaDB SQL root user password`,
   tooltip: `The password for the Ghost root user`,
   value: ``

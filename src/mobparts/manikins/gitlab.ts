@@ -14,14 +14,15 @@ import gitlabIcon from '../../images/manikin-icons/gitlabIcon.png';
  * git Manikin
  */
 export let gitlabManikin: IManikin = {
-  name: `GitLab`,
   description: `GitLab version control service`,
+  folder: `GitLab`,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
-  folder: `GitLab`,
-  subfolders: [],
+  manikinIcon: gitlabIcon,
+  manikinIndex: 3,
   memories: [],
-  manikinIcon: gitlabIcon
+  mites: [serviceMite, networkMite],
+  name: `GitLab`,
+  ports: [],
+  subfolders: []
 };

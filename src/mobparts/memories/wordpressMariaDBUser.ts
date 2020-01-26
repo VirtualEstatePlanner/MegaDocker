@@ -7,6 +7,7 @@
 import { IMemory } from '../../interfaces/IMemory';
 
 export let wordpressMariaDBUser: IMemory = {
+  memoryIndex: 2,
   name: `WordPress MariaDB User`,
   tooltip: `Choose a username for WordPress to connect to it's MariaDB database.`,
   value: ``

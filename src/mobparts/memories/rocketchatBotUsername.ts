@@ -7,6 +7,7 @@
 import { IMemory } from '../../interfaces/IMemory';
 
 export let rocketchatBotUsername: IMemory = {
+  memoryIndex: 5,
   name: `RocketChat bot user name`,
   tooltip: `Choose the username of the RocketChat bot.`,
   value: ``

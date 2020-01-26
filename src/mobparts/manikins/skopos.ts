@@ -14,14 +14,15 @@ import * as skoposIcon from '../../images/manikin-icons/skoposIcon.png';
  * skopos Manikin
  */
 export let skoposManikin: IManikin = {
-  name: `Skopos`,
-  mites: [serviceMite, networkMite],
-  folder: `Skopos`,
-  subfolders: [],
   description: `Skopos Continuous Integraion/Continuous Deployment service`,
-  ports: [],
-  isSelected: true,
+  folder: `Skopos`,
   isCore: true,
+  isSelected: true,
   manikinIcon: skoposIcon,
-  memories: []
+  manikinIndex: 10,
+  memories: [],
+  mites: [serviceMite, networkMite],
+  name: `Skopos`,
+  subfolders: [],
+  ports: []
 };

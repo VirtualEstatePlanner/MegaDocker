@@ -14,14 +14,15 @@ import visualizerIcon from '../../images/manikin-icons/visualizerIcon.png';
  * visualizer Manikin
  */
 export let visualizerManikin: IManikin = {
-  name: `Visualizer`,
   description: `Docker swarm mode container placement visualization service`,
+  folder: `Visualizer`,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
-  folder: `Visualizer`,
-  subfolders: [],
+  manikinIcon: visualizerIcon,
+  manikinIndex: 13,
   memories: [],
-  manikinIcon: visualizerIcon
+  mites: [serviceMite, networkMite],
+  name: `Visualizer`,
+  ports: [],
+  subfolders: []
 };

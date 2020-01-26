@@ -10,14 +10,15 @@ import { networkMite } from '../mites/network/_networkmitetemplate';
 import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
 
 export const $SOMEAPPLICATIONManikin: IManikin = {
-  name: ``,
   description: ``,
+  folder: ``,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
-  folder: ``,
-  subfolders: [],
+  manikinIcon: defaultIcon,
+  manikinIndex: 99,
   memories: [],
-  manikinIcon: defaultIcon
+  mites: [serviceMite, networkMite],
+  name: ``,
+  ports: [],
+  subfolders: []
 };

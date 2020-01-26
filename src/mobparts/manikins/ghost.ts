@@ -15,14 +15,15 @@ import ghostIcon from '../../images/manikin-icons/ghostIcon.png';
  * replace MVOs
  */
 export let ghostManikin: IManikin = {
-  name: `Ghost`,
   description: `Ghost blog service`,
+  folder: `Ghost`,
   isCore: false,
   isSelected: false,
-  mites: [serviceMite, networkMite],
-  ports: [],
-  folder: `Ghost`,
-  subfolders: [],
+  manikinIcon: ghostIcon,
+  manikinIndex: 2,
   memories: [],
-  manikinIcon: ghostIcon
+  mites: [serviceMite, networkMite],
+  name: `Ghost`,
+  ports: [],
+  subfolders: []
 };

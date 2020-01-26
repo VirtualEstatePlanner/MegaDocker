@@ -20,15 +20,12 @@ import { mobName } from '../memories/mobName';
  * traefik Manikin
  */
 export let traefikManikin: IManikin = {
-  name: `Traefik`,
-  manikinIcon: traefikIcon,
   description: `Traefik reverse proxy service`,
+  folder: `Traefik`,
   isCore: true,
   isSelected: true,
-  mites: [traefikServiceMite, traefikNetworkMite],
-  ports: [],
-  folder: `Traefik`,
-  subfolders: [`certs`, `private`, `pem`],
+  manikinIcon: traefikIcon,
+  manikinIndex: 12,
   memories: [
     mobName,
     letsEncryptEmail,
@@ -36,5 +33,9 @@ export let traefikManikin: IManikin = {
     cloudflareAPIKey,
     primaryDomain,
     secondaryDomain
-  ]
+  ],
+  name: `Traefik`,
+  mites: [traefikServiceMite, traefikNetworkMite],
+  ports: [],
+  subfolders: [`certs`, `private`, `pem`]
 };

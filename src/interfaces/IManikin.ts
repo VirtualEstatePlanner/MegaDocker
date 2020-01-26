@@ -9,14 +9,15 @@ import { IMemory } from './IMemory';
 import { IManikinPort } from './IManikinPort';
 
 export interface IManikin {
-  name: string;
-  manikinIcon: string;
   description: string;
-  isCore: Boolean;
-  isSelected: Boolean;
-  mites: IMite[];
-  ports: IManikinPort[];
   folder: string;
-  subfolders: string[];
+  isCore: boolean;
+  isSelected: boolean;
+  manikinIcon: string;
+  manikinIndex: number;
   memories: IMemory[];
+  mites: IMite[];
+  name: string;
+  ports: IManikinPort[];
+  subfolders: string[];
 }
