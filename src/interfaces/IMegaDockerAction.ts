@@ -1,5 +1,13 @@
 import { IManikin } from './IManikin';
 import { IMemory } from './IMemory';
+import { IMite } from './IMite';
+
+interface MiteAction {
+  type: string;
+  payload: IMite;
+}
+
+export type IMiteAction = MiteAction;
 
 interface ManikinAction {
   type: string;
@@ -39,5 +47,9 @@ interface MemoryArrayAction {
 export type IMemoryArrayAction = MemoryArrayAction;
 */
 
-export type IMegaDockerAction = IManikinAction | IMemoryAction | IStringAction;
+export type IMegaDockerAction =
+  | IManikinAction
+  | IMemoryAction
+  | IMiteAction
+  | IStringAction;
 //  | IManikinArrayAction | IMemoryArrayAction

@@ -69,7 +69,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         };
       }
       break;
-    case `ADD_MEMORY`:
+    case `ADD_MANIKIN_MEMORIES`:
       if (isMemoryAction() === true) {
         return {
           ...state,
@@ -80,7 +80,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         };
       }
       break;
-    case `REMOVE_MEMORY`:
+    case `REMOVE_MANIKIN_MEMORIES`:
       if (isMemoryAction() === true) {
         const index = state.memoryTableContents.indexOf(
           action.payload as IMemory
@@ -91,7 +91,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         };
       }
       break;
-    case `UPDATE_INFOPANE`:
+    case `UPDATE_INFOPANE_CONTENT`:
       if (isStringAction() === true) {
         const infoValue = action.payload as string;
         return {
