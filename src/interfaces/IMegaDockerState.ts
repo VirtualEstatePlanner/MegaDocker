@@ -18,25 +18,17 @@ const coreManikins: IManikin[] = allManikins.filter(
   (eachManikin) => eachManikin.isCore === true
 );
 
-console.log(coreManikins);
-
 const coreMemsArray: IMemory[][] = coreManikins.map(
   (eachManikin) => eachManikin.memories
 );
-
-console.log(coreMemsArray);
 
 const coreMems: IMemory[] = coreMemsArray.flatMap((eachArray) =>
   eachArray.concat().filter((eachMemory) => eachMemory)
 );
 
-console.log(coreMems);
-
 const mobMites = allManikins.flatMap((eachManikin) =>
   eachManikin.mites.flatMap((eachMite) => eachMite)
 );
-
-console.log(mobMites);
 
 export const initialMegaDockerState: IMegaDockerState = {
   manikinTableContents: [...allManikins],
