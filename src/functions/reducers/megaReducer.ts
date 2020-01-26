@@ -1,9 +1,9 @@
 import { IManikin } from '../../interfaces/IManikin';
+import { IMite } from '../../interfaces/IMite';
 import {
   IManikinAction,
-  //  IManikinArrayAction,
   IMemoryAction,
-  //  IMemoryArrayAction,
+  IMiteAction,
   IStringAction,
   IMegaDockerAction
 } from '../../interfaces/IMegaDockerAction';
@@ -13,29 +13,24 @@ import { IMemory } from '../../interfaces/IMemory';
 const isManikinAction: Function = (
   checkMe: IMegaDockerAction
 ): checkMe is IManikinAction => {
-  console.log(checkMe);
   return true;
 };
-
-/*const isManikinArrayAction: Function = (checkMe: IMegaDockerAction): checkMe is IManikinArrayAction => {
-    return true
-}*/
 
 const isMemoryAction: Function = (
   checkMe: IMegaDockerAction
 ): checkMe is IMemoryAction => {
-  console.log(checkMe);
   return true;
 };
-
-/*const isMemoryArrayAction: Function = (checkMe: IMegaDockerAction): checkMe is IMemoryArrayAction => {
-    return true
-}*/
 
 const isStringAction: Function = (
   checkMe: IMegaDockerAction
 ): checkMe is IStringAction => {
-  console.log(checkMe);
+  return true;
+};
+
+const isMiteAction: Function = (
+  checkMe: IMegaDockerAction
+): checkMe is IMiteAction => {
   return true;
 };
 
@@ -91,6 +86,23 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         };
       }
       break;
+    case `ADD_MANIKIN_MITES`:
+      if (isMiteAction() === true) {
+        return {
+          ...state,
+          allMobMites: [...state.allMobMites, action.payload as IMite]
+        };
+      }
+      break;
+    case `REMOVE_MANIKIN_MITES`:
+      if (isMiteAction() === true) {
+        const index = state.allMobMites.indexOf(action.payload as IMite);
+        return {
+          ...state,
+          allMobMites: [...state.allMobMites.splice(index, 0)]
+        };
+      }
+      break;
     case `UPDATE_INFOPANE_CONTENT`:
       if (isStringAction() === true) {
         const infoValue = action.payload as string;
@@ -101,7 +113,9 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       }
       break;
     default:
-      throw new Error(`passed a bad Manikin action to reducer function`);
+      throw new Error(
+        `you probably passed a bad action.type to reducer function`
+      );
   }
   return state;
 };
