@@ -39,7 +39,10 @@ const isStringAction: Function = (
   return true;
 };
 
-export const megaReducer = (
+/**
+ * Reduces previous application state into current application state
+ */
+export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
   state: IMegaDockerState,
   action: IMegaDockerAction
 ): IMegaDockerState => {

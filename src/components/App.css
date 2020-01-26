@@ -55,8 +55,18 @@
   overflow: auto;
 }
 
+.ManikinReadyIcon {
+  justify-self: end;
+  height: 20px;
+  width: 20px;
+}
+
 .ManikinTable {
   overflow: scroll;
+}
+
+.MemoryHeaderRow {
+  justify-content: space-between;
 }
 
 .MemoryPane {
@@ -79,4 +89,8 @@
 .MemoryTableBody {
   padding: 0 !important;
   overflow: scroll;
+}
+
+.ValueColumnHeaderCell {
+  place-content: center;
 }

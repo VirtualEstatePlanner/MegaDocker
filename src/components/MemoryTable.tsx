@@ -17,7 +17,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
         <React.Suspense fallback={<div>...loading</div>}>
             <Table className="MemoryTable" size="small" stickyHeader>
                 <TableHead className="MemoryTableHeader" >
-                    <TableRow>
+                    <TableRow className="MemoryHeaderRow">
                         <TableCell>Description</TableCell>
                         <TableCell>Value</TableCell>
                         <TableCell>Ready</TableCell>
@@ -37,7 +37,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                                     />
                                 </Tooltip>
                             </TableCell>
-                            <TableCell ><img alt='ready indicator' height={20} width={20} src={eachMemory.value !== `` ? checkmarkIcon : xmarkIcon} /></TableCell>
+                            <TableCell className="ManikinReadyIcon"><img alt='ready indicator' height={20} width={20} src={eachMemory.value !== `` ? checkmarkIcon : xmarkIcon} /></TableCell>
                         </TableRow>))}
                 </TableBody>
             </Table>
