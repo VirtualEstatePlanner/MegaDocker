@@ -6,33 +6,36 @@
 
 //tslint:disable
 import { run } from '../core/run';
+export default run;
+
+/**
 import { IManikin } from '../../interfaces/IManikin';
 import { makeMobFolder } from '../core/makeMobFolder';
 import { makeFoldersForManikin } from '../core/makeFoldersForManikin';
 import { homedir } from 'os';
 import { userMob } from '../../globals/userMob';
 
-/**
  * saves a YML file to disk and runs the Mob that file describes
- */
-
-export function startMob(): void {
-  // TODO
-  const chosenManikins: IManikin[] = [];
-  const stackFileName: string = `${userMob.mobName}.yml`;
-
-  /*userMob.storagePath = `${userMegaDockerFolder}.${userMob.mobName}`;
-    userMob.filePath: Path = userMob.storagePath.path;
-    makeMobFolder(mobName, homedir.toString());
-    makeYMLFile(stackFileName);
-    for (chosenManikins.forEach) {
-        makeFoldersForManikin(manikin, manikin.subfolders);
+ 
+ export function startMob(): void {
+   // TODO
+   const chosenManikins: IManikin[] = [];
+   const stackFileName: string = `${userMob.mobName}.yml`;
+   
+   userMob.storagePath = `${userMegaDockerFolder}.${userMob.mobName}`;
+   userMob.filePath: Path = userMob.storagePath.path;
+   makeMobFolder(mobName, homedir.toString());
+   makeYMLFile(stackFileName);
+   for (chosenManikins.forEach) {
+     makeFoldersForManikin(manikin, manikin.subfolders);
     }
     run(
-        '/usr/local/bin/docker',
-        ['stack',
-        'deploy',
-        '-c',
-        `${userMob.filePath}/${userMob.mobName}.yml`,
-        `${userMob.mobName}`]);*/
-}
+      '/usr/local/bin/docker',
+      ['stack',
+      'deploy',
+      '-c',
+      `${userMob.filePath}/${userMob.mobName}.yml`,
+      `${userMob.mobName}`]);
+    }
+    
+    */
