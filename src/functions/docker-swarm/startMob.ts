@@ -6,7 +6,7 @@
 
 //tslint:disable
 import { run } from '../core/run';
-import { IManikin } from '../../classes/IManikin';
+import { IManikin } from '../../interfaces/IManikin';
 import { makeMobFolder } from '../core/makeMobFolder';
 import { makeFoldersForManikin } from '../core/makeFoldersForManikin';
 import { homedir } from 'os';

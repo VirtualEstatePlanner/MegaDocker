@@ -2,8 +2,8 @@ import { checkForFile } from './checkForFile';
 import { makeFolder } from './makeFolder';
 import { deleteFolder } from './deleteFolder';
 import { makeFoldersForManikin } from './makeFoldersForManikin';
-import { IManikin } from '../../classes/IManikin';
-import { IMob } from '../../classes/IMob';
+import { IManikin } from '../../interfaces/IManikin';
+import { IMob } from '../../interfaces/IMob';
 import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
 import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
 

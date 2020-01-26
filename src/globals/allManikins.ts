@@ -1,4 +1,4 @@
-import { IManikin } from '../classes/IManikin';
+import { IManikin } from '../interfaces/IManikin';
 // import manikins
 import { drupalManikin } from '../mobparts/manikins/drupal';
 import { ghostManikin } from '../mobparts/manikins/ghost';

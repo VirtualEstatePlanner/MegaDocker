@@ -2,19 +2,19 @@ import React from "react";
 import "./App.css";
 import { ManikinPane } from './ContainerManikinPane'
 import { MainArea } from "./ContainerMainArea";
-import { Store } from "./Store";
-// import { IMegaDockerState } from "../classes/IMegaDockerState";
+import { megaReducer } from "../functions/reducers/megaReducer";
+import { initialMegaDockerState } from "../interfaces/IMegaDockerState";
 
 export const App: React.FC = (props: any): React.ReactElement => {
-  const store = React.useContext(Store)
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [state, dispatch] = React.useReducer(megaReducer, initialMegaDockerState)
 
-  console.log(store)
+  console.log(state)
+
   return (
-    <Store.Provider value={store}>{props.children}
-      <div className="App">
-        <ManikinPane />
-        <MainArea />
-      </div>
-    </Store.Provider>
+    <div className="App">
+      <ManikinPane />
+      <MainArea />
+    </div>
   );
 };

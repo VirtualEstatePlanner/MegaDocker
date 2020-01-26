@@ -1,4 +1,4 @@
-import { IManikin } from '../../classes/IManikin';
+import { IManikin } from '../../interfaces/IManikin';
 import {
   IManikinAction,
   //  IManikinArrayAction,
@@ -6,9 +6,9 @@ import {
   //  IMemoryArrayAction,
   IStringAction,
   IMegaDockerAction
-} from '../../classes/IMegaDockerAction';
-import { IMegaDockerState } from '../../classes/IMegaDockerState';
-import { IMemory } from '../../classes/IMemory';
+} from '../../interfaces/IMegaDockerAction';
+import { IMegaDockerState } from '../../interfaces/IMegaDockerState';
+import { IMemory } from '../../interfaces/IMemory';
 
 const isManikinAction: Function = (
   checkMe: IMegaDockerAction

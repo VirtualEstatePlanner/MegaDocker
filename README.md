@@ -158,7 +158,7 @@ You can also make your own **Mites** and mold them into all manner of **Manikins
 
 ## Mites
 
-**Mites** contain snippets of plain text (in the form of [TypeScript](https://www.typescriptlang.org) objects that conform to the `IMite` [interface](https://github.com/VirtualEstatePlanner/MD/blob/master/src/classes/IMite.ts) or the `ICustomMite` [interface](https://github.com/VirtualEstatePlanner/MD/blob/master/src/classes/ICustomMite.ts)) that contain part of a **Manikin**'s file. This is almost always a snippet of [YAML](https://yaml.org) used to create a **Manikin** in a `pod.yml` or `docker-compose.yml` file, although a **Mite** may contain any kind of snippet necessary to make a required file (such as a `.conf` file) for any application you can think of.
+**Mites** contain snippets of plain text (in the form of [TypeScript](https://www.typescriptlang.org) objects that conform to the `IMite` [interface](https://github.com/VirtualEstatePlanner/MD/blob/master/src/interfaces/IMite.ts) or the `ICustomMite` [interface](https://github.com/VirtualEstatePlanner/MD/blob/master/src/interfaces/ICustomMite.ts)) that contain part of a **Manikin**'s file. This is almost always a snippet of [YAML](https://yaml.org) used to create a **Manikin** in a `pod.yml` or `docker-compose.yml` file, although a **Mite** may contain any kind of snippet necessary to make a required file (such as a `.conf` file) for any application you can think of.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 

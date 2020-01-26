@@ -4,8 +4,8 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from '../../classes/IManikin';
-import { IMob } from '../../classes/IMob';
+import { IManikin } from '../../interfaces/IManikin';
+import { IMob } from '../../interfaces/IMob';
 import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
 import { makeFolder } from './makeFolder';
 import { checkForFile } from './checkForFile';

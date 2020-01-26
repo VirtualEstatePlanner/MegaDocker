@@ -6,7 +6,7 @@
 
 import { makeFolder } from './makeFolder';
 import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
-import { IMob } from '../../classes/IMob';
+import { IMob } from '../../interfaces/IMob';
 
 /**
  * @mob - the of the Mob we are creating a storage location for (folder will have this name)

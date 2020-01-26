@@ -1,4 +1,4 @@
-import { IMemory } from '../classes/IMemory';
+import { IMemory } from '../interfaces/IMemory';
 import { mobName } from '../mobparts/memories/mobName';
 import { cloudflareAPIKey } from '../mobparts/memories/cloudflareAPIKey';
 import { cloudflareEmail } from '../mobparts/memories/cloudflareEmail';

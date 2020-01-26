@@ -1,4 +1,4 @@
-import { IMite } from '../classes/IMite';
+import { IMite } from '../interfaces/IMite';
 
 /**
  * an array of all the Mites in the current Mob

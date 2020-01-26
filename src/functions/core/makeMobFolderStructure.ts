@@ -8,7 +8,7 @@ import { coreManikins } from '../../globals/coreManikins';
 import { userMob } from '../../globals/userMob';
 import { makeFoldersForManikin } from './makeFoldersForManikin';
 import { makeMobFolder } from './makeMobFolder';
-import { IMob } from '../../classes/IMob';
+import { IMob } from '../../interfaces/IMob';
 
 /**
  * creates all folders for the Mob and it's Manikins

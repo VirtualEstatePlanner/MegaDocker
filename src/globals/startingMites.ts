@@ -1,5 +1,5 @@
 import { allManikins } from './allManikins';
-import { IMite } from '../classes/IMite';
+import { IMite } from '../interfaces/IMite';
 
 /**
  * an array containing all MEGADocker's starting Mites

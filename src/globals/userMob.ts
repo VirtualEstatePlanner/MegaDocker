@@ -1,6 +1,6 @@
 import { coreManikins } from './coreManikins';
 import { mobName } from '../mobparts/memories/mobName';
-import { IMob } from '../classes/IMob';
+import { IMob } from '../interfaces/IMob';
 import { userMemories } from './userMemories';
 
 /**

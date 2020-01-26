@@ -1,7 +1,7 @@
 import { checkForFile } from './checkForFile';
 import { makeFolder } from './makeFolder';
 import { deleteFolder } from './deleteFolder';
-import { IMob } from '../../classes/IMob';
+import { IMob } from '../../interfaces/IMob';
 import { allManikins } from '../../globals/allManikins';
 import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
 

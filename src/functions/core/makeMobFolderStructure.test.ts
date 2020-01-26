@@ -1,7 +1,7 @@
 import { makeMobFolderStructure } from './makeMobFolderStructure';
 import { checkForFile } from './checkForFile';
 import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
-import { IMob } from '../../classes/IMob';
+import { IMob } from '../../interfaces/IMob';
 import { allManikins } from '../../globals/allManikins';
 import { deleteFolder } from './deleteFolder';
 

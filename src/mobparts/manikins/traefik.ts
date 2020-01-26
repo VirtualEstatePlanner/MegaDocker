@@ -4,7 +4,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from '../../classes/IManikin';
+import { IManikin } from '../../interfaces/IManikin';
 
 import { cloudflareAPIKey } from '../memories/cloudflareAPIKey';
 import { cloudflareEmail } from '../memories/cloudflareEmail';

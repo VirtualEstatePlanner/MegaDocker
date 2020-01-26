@@ -6,7 +6,7 @@ import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 // import { megaReducer } from "../functions/reducers/megaReducer";
-import { IMegaDockerState } from "../classes/IMegaDockerState";
+import { IMegaDockerState } from "../interfaces/IMegaDockerState";
 import { Store } from "../components/Store";
 import { Tooltip } from "@material-ui/core";
 
@@ -21,6 +21,7 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         { name: "isSelected", label: "Choose" }
     ]
     const store: IMegaDockerState = React.useContext(Store)
+
     return (
         <Store.Provider value={store}>{props.children}
             <React.Suspense fallback={<div>...loading</div>}>
@@ -54,7 +55,8 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                                 <TableCell key={eachManikin.description}><Switch
                                     defaultChecked={eachManikin.isCore ? true : false}
                                     value={eachManikin.isSelected}
-                                    disabled={eachManikin.isCore ? true : false} />
+                                    disabled={eachManikin.isCore ? true : false}
+                                    onChange={event => event.target.value} />
                                 </TableCell>
                             </TableRow>))}
                     </TableBody>
