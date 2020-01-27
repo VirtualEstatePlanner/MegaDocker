@@ -6,8 +6,8 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
-import { serviceMite } from '../mites/service/_servicemitetemplate';
-import { networkMite } from '../mites/network/_networkmitetemplate';
+import { swarmpitServiceMite } from '../mites/service/swarmpitServiceMite';
+import { swarmpitNetworkMite } from '../mites/network/swarmpitNetworkMite';
 import swarmpitIcon from '../../images/manikin-icons/swarmpitIcon.png';
 
 /**
@@ -22,7 +22,7 @@ export let swarmpitManikin: IManikin = {
   manikinIndex: 11,
   memories: [],
   name: `Swarmpit`,
-  mites: [serviceMite, networkMite],
+  mites: [swarmpitServiceMite, swarmpitNetworkMite],
   ports: [],
   subfolders: [`database`]
 };

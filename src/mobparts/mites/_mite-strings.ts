@@ -6,20 +6,6 @@
 
 //  tslint:disable max-line-length
 
-export const mobFileHeaderString: string = `
-# MegaDocker YML File
-version: '3.6'
-
-# Created by MegaDocker
-# Data is stored at: ${mobFolderPath}
-# Mob is named: ${mobName}
-
-#Begin Services Section
-services:
-`;
-
-import { cloudflareAPIKey } from '../memories/cloudflareAPIKey';
-import { cloudflareEmail } from '../memories/cloudflareEmail';
 import { drupalPostgresPassword } from '../memories/drupalPostgresPassword';
 import { drupalPostgresUser } from '../memories/drupalPostgresUser';
 import { ghostRootMariaDBPassword } from '../memories/ghostRootMariaDBPassword';
@@ -33,6 +19,18 @@ import { secondaryDomain } from '../memories/secondaryDomain';
 import { wordpressMariaDBPassword } from '../memories/wordpressMariaDBPassword';
 import { wordpressMariaDBRootPassword } from '../memories/wordpressMariaDBRootPassword';
 import { wordpressMariaDBUser } from '../memories/wordpressMariaDBUser';
+
+export const mobFileHeaderString: string = `
+# MegaDocker YML File
+version: '3.6'
+
+# Created by MegaDocker
+# Data is stored at: ${mobFolderPath}
+# Mob is named: ${mobName}
+
+#Begin Services Section
+services:
+`;
 
 export const wordPressServiceString: string = `
 
@@ -479,114 +477,6 @@ export const nginxServiceString: string = `
 
 `;
 
-export const skoposServiceString: string = `
-
-#Begin Skopos Service Section
-
- skopos:
-  image: opsani/skopos:edge
-  networks:
-   - traefik
-  environment:
-   - skstkn=dflt:339650468.1517278337
-  volumes:
-   - /var/run/docker.sock:/var/run/docker.sock:rw
-  deploy:
-   replicas: 1
-   restart_policy:
-    condition: on-failure
-   labels:
-    - "traefik.enable=true"
-    - "traefik.port=8100"
-    - "traefik.backend=skopos"
-    - "traefik.frontend.rule=Host:skopos.${primaryDomain.value},skopos.${secondaryDomain.value}"
-    - "com.MegaDocker.description=Skopos - an application discovery and CI/CD for Docker Swarm Tool"
-
-#End Skopos Service Section
-
-`;
-
-export const swarmpitServiceString: string = `
-
-#Begin Swarmpit Service Section
-
- swarmpit-app:
-  image: swarmpit/swarmpit
-  depends_on:
-   - swarmpit-db
-  volumes:
-   - /var/run/docker.sock:/var/run/docker.sock
-  networks:
-   - traefik
-   - swarmpit
-  environment:
-   - SWARMPIT_DB=http://${mobName}_swarmpit-db:5984
-  deploy:
-   resources:
-    limits:
-     cpus: '0.50'
-     memory: 1024M
-    reservations:
-     cpus: '0.25'
-     memory: 512M
-   placement:
-    constraints:
-     - node.role == manager
-   labels:
-    - "traefik.enable=true"
-    - "traefik.port=8080"
-    - "traefik.backend=swarmpit"
-    - "traefik.docker.network=traefik"
-    - "traefik.frontend.rule=Host:swarmpit.${primaryDomain.value},swarmpit.${secondaryDomain.value}"
-    - "com.MegaDocker.description=Swarmpit - a web GUI for Docker Swarm."
-   restart_policy:
-    condition: on-failure
-
- swarmpit-db:
-  image: klaemo/couchdb
-  volumes:
-   - ${mobFolderPath}/Swarmpit/database:/opt/couchdb/data
-  networks:
-   - swarmpit
-  deploy:
-   labels:
-    - "com.MegaDocker.description=CouchDB Database - stores Swarmpit data"
-   resources:
-    limits:
-     cpus: '0.50'
-     memory: 1024M
-    reservations:
-     cpus: '0.25'
-     memory: 512M
-   restart_policy:
-    condition: on-failure
-
- swarmpit-eye:
-  image: swarmpit/agent
-  networks:
-   - swarmpit
-  volumes:
-   - /var/run/docker.sock:/var/run/docker.sock:ro
-  deploy:
-   labels:
-    - "com.MegaDocker.description=Event Collector - Swarmpit event monitoring daemon"
-   mode: global
-   resources:
-    limits:
-     cpus: '0.10'
-     memory: 64M
-    reservations:
-     cpus: '0.05'
-     memory: 32M
-   restart_policy:
-    condition: on-failure
-
-#End Swarmpit Service Section
-
-`;
-
-export const traefikServiceString: string = ``;
-
 export const visualizerServiceString: string = `
 
 #Begin Visualizer Service Section
@@ -680,19 +570,6 @@ export const mobNetworksSectionString: string = `
 networks:
 
 `;
-
-export const swarmpitNetworkString: string = `
-
-#Begin Swarmpit Network Section
-
- swarmpit:
-  external: true
-
-#End Swarmpit Network Section
-
-`;
-
-export const traefikNetworkString: string = ``;
 
 export const myELKNetworkString: string = `
 

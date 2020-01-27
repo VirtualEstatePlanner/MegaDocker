@@ -3,31 +3,40 @@ import { megaReducer } from '../functions/reducers/megaReducer'
 import { IMegaDockerState } from '../interfaces/IMegaDockerState';
 import { allManikins } from '../globals/allManikins';
 import { IManikin } from '../interfaces/IManikin';
-import { IMemory } from '../interfaces/IMemory';
+import { IMite } from '../interfaces/IMite';
 
-const coreManikins: IManikin[] = allManikins.filter(
-    (eachManikin) => eachManikin.isCore === true
-);
+const tableManikins: IManikin[] = allManikins
 
-const coreMemsArray: IMemory[][] = coreManikins.map(
-    (eachManikin) => eachManikin.memories
-);
+export const updateSelectedManikins = (manikinArray: IManikin[]) => manikinArray.filter((eachManikin) => eachManikin.isSelected === true)
 
-const coreMems: IMemory[] = coreMemsArray.flatMap((eachArray) =>
-    eachArray.concat().filter((eachMemory) => eachMemory)
-);
+const selectedManikins: IManikin[] = updateSelectedManikins(tableManikins)
 
-const mobMites = allManikins.flatMap((eachManikin) =>
-    eachManikin.mites.flatMap((eachMite) => eachMite)
-);
+export const updateMemories = (manikinArray: IManikin[]) =>
+    (manikinArray.filter((eachManikin: IManikin) =>
+        eachManikin.memories)).flatMap((eachManikin) =>
+            eachManikin.memories)
+
+export const updateMobMites = (manikins: IManikin[]): IMite[] => manikins.flatMap((eachManikin) =>
+    eachManikin.mites.flatMap((eachMite) => eachMite));
+console.log(updateMobMites(selectedManikins))
+
+export const updateServiceMites = (miteArray: IMite[]) => miteArray.filter((eachMite) => eachMite.type === `Service`)
+console.log(updateServiceMites(updateMobMites(selectedManikins)))
+
+export const updateNetworkMites = (miteArray: IMite[]) => miteArray.filter((eachMite) => eachMite.type === `Network`)
+console.log(updateNetworkMites(updateMobMites(selectedManikins)))
+
+export const updateCustomMites = (miteArray: IMite[]) => miteArray.filter((eachMite) => eachMite.type === `Custom`)
+console.log(updateCustomMites(updateMobMites(selectedManikins)))
 
 const initialMegaDockerState: IMegaDockerState = {
-    manikinTableContents: allManikins,
-    memoryTableContents: coreMems,
-    allMobMites: mobMites,
-    mobServiceMites: mobMites.filter((eachMite) => eachMite.type === `Service`),
-    mobNetworkMites: mobMites.filter((eachMite) => eachMite.type === `Network`),
-    mobCustomMites: mobMites.filter((eachMite) => eachMite.type === `Custom`),
+    manikinTableContents: tableManikins,
+    selectedManikins: updateSelectedManikins(tableManikins),
+    memoryTableContents: updateMemories(updateSelectedManikins(tableManikins)),
+    allMobMites: updateMobMites(selectedManikins),
+    mobServiceMites: updateServiceMites(updateMobMites(selectedManikins)),
+    mobNetworkMites: updateNetworkMites(updateMobMites(selectedManikins)),
+    mobCustomMites: updateCustomMites(updateMobMites(selectedManikins)),
     infoContent: `Learn more about something by clicking it and reading the information here.`,
     ymlOutput: ``
 };
@@ -39,6 +48,7 @@ export const StoreProvider = (props: any): React.ReactElement => {
     // TODO: remove once application Context works
     const [state, dispatch] = React.useReducer(megaReducer, initialMegaDockerState)
     console.log(state)
+    console.log(selectedManikins)
     // TODO: keep below this comment
 
     return (<Store.Provider value={{ ...state, ...dispatch }}>{props.children}</Store.Provider >)

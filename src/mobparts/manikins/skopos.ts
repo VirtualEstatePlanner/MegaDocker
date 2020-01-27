@@ -6,8 +6,7 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
-import { serviceMite } from '../mites/service/_servicemitetemplate';
-import { networkMite } from '../mites/network/_networkmitetemplate';
+import { skoposServiceMite } from '../mites/service/skoposServiceMite';
 import * as skoposIcon from '../../images/manikin-icons/skoposIcon.png';
 
 /**
@@ -21,7 +20,7 @@ export let skoposManikin: IManikin = {
   manikinIcon: skoposIcon,
   manikinIndex: 10,
   memories: [],
-  mites: [serviceMite, networkMite],
+  mites: [skoposServiceMite],
   name: `Skopos`,
   subfolders: [],
   ports: []
