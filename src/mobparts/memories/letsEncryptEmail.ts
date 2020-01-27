@@ -10,5 +10,6 @@ export let letsEncryptEmail: IMemory = {
   memoryIndex: 9,
   name: `Let'sEncrypt Email`,
   tooltip: `The email address used to register your domains`,
-  value: ``
+  value: ``,
+  isReady: false
 };

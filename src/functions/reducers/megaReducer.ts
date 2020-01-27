@@ -1,121 +1,32 @@
-import { IManikin } from '../../interfaces/IManikin';
-import { IMite } from '../../interfaces/IMite';
-import {
-  IManikinAction,
-  IMemoryAction,
-  IMiteAction,
-  IStringAction,
-  IMegaDockerAction
-} from '../../interfaces/IMegaDockerAction';
+//import { IManikin } from '../../interfaces/IManikin';
+//import { IMemory } from '../../interfaces/IMemory';
+//import { IMite } from '../../interfaces/IMite';
+import { IMegaDockerAction } from '../../interfaces/IMegaDockerAction';
 import { IMegaDockerState } from '../../interfaces/IMegaDockerState';
-import { IMemory } from '../../interfaces/IMemory';
-
-const isManikinAction: Function = (
-  checkMe: IMegaDockerAction
-): checkMe is IManikinAction => {
-  return true;
-};
-
-const isMemoryAction: Function = (
-  checkMe: IMegaDockerAction
-): checkMe is IMemoryAction => {
-  return true;
-};
-
-const isStringAction: Function = (
-  checkMe: IMegaDockerAction
-): checkMe is IStringAction => {
-  return true;
-};
-
-const isMiteAction: Function = (
-  checkMe: IMegaDockerAction
-): checkMe is IMiteAction => {
-  return true;
-};
 
 /**
- * Reduces previous application state into current application state
+ * Updates application state with useReducer
  */
 export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
-  state: IMegaDockerState,
+  prevState: IMegaDockerState,
   action: IMegaDockerAction
 ): IMegaDockerState => {
+  let newState: IMegaDockerState = prevState;
   switch (action.type) {
-    case `ADD_MANIKIN`:
-      if (isManikinAction() === true) {
-        return {
-          ...state,
-          manikinTableContents: [
-            ...state.manikinTableContents,
-            action.payload as IManikin
-          ]
-        };
-      }
+    case `TOGGLE_MANIKIN`:
+      newState = {
+        ...prevState,
+        manikinTableContents: [...action.payload.manikinTableContents]
+      };
       break;
-    case `REMOVE_MANIKIN`:
-      if (isManikinAction() === true) {
-        const index = state.manikinTableContents.indexOf(
-          action.payload as IManikin
-        );
-        return {
-          ...state,
-          manikinTableContents: [...state.manikinTableContents.splice(index, 0)]
-        };
-      }
-      break;
-    case `ADD_MANIKIN_MEMORIES`:
-      if (isMemoryAction() === true) {
-        return {
-          ...state,
-          memoryTableContents: [
-            ...state.memoryTableContents,
-            action.payload as IMemory
-          ]
-        };
-      }
-      break;
-    case `REMOVE_MANIKIN_MEMORIES`:
-      if (isMemoryAction() === true) {
-        const index = state.memoryTableContents.indexOf(
-          action.payload as IMemory
-        );
-        return {
-          ...state,
-          memoryTableContents: [...state.memoryTableContents.splice(index, 0)]
-        };
-      }
-      break;
-    case `ADD_MANIKIN_MITES`:
-      if (isMiteAction() === true) {
-        return {
-          ...state,
-          allMobMites: [...state.allMobMites, action.payload as IMite]
-        };
-      }
-      break;
-    case `REMOVE_MANIKIN_MITES`:
-      if (isMiteAction() === true) {
-        const index = state.allMobMites.indexOf(action.payload as IMite);
-        return {
-          ...state,
-          allMobMites: [...state.allMobMites.splice(index, 0)]
-        };
-      }
-      break;
-    case `UPDATE_INFOPANE_CONTENT`:
-      if (isStringAction() === true) {
-        const infoValue = action.payload as string;
-        return {
-          ...state,
-          infoContent: infoValue
-        };
-      }
+    case `UPDATE_MEMORY_VALUE`:
+      newState = {
+        ...prevState,
+        memoryTableContents: [...action.payload.memoryTableContents]
+      };
       break;
     default:
-      throw new Error(
-        `you probably passed a bad action.type to reducer function`
-      );
+      throw new Error(`something went wrong in the megaReducer function`);
   }
-  return state;
+  return newState;
 };

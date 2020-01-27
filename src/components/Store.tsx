@@ -27,8 +27,8 @@ export const updateCustomMites = (miteArray: IMite[]) => miteArray.filter((eachM
 
 const initialMegaDockerState: IMegaDockerState = {
     manikinTableContents: tableManikins,
-    selectedManikins: updateSelectedManikins(tableManikins),
-    memoryTableContents: updateMemories(updateSelectedManikins(tableManikins)),
+    selectedManikins: selectedManikins,
+    memoryTableContents: updateMemories(selectedManikins),
     allMobMites: updateMobMites(selectedManikins),
     mobServiceMites: updateServiceMites(updateMobMites(selectedManikins)),
     mobNetworkMites: updateNetworkMites(updateMobMites(selectedManikins)),
@@ -46,5 +46,5 @@ export const StoreProvider = (props: any): React.ReactElement => {
     console.log(state)
     // TODO: keep below this comment
 
-    return (<Store.Provider value={{ ...state, ...dispatch }}>{props.children}</Store.Provider >)
+    return (<React.Suspense fallback="loading"><Store.Provider value={{ ...initialMegaDockerState, ...dispatch }}>{props.children}</Store.Provider ></React.Suspense>)
 }

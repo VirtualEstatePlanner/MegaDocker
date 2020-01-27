@@ -10,5 +10,6 @@ export let mobFolderPath: IMemory = {
   memoryIndex: 10,
   name: `Mob Folder Location`,
   tooltip: `The file path to your Mob's folder.`,
-  value: ``
+  value: ``,
+  isReady: false
 };

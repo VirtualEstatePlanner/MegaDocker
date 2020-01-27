@@ -37,7 +37,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                                     />
                                 </Tooltip>
                             </TableCell>
-                            <TableCell className="ManikinReadyIcon"><img alt='ready indicator' height={20} width={20} src={eachMemory.value !== `` ? checkmarkIcon : xmarkIcon} /></TableCell>
+                            <TableCell className="ManikinReadyIcon"><img alt='ready indicator' height={20} width={20} src={eachMemory.isReady ? checkmarkIcon : xmarkIcon} /></TableCell>
                         </TableRow>))}
                 </TableBody>
             </Table>

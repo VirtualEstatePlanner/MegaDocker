@@ -9,4 +9,5 @@ export interface IMemory {
   name: string;
   tooltip: string;
   value: string;
+  isReady: boolean;
 }

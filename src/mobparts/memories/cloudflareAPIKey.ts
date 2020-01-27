@@ -10,5 +10,6 @@ export let cloudflareAPIKey: IMemory = {
   memoryIndex: 0,
   name: `CloudFlare API Key`,
   tooltip: `A CloudFlare API Key from your account that has full 'domain' privileges.`,
-  value: ``
+  value: ``,
+  isReady: false
 };

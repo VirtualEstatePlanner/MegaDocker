@@ -11,5 +11,6 @@ export let rocketchatBotPassword: IMemory = {
   memoryIndex: 6,
   name: `RocketChat bot user name`,
   tooltip: `Choose the password of the RocketChat bot user (${rocketchatBotUsername.value}).`,
-  value: ``
+  value: ``,
+  isReady: false
 };

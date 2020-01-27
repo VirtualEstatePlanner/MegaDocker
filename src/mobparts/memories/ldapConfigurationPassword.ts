@@ -10,5 +10,6 @@ export let ldapConfigurationPassword: IMemory = {
   memoryIndex: 11,
   name: `LDAP Configuration Password`,
   tooltip: `Choose a configuration password for the LDAP server.`,
-  value: ``
+  value: ``,
+  isReady: false
 };

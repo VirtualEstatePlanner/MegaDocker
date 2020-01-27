@@ -10,5 +10,6 @@ export let drupalPostgresUser: IMemory = {
   memoryIndex: 15,
   name: `Drupal Postgres User`,
   tooltip: `Choose a username for Drupal to connect to it's PostgreSQL database.`,
-  value: ``
+  value: ``,
+  isReady: false
 };

@@ -10,5 +10,6 @@ export let VARIABLENAME: IMemory = {
   memoryIndex: 99,
   name: ``,
   tooltip: ``,
-  value: ``
+  value: ``,
+  isReady: false
 };

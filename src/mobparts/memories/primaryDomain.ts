@@ -10,5 +10,6 @@ export let primaryDomain: IMemory = {
   memoryIndex: 7,
   name: `Primary Domain`,
   tooltip: `Your main domain name, such as 'example.com' or 'myawesomemob.org'.  Free domains are available at '' and can have their DNS handled for free at 'https://www.cloudflare.com'`,
-  value: ``
+  value: ``,
+  isReady: false
 };

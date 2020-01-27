@@ -10,5 +10,6 @@ export let secondaryDomain: IMemory = {
   memoryIndex: 1,
   name: `Secondary Domain`,
   tooltip: `Your backup domain name, such as 'example.com' or 'myawesomemob.org'.  It must not be the same as your main domain name.`,
-  value: ``
+  value: ``,
+  isReady: false
 };

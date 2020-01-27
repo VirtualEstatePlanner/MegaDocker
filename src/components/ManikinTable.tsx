@@ -1,71 +1,80 @@
 import React from "react";
-import Switch from "@material-ui/core/Switch";
-import Table from "@material-ui/core/Table";
-import TableBody from "@material-ui/core/TableBody";
-import TableCell from "@material-ui/core/TableCell";
-import TableHead from "@material-ui/core/TableHead";
-import TableRow from "@material-ui/core/TableRow";
-// import { megaReducer } from "../functions/reducers/megaReducer";
+import {
+    Switch,
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableRow
+} from "@material-ui/core";
 import { IMegaDockerState } from "../interfaces/IMegaDockerState";
-import { Store } from "../components/Store";
 import { Tooltip } from "@material-ui/core";
+import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
+import { megaReducer } from "../functions/reducers/megaReducer";
+import { IManikin } from "../interfaces/IManikin";
+import { Store } from "./Store";
 
-interface IColumn {
-    name: string,
-    label: string,
-}
 export const ManikinTable: React.FC = (props: any): React.ReactElement => {
+    const prevState: IMegaDockerState = React.useContext(Store)
+    // TODO: use dispatch function
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, prevState)
+    interface IColumn {
+        name: string,
+        label: string,
+    }
+
     const columns: IColumn[] = [
         { name: "name", label: "Manikin" },
         { name: "icon", label: "" },
         { name: "isSelected", label: "Choose" }
     ]
-    const store: IMegaDockerState = React.useContext(Store)
 
-    const handleCheckboxChange = (inputValue: boolean): boolean => {
-        let outputValue: boolean = !inputValue
-        return outputValue
+    const handleCheckboxChange = (prevState: IMegaDockerState): IMegaDockerAction => {
+        let newState: IMegaDockerAction = {
+            type: 'TOGGLE_MANIKIN',
+            payload: {
+                ...prevState,
+                manikinTableContents: [...prevState.manikinTableContents],
+            }
+        }
+        return newState
     }
     return (
-        <Store.Provider value={store}>{props.children}
-            <React.Suspense fallback={<div>...loading</div>}>
-                <Table className="ManikinTable" size="small" stickyHeader>
-                    <TableHead className="ManikinTableHeader">
-                        <TableRow>
-                            {columns.map(column => (
-                                <TableCell
-                                    key={column.name}>
-                                    {column.label}
-                                </TableCell>
-                            ))}
-                        </TableRow>
-                    </TableHead>
-                    <TableBody className="ManikinTableBody">
-                        {store.manikinTableContents.map(eachManikin => (
-                            <TableRow
-                                key={eachManikin.manikinIndex}
-                                className={eachManikin.isCore ? "CoreManikinRow" : "ManikinRow"}
-                                hover={eachManikin.isCore ? false : true}>
-                                <Tooltip title={eachManikin.description}>
-                                    <TableCell key={eachManikin.name}>
-                                        {eachManikin.name}</TableCell>
-                                </Tooltip>
-                                <TableCell key={eachManikin.manikinIcon}>
-                                    <img alt={eachManikin.name}
-                                        src={eachManikin.manikinIcon}
-                                        height="20"
-                                        width="20" />
-                                </TableCell>
-                                <TableCell key={`${eachManikin.name} checkbox`}><Switch
-                                    checked={eachManikin.isSelected}
-                                    disabled={eachManikin.isCore ? true : false}
-                                    onChange={(): boolean => handleCheckboxChange(eachManikin.isSelected)} />
-                                </TableCell>
-                            </TableRow>))}
-                    </TableBody>
-                </Table>
-            </React.Suspense >
-        </Store.Provider >
+        <Table className="ManikinTable" size="small" stickyHeader>
+            <TableHead className="ManikinTableHeader">
+                <TableRow>
+                    {columns.map(column => (
+                        <TableCell
+                            key={column.name}>
+                            {column.label}
+                        </TableCell>
+                    ))}
+                </TableRow>
+            </TableHead>
+            <TableBody className="ManikinTableBody">
+                {state.manikinTableContents.map((eachManikin: IManikin) => (
+                    <TableRow
+                        key={`${eachManikin.name}Row`}
+                        className="ManikinRow"
+                        hover={eachManikin.isCore ? false : true}>
+                        <Tooltip title={eachManikin.description}>
+                            <TableCell key={`${eachManikin.name}NameCell`}>
+                                {eachManikin.name}</TableCell>
+                        </Tooltip>
+                        <TableCell key={`${eachManikin.name}Icon`}>
+                            <img alt={eachManikin.name}
+                                src={eachManikin.manikinIcon}
+                                height="20"
+                                width="20" />
+                        </TableCell>
+                        <TableCell key={`${eachManikin.name}CheckboxCell`}><Switch key={`${eachManikin.name}Checkbox`}
+                            checked={eachManikin.isSelected}
+                            disabled={eachManikin.isCore ? true : false}
+                            onChange={() => handleCheckboxChange(state)} />
+                        </TableCell>
+                    </TableRow>))}
+            </TableBody>
+        </Table>
     )
 }
-// contentEditable={eachManikin.isCore ? false : true}
