@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { usernameValidator } from '../../functions/validators/usernameValidator';
 
 export let rocketchatBotUsername: IMemory = {
   memoryIndex: 5,
@@ -13,5 +13,5 @@ export let rocketchatBotUsername: IMemory = {
   tooltip: `Choose the username of the RocketChat bot.`,
   value: ``,
   isReady: false,
-  validator: emailValidator
+  validator: usernameValidator
 };

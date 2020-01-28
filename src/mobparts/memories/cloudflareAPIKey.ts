@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export let cloudflareAPIKey: IMemory = {
   memoryIndex: 0,
@@ -13,5 +13,5 @@ export let cloudflareAPIKey: IMemory = {
   tooltip: `A CloudFlare API Key from your account that has full 'domain' privileges.`,
   value: ``,
   isReady: false,
-  validator: emailValidator
+  validator: passwordValidator
 };

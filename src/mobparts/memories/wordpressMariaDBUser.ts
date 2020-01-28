@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { usernameValidator } from '../../functions/validators/usernameValidator';
 
 export let wordpressMariaDBUser: IMemory = {
   memoryIndex: 2,
@@ -13,5 +13,5 @@ export let wordpressMariaDBUser: IMemory = {
   tooltip: `Choose a username for WordPress to connect to it's MariaDB database.`,
   value: ``,
   isReady: false,
-  validator: emailValidator
+  validator: usernameValidator
 };

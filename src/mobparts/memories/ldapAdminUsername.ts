@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { usernameValidator } from '../../functions/validators/usernameValidator';
 
 export let ldapAdminUsername: IMemory = {
   memoryIndex: 12,
@@ -13,5 +13,5 @@ export let ldapAdminUsername: IMemory = {
   tooltip: `Choose the administrator username for your LDAP server.`,
   value: ``,
   isReady: false,
-  validator: emailValidator
+  validator: usernameValidator
 };

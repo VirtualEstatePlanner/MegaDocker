@@ -6,7 +6,7 @@
 
 import { IMemory } from '../../interfaces/IMemory';
 import { ldapAdminUsername } from './ldapAdminUsername';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export let ldapAdminPassword: IMemory = {
   memoryIndex: 13,
@@ -14,5 +14,5 @@ export let ldapAdminPassword: IMemory = {
   tooltip: `Choose the password for the LDAP server administrative user (${ldapAdminUsername.value})`,
   value: ``,
   isReady: false,
-  validator: emailValidator
+  validator: passwordValidator
 };

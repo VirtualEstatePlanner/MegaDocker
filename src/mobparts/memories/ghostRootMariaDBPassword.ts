@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export let ghostRootMariaDBPassword: IMemory = {
   memoryIndex: 14,
@@ -13,5 +13,5 @@ export let ghostRootMariaDBPassword: IMemory = {
   tooltip: `The password for the Ghost root user`,
   value: ``,
   isReady: false,
-  validator: emailValidator
+  validator: passwordValidator
 };

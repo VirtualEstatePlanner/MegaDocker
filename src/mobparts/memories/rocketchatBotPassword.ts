@@ -6,7 +6,7 @@
 
 import { IMemory } from '../../interfaces/IMemory';
 import { rocketchatBotUsername } from './rocketchatBotUsername';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export let rocketchatBotPassword: IMemory = {
   memoryIndex: 6,
@@ -14,5 +14,5 @@ export let rocketchatBotPassword: IMemory = {
   tooltip: `Choose the password of the RocketChat bot user (${rocketchatBotUsername.value}).`,
   value: ``,
   isReady: false,
-  validator: emailValidator
+  validator: passwordValidator
 };

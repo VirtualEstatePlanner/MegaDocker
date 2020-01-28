@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export let ldapConfigurationPassword: IMemory = {
   memoryIndex: 11,
@@ -13,5 +13,5 @@ export let ldapConfigurationPassword: IMemory = {
   tooltip: `Choose a configuration password for the LDAP server.`,
   value: ``,
   isReady: false,
-  validator: emailValidator
+  validator: passwordValidator
 };

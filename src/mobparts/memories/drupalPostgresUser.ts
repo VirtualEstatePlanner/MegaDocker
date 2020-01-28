@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { usernameValidator } from '../../functions/validators/usernameValidator';
 
 export let drupalPostgresUser: IMemory = {
   memoryIndex: 15,
@@ -13,5 +13,5 @@ export let drupalPostgresUser: IMemory = {
   tooltip: `Choose a username for Drupal to connect to it's PostgreSQL database.`,
   value: ``,
   isReady: false,
-  validator: emailValidator
+  validator: usernameValidator
 };
