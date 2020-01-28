@@ -12,6 +12,7 @@ export let drupalPostgresPassword: IMemory = {
   name: `Drupal Postgres Password`,
   tooltip: `Choose a password for Drupal to connect to it's PostgreSQL database.`,
   value: ``,
+  valueType: 'password',
   isReady: false,
   validator: passwordValidator
 };

@@ -12,6 +12,7 @@ export let ghostRootMariaDBPassword: IMemory = {
   name: `Ghost MariaDB SQL root user password`,
   tooltip: `The password for the Ghost root user`,
   value: ``,
+  valueType: 'password',
   isReady: false,
   validator: passwordValidator
 };

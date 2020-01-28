@@ -5,13 +5,14 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { nowhitespaceValidator } from '../../functions/validators/nowhitespaceValidator';
 
 export let mobName: IMemory = {
   memoryIndex: 8,
   name: `Mob Name`,
   tooltip: `Name your MEGADocker Mob.  This will also be the name of the folder that contains your Mob's persistent data inside of your 'Documents/MEGADocker' folder.`,
   value: ``,
+  valueType: 'text',
   isReady: false,
-  validator: emailValidator
+  validator: nowhitespaceValidator
 };

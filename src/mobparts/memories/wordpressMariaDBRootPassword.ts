@@ -12,6 +12,7 @@ export let wordpressMariaDBRootPassword: IMemory = {
   name: `The root user password for the WordPress MariaDB instance`,
   tooltip: `Choose a password for WordPress's MariaDB server's root user.`,
   value: ``,
+  valueType: 'password',
   isReady: false,
   validator: passwordValidator
 };

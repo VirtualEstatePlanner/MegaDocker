@@ -12,6 +12,7 @@ export let wordpressMariaDBUser: IMemory = {
   name: `WordPress MariaDB User`,
   tooltip: `Choose a username for WordPress to connect to it's MariaDB database.`,
   value: ``,
+  valueType: 'text',
   isReady: false,
   validator: usernameValidator
 };

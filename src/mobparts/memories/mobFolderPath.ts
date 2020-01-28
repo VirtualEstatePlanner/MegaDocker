@@ -12,6 +12,7 @@ export let mobFolderPath: IMemory = {
   name: `Mob Folder Location`,
   tooltip: `The file path to your Mob's folder.`,
   value: ``,
+  valueType: 'text',
   isReady: false,
   validator: emailValidator
 };

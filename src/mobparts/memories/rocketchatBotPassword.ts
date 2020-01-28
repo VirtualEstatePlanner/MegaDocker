@@ -13,6 +13,7 @@ export let rocketchatBotPassword: IMemory = {
   name: `RocketChat bot user name`,
   tooltip: `Choose the password of the RocketChat bot user (${rocketchatBotUsername.value}).`,
   value: ``,
+  valueType: 'password',
   isReady: false,
   validator: passwordValidator
 };

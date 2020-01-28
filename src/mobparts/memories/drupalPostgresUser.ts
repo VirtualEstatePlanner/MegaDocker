@@ -12,6 +12,7 @@ export let drupalPostgresUser: IMemory = {
   name: `Drupal Postgres User`,
   tooltip: `Choose a username for Drupal to connect to it's PostgreSQL database.`,
   value: ``,
+  valueType: 'text',
   isReady: false,
   validator: usernameValidator
 };

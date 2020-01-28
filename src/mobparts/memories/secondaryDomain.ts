@@ -5,13 +5,14 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { domainValidator } from '../../functions/validators/domainValidator';
 
 export let secondaryDomain: IMemory = {
   memoryIndex: 1,
   name: `Secondary Domain`,
   tooltip: `Your backup domain name, such as 'example.com' or 'myawesomemob.org'.  It must not be the same as your main domain name.`,
   value: ``,
+  valueType: 'text',
   isReady: false,
-  validator: emailValidator
+  validator: domainValidator
 };

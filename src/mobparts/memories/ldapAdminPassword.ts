@@ -13,6 +13,7 @@ export let ldapAdminPassword: IMemory = {
   name: `LDAP Administrator account password`,
   tooltip: `Choose the password for the LDAP server administrative user (${ldapAdminUsername.value})`,
   value: ``,
+  valueType: 'password',
   isReady: false,
   validator: passwordValidator
 };

@@ -12,6 +12,7 @@ export let letsEncryptEmail: IMemory = {
   name: `Let'sEncrypt Email`,
   tooltip: `The email address used to register your domains`,
   value: ``,
+  valueType: 'email',
   isReady: false,
   validator: emailValidator
 };

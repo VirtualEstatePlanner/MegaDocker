@@ -12,6 +12,7 @@ export let cloudflareEmail: IMemory = {
   name: `CloudFlare Email`,
   tooltip: `The email address of your CloudFlare account`,
   value: ``,
+  valueType: 'email',
   isReady: false,
   validator: emailValidator
 };

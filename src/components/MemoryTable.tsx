@@ -42,10 +42,6 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
             type: 'UPDATE_MEMORY_VALUE',
             payload: workingState
         }
-        console.log(memory.name)
-        console.log(memory.value)
-        console.log(memory.validator(memory.value).valueOf())
-        console.log(state)
         return newStateAction
     }
     return (
@@ -78,7 +74,8 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                                     <Input
                                         fullWidth
                                         value={eachMemory.value}
-                                        placeholder="input data here"
+                                        type={eachMemory.valueType}
+                                        placeholder={(`Please enter your ${eachMemory.name} here`)}
                                         onChange={event => dispatch(updateMemoryValue(state, eachMemory, event))}
                                     />
                                 </Tooltip>
@@ -89,7 +86,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                                     alt='ready indicator'
                                     height={20}
                                     width={20}
-                                    src={eachMemory.value === `` ? xmarkIcon : (eachMemory.validator(eachMemory.value) ? checkmarkIcon : xmarkIcon)} />
+                                    src={eachMemory.validator ? (eachMemory.value !== `` ? checkmarkIcon : xmarkIcon) : xmarkIcon} />
                             </TableCell>
                         </TableRow>))}
                 </TableBody>

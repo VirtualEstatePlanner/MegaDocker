@@ -12,6 +12,7 @@ export let rocketchatBotUsername: IMemory = {
   name: `RocketChat bot user name`,
   tooltip: `Choose the username of the RocketChat bot.`,
   value: ``,
+  valueType: 'text',
   isReady: false,
   validator: usernameValidator
 };

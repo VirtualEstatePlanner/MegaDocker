@@ -1,3 +1,5 @@
+import { IValidator } from './IValidator';
+
 //  IMemory.ts
 //  MegaDocker
 //  an interface that represents a variable used by a Manikin
@@ -9,6 +11,7 @@ export interface IMemory {
   name: string;
   tooltip: string;
   value: string;
+  valueType: 'password' | 'email' | 'text';
   isReady: boolean;
   validator(value: string): boolean;
 }

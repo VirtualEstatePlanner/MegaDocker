@@ -5,13 +5,14 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { nowhitespaceValidator } from '../../functions/validators/nowhitespaceValidator';
 
 export let VARIABLENAME: IMemory = {
   memoryIndex: 99,
   name: ``,
   tooltip: ``,
   value: ``,
+  valueType: 'text',
   isReady: false,
-  validator: emailValidator
+  validator: nowhitespaceValidator
 };
