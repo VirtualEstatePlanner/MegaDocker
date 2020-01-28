@@ -74,9 +74,11 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                                     title={eachMemory.tooltip}>
                                     <Input
                                         fullWidth
+                                        required={true}
                                         value={eachMemory.value}
                                         type={eachMemory.valueType}
                                         placeholder={(`Please enter your ${eachMemory.name} here`)}
+                                        autoComplete={eachMemory.shouldAutocomplete.toString()}
                                         onChange={event => dispatch(updateMemoryValue(state, eachMemory, event))}
                                     />
                                 </Tooltip>

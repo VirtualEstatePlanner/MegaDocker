@@ -9,6 +9,7 @@ import { usernameValidator } from '../../functions/validators/usernameValidator'
 
 export let drupalPostgresUser: IMemory = {
   memoryIndex: 15,
+  shouldAutocomplete: false,
   name: `Drupal Postgres User`,
   tooltip: `Choose a username for Drupal to connect to it's PostgreSQL database.`,
   value: ``,

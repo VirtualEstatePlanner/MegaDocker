@@ -9,6 +9,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export let cloudflareAPIKey: IMemory = {
   memoryIndex: 0,
+  shouldAutocomplete: false,
   name: `CloudFlare API Key`,
   tooltip: `A CloudFlare API Key from your account that has full 'domain' privileges.`,
   value: ``,

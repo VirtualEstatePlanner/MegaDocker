@@ -9,6 +9,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export let ldapConfigurationPassword: IMemory = {
   memoryIndex: 11,
+  shouldAutocomplete: false,
   name: `LDAP Configuration Password`,
   tooltip: `Choose a configuration password for the LDAP server.`,
   value: ``,

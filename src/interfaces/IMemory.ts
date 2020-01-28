@@ -7,11 +7,12 @@ import { IValidator } from './IValidator';
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 export interface IMemory {
+  isReady: boolean;
   memoryIndex: number;
   name: string;
+  shouldAutocomplete: boolean;
   tooltip: string;
+  validator(value: string): boolean;
   value: string;
   valueType: 'password' | 'email' | 'text';
-  isReady: boolean;
-  validator(value: string): boolean;
 }

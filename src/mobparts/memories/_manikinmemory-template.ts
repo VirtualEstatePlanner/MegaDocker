@@ -11,6 +11,7 @@ export let VARIABLENAME: IMemory = {
   memoryIndex: 99,
   name: ``,
   tooltip: ``,
+  shouldAutocomplete: false,
   value: ``,
   valueType: 'text',
   isReady: false,

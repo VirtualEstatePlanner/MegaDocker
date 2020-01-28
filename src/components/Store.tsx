@@ -10,7 +10,7 @@ export const updateSelectedManikins = (manikinArray: IManikin[]) => manikinArray
 
 export const updateMemories = (manikinArray: IManikin[]) =>
     (manikinArray.filter((eachManikin: IManikin) =>
-        eachManikin.memories)).flatMap((eachManikin) =>
+        eachManikin.isSelected)).flatMap((eachManikin) =>
             eachManikin.memories)
 
 export const updateMobMites = (manikins: IManikin[]): IMite[] => manikins.flatMap((eachManikin) =>

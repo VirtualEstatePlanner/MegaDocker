@@ -49,12 +49,12 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         workingState.infoContent = `Manikin ${manikin.name} was toggled.`
         workingState.ymlOutput = ``
 
+        console.log(workingState.memoryTableContents)
+
         let newStateAction: IMegaDockerAction = {
             type: 'TOGGLE_MANIKIN',
             payload: workingState
         }
-        console.log(manikin.name)
-        console.log(state)
         return newStateAction
     }
 
@@ -86,10 +86,12 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                                 height="20"
                                 width="20" />
                         </TableCell>
-                        <TableCell key={`${eachManikin.name}CheckboxCell`}><Switch key={`${eachManikin.name}Checkbox`}
-                            checked={eachManikin.isSelected}
-                            disabled={eachManikin.isCore ? true : false}
-                            onChange={() => dispatch(toggleManikin(state, eachManikin)!)} />
+                        <TableCell key={`${eachManikin.name}CheckboxCell`}>
+                            <Switch
+                                key={`${eachManikin.name}Checkbox`}
+                                checked={eachManikin.isSelected}
+                                disabled={eachManikin.isCore ? true : false}
+                                onChange={() => dispatch(toggleManikin(state, eachManikin))} />
                         </TableCell>
                     </TableRow>))}
             </TableBody>
