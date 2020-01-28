@@ -97,4 +97,3 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
         </React.Suspense>
     )
 }
-// src={eachMemory.validator ? (eachMemory.value !== `` ? checkmarkIcon : xmarkIcon) : xmarkIcon} />
