@@ -5,11 +5,13 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
+import { emailValidator } from '../../functions/validators/emailValidator';
 
 export let letsEncryptEmail: IMemory = {
   memoryIndex: 9,
   name: `Let'sEncrypt Email`,
   tooltip: `The email address used to register your domains`,
   value: ``,
-  isReady: false
+  isReady: false,
+  validator: emailValidator
 };

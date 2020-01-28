@@ -5,11 +5,13 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
+import { emailValidator } from '../../functions/validators/emailValidator';
 
 export let wordpressMariaDBRootPassword: IMemory = {
   memoryIndex: 3,
   name: `The root user password for the WordPress MariaDB instance`,
   tooltip: `Choose a password for WordPress's MariaDB server's root user.`,
   value: ``,
-  isReady: false
+  isReady: false,
+  validator: emailValidator
 };

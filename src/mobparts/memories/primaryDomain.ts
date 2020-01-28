@@ -5,11 +5,13 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
+import { emailValidator } from '../../functions/validators/emailValidator';
 
 export let primaryDomain: IMemory = {
   memoryIndex: 7,
   name: `Primary Domain`,
   tooltip: `Your main domain name, such as 'example.com' or 'myawesomemob.org'.  Free domains are available at '' and can have their DNS handled for free at 'https://www.cloudflare.com'`,
   value: ``,
-  isReady: false
+  isReady: false,
+  validator: emailValidator
 };

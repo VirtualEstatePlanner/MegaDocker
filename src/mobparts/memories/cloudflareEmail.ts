@@ -5,11 +5,13 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
+import { emailValidator } from '../../functions/validators/emailValidator';
 
 export let cloudflareEmail: IMemory = {
   memoryIndex: 17,
   name: `CloudFlare Email`,
   tooltip: `The email address of your CloudFlare account`,
   value: ``,
-  isReady: false
+  isReady: false,
+  validator: emailValidator
 };

@@ -5,11 +5,13 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
+import { emailValidator } from '../../functions/validators/emailValidator';
 
 export let drupalPostgresPassword: IMemory = {
   memoryIndex: 16,
   name: `Drupal Postgres Password`,
   tooltip: `Choose a password for Drupal to connect to it's PostgreSQL database.`,
   value: ``,
-  isReady: false
+  isReady: false,
+  validator: emailValidator
 };

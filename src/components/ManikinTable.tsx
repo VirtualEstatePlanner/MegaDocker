@@ -12,12 +12,18 @@ import { Tooltip } from "@material-ui/core";
 import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
 import { megaReducer } from "../functions/reducers/megaReducer";
 import { IManikin } from "../interfaces/IManikin";
-import { Store } from "./Store";
+import {
+    Store,
+    updateSelectedManikins,
+    updateMemories,
+    updateMobMites,
+    updateNetworkMites,
+    updateCustomMites,
+    updateServiceMites
+} from "./Store";
 
 export const ManikinTable: React.FC = (props: any): React.ReactElement => {
     const prevState: IMegaDockerState = React.useContext(Store)
-    // TODO: use dispatch function
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, prevState)
     interface IColumn {
         name: string,
@@ -30,16 +36,28 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         { name: "isSelected", label: "Choose" }
     ]
 
-    const handleCheckboxChange = (prevState: IMegaDockerState): IMegaDockerAction => {
-        let newState: IMegaDockerAction = {
+    const toggleManikin = (prevState: IMegaDockerState, manikin: IManikin): IMegaDockerAction => {
+        const indexOfManikin: number = prevState.manikinTableContents.indexOf(manikin)
+        let workingState: IMegaDockerState = prevState
+        workingState.manikinTableContents[indexOfManikin].isSelected = !prevState.manikinTableContents[indexOfManikin].isSelected
+        workingState.selectedManikins = updateSelectedManikins(workingState.manikinTableContents)
+        workingState.memoryTableContents = updateMemories(workingState.selectedManikins)
+        workingState.allMobMites = updateMobMites(workingState.selectedManikins)
+        workingState.mobServiceMites = updateServiceMites(updateMobMites(workingState.selectedManikins))
+        workingState.mobNetworkMites = updateNetworkMites(updateMobMites(workingState.selectedManikins))
+        workingState.mobCustomMites = updateCustomMites(updateMobMites(workingState.selectedManikins))
+        workingState.infoContent = `Manikin ${manikin.name} was toggled.`
+        workingState.ymlOutput = ``
+
+        let newStateAction: IMegaDockerAction = {
             type: 'TOGGLE_MANIKIN',
-            payload: {
-                ...prevState,
-                manikinTableContents: [...prevState.manikinTableContents],
-            }
+            payload: workingState
         }
-        return newState
+        console.log(manikin.name)
+        console.log(state)
+        return newStateAction
     }
+
     return (
         <Table className="ManikinTable" size="small" stickyHeader>
             <TableHead className="ManikinTableHeader">
@@ -71,7 +89,7 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                         <TableCell key={`${eachManikin.name}CheckboxCell`}><Switch key={`${eachManikin.name}Checkbox`}
                             checked={eachManikin.isSelected}
                             disabled={eachManikin.isCore ? true : false}
-                            onChange={() => handleCheckboxChange(state)} />
+                            onChange={() => dispatch(toggleManikin(state, eachManikin)!)} />
                         </TableCell>
                     </TableRow>))}
             </TableBody>

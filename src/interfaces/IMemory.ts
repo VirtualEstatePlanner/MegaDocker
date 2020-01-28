@@ -10,4 +10,5 @@ export interface IMemory {
   tooltip: string;
   value: string;
   isReady: boolean;
+  validator(value: string): boolean;
 }
