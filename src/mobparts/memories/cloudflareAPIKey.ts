@@ -12,7 +12,7 @@ export let cloudflareAPIKey: IMemory = {
   name: `CloudFlare API Key`,
   tooltip: `A CloudFlare API Key from your account that has full 'domain' privileges.`,
   value: ``,
-  valueType: 'text',
+  valueType: 'password',
   isReady: false,
   validator: passwordValidator
 };

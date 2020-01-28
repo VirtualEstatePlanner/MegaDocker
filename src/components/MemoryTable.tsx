@@ -44,6 +44,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
         }
         return newStateAction
     }
+
     return (
         <React.Suspense
             fallback={<div>...loading</div>}>
@@ -86,7 +87,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                                     alt='ready indicator'
                                     height={20}
                                     width={20}
-                                    src={eachMemory.validator ? (eachMemory.value !== `` ? checkmarkIcon : xmarkIcon) : xmarkIcon} />
+                                    src={eachMemory.value === `` ? xmarkIcon : (eachMemory.validator(eachMemory.value).valueOf() ? checkmarkIcon : xmarkIcon)} />
                             </TableCell>
                         </TableRow>))}
                 </TableBody>
