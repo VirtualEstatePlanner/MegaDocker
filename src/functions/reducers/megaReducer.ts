@@ -9,28 +9,48 @@ import { mobNetworksSectionString } from '../../mobparts/mites/network/mobNetwor
 import { mobNetworkFooterSectionString } from '../../mobparts/mites/network/mobNetowrkFooterSectionString';
 
 /**
- * Updates application state with useReducer
+ * updates selectedManikins array based on application state
  */
-
 const updateSelectedManikins = (manikinArray: IManikin[]): IManikin[] =>
   manikinArray.filter((eachManikin) => eachManikin.isSelected === true);
+/**
+ * updates memories arrayb based on application state
+ */
 const updateMemories = (manikinArray: IManikin[]): IMemory[] =>
   manikinArray
     .filter((eachManikin: IManikin) => eachManikin.isSelected)
     .flatMap((eachManikin) => eachManikin.memories);
+/**
+ * updates allMobMites array based on application state
+ */
 const updateMobMites = (manikins: IManikin[]): IMite[] =>
   manikins.flatMap((eachManikin) =>
     eachManikin.mites.flatMap((eachMite) => eachMite)
   );
+/**
+ * updates serviceMites array based on application state
+ */
 const updateServiceMites = (miteArray: IMite[]): IMite[] =>
   miteArray.filter((eachMite) => eachMite.type === `Service`);
+/**
+ * updates networkMites array based on application state
+ */
 const updateNetworkMites = (miteArray: IMite[]): IMite[] =>
   miteArray.filter((eachMite) => eachMite.type === `Network`);
+/**
+ * updates customMites array based on application state
+ */
 const updateCustomMites = (miteArray: IMite[]): IMite[] =>
   miteArray.filter((eachMite) => eachMite.type === `Custom`);
+/**
+ * updates Info Pane content
+ */
 const updateInfoContent = (info: string): string => {
   return info;
 };
+/**
+ * updates YML file
+ */
 const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
   let tempServicesYML: string[] = serviceMites.flatMap(
     (eachMite) => eachMite.miteString
@@ -50,6 +70,9 @@ const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
   return ymlString;
 };
 
+/**
+ * Updates application state with useReducer
+ */
 export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
   prevState: IMegaDockerState,
   action: IMegaDockerAction
