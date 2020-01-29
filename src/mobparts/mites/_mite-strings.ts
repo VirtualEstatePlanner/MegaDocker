@@ -20,18 +20,6 @@ import { wordpressMariaDBPassword } from '../memories/wordpressMariaDBPassword';
 import { wordpressMariaDBRootPassword } from '../memories/wordpressMariaDBRootPassword';
 import { wordpressMariaDBUser } from '../memories/wordpressMariaDBUser';
 
-export const mobFileHeaderString: string = `
-# MegaDocker YML File
-version: '3.6'
-
-# Created by MegaDocker
-# Data is stored at: ${mobFolderPath}
-# Mob is named: ${mobName}
-
-#Begin Services Section
-services:
-`;
-
 export const wordPressServiceString: string = `
 
 #Begin WordPress Service Section
@@ -557,20 +545,6 @@ export const myELKServiceString: string = `
 
 `;
 
-export const servicesFooterSectionString: string = `
-
-#End Services Section
-
-`;
-
-export const mobNetworksSectionString: string = `
-
-#Begin Networks Section
-
-networks:
-
-`;
-
 export const myELKNetworkString: string = `
 
 #Begin ELK Network Section
@@ -693,12 +667,6 @@ export const webdavNetworkString: string = `
 `;
 
 export const noNetworkString: string = ``;
-
-export const mobNetworkFooterSectionString: string = `
-
-#End Networks Section
-
-`;
 
 export const blankSynopsisString: string = `
 Empty

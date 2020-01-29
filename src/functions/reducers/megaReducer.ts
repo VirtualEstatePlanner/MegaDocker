@@ -16,7 +16,8 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     case `TOGGLE_MANIKIN`:
       newState = {
         ...prevState,
-        manikinTableContents: [...action.payload.manikinTableContents]
+        manikinTableContents: [...action.payload.manikinTableContents],
+        memoryTableContents: [...action.payload.memoryTableContents]
       };
       break;
     case `UPDATE_MEMORY_VALUE`:

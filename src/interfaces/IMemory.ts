@@ -1,5 +1,3 @@
-import { IValidator } from './IValidator';
-
 //  IMemory.ts
 //  MegaDocker
 //  an interface that represents a variable used by a Manikin

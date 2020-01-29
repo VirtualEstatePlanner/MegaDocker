@@ -23,8 +23,8 @@ import {
 } from "./Store";
 
 export const ManikinTable: React.FC = (props: any): React.ReactElement => {
-    const prevState: IMegaDockerState = React.useContext(Store)
-    const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, prevState)
+    const appState: IMegaDockerState = React.useContext(Store)
+    const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, appState)
     interface IColumn {
         name: string,
         label: string,
@@ -49,14 +49,15 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         workingState.infoContent = `Manikin ${manikin.name} was toggled.`
         workingState.ymlOutput = ``
 
-        console.log(workingState.memoryTableContents)
-
         let newStateAction: IMegaDockerAction = {
             type: 'TOGGLE_MANIKIN',
             payload: workingState
         }
         return newStateAction
     }
+
+    console.log(...state.selectedManikins)
+    console.log(...state.memoryTableContents)
 
     return (
         <Table className="ManikinTable" size="small" stickyHeader>
