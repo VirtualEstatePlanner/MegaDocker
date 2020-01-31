@@ -9,21 +9,13 @@ import {
 } from "@material-ui/core";
 import { IMegaDockerState } from "../interfaces/IMegaDockerState";
 import { Tooltip } from "@material-ui/core";
-import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
+import { IMegaDockerAction, IMegaDockerActionWithManikinPayload } from "../interfaces/IMegaDockerAction";
 import { megaReducer } from "../functions/reducers/megaReducer";
 import { IManikin } from "../interfaces/IManikin";
-import {
-    Store,
-    updateSelectedManikins,
-    updateMemories,
-    updateMobMites,
-    updateNetworkMites,
-    updateCustomMites,
-    updateServiceMites
-} from "./Store";
+import { Context } from "./Context";
 
 export const ManikinTable: React.FC = (props: any): React.ReactElement => {
-    const appState: IMegaDockerState = React.useContext(Store)
+    const appState: IMegaDockerState = React.useContext(Context)
     const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, appState)
     interface IColumn {
         name: string,
@@ -39,19 +31,11 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
     const toggleManikin = (prevState: IMegaDockerState, manikin: IManikin): IMegaDockerAction => {
         const indexOfManikin: number = prevState.manikinTableContents.indexOf(manikin)
         let workingState: IMegaDockerState = prevState
-        workingState.manikinTableContents[indexOfManikin].isSelected = !prevState.manikinTableContents[indexOfManikin].isSelected
-        workingState.selectedManikins = updateSelectedManikins(workingState.manikinTableContents)
-        workingState.memoryTableContents = updateMemories(workingState.selectedManikins)
-        workingState.allMobMites = updateMobMites(workingState.selectedManikins)
-        workingState.mobServiceMites = updateServiceMites(updateMobMites(workingState.selectedManikins))
-        workingState.mobNetworkMites = updateNetworkMites(updateMobMites(workingState.selectedManikins))
-        workingState.mobCustomMites = updateCustomMites(updateMobMites(workingState.selectedManikins))
         workingState.infoContent = `Manikin ${manikin.name} was toggled.`
-        workingState.ymlOutput = ``
 
-        let newStateAction: IMegaDockerAction = {
+        let newStateAction: IMegaDockerActionWithManikinPayload = {
             type: 'TOGGLE_MANIKIN',
-            payload: workingState
+            payload: workingState.manikinTableContents[indexOfManikin]
         }
         return newStateAction
     }

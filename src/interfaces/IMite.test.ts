@@ -8,10 +8,12 @@ import { IMite } from './IMite';
 
 const testMite: IMite = {
   type: `Network`,
-  miteString: 'this is some YML'
+  miteString: 'this is some YML',
+  miteIndex: 654897
 };
 
-it('has both values', () => {
+it('has all 3 values', () => {
   expect(testMite.type).toStrictEqual(`Network`);
   expect(testMite.miteString).toStrictEqual(`this is some YML`);
+  expect(testMite.miteIndex).toStrictEqual(`654897`);
 });

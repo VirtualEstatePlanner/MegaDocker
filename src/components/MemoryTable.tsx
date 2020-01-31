@@ -10,22 +10,14 @@ import {
 } from "@material-ui/core";
 import * as checkmarkIcon from "../images/indicators/checkmarkIcon.png"
 import * as xmarkIcon from "../images/indicators/xmarkIcon.png"
-import {
-    Store,
-    updateMemories,
-    updateMobMites,
-    updateServiceMites,
-    updateNetworkMites,
-    updateCustomMites,
-    updateYML
-} from './Store';
+import { Context } from './Context';
 import { IMegaDockerState } from "../interfaces/IMegaDockerState";
 import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
 import { megaReducer } from "../functions/reducers/megaReducer";
 import { IMemory } from "../interfaces/IMemory";
 
 export const MemoryTable: React.FC = (props: any): React.ReactElement => {
-    const appState = React.useContext(Store)
+    const appState = React.useContext(Context)
     const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, appState)
 
     const updateMemoryValue = (
@@ -39,13 +31,13 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
         workingState.memoryTableContents[indexOfMemory].isReady = workingState.memoryTableContents[indexOfMemory].validator(workingState.memoryTableContents[indexOfMemory].value)
         workingState.manikinTableContents = prevState.manikinTableContents
         workingState.selectedManikins = prevState.selectedManikins
-        workingState.memoryTableContents = updateMemories(workingState.selectedManikins)
-        workingState.allMobMites = updateMobMites(workingState.selectedManikins)
-        workingState.mobServiceMites = updateServiceMites(updateMobMites(workingState.selectedManikins))
-        workingState.mobNetworkMites = updateNetworkMites(updateMobMites(workingState.selectedManikins))
-        workingState.mobCustomMites = updateCustomMites(updateMobMites(workingState.selectedManikins))
+        workingState.memoryTableContents = prevState.memoryTableContents
+        workingState.allMobMites = prevState.allMobMites
+        workingState.mobServiceMites = prevState.mobServiceMites
+        workingState.mobNetworkMites = prevState.mobNetworkMites
+        workingState.mobCustomMites = prevState.mobCustomMites
         workingState.infoContent = `Manikin ${memory.name} was updated to ${memory.value}.`
-        workingState.ymlOutput = updateYML(workingState.mobServiceMites, workingState.mobNetworkMites)
+        workingState.ymlOutput = prevState.ymlOutput
         //updateYML(workingState.mobServiceMites, workingState.mobNetworkMites)
         let newStateAction: IMegaDockerAction = {
             type: 'UPDATE_MEMORY_VALUE',

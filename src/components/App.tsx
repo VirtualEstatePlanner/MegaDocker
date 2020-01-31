@@ -2,15 +2,15 @@ import React from "react";
 import "./App.css";
 import { ManikinPane } from './ContainerManikinPane'
 import { MainArea } from "./ContainerMainArea";
-import { StoreProvider } from './Store'
+import { ContextProvider } from './Context'
 export const App: React.FC = (props: any): React.ReactElement => {
 
   return (
     <div className="App">
-      <StoreProvider>
+      <ContextProvider>
         <ManikinPane />
         <MainArea />
-      </StoreProvider>
+      </ContextProvider>
     </div>
   );
 };
