@@ -108,6 +108,13 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
           action.payload.mobNetworkMites
         )
       };
+      break;
+    case `UPDATE_INFO_CONTENT`:
+      newState = {
+        ...prevState,
+        infoContent: updateInfoContent(action.payload.infoContent)
+      };
+      break;
     default:
       throw new Error(`something went wrong in the megaReducer function`);
   }
