@@ -31,6 +31,14 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
     const toggleManikin = (prevState: IMegaDockerState, manikin: IManikin): IMegaDockerAction => {
         const indexOfManikin: number = prevState.manikinTableContents.indexOf(manikin)
         let workingState: IMegaDockerState = prevState
+        workingState.manikinTableContents[indexOfManikin].isSelected = !prevState.manikinTableContents[indexOfManikin].isSelected
+        workingState.selectedManikins = updateSelectedManikins(workingState.manikinTableContents)
+        workingState.memoryTableContents = updateMemories(workingState.selectedManikins)
+        workingState.allMobMites = updateMobMites(workingState.selectedManikins)
+        workingState.mobServiceMites = updateServiceMites(updateMobMites(workingState.selectedManikins))
+        workingState.mobNetworkMites = updateNetworkMites(updateMobMites(workingState.selectedManikins))
+        workingState.mobCustomMites = updateCustomMites(updateMobMites(workingState.selectedManikins))
+        workingState.ymlOutput = ``
         workingState.infoContent = `Manikin ${manikin.name} was toggled.`
 
         let newStateAction: IMegaDockerActionWithManikinPayload = {
@@ -40,8 +48,7 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         return newStateAction
     }
 
-    console.log(...state.selectedManikins)
-    console.log(...state.memoryTableContents)
+    console.log(state)
 
     return (
         <Table className="ManikinTable" size="small" stickyHeader>
