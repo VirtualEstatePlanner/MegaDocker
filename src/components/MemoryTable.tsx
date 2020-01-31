@@ -46,7 +46,6 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
         workingState.mobCustomMites = updateCustomMites(updateMobMites(workingState.selectedManikins))
         workingState.infoContent = `Manikin ${memory.name} was updated to ${memory.value}.`
         workingState.ymlOutput = updateYML(workingState.mobServiceMites, workingState.mobNetworkMites)
-        //updateYML(workingState.mobServiceMites, workingState.mobNetworkMites)
         let newStateAction: IMegaDockerAction = {
             type: 'UPDATE_MEMORY_VALUE',
             payload: workingState
@@ -63,9 +62,9 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                 className="MemoryTableHeader">
                 <TableRow
                     className="MemoryHeaderRow">
-                    <TableCell>Description</TableCell>
-                    <TableCell>Value</TableCell>
-                    <TableCell>Ready</TableCell>
+                    <TableCell>Description{props.children}</TableCell>
+                    <TableCell>Value{props.children}</TableCell>
+                    <TableCell>Ready{props.children}</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody
@@ -76,7 +75,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                         key={eachMemory.memoryIndex}>
                         <TableCell
                             padding='checkbox'>{eachMemory.name}</TableCell>
-                        <TableCell >
+                        <TableCell>
                             <Tooltip
                                 title={eachMemory.tooltip}>
                                 <Input
@@ -86,8 +85,8 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                                     type={eachMemory.valueType}
                                     placeholder={(`Please enter your ${eachMemory.name} here`)}
                                     autoComplete={eachMemory.shouldAutocomplete.toString()}
-                                    onChange={event => dispatch(updateMemoryValue(state, eachMemory, event))}
-                                />
+                                    onChange={event => dispatch(updateMemoryValue(state, eachMemory, event))}>
+                                </Input>
                             </Tooltip>
                         </TableCell>
                         <TableCell

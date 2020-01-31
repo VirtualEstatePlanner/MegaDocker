@@ -39,8 +39,6 @@ export const App: React.FC = () => {
     return dispatch(dispatchObj)
   }
 
-  console.log(state)
-
   return (
     <React.Fragment>
       <header className='header'>

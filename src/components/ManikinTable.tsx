@@ -46,7 +46,7 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         workingState.mobServiceMites = updateServiceMites(updateMobMites(workingState.selectedManikins))
         workingState.mobNetworkMites = updateNetworkMites(updateMobMites(workingState.selectedManikins))
         workingState.mobCustomMites = updateCustomMites(updateMobMites(workingState.selectedManikins))
-        workingState.infoContent = `Manikin ${manikin.name} was toggled.`
+        workingState.infoContent = `Manikin ${manikin.name}.isSelected was set to ${manikin.isSelected}.`
         workingState.ymlOutput = ``
 
         let newStateAction: IMegaDockerAction = {
@@ -56,8 +56,7 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         return newStateAction
     }
 
-    console.log(...state.selectedManikins)
-    console.log(...state.memoryTableContents)
+    console.log(state)
 
     return (
         <Table className="ManikinTable" size="small" stickyHeader>
