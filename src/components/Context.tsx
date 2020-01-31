@@ -9,24 +9,24 @@ import { servicesFooterSectionString } from '../mobparts/mites/service/servicesF
 import { mobNetworkFooterSectionString } from '../mobparts/mites/network/mobNetowrkFooterSectionString';
 import { mobNetworksSectionString } from '../mobparts/mites/network/mobNetworksSectionString';
 
-const updateSelectedManikins = (manikinArray: IManikin[]): IManikin[] => manikinArray.filter((eachManikin) => eachManikin.isSelected === true)
-const updateMemories = (manikinArray: IManikin[]): IMemory[] =>
+export const updateSelectedManikins = (manikinArray: IManikin[]): IManikin[] => manikinArray.filter((eachManikin) => eachManikin.isSelected === true)
+export const updateMemories = (manikinArray: IManikin[]): IMemory[] =>
     (manikinArray.filter((eachManikin: IManikin) =>
         eachManikin.isSelected)).flatMap((eachManikin) =>
             eachManikin.memories)
-const updateMobMites = (manikins: IManikin[]): IMite[] => manikins.flatMap((eachManikin) =>
+export const updateMobMites = (manikins: IManikin[]): IMite[] => manikins.flatMap((eachManikin) =>
     eachManikin.mites.flatMap((eachMite) => eachMite));
-const updateServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Service`)
-const updateNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Network`)
-const updateCustomMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Custom`)
-const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
+export const updateServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Service`)
+export const updateNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Network`)
+export const updateCustomMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Custom`)
+export const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
     let tempServicesYML: string[] = serviceMites.flatMap((eachMite) => eachMite.miteString)
     let tempNetworksYML: string[] = networkMites.flatMap((eachMite) => eachMite.miteString)
     let ymlOutputArray: string[] = [mobFileHeaderString, ...tempServicesYML, servicesFooterSectionString, mobNetworksSectionString, ...tempNetworksYML, mobNetworkFooterSectionString]
     let ymlString: string = ymlOutputArray.join(``)
     return ymlString
 }
-const updateInfoContent = (info: string): string => {
+export const updateInfoContent = (info: string): string => {
     return info
 }
 

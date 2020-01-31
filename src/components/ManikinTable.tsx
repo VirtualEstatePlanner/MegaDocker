@@ -12,7 +12,15 @@ import { Tooltip } from "@material-ui/core";
 import { IMegaDockerAction, IMegaDockerActionWithManikinPayload } from "../interfaces/IMegaDockerAction";
 import { megaReducer } from "../functions/reducers/megaReducer";
 import { IManikin } from "../interfaces/IManikin";
-import { Context } from "./Context";
+import {
+    Context,
+    updateSelectedManikins,
+    updateMemories,
+    updateMobMites,
+    updateServiceMites,
+    updateNetworkMites,
+    updateCustomMites
+} from "./Context";
 
 export const ManikinTable: React.FC = (props: any): React.ReactElement => {
     const appState: IMegaDockerState = React.useContext(Context)
