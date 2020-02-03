@@ -30,18 +30,27 @@ export const updateInfoContent = (info: string): string => {
     return info
 }
 
-let tableManikins: IManikin[] = [...allManikins]
+const initialTableManikins: IManikin[] = [...allManikins]
+const initialSelectedManikins: IManikin[] = updateSelectedManikins(initialTableManikins)
+const initialMemoryTableContents: IMemory[] = updateMemories(initialSelectedManikins)
+const initialMobMites: IMite[] = updateMobMites(initialSelectedManikins)
+const initialServiceMites: IMite[] = updateServiceMites(initialMobMites)
+const initialNetworkMites: IMite[] = updateNetworkMites(initialMobMites)
+const initialCustomMites: IMite[] = updateCustomMites(initialMobMites)
+const initialInfoContent: string = `This is the Information Pane.  You can read more about the selected item here.`
+const initialYmlOutput: string = updateYML(initialServiceMites, initialNetworkMites)
+
 
 let initialMegaDockerState: IMegaDockerState = {
-    manikinTableContents: tableManikins,
-    selectedManikins: updateSelectedManikins(tableManikins),
-    memoryTableContents: updateMemories(updateSelectedManikins(tableManikins)),
-    allMobMites: updateMobMites(updateSelectedManikins(tableManikins)),
-    mobServiceMites: updateServiceMites(updateMobMites(updateSelectedManikins(tableManikins))),
-    mobNetworkMites: updateNetworkMites(updateMobMites(updateSelectedManikins(tableManikins))),
-    mobCustomMites: updateCustomMites(updateMobMites(updateSelectedManikins(tableManikins))),
-    infoContent: updateInfoContent(`This is the Information Pane.  You can read more about the selected item here.`),
-    ymlOutput: updateYML(updateServiceMites(updateMobMites(updateSelectedManikins(tableManikins))), updateNetworkMites(updateMobMites(updateSelectedManikins(tableManikins))))
+    manikinTableContents: initialTableManikins,
+    selectedManikins: initialSelectedManikins,
+    memoryTableContents: initialMemoryTableContents,
+    allMobMites: initialMobMites,
+    mobServiceMites: initialServiceMites,
+    mobNetworkMites: initialNetworkMites,
+    mobCustomMites: initialCustomMites,
+    infoContent: initialInfoContent,
+    ymlOutput: initialYmlOutput
 };
 
 export const Context = React.createContext<IMegaDockerState>(initialMegaDockerState)

@@ -19,6 +19,7 @@ import { IMemory } from "../interfaces/IMemory";
 export const MemoryTable: React.FC = (props: any): React.ReactElement => {
     const appState = React.useContext(Context)
     const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, appState)
+    console.log(`defined state and dispatch in Memory Table`)
 
     const updateMemoryValue = (
         prevState: IMegaDockerState,
@@ -55,9 +56,9 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                 className="MemoryTableHeader">
                 <TableRow
                     className="MemoryHeaderRow">
-                    <TableCell>Description{props.children}</TableCell>
-                    <TableCell>Value{props.children}</TableCell>
-                    <TableCell>Ready{props.children}</TableCell>
+                    <TableCell>Description</TableCell>
+                    <TableCell>Value</TableCell>
+                    <TableCell>Ready</TableCell>
                 </TableRow>
             </TableHead>
             <TableBody

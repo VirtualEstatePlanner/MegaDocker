@@ -27,7 +27,7 @@ async function doInstallation(): Promise<void> {
         `attach`,
         `/${downloadFolder}/VirtualBox.dmg`
       ]);
-      // // console.log(`waiting 30 seconds`);
+      // console.log(`waiting 30 seconds`);
       // runOrdered(`sleep 30`);
       // console.log(`launching installer`);
       runPrivilegedOrdered(`/usr/sbin/installer`, [
@@ -36,7 +36,7 @@ async function doInstallation(): Promise<void> {
         `-target`,
         `/`
       ]);
-      // // console.log(`waiting 30 seconds`);
+      // console.log(`waiting 30 seconds`);
       // runOrdered(`sleep 30`);
       // console.log(`ejecting disk image`);
       runPrivilegedOrdered(`/usr/sbin/diskutil`, [
