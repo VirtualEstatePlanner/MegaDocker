@@ -7,7 +7,7 @@ export const App: React.FC = (props: any): React.ReactElement => {
 
   return (
     <div className="App">
-      <ContextProvider>
+      <ContextProvider>{props.children}
         <ManikinPane />
         <MainArea />
       </ContextProvider>

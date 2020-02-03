@@ -7,6 +7,7 @@ import { mobFileHeaderString } from '../../mobparts/mites/service/mobFileHeaderS
 import { servicesFooterSectionString } from '../../mobparts/mites/service/servicesFooterSectionString';
 import { mobNetworksSectionString } from '../../mobparts/mites/network/mobNetworksSectionString';
 import { mobNetworkFooterSectionString } from '../../mobparts/mites/network/mobNetowrkFooterSectionString';
+import { initialMegaDockerState } from '../../components/Context';
 
 /**
  * updates selectedManikins array based on application state
@@ -78,8 +79,12 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
   prevState: IMegaDockerState,
   action: IMegaDockerAction
 ): IMegaDockerState => {
+  console.log(`running megaReducer`);
   let newState: IMegaDockerState = prevState;
   switch (action.type) {
+    case `APPLICATION_START`:
+      newState = initialMegaDockerState;
+      break;
     case `TOGGLE_MANIKIN`:
       const newSelectedManikins: IManikin[] = updateSelectedManikins(
         action.payload.manikinTableContents

@@ -24,10 +24,10 @@ import {
 } from "./Context";
 
 export const ManikinTable: React.FC = (props: any): React.ReactElement => {
+
     const appState: IMegaDockerState = React.useContext(Context)
     const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, appState)
-
-    console.log(`defined state and dispatch in ManikinTable`)
+    console.log(`updated ManikinTable`)
 
     interface IColumn {
         name: string,
@@ -45,6 +45,7 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         const indexOfManikin: number = prevState.manikinTableContents.indexOf(manikin)
         let workingState: IMegaDockerState = prevState
         workingState.manikinTableContents[indexOfManikin].isSelected = !prevState.manikinTableContents[indexOfManikin].isSelected
+        console.log(`${workingState.manikinTableContents[indexOfManikin].name} manikin was ${workingState.manikinTableContents[indexOfManikin].isSelected ? 'selected' : 'deselected'}`)
         workingState.selectedManikins = updateSelectedManikins(workingState.manikinTableContents)
         workingState.memoryTableContents = updateMemories(workingState.selectedManikins)
         workingState.allMobMites = updateMobMites(workingState.selectedManikins)
@@ -60,9 +61,6 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
             type: 'TOGGLE_MANIKIN',
             payload: newState
         }
-
-        console.log(newState)
-        console.log(`generated new application state, dispatching action`)
 
         return newStateAction
     }

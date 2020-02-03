@@ -41,7 +41,7 @@ const initialInfoContent: string = `This is the Information Pane.  You can read 
 const initialYmlOutput: string = updateYML(initialServiceMites, initialNetworkMites)
 
 
-let initialMegaDockerState: IMegaDockerState = {
+export const initialMegaDockerState: IMegaDockerState = {
     manikinTableContents: initialTableManikins,
     selectedManikins: initialSelectedManikins,
     memoryTableContents: initialMemoryTableContents,

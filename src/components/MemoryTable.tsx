@@ -17,9 +17,10 @@ import { megaReducer } from "../functions/reducers/megaReducer";
 import { IMemory } from "../interfaces/IMemory";
 
 export const MemoryTable: React.FC = (props: any): React.ReactElement => {
+
     const appState = React.useContext(Context)
     const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, appState)
-    console.log(`defined state and dispatch in Memory Table`)
+    console.log(`updated MemoryTable`)
 
     const updateMemoryValue = (
         prevState: IMegaDockerState,

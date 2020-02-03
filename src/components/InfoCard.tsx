@@ -13,7 +13,7 @@ export const InfoCard: React.FC = (props: any): React.ReactElement => {
     // because we aren't using dispatch in this file
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, appState)
-    console.log(`defined state and dispatch in Info Pane`)
+    console.log(`updated InfoCard`)
 
     return (
         <Card className="ManikinInfo">
