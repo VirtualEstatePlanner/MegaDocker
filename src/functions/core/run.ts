@@ -14,13 +14,13 @@ import { ChildProcess, spawn } from 'child_process';
 export function run(command: string, opt?: string[]): any {
   const child: ChildProcess = spawn(`'${command}', ['${opt}']`);
   child.on(`error`, (err) => {
-    console.log(`an error occurred with message: ${err.message}`);
+    // console.log(`an error occurred with message: ${err.message}`);
   });
   child.on(`exit`, (code) => {
-    console.log(`Child process ${command} exited with code ${code}`);
+    // console.log(`Child process ${command} exited with code ${code}`);
   });
   child.on(`data`, (data) => {
-    console.log(`stdout: ${data}`);
+    // console.log(`stdout: ${data}`);
   });
   child.unref();
 }

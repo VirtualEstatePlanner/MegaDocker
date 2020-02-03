@@ -1,7 +1,7 @@
 import React from "react";
 
 function buttonClicked() {
-    console.log("Button was clicked!");
+    // console.log("Button was clicked!");
 }
 
 export const Button: React.FC = (): React.ReactElement => {

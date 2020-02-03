@@ -23,12 +23,12 @@ export function runPrivilegedOrdered(command: string, opt?: string[]): void {
   options = [...options, `& wait`];
   const child: ChildProcess = exec(`${command} ${options}`);
   child.on(`error`, (err) => {
-    console.log(`an error occurred with message: ${err.message}`);
+    // console.log(`an error occurred with message: ${err.message}`);
   });
   child.on(`exit`, (code) => {
-    console.log(`Child process ${command} exited with code ${code}`);
+    // console.log(`Child process ${command} exited with code ${code}`);
   });
   child.on(`data`, (data) => {
-    console.log(`stdout: ${data}`);
+    // console.log(`stdout: ${data}`);
   });
 }

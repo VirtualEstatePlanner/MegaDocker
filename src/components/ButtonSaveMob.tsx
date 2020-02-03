@@ -3,7 +3,7 @@ import { saveFile } from "../functions/core/saveFile";
 import Button from "@material-ui/core/Button"
 
 function saveButtonClicked() {
-    console.log("pressed save!");
+    // console.log("pressed save!");
     saveFile(
         `${process.env.PWD}`,
         `testfilename`,

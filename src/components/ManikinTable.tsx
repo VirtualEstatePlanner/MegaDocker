@@ -10,16 +10,17 @@ import {
 import { IMegaDockerState } from "../interfaces/IMegaDockerState";
 import { Tooltip } from "@material-ui/core";
 import { IMegaDockerAction, IMegaDockerActionWithManikinPayload } from "../interfaces/IMegaDockerAction";
-import { megaReducer } from "../functions/reducers/megaReducer";
+import { megaReducer, toggleManikinReducer } from "../functions/reducers/megaReducer";
 import { IManikin } from "../interfaces/IManikin";
 import {
-    Context,
-    updateSelectedManikins,
-    updateMemories,
-    updateMobMites,
-    updateServiceMites,
-    updateNetworkMites,
-    updateCustomMites
+    Context
+    // ,
+    // updateSelectedManikins,
+    // updateMemories,
+    // updateMobMites,
+    // updateServiceMites,
+    // updateNetworkMites,
+    // updateCustomMites
 } from "./Context";
 
 export const ManikinTable: React.FC = (props: any): React.ReactElement => {
@@ -36,27 +37,27 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         { name: "isSelected", label: "Choose" }
     ]
 
-    const toggleManikin = (prevState: IMegaDockerState, manikin: IManikin): IMegaDockerAction => {
-        const indexOfManikin: number = prevState.manikinTableContents.indexOf(manikin)
-        let workingState: IMegaDockerState = prevState
-        workingState.manikinTableContents[indexOfManikin].isSelected = !prevState.manikinTableContents[indexOfManikin].isSelected
-        workingState.selectedManikins = updateSelectedManikins(workingState.manikinTableContents)
-        workingState.memoryTableContents = updateMemories(workingState.selectedManikins)
-        workingState.allMobMites = updateMobMites(workingState.selectedManikins)
-        workingState.mobServiceMites = updateServiceMites(updateMobMites(workingState.selectedManikins))
-        workingState.mobNetworkMites = updateNetworkMites(updateMobMites(workingState.selectedManikins))
-        workingState.mobCustomMites = updateCustomMites(updateMobMites(workingState.selectedManikins))
-        workingState.ymlOutput = ``
-        workingState.infoContent = `Manikin ${manikin.name} was toggled.`
+    // const toggleManikin = (prevState: IMegaDockerState, manikin: IManikin): IMegaDockerAction => {
+    //     const indexOfManikin: number = prevState.manikinTableContents.indexOf(manikin)
+    //     let workingState: IMegaDockerState = prevState
+    //     workingState.manikinTableContents[indexOfManikin].isSelected = !prevState.manikinTableContents[indexOfManikin].isSelected
+    //     workingState.selectedManikins = updateSelectedManikins(workingState.manikinTableContents)
+    //     workingState.memoryTableContents = updateMemories(workingState.selectedManikins)
+    //     workingState.allMobMites = updateMobMites(workingState.selectedManikins)
+    //     workingState.mobServiceMites = updateServiceMites(updateMobMites(workingState.selectedManikins))
+    //     workingState.mobNetworkMites = updateNetworkMites(updateMobMites(workingState.selectedManikins))
+    //     workingState.mobCustomMites = updateCustomMites(updateMobMites(workingState.selectedManikins))
+    //     workingState.ymlOutput = ``
+    //     workingState.infoContent = `Manikin ${manikin.name} was toggled.`
 
-        let newStateAction: IMegaDockerActionWithManikinPayload = {
-            type: 'TOGGLE_MANIKIN',
-            payload: workingState.manikinTableContents[indexOfManikin]
-        }
-        return newStateAction
-    }
+    //     let newStateAction: IMegaDockerActionWithManikinPayload = {
+    //         type: 'TOGGLE_MANIKIN',
+    //         payload: workingState.manikinTableContents[indexOfManikin]
+    //     }
+    //     return newStateAction
+    // }
 
-    console.log(state)
+    // console.log(state)
 
     return (
         <Table className="ManikinTable" size="small" stickyHeader>
@@ -91,7 +92,7 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                                 key={`${eachManikin.name}Checkbox`}
                                 checked={eachManikin.isSelected}
                                 disabled={eachManikin.isCore ? true : false}
-                                onChange={() => dispatch(toggleManikin(state, eachManikin))} />
+                                onChange={() => dispatch(toggleManikinReducer(state, eachManikin))} />
                         </TableCell>
                     </TableRow>))}
             </TableBody>

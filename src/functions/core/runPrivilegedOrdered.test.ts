@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import { runOrdered } from './runOrdered';
 import { runPrivilegedOrdered } from './runPrivilegedOrdered';
 

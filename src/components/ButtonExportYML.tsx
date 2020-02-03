@@ -7,7 +7,7 @@ import Button from "@material-ui/core/Button"
 
 function buttonClicked() {
     //saveFile(userMegaDockerFolder, mobName.value, `yml`, userMob.mobManikins.toString())
-    console.log("pressed export!");
+    // console.log("pressed export!");
     saveFile(
         `${process.env.PWD}`,
         `testfilename`,

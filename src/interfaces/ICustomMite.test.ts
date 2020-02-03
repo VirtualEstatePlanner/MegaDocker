@@ -7,6 +7,7 @@
 import { ICustomMite } from './ICustomMite';
 
 const testCustomMite: ICustomMite = {
+  miteIndex: 4589967145,
   type: `Custom`,
   miteString: `this could be empty`,
   miteFiles: [

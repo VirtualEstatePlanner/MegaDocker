@@ -18,12 +18,12 @@ import { ChildProcess, exec } from 'child_process';
 export function runPrivileged(command: string, opt?: string[]): void {
   const child: ChildProcess = exec(`${command} ${opt}`);
   child.on(`error`, (err) => {
-    console.log(`an error occurred with message: ${err.message}`);
+    // console.log(`an error occurred with message: ${err.message}`);
   });
   child.on(`exit`, (code) => {
-    console.log(`Child process ${command} exited with code ${code}`);
+    // console.log(`Child process ${command} exited with code ${code}`);
   });
   child.on(`data`, (data) => {
-    console.log(`stdout: ${data}`);
+    // console.log(`stdout: ${data}`);
   });
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import { checkForFile } from '../core/checkForFile';
 import { deleteFile } from '../core/deleteFile';
 import { detectOS } from '../core/detectOS';

@@ -13,7 +13,7 @@ import { run } from '../core/run';
  */
 export function dockerPS(): string {
   let output = run('/usr/local/bin/docker', ['ps']);
-  console.log(output);
+  // console.log(output);
   return output as string;
   // TODO needs a return of a JSON object, maybe?
 }

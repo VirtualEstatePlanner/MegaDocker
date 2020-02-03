@@ -2,7 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button"
 
 function buttonClicked() {
-    console.log("pressed launch!");
+    // console.log("pressed launch!");
 }
 
 export const ButtonLaunchMob: React.FC = (): React.ReactElement => {

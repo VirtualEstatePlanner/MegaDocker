@@ -25,7 +25,7 @@ export function saveFile(
     fileContents,
     (err: NodeJS.ErrnoException | null | NoParamCallback) => {
       if (err !== null) {
-        console.log(err);
+        // console.log(err);
       }
     }
   );

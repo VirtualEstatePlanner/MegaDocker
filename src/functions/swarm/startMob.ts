@@ -13,7 +13,7 @@ import { IManikin } from '../../interfaces/IManikin';
 export function startMob(): void {
   // TODO
   // tslint:disable-next-line: no-console
-  console.log(`TODO THIS FUNCTION: startMob`);
+  // console.log(`TODO THIS FUNCTION: startMob`);
   //  const chosenManikins: IManikin[] = [];
 
   /*

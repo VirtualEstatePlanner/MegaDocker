@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 //  IManikin.ts
 //  MegaDocker
 //  an interface that represents a Manikin
@@ -13,6 +14,7 @@ import defaultIcon from '../images/manikin-icons/defaultIcon.png';
 export const someTestManikin: IManikin = {
   name: `someManikinName`,
   manikinIcon: defaultIcon,
+  manikinIndex: 1234524356,
   description: `it does something that is your bidding`,
   isCore: true,
   isSelected: true,

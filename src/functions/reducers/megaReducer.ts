@@ -69,6 +69,39 @@ const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
   let ymlString: string = ymlOutputArray.join(``);
   return ymlString;
 };
+export const toggleManikinReducer = (
+  prevState: IMegaDockerState,
+  manikin: IManikin
+): IMegaDockerAction => {
+  const indexOfManikin: number = prevState.manikinTableContents.indexOf(
+    manikin
+  );
+  let workingState: IMegaDockerState = { ...prevState };
+  workingState.manikinTableContents[indexOfManikin].isSelected = !prevState
+    .manikinTableContents[indexOfManikin].isSelected;
+  workingState.selectedManikins = updateSelectedManikins(
+    workingState.manikinTableContents
+  );
+  workingState.memoryTableContents = updateMemories(
+    workingState.selectedManikins
+  );
+  workingState.allMobMites = updateMobMites(workingState.selectedManikins);
+  workingState.mobServiceMites = updateServiceMites(
+    updateMobMites(workingState.selectedManikins)
+  );
+  workingState.mobNetworkMites = updateNetworkMites(
+    updateMobMites(workingState.selectedManikins)
+  );
+  workingState.mobCustomMites = updateCustomMites(
+    updateMobMites(workingState.selectedManikins)
+  );
+  workingState.ymlOutput = ``;
+  workingState.infoContent = `Manikin ${manikin.name} was toggled.`;
+  return {
+    type: 'TOGGLE_MANIKIN',
+    payload: workingState
+  };
+};
 
 /**
  * Updates application state with useReducer

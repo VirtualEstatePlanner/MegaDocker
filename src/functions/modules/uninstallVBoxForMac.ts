@@ -7,5 +7,5 @@
 export function uninstallVBoxForMac() {
   //  TODO - run/o/p the script from virtualbox's unisntall script
   // tslint:disable-next-line: no-console
-  console.log(`TODO THIS FUNCTION: uninstallVBoxForMac`);
+  // console.log(`TODO THIS FUNCTION: uninstallVBoxForMac`);
 }

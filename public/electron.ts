@@ -6,12 +6,12 @@ export let mainWindow: BrowserWindow | null;
 
 function createWindow() {
   const indexpath: string = join(__dirname, `/index.html`);
-  console.log(`indexpath results:`);
-  console.log(indexpath);
+  // // console.log(`indexpath results:`);
+  // // console.log(indexpath);
 
   const electronurl: string = resolve(indexpath);
-  console.log(`electronurl results:`);
-  console.log(electronurl);
+  // // console.log(`electronurl results:`);
+  // // console.log(electronurl);
 
   mainWindow = new BrowserWindow({
     width: 1100,
@@ -56,5 +56,5 @@ app.on('activate', () => {
 });
 
 ipcMain.on('onButtonClick', () => {
-  console.log('Main on button click');
+  // // console.log('Main on button click');
 });

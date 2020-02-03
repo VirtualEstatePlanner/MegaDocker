@@ -47,13 +47,21 @@ let initialMegaDockerState: IMegaDockerState = {
 export const Context = React.createContext<IMegaDockerState>(initialMegaDockerState)
 
 export const ContextProvider = (props: any): React.ReactElement => {
-    return (<React.Suspense fallback="...loading"><Context.Provider value={initialMegaDockerState}>{props.children}</Context.Provider ></React.Suspense>)
+    return (
+        <React.Suspense fallback="...loading">
+            <Context.Provider value={initialMegaDockerState}>
+                {props.children}
+            </Context.Provider >
+        </React.Suspense>
+    )
 }
 
 export const ContextConsumer = (props: any): React.ReactElement => {
     return (
         <React.Suspense fallback="...loading">
-            <Context.Consumer>{props.children}</Context.Consumer>
+            <Context.Consumer>
+                {props.children}
+            </Context.Consumer>
         </React.Suspense>
 
     )
