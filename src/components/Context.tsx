@@ -56,6 +56,7 @@ export const initialMegaDockerState: IMegaDockerState = {
 export const Context = React.createContext<IMegaDockerState>(initialMegaDockerState)
 
 export const ContextProvider = (props: any): React.ReactElement => {
+    console.log(`generated Context`)
     return (
         <React.Suspense fallback="...loading">
             <Context.Provider value={initialMegaDockerState}>
