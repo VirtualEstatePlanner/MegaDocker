@@ -13,7 +13,7 @@ function saveButtonClicked() {
 }
 
 export const ButtonSaveMob: React.FC = (): React.ReactElement => {
-    console.log(`generate ButtonSaveMob`)
+    console.log(`generating ButtonSaveMob`)
     return (
         <Button variant="contained" onClick={saveButtonClicked}>Save Mob</Button>
     );

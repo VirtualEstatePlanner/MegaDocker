@@ -4,7 +4,7 @@ import { ManikinPane } from './ContainerManikinPane'
 import { MainArea } from "./ContainerMainArea";
 import { ContextProvider } from './Context'
 export const App: React.FC = (props: any): React.ReactElement => {
-  console.log(`mounted App in DOM`)
+  console.log(`generating App`)
   return (
     <div className="App">
       <ContextProvider>{props.children}
