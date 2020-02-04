@@ -24,10 +24,10 @@ import {
 } from "./Context";
 
 export const ManikinTable: React.FC = (props: any): React.ReactElement => {
+    console.log(`updating ManikinTable`)
 
     const appState: IMegaDockerState = React.useContext(Context)
     const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, appState)
-    console.log(`updated ManikinTable`)
 
     interface IColumn {
         name: string,

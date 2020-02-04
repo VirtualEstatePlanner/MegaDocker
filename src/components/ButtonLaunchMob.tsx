@@ -6,6 +6,7 @@ function buttonClicked() {
 }
 
 export const ButtonLaunchMob: React.FC = (): React.ReactElement => {
+    console.log(`generating ButtonLaunchMob`)
     return (
         <Button variant="contained" onClick={buttonClicked}>Launch Mob</Button>
     );

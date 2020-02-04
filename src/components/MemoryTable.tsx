@@ -20,7 +20,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
 
     const appState = React.useContext(Context)
     const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, appState)
-    console.log(`updated MemoryTable`)
+    console.log(`updating MemoryTable`)
 
     const updateMemoryValue = (
         prevState: IMegaDockerState,
@@ -38,7 +38,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
         workingState.mobServiceMites = prevState.mobServiceMites
         workingState.mobNetworkMites = prevState.mobNetworkMites
         workingState.mobCustomMites = prevState.mobCustomMites
-        workingState.infoContent = `Manikin ${memory.name} was updated to ${memory.value}.`
+        workingState.infoContent = `Manikin ${memory.name} was updating to ${memory.value}.`
         workingState.ymlOutput = updateYML(workingState.mobServiceMites, workingState.mobNetworkMites)
 
         let newStateAction: IMegaDockerAction = {

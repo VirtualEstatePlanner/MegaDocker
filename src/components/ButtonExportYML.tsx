@@ -17,6 +17,7 @@ function buttonClicked() {
 }
 
 export const ButtonExportYML: React.FC = (): React.ReactElement => {
+    console.log(`generating ExportButton`)
     return (
         <Button variant="contained" onClick={buttonClicked}>Export YML</Button>
     );
