@@ -19,4 +19,4 @@ The line in **bold** is the current version
 - `v0.8.5-beta` : create `kubernetes` versions of all `Manikins` and `Mites`, add Google Cloud Provider API, finish all `TODO`s
 - `v0.9.0-beta` : clean up documentation, polish UI, write code coverage tests, prepare for crowdfunding and investors
 - `v0.9.5-preview` : look for investors, usable by end-user with only minor rough edges
-- `v1.0.0` : add altermante Manikin configurations, no rough corners: we open source and announce, begin crowdfunding
+- `v1.0.0` : add alternate Manikin configurations, no rough corners: we open source and announce, begin crowdfunding

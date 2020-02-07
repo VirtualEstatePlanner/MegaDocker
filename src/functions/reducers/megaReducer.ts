@@ -16,7 +16,7 @@ const updateSelectedManikins = (manikinArray: IManikin[]): IManikin[] => {
   return manikinArray.filter((eachManikin) => eachManikin.isSelected === true);
 };
 /**
- * updates memories arrayb based on application state
+ * updates memories array based on application state
  */
 const updateMemories = (manikinArray: IManikin[]): IMemory[] =>
   manikinArray
@@ -122,7 +122,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       };
       break;
     default:
-      throw new Error(`something went wrong in the megaReducer function`);
+      throw new Error(`Unhadndled action type: ${action.type}`);
   }
   return newState;
 };
