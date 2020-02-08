@@ -55,7 +55,7 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         workingState.ymlOutput = updateYML(workingState.mobServiceMites, workingState.mobNetworkMites)
         workingState.infoContent = `Manikin ${manikin.name} was set to ${workingState.manikinTableContents[indexOfManikin].isSelected}.`
 
-        const newState = { ...workingState }
+        const newState = workingState
 
         const newStateAction: IMegaDockerAction = {
             type: 'TOGGLE_MANIKIN',

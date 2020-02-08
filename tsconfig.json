@@ -22,5 +22,5 @@
     ]
   },
   "include": ["src", "public", "typings"],
-  "exclude": ["**/*/*.test.ts*"]
+  "exclude": ["**/*/*.test.ts*", "**/*/node_modules"]
 }

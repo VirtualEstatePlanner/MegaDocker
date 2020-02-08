@@ -7,7 +7,7 @@ export const App: React.FC = (props: any): React.ReactElement => {
   console.log(`generating App`)
   return (
     <div className="App">
-      <ContextProvider>{props.children}
+      <ContextProvider>
         <ManikinPane />
         <MainArea />
       </ContextProvider>

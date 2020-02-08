@@ -79,11 +79,13 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
   prevState: IMegaDockerState,
   action: IMegaDockerAction
 ): IMegaDockerState => {
-  console.log(`running megaReducer`);
+  console.log(`running megaReducer with type ${action.type} and payload:`);
+  console.log(action.payload);
   let newState: IMegaDockerState = prevState;
   switch (action.type) {
     case `APPLICATION_START`:
       newState = initialMegaDockerState;
+      console.log(`dispatched action 'APPLICATION_START'`);
       break;
     case `TOGGLE_MANIKIN`:
       const newSelectedManikins: IManikin[] = updateSelectedManikins(
@@ -97,14 +99,17 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         allMobMites: newMobMites,
         mobServiceMites: updateServiceMites(newMobMites),
         mobNetworkMites: updateNetworkMites(newMobMites),
-        mobCustomMites: updateCustomMites(newMobMites)
+        mobCustomMites: updateCustomMites(newMobMites),
+        infoContent: `manikinThatWasToggled.description`
       };
+      console.log(`dispatched action 'TOGGLE_MANIKIN'`);
       break;
     case `UPDATE_MEMORY_VALUE`:
       newState = {
         ...prevState,
         memoryTableContents: updateMemories(action.payload.manikinTableContents)
       };
+      console.log(`dispatched action 'UPDATE_MEMORY_VALUE'`);
       break;
     case `GENERATE_YML_OUTPUT`:
       newState = {
@@ -114,15 +119,17 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
           action.payload.mobNetworkMites
         )
       };
+      console.log(`dispatched action 'GENERATE_YML_OUTPUT'`);
       break;
     case `UPDATE_INFO_CONTENT`:
       newState = {
         ...prevState,
         infoContent: updateInfoContent(action.payload.infoContent)
       };
+      console.log(`dispatched action 'UPDATE_INFO_CONTENT'`);
       break;
     default:
-      throw new Error(`Unhadndled action type: ${action.type}`);
+      throw new Error(`Unhandled action type: ${action.type}`);
   }
   return newState;
 };
