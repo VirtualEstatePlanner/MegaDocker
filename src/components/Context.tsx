@@ -53,10 +53,11 @@ export const initialMegaDockerState: IMegaDockerState = {
     ymlOutput: initialYmlOutput
 };
 
-export const Context = React.createContext<IMegaDockerState>(initialMegaDockerState)
+export const Context: React.Context<IMegaDockerState> = React.createContext<IMegaDockerState>(initialMegaDockerState)
 
-export const ContextProvider = (props: any): React.ReactElement => {
+export const ContextProvider: React.FC = (props: any): React.ReactElement => {
     console.log(`generating Context`)
+
     return (
         <React.Suspense fallback="...loading">
             <Context.Provider value={initialMegaDockerState}>
@@ -66,7 +67,7 @@ export const ContextProvider = (props: any): React.ReactElement => {
     )
 }
 
-export const ContextConsumer = (props: any): React.ReactElement => {
+export const ContextConsumer: React.FC = (props: any): React.ReactElement => {
     return (
         <React.Suspense fallback="...loading">
             <Context.Consumer>
