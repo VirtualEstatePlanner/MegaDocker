@@ -59,21 +59,17 @@ export const ContextProvider: React.FC = (props: any): React.ReactElement => {
     console.log(`generating Context`)
 
     return (
-        <React.Suspense fallback="...loading">
-            <Context.Provider value={initialMegaDockerState}>
-                {props.children}
-            </Context.Provider >
-        </React.Suspense>
+        <Context.Provider value={initialMegaDockerState}>
+            {props.children}
+        </Context.Provider >
     )
 }
 
 export const ContextConsumer: React.FC = (props: any): React.ReactElement => {
     return (
-        <React.Suspense fallback="...loading">
-            <Context.Consumer>
-                {props.children}
-            </Context.Consumer>
-        </React.Suspense>
+        <Context.Consumer>
+            {props.children}
+        </Context.Consumer>
 
     )
 }
