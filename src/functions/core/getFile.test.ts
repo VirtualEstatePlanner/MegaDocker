@@ -1,7 +1,6 @@
 import { checkForFile } from './checkForFile';
 import { deleteFile } from './deleteFile';
 import { getFile } from './getFile';
-import { doesNotReject } from 'assert';
 
 it(`should download a URL to a file`, async () => {
   expect(checkForFile(`${process.env.PWD}`, `downloadedfile.md`)).toBeFalsy;
