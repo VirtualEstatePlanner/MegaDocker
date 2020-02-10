@@ -10,18 +10,9 @@ import {
 import { IMegaDockerState } from "../interfaces/IMegaDockerState";
 import { Tooltip } from "@material-ui/core";
 import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
-import { megaReducer } from "../functions/reducers/megaReducer";
+import { megaReducer, updateSelectedManikins, updateMemories, updateMobMites, updateServiceMites, updateNetworkMites, updateCustomMites, updateYML } from "../functions/reducers/megaReducer";
 import { IManikin } from "../interfaces/IManikin";
-import {
-    Context,
-    updateSelectedManikins,
-    updateMemories,
-    updateMobMites,
-    updateServiceMites,
-    updateNetworkMites,
-    updateCustomMites,
-    updateYML
-} from "./Context";
+import { Context } from "./Context";
 
 export const ManikinTable: React.FC = (props: any): React.ReactElement => {
     console.log(`updating ManikinTable`)
@@ -40,19 +31,19 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         { name: "isSelected", label: "Choose" }
     ]
 
-    const toggleManikin = (prevState: IMegaDockerState, manikin: IManikin): IMegaDockerAction => {
+    const toggleManikinAction = (prevState: IMegaDockerState, manikin: IManikin): IMegaDockerAction => {
 
         const indexOfManikin: number = prevState.manikinTableContents.indexOf(manikin)
-        let workingState: IMegaDockerState = prevState
+        let workingState: IMegaDockerState = { ...prevState }
         workingState.manikinTableContents[indexOfManikin].isSelected = !prevState.manikinTableContents[indexOfManikin].isSelected
         console.log(`${workingState.manikinTableContents[indexOfManikin].name} manikin was ${workingState.manikinTableContents[indexOfManikin].isSelected ? 'selected' : 'deselected'}`)
         workingState.selectedManikins = updateSelectedManikins(workingState.manikinTableContents)
         workingState.memoryTableContents = updateMemories(workingState.selectedManikins)
         workingState.allMobMites = updateMobMites(workingState.selectedManikins)
-        workingState.mobServiceMites = updateServiceMites(updateMobMites(workingState.selectedManikins))
-        workingState.mobNetworkMites = updateNetworkMites(updateMobMites(workingState.selectedManikins))
+        workingState.mobDServiceMites = updateServiceMites(updateMobMites(workingState.selectedManikins))
+        workingState.mobDNetworkMites = updateNetworkMites(updateMobMites(workingState.selectedManikins))
         workingState.mobCustomMites = updateCustomMites(updateMobMites(workingState.selectedManikins))
-        workingState.ymlOutput = updateYML(workingState.mobServiceMites, workingState.mobNetworkMites)
+        workingState.ymlOutput = updateYML(workingState.mobDServiceMites, workingState.mobDNetworkMites)
         workingState.infoContent = `Manikin ${manikin.name} was set to ${workingState.manikinTableContents[indexOfManikin].isSelected}.`
 
         const newState = workingState
@@ -98,7 +89,7 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                                 key={`${eachManikin.name}Checkbox`}
                                 checked={eachManikin.isSelected}
                                 disabled={eachManikin.isCore ? true : false}
-                                onChange={() => dispatch(toggleManikin(state, eachManikin))} />
+                                onChange={() => dispatch(toggleManikinAction(state, eachManikin))} />
                         </TableCell>
                     </TableRow>))}
             </TableBody>

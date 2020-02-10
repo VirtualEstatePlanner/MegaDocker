@@ -8,10 +8,11 @@
 
 .App {
   display: flex;
-  min-height: 100vh;
+  background-color: white;
   min-width: 100vw;
   flex-direction: row;
   margin: 0 auto;
+  min-height: 100vh;
 }
 
 .ButtonPane {
@@ -47,8 +48,8 @@
 }
 
 .ManikinPane {
-  flex-direction: column;
   display: flex;
+  flex-direction: column;
   height: 100vh;
   width: 40vw;
   justify-content: flex-start;
@@ -62,6 +63,7 @@
 }
 
 .ManikinTable {
+  flex-direction: column;
   overflow: scroll;
 }
 
@@ -70,9 +72,8 @@
 }
 
 .MemoryPane {
-  /*  background-color: pink; */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   overflow: auto;
   height: 70vh;
   width: 75vw;
@@ -81,7 +82,6 @@
 
 .MemoryTable {
   display: flex;
-  background-color: white;
   height: 100%;
   flex-grow: 1;
 }

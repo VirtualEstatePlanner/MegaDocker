@@ -10,10 +10,10 @@ import {
 } from "@material-ui/core";
 import * as checkmarkIcon from "../images/indicators/checkmarkIcon.png"
 import * as xmarkIcon from "../images/indicators/xmarkIcon.png"
-import { Context, updateYML } from './Context';
+import { Context } from './Context';
 import { IMegaDockerState } from "../interfaces/IMegaDockerState";
 import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
-import { megaReducer } from "../functions/reducers/megaReducer";
+import { megaReducer, updateYML } from "../functions/reducers/megaReducer";
 import { IMemory } from "../interfaces/IMemory";
 
 export const MemoryTable: React.FC = (props: any): React.ReactElement => {
@@ -35,11 +35,11 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
         workingState.selectedManikins = prevState.selectedManikins
         workingState.memoryTableContents = prevState.memoryTableContents
         workingState.allMobMites = prevState.allMobMites
-        workingState.mobServiceMites = prevState.mobServiceMites
-        workingState.mobNetworkMites = prevState.mobNetworkMites
+        workingState.mobDServiceMites = prevState.mobDServiceMites
+        workingState.mobDNetworkMites = prevState.mobDNetworkMites
         workingState.mobCustomMites = prevState.mobCustomMites
         workingState.infoContent = `Manikin ${memory.name} was updating to ${memory.value}.`
-        workingState.ymlOutput = updateYML(workingState.mobServiceMites, workingState.mobNetworkMites)
+        workingState.ymlOutput = updateYML(workingState.mobDServiceMites, workingState.mobDNetworkMites)
 
         let newStateAction: IMegaDockerAction = {
             type: 'UPDATE_MEMORY_VALUE',
