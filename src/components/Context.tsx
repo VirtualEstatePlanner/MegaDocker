@@ -46,8 +46,8 @@ export const initialMegaDockerState: IMegaDockerState = {
     selectedManikins: initialSelectedManikins,
     memoryTableContents: initialMemoryTableContents,
     allMobMites: initialMobMites,
-    mobServiceMites: initialServiceMites,
-    mobNetworkMites: initialNetworkMites,
+    mobDServiceMites: initialServiceMites,
+    mobDNetworkMites: initialNetworkMites,
     mobCustomMites: initialCustomMites,
     infoContent: initialInfoContent,
     ymlOutput: initialYmlOutput
