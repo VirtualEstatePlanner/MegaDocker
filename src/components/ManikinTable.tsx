@@ -7,18 +7,15 @@ import {
     TableHead,
     TableRow
 } from "@material-ui/core";
-import { IMegaDockerState } from "../interfaces/IMegaDockerState";
 import { Tooltip } from "@material-ui/core";
-import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
-import { megaReducer, updateSelectedManikins, updateMemories, updateMobMites, updateServiceMites, updateNetworkMites, updateCustomMites, updateYML } from "../functions/reducers/megaReducer";
 import { IManikin } from "../interfaces/IManikin";
-import { Context } from "./Context";
+import { IManikinToggleAction } from "../interfaces/actionInterfaces/IManikinToggleAction";
+import { IMegaDockerState } from "../interfaces/IMegaDockerState";
+import { MegaContext } from "./MegaContext";
+import { megaReducer } from "../functions/reducers/megaReducer";
 
 export const ManikinTable: React.FC = (props: any): React.ReactElement => {
-    console.log(`updating ManikinTable`)
-
-    const appState: IMegaDockerState = React.useContext(Context)
-    const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, appState)
+    const [state, dispatch]: [IMegaDockerState, React.Dispatch<IManikinToggleAction>] = React.useReducer(megaReducer, React.useContext(MegaContext))
 
     interface IColumn {
         name: string,
@@ -30,31 +27,6 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
         { name: "icon", label: "" },
         { name: "isSelected", label: "Choose" }
     ]
-
-    const toggleManikinAction = (prevState: IMegaDockerState, manikin: IManikin): IMegaDockerAction => {
-
-        const indexOfManikin: number = prevState.manikinTableContents.indexOf(manikin)
-        let workingState: IMegaDockerState = { ...prevState }
-        workingState.manikinTableContents[indexOfManikin].isSelected = !prevState.manikinTableContents[indexOfManikin].isSelected
-        console.log(`${workingState.manikinTableContents[indexOfManikin].name} manikin was ${workingState.manikinTableContents[indexOfManikin].isSelected ? 'selected' : 'deselected'}`)
-        workingState.selectedManikins = updateSelectedManikins(workingState.manikinTableContents)
-        workingState.memoryTableContents = updateMemories(workingState.selectedManikins)
-        workingState.allMobMites = updateMobMites(workingState.selectedManikins)
-        workingState.mobDServiceMites = updateServiceMites(updateMobMites(workingState.selectedManikins))
-        workingState.mobDNetworkMites = updateNetworkMites(updateMobMites(workingState.selectedManikins))
-        workingState.mobCustomMites = updateCustomMites(updateMobMites(workingState.selectedManikins))
-        workingState.ymlOutput = updateYML(workingState.mobDServiceMites, workingState.mobDNetworkMites)
-        workingState.infoContent = `Manikin ${manikin.name} was set to ${workingState.manikinTableContents[indexOfManikin].isSelected}.`
-
-        const newState = workingState
-
-        const newStateAction: IMegaDockerAction = {
-            type: 'TOGGLE_MANIKIN',
-            payload: newState
-        }
-
-        return newStateAction
-    }
 
     return (
         <Table className="ManikinTable" size="small" stickyHeader>
@@ -69,7 +41,7 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                 </TableRow>
             </TableHead>
             <TableBody className="ManikinTableBody">
-                {state.manikinTableContents.map((eachManikin: IManikin) => (
+                {state.manikinTable.map((eachManikin: IManikin) => (
                     <TableRow
                         key={`${eachManikin.name}Row`}
                         className="ManikinRow"
@@ -89,7 +61,11 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                                 key={`${eachManikin.name}Checkbox`}
                                 checked={eachManikin.isSelected}
                                 disabled={eachManikin.isCore ? true : false}
-                                onChange={() => dispatch(toggleManikinAction(state, eachManikin))} />
+                                onChange={() => dispatch({
+                                    type: `MANIKIN_TOGGLE_ACTION`,
+                                    payload: eachManikin
+                                }
+                                )} />
                         </TableCell>
                     </TableRow>))}
             </TableBody>

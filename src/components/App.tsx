@@ -2,16 +2,16 @@ import React from "react";
 import "./App.css";
 import { ManikinPane } from './ContainerManikinPane'
 import { MainArea } from "./ContainerMainArea";
-import { ContextProvider } from './Context'
+import { MegaContextProvider } from './MegaContext'
 
 export const App: React.FC = (props: any): React.ReactElement => {
   console.log(`generating App`)
   return (
     <div className="App">
-      <ContextProvider>
+      <MegaContextProvider>
         <ManikinPane />
         <MainArea />
-      </ContextProvider>
+      </MegaContextProvider>
     </div>
   );
 };

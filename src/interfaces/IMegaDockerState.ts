@@ -14,17 +14,17 @@ import { IMite } from './IMite';
  * @mobDNetworkMites docker-compose network yml mites
  * @mobKServiceMites docker-compose service yml mites
  * @mobKNetworkMites docker-compose network yml mites
- * @mobCustomMites non-yml mites
+ * @mobCustomMites an array of arrays of non-yml mites
  * @infoContent
  */
 export interface IMegaDockerState {
-  manikinTableContents: IManikin[];
+  manikinTable: IManikin[];
   selectedManikins: IManikin[];
-  memoryTableContents: IMemory[];
+  memories: IMemory[];
   allMobMites: IMite[];
   mobDServiceMites: IMite[];
   mobDNetworkMites: IMite[];
-  mobCustomMites: IMite[];
+  mobCustomMites: IMite[][];
   infoContent: string;
   ymlOutput: string;
 }

@@ -1,8 +1,16 @@
+import React from 'react';
+// data interfaces
 import { IManikin } from '../../interfaces/IManikin';
 import { IMemory } from '../../interfaces/IMemory';
 import { IMite } from '../../interfaces/IMite';
-import { IMegaDockerAction } from '../../interfaces/IMegaDockerAction';
+// action interfaces
+import { IApplicationStartAction } from '../../interfaces/actionInterfaces/IApplicationStartAction';
+import { IGenerateYmlOutputAction } from '../../interfaces/actionInterfaces/IGenerateYmlOutputAction';
+import { IManikinToggleAction } from '../../interfaces/actionInterfaces/IManikinToggleAction';
 import { IMegaDockerState } from '../../interfaces/IMegaDockerState';
+import { IUpdateMemoryValueAction } from '../../interfaces/actionInterfaces/IUpdateMemoryValueAction';
+import { IUpdateInfoContentAction } from '../../interfaces/actionInterfaces/IUpdateInfoContentAction';
+// global consts
 import { allManikins } from '../../globals/allManikins';
 import { mobFileHeaderString } from '../../mobparts/mites/service/mobFileHeaderString';
 import { servicesFooterSectionString } from '../../mobparts/mites/service/servicesFooterSectionString';
@@ -12,53 +20,52 @@ import { mobNetworksSectionString } from '../../mobparts/mites/network/mobNetwor
 /**
  * updates selectedManikins array based on application state
  */
-export const updateSelectedManikins = (
-  manikinArray: IManikin[]
-): IManikin[] => {
-  return manikinArray.filter((eachManikin) => eachManikin.isSelected === true);
-};
+const getManikins = (manikinsToSelectFrom: IManikin[]): IManikin[] =>
+  manikinsToSelectFrom.filter((eachManikin) => eachManikin.isSelected === true);
 /**
  * updates memories array based on application state
  */
-export const updateMemories = (manikinArray: IManikin[]): IMemory[] =>
-  manikinArray
+const getMemories = (manikinsToGetMemoriesFrom: IManikin[]): IMemory[] =>
+  manikinsToGetMemoriesFrom
     .filter((eachManikin: IManikin) => eachManikin.isSelected)
     .flatMap((eachManikin) => eachManikin.memories);
 /**
  * updates allMobMites array based on application state
  */
-export const updateMobMites = (manikins: IManikin[]): IMite[] =>
-  manikins.flatMap((eachManikin) =>
+const getMites = (manikinsToGetMitesFrom: IManikin[]): IMite[] =>
+  manikinsToGetMitesFrom.flatMap((eachManikin) =>
     eachManikin.mites.flatMap((eachMite) => eachMite)
   );
 /**
  * updates serviceMites array based on application state
  */
-export const updateServiceMites = (miteArray: IMite[]): IMite[] =>
+
+const getDServiceMites = (miteArray: IMite[]): IMite[] =>
   miteArray.filter((eachMite) => eachMite.type === `Service`);
 /**
  * updates networkMites array based on application state
  */
-export const updateNetworkMites = (miteArray: IMite[]): IMite[] =>
+
+const getDNetworkMites = (miteArray: IMite[]): IMite[] =>
   miteArray.filter((eachMite) => eachMite.type === `Network`);
+
 /**
  * updates customMites array based on application state
  */
-export const updateCustomMites = (miteArray: IMite[]): IMite[] =>
-  miteArray.filter((eachMite) => eachMite.type === `Custom`);
+const getCustomMites = (miteArray: IMite[]): IMite[][] => [
+  miteArray.filter((eachMite) => eachMite.type === `Custom`)
+];
+
 /**
  * updates Info Pane content
  */
-export const updateInfoContent = (info: string): string => {
+const updateInfoContent = (info: string): string => {
   return info;
 };
 /**
  * updates YML file
  */
-export const updateYML = (
-  serviceMites: IMite[],
-  networkMites: IMite[]
-): string => {
+const getYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
   let tempServicesYML: string[] = serviceMites.flatMap(
     (eachMite) => eachMite.miteString
   );
@@ -77,92 +84,100 @@ export const updateYML = (
   return ymlString;
 };
 
-const initialTableManikins: IManikin[] = [...allManikins];
-const initialSelectedManikins: IManikin[] = updateSelectedManikins(
-  initialTableManikins
-);
-const initialMemoryTableContents: IMemory[] = updateMemories(
-  initialSelectedManikins
-);
-const initialMobMites: IMite[] = updateMobMites(initialSelectedManikins);
-const initialServiceMites: IMite[] = updateServiceMites(initialMobMites);
-const initialNetworkMites: IMite[] = updateNetworkMites(initialMobMites);
-const initialCustomMites: IMite[] = updateCustomMites(initialMobMites);
-const initialInfoContent: string = `This is the Information Pane.  You can read more about the selected item here.`;
-const initialYmlOutput: string = updateYML(
-  initialServiceMites,
-  initialNetworkMites
-);
+const coreManikins: IManikin[] = getManikins(allManikins);
+const coreMemories: IMemory[] = getMemories(coreManikins);
+const coreMites: IMite[] = getMites(coreManikins);
+const dServiceMites: IMite[] = getDServiceMites(coreMites);
+const dNetworkMites: IMite[] = getDNetworkMites(coreMites);
+const customMites: IMite[][] = getCustomMites(coreMites);
+const welcomeInfo: string = `This is the Information Pane.  You can read more about the selected item here.`;
+const coreYML: string = getYML(dServiceMites, dNetworkMites);
 
-export const initialMegaDockerState: IMegaDockerState = {
-  manikinTableContents: initialTableManikins,
-  selectedManikins: initialSelectedManikins,
-  memoryTableContents: initialMemoryTableContents,
-  allMobMites: initialMobMites,
-  mobDServiceMites: initialServiceMites,
-  mobDNetworkMites: initialNetworkMites,
-  mobCustomMites: initialCustomMites,
-  infoContent: initialInfoContent,
-  ymlOutput: initialYmlOutput
+export const coreState: IMegaDockerState = {
+  manikinTable: allManikins,
+  selectedManikins: coreManikins,
+  memories: coreMemories,
+  allMobMites: coreMites,
+  mobDServiceMites: dServiceMites,
+  mobDNetworkMites: dNetworkMites,
+  mobCustomMites: customMites,
+  infoContent: welcomeInfo,
+  ymlOutput: coreYML
 };
+
 /**
- * Updates application state with useReducer
+ * Updates application state for React.useReducer
  */
-export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
+export const megaReducer: React.Reducer<
+  IMegaDockerState,
+  | IApplicationStartAction
+  | IGenerateYmlOutputAction
+  | IManikinToggleAction
+  | IUpdateInfoContentAction
+  | IUpdateMemoryValueAction
+> = (
   prevState: IMegaDockerState,
-  action: IMegaDockerAction
+  action:
+    | IApplicationStartAction
+    | IGenerateYmlOutputAction
+    | IManikinToggleAction
+    | IUpdateInfoContentAction
+    | IUpdateMemoryValueAction
 ): IMegaDockerState => {
   console.log(`running megaReducer with type ${action.type} and payload:`);
   console.log(action.payload);
-  let newState: IMegaDockerState = prevState;
-  switch (action.type) {
-    case `APPLICATION_START`:
-      newState = initialMegaDockerState;
-      console.log(`dispatched action 'APPLICATION_START'`);
-      break;
-    case `TOGGLE_MANIKIN`:
-      const newSelectedManikins: IManikin[] = updateSelectedManikins(
-        action.payload.manikinTableContents
-      );
-      const newMobMites: IMite[] = updateMobMites(newSelectedManikins);
+
+  const updateMemoryValue: Function = (
+    newValue: string,
+    newReady: boolean,
+    newInfo: string,
+    memoryIndex: number
+  ): IMegaDockerState => {
+    let workingState: IMegaDockerState = { ...prevState };
+    workingState.memories[memoryIndex].value = newValue;
+    workingState.memories[memoryIndex].isReady = newReady;
+    workingState.infoContent = newInfo;
+    const newState = workingState;
+    return newState;
+  };
+
+  let newState: IMegaDockerState = prevState; // duplicate the state to modify a copy
+
+  switch (
+    action.type // check which modification to make to state
+  ) {
+    case `APPLICATION_START`: // to start the program with core manikins selected
+      return coreState;
+
+    case `MANIKIN_TOGGLE_ACTION`: // to de/select a manikin
+      newState.manikinTable = [...newState.manikinTable, action.payload];
+      newState.selectedManikins = getManikins(newState.manikinTable);
+      newState.memories = getMemories(newState.selectedManikins);
+      newState.allMobMites = getMites(newState.selectedManikins);
+      newState.mobDNetworkMites = getDServiceMites(newState.allMobMites);
+      newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites);
+      newState.mobCustomMites = getCustomMites(newState.allMobMites);
+      newState.infoContent = action.payload.description;
+      return newState;
+
+    case `UPDATE_MEMORY_VALUE`: // to handle new data in a memory
+      const newMemory = updateMemoryValue(action.payload);
+      newState = { ...newState, memories: [...newState.memories, newMemory] };
+      return newState;
+
+    case `GENERATE_YML_OUTPUT`: // for export button
       newState = {
         ...prevState,
-        selectedManikins: newSelectedManikins,
-        memoryTableContents: updateMemories(newSelectedManikins),
-        allMobMites: newMobMites,
-        mobDServiceMites: updateServiceMites(newMobMites),
-        mobDNetworkMites: updateNetworkMites(newMobMites),
-        mobCustomMites: updateCustomMites(newMobMites),
-        infoContent: `manikinThatWasToggled.description`
+        ymlOutput: getYML(newState.mobDServiceMites, newState.mobDNetworkMites)
       };
-      console.log(`dispatched action 'TOGGLE_MANIKIN'`);
-      break;
-    case `UPDATE_MEMORY_VALUE`:
+      return newState;
+    case `UPDATE_INFO_CONTENT`: // to dispatch user hints to info pane
       newState = {
         ...prevState,
-        memoryTableContents: updateMemories(action.payload.manikinTableContents)
+        infoContent: updateInfoContent(action.payload)
       };
-      console.log(`dispatched action 'UPDATE_MEMORY_VALUE'`);
-      break;
-    case `GENERATE_YML_OUTPUT`:
-      newState = {
-        ...prevState,
-        ymlOutput: updateYML(
-          action.payload.mobServiceMites,
-          action.payload.mobNetworkMites
-        )
-      };
-      console.log(`dispatched action 'GENERATE_YML_OUTPUT'`);
-      break;
-    case `UPDATE_INFO_CONTENT`:
-      newState = {
-        ...prevState,
-        infoContent: updateInfoContent(action.payload.infoContent)
-      };
-      console.log(`dispatched action 'UPDATE_INFO_CONTENT'`);
-      break;
+      return newState;
     default:
-      throw new Error(`Unhandled action type: ${action.type}`);
+      throw new Error(`Unhandled action type`);
   }
-  return newState;
 };

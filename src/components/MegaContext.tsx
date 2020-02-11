@@ -36,15 +36,15 @@ const initialMemoryTableContents: IMemory[] = updateMemories(initialSelectedMani
 const initialMobMites: IMite[] = updateMobMites(initialSelectedManikins)
 const initialServiceMites: IMite[] = updateServiceMites(initialMobMites)
 const initialNetworkMites: IMite[] = updateNetworkMites(initialMobMites)
-const initialCustomMites: IMite[] = updateCustomMites(initialMobMites)
+const initialCustomMites: IMite[][] = [updateCustomMites(initialMobMites)]
 const initialInfoContent: string = `This is the Information Pane.  You can read more about the selected item here.`
 const initialYmlOutput: string = updateYML(initialServiceMites, initialNetworkMites)
 
 
 export const initialMegaDockerState: IMegaDockerState = {
-    manikinTableContents: initialTableManikins,
+    manikinTable: initialTableManikins,
     selectedManikins: initialSelectedManikins,
-    memoryTableContents: initialMemoryTableContents,
+    memories: initialMemoryTableContents,
     allMobMites: initialMobMites,
     mobDServiceMites: initialServiceMites,
     mobDNetworkMites: initialNetworkMites,
@@ -53,23 +53,23 @@ export const initialMegaDockerState: IMegaDockerState = {
     ymlOutput: initialYmlOutput
 };
 
-export const Context: React.Context<IMegaDockerState> = React.createContext<IMegaDockerState>(initialMegaDockerState)
+export const MegaContext: React.Context<IMegaDockerState> = React.createContext<IMegaDockerState>(initialMegaDockerState)
 
-export const ContextProvider: React.FC = (props: any): React.ReactElement => {
+export const MegaContextProvider: React.FC = (props: any): React.ReactElement => {
     console.log(`generating Context`)
 
     return (
-        <Context.Provider value={initialMegaDockerState}>
+        <MegaContext.Provider value={initialMegaDockerState}>
             {props.children}
-        </Context.Provider >
+        </MegaContext.Provider >
     )
 }
 
-export const ContextConsumer: React.FC = (props: any): React.ReactElement => {
+export const MegaContextConsumer: React.FC = (props: any): React.ReactElement => {
     return (
-        <Context.Consumer>
+        <MegaContext.Consumer>
             {props.children}
-        </Context.Consumer>
+        </MegaContext.Consumer>
 
     )
 }

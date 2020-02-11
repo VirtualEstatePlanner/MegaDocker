@@ -10,40 +10,57 @@ import {
 } from "@material-ui/core";
 import * as checkmarkIcon from "../images/indicators/checkmarkIcon.png"
 import * as xmarkIcon from "../images/indicators/xmarkIcon.png"
-import { Context } from './Context';
+import { MegaContext } from './MegaContext';
 import { IMegaDockerState } from "../interfaces/IMegaDockerState";
-import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
-import { megaReducer, updateYML } from "../functions/reducers/megaReducer";
+// import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
+import { megaReducer } from "../functions/reducers/megaReducer";
 import { IMemory } from "../interfaces/IMemory";
+import { IApplicationStartAction } from "../interfaces/actionInterfaces/IApplicationStartAction";
+import { IGenerateYmlOutputAction } from "../interfaces/actionInterfaces/IGenerateYmlOutputAction";
+import { IManikinToggleAction } from "../interfaces/actionInterfaces/IManikinToggleAction";
+import { IUpdateInfoContentAction } from "../interfaces/actionInterfaces/IUpdateInfoContentAction";
+import { IUpdateMemoryValueAction } from "../interfaces/actionInterfaces/IUpdateMemoryValueAction";
 
 export const MemoryTable: React.FC = (props: any): React.ReactElement => {
 
-    const appState = React.useContext(Context)
-    const [state, dispatch]: [IMegaDockerState, React.Dispatch<IMegaDockerAction>] = React.useReducer(megaReducer, appState)
-    console.log(`updating MemoryTable`)
+    const appState = React.useContext(MegaContext)
 
+    /**
+     * @state the current application state
+     * @dispatch a function to update that by passing an action to megaReducer
+     */
+    const [state, dispatch]: [
+        IMegaDockerState,
+        React.Dispatch<IApplicationStartAction |
+            IGenerateYmlOutputAction |
+            IManikinToggleAction |
+            IUpdateInfoContentAction |
+            IUpdateMemoryValueAction>] = React.useReducer(megaReducer, appState)
+
+    /**
+     * 
+     * @param prevState the previous application state
+     * @param memoryToUpdate an IMemory
+     * @param changeEvent a React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+     */
     const updateMemoryValue = (
         prevState: IMegaDockerState,
-        memory: IMemory,
-        event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
-    ): IMegaDockerAction => {
-        const indexOfMemory: number = prevState.memoryTableContents.indexOf(memory)
-        let workingState: IMegaDockerState = prevState
-        workingState.memoryTableContents[indexOfMemory].value = event.target.value
-        workingState.memoryTableContents[indexOfMemory].isReady = workingState.memoryTableContents[indexOfMemory].validator(workingState.memoryTableContents[indexOfMemory].value)
-        workingState.manikinTableContents = prevState.manikinTableContents
-        workingState.selectedManikins = prevState.selectedManikins
-        workingState.memoryTableContents = prevState.memoryTableContents
-        workingState.allMobMites = prevState.allMobMites
-        workingState.mobDServiceMites = prevState.mobDServiceMites
-        workingState.mobDNetworkMites = prevState.mobDNetworkMites
-        workingState.mobCustomMites = prevState.mobCustomMites
-        workingState.infoContent = `Manikin ${memory.name} was updating to ${memory.value}.`
-        workingState.ymlOutput = updateYML(workingState.mobDServiceMites, workingState.mobDNetworkMites)
+        memoryToUpdate: IMemory,
+        changeEvent: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): IUpdateMemoryValueAction => {
 
-        let newStateAction: IMegaDockerAction = {
+        /**
+         *  generates the payload to reduce
+         * @param memory the IMemory that will be reduced against the state
+         * @param newValue the IMemory.value to reduce against
+         */
+        const newMemoryValuePayload = {
+            memory: memoryToUpdate,
+            value: changeEvent.target.value
+        }
+
+        let newStateAction: IUpdateMemoryValueAction = {
             type: 'UPDATE_MEMORY_VALUE',
-            payload: workingState
+            payload: newMemoryValuePayload
         }
         return newStateAction
     }
@@ -64,23 +81,23 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
             </TableHead>
             <TableBody
                 className="MemoryTableBody">
-                {state.memoryTableContents.map((eachMemory: IMemory) => (
+                {state.memories.map((thisMemory: IMemory) => (
                     <TableRow
                         hover
-                        key={eachMemory.memoryIndex}>
+                        key={thisMemory.memoryIndex}>
                         <TableCell
-                            padding='checkbox'>{eachMemory.name}</TableCell>
+                            padding='checkbox'>{thisMemory.name}</TableCell>
                         <TableCell>
                             <Tooltip
-                                title={eachMemory.tooltip}>
+                                title={thisMemory.tooltip}>
                                 <Input
                                     fullWidth
                                     required={true}
-                                    value={eachMemory.value}
-                                    type={eachMemory.valueType}
-                                    placeholder={(`Please enter your ${eachMemory.name} here`)}
-                                    autoComplete={eachMemory.shouldAutocomplete.toString()}
-                                    onChange={event => dispatch(updateMemoryValue(state, eachMemory, event))}>
+                                    value={thisMemory.value}
+                                    type={thisMemory.valueType}
+                                    placeholder={(`Please enter your ${thisMemory.name} here`)}
+                                    autoComplete={thisMemory.shouldAutocomplete.toString()}
+                                    onChange={changeEvent => dispatch(updateMemoryValue(state, thisMemory, changeEvent))}>
                                 </Input>
                             </Tooltip>
                         </TableCell>
@@ -90,7 +107,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                                 alt='ready indicator'
                                 height={20}
                                 width={20}
-                                src={eachMemory.value === `` ? xmarkIcon : (eachMemory.validator(eachMemory.value).valueOf() ? checkmarkIcon : xmarkIcon)} />
+                                src={thisMemory.value === `` ? xmarkIcon : (thisMemory.validator(thisMemory.value).valueOf() ? checkmarkIcon : xmarkIcon)} />
                         </TableCell>
                     </TableRow>))}
             </TableBody>
