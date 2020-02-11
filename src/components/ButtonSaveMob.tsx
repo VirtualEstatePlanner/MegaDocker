@@ -3,7 +3,7 @@ import React from "react";
 import Button from "@material-ui/core/Button"
 
 function saveButtonClicked() {
-    console.log("pressed save (but didn't do anything)");
+    console.log("pressed save (but didn't do anything! Fix this)");
     // saveFile(
     //     `${process.env.PWD}`,
     //     `testfilename`,
@@ -12,9 +12,5 @@ function saveButtonClicked() {
     // );
 }
 
-export const ButtonSaveMob: React.FC = (): React.ReactElement => {
-    console.log(`generating ButtonSaveMob`)
-    return (
-        <Button variant="contained" onClick={saveButtonClicked}>Save Mob</Button>
-    );
-};
+export const ButtonSaveMob: React.FC = (): React.ReactElement =>
+    <Button variant="contained" onClick={saveButtonClicked}>Save Mob</Button>

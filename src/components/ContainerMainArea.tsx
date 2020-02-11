@@ -3,13 +3,9 @@ import { InfoPane } from "./ContainerInfoPane";
 import { ButtonPane } from "./ContainerButtonPane";
 import { MemoryPane } from "./ContainerMemoryPane";
 
-export const MainArea: React.FC = (props: any): React.ReactElement => {
-    console.log(`generating MainArea`)
-    return (
-        <div className="MainArea" >{props.children}
-            <InfoPane />
-            <MemoryPane />
-            <ButtonPane />
-        </div>
-    );
-};
+export const MainArea: React.FC = (props: any): React.ReactElement =>
+    <div className="MainArea" >{props.children}
+        <InfoPane>{props.children}</InfoPane>
+        <MemoryPane>{props.children}</MemoryPane>
+        <ButtonPane>{props.children}</ButtonPane>
+    </div>

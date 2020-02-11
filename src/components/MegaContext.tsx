@@ -56,7 +56,6 @@ export const initialMegaDockerState: IMegaDockerState = {
 export const MegaContext: React.Context<IMegaDockerState> = React.createContext<IMegaDockerState>(initialMegaDockerState)
 
 export const MegaContextProvider: React.FC = (props: any): React.ReactElement => {
-    console.log(`generating Context`)
 
     return (
         <MegaContext.Provider value={initialMegaDockerState}>

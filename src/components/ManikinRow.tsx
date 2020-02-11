@@ -4,11 +4,11 @@ import TableRow from "@material-ui/core/TableRow";
 import { ManikinIcon } from "./ManikinIcon";
 import { ManikinSwitch } from "./ManikinSwitch";
 
-export const ManikinRow: React.FC = (): React.ReactElement => {
+export const ManikinRow: React.FC = (props: any): React.ReactElement => {
     return (
-        <TableRow className="ManikinRow">
-            <TableCell>{'manikinname'}</TableCell>
-            <TableCell><ManikinIcon /></TableCell>
-            <TableCell padding="checkbox"><ManikinSwitch /></TableCell>
+        <TableRow className="ManikinRow">{props.children}
+            <TableCell>{props.children}{'manikinname'}</TableCell>
+            <TableCell>{props.children}<ManikinIcon /></TableCell>
+            <TableCell padding="checkbox">{props.children}<ManikinSwitch /></TableCell>
         </TableRow>)
 }

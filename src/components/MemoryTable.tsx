@@ -21,7 +21,11 @@ import { IManikinToggleAction } from "../interfaces/actionInterfaces/IManikinTog
 import { IUpdateInfoContentAction } from "../interfaces/actionInterfaces/IUpdateInfoContentAction";
 import { IUpdateMemoryValueAction } from "../interfaces/actionInterfaces/IUpdateMemoryValueAction";
 
-export const MemoryTable: React.FC = (props: any): React.ReactElement => {
+/**
+ * generates the memories table
+ * @param props the component props
+ */
+export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
 
     const appState = React.useContext(MegaContext)
 
@@ -38,38 +42,28 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
             IUpdateMemoryValueAction>] = React.useReducer(megaReducer, appState)
 
     /**
-     * 
-     * @param prevState the previous application state
-     * @param memoryToUpdate an IMemory
-     * @param changeEvent a React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+     *  generates the payload to reduce
+     * @param memory the IMemory that will be reduced against the state
+     * @param newValue the IMemory.value to reduce against
      */
-    const updateMemoryValue = (
-        prevState: IMegaDockerState,
+    const createMemoryValueAction = (
         memoryToUpdate: IMemory,
         changeEvent: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): IUpdateMemoryValueAction => {
-
-        /**
-         *  generates the payload to reduce
-         * @param memory the IMemory that will be reduced against the state
-         * @param newValue the IMemory.value to reduce against
-         */
-        const newMemoryValuePayload = {
-            memory: memoryToUpdate,
-            value: changeEvent.target.value
-        }
-
-        let newStateAction: IUpdateMemoryValueAction = {
+        return {
             type: 'UPDATE_MEMORY_VALUE',
-            payload: newMemoryValuePayload
+            payload: {
+                memory: memoryToUpdate,
+                value: changeEvent.target.value
+            }
         }
-        return newStateAction
     }
 
     return (
         <Table
             className="MemoryTable"
             size="small"
-            stickyHeader>
+            stickyHeader
+        >
             <TableHead
                 className="MemoryTableHeader">
                 <TableRow
@@ -97,7 +91,7 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                                     type={thisMemory.valueType}
                                     placeholder={(`Please enter your ${thisMemory.name} here`)}
                                     autoComplete={thisMemory.shouldAutocomplete.toString()}
-                                    onChange={changeEvent => dispatch(updateMemoryValue(state, thisMemory, changeEvent))}>
+                                    onChange={changeEvent => dispatch(createMemoryValueAction(thisMemory, changeEvent))}>
                                 </Input>
                             </Tooltip>
                         </TableCell>
@@ -111,6 +105,6 @@ export const MemoryTable: React.FC = (props: any): React.ReactElement => {
                         </TableCell>
                     </TableRow>))}
             </TableBody>
-        </Table>
+        </Table >
     )
 }

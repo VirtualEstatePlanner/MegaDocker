@@ -6,12 +6,8 @@ export let mainWindow: BrowserWindow | null;
 
 function createWindow() {
   const indexpath: string = join(__dirname, `/index.html`);
-  // console.log(`indexpath results:`);
-  // console.log(indexpath);
 
   const electronurl: string = resolve(indexpath);
-  // console.log(`electronurl results:`);
-  // console.log(electronurl);
 
   mainWindow = new BrowserWindow({
     width: 1100,
@@ -26,7 +22,6 @@ function createWindow() {
   if (process.env.NODE_ENV === 'development') {
     mainWindow.loadURL(`http://localhost:3000`);
   } else {
-    //      mainWindow.loadFile(`file://${indexpath})`
     mainWindow.loadURL(
       format({
         pathname: indexpath,
@@ -55,6 +50,4 @@ app.on('activate', () => {
   }
 });
 
-ipcMain.on('onButtonClick', () => {
-  // console.log('Main on button click');
-});
+ipcMain.on('onButtonClick', () => {});

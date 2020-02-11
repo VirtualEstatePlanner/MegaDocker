@@ -84,27 +84,6 @@ const getYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
   return ymlString;
 };
 
-const coreManikins: IManikin[] = getManikins(allManikins);
-const coreMemories: IMemory[] = getMemories(coreManikins);
-const coreMites: IMite[] = getMites(coreManikins);
-const dServiceMites: IMite[] = getDServiceMites(coreMites);
-const dNetworkMites: IMite[] = getDNetworkMites(coreMites);
-const customMites: IMite[][] = getCustomMites(coreMites);
-const welcomeInfo: string = `This is the Information Pane.  You can read more about the selected item here.`;
-const coreYML: string = getYML(dServiceMites, dNetworkMites);
-
-export const coreState: IMegaDockerState = {
-  manikinTable: allManikins,
-  selectedManikins: coreManikins,
-  memories: coreMemories,
-  allMobMites: coreMites,
-  mobDServiceMites: dServiceMites,
-  mobDNetworkMites: dNetworkMites,
-  mobCustomMites: customMites,
-  infoContent: welcomeInfo,
-  ymlOutput: coreYML
-};
-
 /**
  * Updates application state for React.useReducer
  */
@@ -127,57 +106,63 @@ export const megaReducer: React.Reducer<
   console.log(`running megaReducer with type ${action.type} and payload:`);
   console.log(action.payload);
 
-  const updateMemoryValue: Function = (
-    newValue: string,
-    newReady: boolean,
-    newInfo: string,
-    memoryIndex: number
-  ): IMegaDockerState => {
-    let workingState: IMegaDockerState = { ...prevState };
-    workingState.memories[memoryIndex].value = newValue;
-    workingState.memories[memoryIndex].isReady = newReady;
-    workingState.infoContent = newInfo;
-    const newState = workingState;
-    return newState;
-  };
-
   let newState: IMegaDockerState = prevState; // duplicate the state to modify a copy
 
   switch (
     action.type // check which modification to make to state
   ) {
-    case `APPLICATION_START`: // to start the program with core manikins selected
-      return coreState;
+    case `APPLICATION_START`: // to start the program with only core manikins selected
+      newState.manikinTable = allManikins;
+      newState.selectedManikins = getManikins(allManikins);
+      newState.memories = getMemories(newState.selectedManikins);
+      newState.allMobMites = getMites(newState.selectedManikins);
+      newState.mobDServiceMites = getDServiceMites(newState.allMobMites);
+      newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites);
+      newState.mobCustomMites = getCustomMites(newState.allMobMites);
+      newState.infoContent = `This is the Information Pane.  You can read these about the selected item here.`;
+      newState.ymlOutput = getYML(
+        newState.mobDServiceMites,
+        newState.mobDNetworkMites
+      );
+      return newState;
 
     case `MANIKIN_TOGGLE_ACTION`: // to de/select a manikin
-      newState.manikinTable = [...newState.manikinTable, action.payload];
+      const mIndex: number = newState.manikinTable.indexOf(action.payload);
+      newState.manikinTable[mIndex].isSelected = !newState.manikinTable[mIndex]
+        .isSelected;
       newState.selectedManikins = getManikins(newState.manikinTable);
       newState.memories = getMemories(newState.selectedManikins);
       newState.allMobMites = getMites(newState.selectedManikins);
       newState.mobDNetworkMites = getDServiceMites(newState.allMobMites);
       newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites);
       newState.mobCustomMites = getCustomMites(newState.allMobMites);
-      newState.infoContent = action.payload.description;
+      newState.infoContent = `Toggled ${action.payload.name} .isSelected to ${newState.manikinTable[mIndex].isSelected}`;
       return newState;
 
-    case `UPDATE_MEMORY_VALUE`: // to handle new data in a memory
-      const newMemory = updateMemoryValue(action.payload);
-      newState = { ...newState, memories: [...newState.memories, newMemory] };
+    case `UPDATE_MEMORY_VALUE`: // to handle changing data in a memory's value
+      const memoryIndex = newState.memories.indexOf(action.payload.memory);
+      newState.memories[memoryIndex].value = action.payload.value;
+      newState.memories[memoryIndex].isReady = newState.memories[
+        memoryIndex
+      ].validator(newState.memories[memoryIndex].value);
+      newState.infoContent = `${action.payload.memory.name} was updated`;
       return newState;
 
     case `GENERATE_YML_OUTPUT`: // for export button
       newState = {
-        ...prevState,
+        ...newState,
         ymlOutput: getYML(newState.mobDServiceMites, newState.mobDNetworkMites)
       };
       return newState;
+
     case `UPDATE_INFO_CONTENT`: // to dispatch user hints to info pane
       newState = {
-        ...prevState,
+        ...newState,
         infoContent: updateInfoContent(action.payload)
       };
       return newState;
+
     default:
-      throw new Error(`Unhandled action type`);
+      throw new Error(`megaReducer Error: hit default case in switch`);
   }
 };
