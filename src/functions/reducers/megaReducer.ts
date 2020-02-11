@@ -18,73 +18,6 @@ import { mobNetworkFooterSectionString } from '../../mobparts/mites/network/mobN
 import { mobNetworksSectionString } from '../../mobparts/mites/network/mobNetworksSectionString';
 
 /**
- * updates selectedManikins array based on application state
- */
-const getManikins = (manikinsToSelectFrom: IManikin[]): IManikin[] =>
-  manikinsToSelectFrom.filter((eachManikin) => eachManikin.isSelected === true);
-/**
- * updates memories array based on application state
- */
-const getMemories = (manikinsToGetMemoriesFrom: IManikin[]): IMemory[] =>
-  manikinsToGetMemoriesFrom
-    .filter((eachManikin: IManikin) => eachManikin.isSelected)
-    .flatMap((eachManikin) => eachManikin.memories);
-/**
- * updates allMobMites array based on application state
- */
-const getMites = (manikinsToGetMitesFrom: IManikin[]): IMite[] =>
-  manikinsToGetMitesFrom.flatMap((eachManikin) =>
-    eachManikin.mites.flatMap((eachMite) => eachMite)
-  );
-/**
- * updates serviceMites array based on application state
- */
-
-const getDServiceMites = (miteArray: IMite[]): IMite[] =>
-  miteArray.filter((eachMite) => eachMite.type === `Service`);
-/**
- * updates networkMites array based on application state
- */
-
-const getDNetworkMites = (miteArray: IMite[]): IMite[] =>
-  miteArray.filter((eachMite) => eachMite.type === `Network`);
-
-/**
- * updates customMites array based on application state
- */
-const getCustomMites = (miteArray: IMite[]): IMite[][] => [
-  miteArray.filter((eachMite) => eachMite.type === `Custom`)
-];
-
-/**
- * updates Info Pane content
- */
-const updateInfoContent = (info: string): string => {
-  return info;
-};
-/**
- * updates YML file
- */
-const getYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
-  let tempServicesYML: string[] = serviceMites.flatMap(
-    (eachMite) => eachMite.miteString
-  );
-  let tempNetworksYML: string[] = networkMites.flatMap(
-    (eachMite) => eachMite.miteString
-  );
-  let ymlOutputArray: string[] = [
-    mobFileHeaderString,
-    ...tempServicesYML,
-    servicesFooterSectionString,
-    mobNetworksSectionString,
-    ...tempNetworksYML,
-    mobNetworkFooterSectionString
-  ];
-  let ymlString: string = ymlOutputArray.join(``);
-  return ymlString;
-};
-
-/**
  * Updates application state for React.useReducer
  */
 export const megaReducer: React.Reducer<
@@ -95,7 +28,7 @@ export const megaReducer: React.Reducer<
   | IUpdateInfoContentAction
   | IUpdateMemoryValueAction
 > = (
-  prevState: IMegaDockerState,
+  state: IMegaDockerState,
   action:
     | IApplicationStartAction
     | IGenerateYmlOutputAction
@@ -105,8 +38,75 @@ export const megaReducer: React.Reducer<
 ): IMegaDockerState => {
   console.log(`running megaReducer with type ${action.type} and payload:`);
   console.log(action.payload);
+  /**
+   * updates selectedManikins array based on application state
+   */
+  const getManikins = (manikinsToSelectFrom: IManikin[]): IManikin[] =>
+    manikinsToSelectFrom.filter(
+      (eachManikin) => eachManikin.isSelected === true
+    );
+  /**
+   * updates memories array based on application state
+   */
+  const getMemories = (manikinsToGetMemoriesFrom: IManikin[]): IMemory[] =>
+    manikinsToGetMemoriesFrom
+      .filter((eachManikin: IManikin) => eachManikin.isSelected)
+      .flatMap((eachManikin) => eachManikin.memories);
+  /**
+   * updates allMobMites array based on application state
+   */
+  const getMites = (manikinsToGetMitesFrom: IManikin[]): IMite[] =>
+    manikinsToGetMitesFrom.flatMap((eachManikin) =>
+      eachManikin.mites.flatMap((eachMite) => eachMite)
+    );
+  /**
+   * updates serviceMites array based on application state
+   */
 
-  let newState: IMegaDockerState = prevState; // duplicate the state to modify a copy
+  const getDServiceMites = (miteArray: IMite[]): IMite[] =>
+    miteArray.filter((eachMite) => eachMite.type === `Service`);
+  /**
+   * updates networkMites array based on application state
+   */
+
+  const getDNetworkMites = (miteArray: IMite[]): IMite[] =>
+    miteArray.filter((eachMite) => eachMite.type === `Network`);
+
+  /**
+   * updates customMites array based on application state
+   */
+  const getCustomMites = (miteArray: IMite[]): IMite[][] => [
+    miteArray.filter((eachMite) => eachMite.type === `Custom`)
+  ];
+
+  /**
+   * updates Info Pane content
+   */
+  const updateInfoContent = (info: string): string => {
+    return info;
+  };
+  /**
+   * updates YML file
+   */
+  const getYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
+    let tempServicesYML: string[] = serviceMites.flatMap(
+      (eachMite) => eachMite.miteString
+    );
+    let tempNetworksYML: string[] = networkMites.flatMap(
+      (eachMite) => eachMite.miteString
+    );
+    let ymlOutputArray: string[] = [
+      mobFileHeaderString,
+      ...tempServicesYML,
+      servicesFooterSectionString,
+      mobNetworksSectionString,
+      ...tempNetworksYML,
+      mobNetworkFooterSectionString
+    ];
+    let ymlString: string = ymlOutputArray.join(``);
+    return ymlString;
+  };
+  let newState: IMegaDockerState = state; // duplicate the state to modify a copy
 
   switch (
     action.type // check which modification to make to state
