@@ -1,6 +1,4 @@
-import { IMegaDockerAction } from '../IMegaDockerAction';
-
-export interface IUpdateInfoContentAction extends IMegaDockerAction {
+export interface IUpdateInfoContentAction {
   type: `UPDATE_INFO_CONTENT`;
   payload: string;
 }

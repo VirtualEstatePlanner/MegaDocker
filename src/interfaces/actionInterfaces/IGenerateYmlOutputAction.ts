@@ -1,7 +1,6 @@
-import { IManikin } from '../IManikin';
-import { IMegaDockerAction } from '../IMegaDockerAction';
+import { IMegaDockerState } from '../IMegaDockerState';
 
-export interface IGenerateYmlOutputAction extends IMegaDockerAction {
+export interface IGenerateYmlOutputAction {
   type: `GENERATE_YML_OUTPUT`;
-  manikins: IManikin[];
+  payload: IMegaDockerState;
 }

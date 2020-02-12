@@ -1,7 +1,6 @@
-import { IMegaDockerAction } from '../IMegaDockerAction';
 import { IMemory } from '../IMemory';
 
-export interface IUpdateMemoryValueAction extends IMegaDockerAction {
+export interface IUpdateMemoryValueAction {
   type: `UPDATE_MEMORY_VALUE`;
   payload: {
     memory: IMemory;
