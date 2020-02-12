@@ -9,13 +9,13 @@ import {
 } from "@material-ui/core";
 import { Tooltip } from "@material-ui/core";
 import { IManikin } from "../interfaces/IManikin";
-import { IManikinToggleAction } from "../interfaces/actionInterfaces/IManikinToggleAction";
+import { IToggleManikinAction } from "../interfaces/actionInterfaces/IToggleManikinAction";
 import { IMegaDockerState } from "../interfaces/IMegaDockerState";
 import { MegaContext } from "./MegaContext";
 import { megaReducer } from "../functions/reducers/megaReducer";
 
-export const ManikinTable: React.FC = (props: any): React.ReactElement => {
-    const [state, dispatch]: [IMegaDockerState, React.Dispatch<IManikinToggleAction>] = React.useReducer(megaReducer, React.useContext(MegaContext))
+export const ManikinTable: React.FC = (): React.ReactElement => {
+    const [state, dispatch]: [IMegaDockerState, React.Dispatch<IToggleManikinAction>] = React.useReducer(megaReducer, React.useContext(MegaContext))
 
     interface IColumn {
         name: string,
@@ -62,8 +62,8 @@ export const ManikinTable: React.FC = (props: any): React.ReactElement => {
                                 checked={eachManikin.isSelected}
                                 disabled={eachManikin.isCore ? true : false}
                                 onChange={() => dispatch({
-                                    type: `MANIKIN_TOGGLE_ACTION`,
-                                    payload: eachManikin
+                                    type: `TOGGLE_MANIKIN`,
+                                    payload: state.manikinTable.indexOf(eachManikin)
                                 }
                                 )} />
                         </TableCell>

@@ -4,12 +4,8 @@ import { IManikin } from '../../interfaces/IManikin';
 import { IMemory } from '../../interfaces/IMemory';
 import { IMite } from '../../interfaces/IMite';
 // action interfaces
-import { IApplicationStartAction } from '../../interfaces/actionInterfaces/IApplicationStartAction';
-import { IGenerateYmlOutputAction } from '../../interfaces/actionInterfaces/IGenerateYmlOutputAction';
-import { IManikinToggleAction } from '../../interfaces/actionInterfaces/IManikinToggleAction';
+import { IMegaDockerAction } from '../../interfaces/IMegaDockerAction';
 import { IMegaDockerState } from '../../interfaces/IMegaDockerState';
-import { IUpdateMemoryValueAction } from '../../interfaces/actionInterfaces/IUpdateMemoryValueAction';
-import { IUpdateInfoContentAction } from '../../interfaces/actionInterfaces/IUpdateInfoContentAction';
 // global consts
 import { allManikins } from '../../globals/allManikins';
 import { mobFileHeaderString } from '../../mobparts/mites/service/mobFileHeaderString';
@@ -20,21 +16,9 @@ import { mobNetworksSectionString } from '../../mobparts/mites/network/mobNetwor
 /**
  * Updates application state for React.useReducer
  */
-export const megaReducer: React.Reducer<
-  IMegaDockerState,
-  | IApplicationStartAction
-  | IGenerateYmlOutputAction
-  | IManikinToggleAction
-  | IUpdateInfoContentAction
-  | IUpdateMemoryValueAction
-> = (
+export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
   state: IMegaDockerState,
-  action:
-    | IApplicationStartAction
-    | IGenerateYmlOutputAction
-    | IManikinToggleAction
-    | IUpdateInfoContentAction
-    | IUpdateMemoryValueAction
+  action: IMegaDockerAction
 ): IMegaDockerState => {
   console.log(`running megaReducer with type ${action.type} and payload:`);
   console.log(action.payload);
@@ -126,17 +110,19 @@ export const megaReducer: React.Reducer<
       );
       return newState;
 
-    case `MANIKIN_TOGGLE_ACTION`: // to de/select a manikin
-      const mIndex: number = newState.manikinTable.indexOf(action.payload);
-      newState.manikinTable[mIndex].isSelected = !newState.manikinTable[mIndex]
-        .isSelected;
-      newState.selectedManikins = getManikins(newState.manikinTable);
-      newState.memories = getMemories(newState.selectedManikins);
-      newState.allMobMites = getMites(newState.selectedManikins);
-      newState.mobDNetworkMites = getDServiceMites(newState.allMobMites);
-      newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites);
-      newState.mobCustomMites = getCustomMites(newState.allMobMites);
-      newState.infoContent = `Toggled ${action.payload.name} .isSelected to ${newState.manikinTable[mIndex].isSelected}`;
+    case `TOGGLE_MANIKIN`: // to de/select a manikin
+      newState.manikinTable[action.payload].isSelected = !newState.manikinTable[
+        action.payload
+      ].isSelected; // reverses the selected boolean in the manikin passed to it
+      newState.selectedManikins = getManikins(newState.manikinTable); // rebuilds selected Manikins
+      newState.memories = getMemories(newState.selectedManikins); // rebuilds Memories
+      newState.allMobMites = getMites(newState.selectedManikins); // rebuilds Mites
+      newState.mobDNetworkMites = getDServiceMites(newState.allMobMites); // docker swarm network Mites
+      newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites); // docker swarm service Mites
+      newState.mobCustomMites = getCustomMites(newState.allMobMites); // custom mite file-based Mite[]
+      newState.infoContent = `Toggled ${
+        newState.manikinTable[action.payload].name
+      } .isSelected to ${newState.manikinTable[action.payload].isSelected}`;
       return newState;
 
     case `UPDATE_MEMORY_VALUE`: // to handle changing data in a memory's value

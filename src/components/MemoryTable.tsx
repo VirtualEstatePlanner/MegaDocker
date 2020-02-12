@@ -12,13 +12,8 @@ import * as checkmarkIcon from "../images/indicators/checkmarkIcon.png"
 import * as xmarkIcon from "../images/indicators/xmarkIcon.png"
 import { MegaContext } from './MegaContext';
 import { IMegaDockerState } from "../interfaces/IMegaDockerState";
-// import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
 import { megaReducer } from "../functions/reducers/megaReducer";
 import { IMemory } from "../interfaces/IMemory";
-import { IApplicationStartAction } from "../interfaces/actionInterfaces/IApplicationStartAction";
-import { IGenerateYmlOutputAction } from "../interfaces/actionInterfaces/IGenerateYmlOutputAction";
-import { IManikinToggleAction } from "../interfaces/actionInterfaces/IManikinToggleAction";
-import { IUpdateInfoContentAction } from "../interfaces/actionInterfaces/IUpdateInfoContentAction";
 import { IUpdateMemoryValueAction } from "../interfaces/actionInterfaces/IUpdateMemoryValueAction";
 
 /**
@@ -35,11 +30,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
      */
     const [state, dispatch]: [
         IMegaDockerState,
-        React.Dispatch<IApplicationStartAction |
-            IGenerateYmlOutputAction |
-            IManikinToggleAction |
-            IUpdateInfoContentAction |
-            IUpdateMemoryValueAction>] = React.useReducer(megaReducer, appState)
+        React.Dispatch<IUpdateMemoryValueAction>] = React.useReducer(megaReducer, appState)
 
     /**
      *  generates the payload to reduce
@@ -48,12 +39,12 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
      */
     const createMemoryValueAction = (
         memoryToUpdate: IMemory,
-        changeEvent: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>): IUpdateMemoryValueAction => {
+        newValue: string): IUpdateMemoryValueAction => {
         return {
-            type: 'UPDATE_MEMORY_VALUE',
+            type: `UPDATE_MEMORY_VALUE`,
             payload: {
                 memory: memoryToUpdate,
-                value: changeEvent.target.value
+                value: newValue
             }
         }
     }
@@ -91,7 +82,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                                     type={thisMemory.valueType}
                                     placeholder={(`Please enter your ${thisMemory.name} here`)}
                                     autoComplete={thisMemory.shouldAutocomplete.toString()}
-                                    onChange={changeEvent => dispatch(createMemoryValueAction(thisMemory, changeEvent))}>
+                                    onChange={changeEvent => dispatch(createMemoryValueAction(thisMemory, changeEvent.target.value))}>
                                 </Input>
                             </Tooltip>
                         </TableCell>
