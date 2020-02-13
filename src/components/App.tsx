@@ -5,10 +5,10 @@ import { MainArea } from "./ContainerMainArea";
 import { MegaContextProvider } from './MegaContext'
 // import { IMegaDockerState } from "../interfaces/IMegaDockerState";
 
-export const App: React.FC = (props: any): React.ReactElement =>
+export const App: React.FC = (): React.ReactElement =>
   <div className="App">
-    <MegaContextProvider>{props.children}
-      <ManikinPane>{props.children}</ManikinPane>
-      <MainArea>{props.children}</MainArea>
+    <MegaContextProvider>
+      <ManikinPane></ManikinPane>
+      <MainArea></MainArea>
     </MegaContextProvider>
   </div >

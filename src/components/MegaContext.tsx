@@ -8,6 +8,8 @@ import { mobFileHeaderString } from '../mobparts/mites/service/mobFileHeaderStri
 import { servicesFooterSectionString } from '../mobparts/mites/service/servicesFooterSectionString';
 import { mobNetworkFooterSectionString } from '../mobparts/mites/network/mobNetowrkFooterSectionString';
 import { mobNetworksSectionString } from '../mobparts/mites/network/mobNetworksSectionString';
+// import { megaReducer } from '../functions/reducers/megaReducer'
+// import { IMegaDockerAction } from '../interfaces/IMegaDockerAction';
 
 export const updateSelectedManikins = (manikinArray: IManikin[]): IManikin[] => manikinArray.filter((eachManikin) => eachManikin.isSelected === true)
 export const updateMemories = (manikinArray: IManikin[]): IMemory[] =>
@@ -40,7 +42,6 @@ const initialCustomMites: IMite[][] = [updateCustomMites(initialMobMites)]
 const initialInfoContent: string = `This is the Information Pane.  You can read more about the selected item here.`
 const initialYmlOutput: string = updateYML(initialServiceMites, initialNetworkMites)
 
-
 export const initialMegaDockerState: IMegaDockerState = {
     manikinTable: initialTableManikins,
     selectedManikins: initialSelectedManikins,
@@ -55,20 +56,12 @@ export const initialMegaDockerState: IMegaDockerState = {
 
 export const MegaContext: React.Context<IMegaDockerState> = React.createContext<IMegaDockerState>(initialMegaDockerState)
 
-export const MegaContextProvider: React.FC = (props: any): React.ReactElement => {
+export const MegaContextProvider: React.FC = (props: any): React.ReactElement =>
+    <MegaContext.Provider value={initialMegaDockerState}>
+        {props.children}
+    </MegaContext.Provider >
 
-    return (
-        <MegaContext.Provider value={initialMegaDockerState}>
-            {props.children}
-        </MegaContext.Provider >
-    )
-}
-
-export const MegaContextConsumer: React.FC = (props: any): React.ReactElement => {
-    return (
-        <MegaContext.Consumer>
-            {props.children}
-        </MegaContext.Consumer>
-
-    )
-}
+export const MegaContextConsumer: React.FC = (props: any): React.ReactElement =>
+    <MegaContext.Consumer>
+        {props.children}
+    </MegaContext.Consumer>
