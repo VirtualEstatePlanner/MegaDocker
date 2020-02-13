@@ -53,28 +53,27 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
         <Table
             className="MemoryTable"
             size="small"
-            stickyHeader
-        >
+            stickyHeader>
             <TableHead
                 className="MemoryTableHeader">
                 <TableRow
                     className="MemoryHeaderRow">
-                    <TableCell>Description</TableCell>
-                    <TableCell>Value</TableCell>
-                    <TableCell>Ready</TableCell>
+                    <TableCell>Settings</TableCell>
+                    <TableCell></TableCell>
+                    <TableCell><img alt="" src={checkmarkIcon} height={20} width={20} /></TableCell>
                 </TableRow>
             </TableHead>
             <TableBody
                 className="MemoryTableBody">
                 {state.memories.map((thisMemory: IMemory) => (
-                    <TableRow
-                        hover
+                    <Tooltip
+                        title={thisMemory.tooltip}
                         key={thisMemory.memoryIndex}>
-                        <TableCell
-                            padding='checkbox'>{thisMemory.name}</TableCell>
-                        <TableCell>
-                            <Tooltip
-                                title={thisMemory.tooltip}>
+                        <TableRow
+                            hover>
+                            <TableCell
+                                padding='checkbox'>{thisMemory.name}</TableCell>
+                            <TableCell>
                                 <Input
                                     fullWidth
                                     required={true}
@@ -84,17 +83,18 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                                     autoComplete={thisMemory.shouldAutocomplete.toString()}
                                     onChange={changeEvent => dispatch(createMemoryValueAction(thisMemory, changeEvent.target.value))}>
                                 </Input>
-                            </Tooltip>
-                        </TableCell>
-                        <TableCell
-                            className="ManikinReadyIcon">
-                            <img
-                                alt='ready indicator'
-                                height={20}
-                                width={20}
-                                src={thisMemory.value === `` ? xmarkIcon : (thisMemory.validator(thisMemory.value).valueOf() ? checkmarkIcon : xmarkIcon)} />
-                        </TableCell>
-                    </TableRow>))}
+                            </TableCell>
+                            <TableCell
+                                className="ManikinReadyIcon">
+                                <img
+                                    alt='ready indicator'
+                                    height={20}
+                                    width={20}
+                                    src={thisMemory.value === `` ? xmarkIcon : (thisMemory.validator(thisMemory.value).valueOf() ? checkmarkIcon : xmarkIcon)} />
+                            </TableCell>
+                        </TableRow>
+                    </Tooltip>
+                ))}
             </TableBody>
         </Table >
     )
