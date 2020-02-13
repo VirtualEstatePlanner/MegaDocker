@@ -20,8 +20,13 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
   state: IMegaDockerState,
   action: IMegaDockerAction
 ): IMegaDockerState => {
-  console.log(`running megaReducer with type ${action.type} and payload:`);
-  console.log(action.payload);
+  console.log(
+    `megaReducer:
+    type: ${action.type}
+    payload: ${action.payload.toString()}`
+  );
+  let newState: IMegaDockerState = state; // duplicate the state to modify a copy
+
   /**
    * updates selectedManikins array based on application state
    */
@@ -90,7 +95,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     let ymlString: string = ymlOutputArray.join(``);
     return ymlString;
   };
-  let newState: IMegaDockerState = state; // duplicate the state to modify a copy
 
   switch (
     action.type // check which modification to make to state
@@ -111,7 +115,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       return newState;
 
     case `TOGGLE_MANIKIN`: // to de/select a manikin
-      newState.manikinTable[action.payload].isSelected = !newState.manikinTable[
+      newState.manikinTable[action.payload].isSelected = !state.manikinTable[
         action.payload
       ].isSelected; // reverses the selected boolean in the manikin passed to it
       newState.selectedManikins = getManikins(newState.manikinTable); // rebuilds selected Manikins
