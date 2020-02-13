@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 export interface IMite {
-  type: `Network` | `Service` | `Custom`;
+  type: `Network` | `Service` | `Custom` | `Kubernetes`;
   miteIndex: number;
   miteString: string;
 }
