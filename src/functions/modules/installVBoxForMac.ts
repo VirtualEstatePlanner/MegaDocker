@@ -6,7 +6,7 @@
 
 import { downloadFolder } from '../../globals/downloadFolder';
 import { checkForFile } from '../core/checkForFile';
-import { runOrdered } from '../core/runOrdered';
+// import { runOrdered } from '../core/runOrdered';
 import { runPrivilegedOrdered } from '../core/runPrivilegedOrdered';
 import { downloadVBoxForMac } from './downloadVBoxForMac';
 /**
