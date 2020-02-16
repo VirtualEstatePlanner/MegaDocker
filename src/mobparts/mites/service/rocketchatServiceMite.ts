@@ -14,7 +14,7 @@ import { rocketchatBotPassword } from '../../memories/rocketchatBotPassword';
 
 export const rocketchatServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 998,
+  miteIndex: 2011,
   miteString: `
 
   #Begin Rocketchat Service Section

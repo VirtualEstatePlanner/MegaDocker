@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const portalServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 998,
+  miteIndex: 2010,
   miteString: `
 
   #Begin Portal Service Section

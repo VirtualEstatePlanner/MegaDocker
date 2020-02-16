@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const portainerNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 1,
+  miteIndex: 1009,
   miteString: `
 
 #Begin Portainer Network Section

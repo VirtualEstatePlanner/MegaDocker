@@ -13,7 +13,7 @@ import { mobFolderPath } from '../../memories/mobFolderPath';
 
 export const ghostServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 998,
+  miteIndex: 2003,
   miteString: `
 
   #Begin Ghost Service Section

@@ -12,7 +12,7 @@ import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const elkServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 998,
+  miteIndex: 2002,
   miteString: `
 
   #Begin ELK Service Section

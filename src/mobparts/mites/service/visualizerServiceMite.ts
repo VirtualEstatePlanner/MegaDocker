@@ -11,7 +11,7 @@ import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const visualizerServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 998,
+  miteIndex: 2015,
   miteString: `
 
   #Begin Visualizer Service Section

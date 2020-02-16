@@ -11,7 +11,7 @@ import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const owncloudServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 2008,
+  miteIndex: 2006,
   miteString: `
 
   #Begin Owncloud Service Sections

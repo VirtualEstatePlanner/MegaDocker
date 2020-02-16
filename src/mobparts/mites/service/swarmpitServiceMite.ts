@@ -6,7 +6,7 @@ import { mobFolderPath } from '../../memories/mobFolderPath';
 
 export const swarmpitServiceMite: IMite = {
   type: `Service`,
-  miteIndex: 70,
+  miteIndex: 2013,
   miteString: `
 
   #Begin Swarmpit Service Section

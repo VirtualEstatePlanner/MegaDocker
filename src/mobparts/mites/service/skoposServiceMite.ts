@@ -4,7 +4,7 @@ import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const skoposServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 40,
+  miteIndex: 2012,
   miteString: `
   
 #Begin Skopos Service Section

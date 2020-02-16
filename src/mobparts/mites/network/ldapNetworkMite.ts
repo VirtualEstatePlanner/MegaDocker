@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const ldapNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 1,
+  miteIndex: 1005,
   miteString: `
 
 #Begin LDAP Network Section

@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const gitlabNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 1,
+  miteIndex: 1004,
   miteString: `
 
 #Begin Git Network Section

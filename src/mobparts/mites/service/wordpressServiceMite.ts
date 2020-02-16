@@ -15,7 +15,7 @@ import { wordpressMariaDBRootPassword } from '../../memories/wordpressMariaDBRoo
 
 export const wordpressServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 5,
+  miteIndex: 2017,
   miteString: `
 
   #Begin WordPress Service Section

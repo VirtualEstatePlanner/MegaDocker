@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const gitlabServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 998,
+  miteIndex: 2004,
   miteString: `
 
   #Begin Git Service Section

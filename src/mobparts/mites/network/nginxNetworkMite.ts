@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const nginxNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 998,
+  miteIndex: 1007,
   miteString: `
 
   #Begin Nginx Network Section

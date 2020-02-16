@@ -14,7 +14,7 @@ import { drupalPostgresPassword } from '../../memories/drupalPostgresPassword';
 
 export const drupalServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 3,
+  miteIndex: 2001,
   miteString: `
 
   #Begin Drupal Service Section

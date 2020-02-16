@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { nowhitespaceValidator } from '../../functions/validators/nowhitespaceValidator';
+import { noWhiteSpaceValidator } from '../../functions/validators/nowhitespaceValidator';
 
 export let mobName: IMemory = {
   memoryIndex: 8,
@@ -15,5 +15,5 @@ export let mobName: IMemory = {
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: nowhitespaceValidator
+  validator: noWhiteSpaceValidator
 };

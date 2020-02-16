@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const traefikNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 1,
+  miteIndex: 1014,
   miteString: `
 
 #Begin Traefik Network Section

@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const webdavServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 998,
+  miteIndex: 2016,
   miteString: `
 
   #Begin WebDAV Service Section

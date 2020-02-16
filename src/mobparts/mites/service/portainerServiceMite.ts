@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const portainerServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 998,
+  miteIndex: 2009,
   miteString: `
 
   #Begin Portainer Service Section

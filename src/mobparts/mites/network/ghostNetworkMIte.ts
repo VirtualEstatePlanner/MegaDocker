@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const ghostNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 1,
+  miteIndex: 1003,
   miteString: `
 
 #Begin Ghost Network Section

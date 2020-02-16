@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const elkNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 1,
+  miteIndex: 1002,
   miteString: `
 
 #Begin ELK Network Section

@@ -2,7 +2,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const webdavNetworkMite: IMite = {
   type: `Network`,
-  miteIndex: 71,
+  miteIndex: 1016,
   miteString: `
 
 #Begin Webdav Network Section

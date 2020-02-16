@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const owncloudNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 1,
+  miteIndex: 1008,
   miteString: `
 
 #Begin Owncloud Network Section

@@ -1,16 +1,16 @@
 import { IMite } from '../../../interfaces/IMite';
 
-export const swarmpitNetworkMite: IMite = {
+export const skoposNetworkMite: IMite = {
   type: `Network`,
-  miteIndex: 1013,
+  miteIndex: 1012,
   miteString: `
 
-  #Begin Swarmpit Network Section
+  #Begin Skopos Network Section
   
    swarmpit:
     external: true
   
-  #End Swarmpit Network Section
+  #End Skopos Network Section
   
   `
 };

@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const nextcloudNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 1,
+  miteIndex: 1006,
   miteString: `
 
 #Begin Nextcloud Network Section

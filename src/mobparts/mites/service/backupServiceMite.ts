@@ -1,4 +1,4 @@
-//  drupalNetworkMite.ts
+//  drupalServiceMite.ts
 //  MegaDocker
 //  Network Mite for Drupal
 //  Created by George Georgulas IV on 1/26/19.
@@ -6,17 +6,14 @@
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const backupNetworkMite: IMite = {
-  type: 'Network',
-  miteIndex: 1000,
+export const backupServiceMite: IMite = {
+  type: 'Service',
+  miteIndex: 2000,
   miteString: `
 
-#Begin Backup Network Section
-
- backup:
-  external: true
-
-#End Backup Network Section
-
-`
+  #Begin Backup Service Section
+  
+  #End Backup Service Section
+  
+  `
 };

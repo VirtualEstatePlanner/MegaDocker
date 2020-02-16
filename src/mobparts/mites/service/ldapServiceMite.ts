@@ -13,7 +13,7 @@ import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const ldapServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 998,
+  miteIndex: 2005,
   miteString: `
 
   #Begin LDAP Service Sections

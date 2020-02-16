@@ -10,8 +10,8 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export let wordpressMariaDBPassword: IMemory = {
   memoryIndex: 4,
   shouldAutocomplete: false,
-  name: `The password WordPress will use to access it's MariaDB database`,
-  tooltip: `You must choose this password.`,
+  name: `WordPress MariaDB password`,
+  tooltip: `Please enter your WordPress MariaDB Password here`,
   value: ``,
   valueType: 'password',
   isReady: false,

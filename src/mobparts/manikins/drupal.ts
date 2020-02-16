@@ -9,6 +9,8 @@ import { IManikin } from '../../interfaces/IManikin';
 import { drupalServiceMite } from '../mites/service/drupalServiceMite';
 import { drupalNetworkMite } from '../mites/network/drupalNetworkMite';
 import * as drupalIcon from '../../images/manikin-icons/drupalIcon.png';
+import { drupalPostgresUser } from '../memories/drupalPostgresUser';
+import { drupalPostgresPassword } from '../memories/drupalPostgresPassword';
 
 /**
  * drupal Manikin
@@ -20,7 +22,7 @@ export let drupalManikin: IManikin = {
   isSelected: false,
   manikinIcon: drupalIcon,
   manikinIndex: 0,
-  memories: [],
+  memories: [drupalPostgresUser, drupalPostgresPassword],
   mites: [drupalServiceMite, drupalNetworkMite],
   name: `Drupal`,
   ports: [],

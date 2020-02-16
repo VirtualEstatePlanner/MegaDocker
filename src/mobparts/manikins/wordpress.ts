@@ -7,6 +7,9 @@
 import { IManikin } from '../../interfaces/IManikin';
 import { wordpressServiceMite } from '../mites/service/wordpressServiceMite';
 import { wordpressNetworkMite } from '../mites/network/wordpressNetworkMite';
+import { wordpressMariaDBPassword } from '../memories/wordpressMariaDBPassword';
+import { wordpressMariaDBRootPassword } from '../memories/wordpressMariaDBRootPassword';
+import { wordpressMariaDBUser } from '../memories/wordpressMariaDBUser';
 import * as wordpressIcon from '../../images/manikin-icons/wordpressIcon.png';
 
 export const wordpressManikin: IManikin = {
@@ -16,7 +19,11 @@ export const wordpressManikin: IManikin = {
   isSelected: false,
   manikinIcon: wordpressIcon,
   manikinIndex: 15,
-  memories: [],
+  memories: [
+    wordpressMariaDBRootPassword,
+    wordpressMariaDBUser,
+    wordpressMariaDBPassword
+  ],
   mites: [wordpressServiceMite, wordpressNetworkMite],
   name: `WordPress`,
   ports: [],

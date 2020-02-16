@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const rocketchatNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 1,
+  miteIndex: 1011,
   miteString: `
 
 #Begin RocketChat Network Section

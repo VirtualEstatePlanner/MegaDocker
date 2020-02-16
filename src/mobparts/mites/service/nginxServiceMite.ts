@@ -11,7 +11,7 @@ import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const nginxServiceMite: IMite = {
   type: 'Service',
-  miteIndex: 998,
+  miteIndex: 2007,
   miteString: `
 
   #Begin Nginx Service Sections

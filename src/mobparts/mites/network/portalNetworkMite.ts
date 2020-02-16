@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const portalNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 998,
+  miteIndex: 1010,
   miteString: `
 
   #Begin Portal Network Section
