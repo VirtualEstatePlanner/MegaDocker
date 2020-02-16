@@ -13,7 +13,7 @@ import elkIcon from '../../images/manikin-icons/elkIcon.png';
 /**
  * elk Manikin
  */
-export let elkManikin: IManikin = {
+export const elkManikin: IManikin = {
   description: `ElasticSearch/Logstash/Kibana Monitoring service`,
   folder: `ELK`,
   isCore: false,

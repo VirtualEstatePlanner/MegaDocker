@@ -9,18 +9,18 @@ import { mobFolderPath } from '../../memories/mobFolderPath';
 import { primaryDomain } from '../../memories/primaryDomain';
 import { secondaryDomain } from '../../memories/secondaryDomain';
 
-export const owncloudServiceMite: IMite = {
+export const nextcloudServiceMite: IMite = {
   type: 'Service',
   miteIndex: 2006,
   miteString: `
 
   #Begin Owncloud Service Sections
   
-   owncloud:
-    image: owncloud
+   nextcloud:
+    image: nextcloud
     networks:
      - traefik
-     - owncloud
+     - nextcloud
     volumes:
      - export/Owncloud/apps/:/var/www/html/apps
      - ${mobFolderPath}/Owncloud/config/:/var/www/html/config

@@ -13,7 +13,7 @@ import swarmpitIcon from '../../images/manikin-icons/swarmpitIcon.png';
 /**
  * swarmpit Manikin
  */
-export let swarmpitManikin: IManikin = {
+export const swarmpitManikin: IManikin = {
   description: `Swarmpit Docker swarm mode GUI service`,
   isCore: true,
   isSelected: true,

@@ -13,7 +13,7 @@ import portalIcon from '../../images/manikin-icons/portalIcon.png';
 /**
  * portal Manikin
  */
-export let portalManikin: IManikin = {
+export const portalManikin: IManikin = {
   description: `Web portal with links to running services`,
   folder: `Portal`,
   isCore: false,

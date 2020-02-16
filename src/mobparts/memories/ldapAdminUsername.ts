@@ -7,10 +7,10 @@
 import { IMemory } from '../../interfaces/IMemory';
 import { usernameValidator } from '../../functions/validators/usernameValidator';
 
-export let ldapAdminUsername: IMemory = {
-  memoryIndex: 12,
+export const ldapAdminUsername: IMemory = {
+  memoryIndex: 1010,
   shouldAutocomplete: false,
-  name: `LDAP Administrator account user name`,
+  name: `LDAP Admin username`,
   tooltip: `Choose the administrator username for your LDAP server.`,
   value: ``,
   valueType: 'text',

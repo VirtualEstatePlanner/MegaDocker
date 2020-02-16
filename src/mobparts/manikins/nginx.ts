@@ -13,7 +13,7 @@ import nginxIcon from '../../images/manikin-icons/nginxIcon.png';
 /**
  * nginx Manikin
  */
-export let nginxManikin: IManikin = {
+export const nginxManikin: IManikin = {
   description: `Nginx http service`,
   folder: `Nginx`,
   isCore: false,

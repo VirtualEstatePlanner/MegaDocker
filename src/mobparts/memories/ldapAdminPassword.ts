@@ -8,10 +8,10 @@ import { IMemory } from '../../interfaces/IMemory';
 import { ldapAdminUsername } from './ldapAdminUsername';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
-export let ldapAdminPassword: IMemory = {
-  memoryIndex: 13,
+export const ldapAdminPassword: IMemory = {
+  memoryIndex: 1011,
   shouldAutocomplete: false,
-  name: `LDAP Administrator account password`,
+  name: `LDAP Admin password`,
   tooltip: `Choose the password for the LDAP server administrative user (${ldapAdminUsername.value})`,
   value: ``,
   valueType: 'password',

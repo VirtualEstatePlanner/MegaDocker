@@ -19,7 +19,7 @@ import { mobName } from '../memories/mobName';
 /**
  * traefik Manikin
  */
-export let traefikManikin: IManikin = {
+export const traefikManikin: IManikin = {
   description: `Traefik reverse proxy service`,
   folder: `Traefik`,
   isCore: true,

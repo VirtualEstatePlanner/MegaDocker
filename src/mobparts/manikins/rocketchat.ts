@@ -16,7 +16,7 @@ import { rocketchatBotUsername } from '../memories/rocketchatBotUsername';
  * rocketchat Manikin
  * replace MVOs
  */
-export let rocketchatManikin: IManikin = {
+export const rocketchatManikin: IManikin = {
   description: `Team chat and collaboration service`,
   folder: `RocketChat`,
   isCore: false,

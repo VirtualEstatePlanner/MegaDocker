@@ -9,4 +9,4 @@ export const userMobMites: IMite[] = [];
 /**
  * a string with all of the YML necessary to make a docker-compose.yml file for the current Mob
  */
-export let mobOutputString: string = userMobMites.concat.toString();
+export const mobOutputString: string = userMobMites.concat.toString();

@@ -7,8 +7,8 @@
 import { IMemory } from '../../interfaces/IMemory';
 import { emailValidator } from '../../functions/validators/emailValidator';
 
-export let letsEncryptEmail: IMemory = {
-  memoryIndex: 9,
+export const letsEncryptEmail: IMemory = {
+  memoryIndex: 1005,
   shouldAutocomplete: true,
   name: `Let'sEncrypt Email`,
   tooltip: `The email address used to register your domains`,

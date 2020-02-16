@@ -15,7 +15,7 @@ import { drupalPostgresPassword } from '../memories/drupalPostgresPassword';
 /**
  * drupal Manikin
  */
-export let drupalManikin: IManikin = {
+export const drupalManikin: IManikin = {
   description: `Drupal blog service`,
   folder: `Drupal`,
   isCore: false,

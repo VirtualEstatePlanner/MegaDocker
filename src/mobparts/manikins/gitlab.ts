@@ -13,7 +13,7 @@ import gitlabIcon from '../../images/manikin-icons/gitlabIcon.png';
 /**
  * git Manikin
  */
-export let gitlabManikin: IManikin = {
+export const gitlabManikin: IManikin = {
   description: `GitLab version control service`,
   folder: `GitLab`,
   isCore: false,

@@ -13,7 +13,7 @@ import owncloudIcon from '../../images/manikin-icons/owncloudIcon.png';
 /**
  * owncloud Manikin
  */
-export let owncloudManikin: IManikin = {
+export const owncloudManikin: IManikin = {
   description: `Owncloud file-sharing service`,
   folder: `Owncloud`,
   isCore: false,

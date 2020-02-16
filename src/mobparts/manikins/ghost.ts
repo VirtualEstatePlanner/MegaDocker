@@ -15,7 +15,7 @@ import { ghostRootMariaDBPassword } from '../memories/ghostRootMariaDBPassword';
  * ghost Manikin
  * replace MVOs
  */
-export let ghostManikin: IManikin = {
+export const ghostManikin: IManikin = {
   description: `Ghost blog service`,
   folder: `Ghost`,
   isCore: false,

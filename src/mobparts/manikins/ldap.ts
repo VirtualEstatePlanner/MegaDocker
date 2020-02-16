@@ -16,7 +16,7 @@ import ldapIcon from '../../images/manikin-icons/ldapIcon.png';
 /**
  * ldap Manikin
  */
-export let ldapManikin: IManikin = {
+export const ldapManikin: IManikin = {
   description: `Lightweight Directory Authentication Protocol authentication service`,
   folder: `LDAP`,
   isCore: false,

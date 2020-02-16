@@ -21,10 +21,10 @@ const updateServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((ea
 const updateNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Network`)
 const updateCustomMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Custom`)
 const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
-    let tempServicesYML: string[] = serviceMites.flatMap((eachMite) => eachMite.miteString)
-    let tempNetworksYML: string[] = networkMites.flatMap((eachMite) => eachMite.miteString)
-    let ymlOutputArray: string[] = [mobFileHeaderString, ...tempServicesYML, servicesFooterSectionString, mobNetworksSectionString, ...tempNetworksYML, mobNetworkFooterSectionString]
-    let ymlString: string = ymlOutputArray.join(``)
+    const tempServicesYML: string[] = serviceMites.flatMap((eachMite) => eachMite.miteString)
+    const tempNetworksYML: string[] = networkMites.flatMap((eachMite) => eachMite.miteString)
+    const ymlOutputArray: string[] = [mobFileHeaderString, ...tempServicesYML, servicesFooterSectionString, mobNetworksSectionString, ...tempNetworksYML, mobNetworkFooterSectionString]
+    const ymlString: string = ymlOutputArray.join(``)
     return ymlString
 }
 const updateInfoContent = (info: string): string => {

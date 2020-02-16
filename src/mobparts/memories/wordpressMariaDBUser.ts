@@ -7,10 +7,10 @@
 import { IMemory } from '../../interfaces/IMemory';
 import { usernameValidator } from '../../functions/validators/usernameValidator';
 
-export let wordpressMariaDBUser: IMemory = {
-  memoryIndex: 2,
+export const wordpressMariaDBUser: IMemory = {
+  memoryIndex: 1015,
   shouldAutocomplete: false,
-  name: `WordPress MariaDB User`,
+  name: `WP MariaDB User`,
   tooltip: `Please enter your WordPress MariaDB username here`,
   value: ``,
   valueType: 'text',

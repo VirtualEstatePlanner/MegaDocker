@@ -82,13 +82,13 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
    * updates YML file
    */
   const getYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
-    let tempServicesYML: string[] = serviceMites.flatMap(
+    const tempServicesYML: string[] = serviceMites.flatMap(
       (eachMite) => eachMite.miteString
     );
-    let tempNetworksYML: string[] = networkMites.flatMap(
+    const tempNetworksYML: string[] = networkMites.flatMap(
       (eachMite) => eachMite.miteString
     );
-    let ymlOutputArray: string[] = [
+    const ymlOutputArray: string[] = [
       mobFileHeaderString,
       ...tempServicesYML,
       servicesFooterSectionString,
@@ -96,7 +96,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       ...tempNetworksYML,
       mobNetworkFooterSectionString
     ];
-    let ymlString: string = ymlOutputArray.join(``);
+    const ymlString: string = ymlOutputArray.join(``);
     return ymlString;
   };
 

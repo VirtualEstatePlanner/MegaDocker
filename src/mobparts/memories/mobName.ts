@@ -7,8 +7,8 @@
 import { IMemory } from '../../interfaces/IMemory';
 import { noWhiteSpaceValidator } from '../../functions/validators/nowhitespaceValidator';
 
-export let mobName: IMemory = {
-  memoryIndex: 8,
+export const mobName: IMemory = {
+  memoryIndex: 1000,
   shouldAutocomplete: false,
   name: `Mob Name`,
   tooltip: `Name your MEGADocker Mob.  This will also be the name of the folder that contains your Mob's persistent data inside of your 'Documents/MEGADocker' folder.`,

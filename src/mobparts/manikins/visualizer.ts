@@ -13,7 +13,7 @@ import visualizerIcon from '../../images/manikin-icons/visualizerIcon.png';
 /**
  * visualizer Manikin
  */
-export let visualizerManikin: IManikin = {
+export const visualizerManikin: IManikin = {
   description: `Docker swarm mode container placement visualization service`,
   folder: `Visualizer`,
   isCore: false,

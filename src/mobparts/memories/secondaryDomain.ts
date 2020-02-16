@@ -7,8 +7,8 @@
 import { IMemory } from '../../interfaces/IMemory';
 import { domainValidator } from '../../functions/validators/domainValidator';
 
-export let secondaryDomain: IMemory = {
-  memoryIndex: 1,
+export const secondaryDomain: IMemory = {
+  memoryIndex: 1002,
   shouldAutocomplete: false,
   name: `Secondary Domain`,
   tooltip: `Your backup domain name, such as 'example.com' or 'myawesomemob.org'.  It must not be the same as your main domain name.`,

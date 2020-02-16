@@ -13,7 +13,7 @@ import { skoposNetworkMite } from '../mites/network/skoposNetworkMite';
 /**
  * skopos Manikin
  */
-export let skoposManikin: IManikin = {
+export const skoposManikin: IManikin = {
   description: `Skopos Continuous Integraion/Continuous Deployment service`,
   folder: `Skopos`,
   isCore: true,

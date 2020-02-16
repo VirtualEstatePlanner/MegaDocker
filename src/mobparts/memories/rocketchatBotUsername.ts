@@ -7,8 +7,8 @@
 import { IMemory } from '../../interfaces/IMemory';
 import { usernameValidator } from '../../functions/validators/usernameValidator';
 
-export let rocketchatBotUsername: IMemory = {
-  memoryIndex: 5,
+export const rocketchatBotUsername: IMemory = {
+  memoryIndex: 1012,
   shouldAutocomplete: false,
   name: `RocketChat bot user name`,
   tooltip: `Choose the username of the RocketChat bot.`,
