@@ -6,8 +6,14 @@
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const serviceMite: IMite = {
+export const portainerServiceMite: IMite = {
   type: 'Service',
   miteIndex: 998,
-  miteString: ``
+  miteString: `
+
+  #Begin Portainer Service Section
+  
+  #End Portainer Service Section
+  
+  `
 };

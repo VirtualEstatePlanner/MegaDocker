@@ -6,8 +6,8 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
-import { serviceMite } from '../mites/service/_servicemitetemplate';
-import { networkMite } from '../mites/network/_networkmitetemplate';
+import { rocketchatServiceMite } from '../mites/service/rocketchatServiceMite';
+import { rocketchatNetworkMite } from '../mites/network/rocketchatNetworkMite';
 import rocketchatIcon from '../../images/manikin-icons/rocketchatIcon.png';
 
 /**
@@ -22,7 +22,7 @@ export let rocketchatManikin: IManikin = {
   manikinIcon: rocketchatIcon,
   manikinIndex: 9,
   memories: [],
-  mites: [serviceMite, networkMite],
+  mites: [rocketchatServiceMite, rocketchatNetworkMite],
   name: `RocketChat`,
   ports: [],
   subfolders: [`database`, `dump`, `hubot`, `uploads`]

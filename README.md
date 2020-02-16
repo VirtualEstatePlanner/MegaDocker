@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019 The MegaDocker Group. All rights reserved.'
 
-# MegaDocker v0.2.5-alpha
+# MegaDocker v0.2.7-alpha
 
 Modular Enterprise-Grade Automated Docker
 
@@ -12,8 +12,7 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
-- Added "about" section to README
-- completed functions/core tests
+- Added React.Context API for state management
 
 ![alt text](./src/images/icons/icon.png 'MegaDockerLogo')
 

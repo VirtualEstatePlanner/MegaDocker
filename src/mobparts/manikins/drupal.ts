@@ -6,8 +6,8 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
-import { serviceMite } from '../mites/service/_servicemitetemplate';
-import { networkMite } from '../mites/network/_networkmitetemplate';
+import { drupalServiceMite } from '../mites/service/drupalServiceMite';
+import { drupalNetworkMite } from '../mites/network/drupalNetworkMite';
 import * as drupalIcon from '../../images/manikin-icons/drupalIcon.png';
 
 /**
@@ -21,7 +21,7 @@ export let drupalManikin: IManikin = {
   manikinIcon: drupalIcon,
   manikinIndex: 0,
   memories: [],
-  mites: [serviceMite, networkMite],
+  mites: [drupalServiceMite, drupalNetworkMite],
   name: `Drupal`,
   ports: [],
   subfolders: [`modules`, `profiles`, `themes`, `sites`]

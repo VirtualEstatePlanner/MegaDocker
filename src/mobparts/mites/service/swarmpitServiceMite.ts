@@ -1,11 +1,8 @@
 import { IMite } from '../../../interfaces/IMite';
 import { primaryDomain } from '../../memories/primaryDomain';
 import { secondaryDomain } from '../../memories/secondaryDomain';
-
-//TODO: FIX THESE
-
-const mobName: string = '';
-const mobFolderPath: string = '';
+import { mobName } from '../../memories/mobName';
+import { mobFolderPath } from '../../memories/mobFolderPath';
 
 export const swarmpitServiceMite: IMite = {
   type: `Service`,

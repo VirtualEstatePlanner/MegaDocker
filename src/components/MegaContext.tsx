@@ -4,31 +4,30 @@ import { IManikin } from '../interfaces/IManikin';
 import { IMemory } from '../interfaces/IMemory';
 import { IMite } from '../interfaces/IMite';
 import { allManikins } from '../globals/allManikins';
-import { mobFileHeaderString } from '../mobparts/mites/service/mobFileHeaderString';
-import { servicesFooterSectionString } from '../mobparts/mites/service/servicesFooterSectionString';
-import { mobNetworkFooterSectionString } from '../mobparts/mites/network/mobNetowrkFooterSectionString';
-import { mobNetworksSectionString } from '../mobparts/mites/network/mobNetworksSectionString';
-// import { megaReducer } from '../functions/reducers/megaReducer'
-// import { IMegaDockerAction } from '../interfaces/IMegaDockerAction';
+import { mobFileHeaderString } from '../mobparts/mites/headers/mobFileHeaderString';
+import { servicesFooterSectionString } from '../mobparts/mites/headers/servicesFooterSectionString';
+import { mobNetworkFooterSectionString } from '../mobparts/mites/headers/mobNetworkFooterSectionString';
+import { mobNetworksSectionString } from '../mobparts/mites/headers/mobNetworksSectionString';
+import { megaReducer } from '../functions/reducers/megaReducer'
 
-export const updateSelectedManikins = (manikinArray: IManikin[]): IManikin[] => manikinArray.filter((eachManikin) => eachManikin.isSelected === true)
-export const updateMemories = (manikinArray: IManikin[]): IMemory[] =>
+const updateSelectedManikins = (manikinArray: IManikin[]): IManikin[] => manikinArray.filter((eachManikin) => eachManikin.isSelected === true)
+const updateMemories = (manikinArray: IManikin[]): IMemory[] =>
     (manikinArray.filter((eachManikin: IManikin) =>
         eachManikin.isSelected)).flatMap((eachManikin) =>
             eachManikin.memories)
-export const updateMobMites = (manikins: IManikin[]): IMite[] => manikins.flatMap((eachManikin) =>
+const updateMobMites = (manikins: IManikin[]): IMite[] => manikins.flatMap((eachManikin) =>
     eachManikin.mites.flatMap((eachMite) => eachMite));
-export const updateServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Service`)
-export const updateNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Network`)
-export const updateCustomMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Custom`)
-export const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
+const updateServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Service`)
+const updateNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Network`)
+const updateCustomMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Custom`)
+const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
     let tempServicesYML: string[] = serviceMites.flatMap((eachMite) => eachMite.miteString)
     let tempNetworksYML: string[] = networkMites.flatMap((eachMite) => eachMite.miteString)
     let ymlOutputArray: string[] = [mobFileHeaderString, ...tempServicesYML, servicesFooterSectionString, mobNetworksSectionString, ...tempNetworksYML, mobNetworkFooterSectionString]
     let ymlString: string = ymlOutputArray.join(``)
     return ymlString
 }
-export const updateInfoContent = (info: string): string => {
+const updateInfoContent = (info: string): string => {
     return info
 }
 
@@ -39,7 +38,7 @@ const initialMobMites: IMite[] = updateMobMites(initialSelectedManikins)
 const initialServiceMites: IMite[] = updateServiceMites(initialMobMites)
 const initialNetworkMites: IMite[] = updateNetworkMites(initialMobMites)
 const initialCustomMites: IMite[][] = [updateCustomMites(initialMobMites)]
-const initialInfoContent: string = `This is the Information Pane.  You can read more about the selected item here.`
+const initialInfoContent: string = updateInfoContent(`This is the Information Pane.  You can read more about the selected item here.`);
 const initialYmlOutput: string = updateYML(initialServiceMites, initialNetworkMites)
 
 export const initialMegaDockerState: IMegaDockerState = {
@@ -54,14 +53,16 @@ export const initialMegaDockerState: IMegaDockerState = {
     ymlOutput: initialYmlOutput
 };
 
-export const MegaContext: React.Context<IMegaDockerState> = React.createContext<IMegaDockerState>(initialMegaDockerState)
+export const MegaContext: React.Context<any> = React.createContext({
+    state: initialMegaDockerState
+})
 
-export const MegaContextProvider: React.FC = (props: any): React.ReactElement =>
-    <MegaContext.Provider value={initialMegaDockerState}>
-        {props.children}
-    </MegaContext.Provider >
+export const MegaProvider: React.FC = (props: any): React.ReactElement => {
 
-export const MegaContextConsumer: React.FC = (props: any): React.ReactElement =>
-    <MegaContext.Consumer>
-        {props.children}
-    </MegaContext.Consumer>
+    const [state, dispatch] = React.useReducer(megaReducer, initialMegaDockerState)
+
+    return (
+        <MegaContext.Provider value={{ state, dispatch }}>{props.children}</MegaContext.Provider>
+    )
+}
+

@@ -6,8 +6,8 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
-import { serviceMite } from '../mites/service/_servicemitetemplate';
-import { networkMite } from '../mites/network/_networkmitetemplate';
+import { portalServiceMite } from '../mites/service/portalServiceMite';
+import { portalNetworkMite } from '../mites/network/portalNetworkMite';
 import portalIcon from '../../images/manikin-icons/portalIcon.png';
 
 /**
@@ -21,7 +21,7 @@ export let portalManikin: IManikin = {
   manikinIcon: portalIcon,
   manikinIndex: 8,
   memories: [],
-  mites: [serviceMite, networkMite],
+  mites: [portalServiceMite, portalNetworkMite],
   name: `Portal`,
   ports: [],
   subfolders: [`bitnami`, `html`]

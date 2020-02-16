@@ -8,10 +8,10 @@ import { IMegaDockerAction } from '../../interfaces/IMegaDockerAction';
 import { IMegaDockerState } from '../../interfaces/IMegaDockerState';
 // global consts
 import { allManikins } from '../../globals/allManikins';
-import { mobFileHeaderString } from '../../mobparts/mites/service/mobFileHeaderString';
-import { servicesFooterSectionString } from '../../mobparts/mites/service/servicesFooterSectionString';
-import { mobNetworkFooterSectionString } from '../../mobparts/mites/network/mobNetowrkFooterSectionString';
-import { mobNetworksSectionString } from '../../mobparts/mites/network/mobNetworksSectionString';
+import { mobFileHeaderString } from '../../mobparts/mites/headers/mobFileHeaderString';
+import { servicesFooterSectionString } from '../../mobparts/mites/headers/servicesFooterSectionString';
+import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString';
+import { mobNetworksSectionString } from '../../mobparts/mites/headers/mobNetworksSectionString';
 
 /**
  * Updates application state for React.useReducer
@@ -21,11 +21,15 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
   action: IMegaDockerAction
 ): IMegaDockerState => {
   console.log(
-    `megaReducer:
+    `reducing:
     type: ${action.type}
-    payload: ${action.payload.toString()}`
+    payload: ${action.payload}`
   );
-  let newState: IMegaDockerState = state; // duplicate the state to modify a copy
+
+  /**
+   * mutable copy of the state to change
+   */
+  let newState: IMegaDockerState = { ...state };
 
   /**
    * updates selectedManikins array based on application state
@@ -112,6 +116,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         newState.mobDServiceMites,
         newState.mobDNetworkMites
       );
+      console.log(`generated initial application state`);
       return newState;
 
     case `TOGGLE_MANIKIN`: // to de/select a manikin
@@ -127,6 +132,9 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.infoContent = `Toggled ${
         newState.manikinTable[action.payload].name
       } .isSelected to ${newState.manikinTable[action.payload].isSelected}`;
+      console.log(
+        `toggled ${newState.manikinTable[action.payload].name} Manikin`
+      );
       return newState;
 
     case `UPDATE_MEMORY_VALUE`: // to handle changing data in a memory's value
@@ -136,6 +144,9 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         memoryIndex
       ].validator(newState.memories[memoryIndex].value);
       newState.infoContent = `${action.payload.memory.name} was updated`;
+      console.log(
+        `updated value of ${newState.memories[memoryIndex].name} to ${newState.memories[memoryIndex].value}`
+      );
       return newState;
 
     case `GENERATE_YML_OUTPUT`: // for export button
@@ -143,6 +154,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         ...newState,
         ymlOutput: getYML(newState.mobDServiceMites, newState.mobDNetworkMites)
       };
+      console.log(`${newState.ymlOutput}`);
       return newState;
 
     case `UPDATE_INFO_CONTENT`: // to dispatch user hints to info pane
@@ -150,6 +162,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         ...newState,
         infoContent: updateInfoContent(action.payload)
       };
+      console.log(`${newState.infoContent}`);
       return newState;
 
     default:

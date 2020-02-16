@@ -9,14 +9,13 @@ import {
 } from "@material-ui/core";
 import { Tooltip } from "@material-ui/core";
 import { IManikin } from "../interfaces/IManikin";
-// import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
-// import { IMegaDockerState } from "../interfaces/IMegaDockerState";
+import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
+import { IMegaDockerState } from "../interfaces/IMegaDockerState";
 import { MegaContext } from "./MegaContext";
-import { megaReducer } from "../functions/reducers/megaReducer";
 
 export const ManikinTable: React.FC = (): React.ReactElement => {
-    const [state, dispatch] =
-        React.useReducer(megaReducer, React.useContext(MegaContext))
+
+    const { state, dispatch }: { state: IMegaDockerState, dispatch: React.Dispatch<IMegaDockerAction> } = React.useContext(MegaContext)
 
     return (
         <Table className="ManikinTable" size="small" stickyHeader>
@@ -48,11 +47,10 @@ export const ManikinTable: React.FC = (): React.ReactElement => {
                                     key={`${eachManikin.name}Checkbox`}
                                     checked={eachManikin.isSelected}
                                     disabled={eachManikin.isCore ? true : false}
-                                    onChange={() => dispatch({
+                                    onClick={() => dispatch({
                                         type: `TOGGLE_MANIKIN`,
                                         payload: state.manikinTable.indexOf(eachManikin)
-                                    }
-                                    )} />
+                                    })} />
                             </TableCell>
                         </TableRow>
                     </Tooltip>))}

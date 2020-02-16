@@ -6,8 +6,8 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
-import { serviceMite } from '../mites/service/_servicemitetemplate';
-import { networkMite } from '../mites/network/_networkmitetemplate';
+import { portainerServiceMite } from '../mites/service/portainerServiceMite';
+import { portainerNetworkMite } from '../mites/network/portainerNetworkMite';
 import portainerIcon from '../../images/manikin-icons/portainerIcon.png';
 
 /**
@@ -21,7 +21,7 @@ export let portainerManikin: IManikin = {
   manikinIcon: portainerIcon,
   manikinIndex: 7,
   memories: [],
-  mites: [serviceMite, networkMite],
+  mites: [portainerServiceMite, portainerNetworkMite],
   name: `Portainer`,
   ports: [],
   subfolders: []

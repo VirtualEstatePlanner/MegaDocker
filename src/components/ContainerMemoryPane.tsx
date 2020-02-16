@@ -1,10 +1,10 @@
 import React from "react";
 import { MemoryTable } from './MemoryTable'
 
-export const MemoryPane: React.FC = (props: any): React.ReactElement => {
+export const MemoryPane: React.FC = (): React.ReactElement => {
     return (
         <div className="MemoryPane" >
-            <MemoryTable>{props.children}</MemoryTable> />
+            <MemoryTable></MemoryTable> />
         </div>
     );
 };

@@ -6,8 +6,8 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
-import { serviceMite } from '../mites/service/_servicemitetemplate';
-import { networkMite } from '../mites/network/_networkmitetemplate';
+import { owncloudServiceMite } from '../mites/service/owncloudServiceMite';
+import { owncloudNetworkMite } from '../mites/network/owncloudNetworkMite';
 import owncloudIcon from '../../images/manikin-icons/owncloudIcon.png';
 
 /**
@@ -21,7 +21,7 @@ export let owncloudManikin: IManikin = {
   manikinIcon: owncloudIcon,
   manikinIndex: 6,
   memories: [],
-  mites: [serviceMite, networkMite],
+  mites: [owncloudServiceMite, owncloudNetworkMite],
   name: `Owncloud`,
   ports: [],
   subfolders: [`apps`, `config`, `data`, `postgres`, `redis`, `mariadb`]

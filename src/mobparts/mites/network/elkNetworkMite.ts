@@ -1,4 +1,4 @@
-//  networkMite.ts
+//  traefikNetworkMite.ts
 //  MegaDocker
 //  Network Mite for $SOMEMANIKIN
 //  Created by George Georgulas IV on 1/26/19.
@@ -6,20 +6,17 @@
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const networkMite: IMite = {
+export const elkNetworkMite: IMite = {
   type: 'Network',
-  miteIndex: 999,
+  miteIndex: 1,
   miteString: `
 
-#Begin $SOMEMANIKIN Network Section
- 
- $SOMEMANIKIN:
-  image: 
-  ports:
-  volumes:
-  deploy:
-  
-#End $SOMEMANIKIN Network Section
-  
-  `
+#Begin ELK Network Section
+
+ elk:
+  external: true
+
+#End ELK Network Section
+
+`
 };

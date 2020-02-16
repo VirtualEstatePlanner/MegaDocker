@@ -9,8 +9,8 @@ import { IManikin } from '../../interfaces/IManikin';
 import { ldapAdminPassword } from '../memories/ldapAdminPassword';
 import { ldapAdminUsername } from '../memories/ldapAdminUsername';
 import { ldapConfigurationPassword } from '../memories/ldapConfigurationPassword';
-import { serviceMite } from '../mites/service/_servicemitetemplate';
-import { networkMite } from '../mites/network/_networkmitetemplate';
+import { ldapServiceMite } from '../mites/service/ldapServiceMite';
+import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';
 import ldapIcon from '../../images/manikin-icons/ldapIcon.png';
 
 /**
@@ -24,7 +24,7 @@ export let ldapManikin: IManikin = {
   manikinIcon: ldapIcon,
   manikinIndex: 4,
   memories: [ldapAdminUsername, ldapAdminPassword, ldapConfigurationPassword],
-  mites: [serviceMite, networkMite],
+  mites: [ldapServiceMite, ldapNetworkMite],
   name: `LDAP`,
   ports: [],
   subfolders: [`conf`, `pages`, `log`]

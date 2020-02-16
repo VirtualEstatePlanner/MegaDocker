@@ -6,8 +6,8 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
-import { serviceMite } from '../mites/service/_servicemitetemplate';
-import { networkMite } from '../mites/network/_networkmitetemplate';
+import { gitlabServiceMite } from '../mites/service/gitlabServiceMite';
+import { gitlabNetworkMite } from '../mites/network/gitlabNetworkMite';
 import gitlabIcon from '../../images/manikin-icons/gitlabIcon.png';
 
 /**
@@ -21,7 +21,7 @@ export let gitlabManikin: IManikin = {
   manikinIcon: gitlabIcon,
   manikinIndex: 3,
   memories: [],
-  mites: [serviceMite, networkMite],
+  mites: [gitlabServiceMite, gitlabNetworkMite],
   name: `GitLab`,
   ports: [],
   subfolders: []

@@ -6,8 +6,8 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
-import { serviceMite } from '../mites/service/_servicemitetemplate';
-import { networkMite } from '../mites/network/_networkmitetemplate';
+import { elkServiceMite } from '../mites/service/elkServiceMite';
+import { elkNetworkMite } from '../mites/network/elkNetworkMite';
 import elkIcon from '../../images/manikin-icons/elkIcon.png';
 
 /**
@@ -21,7 +21,7 @@ export let elkManikin: IManikin = {
   manikinIcon: elkIcon,
   manikinIndex: 1,
   memories: [],
-  mites: [serviceMite, networkMite],
+  mites: [elkServiceMite, elkNetworkMite],
   name: `ELK`,
   ports: [],
   subfolders: [`Elasticsearch`, `Logstash`, `Kibana`]

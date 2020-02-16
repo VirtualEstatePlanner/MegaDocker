@@ -1,4 +1,4 @@
-//  serviceMite.ts
+//  traefikNetworkMite.ts
 //  MegaDocker
 //  Network Mite for $SOMEMANIKIN
 //  Created by George Georgulas IV on 1/26/19.
@@ -6,8 +6,17 @@
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const serviceMite: IMite = {
-  type: 'Service',
-  miteIndex: 998,
-  miteString: ``
+export const owncloudNetworkMite: IMite = {
+  type: 'Network',
+  miteIndex: 1,
+  miteString: `
+
+#Begin Owncloud Network Section
+
+ owncloud:
+  external: true
+
+#End Owncloud Network Section
+
+`
 };

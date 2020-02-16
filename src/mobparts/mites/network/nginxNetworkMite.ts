@@ -6,8 +6,14 @@
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const serviceMite: IMite = {
-  type: 'Service',
+export const nginxNetworkMite: IMite = {
+  type: 'Network',
   miteIndex: 998,
-  miteString: ``
+  miteString: `
+
+  #Begin Nginx Network Section
+  
+  #End Nginx Network Section
+  
+  `
 };

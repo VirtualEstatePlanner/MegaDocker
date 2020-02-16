@@ -30,7 +30,7 @@ export const traefikServiceMite: IMite = {
      - node.role == manager
     labels:
      - 
-#End $SOMEMANIKIN Service Section
+#End Traefik Service Section
   
   `
 };

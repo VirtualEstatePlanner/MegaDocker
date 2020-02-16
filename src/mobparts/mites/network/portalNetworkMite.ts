@@ -6,8 +6,14 @@
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const serviceMite: IMite = {
-  type: 'Service',
+export const portalNetworkMite: IMite = {
+  type: 'Network',
   miteIndex: 998,
-  miteString: ``
+  miteString: `
+
+  #Begin Portal Network Section
+  
+  #End Portal Network Section
+  
+  `
 };

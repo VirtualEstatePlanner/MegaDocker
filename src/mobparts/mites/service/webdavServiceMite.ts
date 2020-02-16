@@ -6,8 +6,14 @@
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const serviceMite: IMite = {
+export const webdavServiceMite: IMite = {
   type: 'Service',
   miteIndex: 998,
-  miteString: ``
+  miteString: `
+
+  #Begin WebDAV Service Section
+  
+  #End WebDAV Service Section
+  
+  `
 };

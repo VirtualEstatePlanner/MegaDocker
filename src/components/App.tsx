@@ -2,13 +2,16 @@ import React from "react";
 import "./App.css";
 import { ManikinPane } from './ContainerManikinPane'
 import { MainArea } from "./ContainerMainArea";
-import { MegaContextProvider } from './MegaContext'
-// import { IMegaDockerState } from "../interfaces/IMegaDockerState";
+import { MegaProvider } from './MegaContext'
 
-export const App: React.FC = (): React.ReactElement =>
-  <div className="App">
-    <MegaContextProvider>
-      <ManikinPane></ManikinPane>
-      <MainArea></MainArea>
-    </MegaContextProvider>
-  </div >
+export const App: React.FC = (): React.ReactElement => {
+
+  return (
+    <div className="App">
+      <MegaProvider>
+        <ManikinPane></ManikinPane>
+        <MainArea></MainArea>
+      </MegaProvider>
+    </div >
+  )
+}

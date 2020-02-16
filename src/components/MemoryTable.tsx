@@ -12,9 +12,9 @@ import * as checkmarkIcon from "../images/indicators/checkmarkIcon.png"
 import * as xmarkIcon from "../images/indicators/xmarkIcon.png"
 import { MegaContext } from './MegaContext';
 import { IMegaDockerState } from "../interfaces/IMegaDockerState";
-import { megaReducer } from "../functions/reducers/megaReducer";
 import { IMemory } from "../interfaces/IMemory";
 import { IUpdateMemoryValueAction } from "../interfaces/actionInterfaces/IUpdateMemoryValueAction";
+import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
 
 /**
  * generates the memories table
@@ -22,15 +22,7 @@ import { IUpdateMemoryValueAction } from "../interfaces/actionInterfaces/IUpdate
  */
 export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
 
-    const appState = React.useContext(MegaContext)
-
-    /**
-     * @state the current application state
-     * @dispatch a function to update that by passing an action to megaReducer
-     */
-    const [state, dispatch]: [
-        IMegaDockerState,
-        React.Dispatch<IUpdateMemoryValueAction>] = React.useReducer(megaReducer, appState)
+    const { state, dispatch }: { state: IMegaDockerState, dispatch: React.Dispatch<IMegaDockerAction> } = React.useContext(MegaContext)
 
     /**
      *  generates the payload to reduce

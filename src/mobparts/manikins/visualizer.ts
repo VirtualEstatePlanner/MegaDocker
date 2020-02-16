@@ -6,8 +6,8 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
-import { serviceMite } from '../mites/service/_servicemitetemplate';
-import { networkMite } from '../mites/network/_networkmitetemplate';
+import { visualizerServiceMite } from '../mites/service/visualizerServiceMite';
+import { visualizerNetworkMite } from '../mites/network/visualizerNetworkMite';
 import visualizerIcon from '../../images/manikin-icons/visualizerIcon.png';
 
 /**
@@ -21,7 +21,7 @@ export let visualizerManikin: IManikin = {
   manikinIcon: visualizerIcon,
   manikinIndex: 13,
   memories: [],
-  mites: [serviceMite, networkMite],
+  mites: [visualizerServiceMite, visualizerNetworkMite],
   name: `Visualizer`,
   ports: [],
   subfolders: []
