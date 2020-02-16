@@ -15,7 +15,7 @@ import owncloudIcon from '../../images/manikin-icons/owncloudIcon.png';
  */
 export const owncloudManikin: IManikin = {
   description: `Owncloud file-sharing service`,
-  folder: `Owncloud`,
+  folder: `owncloud`,
   isCore: false,
   isSelected: false,
   manikinIcon: owncloudIcon,

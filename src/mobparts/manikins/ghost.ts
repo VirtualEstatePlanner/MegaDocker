@@ -17,7 +17,7 @@ import { ghostRootMariaDBPassword } from '../memories/ghostRootMariaDBPassword';
  */
 export const ghostManikin: IManikin = {
   description: `Ghost blog service`,
-  folder: `Ghost`,
+  folder: `ghost`,
   isCore: false,
   isSelected: false,
   manikinIcon: ghostIcon,

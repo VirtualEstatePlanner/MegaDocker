@@ -17,7 +17,7 @@ export const swarmpitManikin: IManikin = {
   description: `Swarmpit Docker swarm mode GUI service`,
   isCore: true,
   isSelected: true,
-  folder: `Swarmpit`,
+  folder: `swarmpit`,
   manikinIcon: swarmpitIcon,
   manikinIndex: 11,
   memories: [],

@@ -21,7 +21,7 @@ import { mobName } from '../memories/mobName';
  */
 export const traefikManikin: IManikin = {
   description: `Traefik reverse proxy service`,
-  folder: `Traefik`,
+  folder: `traefik`,
   isCore: true,
   isSelected: true,
   manikinIcon: traefikIcon,

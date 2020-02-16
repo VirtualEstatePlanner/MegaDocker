@@ -14,7 +14,7 @@ import * as wordpressIcon from '../../images/manikin-icons/wordpressIcon.png';
 
 export const wordpressManikin: IManikin = {
   description: `Wordpress Blogging Platform`,
-  folder: `WordPress`,
+  folder: `wordpress`,
   isCore: false,
   isSelected: false,
   manikinIcon: wordpressIcon,

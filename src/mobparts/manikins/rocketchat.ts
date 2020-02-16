@@ -18,7 +18,7 @@ import { rocketchatBotUsername } from '../memories/rocketchatBotUsername';
  */
 export const rocketchatManikin: IManikin = {
   description: `Team chat and collaboration service`,
-  folder: `RocketChat`,
+  folder: `rocketchat`,
   isCore: false,
   isSelected: false,
   manikinIcon: rocketchatIcon,

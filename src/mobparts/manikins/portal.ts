@@ -15,7 +15,7 @@ import portalIcon from '../../images/manikin-icons/portalIcon.png';
  */
 export const portalManikin: IManikin = {
   description: `Web portal with links to running services`,
-  folder: `Portal`,
+  folder: `portal`,
   isCore: false,
   isSelected: false,
   manikinIcon: portalIcon,

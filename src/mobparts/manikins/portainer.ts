@@ -15,7 +15,7 @@ import portainerIcon from '../../images/manikin-icons/portainerIcon.png';
  */
 export const portainerManikin: IManikin = {
   description: `Portainer docker host web GUI service`,
-  folder: `Portainer`,
+  folder: `portainer`,
   isSelected: false,
   isCore: false,
   manikinIcon: portainerIcon,

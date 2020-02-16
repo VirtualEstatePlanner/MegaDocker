@@ -15,7 +15,7 @@ import * as backupIcon from '../../images/manikin-icons/backupIcon.png';
  */
 export const backupManikin: IManikin = {
   description: `Drupal blog service`,
-  folder: `Drupal`,
+  folder: `backup`,
   isCore: false,
   isSelected: false,
   manikinIcon: backupIcon,
@@ -24,5 +24,5 @@ export const backupManikin: IManikin = {
   mites: [backupServiceMite, backupNetworkMite],
   name: `Backup`,
   ports: [],
-  subfolders: [`modules`, `profiles`, `themes`, `sites`]
+  subfolders: [`data`, `settings`]
 };

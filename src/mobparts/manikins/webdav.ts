@@ -17,7 +17,7 @@ export const webdavManikin: IManikin = {
   description: `WebDAV file-sharing service`,
   isCore: false,
   isSelected: false,
-  folder: `WebDAV`,
+  folder: `webdav`,
   manikinIcon: webdavIcon,
   manikinIndex: 14,
   memories: [],

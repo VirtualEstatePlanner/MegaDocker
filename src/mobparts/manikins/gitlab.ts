@@ -15,7 +15,7 @@ import gitlabIcon from '../../images/manikin-icons/gitlabIcon.png';
  */
 export const gitlabManikin: IManikin = {
   description: `GitLab version control service`,
-  folder: `GitLab`,
+  folder: `gitlab`,
   isCore: false,
   isSelected: false,
   manikinIcon: gitlabIcon,

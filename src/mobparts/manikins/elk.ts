@@ -15,7 +15,7 @@ import elkIcon from '../../images/manikin-icons/elkIcon.png';
  */
 export const elkManikin: IManikin = {
   description: `ElasticSearch/Logstash/Kibana Monitoring service`,
-  folder: `ELK`,
+  folder: `elk`,
   isCore: false,
   isSelected: false,
   manikinIcon: elkIcon,

@@ -15,7 +15,7 @@ import nginxIcon from '../../images/manikin-icons/nginxIcon.png';
  */
 export const nginxManikin: IManikin = {
   description: `Nginx http service`,
-  folder: `Nginx`,
+  folder: `nginx`,
   isCore: false,
   isSelected: false,
   manikinIcon: nginxIcon,
