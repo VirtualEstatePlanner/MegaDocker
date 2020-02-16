@@ -11,11 +11,9 @@ import { IManikin } from '../../interfaces/IManikin';
  */
 
 export function startMob(): void {
-  // TODO
+  // TODO: this entire function
   // tslint:disable-next-line: no-console
-  // console.log(`TODO THIS FUNCTION: startMob`);
   //  const chosenManikins: IManikin[] = [];
-
   /*
     userMob.storagePath: Path = `${userMegaDockerFolder}.${userMob.mobName}`;
     userMob.filePath: Path = userMob.storagePath.path;

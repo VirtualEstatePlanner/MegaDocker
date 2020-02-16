@@ -3,7 +3,7 @@ import React from "react";
 import Button from "@material-ui/core/Button"
 
 function saveButtonClicked() {
-    console.log("pressed save (but didn't do anything! Fix this)");
+    // TODO: this entire function
     // saveFile(
     //     `${process.env.PWD}`,
     //     `testfilename`,

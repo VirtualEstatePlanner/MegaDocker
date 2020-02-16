@@ -20,12 +20,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
   state: IMegaDockerState,
   action: IMegaDockerAction
 ): IMegaDockerState => {
-  console.log(
-    `reducing:
-    type: ${action.type}
-    payload: ${action.payload}`
-  );
-
   /**
    * mutable copy of the state to change
    */
@@ -116,7 +110,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         newState.mobDServiceMites,
         newState.mobDNetworkMites
       );
-      console.log(`generated initial application state`);
       return newState;
 
     case `TOGGLE_MANIKIN`: // to de/select a manikin
@@ -132,9 +125,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.infoContent = `Toggled ${
         newState.manikinTable[action.payload].name
       } .isSelected to ${newState.manikinTable[action.payload].isSelected}`;
-      console.log(
-        `toggled ${newState.manikinTable[action.payload].name} Manikin`
-      );
       return newState;
 
     case `UPDATE_MEMORY_VALUE`: // to handle changing data in a memory's value
@@ -144,9 +134,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         memoryIndex
       ].validator(newState.memories[memoryIndex].value);
       newState.infoContent = `${action.payload.memory.name} was updated`;
-      console.log(
-        `updated value of ${newState.memories[memoryIndex].name} to ${newState.memories[memoryIndex].value}`
-      );
       return newState;
 
     case `GENERATE_YML_OUTPUT`: // for export button
@@ -154,7 +141,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         ...newState,
         ymlOutput: getYML(newState.mobDServiceMites, newState.mobDNetworkMites)
       };
-      console.log(`${newState.ymlOutput}`);
       return newState;
 
     case `UPDATE_INFO_CONTENT`: // to dispatch user hints to info pane
@@ -162,7 +148,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         ...newState,
         infoContent: updateInfoContent(action.payload)
       };
-      console.log(`${newState.infoContent}`);
       return newState;
 
     default:

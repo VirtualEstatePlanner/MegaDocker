@@ -6,8 +6,8 @@ import React from "react";
 import Button from "@material-ui/core/Button"
 
 function buttonClicked() {
+    // TODO: this entire function
     //saveFile(userMegaDockerFolder, mobName.value, `yml`, userMob.mobManikins.toString())
-    console.log("pressed export (but didn't do anything! Fix this!)");
     // saveFile(
     //     `${process.env.PWD}`,
     //     `testfilename`,

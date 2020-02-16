@@ -20,14 +20,8 @@ export function runOrdered(command: string, opt?: string[]): void {
   }
   options = [...options, `& wait`];
   const child: ChildProcess = spawn(`${command} ${options}`);
-  child.on(`error`, (err) => {
-    // console.log(`an error occurred with message: ${err.message}`);
-  });
-  child.on(`exit`, (code) => {
-    // console.log(`Child process ${command} exited with code ${code}`);
-  });
-  child.on(`data`, (data) => {
-    // console.log(`stdout: ${data}`);
-  });
+  child.on(`error`, (err) => {});
+  child.on(`exit`, (code) => {});
+  child.on(`data`, (data) => {});
   child.unref();
 }

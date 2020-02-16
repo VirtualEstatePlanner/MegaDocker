@@ -52,7 +52,5 @@ export async function getFile(
 ) {
   try {
     await getSomeFile(pathTo, fileName, urlToDownload);
-  } catch (e) {
-    // console.log(e);
-  }
+  } catch (e) {}
 }
