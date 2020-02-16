@@ -5,7 +5,7 @@ import { makeFoldersForManikin } from './makeFoldersForManikin';
 import { IManikin } from '../../interfaces/IManikin';
 import { IMob } from '../../interfaces/IMob';
 import { userMegaDockerFolder } from '../../globals/userMegaDockerFolder';
-import * as defaultIcon from '../../images/manikin-icons/defaultIcon.png';
+import defaultIcon from '../../images/manikin-icons/defaultIcon.png';
 
 const myTestManikin: IManikin = {
   name: `myTestingManikin`,
