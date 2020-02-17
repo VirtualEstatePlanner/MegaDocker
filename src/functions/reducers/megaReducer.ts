@@ -177,7 +177,13 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.infoContent = `${action.payload.memory.name} was updated`;
       return newState;
 
-    case `DOCKER_SWARM_OUTPUT`: // for export button
+    case `OPEN_MOB_FILE`: // TODO: for save button
+      return newState;
+
+    case `SAVE_MOB_FILE`: // TODO: for open button
+      return newState;
+
+    case `DOCKER_SWARM_OUTPUT`: // TODO: for docker swarm export button
       newState = {
         ...newState,
         ymlOutput: zipDockerSwarm(
@@ -187,7 +193,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       };
       return newState;
 
-    case `KUBERNETES_OUTPUT`: // for export button
+    case `KUBERNETES_OUTPUT`: // TODO: for kubernetes export button
       newState = {
         ...newState,
         ymlOutput: zipKubernetesPod(
