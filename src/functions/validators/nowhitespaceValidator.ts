@@ -1,5 +1,5 @@
 export const noWhiteSpaceValidator = (nowhitespacestring: string): boolean => {
-  const noWhiteSpaceRegex: RegExp = new RegExp('/^((?!(``)).)*$/');
+  const noWhiteSpaceRegex: RegExp = new RegExp(`^[s]*$`);
   const isValidated: boolean = noWhiteSpaceRegex.test(nowhitespacestring)
     ? true
     : false;
