@@ -6,8 +6,8 @@ import { ButtonSaveMob } from './ButtonSaveMob'
 
 export const ButtonPane: React.FC = (): React.ReactElement =>
     <div className="ButtonPane">
+        <ButtonOpenMob />
+        <ButtonSaveMob />
         <ButtonExportDockerSwarm />
         <ButtonExportKubernetes />
-        <ButtonSaveMob />
-        <ButtonOpenMob />
     </div>

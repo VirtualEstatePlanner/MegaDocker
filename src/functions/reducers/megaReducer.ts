@@ -46,6 +46,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     manikinsToGetMitesFrom.flatMap((eachManikin) =>
       eachManikin.mites.flatMap((eachMite) => eachMite)
     );
+
   /**
    * updates serviceMites array based on application state
    */
@@ -58,6 +59,18 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
 
   const getDNetworkMites = (miteArray: IMite[]): IMite[] =>
     miteArray.filter((eachMite) => eachMite.type === `DockerSwarmNetwork`);
+
+  // /**
+  //  * updates serviceMites array based on application state
+  //  */
+  // const getKServiceMites = (miteArray: IMite[]): IMite[] =>
+  //   miteArray.filter((eachMite) => eachMite.type === `KubernetesService`);
+
+  // /**
+  //  * updates networkMites array based on application state
+  //  */
+  // const getKNetworkMites = (miteArray: IMite[]): IMite[] =>
+  //   miteArray.filter((eachMite) => eachMite.type === `KubernetesNetwork`);
 
   /**
    * updates customMites array based on application state
@@ -73,9 +86,36 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     return info;
   };
   /**
-   * updates YML file
+   * makes Docker Swarm .zip file
    */
-  const getYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
+  const zipDockerSwarm = (
+    serviceMites: IMite[],
+    networkMites: IMite[]
+  ): string => {
+    const tempServicesYML: string[] = serviceMites.flatMap(
+      (eachMite) => eachMite.miteString
+    );
+    const tempNetworksYML: string[] = networkMites.flatMap(
+      (eachMite) => eachMite.miteString
+    );
+    const ymlOutputArray: string[] = [
+      mobFileHeaderString,
+      ...tempServicesYML,
+      servicesFooterSectionString,
+      mobNetworksSectionString,
+      ...tempNetworksYML,
+      mobNetworkFooterSectionString
+    ];
+    const ymlString: string = ymlOutputArray.join(``);
+    return ymlString;
+  };
+  /**
+   * makes Docker Swarm .zip file
+   */
+  const zipKubernetesPod = (
+    serviceMites: IMite[],
+    networkMites: IMite[]
+  ): string => {
     const tempServicesYML: string[] = serviceMites.flatMap(
       (eachMite) => eachMite.miteString
     );
@@ -106,7 +146,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites);
       newState.mobCustomMites = getCustomMites(newState.allMobMites);
       newState.infoContent = `This is the Information Pane.  You can read these about the selected item here.`;
-      newState.ymlOutput = getYML(
+      newState.ymlOutput = zipDockerSwarm(
         newState.mobDServiceMites,
         newState.mobDNetworkMites
       );
@@ -136,10 +176,23 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.infoContent = `${action.payload.memory.name} was updated`;
       return newState;
 
-    case `GENERATE_YML_OUTPUT`: // for export button
+    case `DOCKER_SWARM_OUTPUT`: // for export button
       newState = {
         ...newState,
-        ymlOutput: getYML(newState.mobDServiceMites, newState.mobDNetworkMites)
+        ymlOutput: zipDockerSwarm(
+          newState.mobDServiceMites,
+          newState.mobDNetworkMites
+        )
+      };
+      return newState;
+
+    case `KUBERNETES_OUTPUT`: // for export button
+      newState = {
+        ...newState,
+        ymlOutput: zipKubernetesPod(
+          newState.mobKServiceMites,
+          newState.mobKNetworkMites
+        )
       };
       return newState;
 

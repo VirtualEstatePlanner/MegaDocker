@@ -122,6 +122,7 @@
     "@material-ui/core": "latest",
     "@material-ui/icons": "latest",
     "@material-ui/styles": "latest",
+    "jszip": "latest",
     "opener": "latest",
     "react": "latest",
     "react-dom": "latest",
@@ -130,6 +131,7 @@
   "devDependencies": {
     "@types/electron-devtools-installer": "latest",
     "@types/jest": "latest",
+    "@types/jszip": "latest",
     "@types/node": "latest",
     "@types/opener": "latest",
     "@types/react": "latest",

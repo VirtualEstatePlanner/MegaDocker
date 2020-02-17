@@ -24,6 +24,8 @@ export interface IMegaDockerState {
   allMobMites: IMite[];
   mobDServiceMites: IMite[];
   mobDNetworkMites: IMite[];
+  mobKServiceMites: IMite[];
+  mobKNetworkMites: IMite[];
   mobCustomMites: IMite[][];
   infoContent: string;
   ymlOutput: string;

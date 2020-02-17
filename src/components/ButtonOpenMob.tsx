@@ -5,4 +5,4 @@ function buttonClicked() {
 }
 
 export const ButtonOpenMob: React.FC = (): React.ReactElement =>
-    <Button variant="contained" onClick={buttonClicked}>Open Mob</Button>
+    <Button variant="contained" onClick={buttonClicked}>Open a Mob</Button>

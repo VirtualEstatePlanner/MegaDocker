@@ -17,8 +17,10 @@ const updateMemories = (manikinArray: IManikin[]): IMemory[] =>
             eachManikin.memories)
 const updateMobMites = (manikins: IManikin[]): IMite[] => manikins.flatMap((eachManikin) =>
     eachManikin.mites.flatMap((eachMite) => eachMite));
-const updateServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `DockerSwarmService`)
-const updateNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `DockerSwarmNetwork`)
+const updateDServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `DockerSwarmService`)
+const updateDNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `DockerSwarmNetwork`)
+const updateKServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `KubernetesService`)
+const updateKNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `KubernetesNetwork`)
 const updateCustomMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Custom`)
 const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
     const tempServicesYML: string[] = serviceMites.flatMap((eachMite) => eachMite.miteString)
@@ -35,19 +37,23 @@ const initialTableManikins: IManikin[] = [...allManikins]
 const initialSelectedManikins: IManikin[] = updateSelectedManikins(initialTableManikins)
 const initialMemoryTableContents: IMemory[] = updateMemories(initialSelectedManikins)
 const initialMobMites: IMite[] = updateMobMites(initialSelectedManikins)
-const initialServiceMites: IMite[] = updateServiceMites(initialMobMites)
-const initialNetworkMites: IMite[] = updateNetworkMites(initialMobMites)
+const initialDServiceMites: IMite[] = updateDServiceMites(initialMobMites)
+const initialDNetworkMites: IMite[] = updateDNetworkMites(initialMobMites)
+const initialKServiceMites: IMite[] = updateKServiceMites(initialMobMites)
+const initialKNetworkMites: IMite[] = updateKNetworkMites(initialMobMites)
 const initialCustomMites: IMite[][] = [updateCustomMites(initialMobMites)]
 const initialInfoContent: string = updateInfoContent(`This is the Information Pane.  You can read more about the selected item here.`);
-const initialYmlOutput: string = updateYML(initialServiceMites, initialNetworkMites)
+const initialYmlOutput: string = updateYML(initialDServiceMites, initialDNetworkMites)
 
 export const initialMegaDockerState: IMegaDockerState = {
     manikinTable: initialTableManikins,
     selectedManikins: initialSelectedManikins,
     memories: initialMemoryTableContents,
     allMobMites: initialMobMites,
-    mobDServiceMites: initialServiceMites,
-    mobDNetworkMites: initialNetworkMites,
+    mobDServiceMites: initialDServiceMites,
+    mobDNetworkMites: initialDNetworkMites,
+    mobKServiceMites: initialKServiceMites,
+    mobKNetworkMites: initialKNetworkMites,
     mobCustomMites: initialCustomMites,
     infoContent: initialInfoContent,
     ymlOutput: initialYmlOutput
@@ -65,4 +71,3 @@ export const MegaProvider: React.FC = (props: any): React.ReactElement => {
         <MegaContext.Provider value={{ state, dispatch }}>{props.children}</MegaContext.Provider>
     )
 }
-
