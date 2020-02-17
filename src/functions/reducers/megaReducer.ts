@@ -111,7 +111,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     return ymlString;
   };
   /**
-   * makes Docker Swarm .zip file
+   * makes Kubernetes Pod .zip file
    */
   const zipKubernetesPod = (
     serviceMites: IMite[],
