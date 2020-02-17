@@ -13,7 +13,7 @@ import { drupalPostgresUser } from '../../memories/drupalPostgresUser';
 import { drupalPostgresPassword } from '../../memories/drupalPostgresPassword';
 
 export const drupalServiceMite: IMite = {
-  type: 'Service',
+  type: `DockerSwarmService`,
   miteIndex: 2001,
   miteString: `
 

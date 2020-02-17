@@ -7,7 +7,7 @@
 import { IMite } from '../../../interfaces/IMite';
 
 export const drupalNetworkMite: IMite = {
-  type: 'Network',
+  type: `DockerSwarmNetwork`,
   miteIndex: 1001,
   miteString: `
 

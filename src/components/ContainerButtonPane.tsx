@@ -1,11 +1,13 @@
 import React from "react";
-import { ButtonExportYML } from './ButtonExportYML'
-import { ButtonLaunchMob } from './ButtonLaunchMob'
+import { ButtonExportDockerSwarm } from './ButtonExportDockerSwarm'
+import { ButtonExportKubernetes } from './ButtonExportKubernetes'
+import { ButtonOpenMob } from './ButtonOpenMob'
 import { ButtonSaveMob } from './ButtonSaveMob'
 
 export const ButtonPane: React.FC = (): React.ReactElement =>
     <div className="ButtonPane">
-        <ButtonExportYML></ButtonExportYML>
-        <ButtonSaveMob></ButtonSaveMob>
-        <ButtonLaunchMob></ButtonLaunchMob>
+        <ButtonExportDockerSwarm />
+        <ButtonExportKubernetes />
+        <ButtonSaveMob />
+        <ButtonOpenMob />
     </div>

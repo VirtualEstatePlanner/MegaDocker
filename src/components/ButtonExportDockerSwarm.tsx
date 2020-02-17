@@ -16,5 +16,5 @@ function buttonClicked() {
     // );
 }
 
-export const ButtonExportYML: React.FC = (props: any): React.ReactElement =>
-    <Button value={props.children} variant="contained" onClick={buttonClicked}>Export YML</Button>
+export const ButtonExportDockerSwarm: React.FC = (props: any): React.ReactElement =>
+    <Button value={props.children} variant="contained" onClick={buttonClicked}>Export Mob as Docker Swarm Stack</Button>

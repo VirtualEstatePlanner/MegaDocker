@@ -7,7 +7,7 @@
 import { IMite } from '../../../interfaces/IMite';
 
 export const webdavServiceMite: IMite = {
-  type: 'Service',
+  type: `DockerSwarmService`,
   miteIndex: 2016,
   miteString: `
 

@@ -51,13 +51,13 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
    */
 
   const getDServiceMites = (miteArray: IMite[]): IMite[] =>
-    miteArray.filter((eachMite) => eachMite.type === `Service`);
+    miteArray.filter((eachMite) => eachMite.type === `DockerSwarmService`);
   /**
    * updates networkMites array based on application state
    */
 
   const getDNetworkMites = (miteArray: IMite[]): IMite[] =>
-    miteArray.filter((eachMite) => eachMite.type === `Network`);
+    miteArray.filter((eachMite) => eachMite.type === `DockerSwarmNetwork`);
 
   /**
    * updates customMites array based on application state

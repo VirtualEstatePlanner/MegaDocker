@@ -10,7 +10,7 @@ import { primaryDomain } from '../../memories/primaryDomain';
 import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const nextcloudServiceMite: IMite = {
-  type: 'Service',
+  type: `DockerSwarmService`,
   miteIndex: 2006,
   miteString: `
 

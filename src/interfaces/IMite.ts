@@ -5,7 +5,12 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 export interface IMite {
-  type: `Network` | `Service` | `Custom` | `Kubernetes`;
+  type:
+    | `DockerSwarmNetwork`
+    | `DockerSwarmService`
+    | `KubernetesService`
+    | `KubernetesNetwork`
+    | `Custom`;
   miteIndex: number;
   miteString: string;
 }

@@ -17,8 +17,8 @@ const updateMemories = (manikinArray: IManikin[]): IMemory[] =>
             eachManikin.memories)
 const updateMobMites = (manikins: IManikin[]): IMite[] => manikins.flatMap((eachManikin) =>
     eachManikin.mites.flatMap((eachMite) => eachMite));
-const updateServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Service`)
-const updateNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Network`)
+const updateServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `DockerSwarmService`)
+const updateNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `DockerSwarmNetwork`)
 const updateCustomMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Custom`)
 const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
     const tempServicesYML: string[] = serviceMites.flatMap((eachMite) => eachMite.miteString)

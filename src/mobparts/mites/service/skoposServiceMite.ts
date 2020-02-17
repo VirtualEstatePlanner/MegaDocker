@@ -3,7 +3,7 @@ import { primaryDomain } from '../../memories/primaryDomain';
 import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const skoposServiceMite: IMite = {
-  type: 'Service',
+  type: `DockerSwarmService`,
   miteIndex: 2012,
   miteString: `
   

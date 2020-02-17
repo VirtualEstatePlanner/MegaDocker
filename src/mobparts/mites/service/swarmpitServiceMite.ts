@@ -5,7 +5,7 @@ import { mobName } from '../../memories/mobName';
 import { mobFolderPath } from '../../memories/mobFolderPath';
 
 export const swarmpitServiceMite: IMite = {
-  type: `Service`,
+  type: `DockerSwarmService`,
   miteIndex: 2013,
   miteString: `
 

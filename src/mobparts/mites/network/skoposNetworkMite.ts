@@ -1,7 +1,7 @@
 import { IMite } from '../../../interfaces/IMite';
 
 export const skoposNetworkMite: IMite = {
-  type: `Network`,
+  type: `DockerSwarmNetwork`,
   miteIndex: 1012,
   miteString: `
 

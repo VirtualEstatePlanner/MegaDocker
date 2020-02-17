@@ -7,7 +7,7 @@
 import { IMite } from '../../../interfaces/IMite';
 
 export const ldapNetworkMite: IMite = {
-  type: 'Network',
+  type: `DockerSwarmNetwork`,
   miteIndex: 1005,
   miteString: `
 

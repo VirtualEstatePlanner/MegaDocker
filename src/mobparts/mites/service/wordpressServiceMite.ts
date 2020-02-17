@@ -14,7 +14,7 @@ import { secondaryDomain } from '../../memories/secondaryDomain';
 import { wordpressMariaDBRootPassword } from '../../memories/wordpressMariaDBRootPassword';
 
 export const wordpressServiceMite: IMite = {
-  type: 'Service',
+  type: `DockerSwarmService`,
   miteIndex: 2017,
   miteString: `
 

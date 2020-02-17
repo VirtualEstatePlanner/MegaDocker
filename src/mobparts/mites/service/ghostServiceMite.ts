@@ -12,7 +12,7 @@ import { secondaryDomain } from '../../memories/secondaryDomain';
 import { mobFolderPath } from '../../memories/mobFolderPath';
 
 export const ghostServiceMite: IMite = {
-  type: 'Service',
+  type: `DockerSwarmService`,
   miteIndex: 2003,
   miteString: `
 

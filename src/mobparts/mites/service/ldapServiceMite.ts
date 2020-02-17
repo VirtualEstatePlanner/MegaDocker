@@ -12,7 +12,7 @@ import { letsEncryptEmail } from '../../memories/letsEncryptEmail';
 import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const ldapServiceMite: IMite = {
-  type: 'Service',
+  type: `DockerSwarmService`,
   miteIndex: 2005,
   miteString: `
 

@@ -7,7 +7,7 @@
 import { IMite } from '../../../interfaces/IMite';
 
 export const rocketchatNetworkMite: IMite = {
-  type: 'Network',
+  type: `DockerSwarmNetwork`,
   miteIndex: 1011,
   miteString: `
 

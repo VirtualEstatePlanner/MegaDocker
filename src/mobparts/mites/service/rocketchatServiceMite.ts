@@ -13,7 +13,7 @@ import { rocketchatBotUsername } from '../../memories/rocketchatBotUsername';
 import { rocketchatBotPassword } from '../../memories/rocketchatBotPassword';
 
 export const rocketchatServiceMite: IMite = {
-  type: 'Service',
+  type: `DockerSwarmService`,
   miteIndex: 2011,
   miteString: `
 
