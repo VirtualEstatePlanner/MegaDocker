@@ -1,3 +1,4 @@
+import JSZip from 'jszip';
 import { IMite } from '../../interfaces/IMite';
 import { mobFileHeaderString } from '../../mobparts/mites/headers/mobFileHeaderString';
 import { servicesFooterSectionString } from '../../mobparts/mites/headers/servicesFooterSectionString';

@@ -1,3 +1,4 @@
+import JSZip from 'jszip';
 import { IMite } from '../../interfaces/IMite';
 import { mobFileHeaderString } from '../../mobparts/mites/headers/mobFileHeaderString';
 import { servicesFooterSectionString } from '../../mobparts/mites/headers/servicesFooterSectionString';
@@ -11,7 +12,7 @@ export const zipKubernetesDeployment = (
   serviceMites: IMite[],
   networkMites: IMite[]
 ): string => {
-  // TODO: fix this function
+  // TODO: re-write this function to zip for kubernetes and remove the console.log() below
   console.log(`this is still not outputting for kubernetes`);
   const tempServicesYML: string[] = serviceMites.flatMap(
     (eachMite) => eachMite.miteString
