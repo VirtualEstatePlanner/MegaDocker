@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { usernameValidator } from '../../functions/validators/usernameValidator';
+import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const wordpressMariaDBUser: IMemory = {
   memoryIndex: 1015,
@@ -15,5 +15,5 @@ export const wordpressMariaDBUser: IMemory = {
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: usernameValidator
+  validator: noWhitespaceOrSymbolsValidator
 };
