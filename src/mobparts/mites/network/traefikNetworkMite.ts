@@ -14,14 +14,10 @@ export const traefikNetworkMite: IMite = {
 #Begin Traefik Network Section
  
  traefik:
-  image: traefik:latest
-  ports:
-   - 80:80
-   - 443:443
-  volumes:
-  deploy:
-  
-#End $SOMEMANIKIN Network Section
+  driver: overlay
+  name: traefik
+ 
+#End Traefik Network Section
   
   `
 };
