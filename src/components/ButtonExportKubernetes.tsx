@@ -23,6 +23,6 @@ export const ButtonExportKubernetes: React.FC = (): React.ReactElement => {
     const buttonClicked = (): void => dispatch({ type: `KUBERNETES_OUTPUT` })
 
     return (
-        <Button disabled={fullyValidated ? false : true} variant="contained" onClick={buttonClicked} >Zip for Kubernetes Pod</ Button>
+        <Button disabled={fullyValidated ? false : true} variant="contained" onClick={buttonClicked} >Zip for Kubernetes Deployment</ Button>
     )
 }
