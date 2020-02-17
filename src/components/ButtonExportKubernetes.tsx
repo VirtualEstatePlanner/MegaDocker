@@ -18,11 +18,11 @@ export const ButtonExportKubernetes: React.FC = (): React.ReactElement => {
 
     const { state, dispatch }: { state: IMegaDockerState, dispatch: React.Dispatch<IMegaDockerAction> } = React.useContext(MegaContext)
 
-    const isEverythingReady: boolean = state.memories.every((memory) => memory.isReady)
+    const fullyValidated: boolean = state.memories.every((memory) => memory.isReady)
 
     const buttonClicked = (): void => dispatch({ type: `KUBERNETES_OUTPUT` })
 
     return (
-        <Button disabled={isEverythingReady ? false : true} variant="contained" onClick={buttonClicked} >Export as Kubernetes Pod</ Button>
+        <Button disabled={fullyValidated ? false : true} variant="contained" onClick={buttonClicked} >Export as Kubernetes Pod</ Button>
     )
 }

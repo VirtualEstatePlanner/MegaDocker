@@ -17,13 +17,13 @@ export const ButtonExportDockerSwarm: React.FC = (): React.ReactElement => {
 
     const { state, dispatch }: { state: IMegaDockerState, dispatch: React.Dispatch<IMegaDockerAction> } = React.useContext(MegaContext)
 
-    const isEverythingReady: boolean = state.memories.every((memory) => memory.isReady)
+    const fullyValidated: boolean = state.memories.every((memory) => memory.isReady)
 
     const buttonClicked = (): void => {
         dispatch({ type: `DOCKER_SWARM_OUTPUT` })
     }
 
     return (
-        <Button disabled={isEverythingReady ? false : true} variant="contained" onClick={buttonClicked}>Export as Docker Swarm Stack</Button>
+        <Button disabled={fullyValidated ? false : true} variant="contained" onClick={buttonClicked}>Export as Docker Swarm Stack</Button>
     )
 }
