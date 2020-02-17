@@ -3,7 +3,7 @@ import { mobFolderPath } from '../../memories/mobFolderPath';
 
 export const mobFileHeaderString: string = `
 # MegaDocker YML File
-version: '3.6'
+version: '3.7'
 
 # Created by MegaDocker
 # Data is stored at: ${mobFolderPath}
