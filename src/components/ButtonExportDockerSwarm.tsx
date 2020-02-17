@@ -24,6 +24,6 @@ export const ButtonExportDockerSwarm: React.FC = (): React.ReactElement => {
     }
 
     return (
-        <Button disabled={fullyValidated ? false : true} variant="contained" onClick={buttonClicked}>Export as Docker Swarm Stack</Button>
+        <Button disabled={fullyValidated ? false : true} variant="contained" onClick={buttonClicked}>Zip for Docker Swarm Stack</Button>
     )
 }
