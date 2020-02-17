@@ -1,4 +1,5 @@
 import React from 'react';
+import JSZip from 'jszip';
 // data interfaces
 import { IManikin } from '../../interfaces/IManikin';
 import { IMemory } from '../../interfaces/IMemory';
