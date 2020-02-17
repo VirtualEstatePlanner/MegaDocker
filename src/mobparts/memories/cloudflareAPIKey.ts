@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { passwordValidator } from '../../functions/validators/passwordValidator';
+import { cloudflareApiKeyValidator } from '../../functions/validators/cloudflareApiKeyValidator';
 
 export const cloudflareAPIKey: IMemory = {
   memoryIndex: 1004,
@@ -15,5 +15,5 @@ export const cloudflareAPIKey: IMemory = {
   value: ``,
   valueType: 'password',
   isReady: false,
-  validator: passwordValidator
+  validator: cloudflareApiKeyValidator
 };
