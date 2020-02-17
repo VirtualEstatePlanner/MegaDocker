@@ -7,11 +7,11 @@
 import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
-export const ghostRootMariaDBPassword: IMemory = {
+export const ghostMariaDBRootPassword: IMemory = {
   memoryIndex: 1008,
   shouldAutocomplete: false,
-  name: `Ghost MariaDB SQL root user password`,
-  tooltip: `The password for the Ghost root user`,
+  name: `Ghost MariaDB root password`,
+  tooltip: `The password for the Ghost MariaDB root user`,
   value: ``,
   valueType: 'password',
   isReady: false,

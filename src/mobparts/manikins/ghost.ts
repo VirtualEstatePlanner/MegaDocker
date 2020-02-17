@@ -9,7 +9,7 @@ import { IManikin } from '../../interfaces/IManikin';
 import { ghostServiceMite } from '../mites/service/ghostServiceMite';
 import { ghostNetworkMite } from '../mites/network/ghostNetworkMIte';
 import ghostIcon from '../../images/manikin-icons/ghostIcon.png';
-import { ghostRootMariaDBPassword } from '../memories/ghostRootMariaDBPassword';
+import { ghostMariaDBRootPassword } from '../memories/ghostRootMariaDBPassword';
 
 /**
  * ghost Manikin
@@ -22,7 +22,7 @@ export const ghostManikin: IManikin = {
   isSelected: false,
   manikinIcon: ghostIcon,
   manikinIndex: 2,
-  memories: [ghostRootMariaDBPassword],
+  memories: [ghostMariaDBRootPassword],
   mites: [ghostServiceMite, ghostNetworkMite],
   name: `Ghost`,
   ports: [],
