@@ -6,7 +6,7 @@
 
 import { IMite } from '../../../interfaces/IMite';
 import { mobName } from '../../memories/mobName';
-import { ghostRootMariaDBPassword } from '../../memories/ghostRootMariaDBPassword';
+import { ghostMariaDBRootPassword } from '../../memories/ghostRootMariaDBPassword';
 import { primaryDomain } from '../../memories/primaryDomain';
 import { secondaryDomain } from '../../memories/secondaryDomain';
 import { mobFolderPath } from '../../memories/mobFolderPath';
@@ -27,7 +27,7 @@ export const ghostServiceMite: IMite = {
      - database__client=mysql
      - database__connection__host=${mobName}_ghost-mariadb
      - database__connection__user=root
-     - database__connection__password=${ghostRootMariaDBPassword.value}
+     - database__connection__password=${ghostMariaDBRootPassword.value}
      - database__connection__database=mariadb
     deploy:
      labels:
@@ -46,7 +46,7 @@ export const ghostServiceMite: IMite = {
     volumes:
      - ${mobFolderPath}/Ghost/database:/var/lib/mysql
     environment:
-     MYSQL_ROOT_PASSWORD=${ghostRootMariaDBPassword.value}
+     MYSQL_ROOT_PASSWORD=${ghostMariaDBRootPassword.value}
     deploy:
      restart_policy:
       condition: on-failure
