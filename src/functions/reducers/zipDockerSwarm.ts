@@ -32,10 +32,12 @@ export const zipDockerSwarm = (
   let zip: JSZip = new JSZip();
   zip.file(`${mobName.value}.yml`, `${ymlString}`);
 
-  const outputPromise = zip.generateAsync();
+  const outputPromise = zip.generateAsync({ type: 'string' });
+  const result = outputPromise.finally();
+  console.log(result);
   // eslint-disable-next-line no-restricted-globals
-  location.href = `data:application/zip;base64, ${outputPromise.finally()}`;
+  //location.href = `data:application/zip;base64,${result}`;
 
   // eslint-disable-next-line no-restricted-globals
-  return location.href;
+  return ymlString;
 };
