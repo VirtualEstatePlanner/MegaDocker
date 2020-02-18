@@ -23,7 +23,7 @@ import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
 export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
 
     const { state, dispatch }: { state: IMegaDockerState, dispatch: React.Dispatch<IMegaDockerAction> } = React.useContext(MegaContext)
-
+    const fullyValidated: boolean = state.memories.every((memory) => memory.isReady)
     /**
      *  generates the payload to reduce
      * @param memory the IMemory that will be reduced against the state
@@ -52,7 +52,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                     className="MemoryHeaderRow">
                     <TableCell>Settings</TableCell>
                     <TableCell></TableCell>
-                    <TableCell><img alt="" src={checkmarkIcon} height={20} width={20} /></TableCell>
+                    <TableCell><img alt="" src={fullyValidated ? checkmarkIcon : xmarkIcon} height={20} width={20} /></TableCell>
                 </TableRow>
             </TableHead>
             <TableBody
