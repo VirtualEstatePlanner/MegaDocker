@@ -13,12 +13,12 @@ import { getDNetworkMites } from './getDNetworkMites';
 import { getKServiceMites } from './getKServiceMites';
 import { getKNetworkMites } from './getKNetworkMItes';
 import { getCustomMites } from './getCustomMites';
-import { zipDockerSwarm } from './zipDockerSwarm';
 import { updateInfoContent } from './updateInfoContent';
+import { zipDockerSwarm } from './zipDockerSwarm';
 import { zipKubernetesDeployment } from './zipKubernetesDeployment';
 
 /**
- * Updates application state for React.useReducer
+ * Updates application state
  */
 export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
   state: IMegaDockerState,
@@ -53,8 +53,10 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.selectedManikins = getManikins(newState.manikinTable); // rebuilds selected Manikins
       newState.memories = getMemories(newState.selectedManikins); // rebuilds Memories
       newState.allMobMites = getMites(newState.selectedManikins); // rebuilds Mites
-      newState.mobDNetworkMites = getDServiceMites(newState.allMobMites); // docker swarm network Mites
+      newState.mobDServiceMites = getDServiceMites(newState.allMobMites); // docker swarm network Mites
       newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites); // docker swarm service Mites
+      newState.mobKServiceMites = getKServiceMites(newState.allMobMites);
+      newState.mobKNetworkMites = getKNetworkMites(newState.allMobMites);
       newState.mobCustomMites = getCustomMites(newState.allMobMites); // custom mite file-based Mite[]
       newState.infoContent = `Toggled ${
         newState.manikinTable[action.payload].name
@@ -106,6 +108,8 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       return newState;
 
     default:
-      throw new Error(`megaReducer Error: hit default case in switch`);
+      throw new Error(
+        `megaReducer Error: hit default case in action.type switch`
+      );
   }
 };
