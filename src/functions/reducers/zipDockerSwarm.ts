@@ -28,13 +28,19 @@ export const zipDockerSwarm = async (
     mobNetworkFooterSectionString
   ];
   const ymlString: string = ymlOutputArray.join(``);
+  console.log(ymlString);
 
   const makeZip = async (): Promise<string> => {
     let zip: JSZip = new JSZip();
-    zip.file(`${mobName.value}.yml`, `${ymlString}`);
-    zip.folder(`traefik`).folder(`data`);
-    const zippedOutput = zip.generateAsync({ type: `string` });
-    return zippedOutput;
+    try {
+      zip.file(`${mobName.value}.yml`, `${ymlString}`);
+      zip.folder(`traefik`).folder(`data`);
+      const output = await zip.generateAsync({ type: `string` });
+      console.log(output);
+      return output;
+    } catch {
+      return `zip failed`;
+    }
   };
 
   return makeZip();

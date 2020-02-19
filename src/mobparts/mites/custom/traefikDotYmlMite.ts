@@ -73,7 +73,7 @@ export const traefikDotYmlMite: ICustomMite = {
 #            keyType: RSA8192
 #          
 #            dnsChallenge:
-#              provider: dreamhost
+#              provider: cloudflare
 #              # delayBeforeCheck: 0
 #              # resolvers
 #              # - "1.1.1.1:53"

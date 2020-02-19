@@ -79,11 +79,12 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     case `DOCKER_SWARM_OUTPUT`: // TODO: for docker swarm export button
       newState = {
         ...newState,
-        ymlOutput: `zipDockerSwarm(
+        ymlOutput: zipDockerSwarm(
           newState.mobDServiceMites,
           newState.mobDNetworkMites
-        )`
+        ).toString()
       };
+      console.log(newState.ymlOutput);
       return newState;
 
     case `KUBERNETES_OUTPUT`: // TODO: for kubernetes export button
@@ -94,6 +95,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
           newState.mobKNetworkMites
         )
       };
+      console.log(newState.ymlOutput);
       return newState;
 
     case `UPDATE_INFO_CONTENT`: // to dispatch user hints to info pane
