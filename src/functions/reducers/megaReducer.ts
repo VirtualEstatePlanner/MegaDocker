@@ -43,10 +43,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.mobKNetworkMites = getKNetworkMites(newState.allMobMites);
       newState.mobCustomMites = getCustomMites(newState.allMobMites);
       newState.infoContent = `This is the Information Pane.  You can read these about the selected item here.`;
-      newState.ymlOutput = zipDockerSwarm(
-        newState.mobDServiceMites,
-        newState.mobDNetworkMites
-      );
+      newState.ymlOutput = `newState`;
       return newState;
 
     case `TOGGLE_MANIKIN`: // to de/select a manikin
@@ -82,10 +79,10 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     case `DOCKER_SWARM_OUTPUT`: // TODO: for docker swarm export button
       newState = {
         ...newState,
-        ymlOutput: zipDockerSwarm(
+        ymlOutput: `zipDockerSwarm(
           newState.mobDServiceMites,
           newState.mobDNetworkMites
-        )
+        )`
       };
       return newState;
 
