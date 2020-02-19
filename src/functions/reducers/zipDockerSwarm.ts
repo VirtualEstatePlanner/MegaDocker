@@ -9,10 +9,10 @@ import { mobName } from '../../mobparts/memories/mobName';
 /**
  * makes Docker Swarm .zip file
  */
-export const zipDockerSwarm = (
+export const zipDockerSwarm = async (
   serviceMites: IMite[],
   networkMites: IMite[]
-): string => {
+): Promise<string> => {
   const tempServicesYML: string[] = serviceMites.flatMap(
     (eachMite) => eachMite.miteString
   );
@@ -29,14 +29,13 @@ export const zipDockerSwarm = (
   ];
   const ymlString: string = ymlOutputArray.join(``);
 
-  const zipOutput = async (): Promise<string> => {
+  const makeZip = async (): Promise<string> => {
     let zip: JSZip = new JSZip();
     zip.file(`${mobName.value}.yml`, `${ymlString}`);
-    const output = await zip.generateAsync({ type: `string` });
-    return output;
+    zip.folder(`traefik`).folder(`data`);
+    const zippedOutput = zip.generateAsync({ type: `string` });
+    return zippedOutput;
   };
 
-  Promise.resolve(zipOutput());
-
-  return ymlString;
+  return makeZip();
 };
