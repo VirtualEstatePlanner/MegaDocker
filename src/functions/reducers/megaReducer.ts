@@ -25,7 +25,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
   action: IMegaDockerAction
 ): IMegaDockerState => {
   /**
-   * mutable copy of the state to change
+   * a mutable copy of the state to make changes to
    */
   let newState: IMegaDockerState = { ...state };
 
