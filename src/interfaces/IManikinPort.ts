@@ -7,5 +7,5 @@
 export interface IManikinPort {
   externalPort: number;
   internalPort?: number;
-  isUDP: Boolean;
+  isUDP: boolean;
 }
