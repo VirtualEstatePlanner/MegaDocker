@@ -26,5 +26,5 @@ export const ghostManikin: IManikin = {
   mites: [ghostServiceMite, ghostNetworkMite],
   name: `Ghost`,
   ports: [],
-  subfolders: []
+  subfolders: [`mariadb`]
 };
