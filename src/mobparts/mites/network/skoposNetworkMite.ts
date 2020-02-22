@@ -5,12 +5,12 @@ export const skoposNetworkMite: IMite = {
   miteIndex: 1012,
   miteString: `
 
-  #Begin Skopos Network Section
+#Begin Skopos Network Section
+
+ swarmpit:
+  external: true
+
+#End Skopos Network Section
   
-   swarmpit:
-    external: true
-  
-  #End Skopos Network Section
-  
-  `
+`
 };

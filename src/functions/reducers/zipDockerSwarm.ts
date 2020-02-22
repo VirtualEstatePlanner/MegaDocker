@@ -45,11 +45,11 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
 
     const services: string[] = mites
       .filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`)
-      .sort((thing1, thing2): number => {
-        if (thing1.miteIndex > thing2.miteIndex) {
+      .sort((mite1, mite2): number => {
+        if (mite1.miteIndex > mite2.miteIndex) {
           return 1;
         }
-        if (thing1.miteIndex < thing2.miteIndex) {
+        if (mite1.miteIndex < mite2.miteIndex) {
           return -1;
         }
         return 0;
@@ -58,11 +58,11 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
 
     const networks: string[] = mites
       .filter((eachMite: IMite) => eachMite.type === `DockerSwarmNetwork`)
-      .sort((thing1, thing2): number => {
-        if (thing1.miteIndex > thing2.miteIndex) {
+      .sort((mite1, mite2): number => {
+        if (mite1.miteIndex > mite2.miteIndex) {
           return 1;
         }
-        if (thing1.miteIndex < thing2.miteIndex) {
+        if (mite1.miteIndex < mite2.miteIndex) {
           return -1;
         }
         return 0;
