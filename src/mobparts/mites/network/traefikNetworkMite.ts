@@ -12,12 +12,11 @@ export const traefikNetworkMite: IMite = {
   miteString: `
 
 #Begin Traefik Network Section
- 
+
  traefik:
   driver: overlay
-  name: traefik
- 
+
 #End Traefik Network Section
-  
-  `
+
+`
 };

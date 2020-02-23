@@ -118,7 +118,8 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
   /**
    * generates manikin folders and subfolders
    */
-  const makeFolders: Function = (): void => {
+  const makeFolders: VoidFunction = (): void => {
+    // eslint-disable-next-line array-callback-return
     zipManikins.map((eachManikin: IManikin) => {
       const subs = eachManikin.subfolders;
       for (let eachSubfolder in subs) {
