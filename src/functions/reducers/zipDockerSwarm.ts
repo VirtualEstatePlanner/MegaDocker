@@ -25,15 +25,25 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
   /**
    * attaches memory values from UI to selected manikins
    */
-  const applyMemories: Function = () =>
-    zipMemories.map((memory: IMemory) => {
-      zipManikins.map((manikin: IManikin) => {
-        if (manikin.memories.includes(memory)) {
-          const manMemIndex: number = manikin.memories.indexOf(memory);
-          manikin.memories[manMemIndex].value = memory.value;
-        }
+  const applyMemories: Function = () => {
+    const memoryMap = () => {
+      zipMemories.map((memory: IMemory) => {
+        const checkIfMemoryIsIncluded = () => {
+          zipManikins.map((manikin: IManikin) => {
+            const updateManikinMemory = () => {
+              if (manikin.memories.includes(memory)) {
+                const manMemIndex: number = manikin.memories.indexOf(memory);
+                manikin.memories[manMemIndex].value = memory.value;
+              }
+            };
+            return updateManikinMemory;
+          });
+        };
+        return checkIfMemoryIsIncluded;
       });
-    });
+    };
+    return memoryMap;
+  };
 
   /**
    * makes docker-compose.yml file
@@ -109,12 +119,15 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
   const makeFolders: Function = (): void => {
     zipManikins.map((eachManikin: IManikin) => {
       const subs = eachManikin.subfolders;
-      for (let eachSubfolder in subs) {
-        zip
-          .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
-          .folder(eachManikin.folder)
-          .folder(subs[eachSubfolder]);
-      }
+      const output = () => {
+        for (let eachSubfolder in subs) {
+          zip
+            .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
+            .folder(eachManikin.folder)
+            .folder(subs[eachSubfolder]);
+        }
+      };
+      return output;
     });
   };
 
