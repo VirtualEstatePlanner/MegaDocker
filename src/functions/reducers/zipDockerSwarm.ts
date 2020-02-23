@@ -1,4 +1,5 @@
 import JSZip from 'jszip';
+import fileSaver from 'file-saver';
 import { IZipDockerCompose } from '../../interfaces/IZipDockerCompose';
 import { IMemory } from '../../interfaces/IMemory';
 import { IManikin } from '../../interfaces/IManikin';
@@ -91,6 +92,8 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     const ymlString: string = ymlOutputArray.join(``);
 
     const makeZip = async (): Promise<string> => {
+      // applyMemories();
+      // makeFolders();
       try {
         zip
           .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
@@ -100,11 +103,9 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
           );
 
         const output = await zip.generateAsync({
-          // compression: `DEFLATE`,
-          // compressionOptions: { level: 9 },
           type: `binarystring`
         });
-        console.log(output);
+
         return output;
       } catch {
         return `zip failed`;
@@ -114,31 +115,37 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     return makeZip();
   };
 
-  // generate folder structure for each manikin
-
+  /**
+   * generates manikin folders and subfolders
+   */
   const makeFolders: Function = (): void => {
     zipManikins.map((eachManikin: IManikin) => {
       const subs = eachManikin.subfolders;
-      const output = () => {
-        for (let eachSubfolder in subs) {
-          zip
-            .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
-            .folder(eachManikin.folder)
-            .folder(subs[eachSubfolder]);
-        }
-      };
-      return output;
+      for (let eachSubfolder in subs) {
+        zip
+          .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
+          .folder(eachManikin.folder)
+          .folder(subs[eachSubfolder]);
+      }
     });
   };
 
-  // generate docker-compose.yml
-
   applyMemories();
-  // add contents to zip
-  makeFolders();
   createDockerComposeYmlFile();
+  makeFolders();
+  zip
+    .generateAsync({
+      compression: `DEFLATE`,
+      compressionOptions: { level: 9 },
+      type: `blob`
+    })
+    .then(function(content) {
+      fileSaver.saveAs(
+        content,
+        `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip`
+      );
+    });
 
-  // return zip
-  console.log(zip.files);
+  console.log(zip.files, zip);
   return zip;
 };
