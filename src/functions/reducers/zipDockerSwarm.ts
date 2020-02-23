@@ -25,12 +25,12 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
   /**
    * attaches memory values from UI to selected manikins
    */
-  const applyMemories: Function = () => {
+  const applyMemories: VoidFunction = () => {
     const memoryMap = () => {
       zipMemories.map((memory: IMemory) => {
-        const checkIfMemoryIsIncluded = () => {
+        const checkIfMemoryIsIncluded: VoidFunction = () => {
           zipManikins.map((manikin: IManikin) => {
-            const updateManikinMemory = () => {
+            const updateManikinMemory: VoidFunction = () => {
               if (manikin.memories.includes(memory)) {
                 const manMemIndex: number = manikin.memories.indexOf(memory);
                 manikin.memories[manMemIndex].value = memory.value;
