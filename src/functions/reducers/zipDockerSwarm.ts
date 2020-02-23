@@ -147,6 +147,5 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
       );
     });
 
-  console.log(zip.files, zip);
   return zip;
 };

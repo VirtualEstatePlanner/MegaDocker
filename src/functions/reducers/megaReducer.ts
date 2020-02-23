@@ -93,7 +93,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
           newState.mobKNetworkMites
         )
       };
-      console.log(newState.ymlOutput);
       return newState;
 
     case `UPDATE_INFO_CONTENT`: // to dispatch user hints to info pane

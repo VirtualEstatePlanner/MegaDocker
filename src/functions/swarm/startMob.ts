@@ -12,7 +12,6 @@
 
 export function startMob(): void {
   // TODO: this entire function
-  // tslint:disable-next-line: no-console
   //  const chosenManikins: IManikin[] = [];
   /*
     userMob.storagePath: Path = `${userMegaDockerFolder}.${userMob.mobName}`;
