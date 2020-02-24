@@ -20,15 +20,15 @@ export const emailServiceMite: IMite = {
    - 587:587
    - 993:993
   volumes:
-   - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/mail/maildata:/var/mail
-   - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/mail//mailstate:/var/mail-state
-   - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/mail/config:/tmp/docker-mailserver
+   - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/email/maildata:/var/mail
+   - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/email//mailstate:/var/mail-state
+   - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/email/config:/tmp/docker-mailserver
    - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/traefik/ssl/certs:/certs:ro
  #  - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/traefik/ssl/pem/*.[[PRIMARYDOMAIN]].pem:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]].pem:ro
  #  - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]]/key:ro
  #  - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/traefik/ssl/private/letsencrypt.key:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/letsencrypt.key:ro
  #  - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/traefik/ssl:/etc/letsencrypt:ro
- #  - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/mail/letsencrypt:/etc/letsencrypt:ro
+ #  - /Users/agg4/Documents/MegaDocker/[[MOBNAME]]/email/letsencrypt:/etc/letsencrypt:ro
   environment:
    - ENABLE_SPAMASSASSIN=1
    - ENABLE_CLAMAV=1

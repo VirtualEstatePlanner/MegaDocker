@@ -15,7 +15,7 @@ import * as emailIcon from '../../images/manikin-icons/emailIcon.png';
  */
 export const emailManikin: IManikin = {
   description: `email server`,
-  folder: `mail`,
+  folder: `email`,
   isCore: false,
   isSelected: false,
   manikinIcon: emailIcon,
@@ -24,5 +24,5 @@ export const emailManikin: IManikin = {
   mites: [emailServiceMite, emailNetworkMite],
   name: `E-mail`,
   ports: [],
-  subfolders: [`rainloop`, `maildata`, `mailstate`, `config`]
+  subfolders: [`config`, `maildata`, `mailstate`, `rainloop`]
 };
