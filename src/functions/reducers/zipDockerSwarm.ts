@@ -11,6 +11,12 @@ import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobN
 import { traefikManikin } from '../../mobparts/manikins/traefik';
 import { mobName } from '../../mobparts/memories/mobName';
 
+const updateMite: Function = (
+  stringToModify: string,
+  splitOn: string,
+  joinWith: string
+): string => stringToModify.split(splitOn).join(joinWith);
+
 /**
  * makes Docker Swarm .zip file
  */
@@ -35,6 +41,13 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
               if (manikin.memories.includes(memory)) {
                 const manMemIndex: number = manikin.memories.indexOf(memory);
                 manikin.memories[manMemIndex].value = memory.value;
+                manikin.mites.map((eachMite: IMite) => {
+                  updateMite(
+                    eachMite.miteString,
+                    manikin.memories[manMemIndex].memoryMarker,
+                    manikin.memories[manMemIndex].value
+                  );
+                });
               }
             };
             return updateManikinMemory;

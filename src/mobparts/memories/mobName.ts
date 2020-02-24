@@ -9,6 +9,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 
 export const mobName: IMemory = {
   memoryIndex: 1000,
+  memoryMarker: `[[MOBNAME]]`,
   shouldAutocomplete: false,
   name: `Mob Name`,
   tooltip: `Name your MEGADocker Mob.  This will also be the name of the folder that contains your Mob's persistent data inside of your 'Documents/MEGADocker' folder.`,

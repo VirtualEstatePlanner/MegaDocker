@@ -8,7 +8,8 @@
  * interface for IMemory
  * @fromManikins manikinIndexes from IManikins this IMemory appears in
  * @isReady returns true if value passes validator
- * @memoryIndex the uniquie identifier of this IMemory
+ * @memoryIndex the unique identifier of this IMemory
+ * @memoryMarker the string in a mite to be replaced with this memory's value
  * @name the human-readable name of this IMemory
  * @shouldAutocomplete if true, value will autocomplete in browser
  * @tooltip mouseover hint text
@@ -19,6 +20,7 @@
 export interface IMemory {
   isReady: boolean;
   memoryIndex: number;
+  memoryMarker: string;
   name: string;
   shouldAutocomplete: boolean;
   tooltip: string;

@@ -9,6 +9,7 @@ import { emailValidator } from '../../functions/validators/emailValidator';
 
 export const cloudflareEmail: IMemory = {
   memoryIndex: 1003,
+  memoryMarker: `[[CLOUDFLAREEMAIL]]`,
   shouldAutocomplete: true,
   name: `CloudFlare Email`,
   tooltip: `The email address of your CloudFlare account`,

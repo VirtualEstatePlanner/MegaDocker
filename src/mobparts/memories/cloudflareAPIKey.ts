@@ -9,6 +9,7 @@ import { cloudflareApiKeyValidator } from '../../functions/validators/cloudflare
 
 export const cloudflareAPIKey: IMemory = {
   memoryIndex: 1004,
+  memoryMarker: `[[CLOUDFLAREAPIKEY]]`,
   shouldAutocomplete: false,
   name: `CloudFlare API Key`,
   tooltip: `A CloudFlare API Key from your account that has full 'domain' privileges.`,

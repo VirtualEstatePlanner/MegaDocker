@@ -9,6 +9,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 
 export const wordpressMariaDBUser: IMemory = {
   memoryIndex: 1015,
+  memoryMarker: `[[WORDPRESSMARIADBUSER]]`,
   shouldAutocomplete: false,
   name: `WP MariaDB User`,
   tooltip: `Please enter your WordPress MariaDB username here`,

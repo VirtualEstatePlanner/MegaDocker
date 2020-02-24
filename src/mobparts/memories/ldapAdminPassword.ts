@@ -10,6 +10,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const ldapAdminPassword: IMemory = {
   memoryIndex: 1011,
+  memoryMarker: `[[LDAPADMINPASSWORD]]`,
   shouldAutocomplete: false,
   name: `LDAP Admin password`,
   tooltip: `Choose the password for the LDAP server administrative user (${ldapAdminUsername.value})`,

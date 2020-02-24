@@ -9,6 +9,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 
 export const rocketchatBotUsername: IMemory = {
   memoryIndex: 1012,
+  memoryMarker: `[[ROCKETCHATBOTUSERNAME]]`,
   shouldAutocomplete: false,
   name: `RocketChat bot user name`,
   tooltip: `Choose the username of the RocketChat bot.`,

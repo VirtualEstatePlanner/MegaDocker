@@ -9,6 +9,7 @@ import { domainValidator } from '../../functions/validators/domainValidator';
 
 export const secondaryDomain: IMemory = {
   memoryIndex: 1002,
+  memoryMarker: `[[SECONDARYDOMAIN]]`,
   shouldAutocomplete: false,
   name: `Secondary Domain`,
   tooltip: `Your backup domain name, such as 'example.com' or 'myawesomemob.org'.  It must not be the same as your main domain name.`,

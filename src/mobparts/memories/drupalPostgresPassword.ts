@@ -9,6 +9,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const drupalPostgresPassword: IMemory = {
   memoryIndex: 1007,
+  memoryMarker: `[[DRUPALPOSTGRESPASSWORD]]`,
   shouldAutocomplete: false,
   name: `Drupal Postgres Password`,
   tooltip: `Choose a password for Drupal to connect to it's PostgreSQL database.`,
