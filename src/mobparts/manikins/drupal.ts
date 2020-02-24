@@ -21,7 +21,7 @@ export const drupalManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: drupalIcon,
-  manikinIndex: 0,
+  manikinIndex: 1,
   memories: [drupalPostgresUser, drupalPostgresPassword],
   mites: [drupalServiceMite, drupalNetworkMite],
   name: `Drupal`,

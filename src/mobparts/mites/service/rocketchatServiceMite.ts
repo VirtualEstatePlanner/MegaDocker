@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const rocketchatServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2011,
+  miteIndex: 2014,
   miteString: `
 
   #Begin Rocketchat Service Section
@@ -34,7 +34,7 @@ export const rocketchatServiceMite: IMite = {
       condition: on-failure
      labels:
       - "traefik.backend=rocketchat"
-      - "traefik.docker.network=traefik"
+      - "traefik.docker.network=[[MOBNAME]]_traefik"
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:rocketchat.[[PRIMARYDOMAIN]],rocketchat.[[SECONDARYDOMAIN]]"
       - "traefik.port=3000"
@@ -47,8 +47,8 @@ export const rocketchatServiceMite: IMite = {
      restart_policy:
       condition: on-failure
     volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/RocketChat/database:/data/db
-     - ~/Documents/MegaDocker/[[MOBNAME]]/RocketChat/db-dump:/dump
+     - ~/Documents/MegaDocker/[[MOBNAME]]/rocketchat/database:/data/db
+     - ~/Documents/MegaDocker/[[MOBNAME]]/rocketChat/db-dump:/dump
     command: mongod --smallfiles --oplogSize 128 --replSet rs0 --storageEngine=mmapv1
   
    mongo-init-replica:
@@ -69,14 +69,14 @@ export const rocketchatServiceMite: IMite = {
     environment:
      - ROCKETCHAT_URL=[[MOBNAME]]_rocketchat:3000
      - ROCKETCHAT_ROOM=GENERAL
-     - ROCKETCHAT_USER=[[ROCKETCHATBOTNUSERNAME]]
+     - ROCKETCHAT_USER=[[ROCKETCHATBOTUSERNAME]]
      - ROCKETCHAT_PASSWORD=[[ROCKETCHATBOTPASSWORD]]
-     - BOT_NAME=bot
+     - BOT_NAME=rocketchatbot
      - EXTERNAL_SCRIPTS=hubot-help,hubot-seen,hubot-links,hubot-diagnostics
     depends_on:
      - rocketchat
     volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Rocketchat/hubot/scripts:/home/hubot/scripts
+     - ~/Documents/MegaDocker/[[MOBNAME]]/rocketchat/hubot/scripts:/home/hubot/scripts
     ports:
      - 3001:8080
   

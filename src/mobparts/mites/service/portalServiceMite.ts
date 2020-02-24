@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const portalServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2010,
+  miteIndex: 2013,
   miteString: `
 
   #Begin Portal Service Section

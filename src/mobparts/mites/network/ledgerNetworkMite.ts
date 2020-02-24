@@ -1,22 +1,22 @@
 //  traefikNetworkMite.ts
 //  MegaDocker
-//  Network Mite for RocketChat
+//  Network Mite for NextCloud
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const rocketchatNetworkMite: IMite = {
+export const ledgerNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1014,
+  miteIndex: 1007,
   miteString: `
 
-#Begin RocketChat Network Section
+#Begin Ledger Network Section
 
- rocketchat:
+ ledger:
   driver: overlay
 
-#End RocketChat Network Section
+#End Ledger Network Section
 
 `
 };

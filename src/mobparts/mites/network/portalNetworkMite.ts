@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const portalNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1010,
+  miteIndex: 1013,
   miteString: `
 
   #Begin Portal Network Section

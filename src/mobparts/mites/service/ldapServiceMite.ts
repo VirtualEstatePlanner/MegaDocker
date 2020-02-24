@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const ldapServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2005,
+  miteIndex: 2006,
   miteString: `
 
   #Begin LDAP Service Sections

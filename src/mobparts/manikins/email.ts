@@ -19,7 +19,7 @@ export const emailManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: emailIcon,
-  manikinIndex: 1,
+  manikinIndex: 3,
   memories: [],
   mites: [emailServiceMite, emailNetworkMite],
   name: `E-mail`,

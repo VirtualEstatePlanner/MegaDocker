@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const gitlabServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2004,
+  miteIndex: 2005,
   miteString: `
 
 #Begin GitLab Service Section

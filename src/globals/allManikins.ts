@@ -7,6 +7,7 @@ import { emailManikin } from '../mobparts/manikins/email';
 import { ghostManikin } from '../mobparts/manikins/ghost';
 import { gitlabManikin } from '../mobparts/manikins/gitlab';
 import { ldapManikin } from '../mobparts/manikins/ldap';
+import { ledgerManikin } from '../mobparts/manikins/ledger';
 import { nextcloudManikin } from '../mobparts/manikins/nextcloud';
 import { nginxManikin } from '../mobparts/manikins/nginx';
 import { owncloudManikin } from '../mobparts/manikins/owncloud';
@@ -32,6 +33,7 @@ export const allManikins: IManikin[] = [
   ghostManikin,
   gitlabManikin,
   ldapManikin,
+  ledgerManikin,
   nextcloudManikin,
   nginxManikin,
   owncloudManikin,

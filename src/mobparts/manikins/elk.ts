@@ -19,7 +19,7 @@ export const elkManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: elkIcon,
-  manikinIndex: 1,
+  manikinIndex: 2,
   memories: [],
   mites: [elkServiceMite, elkNetworkMite],
   name: `ELK`,

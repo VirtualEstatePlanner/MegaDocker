@@ -22,7 +22,7 @@ export const ldapManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: ldapIcon,
-  manikinIndex: 4,
+  manikinIndex: 6,
   memories: [ldapAdminUsername, ldapAdminPassword, ldapConfigurationPassword],
   mites: [ldapServiceMite, ldapNetworkMite],
   name: `LDAP`,

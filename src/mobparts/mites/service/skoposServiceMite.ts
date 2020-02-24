@@ -2,7 +2,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const skoposServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2012,
+  miteIndex: 2015,
   miteString: `
   
 #Begin Skopos Service Section

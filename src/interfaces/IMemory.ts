@@ -34,6 +34,7 @@ export interface IMemory {
     | `[[LDAPADMINUSERNAME]]`
     | `[[LDAPCONFIGURATIONPASSWORD]]`
     | `[[LDAPORGANIZATION]]`
+    | `[[LEDGERPOSTGRESPASSWORD]]`
     | `[[LETSENCRYPTEMAIL]]`
     | `[[MOBFOLDERPATH]]`
     | `[[MOBNAME]]`

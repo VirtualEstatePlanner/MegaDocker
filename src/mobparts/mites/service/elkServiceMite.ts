@@ -10,48 +10,47 @@ export const elkServiceMite: IMite = {
   type: `DockerSwarmService`,
   miteIndex: 2002,
   miteString: `
+#Begin ELK Service Section
+ 
+ elasticsearch:
+  image: elasticsearch
+  networks:
+   - elk
+  volumes:
+   - ~/Documents/MegaDocker/[[MOBNAME]]/ELK/Elasticsearch:/usr/share/elasticsearch/data
+  ports:
+   - 9200:9200
+   - 9300:9300
 
-  #Begin ELK Service Section
-  
-   elasticsearch:
-    image: elasticsearch
-    networks:
-     - elk
-    volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/ELK/Elasticsearch:/usr/share/elasticsearch/data
-    ports:
-     - 9200:9200
-     - 9300:9300
-  
-   kibana:
-    image: kibana
-    networks:
-     - traefik
-     - elk
-     - ldap
-    environment:
-     - SERVER_NAME=[[MOBNAME]]_elasticsearch:9200
-    depends_on:
-     - elasticsearch
-    deploy:
-     labels:
-     - "traefik.backend=kibana"
-     - "traefik.docker.network=traefik"
-     - "traefik.enable=true"
-     - "traefik.frontend.rule=Host:kibana.[[PRIMARYDOMAIN]],kibana.[[SECONDARYDOMAIN]]"
-     - "traefik.port=5601"
-  
-   logstash:
-    image: logstash
-    volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/ELK/Logstash/config:/config-dir
-    networks:
-     - elk
-    command: logstash -f /config-dir/logstash.conf
-    depends_on:
-     - elasticsearch
-  
-  #End ELK Service Section
-  
-  `
+ kibana:
+  image: kibana
+  networks:
+   - traefik
+   - elk
+   - ldap
+  environment:
+   - SERVER_NAME=[[MOBNAME]]_elasticsearch:9200
+  depends_on:
+   - elasticsearch
+  deploy:
+   labels:
+   - "traefik.backend=kibana"
+   - "traefik.docker.network=traefik"
+   - "traefik.enable=true"
+   - "traefik.frontend.rule=Host:kibana.[[PRIMARYDOMAIN]],kibana.[[SECONDARYDOMAIN]]"
+   - "traefik.port=5601"
+
+ logstash:
+  image: logstash
+  volumes:
+   - ~/Documents/MegaDocker/[[MOBNAME]]/ELK/Logstash/config:/config-dir
+  networks:
+   - elk
+  command: logstash -f /config-dir/logstash.conf
+  depends_on:
+   - elasticsearch
+
+#End ELK Service Section
+
+`
 };

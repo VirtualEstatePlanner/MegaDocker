@@ -19,7 +19,7 @@ export const skoposManikin: IManikin = {
   isCore: true,
   isSelected: true,
   manikinIcon: skoposIcon,
-  manikinIndex: 10,
+  manikinIndex: 15,
   memories: [],
   mites: [skoposServiceMite, skoposNetworkMite],
   name: `Skopos`,

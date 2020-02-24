@@ -19,7 +19,7 @@ export const nextcloudManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: nextcloudIcon,
-  manikinIndex: 6,
+  manikinIndex: 8,
   memories: [],
   mites: [nextcloudServiceMite, nextcloudNetworkMite],
   name: `Nextcloud`,

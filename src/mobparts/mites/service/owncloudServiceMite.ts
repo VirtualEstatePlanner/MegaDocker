@@ -1,6 +1,6 @@
 //  serviceMite.ts
 //  MegaDocker
-//  Service Mite for OwnCloud
+//  Service Mite for Owncloud
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
@@ -8,75 +8,72 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const owncloudServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2008,
+  miteIndex: 2010,
   miteString: `
+ #Begin Owncloud Service Sections
 
-  #Begin Owncloud Service Sections
-  
-   owncloud:
-    image: owncloud
-    networks:
-     - traefik
-     - owncloud
-    volumes:
-     - export/Owncloud/apps/:/var/www/html/apps
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/config/:/var/www/html/config
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/data/:/var/www/html/data
-    deploy:
-     restart_policy:
-      condition: on-failure
-     labels:
-      - "traefik.enable=true"
-      - "traefik.backend=owncloud"
-      - "traefik.frontend.rule=Host:owncloud.[[PRIMARYDOMAIN]],owncloud.[[SECONDARYDOMAIN]]"
-      - "traefik.port=80"
-      - "traefik.docker.network=traefik"
-    depends_on:
-     - postgres
-  
-   owncloud-postgres:
-    image: postgres:alpine
-    environment:
-     - POSTGRES_PASSWORD=password
-     - POSTGRES_USER=owncloud
-     - POSTGRES_DB=owncloud
-    networks:
-     - owncloud
-    volumes:
-   #  - /etc/localtime:/etc/localtime:ro
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/postgres:/var/lib/postgresql
-    deploy:
-     restart_policy:
-      condition: on-failure
-  
-   owncloud-mariadb:
-    image: mariadb
-    environment:
-     - MYSQL_USER=owncloud
-     - MYSQL_PASSWORD=owncloud
-     - MYSQL_ROOT_PASSWORD=owncloud
-     - MYSQL_DATABASE=owncloud
-    volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/mariadb:/var/lib/mysql
-    deploy:
-     restart_policy:
-      condition: on-failure
-    networks:
-     - owncloud
-  
-  
-   owncloud-redis:
-    image: redis
-    volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/redis:/var/lib/mysql
-    networks:
-     - owncloud
-    deploy:
-     restart_policy:
-      condition: on-failure
-  
-  
-  #End Owncloud Service Section
-  
-  `
+ owncloud:
+  image: owncloud:latest
+  networks:
+   - [[MOBNAME]]_traefik
+   - [[MOBNAME]]_owncloud
+  volumes:
+   - export/owncloud/apps/:/var/www/html/apps
+   - ~/Documents/MegaDocker/[[MOBNAME]]/owncloud/config/:/var/www/html/config
+   - ~/Documents/MegaDocker/[[MOBNAME]]/owncloud/data/:/var/www/html/data
+  deploy:
+   restart_policy:
+    condition: on-failure
+   labels:
+    - "traefik.enable=true"
+    - "traefik.backend=owncloud"
+    - "traefik.frontend.rule=Host:owncloud.[[PRIMARYDOMAIN]],owncloud.[[SECONDARYDOMAIN]]"
+    - "traefik.port=80"
+    - "traefik.docker.network=[[MOBNAME]]_traefik"
+  depends_on:
+   - owncloud-postgres
+
+ owncloud-postgres:
+  image: postgres:alpine
+  environment:
+   - POSTGRES_PASSWORD=[[POSTGRESPASSWORD]]
+   - POSTGRES_USER=[[POSTGRESUSER]]
+   - POSTGRES_DB=owncloud
+  networks:
+   - [[MOBNAME]]_owncloud
+  volumes:
+#   - /etc/localtime:/etc/localtime:ro
+   - ~/Documents/MegaDocker/[[MOBNAME]]/owncloud/postgres:/var/lib/postgresql
+  deploy:
+   restart_policy:
+    condition: on-failure
+
+ owncloud-mariadb:
+  image: mariadb: latest
+  environment:
+   - MYSQL_USER=owncloud
+   - MYSQL_PASSWORD=owncloud
+   - MYSQL_ROOT_PASSWORD=owncloud
+   - MYSQL_DATABASE=owncloud
+  volumes:
+   - ~/Documents/MegaDocker/[[MOBNAME]]/owncloud/mariadb:/var/lib/mysql
+  deploy:
+   restart_policy:
+    condition: on-failure
+  networks:
+   - [[MOBNAME]]_owncloud
+
+ owncloud-redis:
+  image: redis: latest
+  volumes:
+   - ~/Documents/MegaDocker/[[MOBNAME]]/owncloud/redis:/var/lib/mysql
+  networks:
+   - [[MOBNAME]]_owncloud
+  deploy:
+   restart_policy:
+    condition: on-failure
+
+#End Owncloud Service Section
+
+`
 };

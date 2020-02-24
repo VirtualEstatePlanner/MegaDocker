@@ -19,7 +19,7 @@ export const swarmpitManikin: IManikin = {
   isSelected: true,
   folder: `swarmpit`,
   manikinIcon: swarmpitIcon,
-  manikinIndex: 11,
+  manikinIndex: 16,
   memories: [],
   name: `Swarmpit`,
   mites: [swarmpitServiceMite, swarmpitNetworkMite],

@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const ghostNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1003,
+  miteIndex: 1004,
   miteString: `
 
 #Begin Ghost Network Section

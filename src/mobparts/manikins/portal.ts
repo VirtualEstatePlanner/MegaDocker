@@ -19,7 +19,7 @@ export const portalManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: portalIcon,
-  manikinIndex: 8,
+  manikinIndex: 13,
   memories: [],
   mites: [portalServiceMite, portalNetworkMite],
   name: `Portal`,

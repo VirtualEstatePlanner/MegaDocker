@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const webdavServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2016,
+  miteIndex: 2019,
   miteString: `
 
   #Begin WebDAV Service Section
