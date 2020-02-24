@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
+import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const piholePassword: IMemory = {
   memoryIndex: 1017,
@@ -16,5 +16,5 @@ export const piholePassword: IMemory = {
   value: ``,
   valueType: 'password',
   isReady: false,
-  validator: noWhitespaceOrSymbolsValidator
+  validator: passwordValidator
 };

@@ -2,9 +2,10 @@ import { IManikin } from '../interfaces/IManikin';
 // import manikins
 import { backupManikin } from '../mobparts/manikins/backup';
 import { drupalManikin } from '../mobparts/manikins/drupal';
+import { elkManikin } from '../mobparts/manikins/elk';
+import { emailManikin } from '../mobparts/manikins/email';
 import { ghostManikin } from '../mobparts/manikins/ghost';
 import { gitlabManikin } from '../mobparts/manikins/gitlab';
-import { elkManikin } from '../mobparts/manikins/elk';
 import { ldapManikin } from '../mobparts/manikins/ldap';
 import { nextcloudManikin } from '../mobparts/manikins/nextcloud';
 import { nginxManikin } from '../mobparts/manikins/nginx';
@@ -27,6 +28,7 @@ export const allManikins: IManikin[] = [
   backupManikin,
   drupalManikin,
   elkManikin,
+  emailManikin,
   ghostManikin,
   gitlabManikin,
   ldapManikin,

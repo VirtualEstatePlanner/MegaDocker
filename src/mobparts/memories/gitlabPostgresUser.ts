@@ -14,7 +14,7 @@ export const gitlabPostgresUser: IMemory = {
   name: `GitLab Postgres User`,
   tooltip: `Choose a user account for Gitlab to connect to the postgres database`,
   value: ``,
-  valueType: 'password',
+  valueType: 'text',
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator
 };
