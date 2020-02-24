@@ -5,12 +5,12 @@ export const swarmpitNetworkMite: IMite = {
   miteIndex: 1016,
   miteString: `
 
-  #Begin Swarmpit Network Section
-  
-   swarmpit:
-    driver: overlay
-  
-  #End Swarmpit Network Section
-  
-  `
+#Begin Swarmpit Network Section
+
+ swarmpit:
+  driver: overlay
+
+#End Swarmpit Network Section
+
+`
 };

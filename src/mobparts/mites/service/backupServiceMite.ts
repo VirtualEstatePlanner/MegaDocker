@@ -11,9 +11,9 @@ export const backupServiceMite: IMite = {
   miteIndex: 2000,
   miteString: `
 
-  #Begin Backup Service Section
-  
-  #End Backup Service Section
-  
-  `
+#Begin Backup Service Section
+
+#End Backup Service Section
+
+`
 };

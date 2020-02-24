@@ -8,6 +8,7 @@ import { IManikin } from '../../interfaces/IManikin';
 
 import { elkServiceMite } from '../mites/service/elkServiceMite';
 import { elkNetworkMite } from '../mites/network/elkNetworkMite';
+import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';
 import elkIcon from '../../images/manikin-icons/elkIcon.png';
 
 /**
@@ -21,8 +22,8 @@ export const elkManikin: IManikin = {
   manikinIcon: elkIcon,
   manikinIndex: 2,
   memories: [],
-  mites: [elkServiceMite, elkNetworkMite],
+  mites: [elkServiceMite, elkNetworkMite, ldapNetworkMite],
   name: `ELK`,
   ports: [],
-  subfolders: [`Elasticsearch`, `Logstash`, `Kibana`]
+  subfolders: [`elasticsearch`, `logstash`, `kibana`]
 };

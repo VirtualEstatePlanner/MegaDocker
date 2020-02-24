@@ -11,9 +11,12 @@ export const portalNetworkMite: IMite = {
   miteIndex: 1013,
   miteString: `
 
-  #Begin Portal Network Section
-  
-  #End Portal Network Section
-  
-  `
+#Begin Portal Network Section
+
+ portal:
+  network: overlay
+
+#End Portal Network Section
+
+`
 };

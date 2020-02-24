@@ -11,9 +11,12 @@ export const nginxNetworkMite: IMite = {
   miteIndex: 1009,
   miteString: `
 
-  #Begin Nginx Network Section
-  
-  #End Nginx Network Section
-  
-  `
+#Begin Nginx Network Section
+
+ nginx:
+  driver: overlay
+
+#End Nginx Network Section
+
+`
 };

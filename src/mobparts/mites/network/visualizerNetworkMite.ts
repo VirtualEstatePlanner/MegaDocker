@@ -7,6 +7,9 @@ export const visualizerNetworkMite: IMite = {
 
 #Begin Visualizer Network Section
 
+ visualizer:
+  driver: overlay
+
 #End Webdav Network Section
 
 `

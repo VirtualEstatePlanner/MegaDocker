@@ -7,7 +7,7 @@ export const skoposNetworkMite: IMite = {
 
 #Begin Skopos Network Section
 
- swarmpit:
+ skopos:
   driver: overlay
 
 #End Skopos Network Section
