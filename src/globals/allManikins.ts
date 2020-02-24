@@ -9,6 +9,7 @@ import { ldapManikin } from '../mobparts/manikins/ldap';
 import { nextcloudManikin } from '../mobparts/manikins/nextcloud';
 import { nginxManikin } from '../mobparts/manikins/nginx';
 import { owncloudManikin } from '../mobparts/manikins/owncloud';
+import { piholeManikin } from '../mobparts/manikins/pihole';
 import { portainerManikin } from '../mobparts/manikins/portainer';
 import { portalManikin } from '../mobparts/manikins/portal';
 import { rocketchatManikin } from '../mobparts/manikins/rocketchat';
@@ -32,6 +33,7 @@ export const allManikins: IManikin[] = [
   nextcloudManikin,
   nginxManikin,
   owncloudManikin,
+  piholeManikin,
   portainerManikin,
   portalManikin,
   rocketchatManikin,

@@ -8,6 +8,10 @@ import { IManikin } from '../../interfaces/IManikin';
 
 import { gitlabServiceMite } from '../mites/service/gitlabServiceMite';
 import { gitlabNetworkMite } from '../mites/network/gitlabNetworkMite';
+import { gitlabPostgresPassword } from '../memories/gitlabPostgresPassword';
+import { gitlabPostgresUser } from '../memories/gitlabPostgresUser';
+import { gitlabRootEmail } from '../memories/gitlabRootEmail';
+import { gitlabRootPassword } from '../memories/gitlabRootPassword';
 import gitlabIcon from '../../images/manikin-icons/gitlabIcon.png';
 
 /**
@@ -20,9 +24,14 @@ export const gitlabManikin: IManikin = {
   isSelected: false,
   manikinIcon: gitlabIcon,
   manikinIndex: 3,
-  memories: [],
+  memories: [
+    gitlabPostgresPassword,
+    gitlabPostgresUser,
+    gitlabRootEmail,
+    gitlabRootPassword
+  ],
   mites: [gitlabServiceMite, gitlabNetworkMite],
   name: `GitLab`,
   ports: [],
-  subfolders: []
+  subfolders: [`config`, `data`, `logs`, `postgresql`]
 };

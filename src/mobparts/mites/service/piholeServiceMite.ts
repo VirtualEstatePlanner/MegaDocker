@@ -25,8 +25,8 @@ export const piholeServiceMite: IMite = {
    TZ: "America/New York"
    WEBPASSWORD: "[[PIHOLEPASSWORD]]"
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/pihole/:/etc/pihole/
-   - ~/Documents/MegaDocker/[[MOBNAME]]/dnsmasq/:/etc/dnsmasq.d/
+   - ~/Documents/MegaDocker/[[MOBNAME]]/pihole/etc-pihole/:/etc/pihole/
+   - ~/Documents/MegaDocker/[[MOBNAME]]/pihole/etc-dnsmasq/:/etc/dnsmasq.d/
   dns:
    - 9.9.9.9
    - 8.8.8.8

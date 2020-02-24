@@ -23,11 +23,11 @@ export const ldapServiceMite: IMite = {
      - LDAP_TLS_CRT_FILENAME=*.[[PRIMARYDOMAIN]].crt
      - LDAP_TLS_KEY_FILENAME=*.[[PRIMARYDOMAIN]].key
      - LDAP_TLS_CA_CRT_FILENAME=letssencrypt.key
-     - LDAP_ORGANISATION=The MegaDocker Group
+     - LDAP_ORGANISATION=[[LDAPORGANIZATION]]
      - LDAP_DOMAIN=ldap.[[PRIMARYDOMAIN]]
      - LDAP_BASE_DN=dc=ldap,dc=megadocker,dc=com
-     - LDAP_ADMIN_PASSWORD=verysecret
-     - LDAP_CONFIG_PASSWORD=verysecret
+     - LDAP_ADMIN_PASSWORD=[[LDAPADMINPASSWORD]]
+     - LDAP_CONFIG_PASSWORD=[[LDAPCONFIGPASSWORD]]
      - LDAP_TLS_CIPHER_SUITE=NORMAL
      - LDAP_TLS_VERIFY_CLIENT=allow
     tty: true
@@ -36,9 +36,9 @@ export const ldapServiceMite: IMite = {
      - ~/Documents/MegaDocker/[[MOBNAME]]/LDAP/ldif-files:/ldif
      - ~/Documents/MegaDocker/[[MOBNAME]]/LDAP/lib:/var/lib/ldap
      - ~/Documents/MegaDocker/[[MOBNAME]]/LDAP/slapd.d:/etc/ldap/slapd.d
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/certs/*.[[PRIMARYDOMAIN]].crt:/container/service/slapd/assets/certs/*.[[PRIMARYDOMAIN]].crt
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/container/service/slapd/assets/certs/*.[[PRIMARYDOMAIN]].key
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/private/letssencrypt.key:/container/service/slapd/assets/certs/letsencrypt.key
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/certs/*.[[PRIMARYDOMAIN]].crt:/container/service/slapd/assets/certs/*.[[PRIMARYDOMAIN]].crt:ro
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/container/service/slapd/assets/certs/*.[[PRIMARYDOMAIN]].key:ro
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/private/letssencrypt.key:/container/service/slapd/assets/certs/letsencrypt.key:ro
     ports:
      - 389:389
      - 636:636
