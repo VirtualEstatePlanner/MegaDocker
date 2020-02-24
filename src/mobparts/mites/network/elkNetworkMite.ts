@@ -14,7 +14,7 @@ export const elkNetworkMite: IMite = {
 #Begin ELK Network Section
 
  elk:
-  external: true
+  driver: overlay
 
 #End ELK Network Section
 

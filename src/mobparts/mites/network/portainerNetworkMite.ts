@@ -14,7 +14,7 @@ export const portainerNetworkMite: IMite = {
 #Begin Portainer Network Section
 
  portainer:
-  external: true
+  driver: overlay
 
 #End Portainer Network Section
 

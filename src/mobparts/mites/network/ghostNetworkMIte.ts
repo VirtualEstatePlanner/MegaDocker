@@ -14,7 +14,7 @@ export const ghostNetworkMite: IMite = {
 #Begin Ghost Network Section
 
  ghost:
-  external: true
+  driver: overlay
 
 #End Ghost Network Section
 

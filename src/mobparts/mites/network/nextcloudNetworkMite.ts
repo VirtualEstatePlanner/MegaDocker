@@ -14,7 +14,7 @@ export const nextcloudNetworkMite: IMite = {
 #Begin Nextcloud Network Section
 
  nextcloud:
-  external: true
+  driver: overlay
 
 #End Nextcloud Network Section
 

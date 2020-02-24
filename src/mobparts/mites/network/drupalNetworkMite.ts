@@ -14,10 +14,7 @@ export const drupalNetworkMite: IMite = {
 #Begin Drupal Network Section
  
  drupal:
-  image: drupal
-  ports:
-  volumes:
-  deploy:
+  driver: overlay
   
 #End Drupal Network Section
   

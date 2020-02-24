@@ -14,7 +14,7 @@ export const rocketchatNetworkMite: IMite = {
 #Begin RocketChat Network Section
 
  rocketchat:
-  external: true
+  driver: overlay
 
 #End RocketChat Network Section
 

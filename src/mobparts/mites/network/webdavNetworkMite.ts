@@ -8,7 +8,7 @@ export const webdavNetworkMite: IMite = {
 #Begin Webdav Network Section
 
  webdav:
-  external: true
+  driver: overlay
 
 #End Webdav Network Section
 

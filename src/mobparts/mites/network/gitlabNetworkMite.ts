@@ -14,7 +14,7 @@ export const gitlabNetworkMite: IMite = {
 #Begin Git Network Section
 
  git:
-  external: true
+  driver: overlay
 
 #End Git Network Section
 

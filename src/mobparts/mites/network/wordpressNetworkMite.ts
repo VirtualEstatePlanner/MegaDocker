@@ -14,10 +14,7 @@ export const wordpressNetworkMite: IMite = {
 #Begin WordPress Network Section
  
  wordpress:
-  image: wordpress:latest
-  ports:
-  volumes:
-  deploy:
+  driver: overlay
   
 #End WordPress Network Section
   

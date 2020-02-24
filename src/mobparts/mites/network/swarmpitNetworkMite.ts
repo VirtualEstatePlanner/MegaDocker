@@ -8,7 +8,7 @@ export const swarmpitNetworkMite: IMite = {
   #Begin Swarmpit Network Section
   
    swarmpit:
-    external: true
+    driver: overlay
   
   #End Swarmpit Network Section
   

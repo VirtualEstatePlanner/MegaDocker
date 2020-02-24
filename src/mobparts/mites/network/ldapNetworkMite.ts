@@ -14,7 +14,7 @@ export const ldapNetworkMite: IMite = {
 #Begin LDAP Network Section
 
  ldap:
-  external: true
+  driver: overlay
 
 #End LDAP Network Section
 

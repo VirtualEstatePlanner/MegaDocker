@@ -14,7 +14,7 @@ export const owncloudNetworkMite: IMite = {
 #Begin Owncloud Network Section
 
  owncloud:
-  external: true
+  driver: overlay
 
 #End Owncloud Network Section
 
