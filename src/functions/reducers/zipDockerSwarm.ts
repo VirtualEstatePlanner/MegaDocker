@@ -39,11 +39,9 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     let workingYml: string = ymlInput;
 
     memories.forEach((eachMemory: IMemory) => {
-      console.log(eachMemory.memoryMarker, eachMemory.value);
       let tempYml = workingYml
         .split(eachMemory.memoryMarker)
         .join(eachMemory.value);
-      console.log(tempYml);
       workingYml = tempYml;
     });
 
