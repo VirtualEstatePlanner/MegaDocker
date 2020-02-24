@@ -1,6 +1,4 @@
 import { IMite } from '../../../interfaces/IMite';
-import { primaryDomain } from '../../memories/primaryDomain';
-import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const skoposServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -25,7 +23,7 @@ export const skoposServiceMite: IMite = {
     - "traefik.enable=true"
     - "traefik.port=8100"
     - "traefik.backend=skopos"
-    - "traefik.frontend.rule=Host:skopos.${primaryDomain.value},skopos.${secondaryDomain.value}"
+    - "traefik.frontend.rule=Host:skopos.[[PRIMARYDOMAIN]],skopos.[[SECONDARYDOMAIN]]"
     - "com.MegaDocker.description=Skopos - an application discovery and CI/CD for Docker Swarm Tool"
 
 #End Skopos Service Section

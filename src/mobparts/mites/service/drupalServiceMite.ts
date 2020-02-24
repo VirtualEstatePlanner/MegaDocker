@@ -5,12 +5,6 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../interfaces/IMite';
-import { primaryDomain } from '../../memories/primaryDomain';
-import { mobName } from '../../memories/mobName';
-import { mobFolderPath } from '../../memories/mobFolderPath';
-import { secondaryDomain } from '../../memories/secondaryDomain';
-import { drupalPostgresUser } from '../../memories/drupalPostgresUser';
-import { drupalPostgresPassword } from '../../memories/drupalPostgresPassword';
 
 export const drupalServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -26,17 +20,17 @@ export const drupalServiceMite: IMite = {
      - traefik
      - drupal
     environment:
-     - SERVER_NAME=drupal.${primaryDomain.value}
+     - SERVER_NAME=drupal.[[PRIMARYDOMAIN]]
      - DRUPAL_PROFILE=standard
      - DRUPAL_SITE_NAME=Drupal
      - DRUPAL_USER=drupaluser
      - DRUPAL_PASS=drupalpass
-     - DRUPAL_DBURL=postgres://drupal:drupaluser@${mobName}_drupal-postgres:5432/drupaldb
+     - DRUPAL_DBURL=postgres://drupal:drupaluser@[[MOBNAME]]_drupal-postgres:5432/drupaldb
     volumes:
-     - ${mobFolderPath}/Drupal/modules:/var/www/html/modules
-     - ${mobFolderPath}/Drupal/profiles:/var/www/html/profiles
-     - ${mobFolderPath}/Drupal/themes:/var/www/html/themes
-     - ${mobFolderPath}/Drupal/sites:/var/www/html/sites
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Drupal/modules:/var/www/html/modules
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Drupal/profiles:/var/www/html/profiles
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Drupal/themes:/var/www/html/themes
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Drupal/sites:/var/www/html/sites
     deploy:
      replicas: 1
      restart_policy:
@@ -46,7 +40,7 @@ export const drupalServiceMite: IMite = {
       - "traefik.docker.network=traefik"
       - "traefik.port=2368"
       - "traefik.backend=drupal"
-      - "traefik.frontend.rule=Host:drupal.${primaryDomain.value},drupal.${secondaryDomain.value}"
+      - "traefik.frontend.rule=Host:drupal.[[PRIMARYDOMAIN]],drupal.[[SECONDARYDOMAIN]]"
       - "com.MegaDocker.description=drupal-Drupal blogging software"
   
    drupal-postgres:
@@ -56,11 +50,11 @@ export const drupalServiceMite: IMite = {
     ports:
      - 5432:5432
     volumes:
-     - ${mobFolderPath}/Drupal/database:/var/lib/postgresql/data
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Drupal/database:/var/lib/postgresql/data
     environment:
      - POSTGRES_DB=drupaldb
-     - POSTGRES_USER=${drupalPostgresUser.value}
-     - POSTGRES_PASSWORD=${drupalPostgresPassword.value}
+     - POSTGRES_USER=[[DRUPALUSER]]
+     - POSTGRES_PASSWORD=[[DRUPALPOSTGRESPASSWORD]]
     deploy:
      replicas: 1
      restart_policy:

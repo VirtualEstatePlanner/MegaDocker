@@ -1,4 +1,3 @@
 export const noDescriptionString: string = `
-Empty
-Manikin Synopsis
+Empty Manikin Synopsis
 `;

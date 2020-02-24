@@ -1,13 +1,10 @@
 //  serviceMite.ts
 //  MegaDocker
-//  Network Mite for $SOMEMANIKIN
+//  Service Mite for Nginx
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../interfaces/IMite';
-import { mobFolderPath } from '../../memories/mobFolderPath';
-import { primaryDomain } from '../../memories/primaryDomain';
-import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const nginxServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -21,10 +18,10 @@ export const nginxServiceMite: IMite = {
     networks:
      - traefik
     volumes:
-     - ${mobFolderPath}/Nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
-     - ${mobFolderPath}/Nginx/pages:/var/www/html
-     - ${mobFolderPath}/Nginx/log:/var/log/nginx/log
-     - ${mobFolderPath}/Nginx/conf/default.template.conf:/etc/nginx/conf.d/default.template
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Nginx/pages:/var/www/html
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Nginx/log:/var/log/nginx/log
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Nginx/conf/default.template.conf:/etc/nginx/conf.d/default.template
     environment:
      - NGINX_HOST=www.megadocker.com
     deploy:
@@ -35,9 +32,9 @@ export const nginxServiceMite: IMite = {
       - "traefik.enable=true"
       - "traefik.port=80"
       - "traefik.backend=nginx"
-      - "traefik.frontend.rule=Host:www.${primaryDomain.value},www.${secondaryDomain.value}"
+      - "traefik.frontend.rule=Host:www.[[PRIMARYDOMAIN]],www.[[SECONDARYDOMAIN]]"
       - "com.MegaDocker.description=nginx - "
-    command: /bin/sh -c "envsubst 'www.${primaryDomain.value}' < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+    command: /bin/sh -c "envsubst 'www.[[PRIMARYDOMAIN]]' < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
   
   #End Nginx Service Section
   

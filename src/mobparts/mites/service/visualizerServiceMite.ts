@@ -1,13 +1,10 @@
 //  serviceMite.ts
 //  MegaDocker
-//  Network Mite for $SOMEMANIKIN
+//  Service Mite for Visualizer
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../interfaces/IMite';
-import { mobName } from '../../memories/mobName';
-import { primaryDomain } from '../../memories/primaryDomain';
-import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const visualizerServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -36,10 +33,10 @@ export const visualizerServiceMite: IMite = {
        memory: 32M
      labels:
       - "traefik.enable=true"
-      - "traefik.docker.network=${mobName}_traefik"
+      - "traefik.docker.network=[[MOBNAME]]_traefik"
       - "traefik.port=8080"
       - "traefik.backend=visualizer"
-      - "traefik.frontend.rule=Host:visualizer.${primaryDomain.value},visualizer.${secondaryDomain.value}"
+      - "traefik.frontend.rule=Host:visualizer.[[PRIMARYDOMAIN]],visualizer.[[SECONDARYDOMAIN]]"
       - "com.MegaDocker.description=Visualizer - Container node placement web visualizer"
   
   #End Visualizer Service Section

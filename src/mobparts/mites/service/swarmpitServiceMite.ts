@@ -1,8 +1,4 @@
 import { IMite } from '../../../interfaces/IMite';
-import { primaryDomain } from '../../memories/primaryDomain';
-import { secondaryDomain } from '../../memories/secondaryDomain';
-import { mobName } from '../../memories/mobName';
-import { mobFolderPath } from '../../memories/mobFolderPath';
 
 export const swarmpitServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -21,7 +17,7 @@ export const swarmpitServiceMite: IMite = {
      - traefik
      - swarmpit
     environment:
-     - SWARMPIT_DB=http://${mobName}_swarmpit-db:5984
+     - SWARMPIT_DB=http://[[MOBNAME]]_swarmpit-db:5984
     deploy:
      resources:
       limits:
@@ -38,7 +34,7 @@ export const swarmpitServiceMite: IMite = {
       - "traefik.port=8080"
       - "traefik.backend=swarmpit"
       - "traefik.docker.network=traefik"
-      - "traefik.frontend.rule=Host:swarmpit.${primaryDomain.value},swarmpit.${secondaryDomain.value}"
+      - "traefik.frontend.rule=Host:swarmpit.[[PRIMARYDOMAIN]],swarmpit.[[SECONDARYDOMAIN]]"
       - "com.MegaDocker.description=Swarmpit - a web GUI for Docker Swarm."
      restart_policy:
       condition: on-failure
@@ -46,7 +42,7 @@ export const swarmpitServiceMite: IMite = {
    swarmpit-db:
     image: klaemo/couchdb
     volumes:
-     - ${mobFolderPath}/Swarmpit/database:/opt/couchdb/data
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Swarmpit/database:/opt/couchdb/data
     networks:
      - swarmpit
     deploy:

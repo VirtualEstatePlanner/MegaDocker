@@ -1,13 +1,10 @@
 //  serviceMite.ts
 //  MegaDocker
-//  Network Mite for $SOMEMANIKIN
+//  Service Mite for NextCloud
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../interfaces/IMite';
-import { mobFolderPath } from '../../memories/mobFolderPath';
-import { primaryDomain } from '../../memories/primaryDomain';
-import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const nextcloudServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -23,15 +20,15 @@ export const nextcloudServiceMite: IMite = {
      - nextcloud
     volumes:
      - export/Owncloud/apps/:/var/www/html/apps
-     - ${mobFolderPath}/Owncloud/config/:/var/www/html/config
-     - ${mobFolderPath}/Owncloud/data/:/var/www/html/data
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/config/:/var/www/html/config
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/data/:/var/www/html/data
     deploy:
      restart_policy:
       condition: on-failure
      labels:
       - "traefik.enable=true"
       - "traefik.backend=owncloud"
-      - "traefik.frontend.rule=Host:owncloud.${primaryDomain.value},owncloud.${secondaryDomain.value}"
+      - "traefik.frontend.rule=Host:owncloud.[[PRIMARYDOMAIN]],owncloud.[[SECONDARYDOMAIN]]"
       - "traefik.port=80"
       - "traefik.docker.network=traefik"
     depends_on:
@@ -47,7 +44,7 @@ export const nextcloudServiceMite: IMite = {
      - owncloud
     volumes:
    #  - /etc/localtime:/etc/localtime:ro
-     - ${mobFolderPath}/Owncloud/postgres:/var/lib/postgresql
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/postgres:/var/lib/postgresql
     deploy:
      restart_policy:
       condition: on-failure
@@ -60,7 +57,7 @@ export const nextcloudServiceMite: IMite = {
      - MYSQL_ROOT_PASSWORD=owncloud
      - MYSQL_DATABASE=owncloud
     volumes:
-     - ${mobFolderPath}/Owncloud/mariadb:/var/lib/mysql
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/mariadb:/var/lib/mysql
     deploy:
      restart_policy:
       condition: on-failure
@@ -71,7 +68,7 @@ export const nextcloudServiceMite: IMite = {
    owncloud-redis:
     image: redis
     volumes:
-     - ${mobFolderPath}/Owncloud/redis:/var/lib/mysql
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/redis:/var/lib/mysql
     networks:
      - owncloud
     deploy:

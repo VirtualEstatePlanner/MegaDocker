@@ -1,15 +1,10 @@
-//  serviceMite.ts
+//  ghostServiceMite.ts
 //  MegaDocker
-//  Network Mite for $SOMEMANIKIN
+//  Service Mite for Ghost
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../interfaces/IMite';
-import { mobName } from '../../memories/mobName';
-import { ghostMariaDBRootPassword } from '../../memories/ghostRootMariaDBPassword';
-import { primaryDomain } from '../../memories/primaryDomain';
-import { secondaryDomain } from '../../memories/secondaryDomain';
-import { mobFolderPath } from '../../memories/mobFolderPath';
 
 export const ghostServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -25,16 +20,16 @@ export const ghostServiceMite: IMite = {
      - traefik
     environment:
      - database__client=mysql
-     - database__connection__host=${mobName}_ghost-mariadb
+     - database__connection__host=[[MOBNAME]]_ghost-mariadb
      - database__connection__user=root
-     - database__connection__password=${ghostMariaDBRootPassword.value}
+     - database__connection__password=[[GHOSTMARIADBROOTPASSWORD]]
      - database__connection__database=mariadb
     deploy:
      labels:
       - "traefik.backend=ghost"
       - "traefik.docker.network=traefik"
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:ghost.${primaryDomain.value},ghost.${secondaryDomain.value}"
+      - "traefik.frontend.rule=Host:ghost.[[PRIAMRYDOMAIN]],ghost.[[SECONDARYDOMAIN]]"
       - "traefik.port=2368"
      restart_policy:
       condition: on-failure
@@ -44,9 +39,9 @@ export const ghostServiceMite: IMite = {
     networks:
      - ghost
     volumes:
-     - ${mobFolderPath}/Ghost/database:/var/lib/mysql
+     - ~/Documents/MegaDocker/[[MOBNAME]]/Ghost/database:/var/lib/mysql
     environment:
-     MYSQL_ROOT_PASSWORD=${ghostMariaDBRootPassword.value}
+     MYSQL_ROOT_PASSWORD=[[GHOSTMARIADBROOTPASSWORD]]
     deploy:
      restart_policy:
       condition: on-failure

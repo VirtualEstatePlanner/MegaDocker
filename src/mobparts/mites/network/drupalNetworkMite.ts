@@ -19,7 +19,7 @@ export const drupalNetworkMite: IMite = {
   volumes:
   deploy:
   
-#End $SOMEMANIKIN Network Section
+#End Drupal Network Section
   
   `
 };

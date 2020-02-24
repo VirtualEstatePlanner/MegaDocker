@@ -1,14 +1,10 @@
-//  serviceMite.ts
+//  elkServiceMite.ts
 //  MegaDocker
-//  Network Mite for $SOMEMANIKIN
+//  Service Mite for Elk
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../interfaces/IMite';
-import { mobFolderPath } from '../../memories/mobFolderPath';
-import { mobName } from '../../memories/mobName';
-import { primaryDomain } from '../../memories/primaryDomain';
-import { secondaryDomain } from '../../memories/secondaryDomain';
 
 export const elkServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -22,7 +18,7 @@ export const elkServiceMite: IMite = {
     networks:
      - elk
     volumes:
-     - ${mobFolderPath}/ELK/Elasticsearch:/usr/share/elasticsearch/data
+     - ~/Documents/MegaDocker/[[MOBNAME]]/ELK/Elasticsearch:/usr/share/elasticsearch/data
     ports:
      - 9200:9200
      - 9300:9300
@@ -34,7 +30,7 @@ export const elkServiceMite: IMite = {
      - elk
      - ldap
     environment:
-     - SERVER_NAME=${mobName}_elasticsearch:9200
+     - SERVER_NAME=[[MOBNAME]]_elasticsearch:9200
     depends_on:
      - elasticsearch
     deploy:
@@ -42,13 +38,13 @@ export const elkServiceMite: IMite = {
      - "traefik.backend=kibana"
      - "traefik.docker.network=traefik"
      - "traefik.enable=true"
-     - "traefik.frontend.rule=Host:kibana.${primaryDomain.value},kibana.${secondaryDomain.value}"
+     - "traefik.frontend.rule=Host:kibana.[[PRIMARYDOMAIN]],kibana.[[SECONDARYDOMAIN]]"
      - "traefik.port=5601"
   
    logstash:
     image: logstash
     volumes:
-     - ${mobFolderPath}/ELK/Logstash/config:/config-dir
+     - ~/Documents/MegaDocker/[[MOBNAME]]/ELK/Logstash/config:/config-dir
     networks:
      - elk
     command: logstash -f /config-dir/logstash.conf
