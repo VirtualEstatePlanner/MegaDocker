@@ -5,15 +5,14 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { rocketchatBotUsername } from './rocketchatBotUsername';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const rocketchatBotPassword: IMemory = {
   memoryIndex: 1013,
   memoryMarker: `[[ROCKETCHATBOTPASSWORD]]`,
   shouldAutocomplete: false,
-  name: `RocketChat bot user name`,
-  tooltip: `Choose the password of the RocketChat bot user (${rocketchatBotUsername.value}).`,
+  name: `RocketChat bot password`,
+  tooltip: `Choose the password of the RocketChat bot user.`,
   value: ``,
   valueType: 'password',
   isReady: false,

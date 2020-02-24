@@ -20,7 +20,25 @@
 export interface IMemory {
   isReady: boolean;
   memoryIndex: number;
-  memoryMarker: string;
+  memoryMarker:
+    | `[[CLOUDFLAREAPIKEY]]`
+    | `[[CLOUDFLAREEMAIL]]`
+    | `[[DRUPALPOSTGRESPASSWORD]]`
+    | `[[DRUPALPOSTGRESUSER]]`
+    | `[[GHOSTMARIADBROOTPASSWORD]]`
+    | `[[LDAPADMINPASSWORD]]`
+    | `[[LDAPADMINUSERNAME]]`
+    | `[[LDAPCONFIGURATIONPASSWORD]]`
+    | `[[LETSENCRYPTEMAIL]]`
+    | `[[MOBFOLDERPATH]]`
+    | `[[MOBNAME]]`
+    | `[[PRIMARYDOMAIN]]`
+    | `[[ROCKETCHATBOTPASSWORD]]`
+    | `[[ROCKETCHATBOTUSERNAME]]`
+    | `[[SECONDARYDOMAIN]]`
+    | `[[WORDPRESSMARIADBPASSWORD]]`
+    | `[[WORDPRESSMARIADBROOTPASSWORD]]`
+    | `[[WORDPRESSMARIADBUSER]]`;
   name: string;
   shouldAutocomplete: boolean;
   tooltip: string;
