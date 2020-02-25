@@ -45,8 +45,10 @@ export const traefikServiceMite: IMite = {
     - "traefik.http.routers.api.tls.certresolver=[[SECONDARYDOMAIN]]"
     - "traefik.http.routers.api.tls.domains[0].main=[[SECONDARYDOMAIN]]"
     - "traefik.http.routers.api.tls.domains[0].sans=*.[[SECONDARYDOMAIN]]"
-   constraints:
-    - node.role == manager
+   placement:
+    constraints:
+     - node.role == manager
+
 #End Traefik Service Section
 
 `

@@ -16,7 +16,7 @@ export const piholeServiceMite: IMite = {
  pihole:
   image: pihole/pihole:latest
   networks:
-   - [[MOBNAME]]_traefik
+   - traefik
   ports:
    - 53:53/tcp
    - 53:53/udp

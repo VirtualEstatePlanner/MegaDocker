@@ -9,7 +9,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const gitlabRootPassword: IMemory = {
   memoryIndex: 1020,
-  memoryMarker: `[[GITLABROOTPASSWWORD]]`,
+  memoryMarker: `[[GITLABROOTPASSWORD]]`,
   shouldAutocomplete: false,
   name: `Gitlab Root Password`,
   tooltip: `Choose the password for the root GitLab user`,

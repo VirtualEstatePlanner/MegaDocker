@@ -20,7 +20,7 @@ gitlab:
   - DB_HOST=GitTest_gitlab-postgresql
   - DB_PORT=5432
   - DB_USER=[[GITLABPOSTGRESUSER]]
-  - DB_PASS=[[GITLABNPOSTGRESPASSWORD]]
+  - DB_PASS=[[GITLABPOSTGRESPASSWORD]]
   - DB_NAME=[[MOBNAME]]_gitlabhq_production
   - REDIS_HOST=[[MOBNAME]]_gitlab-redis
   - REDIS_PORT=63679
