@@ -11,9 +11,9 @@ export const webdavServiceMite: IMite = {
   miteIndex: 2019,
   miteString: `
 
-  #Begin WebDAV Service Section
-  
-  #End WebDAV Service Section
-  
-  `
+#Begin WebDAV Service Section
+
+#End WebDAV Service Section
+
+`
 };

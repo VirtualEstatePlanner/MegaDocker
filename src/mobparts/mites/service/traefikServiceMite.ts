@@ -16,7 +16,7 @@ export const traefikServiceMite: IMite = {
  traefik:
   image: traefik
   networks:
-   - [[MOBNAME]]_traefik
+   - traefik
   ports:
    - 80:80
    - 443:443

@@ -16,7 +16,7 @@ export const nginxServiceMite: IMite = {
  nginx:
   image: nginx:alpine
   networks:
-   - [[MOBNAME]]_traefik
+   - traefik
   volumes:
    - ~/Documents/MegaDocker/[[MOBNAME]]/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
    - ~/Documents/MegaDocker/[[MOBNAME]]/nginx/pages:/var/www/html

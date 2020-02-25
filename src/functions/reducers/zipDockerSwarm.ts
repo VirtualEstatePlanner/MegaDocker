@@ -125,6 +125,7 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
           .folder(eachManikin.folder)
           .folder(subs[eachSubfolder]);
       }
+      zip.folder(`traefik`).file(`acme.json`, ``, { unixPermissions: 600 });
     });
   };
 

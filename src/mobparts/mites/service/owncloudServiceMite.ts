@@ -15,8 +15,8 @@ export const owncloudServiceMite: IMite = {
  owncloud:
   image: owncloud:latest
   networks:
-   - [[MOBNAME]]_traefik
-   - [[MOBNAME]]_owncloud
+   - traefik
+   - owncloud
   volumes:
    - export/owncloud/apps/:/var/www/html/apps
    - ~/Documents/MegaDocker/[[MOBNAME]]/owncloud/config/:/var/www/html/config

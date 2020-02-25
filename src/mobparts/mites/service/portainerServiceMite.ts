@@ -16,7 +16,7 @@ export const portainerServiceMite: IMite = {
  portainer:
   image: portainer/portainer
   networks:
-   - [[MOBNAME]]_traefik
+   - traefik
   command: '--no-auth'
   volumes:
    - /var/run/docker.sock:/var/run/docker.sock
