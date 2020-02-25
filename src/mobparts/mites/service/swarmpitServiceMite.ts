@@ -40,7 +40,7 @@ export const swarmpitServiceMite: IMite = {
     condition: on-failure
   
  swarmpit-db:
-  image: klaemo/couchdb
+  image: couchdb
   volumes:
    - ~/Documents/MegaDocker/[[MOBNAME]]/Swarmpit/database:/opt/couchdb/data
   networks:

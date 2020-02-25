@@ -9,5 +9,10 @@ import { IMite } from './IMite';
 export interface ICustomMite extends IMite {
   type: `Custom`;
   miteString: string;
-  miteFiles: { name: string; extension: string; contents: string }[];
+  miteFile: {
+    path: string;
+    name: string;
+    extension: string;
+    contents: string;
+  };
 }

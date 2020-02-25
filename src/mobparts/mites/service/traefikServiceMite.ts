@@ -24,7 +24,7 @@ export const traefikServiceMite: IMite = {
   volumes:
    - /var/run/docker.sock:/var/run/docker.sock:ro
    - ~/Documents/MegaDocker/[[MOBNAME]]/traefik/acme.json:/acme.json
-   - ~/Documents/MegaDocker/[[MOBNAME]]/traefik/traefik.yml:/traefik.yml
+#   - ~/Documents/MegaDocker/[[MOBNAME]]/traefik/traefik.yml:/traefik.yml
   environment:
    - CF_API_EMAIL=[[CLOUDFLAREEMAIL]]
    - CF_API_KEY=[[CLOUDFLAREAPIKEY]]
