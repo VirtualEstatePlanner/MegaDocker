@@ -1,4 +1,4 @@
-//  owncloud.ts
+//  nextcloud.ts
 //  MegaDocker
 //  A Manikin to generate a Owncloud file-sharing service
 //  Created by George Georgulas IV on 1/26/19.
