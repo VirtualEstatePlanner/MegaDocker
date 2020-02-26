@@ -33,12 +33,12 @@ export const ldapServiceMite: IMite = {
     tty: true
     stdin_open: true
     volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/LDAP/ldif-files:/ldif
-     - ~/Documents/MegaDocker/[[MOBNAME]]/LDAP/lib:/var/lib/ldap
-     - ~/Documents/MegaDocker/[[MOBNAME]]/LDAP/slapd.d:/etc/ldap/slapd.d
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/certs/*.[[PRIMARYDOMAIN]].crt:/container/service/slapd/assets/certs/*.[[PRIMARYDOMAIN]].crt:ro
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/container/service/slapd/assets/certs/*.[[PRIMARYDOMAIN]].key:ro
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/private/letssencrypt.key:/container/service/slapd/assets/certs/letsencrypt.key:ro
+     - ./ldap/ldif-files:/ldif
+     - ./ldap/lib:/var/lib/ldap
+     - ./ldap/slapd.d:/etc/ldap/slapd.d
+     - ./traefik/ssl/certs/*.[[PRIMARYDOMAIN]].crt:/container/service/slapd/assets/certs/*.[[PRIMARYDOMAIN]].crt:ro
+     - ./traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/container/service/slapd/assets/certs/*.[[PRIMARYDOMAIN]].key:ro
+     - ./traefik/ssl/private/letssencrypt.key:/container/service/slapd/assets/certs/letsencrypt.key:ro
     ports:
      - 389:389
      - 636:636
@@ -61,12 +61,12 @@ export const ldapServiceMite: IMite = {
      - PHPLDAPADMIN_LDAP_CLIENT_TLS_KEY_FILENAME=letsencrypt.key
     hostname: ldap-admin.[[PRIMARYDOMAIN]]
     volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/certs/*.[[PRIMARYDOMAIN]].crt:/container/service/phpldapadmin/assets/apache2/certs/certs/*.[[PRIMARYDOMAIN]].crt
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/container/service/phpldapadmin/assets/apache2/certs/private/*.[[PRIMARYDOMAIN]].key
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/private/letsencrypt.key:/container/service/phpldapadmin/assets/apache2/certs/certs/letsencrypt.key
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/certs/*.[[PRIMARYDOMAIN]].crt:/container/service/ldap-client/assets/certs/*.[[PRIMARYDOMAIN]].crt
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/container/service/ldap-client/assets/certs/*.[[PRIMARYDOMAIN]].key
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Traefik/ssl/private/letssencrypt.key:/container/service/ldap-client/assets/certs/letsencrypt.key
+     - ./traefik/ssl/certs/*.[[PRIMARYDOMAIN]].crt:/container/service/phpldapadmin/assets/apache2/certs/certs/*.[[PRIMARYDOMAIN]].crt
+     - ./traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/container/service/phpldapadmin/assets/apache2/certs/private/*.[[PRIMARYDOMAIN]].key
+     - ./traefik/ssl/private/letsencrypt.key:/container/service/phpldapadmin/assets/apache2/certs/certs/letsencrypt.key
+     - ./traefik/ssl/certs/*.[[PRIMARYDOMAIN]].crt:/container/service/ldap-client/assets/certs/*.[[PRIMARYDOMAIN]].crt
+     - ./traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/container/service/ldap-client/assets/certs/*.[[PRIMARYDOMAIN]].key
+     - ./traefik/ssl/private/letssencrypt.key:/container/service/ldap-client/assets/certs/letsencrypt.key
     networks:
      - ldap
      - traefik

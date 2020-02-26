@@ -21,7 +21,7 @@ export const ledgerServiceMite: IMite = {
   networks:
    - internal
   volumes:
-   - "~/Documents/MegaDocker/[[MOBNAME]]/ledger/postgres:/var/lib/postgresql/data"
+   - "./ledger/postgres:/var/lib/postgresql/data"
 
  ledger-smb:
   depends_on:

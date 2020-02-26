@@ -18,7 +18,7 @@ export const elkServiceMite: IMite = {
   networks:
    - elk
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/elk/elasticsearch:/usr/share/elasticsearch/data
+   - ./elk/elasticsearch:/usr/share/elasticsearch/data
 #  ports:
 #   - 9200:9200
 #   - 9300:9300
@@ -44,7 +44,7 @@ export const elkServiceMite: IMite = {
  logstash:
   image: logstash
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/elk/logstash/config:/config-dir
+   - ./elk/logstash/config:/config-dir
   networks:
    - elk
   command: logstash -f /config-dir/logstash.conf

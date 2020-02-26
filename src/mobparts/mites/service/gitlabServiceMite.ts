@@ -51,10 +51,10 @@ gitlab:
   - LDAP_BASE=ou=Users
 #  - LDAP_USER_FILTER=
  volumes:
-  - ~/Documents/MegaDocker/[[MOBNAME]]/traefik/ssl/pem/*.[[PRIMARYDOMAIN]].pem:/ldapcerts/*.[[PRIMARYDOMAIN]].pem
-  - ~/Documents/MegaDocker/[[MOBNAME]]/gitlab/config:/etc/gitlab
-  - ~/Documents/MegaDocker/[[MOBNAME]]/gitlab/logs:/var/log/gitlab
-  - ~/Documents/MegaDocker/[[MOBNAME]]/gitlab/data:/var/opt/gitlab
+  - ./traefik/ssl/pem/*.[[PRIMARYDOMAIN]].pem:/ldapcerts/*.[[PRIMARYDOMAIN]].pem
+  - ./gitlab/config:/etc/gitlab
+  - ./gitlab/logs:/var/log/gitlab
+  - ./gitlab/data:/var/opt/gitlab
  ports:
   - 22:22
  deploy:
@@ -81,7 +81,7 @@ gitlab:
    - POSTGRES_PASSWORD=[[GITLABPOSTGRESPASSWORD]]
    - POSTGRES_DB=gitlabhq_production
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/gitlab/postgresql:/var/lib/postgresql:rw
+   - ./gitlab/postgresql:/var/lib/postgresql:rw
   networks:
    - gitlab
  

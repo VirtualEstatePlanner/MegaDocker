@@ -18,10 +18,10 @@ export const nginxServiceMite: IMite = {
   networks:
    - traefik
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
-   - ~/Documents/MegaDocker/[[MOBNAME]]/nginx/pages:/var/www/html
-   - ~/Documents/MegaDocker/[[MOBNAME]]/nginx/log:/var/log/nginx/log
-   - ~/Documents/MegaDocker/[[MOBNAME]]/nginx/conf/default.template.conf:/etc/nginx/conf.d/default.template
+   - ./nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
+   - ./nginx/pages:/var/www/html
+   - ./nginx/log:/var/log/nginx/log
+   - ./nginx/conf/default.template.conf:/etc/nginx/conf.d/default.template
   environment:
    - NGINX_HOST=www.megadocker.com
   deploy:

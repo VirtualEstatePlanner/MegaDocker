@@ -20,7 +20,7 @@ export const rocketchatServiceMite: IMite = {
      - rocketchat
      - ldap
     volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/RocketChat/uploads:/app/uploads
+     - ./rocketchat/uploads:/app/uploads
     environment:
      - PORT=3000
      - ROOT_URL=http://rocketchat.[[PRIMARYDOMAIN]]:3000
@@ -47,8 +47,8 @@ export const rocketchatServiceMite: IMite = {
      restart_policy:
       condition: on-failure
     volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/rocketchat/database:/data/db
-     - ~/Documents/MegaDocker/[[MOBNAME]]/rocketChat/db-dump:/dump
+     - ./rocketchat/database:/data/db
+     - ./rocketChat/db-dump:/dump
     command: mongod --smallfiles --oplogSize 128 --replSet rs0 --storageEngine=mmapv1
   
    mongo-init-replica:
@@ -76,7 +76,7 @@ export const rocketchatServiceMite: IMite = {
     depends_on:
      - rocketchat
     volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/rocketchat/hubot/scripts:/home/hubot/scripts
+     - ./rocketchat/hubot/scripts:/home/hubot/scripts
     ports:
      - 3001:8080
   

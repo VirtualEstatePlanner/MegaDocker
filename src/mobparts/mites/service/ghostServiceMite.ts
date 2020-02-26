@@ -39,7 +39,7 @@ export const ghostServiceMite: IMite = {
     networks:
      - ghost
     volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Ghost/database:/var/lib/mysql
+     - ./ghost/database:/var/lib/mysql
     environment:
      MYSQL_ROOT_PASSWORD=[[GHOSTMARIADBROOTPASSWORD]]
     deploy:

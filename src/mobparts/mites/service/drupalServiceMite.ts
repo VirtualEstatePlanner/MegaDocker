@@ -27,10 +27,10 @@ export const drupalServiceMite: IMite = {
    - DRUPAL_PASS=drupalpass
    - DRUPAL_DBURL=postgres://drupal:drupaluser@[[MOBNAME]]_drupal-postgres:5432/drupaldb
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/drupal/modules:/var/www/html/modules
-   - ~/Documents/MegaDocker/[[MOBNAME]]/drupal/profiles:/var/www/html/profiles
-   - ~/Documents/MegaDocker/[[MOBNAME]]/drupal/themes:/var/www/html/themes
-   - ~/Documents/MegaDocker/[[MOBNAME]]/drupal/sites:/var/www/html/sites
+   - ./drupal/modules:/var/www/html/modules
+   - ./drupal/profiles:/var/www/html/profiles
+   - ./drupal/themes:/var/www/html/themes
+   - ./drupal/sites:/var/www/html/sites
   deploy:
    replicas: 1
    restart_policy:
@@ -50,7 +50,7 @@ export const drupalServiceMite: IMite = {
   ports:
    - 5432:5432
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/drupal/database:/var/lib/postgresql/data
+   - ./drupal/database:/var/lib/postgresql/data
   environment:
    - POSTGRES_DB=drupaldb
    - POSTGRES_USER=[[DRUPALUSER]]

@@ -42,7 +42,7 @@ export const swarmpitServiceMite: IMite = {
  swarmpit-db:
   image: couchdb
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/swarmpit/database:/opt/couchdb/data
+   - ./swarmpit/database:/opt/couchdb/data
   networks:
    - swarmpit
   deploy:

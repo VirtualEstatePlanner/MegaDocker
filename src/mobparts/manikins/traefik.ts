@@ -15,7 +15,6 @@ import { traefikServiceMite } from '../mites/service/traefikServiceMite';
 import { traefikNetworkMite } from '../mites/network/traefikNetworkMite';
 import traefikIcon from '../../images/manikin-icons/traefikIcon.png';
 import { mobName } from '../memories/mobName';
-import { traefikDotYmlMite } from '../mites/custom/traefikDotYmlMite';
 
 /**
  * traefik Manikin
@@ -36,7 +35,7 @@ export const traefikManikin: IManikin = {
     secondaryDomain
   ],
   name: `Traefik`,
-  mites: [traefikServiceMite, traefikNetworkMite, traefikDotYmlMite],
+  mites: [traefikServiceMite, traefikNetworkMite],
   ports: [],
-  subfolders: [`certs`, `private`, `pem`]
+  subfolders: [`logs`, `certs`, `private`, `pem`]
 };

@@ -26,7 +26,7 @@ export const wordpressServiceMite: IMite = {
    - WORDPRESS_DB_PASSWORD=[[WORDPRESSMARIADBPASSWORD]]
    - WORDPRESS_DB_NAME=wordpress
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/wordpress/data:/var/www/html
+   - ./wordpress/data:/var/www/html
   deploy:
    replicas: 1
    restart_policy:
@@ -49,7 +49,7 @@ export const wordpressServiceMite: IMite = {
    - MYSQL_USER=[[WORDPRESSMARIADBUSER]]
    - MYSQL_PASSWORD=[[WORDPRESSMARIADBPASSWORD]]
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/wordpress/mariadb:/var/lib/mysql
+   - ./wordpress/mariadb:/var/lib/mysql
   deploy:
    restart_policy:
     condition: on-failure

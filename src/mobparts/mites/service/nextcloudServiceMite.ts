@@ -19,9 +19,9 @@ export const nextcloudServiceMite: IMite = {
      - traefik
      - nextcloud
     volumes:
-     - export/Owncloud/apps/:/var/www/html/apps
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/config/:/var/www/html/config
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/data/:/var/www/html/data
+     - ./nextcloud/apps/:/var/www/html/apps
+     - ./nextcloud/config/:/var/www/html/config
+     - ./nextcloud/data/:/var/www/html/data
     deploy:
      restart_policy:
       condition: on-failure
@@ -34,7 +34,7 @@ export const nextcloudServiceMite: IMite = {
     depends_on:
      - postgres
   
-   owncloud-postgres:
+     nextcloud-postgres:
     image: postgres:alpine
     environment:
      - POSTGRES_PASSWORD=password
@@ -44,12 +44,12 @@ export const nextcloudServiceMite: IMite = {
      - owncloud
     volumes:
    #  - /etc/localtime:/etc/localtime:ro
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/postgres:/var/lib/postgresql
+     - ./nextcloud/postgres:/var/lib/postgresql
     deploy:
      restart_policy:
       condition: on-failure
   
-   owncloud-mariadb:
+      nextcloud-mariadb:
     image: mariadb
     environment:
      - MYSQL_USER=owncloud
@@ -57,7 +57,7 @@ export const nextcloudServiceMite: IMite = {
      - MYSQL_ROOT_PASSWORD=owncloud
      - MYSQL_DATABASE=owncloud
     volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/mariadb:/var/lib/mysql
+     - ./nextcloud/mariadb:/var/lib/mysql
     deploy:
      restart_policy:
       condition: on-failure
@@ -65,10 +65,10 @@ export const nextcloudServiceMite: IMite = {
      - owncloud
   
   
-   owncloud-redis:
+     nextcloud-redis:
     image: redis
     volumes:
-     - ~/Documents/MegaDocker/[[MOBNAME]]/Owncloud/redis:/var/lib/mysql
+     - ./nextcloud/redis:/var/lib/mysql
     networks:
      - owncloud
     deploy:

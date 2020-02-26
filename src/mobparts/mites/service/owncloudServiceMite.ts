@@ -18,9 +18,9 @@ export const owncloudServiceMite: IMite = {
    - traefik
    - owncloud
   volumes:
-   - export/owncloud/apps/:/var/www/html/apps
-   - ~/Documents/MegaDocker/[[MOBNAME]]/owncloud/config/:/var/www/html/config
-   - ~/Documents/MegaDocker/[[MOBNAME]]/owncloud/data/:/var/www/html/data
+   - ./owncloud/apps/:/var/www/html/apps
+   - ./owncloud/config/:/var/www/html/config
+   - ./owncloud/data/:/var/www/html/data
   deploy:
    restart_policy:
     condition: on-failure
@@ -43,7 +43,7 @@ export const owncloudServiceMite: IMite = {
    - [[MOBNAME]]_owncloud
   volumes:
 #   - /etc/localtime:/etc/localtime:ro
-   - ~/Documents/MegaDocker/[[MOBNAME]]/owncloud/postgres:/var/lib/postgresql
+   - ./owncloud/postgres:/var/lib/postgresql
   deploy:
    restart_policy:
     condition: on-failure
@@ -56,7 +56,7 @@ export const owncloudServiceMite: IMite = {
    - MYSQL_ROOT_PASSWORD=owncloud
    - MYSQL_DATABASE=owncloud
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/owncloud/mariadb:/var/lib/mysql
+   - ./owncloud/mariadb:/var/lib/mysql
   deploy:
    restart_policy:
     condition: on-failure
@@ -66,7 +66,7 @@ export const owncloudServiceMite: IMite = {
  owncloud-redis:
   image: redis: latest
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/owncloud/redis:/var/lib/mysql
+   - ./owncloud/redis:/var/lib/mysql
   networks:
    - [[MOBNAME]]_owncloud
   deploy:
