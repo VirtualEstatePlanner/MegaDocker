@@ -15,6 +15,9 @@ export const traefikServiceMite: IMite = {
 
  traefik:
   image: traefik
+  command:
+   - --providers.docker=true
+   - --providers.docker.swarmMode=true
   networks:
    - traefik
   ports:

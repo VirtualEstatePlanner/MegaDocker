@@ -20,7 +20,6 @@ export const piholeServiceMite: IMite = {
   ports:
    - 53:53/tcp
    - 53:53/udp
-   - 80:80/tcp
   environment:
    TZ: "America/New York"
    WEBPASSWORD: "[[PIHOLEPASSWORD]]"
@@ -35,13 +34,15 @@ export const piholeServiceMite: IMite = {
    - 1.0.0.1
   deploy:
    restart_policy:
-    condition: any
+    condition: on-failure
+   labels:
    labels:
     - "traefik.enable=true"
-    - "traefik.backend=pihole"
-    - "traefik.frontend.rule=Host:pihole.[[PRIMARYDOMAIN]], pihole.[[SECONDARYDOMAIN]]"
     - "traefik.docker.network=[[MOBNAME]]_traefik"
-    - "traefik.port=80"
+    - "traefik.http.routers.pihole.rule=Host('pihole.[[PRIMARYDOMAIN]]')"
+    - "traefik.http.services.pihole.loadbalancer.server.port=80"
+    - "traefik.http.routers.api.entrypoints=web"
+    - "traefik.http.routers.api.entrypoints=websecure"
  
  #End pihole service section
  `

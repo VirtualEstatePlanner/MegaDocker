@@ -3,6 +3,7 @@ import fileSaver from 'file-saver';
 import { IMemory } from '../../interfaces/IMemory';
 import { IManikin } from '../../interfaces/IManikin';
 import { IMite } from '../../interfaces/IMite';
+import { ICustomMite } from '../../interfaces/ICustomMite';
 import { IZipDockerCompose } from '../../interfaces/IZipDockerCompose';
 import { mobFileHeaderString } from '../../mobparts/mites/headers/mobFileHeaderString';
 import { servicesFooterSectionString } from '../../mobparts/mites/headers/servicesFooterSectionString';
@@ -10,7 +11,6 @@ import { mobNetworksSectionString } from '../../mobparts/mites/headers/mobNetwor
 import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString';
 import { traefikManikin } from '../../mobparts/manikins/traefik';
 import { mobName } from '../../mobparts/memories/mobName';
-import { ICustomMite } from '../../interfaces/ICustomMite';
 
 /**
  * makes .zip file for docker-compose
@@ -27,29 +27,6 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
   const mites: IMite[] = zipManikins.flatMap((eachManikin: IManikin) =>
     eachManikin.mites.map((eachMite: IMite) => eachMite)
   );
-
-  /**
-   * updates yml with variables from memories
-   * @param ymlInput the initial string to change
-   * @param memories the memories to apply
-   */
-  const updateYMLWithMemoryValues: Function = (
-    ymlInput: string,
-    memories: IMemory[]
-  ): string => {
-    let workingYml: string = ymlInput;
-
-    memories.forEach((eachMemory: IMemory) => {
-      let tempYml = workingYml
-        .split(eachMemory.memoryMarker)
-        .join(eachMemory.value);
-      workingYml = tempYml;
-    });
-
-    const finalYml = workingYml;
-    return finalYml;
-  };
-
   const serviceMites: string[] = mites
     .filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`)
     .sort((mite1, mite2): number => {
@@ -76,13 +53,37 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     })
     .map((eachMite: IMite) => eachMite.miteString);
 
-  const customs: IMite[] = mites.filter((eachMite: IMite) =>
-    eachMite.hasOwnProperty(`miteFiles`)
+  const customs: IMite[] = mites.filter(
+    (eachMite: IMite) => eachMite.type === `Custom`
   );
 
   const customMites: ICustomMite[] = customs.map(
     (mite: IMite) => mite as ICustomMite
   );
+
+  console.log(customMites);
+  /**
+   * updates yml with variables from memories
+   * @param ymlInput the initial string to change
+   * @param memories the memories to apply
+   */
+  const updateYMLWithMemoryValues: Function = (
+    ymlInput: string,
+    memories: IMemory[]
+  ): string => {
+    let workingYml: string = ymlInput;
+
+    memories.forEach((eachMemory: IMemory) => {
+      let tempYml = workingYml
+        .split(eachMemory.memoryMarker)
+        .join(eachMemory.value);
+      workingYml = tempYml;
+    });
+
+    const finalYml = workingYml;
+    return finalYml;
+  };
+
   customMites.map((eachCustomMite: ICustomMite) => {
     console.log(
       `updating contents of customMite: ${eachCustomMite.miteFile.name}`
@@ -91,7 +92,7 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
       const workingFileContents = eachCustomMite.miteFile.contents
         .split(eachMemory.memoryMarker)
         .join(eachMemory.value);
-      return workingFileContents;
+      eachCustomMite.miteFile.contents = workingFileContents;
     });
     return newFileContents;
   });
@@ -122,7 +123,7 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
         customMites.forEach((eachCustomMite) => {
           console.log(`generating file: ${eachCustomMite.miteFile.name}`);
           zip.file(
-            `${eachCustomMite.miteFile.path}/${eachCustomMite.miteFile.name}/${eachCustomMite.miteFile.extension}`,
+            `${zipManikins[traefikIndex].memories[mobNameIndex].value}/${eachCustomMite.miteFile.path}/${eachCustomMite.miteFile.name}.${eachCustomMite.miteFile.extension}`,
             `${eachCustomMite.miteFile.contents}`
           );
         });
@@ -160,30 +161,33 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
           `#!/bin/sh
 docker stack deploy -c ${zipManikins[traefikIndex].memories[mobNameIndex].value}.yml ${zipManikins[traefikIndex].memories[mobNameIndex].value}
 `,
-          { unixPermissions: `0755` }
+          { unixPermissions: `755` }
         );
       zip
         .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
         .file(
+          //         .file(
           `stopstack.sh`,
           `#!/bin/sh
-docker stack rm ${zipManikins[traefikIndex].memories[mobNameIndex].value}
-`,
-          { unixPermissions: `0755` }
+        docker stack rm ${zipManikins[traefikIndex].memories[mobNameIndex].value}
+        `,
+          { unixPermissions: `755` }
+          //         );
         );
     });
   };
 
   createZipContents();
   makeFoldersAndConvenienceScripts();
+
   zip
     .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
-    .folder(`traefik`)
-    .file(`acme.json`, ``, { unixPermissions: `0600` });
+    .file(`traefik/acme.json`, ``, { unixPermissions: `600` });
   zip
     .generateAsync({
       compression: `DEFLATE`,
       compressionOptions: { level: 9 },
+      platform: `UNIX`,
       type: `blob`
     })
     .then(function(content) {

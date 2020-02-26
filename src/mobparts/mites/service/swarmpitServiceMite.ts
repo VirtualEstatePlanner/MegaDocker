@@ -33,7 +33,7 @@ export const swarmpitServiceMite: IMite = {
     - "traefik.enable=true"
     - "traefik.port=8080"
     - "traefik.backend=swarmpit"
-    - "traefik.docker.network=traefik"
+    - "traefik.docker.network=[[MOBNAME]]_traefik"
     - "traefik.frontend.rule=Host:swarmpit.[[PRIMARYDOMAIN]],swarmpit.[[SECONDARYDOMAIN]]"
     - "com.MegaDocker.description=Swarmpit - a web GUI for Docker Swarm."
    restart_policy:
@@ -42,7 +42,7 @@ export const swarmpitServiceMite: IMite = {
  swarmpit-db:
   image: couchdb
   volumes:
-   - ~/Documents/MegaDocker/[[MOBNAME]]/Swarmpit/database:/opt/couchdb/data
+   - ~/Documents/MegaDocker/[[MOBNAME]]/swarmpit/database:/opt/couchdb/data
   networks:
    - swarmpit
   deploy:
