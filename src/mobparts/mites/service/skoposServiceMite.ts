@@ -20,11 +20,14 @@ export const skoposServiceMite: IMite = {
    restart_policy:
     condition: on-failure
    labels:
-    - "traefik.enable=true"
-    - "traefik.port=8100"
-    - "traefik.backend=skopos"
-    - "traefik.frontend.rule=Host:skopos.[[PRIMARYDOMAIN]],skopos.[[SECONDARYDOMAIN]]"
-    - "com.MegaDocker.description=Skopos - an application discovery and CI/CD for Docker Swarm Tool"
+    - 'traefik.enable=true'
+    - 'traefik.docker.network=[[MOBNAME]]_traefik'
+    - 'traefik.http.routers.skopos.entrypoints=https'
+    - 'traefik.http.routers.skopos.middlewares.forcesecure'
+    - 'traefik.http.routers.skopos.rule=Host("skopos.[[PRIMARYDOMAIN]]") || Host("skopos.[[SECONDARYDOMAIN]]")'
+#    - 'traefik.http.routers.skopos.tls.certresolver=wildcard'
+    - 'traefik.http.services.skopos.loadbalancer.server.port=80'
+    - 'traefik.http.routers.skopos.service=[[MOBNAME]]_skopos'
 
 #End Skopos Service Section
 

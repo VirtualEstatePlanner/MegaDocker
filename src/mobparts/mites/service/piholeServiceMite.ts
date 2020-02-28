@@ -11,7 +11,7 @@ export const piholeServiceMite: IMite = {
   miteIndex: 2011,
   miteString: `
   
-#Begin pihole service section
+# Begin pihole service section
 
  pihole:
   image: pihole/pihole:latest
@@ -36,14 +36,22 @@ export const piholeServiceMite: IMite = {
    restart_policy:
     condition: on-failure
    labels:
-   labels:
-    - "traefik.enable=true"
-    - "traefik.docker.network=[[MOBNAME]]_traefik"
-    - "traefik.http.routers.pihole.rule=Host('pihole.[[PRIMARYDOMAIN]]')"
-    - "traefik.http.services.pihole.loadbalancer.server.port=80"
-    - "traefik.http.routers.api.entrypoints=web"
-    - "traefik.http.routers.api.entrypoints=websecure"
- 
- #End pihole service section
- `
+    - 'traefik.enable=true'
+    - 'traefik.docker.network=[[MOBNAME]]_traefik'
+    - 'traefik.http.services.pihole.loadbalancer.server.port=80'
+    - 'traefik.http.routers.pihole.entrypoints=http, https'
+    - 'traefik.http.routers.pihole-secured.entrypoints=https'
+    - 'traefik.http.middlewares.forcesecure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.pihole.middlewares.auto-tls'
+    - 'traefik.http.routers.pihole.rule=Host("pihole.[[PRIMARYDOMAIN]]") || Host("pihole.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.pihole-secured.rule=Host("pihole.[[PRIMARYDOMAIN]]") || Host("pihole.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.pihole.service=pihole'
+    - 'traefik.http.routers.pihole-secured.tls.certresolver=wildcard'
+    - 'traefik.http.routers.pihole-secured.tls.domains[0].main=[[PRIMARYDOMAIN]]'
+    - 'traefik.http.routers.pihole-secured.tls.domains[0].sans=*.[[PRIMARYDOMAIN]]'
+    - 'traefik.http.routers.pihole-secured.tls.domains[1].main=[[SECONDARYDOMAIN]]'
+    - 'traefik.http.routers.pihole-secured.tls.domains[1].sans=*.[[SECONDARYDOMAIN]]'
+
+# End pihole service section
+`
 };

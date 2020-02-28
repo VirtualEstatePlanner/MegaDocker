@@ -1,11 +1,11 @@
-export const cloudflareApiKeyValidator = (
-  cloudflareApiKeyString: string
+export const cloudflareApiTokenValidator = (
+  cloudflareApiTokenString: string
 ): boolean => {
   const isExactlyFortyCharacters: boolean =
-    cloudflareApiKeyString.length === 40;
+    cloudflareApiTokenString.length === 40;
   const isAlphanumericRegex: RegExp = new RegExp(`[a-zA-Z0-9_-]`);
   const containsOnlyAlphanumerics: boolean = isAlphanumericRegex.test(
-    cloudflareApiKeyString
+    cloudflareApiTokenString
   )
     ? true
     : false;

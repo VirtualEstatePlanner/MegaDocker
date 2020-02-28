@@ -9,6 +9,7 @@ import { IManikin } from '../../interfaces/IManikin';
 import { swarmpitServiceMite } from '../mites/service/swarmpitServiceMite';
 import { swarmpitNetworkMite } from '../mites/network/swarmpitNetworkMite';
 import swarmpitIcon from '../../images/manikin-icons/swarmpitIcon.png';
+//import { swarmpitCouchbasePassword } from '../memories/swarmpitCouchbasePassword';
 
 /**
  * swarmpit Manikin
@@ -20,9 +21,11 @@ export const swarmpitManikin: IManikin = {
   folder: `swarmpit`,
   manikinIcon: swarmpitIcon,
   manikinIndex: 16,
-  memories: [],
+  memories: [
+    /*swarmpitCouchbasePassword*/
+  ],
   name: `Swarmpit`,
   mites: [swarmpitServiceMite, swarmpitNetworkMite],
   ports: [],
-  subfolders: [`database`]
+  subfolders: [`couchbase-data`, `influx-data`]
 };

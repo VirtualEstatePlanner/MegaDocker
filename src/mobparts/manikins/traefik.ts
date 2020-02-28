@@ -6,8 +6,7 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
-import { cloudflareAPIKey } from '../memories/cloudflareAPIKey';
-import { cloudflareEmail } from '../memories/cloudflareEmail';
+import { cloudflareAPIToken } from '../memories/cloudflareAPIToken';
 import { letsEncryptEmail } from '../memories/letsEncryptEmail';
 import { primaryDomain } from '../memories/primaryDomain';
 import { secondaryDomain } from '../memories/secondaryDomain';
@@ -29,8 +28,7 @@ export const traefikManikin: IManikin = {
   memories: [
     mobName,
     letsEncryptEmail,
-    cloudflareEmail,
-    cloudflareAPIKey,
+    cloudflareAPIToken,
     primaryDomain,
     secondaryDomain
   ],

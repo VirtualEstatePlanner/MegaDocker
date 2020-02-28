@@ -22,6 +22,7 @@ export interface IMemory {
   memoryIndex: number;
   memoryMarker:
     | `[[CLOUDFLAREAPIKEY]]`
+    | `[[CLOUDFLAREAPITOKEN]]`
     | `[[CLOUDFLAREEMAIL]]`
     | `[[DRUPALPOSTGRESPASSWORD]]`
     | `[[DRUPALPOSTGRESUSER]]`
@@ -43,6 +44,7 @@ export interface IMemory {
     | `[[ROCKETCHATBOTPASSWORD]]`
     | `[[ROCKETCHATBOTUSERNAME]]`
     | `[[SECONDARYDOMAIN]]`
+    | `[[SWARMPITCOUCHBASEPASSWORD]]`
     | `[[WORDPRESSMARIADBPASSWORD]]`
     | `[[WORDPRESSMARIADBROOTPASSWORD]]`
     | `[[WORDPRESSMARIADBUSER]]`;

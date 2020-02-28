@@ -5,12 +5,12 @@ export const piholeNetworkMite: IMite = {
   miteIndex: 1011,
   miteString: `
 
-#Begin Skopos Network Section
+#Begin PiHole Network Section
 
  pihole:
   driver: overlay
 
-#End Skopos Network Section
+#End PiHole Network Section
   
 `
 };

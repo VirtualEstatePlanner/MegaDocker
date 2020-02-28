@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { emailValidator } from '../../functions/validators/emailValidator';
 
 export const gitlabRootEmail: IMemory = {
-  memoryIndex: 1005,
+  memoryIndex: 1008,
   memoryMarker: `[[GITLABROOTEMAIL]]`,
   shouldAutocomplete: true,
   name: `GitLab Root Email`,
