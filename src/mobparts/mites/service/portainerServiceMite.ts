@@ -21,12 +21,27 @@ export const portainerServiceMite: IMite = {
   volumes:
    - /var/run/docker.sock:/var/run/docker.sock
   deploy:
+   mode: global
+   restart_policy:
+    condition: on-failure
    labels:
-    - "traefik.backend=portainer"
-    - "traefik.docker.network=[[MOBNAME]]_traefik"
-    - "traefik.enable=true"
-    - "traefik.frontend.rule=Host:portainer.[[PRIMARYDOMAIN]],portainer.[[SECONDARYDOMAIN]]"
-    - "traefik.port=9000"
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.portainer.entrypoints=plainhttp'
+    - 'traefik.http.services.portainer.loadbalancer.server.port=9000'
+    - 'traefik.http.routers.portainer.rule=Host("portainer.[[PRIMARYDOMAIN]]") || Host("portainer.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.middlewares.portainer-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.portainer.middlewares=portainer-force-secure'
+    - 'traefik.http.routers.portainer.service=portainer'
+    - 'traefik.http.routers.portainer-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.portainer-https.rule=Host("portainer.[[PRIMARYDOMAIN]]") || Host("portainer.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.portainer-https.service=portainer'
+    - 'traefik.http.routers.portainer-https.tls=true'
+    - 'traefik.http.services.portainer-https.loadbalancer.server.port=9000'
+    - 'com.MegaDocker.description=Portainer docker host management UI'
+   placement:
+    constraints:
+     - node.role == manager
+
 
 #End Portainer Service Section
 

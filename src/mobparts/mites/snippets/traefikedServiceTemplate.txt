@@ -1,0 +1,20 @@
+  deploy:
+   restart_policy:
+    condition: on-failure
+   labels:
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.MANIKIN.entrypoints=plainhttp'
+    - 'traefik.http.services.MANIKIN.loadbalancer.server.port=PORTNUMBER'
+    - 'traefik.http.routers.MANIKIN.rule=Host("MANIKIN.[[PRIMARYDOMAIN]]") || Host("MANIKIN.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.middlewares.MANIKIN-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.MANIKIN.middlewares=MANIKIN-force-secure'
+    - 'traefik.http.routers.MANIKIN.service=MANIKIN'
+    - 'traefik.http.routers.MANIKIN-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.MANIKIN-https.rule=Host("MANIKIN.[[PRIMARYDOMAIN]]") || Host("MANIKIN.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.MANIKIN-https.service=MANIKIN'
+    - 'traefik.http.routers.MANIKIN-https.tls=true'
+    - 'traefik.http.services.MANIKIN-https.loadbalancer.server.port=PORTNUMBER'
+    - 'com.MegaDocker.description=DESCRIPTION'
+   placement:
+    constraints:
+     - node.role == manager

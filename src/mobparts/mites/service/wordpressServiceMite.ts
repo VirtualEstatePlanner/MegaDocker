@@ -26,18 +26,24 @@ export const wordpressServiceMite: IMite = {
    - WORDPRESS_DB_PASSWORD=[[WORDPRESSMARIADBPASSWORD]]
    - WORDPRESS_DB_NAME=wordpress
   volumes:
-   - ./wordpress/data:/var/www/html
+   - ./wordpress/php:/var/www/html
   deploy:
-   replicas: 1
    restart_policy:
     condition: on-failure
    labels:
-    - "traefik.enable=true"
-    - "traefik.port=80"
-    - "traefik.backend=wordpress"
-    - "traefik.frontend.rule=Host:wordpress.[[PRIMARYDOMAIN]],wordpress.[[SECONDARYDOMAIN]]"
-    - "traefik.docker.network=traefik"
-    - "com.MegaDocker.description=WordPress - WordPress blogging platform"
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.wordpress.entrypoints=plainhttp'
+    - 'traefik.http.services.wordpress.loadbalancer.server.port=80'
+    - 'traefik.http.routers.wordpress.rule=Host("wordpress.[[PRIMARYDOMAIN]]") || Host("wordpress.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.middlewares.wordpress-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.wordpress.middlewares=wordpress-force-secure'
+    - 'traefik.http.routers.wordpress.service=wordpress'
+    - 'traefik.http.routers.wordpress-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.wordpress-https.rule=Host("wordpress.[[PRIMARYDOMAIN]]") || Host("wordpress.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.wordpress-https.service=wordpress'
+    - 'traefik.http.routers.wordpress-https.tls=true'
+    - 'traefik.http.services.wordpress-https.loadbalancer.server.port=80'
+    - 'com.MegaDocker.description=WordPress - WordPress blogging platform'
 
  wordpress-mariadb:
   image: mariadb

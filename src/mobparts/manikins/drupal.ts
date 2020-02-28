@@ -11,6 +11,7 @@ import { drupalNetworkMite } from '../mites/network/drupalNetworkMite';
 import * as drupalIcon from '../../images/manikin-icons/drupalIcon.png';
 import { drupalPostgresUser } from '../memories/drupalPostgresUser';
 import { drupalPostgresPassword } from '../memories/drupalPostgresPassword';
+import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';
 
 /**
  * drupal Manikin
@@ -23,8 +24,8 @@ export const drupalManikin: IManikin = {
   manikinIcon: drupalIcon,
   manikinIndex: 1,
   memories: [drupalPostgresUser, drupalPostgresPassword],
-  mites: [drupalServiceMite, drupalNetworkMite],
+  mites: [drupalServiceMite, drupalNetworkMite, ldapNetworkMite],
   name: `Drupal`,
   ports: [],
-  subfolders: [`modules`, `profiles`, `themes`, `sites`]
+  subfolders: [`modules`, `profiles`, `themes`, `sites`, `database`]
 };

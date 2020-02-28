@@ -37,20 +37,18 @@ export const piholeServiceMite: IMite = {
     condition: on-failure
    labels:
     - 'traefik.enable=true'
-    - 'traefik.docker.network=[[MOBNAME]]_traefik'
+    - 'traefik.http.routers.pihole.entrypoints=plainhttp'
     - 'traefik.http.services.pihole.loadbalancer.server.port=80'
-    - 'traefik.http.routers.pihole.entrypoints=http, https'
-    - 'traefik.http.routers.pihole-secured.entrypoints=https'
-    - 'traefik.http.middlewares.forcesecure.redirectscheme.scheme=https'
-    - 'traefik.http.routers.pihole.middlewares.auto-tls'
     - 'traefik.http.routers.pihole.rule=Host("pihole.[[PRIMARYDOMAIN]]") || Host("pihole.[[SECONDARYDOMAIN]]")'
-    - 'traefik.http.routers.pihole-secured.rule=Host("pihole.[[PRIMARYDOMAIN]]") || Host("pihole.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.middlewares.pihole-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.pihole.middlewares=pihole-force-secure'
     - 'traefik.http.routers.pihole.service=pihole'
-    - 'traefik.http.routers.pihole-secured.tls.certresolver=wildcard'
-    - 'traefik.http.routers.pihole-secured.tls.domains[0].main=[[PRIMARYDOMAIN]]'
-    - 'traefik.http.routers.pihole-secured.tls.domains[0].sans=*.[[PRIMARYDOMAIN]]'
-    - 'traefik.http.routers.pihole-secured.tls.domains[1].main=[[SECONDARYDOMAIN]]'
-    - 'traefik.http.routers.pihole-secured.tls.domains[1].sans=*.[[SECONDARYDOMAIN]]'
+    - 'traefik.http.routers.pihole-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.pihole-https.rule=Host("pihole.[[PRIMARYDOMAIN]]") || Host("pihole.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.pihole-https.service=pihole'
+    - 'traefik.http.routers.pihole-https.tls=true'
+    - 'traefik.http.services.pihole-https.loadbalancer.server.port=80'
+    - 'com.MegaDocker.description=Pihole DNS-based adblocker'
 
 # End pihole service section
 `

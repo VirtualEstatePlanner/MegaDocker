@@ -25,5 +25,5 @@ export const elkManikin: IManikin = {
   mites: [elkServiceMite, elkNetworkMite, ldapNetworkMite],
   name: `ELK`,
   ports: [],
-  subfolders: [`elasticsearch`, `logstash`, `kibana`]
+  subfolders: [`elasticsearch-data`, `logstash-config`, `kibana`]
 };

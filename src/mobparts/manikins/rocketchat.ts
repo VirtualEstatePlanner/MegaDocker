@@ -11,6 +11,7 @@ import { rocketchatNetworkMite } from '../mites/network/rocketchatNetworkMite';
 import rocketchatIcon from '../../images/manikin-icons/rocketchatIcon.png';
 import { rocketchatBotPassword } from '../memories/rocketchatBotPassword';
 import { rocketchatBotUsername } from '../memories/rocketchatBotUsername';
+import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';
 
 /**
  * rocketchat Manikin
@@ -24,8 +25,8 @@ export const rocketchatManikin: IManikin = {
   manikinIcon: rocketchatIcon,
   manikinIndex: 14,
   memories: [rocketchatBotPassword, rocketchatBotUsername],
-  mites: [rocketchatServiceMite, rocketchatNetworkMite],
+  mites: [rocketchatServiceMite, rocketchatNetworkMite, ldapNetworkMite],
   name: `RocketChat`,
   ports: [],
-  subfolders: [`database`, `dump`, `hubot`, `uploads`]
+  subfolders: [`database`, `db-dump`, `hubot`, `uploads`]
 };

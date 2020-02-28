@@ -20,24 +20,26 @@ export const visualizerServiceMite: IMite = {
   volumes:
    - /var/run/docker.sock:/var/run/docker.sock:ro
   deploy:
-   replicas: 1
+   restart_policy:
+    condition: on-failure
+   labels:
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.visualizer.entrypoints=plainhttp'
+    - 'traefik.http.services.visualizer.loadbalancer.server.port=8080'
+    - 'traefik.http.routers.visualizer.rule=Host("visualizer.[[PRIMARYDOMAIN]]") || Host("visualizer.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.middlewares.visualizer-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.visualizer.middlewares=visualizer-force-secure'
+    - 'traefik.http.routers.visualizer.service=visualizer'
+    - 'traefik.http.routers.visualizer-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.visualizer-https.rule=Host("visualizer.[[PRIMARYDOMAIN]]") || Host("visualizer.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.visualizer-https.service=visualizer'
+    - 'traefik.http.routers.visualizer-https.tls=true'
+    - 'traefik.http.services.visualizer-https.loadbalancer.server.port=8080'
+    - 'com.MegaDocker.description=Visualizer - Container node placement web visualizer'
    placement:
     constraints:
-    - node.role == manager
-   resources:
-    limits:
-     cpus: '0.10'
-     memory: 64M
-    reservations:
-     cpus: '0.05'
-     memory: 32M
-   labels:
-    - "traefik.enable=true"
-    - "traefik.docker.network=[[MOBNAME]]_traefik"
-    - "traefik.port=8080"
-    - "traefik.backend=visualizer"
-    - "traefik.frontend.rule=Host:visualizer.[[PRIMARYDOMAIN]],visualizer.[[SECONDARYDOMAIN]]"
-    - "com.MegaDocker.description=Visualizer - Container node placement web visualizer"
+     - node.role == manager
+
 
 #End Visualizer Service Section
 

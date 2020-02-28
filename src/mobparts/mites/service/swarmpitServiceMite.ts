@@ -6,6 +6,7 @@ export const swarmpitServiceMite: IMite = {
   miteString: `
 
 #Begin Swarmpit Service Section
+
  swarmpit-app:
   image: swarmpit/swarmpit
   environment:
@@ -31,8 +32,7 @@ export const swarmpitServiceMite: IMite = {
     - 'traefik.http.routers.swarmpit-https.rule=Host("swarmpit.[[PRIMARYDOMAIN]]") || Host("swarmpit.[[SECONDARYDOMAIN]]")'
     - 'traefik.http.routers.swarmpit-https.service=swarmpit'
     - 'traefik.http.routers.swarmpit-https.tls=true'
-    - 'traefik.http.services.swarmpit-https.loadbalancer.server.port=888'
-    # maybe handled by static config                    - 'traefik.docker.network=traefik'
+    - 'traefik.http.services.swarmpit-https.loadbalancer.server.port=8080'
     - 'com.MegaDocker.description=Swarmpit App - a web GUI for Docker Swarm.'
    resources:
     limits:

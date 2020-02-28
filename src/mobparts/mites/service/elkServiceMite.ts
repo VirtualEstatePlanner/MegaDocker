@@ -18,10 +18,7 @@ export const elkServiceMite: IMite = {
   networks:
    - elk
   volumes:
-   - ./elk/elasticsearch:/usr/share/elasticsearch/data
-#  ports:
-#   - 9200:9200
-#   - 9300:9300
+   - ./elk/elasticsearch-data:/usr/share/elasticsearch/data
 
  kibana:
   image: kibana
@@ -34,17 +31,31 @@ export const elkServiceMite: IMite = {
   depends_on:
    - elasticsearch
   deploy:
+   restart_policy:
+    condition: on-failure
    labels:
-   - "traefik.backend=kibana"
-   - "traefik.docker.network=[[MOBNAME]]_traefik"
-   - "traefik.enable=true"
-   - "traefik.frontend.rule=Host:kibana.[[PRIMARYDOMAIN]],kibana.[[SECONDARYDOMAIN]]"
-   - "traefik.port=5601"
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.kibana.entrypoints=plainhttp'
+    - 'traefik.http.services.kibana.loadbalancer.server.port=5601'
+    - 'traefik.http.routers.kibana.rule=Host("kibana.[[PRIMARYDOMAIN]]") || Host("kibana.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.middlewares.kibana-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.kibana.middlewares=kibana-force-secure'
+    - 'traefik.http.routers.kibana.service=kibana'
+    - 'traefik.http.routers.kibana-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.kibana-https.rule=Host("kibana.[[PRIMARYDOMAIN]]") || Host("kibana.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.kibana-https.service=kibana'
+    - 'traefik.http.routers.kibana-https.tls=true'
+    - 'traefik.http.services.kibana-https.loadbalancer.server.port=5601'
+    - 'com.MegaDocker.description=DESCRIPTION'
+   placement:
+    constraints:
+     - node.role == manager
+
 
  logstash:
   image: logstash
   volumes:
-   - ./elk/logstash/config:/config-dir
+   - ./elk/logstash-config:/config-dir
   networks:
    - elk
   command: logstash -f /config-dir/logstash.conf
