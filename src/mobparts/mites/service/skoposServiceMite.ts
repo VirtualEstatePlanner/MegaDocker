@@ -21,13 +21,19 @@ export const skoposServiceMite: IMite = {
     condition: on-failure
    labels:
     - 'traefik.enable=true'
-    - 'traefik.docker.network=[[MOBNAME]]_traefik'
-    - 'traefik.http.routers.skopos.entrypoints=https'
-    - 'traefik.http.routers.skopos.middlewares.forcesecure'
+    - 'traefik.http.routers.skopos.entrypoints=plainhttp'
     - 'traefik.http.routers.skopos.rule=Host("skopos.[[PRIMARYDOMAIN]]") || Host("skopos.[[SECONDARYDOMAIN]]")'
-#    - 'traefik.http.routers.skopos.tls.certresolver=wildcard'
-    - 'traefik.http.services.skopos.loadbalancer.server.port=80'
-    - 'traefik.http.routers.skopos.service=[[MOBNAME]]_skopos'
+    - 'traefik.http.middlewares.skopos-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.skopos.middlewares=skopos-force-secure'
+    - 'traefik.http.routers.skopos-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.skopos-https.rule=Host("skopos.[[PRIMARYDOMAIN]]") || Host("skopos.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.services.skopos.loadbalancer.server.port=8100'
+#    - 'traefik.http.services.skopos-https.loadbalancer.server.port=8100'
+    - 'traefik.http.routers.skopos-https.service=skopos'
+    - 'traefik.http.routers.skopos-https.tls=true'
+    - 'com.MegaDocker.description=Swarmpit App - a web GUI for Docker Swarm.'
+
+# maybe handled by static config                    - 'traefik.docker.network=proxy'
 
 #End Skopos Service Section
 

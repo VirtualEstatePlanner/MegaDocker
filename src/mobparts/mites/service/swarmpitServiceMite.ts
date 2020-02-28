@@ -13,8 +13,6 @@ export const swarmpitServiceMite: IMite = {
    - SWARMPIT_INFLUXDB=http://[[MOBNAME]]_swarmpit-influx-db:8086
   volumes:
    - /var/run/docker.sock:/var/run/docker.sock:ro
-  ports:
-   - 888:8080
   networks:
    - traefik
    - swarmpit
@@ -23,13 +21,18 @@ export const swarmpitServiceMite: IMite = {
     condition: on-failure
    labels:
     - 'traefik.enable=true'
-    - 'traefik.docker.network=[[MOBNAME]]_traefik'
-    - 'traefik.http.services.swarmpit.loadbalancer.server.port=80'
-    - 'traefik.http.routers.swarmpit.service=[[MOBNAME]]_swarmpit-app'
-    - 'traefik.http.routers.swarmpit.entrypoints=https'
-    - 'traefik.http.routers.swarmpit.middlewares.forcesecure'
+    - 'traefik.http.routers.swarmpit.entrypoints=plainhttp'
+    - 'traefik.http.services.swarmpit.loadbalancer.server.port=8080'
     - 'traefik.http.routers.swarmpit.rule=Host("swarmpit.[[PRIMARYDOMAIN]]") || Host("swarmpit.[[SECONDARYDOMAIN]]")'
-#    - 'traefik.http.routers.swarmpit.tls.certresolver=wildcard'
+    - 'traefik.http.middlewares.swarmpit-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.swarmpit.middlewares=swarmpit-force-secure'
+    - 'traefik.http.routers.swarmpit.service=swarmpit'
+    - 'traefik.http.routers.swarmpit-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.swarmpit-https.rule=Host("swarmpit.[[PRIMARYDOMAIN]]") || Host("swarmpit.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.swarmpit-https.service=swarmpit'
+    - 'traefik.http.routers.swarmpit-https.tls=true'
+    - 'traefik.http.services.swarmpit-https.loadbalancer.server.port=888'
+    # maybe handled by static config                    - 'traefik.docker.network=traefik'
     - 'com.MegaDocker.description=Swarmpit App - a web GUI for Docker Swarm.'
    resources:
     limits:
