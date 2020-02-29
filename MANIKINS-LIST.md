@@ -4,15 +4,15 @@
 
 Manikins in **bold** are currently 100% functional
 
-1.  Backup : currently just a stub
-2.  Drupal :
-3.  ELK :
-4.  E-mail : needs Traefik certs exported
-5.  Ghost :
-6.  GitLab :
-7.  LDAP :
-8.  Ledger : currently barely more than a stub
-9.  Nextcloud : might be an owncloud copy
+1. Backup : currently just a stub
+2. Drupal :
+3. ELK :
+4. E-mail : needs Traefik certs exported
+5. Ghost :
+6. GitLab :
+7. LDAP :
+8. Ledger : currently barely more than a stub
+9. Nextcloud : might be an owncloud copy
 10. Nginx :
 11. Owncloud : might be a nextcloud copy
 12. Pihole : needs LDAP for auth
