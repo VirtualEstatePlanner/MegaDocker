@@ -14,14 +14,14 @@ export const elkServiceMite: IMite = {
 # Begin ELK Service Section
  
  elasticsearch:
-  image: elasticsearch
+  image: elasticsearch:7.6.0
   networks:
    - elk
   volumes:
    - ./elk/elasticsearch-data:/usr/share/elasticsearch/data
 
  kibana:
-  image: kibana
+  image: kibana:7.6.0
   networks:
    - traefik
    - elk
@@ -53,7 +53,7 @@ export const elkServiceMite: IMite = {
 
 
  logstash:
-  image: logstash
+  image: logstash:7.6.0
   volumes:
    - ./elk/logstash-config:/config-dir
   networks:

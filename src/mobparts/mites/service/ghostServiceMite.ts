@@ -14,7 +14,7 @@ export const ghostServiceMite: IMite = {
 #Begin Ghost Service Section
 
  ghost:
-  image: ghost:1-alpine
+  image: ghost
   networks:
    - ghost
    - traefik
@@ -47,7 +47,7 @@ export const ghostServiceMite: IMite = {
   networks:
    - ghost
   volumes:
-   - ./ghost/database:/var/lib/mysql
+   - ./ghost/mariadb:/var/lib/mysql
   environment:
    - MYSQL_ROOT_PASSWORD=[[GHOSTMARIADBROOTPASSWORD]]
   deploy:

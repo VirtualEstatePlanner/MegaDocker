@@ -54,7 +54,7 @@ export const emailServiceMite: IMite = {
    - email
    - traefik
   volumes:
-   - ./[[MOBNAME]]/email/rainloop:/rainloop/data
+   - ./email/rainloop:/rainloop/data
   deploy:
    restart_policy:
     condition: on-failure
