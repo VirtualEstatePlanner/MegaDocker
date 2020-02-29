@@ -2,7 +2,10 @@
 
 ## a list of changes per version number
 
-- `v0.2.5-pre-alpha` : **completed core functions test**
+- `v0.2.8-pre-alpha` : **completed Docker swarm zip downloads**
+- `v0.2.7-pre-alpha` : added React Context for state management
+- `v0.2.6-pre-alpha` : added React UI
+- `v0.2.5-pre-alpha` : completed core functions test
 - `v0.2.4-pre-alpha` : switched to CRATE boilerplate, added unit test
 - `v0.2.3-pre-alpha` : fixed buildchain
 - `v0.2.2-pre-alpha` : created a working `React` interface, cleaned some cruff out

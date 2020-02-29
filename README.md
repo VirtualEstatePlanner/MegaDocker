@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019 The MegaDocker Group. All rights reserved.'
 
-# MegaDocker v0.2.7-alpha
+# MegaDocker v0.2.9-alpha
 
 Modular Enterprise-Grade Automated Docker
 
@@ -12,7 +12,7 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
-- Added React.Context API for state management
+- reverse-proxied manikins are now possible
 
 ![alt text](./src/images/icons/icon.png 'MegaDockerLogo')
 
@@ -91,7 +91,7 @@ The Manikin pointed at the making-mallet, mutely turning it's eyeless head to fa
 
 For a moment, The Mad Doctor meditated on what dreadful monstrosities might derive from the machinations of the Manikin, but only for the merest moment. Ding! Ding! Ding! Another Manikin manifested on the making-table. Ding! Ding! Ding! As more of the magic dolls were developed from the mound of Mites, the mushrooming Mob of Manikins began helping to mold the parts of their duplicate draftees. Ding! Ding! Ding! As the Mob grew more multitudinous and the mound of Mites in turn more miniscule, the Mad Doctor began to sing along with the Manikins in their made-up mumbling diction. Ding! Ding! Ding! The din of The Mad Doctor's making-mallet drummed out a delerious and disconcerting metre on his making-table.
 
-Minutes merged into hours, and before The Mad Doctor knew it the, the morning of the next day had dawned, and the seemingly measureless mound of Mites had been undividedly depleted. Surrounding The Mad Doctor was a mighty Mob of Manikins - mute, but mimicking The Mad Doctor (mostly). Drained, The Mad Doctor desisted, depositing his making-mallet at his side. The mystic demands of the Manikins' magic had debiltated The Mad Doctor. He got dizzy, and reached in vain for the edge of the making-table, but fainted, descending to the dirt floor, and knocking over his making-mallet with a final "ding", muted by only his messy mullet.
+Minutes merged into hours, and before The Mad Doctor knew it, the morning of the next day had dawned, and the seemingly measureless mound of Mites had been undividedly depleted. Surrounding The Mad Doctor was a mighty Mob of Manikins - mute, but mimicking The Mad Doctor (mostly). Drained, The Mad Doctor desisted, depositing his making-mallet at his side. The mystic demands of the Manikins' magic had debiltated The Mad Doctor. He got dizzy, and reached in vain for the edge of the making-table, but fainted, descending to the dirt floor, and knocking over his making-mallet with a final "ding", muted by only his messy mullet.
 
 The Manikins looked down at The Mad Doctor from the mantle, the making-table, and the many other places they had dispositioned themsleves. They looked at each other, and their mumbled music took on a questioning tone as they debated their next move. The Mad Doctor had helped them, and so they decided to maintain him mutually. The Mob moved as one magnanimously motivated dedicated division of disciplined diabolic minions. The Manikins marshalled their masses and moved The Mad Doctor to his mattress to rest.
 
