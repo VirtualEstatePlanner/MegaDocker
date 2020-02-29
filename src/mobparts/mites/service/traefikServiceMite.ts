@@ -6,6 +6,8 @@
 
 import { IMite } from '../../../interfaces/IMite';
 
+// TODO: fix traefik authorization to use ldap
+
 export const traefikServiceMite: IMite = {
   type: `DockerSwarmService`,
   miteIndex: 2017,
@@ -18,7 +20,6 @@ export const traefikServiceMite: IMite = {
   command:
    - '--accesslog=true'
    - '--api.dashboard=true'
-#   - '--api.insecure=true'
    - '--certificatesresolvers.cloudflarecerts.acme.email=[[LETSENCRYPTEMAIL]]'
    - '--certificatesresolvers.cloudflarecerts.acme.storage=/acme.json'
    - '--certificatesresolvers.cloudflarecerts.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory'
@@ -27,9 +28,7 @@ export const traefikServiceMite: IMite = {
    - '--certificatesresolvers.cloudflarecerts.acme.dnschallenge.resolvers=1.1.1.1:53, 1.0.0.1:53'
    - '--entrypoints.plainhttp.address=:80'
    - '--entrypoints.encryptedhttp.address=:443'
-#   - '--entrypoints.dashboard.address=:8080'
    - '--log.level=INFO'
-#   - '--log.level=DEBUG'
    - '--providers.docker.endpoint=unix:///var/run/docker.sock'
    - '--providers.docker.exposedbydefault=false'
    - '--providers.docker.network=[[MOBNAME]]_traefik'
