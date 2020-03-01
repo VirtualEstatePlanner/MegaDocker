@@ -57,8 +57,8 @@ export const drupalServiceMite: IMite = {
   image: postgres
   networks:
    - drupal
-  ports:
-   - 5432:5432
+#  ports:
+#   - 5432:5432
   volumes:
    - ./drupal/database:/var/lib/postgresql/data
   environment:

@@ -23,14 +23,14 @@ export const ghostServiceMite: IMite = {
    - database__connection__host=[[MOBNAME]]_ghost-mariadb
    - database__connection__user=root
    - database__connection__password=[[GHOSTMARIADBROOTPASSWORD]]
-   - database__connection__database=mariadb
+   - database__connection__database=[[MOBNAME]]_ghost-mariadb
   deploy:
    restart_policy:
     condition: on-failure
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.ghost.entrypoints=plainhttp'
-    - 'traefik.http.services.ghost.loadbalancer.server.port=80'
+    - 'traefik.http.services.ghost.loadbalancer.server.port=2368'
     - 'traefik.http.routers.ghost.rule=Host("ghost.[[PRIMARYDOMAIN]]") || Host("ghost.[[SECONDARYDOMAIN]]")'
     - 'traefik.http.middlewares.ghost-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.ghost.middlewares=ghost-force-secure'
@@ -39,7 +39,7 @@ export const ghostServiceMite: IMite = {
     - 'traefik.http.routers.ghost-https.rule=Host("ghost.[[PRIMARYDOMAIN]]") || Host("ghost.[[SECONDARYDOMAIN]]")'
     - 'traefik.http.routers.ghost-https.service=ghost'
     - 'traefik.http.routers.ghost-https.tls=true'
-    - 'traefik.http.services.ghost-https.loadbalancer.server.port=80'
+    - 'traefik.http.services.ghost-https.loadbalancer.server.port=2368'
     - 'com.MegaDocker.description=Ghost blogging platform'
 
  ghost-mariadb:

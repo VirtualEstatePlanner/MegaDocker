@@ -19,7 +19,7 @@ export const nginxServiceMite: IMite = {
    - traefik
   volumes:
    - ./nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
-   - ./nginx/pages:/var/www/html
+   - ./nginx/pages:/usr/share/nginx
    - ./nginx/log:/var/log/nginx/log
    - ./nginx/conf/default.template.conf:/etc/nginx/conf.d/default.template
   environment:
@@ -29,13 +29,20 @@ export const nginxServiceMite: IMite = {
    restart_policy:
     condition: on-failure
    labels:
-    - "traefik.enable=true"
-    - "traefik.port=80"
-    - "traefik.network=[[MOBNAME]]_traefik"
-    - "traefik.backend=nginx"
-    - "traefik.frontend.rule=Host:www.[[PRIMARYDOMAIN]],www.[[SECONDARYDOMAIN]]"
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.nginx.entrypoints=plainhttp'
+    - 'traefik.http.services.nginx.loadbalancer.server.port=80'
+    - 'traefik.http.routers.nginx.rule=Host("nginx.[[PRIMARYDOMAIN]]") || Host("nginx.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.middlewares.nginx-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.nginx.middlewares=nginx-force-secure'
+    - 'traefik.http.routers.nginx.service=nginx'
+    - 'traefik.http.routers.nginx-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.nginx-https.rule=Host("nginx.[[PRIMARYDOMAIN]]") || Host("nginx.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.nginx-https.service=nginx'
+    - 'traefik.http.routers.nginx-https.tls=true'
+    - 'traefik.http.services.nginx-https.loadbalancer.server.port=80'
     - "com.MegaDocker.description=nginx - Nginx web server"
-  command: /bin/sh -c "envsubst 'www.[[PRIMARYDOMAIN]]' < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
+#  command: /bin/sh -c "envsubst 'www.[[PRIMARYDOMAIN]]' < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
 
 #End Nginx Service Section
 
