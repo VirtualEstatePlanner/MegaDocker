@@ -1,28 +1,42 @@
 # MANIKINS-LIST
 
-## a list of the first 30 manikins, which ones are working, and what features they still need
+## a list of the first 50 manikins, which ones are working, and what features they still need
 
 Manikins in **bold** are currently working, but may have more features to add
 
-1. Backup : currently just a stub
-2. CloudFlare DNS Anchor : probably exists on Docker Hub?
-3. **Drupal** : needs LDAP for auth
-4. ELK : needs kibana.yml output custom mite for configuration
-5. E-mail : needs Traefik tcp forwarding for 25, 587, 993 and super-requires LDAP
-6. **Ghost** : needs LDAP for auth
-7. GitLab : needs tcp forwarding for 22
-8. LDAP : needs tcp forwarding for 389, 636, 6443
-9. Ledger : currently barely more than a stub
-10. MegaDocker: dockerize web-app
-11. Nextcloud : might be an owncloud copy
-12. Nginx : needs complete rework
-13. Owncloud : might be a nextcloud copy
-14. **Pihole** : needs LDAP for auth
-15. **Portainer** : needs LDAP for auth
-16. RocketChat : needs so much work, probably
-17. **Skopos** : needs LDAP for auth
-18. **Swarmpit** : needs LDAP for auth
-19. **Traefik** : needs LDAP for auth
-20. **Visualizer**: principle of least access: might need LDAP for auth
-21. WebDAV : I think is just a stub
-22. **WordPress** : needs LDAP for auth
+1. Backup : currently just a stub - check funkypenguin
+2. Bitwarden : - check funkypenguin
+3. Calibre : - check funkypenguin
+4. Ceph : - check funkypenguin
+5. Collabora : - check funkypenguin
+6. DNS Anchor : probably exists on Docker Hub?
+7. **Drupal** : needs LDAP for auth
+8. ELK : needs kibana.yml output custom mite for configuration
+9. E-mail : needs Traefik tcp forwarding for 25, 587, 993 and super-requires LDAP
+10. Getter: - check funkypenguin for nzbget, rtorrent, sonarr, radarr, mylar, lazylibrarian, headphones, lidarr, nzbhydra, ombi,
+11. **Ghost** : needs LDAP for auth
+12. GitLab : needs tcp forwarding for 22
+13. Grafana :
+14. Huginn : - check funkypenguin
+15. Kanboard/Wekan : - check funkypenguin for Kanboard
+16. LDAP : needs tcp forwarding for 389, 636, 6443
+17. Ledger : currently barely more than a stub
+18. MegaDocker: dockerize web-app
+19. Nextcloud : might be an owncloud copy
+20. Nginx : needs complete rework
+21. Owncloud : might be a nextcloud copy
+22. **Pihole** : needs LDAP for auth
+23. Piwik : - check funkypenguin
+24. Plex : - check funkypenguin
+25. **Portainer** : needs LDAP for auth
+26. Portal : - check funkypenguin for heimdall
+27. PrivateBin : - check funkypenguin
+28. Prometheus :
+29. RocketChat : needs so much work, probably
+30. **Skopos** : needs LDAP for auth
+31. **Swarmpit** : needs LDAP for auth
+32. **Traefik** : needs LDAP for auth
+33. **Visualizer**: principle of least access: might need LDAP for auth
+34. Wallabag : - check funkypenguin
+35. WebDAV : I think is just a stub
+36. **WordPress** : needs LDAP for auth

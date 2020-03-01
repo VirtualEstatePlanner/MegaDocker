@@ -70,7 +70,7 @@ export const ldapServiceMite: IMite = {
    - ./traefik/certs/private/letsencrypt.key:/container/service/phpldapadmin/assets/apache2/certs/certs/letsencrypt.key:ro
    - ./traefik/certs/certs/[[PRIMARYDOMAIN]].crt:/container/service/ldap-client/assets/certs/[[PRIMARYDOMAIN]].crt:ro
    - ./traefik/certs/private/[[PRIMARYDOMAIN]].key:/container/service/ldap-client/assets/certs/[[PRIMARYDOMAIN]].key:ro
-   - ./traefik/certs/private/letssencrypt.key:/container/service/ldap-client/assets/certs/letsencrypt.key:ro
+   - ./traefik/certs/private/letsencrypt.key:/container/service/ldap-client/assets/certs/letsencrypt.key:ro
   networks:
    - ldap
    - traefik
