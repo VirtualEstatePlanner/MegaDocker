@@ -76,19 +76,16 @@ export const traefikServiceMite: IMite = {
 
  dumper:
   image: ldez/traefik-certs-dumper:latest
+  networks:
+   - traefik
   volumes:
    - ./traefik/acme.json/:/acme.json
-   - ./traefik/certs:/ssl
+   - ./traefik/certs:/output
   command: >
    file --watch
    --source /acme.json
    --version v2
-   --domain-subdir
-   --crt-name=fullchain
-   --crt-ext=.pem
-   --key-name=privkey
-   --key-ext=.pem
-   --dest /ssl
+   --dest /output
  
 # End Traefik Service Section
 

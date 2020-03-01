@@ -13,21 +13,25 @@ export const ldapServiceMite: IMite = {
 
 #Begin LDAP Service Section
 
- openldap:
+ ldap:
   image: osixia/openldap
   command:  --copy-service --loglevel debug
   networks:
    - ldap
   environment:
    - LDAP_TLS=true
-   - LDAP_TLS_CRT_FILENAME=*.[[PRIMARYDOMAIN]].crt
-   - LDAP_TLS_KEY_FILENAME=*.[[PRIMARYDOMAIN]].key
+   - LDAP_TLS_CRT_FILENAME=[[PRIMARYDOMAIN]].crt
+   - LDAP_TLS_KEY_FILENAME=[[PRIMARYDOMAIN]].key
    - LDAP_TLS_CA_CRT_FILENAME=letssencrypt.key
-   - LDAP_ORGANISATION=[[LDAPORGANIZATION]]
+   - LDAP_ORGANISATION=The MegaDocker Group
+# TODO: add [[LDAPORGANIZATION]] Memory
+#   - LDAP_ORGANISATION=[[LDAPORGANIZATION]]
    - LDAP_DOMAIN=ldap.[[PRIMARYDOMAIN]]
-   - LDAP_BASE_DN=dc=ldap,dc=megadocker,dc=com
+# TODO: add [[PRIMARYDOMAIN and split into 2 dcs]] 
+#   - LDAP_BASE_DN=dc=ldap,dc=[[PRIMARYDOMAIN domain]],dc=[[PRIMARYDOMAIN tld]]
+   - LDAP_BASE_DN=dc=ldap,dc=megadocker,dc=net
    - LDAP_ADMIN_PASSWORD=[[LDAPADMINPASSWORD]]
-   - LDAP_CONFIG_PASSWORD=[[LDAPCONFIGPASSWORD]]
+   - LDAP_CONFIG_PASSWORD=[[LDAPCONFIGURATIONPASSWORD]]
    - LDAP_TLS_CIPHER_SUITE=NORMAL
    - LDAP_TLS_VERIFY_CLIENT=allow
   tty: true
@@ -36,9 +40,9 @@ export const ldapServiceMite: IMite = {
    - ./ldap/ldif-files:/ldif
    - ./ldap/lib:/var/lib/ldap
    - ./ldap/slapd.d:/etc/ldap/slapd.d
-   - ./traefik/ssl/certs/*.[[PRIMARYDOMAIN]].crt:/container/service/slapd/assets/certs/*.[[PRIMARYDOMAIN]].crt:ro
-   - ./traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/container/service/slapd/assets/certs/*.[[PRIMARYDOMAIN]].key:ro
-   - ./traefik/ssl/private/letssencrypt.key:/container/service/slapd/assets/certs/letsencrypt.key:ro
+   - ./traefik/certs/certs/[[PRIMARYDOMAIN]].crt:/container/service/slapd/assets/certs/[[PRIMARYDOMAIN]].crt:ro
+   - ./traefik/certs/private/[[PRIMARYDOMAIN]].key:/container/service/slapd/assets/certs/[[PRIMARYDOMAIN]].key:ro
+   - ./traefik/certs/private/letsencrypt.key:/container/service/slapd/assets/certs/letsencrypt.key:ro
   ports:
    - 389:389
    - 636:636
@@ -48,30 +52,30 @@ export const ldapServiceMite: IMite = {
  ldapadmin:
   image: osixia/phpldapadmin:latest
   environment:
-   - SERVER_NAME=[[MOBNAME]]_openldap
-   - PHPLDAPADMIN_LDAP_HOSTS=[[MOBNAME]]_openldap
+   - SERVER_NAME=[[MOBNAME]]_ldap
+   - PHPLDAPADMIN_LDAP_HOSTS=[[MOBNAME]]_ldap
    - PHPLDAPADMIN_TRUST_PROXY_SSL=true
    - PHPLDAPADMIN_HTTPS=false
    - PHPLDAPADMIN_SERVER_ADMIN=[[LETSENCRYPTEMAIL]]
-   - PHPLDAPADMIN_HTTPS_CRT_FILENAME=certs/*.[[PRIMARYDOMAIN]].crt
-   - PHPLDAPADMIN_HTTPS_KEY_FILENAME=private/*.[[PRIMARYDOMAIN]].key
+   - PHPLDAPADMIN_HTTPS_CRT_FILENAME=certs/[[PRIMARYDOMAIN]].crt
+   - PHPLDAPADMIN_HTTPS_KEY_FILENAME=private/[[PRIMARYDOMAIN]].key
    - PHPLDAPADMIN_HTTPS_CA_CRT_FILENAME=private/letsencrypt.key
-   - PHPLDAPADMIN_LDAP_CLIENT_TLS_CA_CRT_FILENAME=*.[[PRIMARYDOMAIN]].crt
-   - PHPLDAPADMIN_LDAP_CLIENT_TLS_CRT_FILENAME=*.[[PRIMARYDOMAIN]].key
+   - PHPLDAPADMIN_LDAP_CLIENT_TLS_CA_CRT_FILENAME=[[PRIMARYDOMAIN]].crt
+   - PHPLDAPADMIN_LDAP_CLIENT_TLS_CRT_FILENAME=[[PRIMARYDOMAIN]].key
    - PHPLDAPADMIN_LDAP_CLIENT_TLS_KEY_FILENAME=letsencrypt.key
-  hostname: ldap-admin.[[PRIMARYDOMAIN]]
+#  hostname: ldapadmin.[[PRIMARYDOMAIN]]
   volumes:
-   - ./traefik/ssl/certs/*.[[PRIMARYDOMAIN]].crt:/container/service/phpldapadmin/assets/apache2/certs/certs/*.[[PRIMARYDOMAIN]].crt
-   - ./traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/container/service/phpldapadmin/assets/apache2/certs/private/*.[[PRIMARYDOMAIN]].key
-   - ./traefik/ssl/private/letsencrypt.key:/container/service/phpldapadmin/assets/apache2/certs/certs/letsencrypt.key
-   - ./traefik/ssl/certs/*.[[PRIMARYDOMAIN]].crt:/container/service/ldap-client/assets/certs/*.[[PRIMARYDOMAIN]].crt
-   - ./traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/container/service/ldap-client/assets/certs/*.[[PRIMARYDOMAIN]].key
-   - ./traefik/ssl/private/letssencrypt.key:/container/service/ldap-client/assets/certs/letsencrypt.key
+   - ./traefik/certs/certs/[[PRIMARYDOMAIN]].crt:/container/service/phpldapadmin/assets/apache2/certs/certs/[[PRIMARYDOMAIN]].crt:ro
+   - ./traefik/certs/private/[[PRIMARYDOMAIN]].key:/container/service/phpldapadmin/assets/apache2/certs/private/[[PRIMARYDOMAIN]].key:ro
+   - ./traefik/certs/private/letsencrypt.key:/container/service/phpldapadmin/assets/apache2/certs/certs/letsencrypt.key:ro
+   - ./traefik/certs/certs/[[PRIMARYDOMAIN]].crt:/container/service/ldap-client/assets/certs/[[PRIMARYDOMAIN]].crt:ro
+   - ./traefik/certs/private/[[PRIMARYDOMAIN]].key:/container/service/ldap-client/assets/certs/[[PRIMARYDOMAIN]].key:ro
+   - ./traefik/certs/private/letssencrypt.key:/container/service/ldap-client/assets/certs/letsencrypt.key:ro
   networks:
    - ldap
    - traefik
   depends_on:
-   - openldap
+   - ldap
   deploy:
    restart_policy:
     condition: on-failure
@@ -79,12 +83,12 @@ export const ldapServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.ldapadmin.entrypoints=plainhttp'
     - 'traefik.http.services.ldapadmin.loadbalancer.server.port=80'
-    - 'traefik.http.routers.ldapadmin.rule=Host("ldapadmin.megadocker.net") || Host("ldapadmin.megadocker.indfo")'
+    - 'traefik.http.routers.ldapadmin.rule=Host("ldapadmin.[[PRIMARYDOMAIN]]") || Host("ldapadmin.[[SECONDARYDOMAIN]]")'
     - 'traefik.http.middlewares.ldapadmin-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.ldapadmin.middlewares=rocketchat-force-secure'
     - 'traefik.http.routers.ldapadmin.service=rocketchat'
     - 'traefik.http.routers.ldapadmin-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.ldapadmin-https.rule=Host("ldapadmin.megadocker.net") || Host("ldapadmin.megadocker.indfo")'
+    - 'traefik.http.routers.ldapadmin-https.rule=Host("ldapadmin.[[PRIMARYDOMAIN]]") || Host("ldapadmin.[[SECONDARYDOMAIN]]")'
     - 'traefik.http.routers.ldapadmin-https.service=rocketchat'
     - 'traefik.http.routers.ldapadmin-https.tls=true'
     - 'traefik.http.services.ldapadmin-https.loadbalancer.server.port=80'

@@ -27,5 +27,5 @@ export const ldapManikin: IManikin = {
   mites: [ldapServiceMite, ldapNetworkMite],
   name: `LDAP`,
   ports: [],
-  subfolders: [`conf`, `pages`, `log`]
+  subfolders: [`conf`, `pages`, `log`, `certs`, `lib`, `ldif-files`, `slapd.d`]
 };

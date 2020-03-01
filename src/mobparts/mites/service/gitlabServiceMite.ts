@@ -17,7 +17,7 @@ export const gitlabServiceMite: IMite = {
   image: gitlab/gitlab-ce
   environment:
    - DB_ADAPTER=postgresql
-   - DB_HOST=GitTest_gitlab-postgres
+   - DB_HOST=[[MOBNAME]]_gitlab-postgres
    - DB_PORT=5432
    - DB_USER=[[GITLABPOSTGRESUSER]]
    - DB_PASS=[[GITLABPOSTGRESPASSWORD]]
@@ -42,7 +42,7 @@ export const gitlabServiceMite: IMite = {
    - LDAP_UID=email
    - LDAP_METHOD=start_tls
    - LDAP_VERIFY_SSL=true
-   - LDAP_CA_FILE=/ldapcerts/*.[[PRIMARYDOMAIN]].pem
+   - LDAP_CA_FILE=/ldapcerts/[[PRIMARYDOMAIN]].crt
    - LDAP_SSL_VERSION=TLSv1_2
    - LDAP_BIND_DN=dc=megadocker,dc=com
    - LDAP_PASS=[[LDAPADMINPASSWORD]]
@@ -51,7 +51,7 @@ export const gitlabServiceMite: IMite = {
    - LDAP_BASE=ou=Users
 #   - LDAP_USER_FILTER=
   volumes:
-   - ./traefik/ssl/:/ldapcerts/*.[[PRIMARYDOMAIN]].pem:ro
+   - ./traefik/certs:/ldapcerts/:ro
    - ./gitlab/config:/etc/gitlab
    - ./gitlab/logs:/var/log/gitlab
    - ./gitlab/data:/var/opt/gitlab
@@ -59,6 +59,7 @@ export const gitlabServiceMite: IMite = {
    - 22:22
   networks:
    - gitlab
+   - ldap
    - traefik
   deploy:
    restart_policy:

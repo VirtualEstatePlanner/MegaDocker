@@ -13,6 +13,7 @@ import { gitlabPostgresUser } from '../memories/gitlabPostgresUser';
 import { gitlabRootEmail } from '../memories/gitlabRootEmail';
 import { gitlabRootPassword } from '../memories/gitlabRootPassword';
 import gitlabIcon from '../../images/manikin-icons/gitlabIcon.png';
+import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';
 
 /**
  * git Manikin
@@ -30,7 +31,7 @@ export const gitlabManikin: IManikin = {
     gitlabRootEmail,
     gitlabRootPassword
   ],
-  mites: [gitlabServiceMite, gitlabNetworkMite],
+  mites: [gitlabServiceMite, gitlabNetworkMite, ldapNetworkMite],
   name: `GitLab`,
   ports: [],
   subfolders: [`config`, `data`, `logs`, `postgresql`]
