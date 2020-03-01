@@ -21,13 +21,13 @@ export const emailServiceMite: IMite = {
    - 993:993
   volumes:
    - ./email/maildata:/var/mail
-   - ./email//mailstate:/var/mail-state
+   - ./email/mailstate:/var/mail-state
    - ./email/config:/tmp/docker-mailserver
 #   - ./traefik/ssl/certs:/certs:ro
 #   - ./traefik/ssl/pem/*.[[PRIMARYDOMAIN]].pem:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]].pem:ro
 #   - ./traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]]/key:ro
 #   - ./traefik/ssl/private/letsencrypt.key:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/letsencrypt.key:ro
-   - ./traefik/ssl:/etc/letsencrypt:ro
+   - ./traefik/certs:/etc/letsencrypt:ro
   environment:
    - ENABLE_SPAMASSASSIN=1
    - ENABLE_CLAMAV=1
@@ -39,8 +39,8 @@ export const emailServiceMite: IMite = {
    - POSTMASTER_ADDRESS=postmaster@[[PRIMARYDOMAIN]]
    - PERMIT_DOCKER=network
    - SSL_TYPE=manual
-   - SSL_CERT_PATH=/certs/certs/*.[[PRIMARYDOMAIN]].crt
-   - SSL_KEY_PATH=/certs/private/*.[[PRIMARYDOMAIN]].key
+   - SSL_CERT_PATH=/etc/letsencrypt/certs/[[PRIMARYDOMAIN]].crt
+   - SSL_KEY_PATH=/etc/letsencrypt/private/[[PRIMARYDOMAIN]].key
   networks:
    - email
   deploy:

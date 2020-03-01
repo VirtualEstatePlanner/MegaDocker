@@ -2,13 +2,13 @@
 
 ## a list of the first 30 manikins, which ones are working, and what features they still need
 
-Manikins in **bold** are currently working, but may have nmore features to add
+Manikins in **bold** are currently working, but may have more features to add
 
 1. Backup : currently just a stub
 2. CloudFlare DNS Anchor : probably exists on Docker Hub?
 3. **Drupal** : needs LDAP for auth
-4. ELK : needs kibana.yml output for configuration
-5. E-mail : needs tcp forwarding for 25, 587, 993
+4. ELK : needs kibana.yml output custom mite for configuration
+5. E-mail : needs Traefik tcp forwarding for 25, 587, 993 and super-requires LDAP
 6. **Ghost** : needs LDAP for auth
 7. GitLab : needs tcp forwarding for 22
 8. LDAP : needs tcp forwarding for 389, 636, 6443
