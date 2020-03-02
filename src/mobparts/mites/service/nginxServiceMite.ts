@@ -39,7 +39,7 @@ export const nginxServiceMite: IMite = {
     - 'traefik.http.routers.nginx-https.service=nginx'
     - 'traefik.http.routers.nginx-https.tls=true'
     - 'traefik.http.services.nginx-https.loadbalancer.server.port=80'
-    - "com.MegaDocker.description=nginx - Nginx web server"
+    - 'com.MegaDocker.description=nginx - Nginx web server'
 
 #End Nginx Service Section
 
