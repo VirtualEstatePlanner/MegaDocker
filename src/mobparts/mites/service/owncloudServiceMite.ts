@@ -40,7 +40,7 @@ export const owncloudServiceMite: IMite = {
    - POSTGRES_USER=[[POSTGRESUSER]]
    - POSTGRES_DB=owncloud
   networks:
-   - [[MOBNAME]]_owncloud
+   - owncloud
   volumes:
 #   - /etc/localtime:/etc/localtime:ro
    - ./owncloud/postgres:/var/lib/postgresql
@@ -49,7 +49,7 @@ export const owncloudServiceMite: IMite = {
     condition: on-failure
 
  owncloud-mariadb:
-  image: mariadb: latest
+  image: mariadb
   environment:
    - MYSQL_USER=owncloud
    - MYSQL_PASSWORD=owncloud
@@ -61,14 +61,14 @@ export const owncloudServiceMite: IMite = {
    restart_policy:
     condition: on-failure
   networks:
-   - [[MOBNAME]]_owncloud
+   - owncloud
 
- owncloud-redis:
-  image: redis: latest
+owncloud-redis:
+  image: redis
   volumes:
    - ./owncloud/redis:/var/lib/mysql
   networks:
-   - [[MOBNAME]]_owncloud
+   - owncloud
   deploy:
    restart_policy:
     condition: on-failure

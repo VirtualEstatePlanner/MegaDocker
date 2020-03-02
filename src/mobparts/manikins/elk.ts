@@ -8,8 +8,10 @@ import { IManikin } from '../../interfaces/IManikin';
 
 import { elkServiceMite } from '../mites/service/elkServiceMite';
 import { elkNetworkMite } from '../mites/network/elkNetworkMite';
-import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';
+import { kibanaDotYmlMite } from '../mites/custom/kibanaDotYmlMite';
 import elkIcon from '../../images/manikin-icons/elkIcon.png';
+import { kibanaUser } from '../memories/kibanaUser';
+import { kibanaPassword } from '../memories/kibanaPassword';
 
 /**
  * elk Manikin
@@ -21,9 +23,9 @@ export const elkManikin: IManikin = {
   isSelected: false,
   manikinIcon: elkIcon,
   manikinIndex: 2,
-  memories: [],
-  mites: [elkServiceMite, elkNetworkMite, ldapNetworkMite],
+  memories: [kibanaUser, kibanaPassword],
+  mites: [elkServiceMite, elkNetworkMite, kibanaDotYmlMite],
   name: `ELK`,
   ports: [],
-  subfolders: [`elasticsearch-data`, `logstash-config`, `kibana`]
+  subfolders: [`elasticsearch-data`, `logstash-config`, `kibana-config`]
 };

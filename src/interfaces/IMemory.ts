@@ -31,6 +31,8 @@ export interface IMemory {
     | `[[GITLABPOSTGRESUSER]]`
     | `[[GITLABROOTEMAIL]]`
     | `[[GITLABROOTPASSWORD]]`
+    | `[[KIBANAPASSWORD]]`
+    | `[[KIBANAUSER]]`
     | `[[LDAPADMINPASSWORD]]`
     | `[[LDAPADMINUSERNAME]]`
     | `[[LDAPCONFIGURATIONPASSWORD]]`

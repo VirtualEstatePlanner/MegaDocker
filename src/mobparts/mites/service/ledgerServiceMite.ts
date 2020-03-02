@@ -19,7 +19,7 @@ export const ledgerServiceMite: IMite = {
    - POSTGRES_PASSWORD: [[LEDGERPOSTGRESPASSWORD]]
    - PGDATA: /var/lib/postgresql/data/pgdata
   networks:
-   - internal
+   - ledger
   volumes:
    - "./ledger/postgres:/var/lib/postgresql/data"
 
@@ -28,8 +28,8 @@ export const ledgerServiceMite: IMite = {
    - ledger-postgres
   image: ledgersmb/ledgersmb
   networks:
-   - internal
-   - default
+   - ledger
+#   - default
   environment:
    - LSMB_WORKERS: 2
 #   - SSMTP_ROOT:

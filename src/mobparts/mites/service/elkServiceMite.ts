@@ -36,7 +36,7 @@ export const elkServiceMite: IMite = {
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.kibana.entrypoints=plainhttp'
-    - 'traefik.http.services.kibana.loadbalancer.server.port=5601'
+    - 'traefik.http.services.kibana.loadbalancer.server.port=80'
     - 'traefik.http.routers.kibana.rule=Host("kibana.[[PRIMARYDOMAIN]]") || Host("kibana.[[SECONDARYDOMAIN]]")'
     - 'traefik.http.middlewares.kibana-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.kibana.middlewares=kibana-force-secure'
@@ -45,8 +45,8 @@ export const elkServiceMite: IMite = {
     - 'traefik.http.routers.kibana-https.rule=Host("kibana.[[PRIMARYDOMAIN]]") || Host("kibana.[[SECONDARYDOMAIN]]")'
     - 'traefik.http.routers.kibana-https.service=kibana'
     - 'traefik.http.routers.kibana-https.tls=true'
-    - 'traefik.http.services.kibana-https.loadbalancer.server.port=5601'
-    - 'com.MegaDocker.description=DESCRIPTION'
+    - 'traefik.http.services.kibana-https.loadbalancer.server.port=80'
+    - 'com.MegaDocker.description=Kibana data visualization dashboard'
    placement:
     constraints:
      - node.role == manager

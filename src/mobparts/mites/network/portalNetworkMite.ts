@@ -14,7 +14,7 @@ export const portalNetworkMite: IMite = {
 #Begin Portal Network Section
 
  portal:
-  network: overlay
+  driver: overlay
 
 #End Portal Network Section
 
