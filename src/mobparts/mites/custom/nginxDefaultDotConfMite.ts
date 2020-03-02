@@ -6,7 +6,7 @@ export const nginxDefaultDotConfMite: ICustomMite = {
   miteIndex: 3000,
   miteFile: {
     path: `nginx/conf`,
-    name: `default`,
+    name: `nginx`,
     extension: `conf`,
     contents: `
 user       www www;

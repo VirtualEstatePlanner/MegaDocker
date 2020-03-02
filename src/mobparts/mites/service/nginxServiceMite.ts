@@ -18,10 +18,8 @@ export const nginxServiceMite: IMite = {
   networks:
    - traefik
   volumes:
-   - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
-   - ./nginx/pages:/usr/share/nginx
+   - ./nginx/pages:/usr/share/nginx/html
    - ./nginx/log:/var/log/nginx/log
-   - ./nginx/conf/default.template.conf:/etc/nginx/conf.d/default.template
   environment:
    - NGINX_HOST=www.[[PRIMARYDOMAIN]]
   deploy:
@@ -42,7 +40,6 @@ export const nginxServiceMite: IMite = {
     - 'traefik.http.routers.nginx-https.tls=true'
     - 'traefik.http.services.nginx-https.loadbalancer.server.port=80'
     - "com.MegaDocker.description=nginx - Nginx web server"
-#  command: /bin/sh -c "envsubst 'www.[[PRIMARYDOMAIN]]' < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf && nginx -g 'daemon off;'"
 
 #End Nginx Service Section
 

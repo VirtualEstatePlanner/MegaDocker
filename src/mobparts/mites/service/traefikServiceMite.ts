@@ -85,7 +85,7 @@ export const traefikServiceMite: IMite = {
    --dest /output
   deploy:
    restart_policy:
-    condition: never
+    condition: none
  
 # End Traefik Service Section
 

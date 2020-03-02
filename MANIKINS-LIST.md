@@ -23,7 +23,7 @@ Manikins in **bold** are currently working, but may have more features to add
 17. Ledger : currently barely more than a stub
 18. MegaDocker: dockerize web-app
 19. Nextcloud : might be an owncloud copy
-20. Nginx : needs complete rework
+20. **Nginx** : needs complete rework
 21. Owncloud : might be a nextcloud copy
 22. **Pihole** : needs LDAP for auth
 23. Piwik : - check funkypenguin
