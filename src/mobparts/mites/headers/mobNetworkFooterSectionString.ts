@@ -1,5 +1,5 @@
 export const mobNetworkFooterSectionString: string = `
 
-#End Networks Section
+# End Networks Section
 
 `;

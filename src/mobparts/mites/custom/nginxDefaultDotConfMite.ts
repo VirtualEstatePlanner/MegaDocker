@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { ICustomMite } from '../../../interfaces/ICustomMite';
 
 export const nginxDefaultDotConfMite: ICustomMite = {
@@ -127,6 +128,6 @@ types {
   video/x-ms-asf                        asx asf;
   video/x-mng                           mng;
 }
-    `
+`
   }
 };

@@ -1,6 +1,6 @@
 export const mobNetworksSectionString: string = `
 
-#Begin Networks Section
+# Begin Networks Section
 
 networks:
 

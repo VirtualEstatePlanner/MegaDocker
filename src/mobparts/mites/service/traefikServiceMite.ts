@@ -81,11 +81,12 @@ export const traefikServiceMite: IMite = {
    - ./traefik/certs:/output
   command: >
    file
+   --watch
    --version v2
    --dest /output
   deploy:
    restart_policy:
-    condition: none
+    condition: on-failure
  
 # End Traefik Service Section
 

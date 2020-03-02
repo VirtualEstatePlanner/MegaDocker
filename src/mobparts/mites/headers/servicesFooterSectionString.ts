@@ -1,5 +1,5 @@
 export const servicesFooterSectionString: string = `
 
-#End Services Section
+# End Services Section
 
 `;
