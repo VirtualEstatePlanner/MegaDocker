@@ -16,7 +16,7 @@ Manikins in **bold** are currently working, but may have more features to add
 10. Getter: - check funkypenguin for nzbget, rtorrent, sonarr, radarr, mylar, lazylibrarian, headphones, lidarr, nzbhydra, ombi,
 11. **Ghost** : needs LDAP for auth
 12. GitLab : needs tcp forwarding for 22
-13. Grafana :
+13. Grafana : - check funkypenguin
 14. Huginn : - check funkypenguin
 15. Kanboard/Wekan : - check funkypenguin for Kanboard
 16. LDAP : needs tcp forwarding for 389, 636, 6443
@@ -31,8 +31,8 @@ Manikins in **bold** are currently working, but may have more features to add
 25. **Portainer** : needs LDAP for auth
 26. Portal : - check funkypenguin for heimdall
 27. PrivateBin : - check funkypenguin
-28. Prometheus :
-29. RocketChat : needs so much work, probably
+28. Prometheus : - check funkypenguin
+29. RocketChat : has some issue connecting to mongo database
 30. **Skopos** : needs LDAP for auth
 31. **Swarmpit** : needs LDAP for auth
 32. **Traefik** : needs LDAP for auth

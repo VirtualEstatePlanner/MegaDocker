@@ -25,11 +25,22 @@ export const owncloudServiceMite: IMite = {
    restart_policy:
     condition: on-failure
    labels:
-    - "traefik.enable=true"
-    - "traefik.backend=owncloud"
-    - "traefik.frontend.rule=Host:owncloud.[[PRIMARYDOMAIN]],owncloud.[[SECONDARYDOMAIN]]"
-    - "traefik.port=80"
-    - "traefik.docker.network=[[MOBNAME]]_traefik"
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.owncloud.entrypoints=plainhttp'
+    - 'traefik.http.services.owncloud.loadbalancer.server.port=80'
+    - 'traefik.http.routers.owncloud.rule=Host("owncloud.[[PRIMARYDOMAIN]]") || Host("owncloud.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.middlewares.owncloud-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.owncloud.middlewares=owncloud-force-secure'
+    - 'traefik.http.routers.owncloud.service=owncloud'
+    - 'traefik.http.routers.owncloud-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.owncloud-https.rule=Host("owncloud.[[PRIMARYDOMAIN]]") || Host("owncloud.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.owncloud-https.service=owncloud'
+    - 'traefik.http.routers.owncloud-https.tls=true'
+    - 'traefik.http.services.owncloud-https.loadbalancer.server.port=80'
+    - 'com.MegaDocker.description=DESCRIPTION'
+   placement:
+    constraints:
+     - node.role == manager
   depends_on:
    - owncloud-postgres
 

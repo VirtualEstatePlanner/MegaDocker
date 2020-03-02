@@ -49,7 +49,6 @@ export const traefikServiceMite: IMite = {
   deploy:
    restart_policy:
     condition: any
-
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.traefik.entrypoints=plainhttp'
@@ -69,12 +68,11 @@ export const traefikServiceMite: IMite = {
     - 'traefik.http.routers.dashboard.tls.domains[1].main=[[SECONDARYDOMAIN]]'
     - 'traefik.http.routers.dashboard.tls.domains[1].sans=*.[[SECONDARYDOMAIN]]'
     - 'com.MegaDocker.description=Swarmpit App - a web GUI for Docker Swarm.'
-
    placement:
     constraints:
      - node.role == manager
 
- dumper:
+ traefik-ssl-exporter:
   image: ldez/traefik-certs-dumper:latest
   networks:
    - traefik
@@ -82,10 +80,12 @@ export const traefikServiceMite: IMite = {
    - ./traefik/acme.json/:/acme.json
    - ./traefik/certs:/output
   command: >
-   file --watch
-   --source /acme.json
+   file
    --version v2
    --dest /output
+  deploy:
+   restart_policy:
+    condition: never
  
 # End Traefik Service Section
 

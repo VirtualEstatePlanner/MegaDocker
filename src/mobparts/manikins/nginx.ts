@@ -9,8 +9,8 @@ import { IManikin } from '../../interfaces/IManikin';
 import { nginxServiceMite } from '../mites/service/nginxServiceMite';
 import { nginxNetworkMite } from '../mites/network/nginxNetworkMite';
 import nginxIcon from '../../images/manikin-icons/nginxIcon.png';
-import { nginxConfMite } from '../mites/custom/nginxConfMite';
-import { nginxConfTemplateMite } from '../mites/custom/nginxConfTemplate';
+import { nginxDefaultDotConfMite } from '../mites/custom/nginxDefaultDotConfMite';
+import { nginxDefaultDotConfDotTemplate } from '../mites/custom/nginxDefaultDotConfDotTemplate';
 import { nginxDefaultIndexHtml } from '../mites/custom/nginxDefaultIndexHtml';
 
 /**
@@ -27,8 +27,8 @@ export const nginxManikin: IManikin = {
   mites: [
     nginxServiceMite,
     nginxNetworkMite,
-    nginxConfMite,
-    nginxConfTemplateMite,
+    nginxDefaultDotConfMite,
+    nginxDefaultDotConfDotTemplate,
     nginxDefaultIndexHtml
   ],
   name: `Nginx`,

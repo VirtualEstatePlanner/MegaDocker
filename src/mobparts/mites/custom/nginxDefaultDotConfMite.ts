@@ -1,6 +1,6 @@
 import { ICustomMite } from '../../../interfaces/ICustomMite';
 
-export const nginxConfMite: ICustomMite = {
+export const nginxDefaultDotConfMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
   miteIndex: 3000,
@@ -30,15 +30,15 @@ http {
     '"$request" $body_bytes_sent "$http_referer" '
     '"$http_user_agent" "$http_x_forwarded_for"';
   access_log   logs/access.log  main;
-  sendfile     on;
+  sendfile     off;
   tcp_nopush   on;
   server_names_hash_bucket_size 128; # this seems to be required for some vhosts
 
   server { # php/fastcgi
     listen       80;
-    server_name  domain1.com www.domain1.com;
-    access_log   logs/domain1.access.log  main;
-    root         html;
+    server_name  [[PRIMARYDOMAIN]]]] www.[[PRIMARYDOMAIN]] [[SECONDARYDOMAIN]] www.[[SECONDARYDOMAIN]];
+    access_log   logs/[[PRIMARYDOMAIN]].access.log  main;
+    root         /usr/share/nginx;
 
     location ~ \.php$ {
       fastcgi_pass   127.0.0.1:1025;

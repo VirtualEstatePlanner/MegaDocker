@@ -18,12 +18,12 @@ export const nginxServiceMite: IMite = {
   networks:
    - traefik
   volumes:
-   - ./nginx/conf/default.conf:/etc/nginx/conf.d/default.conf
+   - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
    - ./nginx/pages:/usr/share/nginx
    - ./nginx/log:/var/log/nginx/log
    - ./nginx/conf/default.template.conf:/etc/nginx/conf.d/default.template
   environment:
-   - NGINX_HOST=www.megadocker.com
+   - NGINX_HOST=www.[[PRIMARYDOMAIN]]
   deploy:
    replicas: 1
    restart_policy:

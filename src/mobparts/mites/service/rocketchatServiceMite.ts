@@ -13,9 +13,10 @@ export const rocketchatServiceMite: IMite = {
 
 #Begin Rocketchat Service Section
 
- rocketchat:
+ rocketchat-app:
   image: rocketchat/rocket.chat:latest
-  command: > sh -c "for i in 'seq 1 30'; do node main.js && s=$$? && break || s=$$?; echo "Tried $$i times. Waiting 5 secs..."; sleep 5; done; (exit $$s)"
+  command: >
+   bash -c "for i in 'seq 1 30'; do INSTANCE_IP=$$(hostname -i) node main.js && s=$? && break || s=$?; echo 'Tried $i times. Waiting 5 secs...'; sleep 5; done; (exit $s)"
   networks:
    - traefik
    - rocketchat
@@ -24,12 +25,10 @@ export const rocketchatServiceMite: IMite = {
    - ./rocketchat/uploads:/app/uploads
   environment:
    - PORT=3000
-   - ROOT_URL=http://rocketchat.[[PRIMARYDOMAIN]]:3000
-   - MONGO_URL=mongodb://[[MOBNAME]]_rocketmongo:27017/rocketchat
-   - MONGO_OPLOG_URL=mongodb://[[MOBNAME]]_rocketmongo:27017/local
-   - MAIL_URL=smtp://smtp.email
-  depends_on:
-   - rocketmongo
+   - ROOT_URL=http://rocketchat.[[PRIMARYDOMAIN]]
+   - MONGO_URL=mongodb://[[MOBNAME]]_rocketchat-mongo:27017/rocketchat
+   - MONGO_OPLOG_URL=mongodb://[[MOBNAME]]_rocketchat-mongo:27017/local
+#   - MAIL_URL=smtp://smtp.email
   deploy:
    restart_policy:
     condition: on-failure
@@ -51,7 +50,7 @@ export const rocketchatServiceMite: IMite = {
     constraints:
      - node.role == manager
  
- rocketmongo:
+ rocketchat-mongo:
   image: mongo
   networks:
    - rocketchat
@@ -61,14 +60,11 @@ export const rocketchatServiceMite: IMite = {
   volumes:
    - ./rocketchat/database:/data/db
    - ./rocketchat/db-dump:/dump
-  command: mongo --smallfiles --oplogSize 128 --replSet rs0 --storageEngine=mmapv1
 
- mongo-init-replica:
+ rocketchat-mongo-replica:
   image: mongo
-#  command: 'mongo mongo/rocketchat --eval "rs.initiate({ _id: ''rs0'', members: [ { _id: 0, host: ''localhost:27017'' } ]})"'
-  command: 'mongo mongo/rocketchat --eval "rs.initiate({ _id: ''rs0'', members: [ { _id: 0, host: ''[[MOBNAME]]_rocketmongo:27017'' } ]})"'
-  depends_on:
-   - rocketmongo
+  command: >
+   bash -c "for i in 'seq 1 30'; do mongo mongo/rocketchat --eval ' rs.initiate({_id: 'rs0', members: [ { _id: 0, host: '[[MOBNAME]]_rocketchat-mongo-replica:27017' } ]})' && s=$? && break || s=$$?; echo 'Tried $i times. Waiting 5 secs...'; sleep 5; done; (exit $s)"
   networks:
    - rocketchat
 
@@ -86,9 +82,10 @@ export const rocketchatServiceMite: IMite = {
   depends_on:
    - rocketchat
   volumes:
-   - ./rocketchat/hubot/scripts:/home/hubot/scripts
-  ports:
-   - 3001:8080
+   - ./rocketchat/hubot-scripts:/home/hubot/scripts
+  deploy:
+   restart_policy:
+    condition: on-failure
 
 #End Rocketchat Service Section
 
