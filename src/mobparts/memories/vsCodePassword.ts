@@ -12,7 +12,7 @@ export const vsCodePassword: IMemory = {
   memoryMarker: `[[VSCODEPASSWORD]]`,
   shouldAutocomplete: false,
   name: `VS Code Password`,
-  tooltip: `Choose the password to access VS Code`,
+  tooltip: `Choose the password to access VS Code through noVNC`,
   value: ``,
   valueType: 'password',
   isReady: false,

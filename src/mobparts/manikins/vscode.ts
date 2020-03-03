@@ -8,8 +8,9 @@ import { IManikin } from '../../interfaces/IManikin';
 
 import { vsCodeServiceMite } from '../mites/service/vsCodeServiceMite';
 import { vsCodeNetworkMite } from '../mites/network/vsCodeNetworkMite';
-import visualizerIcon from '../../images/manikin-icons/visualizerIcon.png';
+import * as vsCodeIcon from '../../images/manikin-icons/vsCodeIcon.png';
 import { vsCodePassword } from '../memories/vsCodePassword';
+import { vsCodeIndexDotHtmlMite } from '../mites/custom/vsCodeIndexDotHtmlMite';
 
 /**
  * visualizer Manikin
@@ -19,11 +20,11 @@ export const vsCodeManikin: IManikin = {
   folder: `vscode`,
   isCore: false,
   isSelected: false,
-  manikinIcon: visualizerIcon,
+  manikinIcon: vsCodeIcon,
   manikinIndex: 18,
   memories: [vsCodePassword],
-  mites: [vsCodeServiceMite, vsCodeNetworkMite],
+  mites: [vsCodeServiceMite, vsCodeNetworkMite, vsCodeIndexDotHtmlMite],
   name: `VS Code`,
   ports: [],
-  subfolders: [`project`, `code-server`]
+  subfolders: [`project`, `pages`]
 };

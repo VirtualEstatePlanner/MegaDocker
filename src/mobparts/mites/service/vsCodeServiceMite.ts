@@ -14,19 +14,21 @@ export const vsCodeServiceMite: IMite = {
 # Begin VS Code Service Section
 
  vscode:
-  image: codercom/code-server
+  image: beneventsur/visual-studio-code
   volumes:
-   - ./vscode/project:/home/coder/project
-   - ./vscode/code-server:/home/coder/.local/share/code-server
+   - ./vscode/pages/index.html:/noVNC/index.html
+   - ./vscode/project:/root/project
+  networks:
+   - traefik
   environment:
-   PASSWORD: [[VSCODEPASSWORD]]
+   - PASSWORD=[[VSCODEPASSWORD]]
   deploy:
    restart_policy:
     condition: on-failure
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.vscode.entrypoints=plainhttp'
-    - 'traefik.http.services.vscode.loadbalancer.server.port=8080'
+    - 'traefik.http.services.vscode.loadbalancer.server.port=6080'
     - 'traefik.http.routers.vscode.rule=Host("vscode.[[PRIMARYDOMAIN]]") || Host("vscode.[[SECONDARYDOMAIN]]")'
     - 'traefik.http.middlewares.vscode-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.vscode.middlewares=vscode-force-secure'
@@ -35,7 +37,7 @@ export const vsCodeServiceMite: IMite = {
     - 'traefik.http.routers.vscode-https.rule=Host("vscode.[[PRIMARYDOMAIN]]") || Host("vscode.[[SECONDARYDOMAIN]]")'
     - 'traefik.http.routers.vscode-https.service=vscode'
     - 'traefik.http.routers.vscode-https.tls=true'
-    - 'traefik.http.services.vscode-https.loadbalancer.server.port=8080'
+    - 'traefik.http.services.vscode-https.loadbalancer.server.port=6080'
     - 'com.MegaDocker.description=VS Code - Development environment'
    placement:
     constraints:
