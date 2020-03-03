@@ -16,8 +16,10 @@ import { skoposNetworkMite } from '../mites/network/skoposNetworkMite';
 export const skoposManikin: IManikin = {
   description: `Skopos Continuous Integraion/Continuous Deployment service`,
   folder: `skopos`,
-  isCore: true,
-  isSelected: true,
+  // isCore: true,
+  // isSelected: true,
+  isCore: false,
+  isSelected: false,
   manikinIcon: skoposIcon,
   manikinIndex: 15,
   memories: [],

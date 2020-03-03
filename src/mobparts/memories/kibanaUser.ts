@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const kibanaUser: IMemory = {
-  memoryIndex: 1007,
+  memoryIndex: 1014,
   memoryMarker: `[[KIBANAUSER]]`,
   shouldAutocomplete: false,
   name: `Kibana User`,

@@ -6,6 +6,8 @@ import { elkManikin } from '../mobparts/manikins/elk';
 import { emailManikin } from '../mobparts/manikins/email';
 import { ghostManikin } from '../mobparts/manikins/ghost';
 import { gitlabManikin } from '../mobparts/manikins/gitlab';
+import { heimdallManikin } from '../mobparts/manikins/heimdall';
+import { kanboardManikin } from '../mobparts/manikins/kanboard';
 import { ldapManikin } from '../mobparts/manikins/ldap';
 import { ledgerManikin } from '../mobparts/manikins/ledger';
 import { nextcloudManikin } from '../mobparts/manikins/nextcloud';
@@ -13,7 +15,6 @@ import { nginxManikin } from '../mobparts/manikins/nginx';
 import { owncloudManikin } from '../mobparts/manikins/owncloud';
 import { piholeManikin } from '../mobparts/manikins/pihole';
 import { portainerManikin } from '../mobparts/manikins/portainer';
-import { portalManikin } from '../mobparts/manikins/portal';
 import { rocketchatManikin } from '../mobparts/manikins/rocketchat';
 import { skoposManikin } from '../mobparts/manikins/skopos';
 import { swarmpitManikin } from '../mobparts/manikins/swarmpit';
@@ -32,6 +33,8 @@ export const allManikins: IManikin[] = [
   emailManikin,
   ghostManikin,
   gitlabManikin,
+  heimdallManikin,
+  kanboardManikin,
   ldapManikin,
   ledgerManikin,
   nextcloudManikin,
@@ -39,7 +42,6 @@ export const allManikins: IManikin[] = [
   owncloudManikin,
   piholeManikin,
   portainerManikin,
-  portalManikin,
   rocketchatManikin,
   skoposManikin,
   swarmpitManikin,

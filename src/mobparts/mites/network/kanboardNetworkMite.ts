@@ -6,17 +6,17 @@
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const portalNetworkMite: IMite = {
+export const kanboardNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
   miteIndex: 1013,
   miteString: `
 
-#Begin Portal Network Section
+# Begin Kanboard Network Section
 
- portal:
+ kanboard:
   driver: overlay
 
-#End Portal Network Section
+# End Kanboard Network Section
 
 `
 };

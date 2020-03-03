@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const mobName: IMemory = {
-  memoryIndex: 1016,
+  memoryIndex: 1021,
   memoryMarker: `[[MOBNAME]]`,
   shouldAutocomplete: false,
   name: `Mob Name`,

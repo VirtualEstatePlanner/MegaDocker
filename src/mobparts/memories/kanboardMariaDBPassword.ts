@@ -1,18 +1,18 @@
-//  primaryDomain.ts
+//  wordpressMariaDBPassword.ts
 //  MegaDocker
-//  The variable for the domain name of your primary web domain
+//  The variable for Wordpress's MariaDB User's password
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
-export const piholePassword: IMemory = {
-  memoryIndex: 1022,
-  memoryMarker: `[[PIHOLEPASSWORD]]`,
+export const kanboardMariaDBPassword: IMemory = {
+  memoryIndex: 1010,
+  memoryMarker: `[[KANBOARDMARIADBPASSWORD]]`,
   shouldAutocomplete: false,
-  name: `Pihole Password`,
-  tooltip: `Choose a password for the Pihole admin account to login to the web interface`,
+  name: `Kanboard MariaDB password`,
+  tooltip: `Please enter your Kanboard MariaDB Password here`,
   value: ``,
   valueType: 'password',
   isReady: false,

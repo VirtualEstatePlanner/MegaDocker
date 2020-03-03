@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const ledgerPostgresPassword: IMemory = {
-  memoryIndex: 1013,
+  memoryIndex: 1018,
   memoryMarker: `[[LEDGERPOSTGRESPASSWORD]]`,
   shouldAutocomplete: false,
   name: `Ledger Postgres Password`,

@@ -17,19 +17,19 @@ Manikins in **bold** are currently working, but may have more features to add
 11. **Ghost** : needs LDAP for auth
 12. GitLab : needs tcp forwarding for 22
 13. Grafana : - check funkypenguin
-14. Huginn : - check funkypenguin
-15. Kanboard/Wekan : - check funkypenguin for Kanboard
-16. LDAP : needs tcp forwarding for 389, 636, 6443
-17. Ledger : currently barely more than a stub
-18. MegaDocker: dockerize web-app
-19. Nextcloud : might be an owncloud copy
-20. **Nginx** : needs complete rework
-21. Owncloud : might be a nextcloud copy
-22. **Pihole** : needs LDAP for auth
-23. Piwik : - check funkypenguin
-24. Plex : - check funkypenguin
-25. **Portainer** : needs LDAP for auth
-26. Portal : - check funkypenguin for heimdall
+14. **Heimdall** : I wish there was a way to autopopulate the stuff in traefik, but we probably need a customMite to be generated at zip time
+15. Huginn : - check funkypenguin
+16. Kanboard/Wekan : - check funkypenguin for Kanboard
+17. LDAP : needs tcp forwarding for 389, 636, 6443
+18. Ledger : currently barely more than a stub
+19. MegaDocker: dockerize web-app
+20. Nextcloud : might be an owncloud copy
+21. **Nginx** : needs complete rework
+22. Owncloud : might be a nextcloud copy
+23. **Pihole** : needs LDAP for auth
+24. Piwik : - check funkypenguin
+25. Plex : - check funkypenguin
+26. **Portainer** : needs LDAP for auth
 27. PrivateBin : - check funkypenguin
 28. Prometheus : - check funkypenguin
 29. RocketChat : has some issue connecting to mongo database

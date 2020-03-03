@@ -7,12 +7,12 @@
 import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
-export const wordpressMariaDBUser: IMemory = {
-  memoryIndex: 1030,
-  memoryMarker: `[[WORDPRESSMARIADBUSER]]`,
+export const kanboardMariaDBUser: IMemory = {
+  memoryIndex: 1012,
+  memoryMarker: `[[KANBOARDMARIADBUSER]]`,
   shouldAutocomplete: false,
-  name: `WP MariaDB User`,
-  tooltip: `Please enter your WordPress MariaDB username here`,
+  name: `Kanboard MariaDB User`,
+  tooltip: `Please enter your Kanboard MariaDB username here`,
   value: ``,
   valueType: 'text',
   isReady: false,

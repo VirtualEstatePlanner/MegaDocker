@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const rocketchatBotUsername: IMemory = {
-  memoryIndex: 1020,
+  memoryIndex: 1025,
   memoryMarker: `[[ROCKETCHATBOTUSERNAME]]`,
   shouldAutocomplete: false,
   name: `RocketChat bot user name`,

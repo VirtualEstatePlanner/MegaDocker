@@ -15,7 +15,7 @@ import { ldapManikin } from '../mobparts/manikins/ldap';
 import { nginxManikin } from '../mobparts/manikins/nginx';
 import { owncloudManikin } from '../mobparts/manikins/owncloud';
 import { portainerManikin } from '../mobparts/manikins/portainer';
-import { portalManikin } from '../mobparts/manikins/portal';
+import { heimdallManikin } from '../mobparts/manikins/heimdall';
 import { rocketchatManikin } from '../mobparts/manikins/rocketchat';
 import { skoposManikin } from '../mobparts/manikins/skopos';
 import { swarmpitManikin } from '../mobparts/manikins/swarmpit';

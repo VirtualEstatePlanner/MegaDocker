@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { domainValidator } from '../../functions/validators/domainValidator';
 
 export const primaryDomain: IMemory = {
-  memoryIndex: 1018,
+  memoryIndex: 1023,
   memoryMarker: `[[PRIMARYDOMAIN]]`,
   shouldAutocomplete: false,
   name: `Primary Domain`,
