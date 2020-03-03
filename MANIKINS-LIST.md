@@ -36,7 +36,7 @@ Manikins in **bold** are currently working, but may have more features to add
 30. **Skopos** : needs LDAP for auth
 31. **Swarmpit** : needs LDAP for auth
 32. **Traefik** : needs LDAP for auth
-33. **VS Code** : wants LDAP for auth if possible
+33. **VS Code** : has serious issuues but theoretically works, wants LDAP for auth if possible
 34. **Visualizer**: principle of least access: might need LDAP for auth
 35. Wallabag : - check funkypenguin
 36. WebDAV : I think is just a stub
