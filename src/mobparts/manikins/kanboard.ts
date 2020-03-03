@@ -19,8 +19,8 @@ import { kanboardMariaDBUser } from '../memories/kanboardMariaDBUser';
 export const kanboardManikin: IManikin = {
   description: `Kanban board for task sharing`,
   folder: `kanboard`,
-  isCore: true,
-  isSelected: true,
+  isCore: false,
+  isSelected: false,
   manikinIcon: kanboardIcon,
   manikinIndex: 13,
   memories: [

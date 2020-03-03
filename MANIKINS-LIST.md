@@ -19,7 +19,7 @@ Manikins in **bold** are currently working, but may have more features to add
 13. Grafana : - check funkypenguin
 14. **Heimdall** : I wish there was a way to autopopulate the stuff in traefik, but we probably need a customMite to be generated at zip time
 15. Huginn : - check funkypenguin
-16. Kanboard/Wekan : - check funkypenguin for Kanboard
+16. **Kanboard** : - needs LDAP for auth
 17. LDAP : needs tcp forwarding for 389, 636, 6443
 18. Ledger : currently barely more than a stub
 19. MegaDocker: dockerize web-app
@@ -36,7 +36,7 @@ Manikins in **bold** are currently working, but may have more features to add
 30. **Skopos** : needs LDAP for auth
 31. **Swarmpit** : needs LDAP for auth
 32. **Traefik** : needs LDAP for auth
-33. Visual Studio Code : - see example at raw.githubusercontent.com/cdr/code-server/master/docker-compose.yml
+33. VS Code : is maybe having a SSL issue?
 34. **Visualizer**: principle of least access: might need LDAP for auth
 35. Wallabag : - check funkypenguin
 36. WebDAV : I think is just a stub

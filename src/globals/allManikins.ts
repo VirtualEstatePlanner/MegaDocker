@@ -20,6 +20,7 @@ import { skoposManikin } from '../mobparts/manikins/skopos';
 import { swarmpitManikin } from '../mobparts/manikins/swarmpit';
 import { traefikManikin } from '../mobparts/manikins/traefik';
 import { visualizerManikin } from '../mobparts/manikins/visualizer';
+import { vsCodeManikin } from '../mobparts/manikins/vscode';
 import { webdavManikin } from '../mobparts/manikins/webdav';
 import { wordpressManikin } from '../mobparts/manikins/wordpress';
 
@@ -47,6 +48,7 @@ export const allManikins: IManikin[] = [
   swarmpitManikin,
   traefikManikin,
   visualizerManikin,
+  vsCodeManikin,
   webdavManikin,
   wordpressManikin
 ];
