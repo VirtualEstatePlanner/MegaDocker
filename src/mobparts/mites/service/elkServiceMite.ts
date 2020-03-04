@@ -28,8 +28,6 @@ export const elkServiceMite: IMite = {
    - ldap
   environment:
    - SERVER_NAME=[[MOBNAME]]_elasticsearch:9200
-  depends_on:
-   - elasticsearch
   deploy:
    restart_policy:
     condition: on-failure

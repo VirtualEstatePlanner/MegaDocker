@@ -23,7 +23,7 @@ Manikins in **bold** are currently working, but may have more features to add
 17. LDAP : needs tcp forwarding for 389, 636, 6443
 18. Ledger : currently barely more than a stub
 19. MegaDocker: dockerize web-app
-20. Nextcloud : might be an owncloud copy
+20. Nextcloud : takes 2 minutes to start after container launch, requires manual setup, never launches fully
 21. **Nginx** : needs complete rework
 22. Owncloud : might be a nextcloud copy
 23. **Pihole** : needs LDAP for auth
@@ -39,5 +39,5 @@ Manikins in **bold** are currently working, but may have more features to add
 33. **VS Code** : has serious issuues but theoretically works, wants LDAP for auth if possible
 34. **Visualizer**: principle of least access: might need LDAP for auth
 35. Wallabag : - check funkypenguin
-36. WebDAV : I think is just a stub
+36. WebDAV : is not connectable, but docker reports as running
 37. **WordPress** : needs LDAP for auth

@@ -13,6 +13,35 @@ export const webdavServiceMite: IMite = {
 
 #Begin WebDAV Service Section
 
+ webdav:
+  image: bytemark/webdav
+  networks:
+   - webdav
+  environment:
+   - AUTH_TYPE=Digest
+   - USERNAME=[[WEBDAVUSER]]
+   - PASSWORD=[[WEBDAVPASSWORD]]
+   - SERVER_NAMES=webdav.[[PRIMARYDOMAIN]],webdav.[[SECONDARYDOMAIN]]
+  volumes:
+   - ./webdav/data:/var/lib/dav
+  deploy:
+   restart_policy:
+    condition: on-failure
+   labels:
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.webdav.entrypoints=plainhttp'
+    - 'traefik.http.services.webdav.loadbalancer.server.port=0'
+    - 'traefik.http.routers.webdav.rule=Host("webdav.[[PRIMARYDOMAIN]]") || Host("webdav.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.middlewares.webdav-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.webdav.middlewares=webdav-force-secure'
+    - 'traefik.http.routers.webdav.service=webdav'
+    - 'traefik.http.routers.webdav-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.webdav-https.rule=Host("webdav.[[PRIMARYDOMAIN]]") || Host("webdav.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.webdav-https.service=webdav'
+    - 'traefik.http.routers.webdav-https.tls=true'
+    - 'traefik.http.services.webdav-https.loadbalancer.server.port=80'
+    - 'com.MegaDocker.description=DESCRIPTION'
+
 #End WebDAV Service Section
 
 `

@@ -11,7 +11,7 @@ export const nextcloudServiceMite: IMite = {
   miteIndex: 2008,
   miteString: `
 
-#Begin NextCloud Service Sections
+# Begin NextCloud Service Sections
 
  nextcloud:
   image: nextcloud
@@ -19,9 +19,7 @@ export const nextcloudServiceMite: IMite = {
    - traefik
    - nextcloud
   volumes:
-   - ./nextcloud/apps/:/var/www/html/apps
-   - ./nextcloud/config/:/var/www/html/config
-   - ./nextcloud/data/:/var/www/html/data
+   - ./nextcloud/main/:/var/www/html
   deploy:
    restart_policy:
     condition: on-failure
@@ -38,20 +36,17 @@ export const nextcloudServiceMite: IMite = {
     - 'traefik.http.routers.nextcloud-https.service=nextcloud'
     - 'traefik.http.routers.nextcloud-https.tls=true'
     - 'traefik.http.services.nextcloud-https.loadbalancer.server.port=80'
-    - 'com.MegaDocker.description=DESCRIPTION'
-  depends_on:
-   - postgres
+    - 'com.MegaDocker.description=Nextcloud office suite'
 
  nextcloud-postgres:
   image: postgres:alpine
   environment:
-   - POSTGRES_PASSWORD=password
-   - POSTGRES_USER=owncloud
-   - POSTGRES_DB=owncloud
+   - POSTGRES_PASSWORD=[[NEXTCLOUDPOSTGRESPASSWORD]]
+   - POSTGRES_USER=[[NEXTCLOUDPOSTGRESUSER]]
+   - POSTGRES_DB=nextcloud
   networks:
-   - owncloud
+   - nextcloud
   volumes:
- #  - /etc/localtime:/etc/localtime:ro
    - ./nextcloud/postgres:/var/lib/postgresql
   deploy:
    restart_policy:
@@ -60,29 +55,19 @@ export const nextcloudServiceMite: IMite = {
  nextcloud-mariadb:
   image: mariadb
   environment:
-   - MYSQL_USER=owncloud
-   - MYSQL_PASSWORD=owncloud
-   - MYSQL_ROOT_PASSWORD=owncloud
-   - MYSQL_DATABASE=owncloud
+   - MYSQL_USER=[[NEXTCLOUDMARIADBUSER]]
+   - MYSQL_PASSWORD=[[NEXTCLOUDMARIADBPASSWORD]]
+   - MYSQL_ROOT_PASSWORD=[[NEXTCLOUDMARIADBROOTPASSWORD]]
+   - MYSQL_DATABASE=nextcloud
   volumes:
    - ./nextcloud/mariadb:/var/lib/mysql
   deploy:
    restart_policy:
     condition: on-failure
   networks:
-   - owncloud
+   - nextcloud
 
- nextcloud-redis:
-  image: redis
-  volumes:
-   - ./nextcloud/redis:/var/lib/mysql
-  networks:
-   - owncloud
-  deploy:
-   restart_policy:
-    condition: on-failure
-  
-#End NextCloud Service Section
+# End NextCloud Service Section
 
 `
 };

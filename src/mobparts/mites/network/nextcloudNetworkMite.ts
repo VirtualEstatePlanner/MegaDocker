@@ -11,12 +11,12 @@ export const nextcloudNetworkMite: IMite = {
   miteIndex: 1008,
   miteString: `
 
-#Begin Nextcloud Network Section
+# Begin Nextcloud Network Section
 
  nextcloud:
   driver: overlay
 
-#End Nextcloud Network Section
+# End Nextcloud Network Section
 
 `
 };

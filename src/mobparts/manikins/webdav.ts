@@ -9,6 +9,8 @@ import { IManikin } from '../../interfaces/IManikin';
 import { webdavServiceMite } from '../mites/service/webdavServiceMite';
 import { webdavNetworkMite } from '../mites/network/webdavNetworkMite';
 import webdavIcon from '../../images/manikin-icons/webdavIcon.png';
+import { webdavUser } from '../memories/webdavUser';
+import { webdavPassword } from '../memories/webdavPassword ';
 
 /**
  * webdav Manikin
@@ -20,9 +22,9 @@ export const webdavManikin: IManikin = {
   folder: `webdav`,
   manikinIcon: webdavIcon,
   manikinIndex: 19,
-  memories: [],
+  memories: [webdavUser, webdavPassword],
   mites: [webdavServiceMite, webdavNetworkMite],
   name: `WebDAV`,
   ports: [],
-  subfolders: []
+  subfolders: [`data`]
 };

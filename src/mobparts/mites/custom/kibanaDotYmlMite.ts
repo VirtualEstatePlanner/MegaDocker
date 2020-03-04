@@ -10,11 +10,11 @@ export const kibanaDotYmlMite: ICustomMite = {
     extension: `yml`,
     contents: `
 server.port: 80
-server.host: "kibana.[[PRIMARYDOMAIN]]"
+#server.host: "kibana.[[PRIMARYDOMAIN]]"
+server.host: "0"
 server.rewriteBasePath: false
 server.name: "kibana.[[PRIMARYDOMAIN]]"
 elasticsearch.hosts: ["http://[[MOBNAME]]_elasticsearch:9200"]
-elasticsearch.preserveHost: true
 kibana.index: ".kibana"
 elasticsearch.username: "[[KIBANAUSER]]"
 elasticsearch.password: "[[KIBANAPASSWORD]]"

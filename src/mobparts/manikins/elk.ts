@@ -12,6 +12,8 @@ import { kibanaDotYmlMite } from '../mites/custom/kibanaDotYmlMite';
 import elkIcon from '../../images/manikin-icons/elkIcon.png';
 import { kibanaUser } from '../memories/kibanaUser';
 import { kibanaPassword } from '../memories/kibanaPassword';
+import { elasticsearchDotYmlMite } from '../mites/custom/elasticsearchDotYmlMite';
+import { logstashDotYmlMite } from '../mites/custom/logstashDotYmlMite';
 
 /**
  * elk Manikin
@@ -24,7 +26,13 @@ export const elkManikin: IManikin = {
   manikinIcon: elkIcon,
   manikinIndex: 2,
   memories: [kibanaUser, kibanaPassword],
-  mites: [elkServiceMite, elkNetworkMite, kibanaDotYmlMite],
+  mites: [
+    elkServiceMite,
+    elkNetworkMite,
+    kibanaDotYmlMite,
+    elasticsearchDotYmlMite,
+    logstashDotYmlMite
+  ],
   name: `ELK`,
   ports: [],
   subfolders: [`elasticsearch-data`, `logstash-config`, `kibana-config`]
