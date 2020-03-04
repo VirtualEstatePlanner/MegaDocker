@@ -3,15 +3,14 @@ import { ICustomMite } from '../../../interfaces/ICustomMite';
 export const kibanaDotYmlMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 3000,
+  miteIndex: 3003,
   miteFile: {
     path: `elk/kibana-config`,
     name: `kibana`,
     extension: `yml`,
-    contents: `
+    contents: `# MegaDocker kibana configuration file for [[MOBNAME]]
 server.port: 80
-#server.host: "kibana.[[PRIMARYDOMAIN]]"
-server.host: "0"
+xpack.reporting.kibanaServer.hostname: 0.0.0.0
 server.rewriteBasePath: false
 server.name: "kibana.[[PRIMARYDOMAIN]]"
 elasticsearch.hosts: ["http://[[MOBNAME]]_elasticsearch:9200"]
@@ -24,6 +23,7 @@ server.ssl.key: /ssl/[[PRIMARYDOMAIN]].key
 logging.verbose: true
 elasticsearch.logQueries: true
 logging.dest: stdout
+logging.json: true
 i18n.locale: "en"
 `
   }

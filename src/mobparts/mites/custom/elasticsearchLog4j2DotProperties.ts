@@ -3,16 +3,12 @@ import { ICustomMite } from '../../../interfaces/ICustomMite';
 export const elasticsearchDotYmlMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 3000,
+  miteIndex: 3002,
   miteFile: {
     path: `elk/elasticsearch-config`,
-    name: `elasticsearch`,
-    extension: `yml`,
+    name: `log4j2`,
+    extension: `properties`,
     contents: `
-cluster.name: "[[MOBNAME]]-elk-cluster"
-network.host: 0.0.0.0
-path.data: /usr/share/elasticsearch/data
-path.logs: /usr/share/elasticsearch/logs
-    `
+`
   }
 };

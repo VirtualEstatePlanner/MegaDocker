@@ -35,5 +35,11 @@ export const elkManikin: IManikin = {
   ],
   name: `ELK`,
   ports: [],
-  subfolders: [`elasticsearch-data`, `logstash-config`, `kibana-config`]
+  subfolders: [
+    `elasticsearch-config`,
+    `elasticsearch-data`,
+    `logstash-config`,
+    `logfiles`,
+    `kibana-config`
+  ]
 };
