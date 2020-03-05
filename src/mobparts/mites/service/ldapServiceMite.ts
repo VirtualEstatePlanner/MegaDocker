@@ -37,6 +37,7 @@ export const ldapServiceMite: IMite = {
   tty: true
   stdin_open: true
   volumes:
+   - ./logs/ldap:/loglocation
    - ./ldap/ldif-files:/ldif
    - ./ldap/lib:/var/lib/ldap
    - ./ldap/slapd.d:/etc/ldap/slapd.d
@@ -65,6 +66,7 @@ export const ldapServiceMite: IMite = {
    - PHPLDAPADMIN_LDAP_CLIENT_TLS_KEY_FILENAME=letsencrypt.key
 #  hostname: ldapadmin.[[PRIMARYDOMAIN]]
   volumes:
+   - ./logs/ldap:/loglocation
    - ./traefik/certs/certs/[[PRIMARYDOMAIN]].crt:/container/service/phpldapadmin/assets/apache2/certs/certs/[[PRIMARYDOMAIN]].crt:ro
    - ./traefik/certs/private/[[PRIMARYDOMAIN]].key:/container/service/phpldapadmin/assets/apache2/certs/private/[[PRIMARYDOMAIN]].key:ro
    - ./traefik/certs/private/letsencrypt.key:/container/service/phpldapadmin/assets/apache2/certs/certs/letsencrypt.key:ro

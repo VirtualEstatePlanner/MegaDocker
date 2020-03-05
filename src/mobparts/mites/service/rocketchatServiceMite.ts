@@ -22,6 +22,7 @@ export const rocketchatServiceMite: IMite = {
    - rocketchat
    - ldap
   volumes:
+   - ./logs/rocketchat:/loglocation
    - ./rocketchat/uploads:/app/uploads
   environment:
    - PORT=3000
@@ -58,6 +59,7 @@ export const rocketchatServiceMite: IMite = {
    restart_policy:
     condition: on-failure
   volumes:
+   - ./logs/rocketchat:/loglocation
    - ./rocketchat/database:/data/db
    - ./rocketchat/db-dump:/dump
 
@@ -82,6 +84,7 @@ export const rocketchatServiceMite: IMite = {
   depends_on:
    - rocketchat
   volumes:
+   - ./logs/rocketchat:/loglocation
    - ./rocketchat/hubot-scripts:/home/hubot/scripts
   deploy:
    restart_policy:

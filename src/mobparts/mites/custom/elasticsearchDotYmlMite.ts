@@ -9,7 +9,7 @@ export const elasticsearchDotYmlMite: ICustomMite = {
     name: `elasticsearch`,
     extension: `yml`,
     contents: `
-cluster.name: "[[MOBNAME]]-elk-cluster"
+cluster.name: "[[MOBNAME]]-docker-cluster"
 network.host: 0.0.0.0
 path.data: /usr/share/elasticsearch/data
 path.logs: /usr/share/elasticsearch/logs

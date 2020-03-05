@@ -21,7 +21,8 @@ export const ledgerServiceMite: IMite = {
   networks:
    - ledger
   volumes:
-   - "./ledger/postgres:/var/lib/postgresql/data"
+  - ./logs/ledger:/loglocation
+  - ./ledger/postgres:/var/lib/postgresql/data
 
  ledger-smb:
   depends_on:

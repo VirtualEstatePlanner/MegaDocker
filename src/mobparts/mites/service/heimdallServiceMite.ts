@@ -22,6 +22,7 @@ export const heimdallServiceMite: IMite = {
    - PGID=20
    - TZ=America/New_York
   volumes:
+   - ./logs/heimdall:/loglocation
    - ./traefik/certs/certs/[[PRIMARYDOMAIN]].crt:/config/keys/[[PRIMARYDOMAIN]].crt
    - ./traefik/certs/certs/[[SECONDARYDOMAIN]].crt:/config/keys/[[SECONDARYDOMAIN]].crt
    - ./traefik/certs/private/[[PRIMARYDOMAIN]].key:/config/keys/[[PRIMARYDOMAIN]].key

@@ -14,14 +14,20 @@ input {
   port => 5000
   type => docker
  }
-file {
- path => /usr/share/logstash/logs/*
+ file {
+  path => "/usr/share/logstash/logs/*"
+ }
+ beats {
+  port => 5044
  }
 }
-    
+
 output {
  elasticsearch {
   hosts => ["http://[[MOBNAME]]_elasticsearch:9200"]
+  user => [[KIBANAUSER]]
+  password => [[KIBANAPASSWORD]]
+  index => "%{[@metadata][beat]}-%{[@metadata][version]}"
  }    
 }
 `

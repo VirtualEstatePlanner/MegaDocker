@@ -13,10 +13,9 @@ import elkIcon from '../../images/manikin-icons/elkIcon.png';
 import { kibanaUser } from '../memories/kibanaUser';
 import { kibanaPassword } from '../memories/kibanaPassword';
 import { elasticsearchDotYmlMite } from '../mites/custom/elasticsearchDotYmlMite';
-import { logstashDotYmlMite } from '../mites/custom/logstashDotYmlMite';
 import { elasticsearchJvmDotOptionsMite } from '../mites/custom/elasticsearchJvmDotOptions';
 import { elasticsearchLog4j2DotPropertiesMite } from '../mites/custom/elasticsearchLog4j2DotPropertiesMite';
-import { logstashDotConfMite } from '../mites/custom/logstashDotConfMite';
+import { filebeatDotYmlMite } from '../mites/custom/filebeatDotYmlMite';
 
 /**
  * elk Manikin
@@ -24,8 +23,8 @@ import { logstashDotConfMite } from '../mites/custom/logstashDotConfMite';
 export const elkManikin: IManikin = {
   description: `ElasticSearch/Logstash/Kibana Monitoring service`,
   folder: `elk`,
-  isCore: false,
-  isSelected: false,
+  isCore: true,
+  isSelected: true,
   manikinIcon: elkIcon,
   manikinIndex: 2,
   memories: [kibanaUser, kibanaPassword],
@@ -36,8 +35,7 @@ export const elkManikin: IManikin = {
     elasticsearchDotYmlMite,
     elasticsearchJvmDotOptionsMite,
     elasticsearchLog4j2DotPropertiesMite,
-    logstashDotConfMite,
-    logstashDotYmlMite
+    filebeatDotYmlMite
   ],
   name: `ELK`,
   ports: [],
@@ -45,9 +43,8 @@ export const elkManikin: IManikin = {
     `elasticsearch-config`,
     `elasticsearch-data`,
     `filebeat-config`,
-    `logstash-config`,
-    `logstash-pipeline`,
-    `logfiles`,
-    `kibana-config`
+    `filebeat-modules`,
+    `kibana-config`,
+    `logfiles`
   ]
 };

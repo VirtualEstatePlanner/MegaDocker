@@ -21,6 +21,7 @@ export const kanboardServiceMite: IMite = {
   environment:
    - DATABASE_URL=mysql://[[KANBOARDMARIADBUSER]]:[[KANBOARDMARIADBPASSWORD]]@[[MOBNAME]]_kanboard-mariadb/kanboard
   volumes:
+   - ./logs/kanboard:/loglocation
    - ./kanboard/kanboard-data:/var/www/app/data
    - ./kanboard/kanboard-plugins:/var/www/app/plugins
   deploy:
@@ -46,6 +47,7 @@ export const kanboardServiceMite: IMite = {
   networks:
    - kanboard
   volumes:
+   - ./logs/kanboard:/loglocation
    - ./kanboard/mariadb:/var/lib/mysql
   environment:
    - MYSQL_ROOT_PASSWORD=[[KANBOARDMARIADBROOTPASSWORD]]

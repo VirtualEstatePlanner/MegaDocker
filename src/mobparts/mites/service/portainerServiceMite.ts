@@ -19,6 +19,7 @@ export const portainerServiceMite: IMite = {
    - traefik
   command: '--no-auth'
   volumes:
+   - ./logs/portainer:/loglocation
    - /var/run/docker.sock:/var/run/docker.sock
   deploy:
    mode: global

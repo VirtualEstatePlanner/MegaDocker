@@ -14,6 +14,7 @@ export const skoposServiceMite: IMite = {
   environment:
    - skstkn=dflt:339650468.1517278337
   volumes:
+   - ./logs/skopos:/loglocation
    - /var/run/docker.sock:/var/run/docker.sock:rw
   deploy:
    replicas: 1

@@ -11,13 +11,13 @@ Manikins in **bold** are currently working, but may have more features to add
 5. Collabora : - check funkypenguin
 6. DNS Anchor : probably exists on Docker Hub?
 7. **Drupal** : needs LDAP for auth
-8. ELK : needs kibana.yml output custom mite for configuration
+8. **ELK** : needs filebeat to push logs to elasticsearch, kibana indexes
 9. E-mail : needs Traefik tcp forwarding for 25, 587, 993 and super-requires LDAP
-10. Getter: - check funkypenguin for nzbget, rtorrent, sonarr, radarr, mylar, lazylibrarian, headphones, lidarr, nzbhydra, ombi,
+10. Getter (autopirate) : - check funkypenguin for nzbget, rtorrent, sonarr, radarr, mylar, lazylibrarian, headphones, lidarr, nzbhydra, ombi,
 11. **Ghost** : needs LDAP for auth
 12. GitLab : needs tcp forwarding for 22
-13. Grafana : - check funkypenguin
-14. **Heimdall** : I wish there was a way to autopopulate the stuff in traefik, but we probably need a customMite to be generated at zip time
+13. Grafana : - check funkypenguin, needs filebeats/kibana integration
+14. **Heimdall** : I wish there was a way to autopopulate the stuff in traefik, but we probably need a customMite to be generated during zip
 15. Huginn : - check funkypenguin
 16. **Kanboard** : - needs LDAP for auth
 17. LDAP : needs tcp forwarding for 389, 636, 6443

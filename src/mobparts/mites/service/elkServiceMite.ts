@@ -17,22 +17,24 @@ export const elkServiceMite: IMite = {
   image: elasticsearch:7.6.0
   environment:
    - bootstrap.memory_lock=true
-   - cluster.name: "[[MOBNAME]]-elk-cluster"
+   - cluster.name="[[MOBNAME]]-docker-cluster"
    - discovery.type=single-node
    - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
    - ES_PATH_CONF=/usr/share/elasticsearch/configs
-   - network.host: 0.0.0.0
-   - path.data: /usr/share/elasticsearch/data
-   - path.logs: /usr/share/elasticsearch/logs
+   - network.host=0.0.0.0
+   - path.data=/usr/share/elasticsearch/data
+   - path.logs=/usr/share/elasticsearch/logs
   networks:
    - elk
   volumes:
+   - ./logs/elk:/loglocation
    - ./elk/elasticsearch-config:/usr/share/elasticsearch/configs
    - ./elk/elasticsearch-data:/usr/share/elasticsearch/data
    - ./elk/logfiles:/usr/share/elasticsearch/logs
 
  filebeat:
-  image: store/elastic/filebeat:7.6.0
+  image: docker.elastic.co/beats/filebeat:7.6.0
+  command: filebeat run --modules traefik
   environment:
    - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
    - ES_PATH_CONF=/usr/share/elasticsearch/configs
@@ -41,9 +43,11 @@ export const elkServiceMite: IMite = {
   networks:
    - elk
   volumes:
-   - ./elk/filebeat-config:/usr/share/elasticsearch/configs
-   - ./elk/elasticsearch-data:/usr/share/elasticsearch/data
-   - ./elk/logfiles:/usr/share/elasticsearch/logs
+  - ./logs/elk:/loglocation
+  - ./elk/filebeat-config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+  - ./elk/filebeat-modules:/usr/share/filebeat/modules.d
+  - /var/lib/docker/containers:/var/lib/docker/containers:ro
+  - /var/run/docker.sock:/var/run/docker.sock
 
  kibana:
   image: kibana:7.6.0
@@ -52,6 +56,8 @@ export const elkServiceMite: IMite = {
    - elk
   environment:
    - SERVER_NAME=[[MOBNAME]]_elasticsearch:9200
+  volumes:
+   - ./logs/elk:/loglocation
   deploy:
    restart_policy:
     condition: on-failure
@@ -72,16 +78,6 @@ export const elkServiceMite: IMite = {
    placement:
     constraints:
      - node.role == manager
-
- logstash:
-  image: logstash:7.6.0
-  volumes:
-   - ./elk/logfiles:/usr/share/logstash/logs
-   - ./elk/logstash-config:/usr/share/logstash/config
-   - ./elk/logstash-pipeline:/usr/share/logstash/pipeline
-  networks:
-   - elk
-  command: logstash -f /usr/share/logstash/pipeline/*
 
 # End ELK Service Section
 

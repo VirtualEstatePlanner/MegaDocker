@@ -51,6 +51,7 @@ export const gitlabServiceMite: IMite = {
    - LDAP_BASE=ou=Users
 #   - LDAP_USER_FILTER=
   volumes:
+   - ./logs/gitlab:/loglocation
    - ./traefik/certs:/ldapcerts/:ro
    - ./gitlab/config:/etc/gitlab
    - ./gitlab/logs:/var/log/gitlab
@@ -89,12 +90,16 @@ export const gitlabServiceMite: IMite = {
    - POSTGRES_PASSWORD=[[GITLABPOSTGRESPASSWORD]]
    - POSTGRES_DB=gitlabhq_production
   volumes:
+   - ./logs/gitlab:/loglocation
    - ./gitlab/postgresql:/var/lib/postgresql:rw
   networks:
    - gitlab
  
  gitlab-redis:
   image: redis:alpine
+  volumes:
+   - ./logs/gitlab:/loglocation
+## TODO: I feel like we should probably persist this database
   networks:
    - gitlab
 

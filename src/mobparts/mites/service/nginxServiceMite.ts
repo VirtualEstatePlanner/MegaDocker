@@ -18,6 +18,7 @@ export const nginxServiceMite: IMite = {
   networks:
    - traefik
   volumes:
+   - ./logs/nginx:/loglocation
    - ./nginx/pages:/usr/share/nginx/html
    - ./nginx/log:/var/log/nginx/log
   environment:

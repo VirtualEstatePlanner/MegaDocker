@@ -24,6 +24,7 @@ export const piholeServiceMite: IMite = {
    TZ: "America/New York"
    WEBPASSWORD: "[[PIHOLEPASSWORD]]"
   volumes:
+   - ./logs/pihole:/loglocation
    - ./pihole/etc-pihole/:/etc/pihole/
    - ./pihole/etc-dnsmasq/:/etc/dnsmasq.d/
   dns:

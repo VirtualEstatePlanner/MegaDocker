@@ -147,6 +147,10 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     // eslint-disable-next-line array-callback-return
     zipManikins.map((eachManikin: IManikin) => {
       const subs = eachManikin.subfolders;
+      zip
+        .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
+        .folder(`logs`)
+        .folder(eachManikin.folder);
       for (let eachSubfolder in subs) {
         zip
           .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)

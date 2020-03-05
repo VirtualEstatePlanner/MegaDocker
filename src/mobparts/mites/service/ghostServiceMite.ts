@@ -18,6 +18,8 @@ export const ghostServiceMite: IMite = {
   networks:
    - ghost
    - traefik
+  volumes:
+   - ./logs/ghost:/loglocation
   environment:
    - database__client=mysql
    - database__connection__host=[[MOBNAME]]_ghost-mariadb
@@ -47,6 +49,7 @@ export const ghostServiceMite: IMite = {
   networks:
    - ghost
   volumes:
+   - ./logs/ghost:/loglocation
    - ./ghost/mariadb:/var/lib/mysql
   environment:
    - MYSQL_ROOT_PASSWORD=[[GHOSTMARIADBROOTPASSWORD]]

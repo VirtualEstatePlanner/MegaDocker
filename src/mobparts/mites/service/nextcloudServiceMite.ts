@@ -19,7 +19,8 @@ export const nextcloudServiceMite: IMite = {
    - traefik
    - nextcloud
   volumes:
-   - ./nextcloud/main/:/var/www/html
+  - ./logs/nextcloud:/loglocation
+  - ./nextcloud/main/:/var/www/html
   deploy:
    restart_policy:
     condition: on-failure
@@ -47,7 +48,8 @@ export const nextcloudServiceMite: IMite = {
   networks:
    - nextcloud
   volumes:
-   - ./nextcloud/postgres:/var/lib/postgresql
+  - ./logs/nextcloud:/loglocation
+  - ./nextcloud/postgres:/var/lib/postgresql
   deploy:
    restart_policy:
     condition: on-failure
@@ -60,7 +62,8 @@ export const nextcloudServiceMite: IMite = {
    - MYSQL_ROOT_PASSWORD=[[NEXTCLOUDMARIADBROOTPASSWORD]]
    - MYSQL_DATABASE=nextcloud
   volumes:
-   - ./nextcloud/mariadb:/var/lib/mysql
+  - ./logs/nextcloud:/loglocation
+  - ./nextcloud/mariadb:/var/lib/mysql
   deploy:
    restart_policy:
     condition: on-failure

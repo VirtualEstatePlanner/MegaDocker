@@ -19,7 +19,6 @@ export const traefikServiceMite: IMite = {
   image: traefik
   command:
    - '--accesslog=true'
-   - '--accesslog.filePath=/logs/traefikAccessLog.json'
    - '--api.dashboard=true'
    - '--certificatesresolvers.cloudflarecerts.acme.email=[[LETSENCRYPTEMAIL]]'
    - '--certificatesresolvers.cloudflarecerts.acme.storage=/acme.json'
@@ -31,9 +30,7 @@ export const traefikServiceMite: IMite = {
    - '--entrypoints.encryptedhttp.address=:443'
    - '--log.level=DEBUG'
    - '--log.format=json'
-   - '--log.filepath=/logs/traefikLog.json'
    - '--accesslog=true'
-   - '--accesslog.filePath=/logs/traefikAccessLog.json'
    - '--providers.docker.endpoint=unix:///var/run/docker.sock'
    - '--providers.docker.exposedbydefault=false'
    - '--providers.docker.network=[[MOBNAME]]_traefik'
@@ -46,9 +43,9 @@ export const traefikServiceMite: IMite = {
    - 443:443
    - 8080:8080
   volumes:
-   - /var/run/docker.sock:/var/run/docker.sock:ro
-   - ./traefik/logs:/logs
+   - ./logs/traefik:/loglocation
    - ./traefik/acme.json:/acme.json
+   - /var/run/docker.sock:/var/run/docker.sock:ro
   environment:
    - CF_DNS_API_TOKEN=[[CLOUDFLAREAPITOKEN]]
    - CF_ZONE_API_TOKEN=[[CLOUDFLAREAPITOKEN]]
@@ -59,6 +56,8 @@ export const traefikServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.traefik.entrypoints=plainhttp'
     - 'traefik.http.routers.traefik.rule=Host("traefik.[[PRIMARYDOMAIN]]") || Host("traefik.[[SECONDARYDOMAIN]]") && (PathPrefix("/api") || PathPrefix("/dashboard"))'
+## TODO: create a traefik login and password with an htpassword compatible JS library, or integrate ldap auth
+##    - 'traefik.http.middlewares.traefik-auth.basicauth.users=[[TRAEFIKUSER]]:[[TRAEFIKPASSWORD]]'
     - 'traefik.http.middlewares.traefik-auth.basicauth.users=traefikuser:$$apr1$$OG8S9BgU$$7BwcoMe3X.gpi.aRLljDd.'
     - 'traefik.http.routers.traefik-https.middlewares=traefik-auth'
     - 'traefik.http.middlewares.traefik-force-secure.redirectscheme.scheme=https'
@@ -83,6 +82,7 @@ export const traefikServiceMite: IMite = {
   networks:
    - traefik
   volumes:
+   - ./logs/traefik:/loglocation
    - ./traefik/acme.json/:/acme.json
    - ./traefik/certs:/output
   command: >

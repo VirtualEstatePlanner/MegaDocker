@@ -13,6 +13,7 @@ export const swarmpitServiceMite: IMite = {
    - SWARMPIT_DB=http://[[MOBNAME]]_swarmpit-couchbase-db:5984
    - SWARMPIT_INFLUXDB=http://[[MOBNAME]]_swarmpit-influx-db:8086
   volumes:
+   - ./logs/swarmpit:/loglocation
    - /var/run/docker.sock:/var/run/docker.sock:ro
   networks:
    - traefik
@@ -48,6 +49,7 @@ export const swarmpitServiceMite: IMite = {
  swarmpit-couchbase-db:
   image: couchdb:2.3.0
   volumes:
+   - ./logs/swarmpit:/loglocation
    - ./swarmpit/couchbase-data:/opt/couchdb/data
   networks:
    - swarmpit
@@ -65,6 +67,7 @@ export const swarmpitServiceMite: IMite = {
  swarmpit-influx-db:
   image: influxdb
   volumes:
+   - ./logs/swarmpit:/loglocation
    - ./swarmpit/influx-data:/var/lib/influxdb
   networks:
    - swarmpit
@@ -86,6 +89,7 @@ export const swarmpitServiceMite: IMite = {
   environment:
    - DOCKER_API_VERSION=1.35
   volumes:
+   - ./logs/swarmpit:/loglocation
    - /var/run/docker.sock:/var/run/docker.sock:ro
   networks:
    - swarmpit

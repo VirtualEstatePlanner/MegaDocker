@@ -20,6 +20,7 @@ export const emailServiceMite: IMite = {
    - 587:587
    - 993:993
   volumes:
+   - ./logs/email:/loglocation
    - ./email/maildata:/var/mail
    - ./email/mailstate:/var/mail-state
    - ./email/config:/tmp/docker-mailserver
@@ -54,6 +55,7 @@ export const emailServiceMite: IMite = {
    - email
    - traefik
   volumes:
+   - ./logs/email:/loglocation
    - ./email/rainloop:/rainloop/data
   deploy:
    restart_policy:

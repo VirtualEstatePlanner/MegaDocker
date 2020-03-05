@@ -27,6 +27,7 @@ export const drupalServiceMite: IMite = {
    - DRUPAL_PASS=drupalpass
    - DRUPAL_DBURL=postgres://drupal:drupaluser@[[MOBNAME]]_drupal-postgres:5432/drupaldb
   volumes:
+   - ./logs/drupal:/loglocation
    - ./drupal/modules:/var/www/html/modules
    - ./drupal/profiles:/var/www/html/profiles
    - ./drupal/themes:/var/www/html/themes
@@ -60,6 +61,7 @@ export const drupalServiceMite: IMite = {
 #  ports:
 #   - 5432:5432
   volumes:
+   - ./logs/drupal:/loglocation
    - ./drupal/database:/var/lib/postgresql/data
   environment:
    - POSTGRES_DB=drupaldb
