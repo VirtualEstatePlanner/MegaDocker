@@ -1,6 +1,6 @@
 import { ICustomMite } from '../../../interfaces/ICustomMite';
 
-export const elasticsearchDotYmlMite: ICustomMite = {
+export const elasticsearchLog4j2DotPropertiesMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
   miteIndex: 3002,
@@ -9,6 +9,7 @@ export const elasticsearchDotYmlMite: ICustomMite = {
     name: `log4j2`,
     extension: `properties`,
     contents: `
+#
 `
   }
 };
