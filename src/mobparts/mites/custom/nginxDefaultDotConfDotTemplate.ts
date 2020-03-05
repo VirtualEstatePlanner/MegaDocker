@@ -8,7 +8,9 @@ export const nginxDefaultDotConfDotTemplate: ICustomMite = {
     path: `nginx/conf`,
     name: `default.template`,
     extension: `conf`,
+    permissions: `644`,
     contents: `
+#
 `
   }
 };

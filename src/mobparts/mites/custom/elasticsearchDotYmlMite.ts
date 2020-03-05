@@ -8,7 +8,8 @@ export const elasticsearchDotYmlMite: ICustomMite = {
     path: `elk/elasticsearch-config`,
     name: `elasticsearch`,
     extension: `yml`,
-    contents: `
+    permissions: `644`,
+    contents: `# MegaDocker elasticsearch.yml file for [[MOBNAME]]
 cluster.name: "[[MOBNAME]]-docker-cluster"
 network.host: 0.0.0.0
 path.data: /usr/share/elasticsearch/data

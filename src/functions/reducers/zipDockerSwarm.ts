@@ -124,7 +124,8 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
           console.log(`generating file: ${eachCustomMite.miteFile.name}`);
           zip.file(
             `${zipManikins[traefikIndex].memories[mobNameIndex].value}/${eachCustomMite.miteFile.path}/${eachCustomMite.miteFile.name}.${eachCustomMite.miteFile.extension}`,
-            `${eachCustomMite.miteFile.contents}`
+            `${eachCustomMite.miteFile.contents}`,
+            { unixPermissions: `${eachCustomMite.miteFile.permissions}` }
           );
         });
         const output = await zip.generateAsync({

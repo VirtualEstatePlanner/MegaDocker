@@ -8,38 +8,10 @@ export const filebeatDotYmlMite: ICustomMite = {
     path: `elk/filebeat-config`,
     name: `filebeat`,
     extension: `yml`,
+    permissions: `600`,
     contents: `# MegaDocker filebeat.yml configuration file
 filebeat.config.modules.path: /usr/share/filebeat/modules.d/*.yml
 filebeat.config.reload.enabled: false
-
-filebeat.modules:
-- module: apache
-  access:
-    var.paths: ["/logfiles"]
-- module: elasticsearch
-  access:
-    var.paths: ["/logfiles"]
-- module: kibana
-  access:
-    var.paths: ["/logfiles"]
-- module: logstash
-  access:
-    var.paths: ["/logfiles"]
-- module: mongodb
-  access:
-    var.paths: ["/logfiles"]
-- module: mysql
-  access:
-    var.paths: ["/logfiles"]
-- module: nginx
-  access:
-    var.paths: ["/logfiles"]
-- module: redis
-  access:
-    var.paths: ["/logfiles"]
-- module: traefik
-  access:
-    var.paths: ["/logfiles"]
 
 processors.add_docker_metadata. host: "unix:///var/run/docker.sock"
 
@@ -62,12 +34,32 @@ logging.metrics.enabled: false
   }
 };
 
-// prospectors:
-//  - paths:
-//   - /var/lib/docker/containers/*/*.log
-//     document_type: syslog
-// output:
-//  logstash:
-//   enabled: true
-//   hosts:
-//       - [[MOBNAME]]_logstash]]:5044
+// TODO: add modules to config
+// filebeat.modules:
+// - module: apache
+//   access:
+//     var.paths: ["/logfiles"]
+// - module: elasticsearch
+//   access:
+//     var.paths: ["/logfiles/elk"]
+// - module: kibana
+//   access:
+//     var.paths: ["/logfiles/elk"]
+// - module: logstash
+//   access:
+//     var.paths: ["/logfiles/elk"]
+// - module: mongodb
+//   access:
+//     var.paths: ["/logfiles"]
+// - module: mysql
+//   access:
+//     var.paths: ["/logfiles"]
+// - module: nginx
+//   access:
+//     var.paths: ["/logfiles/nginx"]
+// - module: redis
+//   access:
+//     var.paths: ["/logfiles"]
+// - module: traefik
+//   access:
+//     var.paths: ["/logfiles/traefik"]

@@ -8,6 +8,7 @@ export const logstashDotConfMite: ICustomMite = {
     path: `elk/logstash-pipeline`,
     name: `logstash`,
     extension: `conf`,
+    permissions: `644`,
     contents: `# MegaDocker logstash.conf file for [[MOBNAME]]
 input {
  syslog {

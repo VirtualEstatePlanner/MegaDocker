@@ -8,6 +8,7 @@ export const nginxDefaultIndexHtml: ICustomMite = {
     path: `nginx/pages`,
     name: `index`,
     extension: `html`,
+    permissions: `644`,
     contents: `
 <!DOCTYPE html>
 <html lang="en">

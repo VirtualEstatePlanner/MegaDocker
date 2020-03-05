@@ -8,6 +8,7 @@ export const elasticsearchLog4j2DotPropertiesMite: ICustomMite = {
     path: `elk/elasticsearch-config`,
     name: `log4j2`,
     extension: `properties`,
+    permissions: `644`,
     contents: `
 #
 `

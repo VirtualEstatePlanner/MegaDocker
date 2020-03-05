@@ -9,6 +9,7 @@ export const nginxDefaultDotConfMite: ICustomMite = {
     path: `nginx/conf`,
     name: `nginx`,
     extension: `conf`,
+    permissions: `644`,
     contents: `
 user       www www;
 worker_processes  5;

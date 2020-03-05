@@ -51,10 +51,9 @@ export const gitlabServiceMite: IMite = {
    - LDAP_BASE=ou=Users
 #   - LDAP_USER_FILTER=
   volumes:
-   - ./logs/gitlab:/loglocation
+   - ./logs/gitlab:/var/log/gitlab
    - ./traefik/certs:/ldapcerts/:ro
    - ./gitlab/config:/etc/gitlab
-   - ./gitlab/logs:/var/log/gitlab
    - ./gitlab/data:/var/opt/gitlab
   ports:
    - 22:22
@@ -90,7 +89,8 @@ export const gitlabServiceMite: IMite = {
    - POSTGRES_PASSWORD=[[GITLABPOSTGRESPASSWORD]]
    - POSTGRES_DB=gitlabhq_production
   volumes:
-   - ./logs/gitlab:/loglocation
+  # maybe wrong log location
+   - ./logs/gitlab:/var/log/postgres
    - ./gitlab/postgresql:/var/lib/postgresql:rw
   networks:
    - gitlab
@@ -98,8 +98,9 @@ export const gitlabServiceMite: IMite = {
  gitlab-redis:
   image: redis:alpine
   volumes:
-   - ./logs/gitlab:/loglocation
-## TODO: I feel like we should probably persist this database
+# maybe wrong log location  
+   - ./logs/gitlab:/var/log/redis
+   - ./gitlab/redis:/data
   networks:
    - gitlab
 

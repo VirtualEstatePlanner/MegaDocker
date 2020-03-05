@@ -8,6 +8,7 @@ export const traefikDotYmlMite: ICustomMite = {
     path: `traefik`,
     name: `traefik`,
     extension: `yml`,
+    permissions: `644`,
     contents: `
 accessLog:
  filePath: accessLog.json

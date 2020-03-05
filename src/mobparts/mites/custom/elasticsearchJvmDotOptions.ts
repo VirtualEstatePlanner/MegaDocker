@@ -8,6 +8,7 @@ export const elasticsearchJvmDotOptionsMite: ICustomMite = {
     path: `elk/elasticsearch-config`,
     name: `jvm`,
     extension: `options`,
+    permissions: `644`,
     contents: `
 #
 `

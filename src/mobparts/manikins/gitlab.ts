@@ -34,5 +34,5 @@ export const gitlabManikin: IManikin = {
   mites: [gitlabServiceMite, gitlabNetworkMite, ldapNetworkMite],
   name: `GitLab`,
   ports: [],
-  subfolders: [`config`, `data`, `logs`, `postgresql`]
+  subfolders: [`config`, `data`, `logs`, `postgresql`, `redis`]
 };

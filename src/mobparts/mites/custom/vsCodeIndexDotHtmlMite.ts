@@ -8,6 +8,7 @@ export const vsCodeIndexDotHtmlMite: ICustomMite = {
     path: `vscode/pages`,
     name: `index`,
     extension: `html`,
+    permissions: `644`,
     contents: `<!DOCTYPE html>
 <html lang="en" class="noVNC_loading">
 <head>

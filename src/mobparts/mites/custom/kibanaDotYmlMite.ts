@@ -8,6 +8,7 @@ export const kibanaDotYmlMite: ICustomMite = {
     path: `elk/kibana-config`,
     name: `kibana`,
     extension: `yml`,
+    permissions: `644`,
     contents: `# MegaDocker kibana configuration file for [[MOBNAME]]
 server.port: 80
 xpack.reporting.kibanaServer.hostname: 0.0.0.0

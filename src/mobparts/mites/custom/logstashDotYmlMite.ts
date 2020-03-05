@@ -8,6 +8,7 @@ export const logstashDotYmlMite: ICustomMite = {
     path: `elk/logstash-config`,
     name: `logstash`,
     extension: `yml`,
+    permissions: `644`,
     contents: `# MegaDocker logstash.yml config file
 http.host: "[[MOBNAME]]-docker-cluster"
 xpack.monitoring.enabled: true
