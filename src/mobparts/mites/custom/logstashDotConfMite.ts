@@ -1,26 +1,28 @@
 import { ICustomMite } from '../../../interfaces/ICustomMite';
 
-export const logstashDotYmlMite: ICustomMite = {
+export const logstashDotConfMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
   miteIndex: 3004,
   miteFile: {
-    path: `elk/logstash-config`,
+    path: `elk/logstash-pipeline`,
     name: `logstash`,
     extension: `conf`,
     contents: `# MegaDocker logstash.conf file for [[MOBNAME]]
 input {
-  file {
-    path => /usr/share/logstash/logfiles/*
-  }
+ syslog {
+  port => 5000
+  type => docker
+ }
+file {
+ path => /usr/share/logstash/logs/*
+ }
 }
+    
 output {
-  elasticsearch {
-    hosts => ["[[MOBNAME]]_elasticsearch:9200"]
-  }
-  stdout { 
-    codec => rubydebug
-  }
+ elasticsearch {
+  hosts => ["http://[[MOBNAME]]_elasticsearch:9200"]
+ }    
 }
 `
   }

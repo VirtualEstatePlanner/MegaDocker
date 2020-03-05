@@ -1,6 +1,6 @@
 import { ICustomMite } from '../../../interfaces/ICustomMite';
 
-export const elasticsearchDotYmlMite: ICustomMite = {
+export const elasticsearchJvmDotOptionsMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
   miteIndex: 3001,
@@ -9,6 +9,7 @@ export const elasticsearchDotYmlMite: ICustomMite = {
     name: `jvm`,
     extension: `options`,
     contents: `
+#
 `
   }
 };

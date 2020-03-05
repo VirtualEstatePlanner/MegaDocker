@@ -16,6 +16,24 @@ export const elkServiceMite: IMite = {
  elasticsearch:
   image: elasticsearch:7.6.0
   environment:
+   - bootstrap.memory_lock=true
+   - cluster.name: "[[MOBNAME]]-elk-cluster"
+   - discovery.type=single-node
+   - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
+   - ES_PATH_CONF=/usr/share/elasticsearch/configs
+   - network.host: 0.0.0.0
+   - path.data: /usr/share/elasticsearch/data
+   - path.logs: /usr/share/elasticsearch/logs
+  networks:
+   - elk
+  volumes:
+   - ./elk/elasticsearch-config:/usr/share/elasticsearch/configs
+   - ./elk/elasticsearch-data:/usr/share/elasticsearch/data
+   - ./elk/logfiles:/usr/share/elasticsearch/logs
+
+ filebeat:
+  image: store/elastic/filebeat:7.6.0
+  environment:
    - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
    - ES_PATH_CONF=/usr/share/elasticsearch/configs
    - bootstrap.memory_lock=true
@@ -23,9 +41,9 @@ export const elkServiceMite: IMite = {
   networks:
    - elk
   volumes:
-   - ./elk/elasticsearch-config:/usr/share/elasticsearch/configs
+   - ./elk/filebeat-config:/usr/share/elasticsearch/configs
    - ./elk/elasticsearch-data:/usr/share/elasticsearch/data
-   - ./elk/elasticsearch-logs:/usr/share/elasticsearch/logs
+   - ./elk/logfiles:/usr/share/elasticsearch/logs
 
  kibana:
   image: kibana:7.6.0
@@ -58,13 +76,12 @@ export const elkServiceMite: IMite = {
  logstash:
   image: logstash:7.6.0
   volumes:
-   - ./elk/logstash-logs:/usr/share/logstash/logfiles
-   - ./elk/logfiles:/usr/share/logstash
+   - ./elk/logfiles:/usr/share/logstash/logs
+   - ./elk/logstash-config:/usr/share/logstash/config
+   - ./elk/logstash-pipeline:/usr/share/logstash/pipeline
   networks:
    - elk
-  command: logstash -f /usr/share/logstash/logstash.conf
-  depends_on:
-   - elasticsearch
+  command: logstash -f /usr/share/logstash/pipeline/*
 
 # End ELK Service Section
 

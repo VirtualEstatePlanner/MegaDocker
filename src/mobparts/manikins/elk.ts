@@ -14,6 +14,9 @@ import { kibanaUser } from '../memories/kibanaUser';
 import { kibanaPassword } from '../memories/kibanaPassword';
 import { elasticsearchDotYmlMite } from '../mites/custom/elasticsearchDotYmlMite';
 import { logstashDotYmlMite } from '../mites/custom/logstashDotYmlMite';
+import { elasticsearchJvmDotOptionsMite } from '../mites/custom/elasticsearchJvmDotOptions';
+import { elasticsearchLog4j2DotPropertiesMite } from '../mites/custom/elasticsearchLog4j2DotPropertiesMite';
+import { logstashDotConfMite } from '../mites/custom/logstashDotConfMite';
 
 /**
  * elk Manikin
@@ -31,6 +34,9 @@ export const elkManikin: IManikin = {
     elkNetworkMite,
     kibanaDotYmlMite,
     elasticsearchDotYmlMite,
+    elasticsearchJvmDotOptionsMite,
+    elasticsearchLog4j2DotPropertiesMite,
+    logstashDotConfMite,
     logstashDotYmlMite
   ],
   name: `ELK`,
@@ -38,7 +44,9 @@ export const elkManikin: IManikin = {
   subfolders: [
     `elasticsearch-config`,
     `elasticsearch-data`,
+    `filebeat-config`,
     `logstash-config`,
+    `logstash-pipeline`,
     `logfiles`,
     `kibana-config`
   ]
