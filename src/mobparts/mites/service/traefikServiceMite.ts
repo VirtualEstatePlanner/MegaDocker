@@ -19,6 +19,7 @@ export const traefikServiceMite: IMite = {
   image: traefik
   command:
    - '--accesslog=true'
+   - '--accesslog.filePath=/logs/traefikAccessLog.json'
    - '--api.dashboard=true'
    - '--certificatesresolvers.cloudflarecerts.acme.email=[[LETSENCRYPTEMAIL]]'
    - '--certificatesresolvers.cloudflarecerts.acme.storage=/acme.json'
@@ -29,9 +30,10 @@ export const traefikServiceMite: IMite = {
    - '--entrypoints.plainhttp.address=:80'
    - '--entrypoints.encryptedhttp.address=:443'
    - '--log.level=DEBUG'
-   - '--logFile=/logs/traefikLog.json'
-   - '--accessLog=true'
-   - '--accessLog.filePath=/logs/traefikAccessLog.json'
+   - '--log.format=json'
+   - '--log.filepath=/logs/traefikLog.json'
+   - '--accesslog=true'
+   - '--accesslog.filePath=/logs/traefikAccessLog.json'
    - '--providers.docker.endpoint=unix:///var/run/docker.sock'
    - '--providers.docker.exposedbydefault=false'
    - '--providers.docker.network=[[MOBNAME]]_traefik'
@@ -45,7 +47,7 @@ export const traefikServiceMite: IMite = {
    - 8080:8080
   volumes:
    - /var/run/docker.sock:/var/run/docker.sock:ro
-
+   - ./traefik/logs:/logs
    - ./traefik/acme.json:/acme.json
   environment:
    - CF_DNS_API_TOKEN=[[CLOUDFLAREAPITOKEN]]
