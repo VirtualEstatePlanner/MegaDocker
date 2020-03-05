@@ -38,6 +38,7 @@ export interface IMemory {
     | `[[KIBANAUSER]]`
     | `[[LDAPADMINPASSWORD]]`
     | `[[LDAPADMINUSERNAME]]`
+    | `[[LDAPORGANIZATION]]`
     | `[[LDAPCONFIGURATIONPASSWORD]]`
     | `[[LDAPORGANIZATION]]`
     | `[[LEDGERPOSTGRESPASSWORD]]`

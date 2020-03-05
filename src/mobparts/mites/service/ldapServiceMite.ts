@@ -19,21 +19,20 @@ export const ldapServiceMite: IMite = {
   networks:
    - ldap
   environment:
-   - LDAP_TLS=true
-   - LDAP_TLS_CRT_FILENAME=[[PRIMARYDOMAIN]].crt
-   - LDAP_TLS_KEY_FILENAME=[[PRIMARYDOMAIN]].key
-   - LDAP_TLS_CA_CRT_FILENAME=letssencrypt.key
    - LDAP_ORGANISATION=The MegaDocker Group
-# TODO: add [[LDAPORGANIZATION]] Memory
-#   - LDAP_ORGANISATION=[[LDAPORGANIZATION]]
+   - LDAP_ORGANIZATION=[[LDAPORGANIZATION]]
+   # TODO: add [[LDAPORGANIZATION]] Memory /n#   - LDAP_ORGANISATION=[[LDAPORGANIZATION]]
    - LDAP_DOMAIN=ldap.[[PRIMARYDOMAIN]]
-# TODO: add [[PRIMARYDOMAIN and split into 2 dcs]] 
-#   - LDAP_BASE_DN=dc=ldap,dc=[[PRIMARYDOMAIN domain]],dc=[[PRIMARYDOMAIN tld]]
-   - LDAP_BASE_DN=dc=ldap,dc=megadocker,dc=net
+   # TODO: add [[PRIMARYDOMAIN and split into 2 dcs]] /n#   - LDAP_BASE_DN=dc=ldap,dc=[[PRIMARYDOMAIN domain]],dc=[[PRIMARYDOMAIN tld]]
+   #   - LDAP_BASE_DN=dc=ldap,dc=megadocker,dc=net
    - LDAP_ADMIN_PASSWORD=[[LDAPADMINPASSWORD]]
    - LDAP_CONFIG_PASSWORD=[[LDAPCONFIGURATIONPASSWORD]]
    - LDAP_TLS_CIPHER_SUITE=NORMAL
    - LDAP_TLS_VERIFY_CLIENT=allow
+   - LDAP_TLS=true
+   - LDAP_TLS_CRT_FILENAME=[[PRIMARYDOMAIN]].crt
+   - LDAP_TLS_KEY_FILENAME=[[PRIMARYDOMAIN]].key
+   - LDAP_TLS_CA_CRT_FILENAME=letssencrypt.key
   tty: true
   stdin_open: true
   volumes:
@@ -52,6 +51,7 @@ export const ldapServiceMite: IMite = {
 
  ldapadmin:
   image: osixia/phpldapadmin:latest
+  command: --loglevel debug
   environment:
    - SERVER_NAME=[[MOBNAME]]_ldap
    - PHPLDAPADMIN_LDAP_HOSTS=[[MOBNAME]]_ldap
