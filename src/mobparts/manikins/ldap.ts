@@ -12,6 +12,7 @@ import { ldapConfigurationPassword } from '../memories/ldapConfigurationPassword
 import { ldapServiceMite } from '../mites/service/ldapServiceMite';
 import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';
 import ldapIcon from '../../images/manikin-icons/ldapIcon.png';
+import { ldapOrganization } from '../memories/ldapOrganization';
 
 /**
  * ldap Manikin
@@ -25,7 +26,12 @@ export const ldapManikin: IManikin = {
   // isSelected: false,
   manikinIcon: ldapIcon,
   manikinIndex: 6,
-  memories: [ldapAdminUsername, ldapAdminPassword, ldapConfigurationPassword],
+  memories: [
+    ldapAdminUsername,
+    ldapAdminPassword,
+    ldapConfigurationPassword,
+    ldapOrganization
+  ],
   mites: [ldapServiceMite, ldapNetworkMite],
   name: `LDAP`,
   ports: [],

@@ -5,7 +5,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { noValidator } from '../../functions/validators/noValidator';
+import { noWhitespaceValidator } from '../../functions/validators/noWhitespaceValidator';
 
 export const ldapOrganization: IMemory = {
   memoryIndex: 1018,
@@ -16,5 +16,6 @@ export const ldapOrganization: IMemory = {
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: noValidator
+  // TODO: create a validator that allows whitespace
+  validator: noWhitespaceValidator
 };
