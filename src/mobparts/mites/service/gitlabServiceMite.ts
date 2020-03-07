@@ -52,7 +52,7 @@ export const gitlabServiceMite: IMite = {
 #   - LDAP_USER_FILTER=
   volumes:
    - ./logs/gitlab:/var/log/gitlab
-   - ./traefik/certs:/ldapcerts/:ro
+   - ./traefik/ssl:/ldapcerts/:ro
    - ./gitlab/config:/etc/gitlab
    - ./gitlab/data:/var/opt/gitlab
   ports:

@@ -23,11 +23,11 @@ export const heimdallServiceMite: IMite = {
    - TZ=America/New_York
   volumes:
    - ./logs/heimdall:/loglocation
-   - ./traefik/certs/certs/[[PRIMARYDOMAIN]].crt:/config/keys/[[PRIMARYDOMAIN]].crt
-   - ./traefik/certs/certs/[[SECONDARYDOMAIN]].crt:/config/keys/[[SECONDARYDOMAIN]].crt
-   - ./traefik/certs/private/[[PRIMARYDOMAIN]].key:/config/keys/[[PRIMARYDOMAIN]].key
-   - ./traefik/certs/private/[[SECONDARYDOMAIN]].key:/config/keys/[[SECONDARYDOMAIN]].key
-#   - ./traefik/certs/private/letsencrypt.key:/config/keys/cert.key
+   - ./traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/config/keys/[[PRIMARYDOMAIN]].crt
+   - ./traefik/ssl/certs/[[SECONDARYDOMAIN]].crt:/config/keys/[[SECONDARYDOMAIN]].crt
+   - ./traefik/ssl/private/[[PRIMARYDOMAIN]].key:/config/keys/[[PRIMARYDOMAIN]].key
+   - ./traefik/ssl/private/[[SECONDARYDOMAIN]].key:/config/keys/[[SECONDARYDOMAIN]].key
+#   - ./traefik/ssl/private/letsencrypt.key:/config/keys/cert.key
    - ./heimdall/php:/config/php
    - ./heimdall/www:/config/www
    - ./heimdall/log:/config/log

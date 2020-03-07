@@ -15,13 +15,13 @@ Manikins in **bold** are currently working, but may have more features to add
 9. E-mail : needs Traefik tcp forwarding for 25, 587, 993 and super-requires LDAP
 10. Getter (autopirate) : - check funkypenguin for nzbget, rtorrent, sonarr, radarr, mylar, lazylibrarian, headphones, lidarr, nzbhydra, ombi,
 11. **Ghost** : needs LDAP for auth
-12. GitLab : needs tcp forwarding for 22
+12. GitLab : needs tcp forwarding for 22, needs LDAP for auth
 13. Grafana : - check funkypenguin, needs filebeats/kibana integration
 14. **Heimdall** : I wish there was a way to autopopulate the stuff in traefik, but we probably need a customMite to be generated during zip
 15. Huginn : - check funkypenguin
 16. **Kanboard** : - needs LDAP for auth
 17. Keycloak : -check funkypenguin
-18. LDAP : needs tcp forwarding for 389, 636, 6443
+18. **LDAP** : needs tcp forwarding for 389, 636, 6443, needs ldif generation to populate server
 19. Ledger : currently barely more than a stub
 20. MegaDocker: dockerize web-app in an nginx container
 21. Nextcloud : takes 2 minutes to start after container launch, requires manual setup, never launches fully

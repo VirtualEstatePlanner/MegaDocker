@@ -5,17 +5,18 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { noWhitespaceValidator } from '../../functions/validators/noWhitespaceValidator';
+// import { noWhitespaceValidator } from '../../functions/validators/noWhitespaceValidator';
+import { noValidator } from '../../functions/validators/noValidator';
 
-export const ldapOrganization: IMemory = {
+export const ldapOrganisation: IMemory = {
   memoryIndex: 1018,
-  memoryMarker: `[[LDAPORGANIZATION]]`,
+  memoryMarker: `[[LDAPORGANISATION]]`,
   shouldAutocomplete: false,
-  name: `LDAP Organization`,
+  name: `LDAP Organisation`,
   tooltip: `Choose the organization name for your LDAP server.`,
   value: ``,
   valueType: 'text',
   isReady: false,
   // TODO: create a validator that allows whitespace
-  validator: noWhitespaceValidator
+  validator: noValidator
 };

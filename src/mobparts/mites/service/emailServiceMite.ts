@@ -28,7 +28,7 @@ export const emailServiceMite: IMite = {
 #   - ./traefik/ssl/pem/*.[[PRIMARYDOMAIN]].pem:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]].pem:ro
 #   - ./traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]]/key:ro
 #   - ./traefik/ssl/private/letsencrypt.key:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/letsencrypt.key:ro
-   - ./traefik/certs:/etc/letsencrypt:ro
+   - ./traefik/ssl:/etc/letsencrypt:ro
   environment:
    - ENABLE_SPAMASSASSIN=1
    - ENABLE_CLAMAV=1

@@ -38,9 +38,8 @@ export interface IMemory {
     | `[[KIBANAUSER]]`
     | `[[LDAPADMINPASSWORD]]`
     | `[[LDAPADMINUSERNAME]]`
-    | `[[LDAPORGANIZATION]]`
     | `[[LDAPCONFIGURATIONPASSWORD]]`
-    | `[[LDAPORGANIZATION]]`
+    | `[[LDAPORGANISATION]]`
     | `[[LEDGERPOSTGRESPASSWORD]]`
     | `[[LETSENCRYPTEMAIL]]`
     | `[[MOBFOLDERPATH]]`

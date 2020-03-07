@@ -84,7 +84,7 @@ export const traefikServiceMite: IMite = {
   volumes:
    - ./logs/traefik:/loglocation
    - ./traefik/acme.json/:/acme.json
-   - ./traefik/certs:/output
+   - ./traefik/ssl:/output
   command: >
    file
    --watch
