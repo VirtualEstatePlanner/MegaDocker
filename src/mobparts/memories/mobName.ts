@@ -5,16 +5,16 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
-import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
+import { mobnameValidator } from '../../functions/validators/mobnameValidator';
 
 export const mobName: IMemory = {
   memoryIndex: 1022,
   memoryMarker: `[[MOBNAME]]`,
   shouldAutocomplete: false,
   name: `Mob Name`,
-  tooltip: `Name your MEGADocker Mob.  This will also be the name of the folder that contains your Mob's persistent data inside of your 'Documents/MEGADocker' folder.`,
+  tooltip: `Name your MEGADocker Mob (only using lowercase letters or numbers).  This will also be the name of the folder that contains your Mob's persistent data inside of your 'Documents/MEGADocker' folder.`,
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: noWhitespaceOrSymbolsValidator
+  validator: mobnameValidator
 };
