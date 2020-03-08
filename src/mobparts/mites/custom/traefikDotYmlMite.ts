@@ -3,7 +3,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite';
 export const traefikDotYmlMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 3009,
+  miteIndex: 3010,
   miteFile: {
     path: `traefik`,
     name: `traefik`,

@@ -11,6 +11,8 @@ import { mobNetworksSectionString } from '../../mobparts/mites/headers/mobNetwor
 import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString';
 import { traefikManikin } from '../../mobparts/manikins/traefik';
 import { mobName } from '../../mobparts/memories/mobName';
+import { ldapBootstrapMegaDockerDotLdifMite } from '../../mobparts/mites/custom/ldapBootstrapMegaDockerDotLdifMite';
+import { primaryDomain } from '../../mobparts/memories/primaryDomain';
 
 /**
  * makes .zip file for docker-compose
@@ -21,12 +23,18 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
   let zipMemories: IMemory[] = [...zipCompose.memories];
   let zipManikins: IManikin[] = [...zipCompose.manikins];
 
-  const traefikIndex = zipManikins.indexOf(traefikManikin);
-  const mobNameIndex = zipManikins[traefikIndex].memories.indexOf(mobName);
+  const traefikIndex: number = zipManikins.indexOf(traefikManikin);
+  const mobNameIndex: number = zipManikins[traefikIndex].memories.indexOf(
+    mobName
+  );
+  const domainIndex: number = zipManikins[traefikIndex].memories.indexOf(
+    primaryDomain
+  );
 
   const mites: IMite[] = zipManikins.flatMap((eachManikin: IManikin) =>
     eachManikin.mites.map((eachMite: IMite) => eachMite)
   );
+
   const serviceMites: string[] = mites
     .filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`)
     .sort((mite1, mite2): number => {
@@ -61,13 +69,33 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     (mite: IMite) => mite as ICustomMite
   );
 
-  console.log(customMites);
+  const ldifIndex: number = customMites.indexOf(
+    ldapBootstrapMegaDockerDotLdifMite
+  );
+
+  /**
+   * adds dc values to bootstrap ldif
+   */
+  const populateLdifDCs: Function = (): string => {
+    const fullDomain: string =
+      zipCompose.manikins[traefikIndex].memories[domainIndex].value;
+    const tld: string = fullDomain.split(`.`)[1];
+    const domain: string = fullDomain.split(`.`)[0];
+    const workingLdif = ldapBootstrapMegaDockerDotLdifMite.miteFile.contents
+      .split(`[[LDAPDOMAINASDCS]]`)
+      .join(`dc=${domain},dc=${tld}`);
+
+    console.log(workingLdif);
+
+    return workingLdif;
+  };
+  customMites[ldifIndex].miteFile.contents = populateLdifDCs();
   /**
    * updates yml with variables from memories
    * @param ymlInput the initial string to change
    * @param memories the memories to apply
    */
-  const updateYMLWithMemoryValues: Function = (
+  const insertMemoryValues: Function = (
     ymlInput: string,
     memories: IMemory[]
   ): string => {
@@ -118,7 +146,7 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
           .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
           .file(
             `${zipManikins[traefikIndex].memories[mobNameIndex].value}.yml`,
-            `${updateYMLWithMemoryValues(ymlString, zipMemories)}`
+            `${insertMemoryValues(ymlString, zipMemories)}`
           );
         customMites.forEach((eachCustomMite) => {
           console.log(`generating file: ${eachCustomMite.miteFile.name}`);

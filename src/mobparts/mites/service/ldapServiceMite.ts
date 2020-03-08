@@ -34,8 +34,7 @@ export const ldapServiceMite: IMite = {
   stdin_open: true
   volumes:
    - ./logs/ldap:/var/log/ldap
-   - ./ldap/ldif-files:/ldif
-   - ./ldap/ldif-files:/container/service/slapd/assets/config/nootstrap/ldif/custom
+   - ./ldap/ldif-files:/container/service/slapd/assets/config/bootstrap/ldif/custom
    - ./ldap/lib:/var/lib/ldap
    - ./ldap/slapd.d:/etc/ldap/slapd.d
    - ./traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/container/service/slapd/assets/certs/[[PRIMARYDOMAIN]].crt:ro

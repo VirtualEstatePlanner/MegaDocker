@@ -13,6 +13,7 @@ import { ldapServiceMite } from '../mites/service/ldapServiceMite';
 import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';
 import ldapIcon from '../../images/manikin-icons/ldapIcon.png';
 import { ldapOrganisation } from '../memories/ldapOrganisation';
+import { ldapBootstrapMegaDockerDotLdifMite } from '../mites/custom/ldapBootstrapMegaDockerDotLdifMite';
 
 /**
  * ldap Manikin
@@ -32,7 +33,7 @@ export const ldapManikin: IManikin = {
     ldapConfigurationPassword,
     ldapOrganisation
   ],
-  mites: [ldapServiceMite, ldapNetworkMite],
+  mites: [ldapServiceMite, ldapNetworkMite, ldapBootstrapMegaDockerDotLdifMite],
   name: `LDAP`,
   ports: [],
   subfolders: [`conf`, `pages`, `log`, `certs`, `lib`, `ldif-files`, `slapd.d`]
