@@ -13,7 +13,6 @@ import { gitlabPostgresUser } from '../memories/gitlabPostgresUser';
 import { gitlabRootEmail } from '../memories/gitlabRootEmail';
 import { gitlabRootPassword } from '../memories/gitlabRootPassword';
 import gitlabIcon from '../../images/manikin-icons/gitlabIcon.png';
-import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';
 
 /**
  * git Manikin
@@ -21,6 +20,8 @@ import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';
 export const gitlabManikin: IManikin = {
   description: `GitLab version control service`,
   folder: `gitlab`,
+  // isCore: true,
+  // isSelected: true,
   isCore: false,
   isSelected: false,
   manikinIcon: gitlabIcon,
@@ -31,7 +32,7 @@ export const gitlabManikin: IManikin = {
     gitlabRootEmail,
     gitlabRootPassword
   ],
-  mites: [gitlabServiceMite, gitlabNetworkMite, ldapNetworkMite],
+  mites: [gitlabServiceMite, gitlabNetworkMite],
   name: `GitLab`,
   ports: [],
   subfolders: [`config`, `data`, `logs`, `postgresql`, `redis`]

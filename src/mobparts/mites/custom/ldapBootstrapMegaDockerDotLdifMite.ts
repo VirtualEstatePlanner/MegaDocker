@@ -20,6 +20,9 @@ objectclass: organizationalUnit
 dn: ou=Customers,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
+dn: ou=Technicians,ou=People,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
 dn: ou=Vendors,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 

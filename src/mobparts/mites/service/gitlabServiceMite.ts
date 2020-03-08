@@ -37,7 +37,7 @@ export const gitlabServiceMite: IMite = {
    - GITLAB_SSH_PORT=22
    - EXTERNAL_URL=http://gitlab.[[PRIMARYDOMAIN]]
    - LDAP_ENABLED=true
-   - LDAP_HOST=[[MOBNAME]]_openldap
+   - LDAP_HOST=[[MOBNAME]]_ldap.[[PRIMARYDOMAIN]]
    - LDAP_PORT=636
    - LDAP_UID=email
    - LDAP_METHOD=start_tls
@@ -49,7 +49,8 @@ export const gitlabServiceMite: IMite = {
    - LDAP_PASS=[[LDAPADMINPASSWORD]]
    - LDAP_ACTIVE_DIRECTORY=false
    - LDAP_ALLOW_USERNAME_OR_EMAIL_LOGIN=true
-   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups
+   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,dc=megadocker,dc=net
+#   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
 #   - LDAP_USER_FILTER=
   volumes:
    - ./logs/gitlab:/var/log/gitlab
