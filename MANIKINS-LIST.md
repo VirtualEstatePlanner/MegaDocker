@@ -21,7 +21,7 @@ Manikins in **bold** are currently working, but may have more features to add
 15. Huginn : - check funkypenguin
 16. **Kanboard** : - needs LDAP for auth
 17. Keycloak : -check funkypenguin
-18. **LDAP** : needs tcp forwarding for 389, 636, 6443, needs ldif generation to populate server
+18. **LDAP** : needs traefik tcp forwarding for 389, 636, 6443
 19. Ledger : currently barely more than a stub
 20. MegaDocker: dockerize web-app in an nginx container
 21. Nextcloud : takes 2 minutes to start after container launch, requires manual setup, never launches fully
@@ -33,7 +33,7 @@ Manikins in **bold** are currently working, but may have more features to add
 27. **Portainer** : needs LDAP for auth
 28. PrivateBin : - check funkypenguin
 29. Prometheus : - check funkypenguin
-30. RocketChat : has some issue connecting to mongo database
+30. RocketChat : has a mongoDB replication issue, I think
 31. **Skopos** : needs LDAP for auth
 32. **Swarmpit** : needs LDAP for auth
 33. **Traefik** : needs LDAP for auth
