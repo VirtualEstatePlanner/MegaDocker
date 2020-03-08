@@ -85,8 +85,6 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
       .split(`[[LDAPDOMAINASDCS]]`)
       .join(`dc=${domain},dc=${tld}`);
 
-    console.log(workingLdif);
-
     return workingLdif;
   };
   customMites[ldifIndex].miteFile.contents = populateLdifDCs();
@@ -113,9 +111,6 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
   };
 
   customMites.map((eachCustomMite: ICustomMite) => {
-    console.log(
-      `updating contents of customMite: ${eachCustomMite.miteFile.name}`
-    );
     const newFileContents = zipMemories.forEach((eachMemory: IMemory) => {
       const workingFileContents = eachCustomMite.miteFile.contents
         .split(eachMemory.memoryMarker)
@@ -149,7 +144,6 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
             `${insertMemoryValues(ymlString, zipMemories)}`
           );
         customMites.forEach((eachCustomMite) => {
-          console.log(`generating file: ${eachCustomMite.miteFile.name}`);
           zip.file(
             `${zipManikins[traefikIndex].memories[mobNameIndex].value}/${eachCustomMite.miteFile.path}/${eachCustomMite.miteFile.name}.${eachCustomMite.miteFile.extension}`,
             `${eachCustomMite.miteFile.contents}`,

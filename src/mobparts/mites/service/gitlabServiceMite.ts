@@ -44,11 +44,12 @@ export const gitlabServiceMite: IMite = {
    - LDAP_VERIFY_SSL=true
    - LDAP_CA_FILE=/ldapcerts/[[PRIMARYDOMAIN]].crt
    - LDAP_SSL_VERSION=TLSv1_2
-   - LDAP_BIND_DN=dc=megadocker,dc=com
+#   - LDAP_BIND_DN=[[LDAPDOMAINASDCS]]
+   - LDAP_BIND_DN=dc=megadocker,dc=net
    - LDAP_PASS=[[LDAPADMINPASSWORD]]
    - LDAP_ACTIVE_DIRECTORY=false
    - LDAP_ALLOW_USERNAME_OR_EMAIL_LOGIN=true
-   - LDAP_BASE=ou=Users
+   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups
 #   - LDAP_USER_FILTER=
   volumes:
    - ./logs/gitlab:/var/log/gitlab
