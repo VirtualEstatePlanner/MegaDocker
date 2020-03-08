@@ -38,6 +38,9 @@ objectclass: organizationalUnit
 dn: ou=TraefikUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
+dn: ou=GitlabUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
 dn: ou=SwarmpitUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
