@@ -3,7 +3,8 @@ import { IMegaDockerState } from '../interfaces/IMegaDockerState';
 import { IManikin } from '../interfaces/IManikin';
 import { IMemory } from '../interfaces/IMemory';
 import { IMite } from '../interfaces/IMite';
-import { allManikins } from '../globals/allManikins';
+//import { allManikins } from '../globals/allManikins';
+import { workingManikins } from '../globals/workingManikins';
 import { mobFileHeaderString } from '../mobparts/mites/headers/mobFileHeaderString';
 import { servicesFooterSectionString } from '../mobparts/mites/headers/servicesFooterSectionString';
 import { mobNetworkFooterSectionString } from '../mobparts/mites/headers/mobNetworkFooterSectionString';
@@ -33,7 +34,7 @@ const updateInfoContent = (info: string): string => {
     return info
 }
 
-const initialTableManikins: IManikin[] = [...allManikins]
+const initialTableManikins: IManikin[] = [...workingManikins]
 const initialSelectedManikins: IManikin[] = updateSelectedManikins(initialTableManikins)
 const initialMemoryTableContents: IMemory[] = updateMemories(initialSelectedManikins)
 const initialMobMites: IMite[] = updateMobMites(initialSelectedManikins)

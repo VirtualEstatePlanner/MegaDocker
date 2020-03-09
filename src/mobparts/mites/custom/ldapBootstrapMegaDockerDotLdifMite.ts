@@ -29,61 +29,58 @@ objectclass: organizationalUnit
 dn: ou=Employees,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=Managers,ou=Employees,ou=People,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-dn: ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=Managers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=TraefikUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=TraefikUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=GitlabUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=GitlabUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=SwarmpitUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=SwarmpitUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=SkoposUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=SkoposUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=KanboardUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=KanboardUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=KibanaUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=KibanaUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=DrupalUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=DrupalUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=GhostUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=GhostUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=WordpressUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=WordpressUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=PiholeUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=PiholeUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=EmailUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=EmailUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=RocketchatUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=RocketchatUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=PortainerUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=PortainerUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=NextcloudUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=NextcloudUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=OwncloudUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=OwncloudUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=HeimdallUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+dn: ou=HeimdallUsers,ou=Employees,ou=Users,ou=People,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 `
   }

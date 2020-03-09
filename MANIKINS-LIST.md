@@ -26,7 +26,7 @@ Manikins in **bold** are currently working, but may have more features to add
 20. **Heimdall** : I wish there was a way to autopopulate the stuff in traefik, but we probably need a customMite to be generated during zip
 21. Huginn : - check funkypenguin
 22. Journal :
-23. **Kanboard** : - needs LDAP for auth
+23. **Kanboard** : - needs LDAP for auth, needs admin user and password variable set
 24. Keycloak : -check funkypenguin
 25. **LDAP** : needs traefik tcp forwarding for 389, 636, 6443
 26. Ledger : currently barely more than a stub

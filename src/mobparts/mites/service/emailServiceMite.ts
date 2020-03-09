@@ -11,7 +11,7 @@ export const emailServiceMite: IMite = {
   miteIndex: 2003,
   miteString: `
 
-#Begin MailServer section
+# Begin MailServer section
 
  mailserver:
   image: tvial/docker-mailserver
@@ -78,7 +78,7 @@ export const emailServiceMite: IMite = {
     constraints:
      - node.role == manager
 
-#End Mailserver Service Section
+# End Mailserver Service Section
 
 `
 };

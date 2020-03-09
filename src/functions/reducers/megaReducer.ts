@@ -3,7 +3,8 @@ import React from 'react';
 import { IMegaDockerAction } from '../../interfaces/IMegaDockerAction';
 import { IMegaDockerState } from '../../interfaces/IMegaDockerState';
 // global consts
-import { allManikins } from '../../globals/allManikins';
+// import { allManikins } from '../../globals/allManikins';
+import { workingManikins } from '../../globals/workingManikins';
 // reducer operation functions
 import { getManikins } from './getManikins';
 import { getMemories } from './getMemories';
@@ -33,8 +34,8 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     action.type // check which modification to make to state
   ) {
     case `APPLICATION_START`: // to start the program with only core manikins selected
-      newState.manikinTable = allManikins;
-      newState.selectedManikins = getManikins(allManikins);
+      newState.manikinTable = workingManikins;
+      newState.selectedManikins = getManikins(workingManikins);
       newState.memories = getMemories(newState.selectedManikins);
       newState.allMobMites = getMites(newState.selectedManikins);
       newState.mobDServiceMites = getDServiceMites(newState.allMobMites);
