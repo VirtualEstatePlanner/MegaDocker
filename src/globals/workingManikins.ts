@@ -5,7 +5,7 @@ import { drupalManikin } from '../mobparts/manikins/drupal';
 import { elkManikin } from '../mobparts/manikins/elk';
 import { emailManikin } from '../mobparts/manikins/email';
 import { ghostManikin } from '../mobparts/manikins/ghost';
-import { gitlabManikin } from '../mobparts/manikins/gitlab';
+// import { gitlabManikin } from '../mobparts/manikins/gitlab';
 import { heimdallManikin } from '../mobparts/manikins/heimdall';
 import { kanboardManikin } from '../mobparts/manikins/kanboard';
 import { ldapManikin } from '../mobparts/manikins/ldap';
@@ -32,7 +32,7 @@ export const workingManikins: IManikin[] = [
   elkManikin,
   emailManikin,
   ghostManikin,
-  gitlabManikin,
+  // gitlabManikin,
   heimdallManikin,
   kanboardManikin,
   ldapManikin,
