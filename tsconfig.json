@@ -10,7 +10,6 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
-    "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
@@ -19,7 +18,8 @@
       "node_modules/@types",
       "node_modules/@types/node",
       "src/typings"
-    ]
+    ],
+    "noEmit": true
   },
   "include": ["src", "public", "typings"],
   "exclude": ["**/*/*.test.ts*", "**/*/node_modules"]
