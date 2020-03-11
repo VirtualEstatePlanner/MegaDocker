@@ -72,7 +72,7 @@ export const traefikServiceMite: IMite = {
     - 'traefik.http.routers.dashboard.tls.domains[0].sans=*.[[PRIMARYDOMAIN]]'
     - 'traefik.http.routers.dashboard.tls.domains[1].main=[[SECONDARYDOMAIN]]'
     - 'traefik.http.routers.dashboard.tls.domains[1].sans=*.[[SECONDARYDOMAIN]]'
-    - 'com.MegaDocker.description=Swarmpit App - a web GUI for Docker Swarm.'
+    - 'com.MegaDocker.description=Traefik - a modern reverse-proxy for microservices environments.'
    placement:
     constraints:
      - node.role == manager

@@ -16,10 +16,10 @@ import swarmpitIcon from '../../images/manikin-icons/swarmpitIcon.png';
  */
 export const swarmpitManikin: IManikin = {
   description: `Swarmpit Docker swarm mode GUI service`,
-  // isCore: true,
-  // isSelected: true,
-  isCore: false,
-  isSelected: false,
+  isCore: true,
+  isSelected: true,
+  // isCore: false,
+  // isSelected: false,
   folder: `swarmpit`,
   manikinIcon: swarmpitIcon,
   manikinIndex: 16,

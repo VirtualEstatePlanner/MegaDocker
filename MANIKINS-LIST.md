@@ -2,6 +2,8 @@
 
 ## a list of the first 50 manikins, which ones are working, and what features they still need
 
+### currently running: 16
+
 Manikins in **bold** are currently working, but may have more features to add
 
 1. Anchr :
@@ -41,13 +43,13 @@ Manikins in **bold** are currently working, but may have more features to add
 35. **Portainer** : needs LDAP for auth
 36. PrivateBin : - check funkypenguin
 37. Prometheus : - check funkypenguin
-38. RocketChat : has a mongoDB replication issue, I think
+38. **RocketChat** : needs LDAP for auth
 39. **Skopos** : needs LDAP for auth
 40. **Swarmpit** : needs LDAP for auth
 41. Tania :
 42. TournamentMango :
 43. **Traefik** : needs LDAP for auth
-44. **VS Code** : has serious issuues but theoretically works, wants LDAP for auth if possible
+44. VS Code : has serious issuues but theoretically works, needs LDAP for auth if possible
 45. **Visualizer**: principle of least access: might need LDAP for auth
 46. Wallabag : - check funkypenguin
 47. WebDAV : is not connectable, but docker reports as running
