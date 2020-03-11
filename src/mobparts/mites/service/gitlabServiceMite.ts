@@ -49,8 +49,8 @@ export const gitlabServiceMite: IMite = {
    - LDAP_PASS=[[LDAPADMINPASSWORD]]
    - LDAP_ACTIVE_DIRECTORY=false
    - LDAP_ALLOW_USERNAME_OR_EMAIL_LOGIN=true
-   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,dc=megadocker,dc=net
 #   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,dc=megadocker,dc=net
 #   - LDAP_USER_FILTER=
   volumes:
    - ./logs/gitlab:/var/log/gitlab
@@ -91,7 +91,6 @@ export const gitlabServiceMite: IMite = {
    - POSTGRES_PASSWORD=[[GITLABPOSTGRESPASSWORD]]
    - POSTGRES_DB=gitlabhq_production
   volumes:
-  # maybe wrong log location
    - ./logs/gitlab:/var/log/postgres
    - ./gitlab/postgresql:/var/lib/postgresql:rw
   networks:
