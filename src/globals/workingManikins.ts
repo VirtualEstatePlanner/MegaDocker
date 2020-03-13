@@ -1,5 +1,6 @@
 import { IManikin } from '../interfaces/IManikin';
 // import manikins
+// import { autoTvManikin } from '../mobparts/manikins/autoTv';
 // import { backupManikin } from '../mobparts/manikins/backup';
 import { drupalManikin } from '../mobparts/manikins/drupal';
 import { elkManikin } from '../mobparts/manikins/elk';
@@ -27,6 +28,7 @@ import { wordpressManikin } from '../mobparts/manikins/wordpress';
  * an array containing all Manikins available in MEGADocker
  */
 export const workingManikins: IManikin[] = [
+  // autoTvManikin,
   // backupManikin,
   drupalManikin,
   elkManikin,
