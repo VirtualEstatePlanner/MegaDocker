@@ -62,7 +62,7 @@ export const rocketchatServiceMite: IMite = {
    - ./rocketchat/uploads:/app/uploads
   environment:
    - PORT=3000
-   - ROOT_URL=http://rocketchat.[[PRIMARYDOMAIN]]:3000
+   - ROOT_URL=https://rocketchat.[[PRIMARYDOMAIN]]
    - MONGO_URL=mongodb://[[MOBNAME]]_rocketchat-mongo:27017/rocketchat
    - MONGO_OPLOG_URL=mongodb://[[MOBNAME]]_rocketchat-mongo:27017/local
 

@@ -43,7 +43,7 @@ export const traefikServiceMite: IMite = {
    - 443:443
    - 8080:8080
   volumes:
-   - ./logs/traefik:/loglocation
+   - ./logs/traefik:/var/log/traefik
    - ./traefik/acme.json:/acme.json
    - /var/run/docker.sock:/var/run/docker.sock:ro
   environment:

@@ -5,7 +5,7 @@ export const skoposServiceMite: IMite = {
   miteIndex: 2015,
   miteString: `
   
-#Begin Skopos Service Section
+# Begin Skopos Service Section
 
  skopos:
   image: opsani/skopos:edge
@@ -29,14 +29,12 @@ export const skoposServiceMite: IMite = {
     - 'traefik.http.routers.skopos-https.entrypoints=encryptedhttp'
     - 'traefik.http.routers.skopos-https.rule=Host("skopos.[[PRIMARYDOMAIN]]") || Host("skopos.[[SECONDARYDOMAIN]]")'
     - 'traefik.http.services.skopos.loadbalancer.server.port=8100'
-#    - 'traefik.http.services.skopos-https.loadbalancer.server.port=8100'
+    - 'traefik.http.services.skopos-https.loadbalancer.server.port=8100'
     - 'traefik.http.routers.skopos-https.service=skopos'
     - 'traefik.http.routers.skopos-https.tls=true'
     - 'com.MegaDocker.description=Swarmpit App - a web GUI for Docker Swarm.'
 
-# maybe handled by static config                    - 'traefik.docker.network=proxy'
-
-#End Skopos Service Section
+# End Skopos Service Section
 
 `
 };
