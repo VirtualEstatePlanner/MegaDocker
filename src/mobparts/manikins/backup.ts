@@ -19,7 +19,7 @@ export const backupManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: backupIcon,
-  manikinIndex: 0,
+  manikinIndex: 2,
   memories: [],
   mites: [backupServiceMite, backupNetworkMite],
   name: `Backup`,

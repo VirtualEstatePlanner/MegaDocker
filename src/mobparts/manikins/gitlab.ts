@@ -25,7 +25,7 @@ export const gitlabManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: gitlabIcon,
-  manikinIndex: 5,
+  manikinIndex: 7,
   memories: [
     gitlabPostgresPassword,
     gitlabPostgresUser,

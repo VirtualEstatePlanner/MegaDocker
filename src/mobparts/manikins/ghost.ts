@@ -21,7 +21,7 @@ export const ghostManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: ghostIcon,
-  manikinIndex: 4,
+  manikinIndex: 6,
   memories: [ghostMariaDBRootPassword],
   mites: [ghostServiceMite, ghostNetworkMite],
   name: `Ghost`,

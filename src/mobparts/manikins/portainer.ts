@@ -19,7 +19,7 @@ export const portainerManikin: IManikin = {
   isSelected: false,
   isCore: false,
   manikinIcon: portainerIcon,
-  manikinIndex: 12,
+  manikinIndex: 17,
   memories: [],
   mites: [portainerServiceMite, portainerNetworkMite],
   name: `Portainer`,

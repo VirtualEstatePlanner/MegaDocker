@@ -26,7 +26,7 @@ export const ldapManikin: IManikin = {
   // isCore: false,
   // isSelected: false,
   manikinIcon: ldapIcon,
-  manikinIndex: 6,
+  manikinIndex: 11,
   memories: [
     //    ldapAdminUsername,
     ldapAdminPassword,

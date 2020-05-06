@@ -22,7 +22,7 @@ export const swarmpitManikin: IManikin = {
   // isSelected: false,
   folder: `swarmpit`,
   manikinIcon: swarmpitIcon,
-  manikinIndex: 16,
+  manikinIndex: 20,
   memories: [
     /*swarmpitCouchbasePassword*/
   ],

@@ -23,7 +23,7 @@ export const autoTvManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: tvIcon,
-  manikinIndex: 11,
+  manikinIndex: 1,
   memories: [],
   mites: [
     autoTvServiceMite,

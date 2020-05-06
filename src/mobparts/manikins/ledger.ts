@@ -20,7 +20,7 @@ export const ledgerManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: ledgerIcon,
-  manikinIndex: 7,
+  manikinIndex: 12,
   memories: [ledgerPostgresPassword],
   mites: [ledgerServiceMite, ledgerNetworkMite],
   name: `Ledger`,

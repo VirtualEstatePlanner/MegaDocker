@@ -22,7 +22,7 @@ export const kanboardManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: kanboardIcon,
-  manikinIndex: 13,
+  manikinIndex: 10,
   memories: [
     kanboardMariaDBPassword,
     kanboardMariaDBRootPassword,
