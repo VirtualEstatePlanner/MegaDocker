@@ -6,7 +6,7 @@
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const backupServiceMite: IMite = {
+export const duplicatiServiceMite: IMite = {
   type: `DockerSwarmService`,
   miteIndex: 2000,
   miteString: `
