@@ -14,7 +14,7 @@ import * as backupIcon from '../../images/manikin-icons/backupIcon.png';
  * drupal Manikin
  */
 export const backupManikin: IManikin = {
-  description: `Drupal blog service`,
+  description: `Backup Service`,
   folder: `backup`,
   isCore: false,
   isSelected: false,
@@ -24,5 +24,5 @@ export const backupManikin: IManikin = {
   mites: [backupServiceMite, backupNetworkMite],
   name: `Backup`,
   ports: [],
-  subfolders: [`data`, `settings`]
+  subfolders: [`data`, `Duplicati`]
 };

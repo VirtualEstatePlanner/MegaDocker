@@ -1,7 +1,7 @@
 import { IManikin } from '../interfaces/IManikin';
 // import manikins
 // import { autoTvManikin } from '../mobparts/manikins/autoTv';
-// import { backupManikin } from '../mobparts/manikins/backup';
+import { backupManikin } from '../mobparts/manikins/backup';
 import { drupalManikin } from '../mobparts/manikins/drupal';
 import { elkManikin } from '../mobparts/manikins/elk';
 import { emailManikin } from '../mobparts/manikins/email';
@@ -30,7 +30,7 @@ import { wordpressManikin } from '../mobparts/manikins/wordpress';
  */
 export const workingManikins: IManikin[] = [
   // autoTvManikin,
-  // backupManikin,
+  backupManikin,
   drupalManikin,
   elkManikin,
   emailManikin,
