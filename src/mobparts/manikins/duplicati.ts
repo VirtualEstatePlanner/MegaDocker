@@ -7,7 +7,7 @@
 import { IManikin } from '../../interfaces/IManikin';
 
 import { duplicatiServiceMite } from '../mites/service/duplicatiServiceMite';
-import * as duplicatiIcon from '../../images/manikin-icons/duplicatiIcon.png';
+import duplicatiIcon from '../../images/manikin-icons/duplicatiIcon.png';
 
 /**
  * drupal Manikin
@@ -23,5 +23,5 @@ export const duplicatiManikin: IManikin = {
   mites: [duplicatiServiceMite],
   name: `Duplicati`,
   ports: [],
-  subfolders: [`data`, `Duplicati`]
+  subfolders: [`data`, `Duplicati`],
 };

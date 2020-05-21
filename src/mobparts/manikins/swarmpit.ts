@@ -29,5 +29,5 @@ export const swarmpitManikin: IManikin = {
   name: `Swarmpit`,
   mites: [swarmpitServiceMite, swarmpitNetworkMite],
   ports: [],
-  subfolders: [`couchbase-data`, `influx-data`]
+  subfolders: [`couchbase-data`, `influx-data`],
 };
