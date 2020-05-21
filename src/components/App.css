@@ -16,10 +16,8 @@
 }
 
 .ButtonPane {
-  display: flex;
-  flex-direction: row;
-  height: 10vh;
   width: 75vw;
+  width: 7vh;
   justify-content: space-around;
 }
 
@@ -72,17 +70,16 @@
 }
 
 .MemoryPane {
-  display: flex;
+  display: fixed;
   flex-direction: column;
   overflow: auto;
-  height: 89vh;
+  height: 92vh;
   width: 75vw;
 }
 
 .MemoryTable {
-  display: flex;
+  display: fixed;
   height: 100%;
-  flex-grow: 1;
 }
 
 .MemoryTableBody {

@@ -44,52 +44,61 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
     }
 
     return (
-        <Table
-            className="MemoryTable"
-            size="small"
-            stickyHeader>
-            <TableHead
-                className="MemoryTableHeader">
-                <TableRow
-                    className="MemoryHeaderRow">
-                    <TableCell>Settings</TableCell>
-                    <TableCell></TableCell>
-                    <TableCell><img alt="" src={fullyValidated ? checkmarkIcon : xmarkIcon} height={20} width={20} /></TableCell>
-                </TableRow>
-            </TableHead>
-            <TableBody
-                className="MemoryTableBody">
-                {state.memories.map((thisMemory: IMemory) => (
-                    <Tooltip
-                        title={thisMemory.tooltip}
-                        key={thisMemory.memoryIndex}>
-                        <TableRow
-                            hover>
-                            <TableCell
-                                padding='checkbox'>{thisMemory.name}</TableCell>
-                            <TableCell>
-                                <TextField
-                                    fullWidth
-                                    required={true}
-                                    value={thisMemory.value}
-                                    type={thisMemory.valueType}
-                                    placeholder={(`Please enter your ${thisMemory.name} here`)}
-                                    autoComplete={thisMemory.shouldAutocomplete.toString()}
-                                    onChange={changeEvent => dispatch(createMemoryValueAction(thisMemory, changeEvent.target.value))}>
-                                </TextField>
-                            </TableCell>
-                            <TableCell
-                                className="ManikinReadyIcon">
-                                <img
-                                    alt='ready indicator'
-                                    height={20}
-                                    width={20}
-                                    src={thisMemory.value === `` ? xmarkIcon : (thisMemory.validator(thisMemory.value).valueOf() ? checkmarkIcon : xmarkIcon)} />
-                            </TableCell>
-                        </TableRow>
-                    </Tooltip>
-                ))}
-            </TableBody>
-        </Table >
+        <div style={{
+            width: '100%'
+        }}>
+            <Table
+                className="MemoryTable"
+                size="small"
+                stickyHeader>
+                <TableHead>
+                    <TableRow
+                        className="MemoryHeaderRow">
+                        <TableCell variant='head' style={{ width: '15%' }}>Settings</TableCell>
+                        <TableCell variant='head' style={{ width: '80%' }} />
+                        <TableCell variant='head' style={{ width: '5%' }} ><img alt="" src={fullyValidated ? checkmarkIcon : xmarkIcon} height={20} width={20} /></TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody
+                    className="MemoryTableBody"
+                    style={{
+                        width: '100%'
+                    }}>
+
+                    {state.memories.map((thisMemory: IMemory) => (
+                        <Tooltip
+                            title={thisMemory.tooltip}
+                            key={thisMemory.memoryIndex}>
+                            <TableRow
+                                hover>
+                                <TableCell
+                                    style={{ width: '15%' }}
+                                    padding='checkbox'
+                                    variant='body'>{thisMemory.name}</TableCell>
+                                <TableCell variant='body'>
+                                    <TextField
+                                        fullWidth
+                                        required={true}
+                                        value={thisMemory.value}
+                                        type={thisMemory.valueType}
+                                        placeholder={(`Please enter your ${thisMemory.name} here`)}
+                                        autoComplete={thisMemory.shouldAutocomplete.toString()}
+                                        onChange={changeEvent => dispatch(createMemoryValueAction(thisMemory, changeEvent.target.value))} />
+                                </TableCell>
+                                <TableCell style={{ width: '5%' }}
+                                    className="ManikinReadyIcon"
+                                    variant='body'>
+                                    <img
+                                        alt='ready indicator'
+                                        height={20}
+                                        width={20}
+                                        src={thisMemory.value === `` ? xmarkIcon : (thisMemory.validator(thisMemory.value).valueOf() ? checkmarkIcon : xmarkIcon)} />
+                                </TableCell>
+                            </TableRow>
+                        </Tooltip>
+                    ))}
+                </TableBody>
+            </Table >
+        </div >
     )
 }

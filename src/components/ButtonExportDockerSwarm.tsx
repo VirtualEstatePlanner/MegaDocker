@@ -19,6 +19,6 @@ export const ButtonExportDockerSwarm: React.FC = (): React.ReactElement => {
     const mobname: string = state.memories[mobnameIndex].value
 
     return (
-        <Button disabled={fullyValidated ? false : true} variant="contained" onClick={buttonClicked}>download {mobname}.zip</Button>
+        <Button disabled={fullyValidated ? false : true} variant="contained" onClick={buttonClicked}>'download {mobname}.zip file'</Button>
     )
 }
