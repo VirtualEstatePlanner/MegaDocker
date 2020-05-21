@@ -22,23 +22,23 @@ function getSomeFile(pathTo: string, fileName: string, urlToDownload: string) {
   const uri: UrlWithStringQuery = parse(urlToDownload);
   const file: WriteStream = createWriteStream(`${pathTo}/${fileName}`);
 
-  return new Promise(function(resolve, reject) {
-    const request = get(uri.href).on('response', function(
+  return new Promise(function (resolve, reject) {
+    const request = get(uri.href!).on('response', function (
       res: IncomingMessage
     ) {
       res
-        .on('data', function(chunk) {
+        .on('data', function (chunk) {
           file.write(chunk);
         })
-        .on('end', function() {
+        .on('end', function () {
           file.end();
           resolve();
         })
-        .on('error', function(err) {
+        .on('error', function (err) {
           reject(err);
         });
     });
-    request.setTimeout(TIMEOUT, function() {
+    request.setTimeout(TIMEOUT, function () {
       request.abort();
       reject(new Error(`request timeout after ${TIMEOUT / 1000.0} seconds`));
     });

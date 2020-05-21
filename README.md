@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019 The MegaDocker Group. All rights reserved.'
 
-# MegaDocker v0.2.9-alpha
+# MegaDocker v0.3.0-beta
 
 Modular Enterprise-Grade Automated Docker
 
@@ -12,7 +12,7 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
-- reverse-proxied manikins are now possible
+- Electron application now buildable
 
 ![alt text](./src/images/icons/icon.png 'MegaDockerLogo')
 

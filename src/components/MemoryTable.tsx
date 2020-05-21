@@ -1,11 +1,11 @@
 import React from "react";
 import {
-    Input,
     Table,
     TableBody,
     TableCell,
     TableHead,
     TableRow,
+    TextField,
     Tooltip
 } from "@material-ui/core";
 import * as checkmarkIcon from "../images/indicators/checkmarkIcon.png"
@@ -68,7 +68,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                             <TableCell
                                 padding='checkbox'>{thisMemory.name}</TableCell>
                             <TableCell>
-                                <Input
+                                <TextField
                                     fullWidth
                                     required={true}
                                     value={thisMemory.value}
@@ -76,7 +76,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                                     placeholder={(`Please enter your ${thisMemory.name} here`)}
                                     autoComplete={thisMemory.shouldAutocomplete.toString()}
                                     onChange={changeEvent => dispatch(createMemoryValueAction(thisMemory, changeEvent.target.value))}>
-                                </Input>
+                                </TextField>
                             </TableCell>
                             <TableCell
                                 className="ManikinReadyIcon">
