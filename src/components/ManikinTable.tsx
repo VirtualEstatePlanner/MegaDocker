@@ -32,7 +32,7 @@ export const ManikinTable: React.FC = (): React.ReactElement => {
                         key={`${eachManikin.name}Row`}
                         title={eachManikin.description}>
                         <TableRow
-                            className="ManikinRow"
+                            className={eachManikin.isCore ? "CoreManikinRow" : "ManikinRow"}
                             hover={eachManikin.isCore ? false : true}>
                             <TableCell key={`${eachManikin.name}NameCell`}>
                                 {eachManikin.name}</TableCell>
