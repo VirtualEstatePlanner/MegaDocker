@@ -33,12 +33,12 @@ export const ghostServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.ghost.entrypoints=plainhttp'
     - 'traefik.http.services.ghost.loadbalancer.server.port=2368'
-    - 'traefik.http.routers.ghost.rule=Host("ghost.[[PRIMARYDOMAIN]]") || Host("ghost.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.ghost.rule=Host("ghost.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.ghost-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.ghost.middlewares=ghost-force-secure'
     - 'traefik.http.routers.ghost.service=ghost'
     - 'traefik.http.routers.ghost-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.ghost-https.rule=Host("ghost.[[PRIMARYDOMAIN]]") || Host("ghost.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.ghost-https.rule=Host("ghost.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.ghost-https.service=ghost'
     - 'traefik.http.routers.ghost-https.tls=true'
     - 'traefik.http.services.ghost-https.loadbalancer.server.port=2368'
@@ -59,5 +59,5 @@ export const ghostServiceMite: IMite = {
 
 #End Ghost Service Section
 
-`
+`,
 };

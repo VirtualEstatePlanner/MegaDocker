@@ -38,7 +38,7 @@ http {
 
   server { # php/fastcgi
     listen       80;
-    server_name  [[PRIMARYDOMAIN]]]] www.[[PRIMARYDOMAIN]] [[SECONDARYDOMAIN]] www.[[SECONDARYDOMAIN]];
+    server_name  [[PRIMARYDOMAIN]]]] www.[[PRIMARYDOMAIN]];
     access_log   logs/[[PRIMARYDOMAIN]].access.log  main;
     root         /usr/share/nginx;
 
@@ -129,6 +129,6 @@ types {
   video/x-ms-asf                        asx asf;
   video/x-mng                           mng;
 }
-`
-  }
+`,
+  },
 };

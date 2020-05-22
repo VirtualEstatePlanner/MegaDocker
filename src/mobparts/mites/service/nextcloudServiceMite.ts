@@ -28,12 +28,12 @@ export const nextcloudServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.nextcloud.entrypoints=plainhttp'
     - 'traefik.http.services.nextcloud.loadbalancer.server.port=80'
-    - 'traefik.http.routers.nextcloud.rule=Host("nextcloud.[[PRIMARYDOMAIN]]") || Host("nextcloud.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.nextcloud.rule=Host("nextcloud.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.nextcloud-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.nextcloud.middlewares=nextcloud-force-secure'
     - 'traefik.http.routers.nextcloud.service=nextcloud'
     - 'traefik.http.routers.nextcloud-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.nextcloud-https.rule=Host("nextcloud.[[PRIMARYDOMAIN]]") || Host("nextcloud.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.nextcloud-https.rule=Host("nextcloud.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.nextcloud-https.service=nextcloud'
     - 'traefik.http.routers.nextcloud-https.tls=true'
     - 'traefik.http.services.nextcloud-https.loadbalancer.server.port=80'
@@ -72,5 +72,5 @@ export const nextcloudServiceMite: IMite = {
 
 # End NextCloud Service Section
 
-`
+`,
 };

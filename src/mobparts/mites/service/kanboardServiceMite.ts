@@ -31,12 +31,12 @@ export const kanboardServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.kanboard.entrypoints=plainhttp'
     - 'traefik.http.services.kanboard.loadbalancer.server.port=80'
-    - 'traefik.http.routers.kanboard.rule=Host("kanboard.[[PRIMARYDOMAIN]]") || Host("kanboard.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.kanboard.rule=Host("kanboard.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.kanboard-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.kanboard.middlewares=kanboard-force-secure'
     - 'traefik.http.routers.kanboard.service=kanboard'
     - 'traefik.http.routers.kanboard-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.kanboard-https.rule=Host("kanboard.[[PRIMARYDOMAIN]]") || Host("kanboard.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.kanboard-https.rule=Host("kanboard.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.kanboard-https.service=kanboard'
     - 'traefik.http.routers.kanboard-https.tls=true'
     - 'traefik.http.services.kanboard-https.loadbalancer.server.port=80'
@@ -57,5 +57,5 @@ export const kanboardServiceMite: IMite = {
   
 # End Kanboard Service Section
   
-  `
+  `,
 };

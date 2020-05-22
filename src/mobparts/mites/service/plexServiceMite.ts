@@ -41,12 +41,12 @@ export const plexServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.plex.entrypoints=plainhttp'
     - 'traefik.http.services.plex.loadbalancer.server.port=32400'
-    - 'traefik.http.routers.plex.rule=Host("plex.[[PRIMARYDOMAIN]]") || Host("plex.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.plex.rule=Host("plex.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.plex-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.plex.middlewares=plex-force-secure'
     - 'traefik.http.routers.plex.service=plex'
     - 'traefik.http.routers.plex-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.plex-https.rule=Host("plex.[[PRIMARYDOMAIN]]") || Host("plex.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.plex-https.rule=Host("plex.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.plex-https.service=plex'
     - 'traefik.http.routers.plex-https.tls=true'
     - 'traefik.http.services.plex-https.loadbalancer.server.port=32400'
@@ -57,5 +57,5 @@ export const plexServiceMite: IMite = {
 
 # End Plex Service Section
 
-`
+`,
 };

@@ -64,12 +64,12 @@ export const emailServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.rainloop.entrypoints=plainhttp'
     - 'traefik.http.services.rainloop.loadbalancer.server.port=80'
-    - 'traefik.http.routers.rainloop.rule=Host("webmail.[[PRIMARYDOMAIN]]") || Host("webmail.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.rainloop.rule=Host("webmail.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.rainloop-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.rainloop.middlewares=rainloop-force-secure'
     - 'traefik.http.routers.rainloop.service=rainloop'
     - 'traefik.http.routers.rainloop-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.rainloop-https.rule=Host("webmail.[[PRIMARYDOMAIN]]") || Host("webmail.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.rainloop-https.rule=Host("webmail.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.rainloop-https.service=rainloop'
     - 'traefik.http.routers.rainloop-https.tls=true'
     - 'traefik.http.services.rainloop-https.loadbalancer.server.port=80'
@@ -80,5 +80,5 @@ export const emailServiceMite: IMite = {
 
 # End Mailserver Service Section
 
-`
+`,
 };

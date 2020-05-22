@@ -11,7 +11,7 @@ export const webdavServiceMite: IMite = {
   miteIndex: 2019,
   miteString: `
 
-#Begin WebDAV Service Section
+# Begin WebDAV Service Section
 
  webdav:
   image: bytemark/webdav
@@ -21,7 +21,7 @@ export const webdavServiceMite: IMite = {
    - AUTH_TYPE=Digest
    - USERNAME=[[WEBDAVUSER]]
    - PASSWORD=[[WEBDAVPASSWORD]]
-   - SERVER_NAMES=webdav.[[PRIMARYDOMAIN]],webdav.[[SECONDARYDOMAIN]]
+   - SERVER_NAMES=webdav.[[PRIMARYDOMAIN]]
   volumes:
    - ./webdav/data:/var/lib/dav
   deploy:
@@ -31,18 +31,18 @@ export const webdavServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.webdav.entrypoints=plainhttp'
     - 'traefik.http.services.webdav.loadbalancer.server.port=0'
-    - 'traefik.http.routers.webdav.rule=Host("webdav.[[PRIMARYDOMAIN]]") || Host("webdav.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.webdav.rule=Host("webdav.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.webdav-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.webdav.middlewares=webdav-force-secure'
     - 'traefik.http.routers.webdav.service=webdav'
     - 'traefik.http.routers.webdav-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.webdav-https.rule=Host("webdav.[[PRIMARYDOMAIN]]") || Host("webdav.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.webdav-https.rule=Host("webdav.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.webdav-https.service=webdav'
     - 'traefik.http.routers.webdav-https.tls=true'
     - 'traefik.http.services.webdav-https.loadbalancer.server.port=80'
-    - 'com.MegaDocker.description=DESCRIPTION'
+    - 'com.MegaDocker.description=WebDav - File-sharing service'
 
-#End WebDAV Service Section
+# End WebDAV Service Section
 
-`
+`,
 };

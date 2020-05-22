@@ -70,12 +70,12 @@ export const gitlabServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.gitlab.entrypoints=plainhttp'
     - 'traefik.http.services.gitlab.loadbalancer.server.port=80'
-    - 'traefik.http.routers.gitlab.rule=Host("gitlab.[[PRIMARYDOMAIN]]") || Host("gitlab.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.gitlab.rule=Host("gitlab.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.gitlab-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.gitlab.middlewares=gitlab-force-secure'
     - 'traefik.http.routers.gitlab.service=gitlab'
     - 'traefik.http.routers.gitlab-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.gitlab-https.rule=Host("gitlab.[[PRIMARYDOMAIN]]") || Host("gitlab.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.gitlab-https.rule=Host("gitlab.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.gitlab-https.service=gitlab'
     - 'traefik.http.routers.gitlab-https.tls=true'
     - 'traefik.http.services.gitlab-https.loadbalancer.server.port=80'
@@ -107,5 +107,5 @@ export const gitlabServiceMite: IMite = {
 
 #End Git Service Section
 
-`
+`,
 };

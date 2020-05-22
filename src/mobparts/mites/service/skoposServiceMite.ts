@@ -23,11 +23,11 @@ export const skoposServiceMite: IMite = {
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.skopos.entrypoints=plainhttp'
-    - 'traefik.http.routers.skopos.rule=Host("skopos.[[PRIMARYDOMAIN]]") || Host("skopos.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.skopos.rule=Host("skopos.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.skopos-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.skopos.middlewares=skopos-force-secure'
     - 'traefik.http.routers.skopos-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.skopos-https.rule=Host("skopos.[[PRIMARYDOMAIN]]") || Host("skopos.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.skopos-https.rule=Host("skopos.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.services.skopos.loadbalancer.server.port=8100'
     - 'traefik.http.services.skopos-https.loadbalancer.server.port=8100'
     - 'traefik.http.routers.skopos-https.service=skopos'
@@ -36,5 +36,5 @@ export const skoposServiceMite: IMite = {
 
 # End Skopos Service Section
 
-`
+`,
 };

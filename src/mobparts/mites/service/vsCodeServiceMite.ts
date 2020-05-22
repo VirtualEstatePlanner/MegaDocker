@@ -29,12 +29,12 @@ export const vsCodeServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.vscode.entrypoints=plainhttp'
     - 'traefik.http.services.vscode.loadbalancer.server.port=6080'
-    - 'traefik.http.routers.vscode.rule=Host("vscode.[[PRIMARYDOMAIN]]") || Host("vscode.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.vscode.rule=Host("vscode.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.vscode-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.vscode.middlewares=vscode-force-secure'
     - 'traefik.http.routers.vscode.service=vscode'
     - 'traefik.http.routers.vscode-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.vscode-https.rule=Host("vscode.[[PRIMARYDOMAIN]]") || Host("vscode.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.vscode-https.rule=Host("vscode.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.vscode-https.service=vscode'
     - 'traefik.http.routers.vscode-https.tls=true'
     - 'traefik.http.services.vscode-https.loadbalancer.server.port=6080'
@@ -46,5 +46,5 @@ export const vsCodeServiceMite: IMite = {
 
 # End VS Code Service Section
 
-`
+`,
 };

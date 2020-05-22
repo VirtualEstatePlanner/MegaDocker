@@ -53,7 +53,6 @@ export interface IMemory {
     | `[[PRIMARYDOMAIN]]`
     | `[[ROCKETCHATBOTPASSWORD]]`
     | `[[ROCKETCHATBOTUSERNAME]]`
-    | `[[SECONDARYDOMAIN]]`
     | `[[SWARMPITCOUCHBASEPASSWORD]]`
     | `[[VSCODEPASSWORD]]`
     | `[[WEBDAVUSER]]`

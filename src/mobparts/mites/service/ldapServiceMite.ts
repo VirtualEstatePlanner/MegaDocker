@@ -73,12 +73,12 @@ export const ldapServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.ldapadmin.entrypoints=plainhttp'
     - 'traefik.http.services.ldapadmin.loadbalancer.server.port=80'
-    - 'traefik.http.routers.ldapadmin.rule=Host("ldapadmin.[[PRIMARYDOMAIN]]") || Host("ldapadmin.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.ldapadmin.rule=Host("ldapadmin.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.ldapadmin-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.ldapadmin.middlewares=ldapadmin-force-secure'
     - 'traefik.http.routers.ldapadmin.service=ldapadmin'
     - 'traefik.http.routers.ldapadmin-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.ldapadmin-https.rule=Host("ldapadmin.[[PRIMARYDOMAIN]]") || Host("ldapadmin.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.ldapadmin-https.rule=Host("ldapadmin.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.ldapadmin-https.service=ldapadmin'
     - 'traefik.http.routers.ldapadmin-https.tls=true'
     - 'traefik.http.services.ldapadmin-https.loadbalancer.server.port=80'
@@ -86,5 +86,5 @@ export const ldapServiceMite: IMite = {
 
 # End LDAP Service Section
 
-`
+`,
 };

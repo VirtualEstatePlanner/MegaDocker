@@ -31,12 +31,12 @@ export const nginxServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.nginx.entrypoints=plainhttp'
     - 'traefik.http.services.nginx.loadbalancer.server.port=80'
-    - 'traefik.http.routers.nginx.rule=Host("nginx.[[PRIMARYDOMAIN]]") || Host("nginx.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.nginx.rule=Host("nginx.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.nginx-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.nginx.middlewares=nginx-force-secure'
     - 'traefik.http.routers.nginx.service=nginx'
     - 'traefik.http.routers.nginx-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.nginx-https.rule=Host("nginx.[[PRIMARYDOMAIN]]") || Host("nginx.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.nginx-https.rule=Host("nginx.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.nginx-https.service=nginx'
     - 'traefik.http.routers.nginx-https.tls=true'
     - 'traefik.http.services.nginx-https.loadbalancer.server.port=80'
@@ -44,5 +44,5 @@ export const nginxServiceMite: IMite = {
 
 #End Nginx Service Section
 
-`
+`,
 };

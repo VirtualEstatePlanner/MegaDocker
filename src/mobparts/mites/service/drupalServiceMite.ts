@@ -39,12 +39,12 @@ export const drupalServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.drupal.entrypoints=plainhttp'
     - 'traefik.http.services.drupal.loadbalancer.server.port=80'
-    - 'traefik.http.routers.drupal.rule=Host("drupal.[[PRIMARYDOMAIN]]") || Host("drupal.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.drupal.rule=Host("drupal.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.drupal-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.drupal.middlewares=drupal-force-secure'
     - 'traefik.http.routers.drupal.service=drupal'
     - 'traefik.http.routers.drupal-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.drupal-https.rule=Host("drupal.[[PRIMARYDOMAIN]]") || Host("drupal.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.drupal-https.rule=Host("drupal.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.drupal-https.service=drupal'
     - 'traefik.http.routers.drupal-https.tls=true'
     - 'traefik.http.services.drupal-https.loadbalancer.server.port=80'
@@ -74,5 +74,5 @@ export const drupalServiceMite: IMite = {
 
 #End Drupal Service Section
 
-`
+`,
 };

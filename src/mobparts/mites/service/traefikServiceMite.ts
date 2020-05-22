@@ -55,7 +55,7 @@ export const traefikServiceMite: IMite = {
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.traefik.entrypoints=plainhttp'
-    - 'traefik.http.routers.traefik.rule=Host("traefik.[[PRIMARYDOMAIN]]") || Host("traefik.[[SECONDARYDOMAIN]]") && (PathPrefix("/api") || PathPrefix("/dashboard"))'
+    - 'traefik.http.routers.traefik.rule=Host("traefik.[[PRIMARYDOMAIN]]") && (PathPrefix("/api") || PathPrefix("/dashboard"))'
 ## TODO: create a traefik login and password with an htpassword compatible JS library, or integrate ldap auth
 ##    - 'traefik.http.middlewares.traefik-auth.basicauth.users=[[TRAEFIKUSER]]:[[TRAEFIKPASSWORD]]'
     - 'traefik.http.middlewares.traefik-auth.basicauth.users=traefikuser:$$apr1$$OG8S9BgU$$7BwcoMe3X.gpi.aRLljDd.'
@@ -63,15 +63,13 @@ export const traefikServiceMite: IMite = {
     - 'traefik.http.middlewares.traefik-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.traefik.middlewares=traefik-force-secure'
     - 'traefik.http.routers.traefik-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.traefik-https.rule=Host("traefik.[[PRIMARYDOMAIN]]") || Host("traefik.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.traefik-https.rule=Host("traefik.[[PRIMARYDOMAIN]]") && (PathPrefix("/api") || PathPrefix("/dashboard"))'
     - 'traefik.http.services.traefik.loadbalancer.server.port=8080'
     - 'traefik.http.routers.traefik-https.service=api@internal'
     - 'traefik.http.routers.traefik-https.tls=true'
     - 'traefik.http.routers.dashboard.tls.certresolver=cloudflarecerts'
     - 'traefik.http.routers.dashboard.tls.domains[0].main=[[PRIMARYDOMAIN]]'
     - 'traefik.http.routers.dashboard.tls.domains[0].sans=*.[[PRIMARYDOMAIN]]'
-    - 'traefik.http.routers.dashboard.tls.domains[1].main=[[SECONDARYDOMAIN]]'
-    - 'traefik.http.routers.dashboard.tls.domains[1].sans=*.[[SECONDARYDOMAIN]]'
     - 'com.MegaDocker.description=Traefik - a modern reverse-proxy for microservices environments.'
    placement:
     constraints:
@@ -96,5 +94,5 @@ export const traefikServiceMite: IMite = {
  
 # End Traefik Service Section
 
-`
+`,
 };

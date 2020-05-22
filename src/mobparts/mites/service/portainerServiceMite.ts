@@ -29,12 +29,12 @@ export const portainerServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.portainer.entrypoints=plainhttp'
     - 'traefik.http.services.portainer.loadbalancer.server.port=9000'
-    - 'traefik.http.routers.portainer.rule=Host("portainer.[[PRIMARYDOMAIN]]") || Host("portainer.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.portainer.rule=Host("portainer.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.portainer-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.portainer.middlewares=portainer-force-secure'
     - 'traefik.http.routers.portainer.service=portainer'
     - 'traefik.http.routers.portainer-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.portainer-https.rule=Host("portainer.[[PRIMARYDOMAIN]]") || Host("portainer.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.portainer-https.rule=Host("portainer.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.portainer-https.service=portainer'
     - 'traefik.http.routers.portainer-https.tls=true'
     - 'traefik.http.services.portainer-https.loadbalancer.server.port=9000'
@@ -46,5 +46,5 @@ export const portainerServiceMite: IMite = {
 
 #End Portainer Service Section
 
-`
+`,
 };

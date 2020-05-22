@@ -48,12 +48,12 @@ export const rocketchatServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.rocketchat.entrypoints=plainhttp'
     - 'traefik.http.services.rocketchat.loadbalancer.server.port=3000'
-    - 'traefik.http.routers.rocketchat.rule=Host("rocketchat.[[PRIMARYDOMAIN]]") || Host("rocketchat.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.rocketchat.rule=Host("rocketchat.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.rocketchat-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.rocketchat.middlewares=rocketchat-force-secure'
     - 'traefik.http.routers.rocketchat.service=rocketchat'
     - 'traefik.http.routers.rocketchat-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.rocketchat-https.rule=Host("rocketchat.[[PRIMARYDOMAIN]]") || Host("rocketchat.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.rocketchat-https.rule=Host("rocketchat.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.rocketchat-https.service=rocketchat'
     - 'traefik.http.routers.rocketchat-https.tls=true'
     - 'traefik.http.services.rocketchat-https.loadbalancer.server.port=3000'
@@ -87,5 +87,5 @@ export const rocketchatServiceMite: IMite = {
 
 # End Rocketchat Service Section
 
-`
+`,
 };

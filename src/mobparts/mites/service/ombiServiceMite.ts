@@ -26,12 +26,12 @@ export const ombiServiceMite: IMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.ombi.entrypoints=plainhttp'
     - 'traefik.http.services.ombi.loadbalancer.server.port=80'
-    - 'traefik.http.routers.ombi.rule=Host("ombi.[[PRIMARYDOMAIN]]") || Host("ombi.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.ombi.rule=Host("ombi.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.ombi-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.ombi.middlewares=ombi-force-secure'
     - 'traefik.http.routers.ombi.service=ombi'
     - 'traefik.http.routers.ombi-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.ombi-https.rule=Host("ombi.[[PRIMARYDOMAIN]]") || Host("ombi.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.ombi-https.rule=Host("ombi.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.ombi-https.service=ombi'
     - 'traefik.http.routers.ombi-https.tls=true'
     - 'traefik.http.services.ombi-https.loadbalancer.server.port=80'
@@ -39,5 +39,5 @@ export const ombiServiceMite: IMite = {
 
 # End Ombi Service Section
 
-`
+`,
 };
