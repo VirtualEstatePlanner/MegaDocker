@@ -9,7 +9,7 @@ import { IManikin } from '../../interfaces/IManikin';
 import { cloudflareAPIToken } from '../memories/cloudflareAPIToken';
 import { letsEncryptEmail } from '../memories/letsEncryptEmail';
 import { primaryDomain } from '../memories/primaryDomain';
-import { secondaryDomain } from '../memories/secondaryDomain';
+// import { secondaryDomain } from '../memories/secondaryDomain';
 import { traefikServiceMite } from '../mites/service/traefikServiceMite';
 import { traefikNetworkMite } from '../mites/network/traefikNetworkMite';
 import traefikIcon from '../../images/manikin-icons/traefikIcon.png';
@@ -30,10 +30,10 @@ export const traefikManikin: IManikin = {
     letsEncryptEmail,
     cloudflareAPIToken,
     primaryDomain,
-    secondaryDomain
+    //    secondaryDomain
   ],
   name: `Traefik`,
   mites: [traefikServiceMite, traefikNetworkMite],
   ports: [],
-  subfolders: [`ssl`]
+  subfolders: [`ssl`],
 };

@@ -11,10 +11,10 @@ export const primaryDomain: IMemory = {
   memoryIndex: 1029,
   memoryMarker: `[[PRIMARYDOMAIN]]`,
   shouldAutocomplete: false,
-  name: `Primary Domain`,
-  tooltip: `Your main domain name, such as 'example.com' or 'myawesomemob.org'.  Free domains are available at '' and can have their DNS handled for free at 'https://www.cloudflare.com'`,
+  name: `Web Domain`,
+  tooltip: `Your domain name, such as 'example.com' or 'myawesomemob.org'.`,
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: domainValidator
+  validator: domainValidator,
 };
