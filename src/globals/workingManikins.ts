@@ -17,7 +17,7 @@ import { nginxManikin } from '../mobparts/manikins/nginx';
 import { piholeManikin } from '../mobparts/manikins/pihole';
 import { portainerManikin } from '../mobparts/manikins/portainer';
 import { rocketchatManikin } from '../mobparts/manikins/rocketchat';
-import { skoposManikin } from '../mobparts/manikins/skopos';
+//import { skoposManikin } from '../mobparts/manikins/skopos';
 import { swarmpitManikin } from '../mobparts/manikins/swarmpit';
 import { traefikManikin } from '../mobparts/manikins/traefik';
 import { visualizerManikin } from '../mobparts/manikins/visualizer';
@@ -46,11 +46,11 @@ export const workingManikins: IManikin[] = [
   piholeManikin,
   portainerManikin,
   rocketchatManikin,
-  skoposManikin,
+  //skoposManikin,
   swarmpitManikin,
   traefikManikin,
   visualizerManikin,
   // vsCodeManikin,
   // webdavManikin,
-  wordpressManikin
+  wordpressManikin,
 ];

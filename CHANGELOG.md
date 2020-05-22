@@ -2,7 +2,8 @@
 
 ## a list of changes per version number
 
-- `v0.3-beta` : **fixed Electron builds, updated dependency versions**
+- `v0.3.1-beta` : **removed Skopos**
+- `v0.3.0-beta` : fixed Electron builds, updated dependency versions
 - `v0.2.9-alpha` : removed tests because they were getting irritating, will re-add in `v0.4`
 - `v0.2.8-alpha` : implemented zip file downloads
 - `v0.2.7-alpha` : added React Context for state management

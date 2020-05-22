@@ -1,6 +1,6 @@
 {
-  "version": "0.3.0-beta",
-  "buildVersion": "0.3.0-beta",
+  "version": "0.3.1-beta",
+  "buildVersion": "0.3.1-beta",
   "author": "George Georgulas IV <georgegeorgulas@gmail.com> (https://github.com/VirtualEstatePlanner)",
   "copyright": "© 2020 The MEGADocker Group",
   "private": true,
