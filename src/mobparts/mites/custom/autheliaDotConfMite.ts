@@ -1,6 +1,6 @@
 import { ICustomMite } from '../../../interfaces/ICustomMite';
 
-export const elasticsearchDotYmlMite: ICustomMite = {
+export const autheliaDotConfMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
   miteIndex: 3000,
