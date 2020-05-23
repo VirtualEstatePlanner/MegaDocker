@@ -19,10 +19,10 @@ export const visualizerManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: visualizerIcon,
-  manikinIndex: 22,
+  manikinIndex: 26,
   memories: [],
   mites: [visualizerServiceMite, visualizerNetworkMite],
   name: `Visualizer`,
   ports: [],
-  subfolders: []
+  subfolders: [],
 };

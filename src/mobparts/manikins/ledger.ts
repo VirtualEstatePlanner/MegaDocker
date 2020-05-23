@@ -20,10 +20,10 @@ export const ledgerManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: ledgerIcon,
-  manikinIndex: 12,
+  manikinIndex: 13,
   memories: [ledgerPostgresPassword],
   mites: [ledgerServiceMite, ledgerNetworkMite],
   name: `Ledger`,
   ports: [],
-  subfolders: [`postgres`, `maildata`, `mailstate`, `rainloop`]
+  subfolders: [`postgres`, `maildata`, `mailstate`, `rainloop`],
 };

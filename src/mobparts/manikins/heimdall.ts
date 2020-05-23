@@ -19,10 +19,10 @@ export const heimdallManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: heimdallIcon,
-  manikinIndex: 9,
+  manikinIndex: 10,
   memories: [],
   mites: [heimdallServiceMite, heimdallNetworkMite],
   name: `Heimdall`,
   ports: [],
-  subfolders: [`log`, `nginx`, `php`, `www`]
+  subfolders: [`log`, `nginx`, `php`, `www`],
 };

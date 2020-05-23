@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const ledgerServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2007,
+  miteIndex: 2012,
   miteString: `
 
 # Begin Ledger Service Section
@@ -44,5 +44,5 @@ export const ledgerServiceMite: IMite = {
 
 # End Ledger Service Section
 
-`
+`,
 };

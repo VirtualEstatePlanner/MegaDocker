@@ -18,14 +18,14 @@ export const wordpressManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: wordpressIcon,
-  manikinIndex: 25,
+  manikinIndex: 29,
   memories: [
     wordpressMariaDBRootPassword,
     wordpressMariaDBUser,
-    wordpressMariaDBPassword
+    wordpressMariaDBPassword,
   ],
   mites: [wordpressServiceMite, wordpressNetworkMite],
   name: `WordPress`,
   ports: [],
-  subfolders: [`mariadb`, `php`]
+  subfolders: [`mariadb`, `php`],
 };

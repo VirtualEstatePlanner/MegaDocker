@@ -24,16 +24,16 @@ export const nextcloudManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: nextcloudIcon,
-  manikinIndex: 13,
+  manikinIndex: 16,
   memories: [
     nextcloudMariaDBPassword,
     nextcloudMariaDBRootPassword,
     nextcloudMariaDBUser,
     nextcloudPostgresPassword,
-    nextcloudPostgresUser
+    nextcloudPostgresUser,
   ],
   mites: [nextcloudServiceMite, nextcloudNetworkMite],
   name: `Nextcloud`,
   ports: [],
-  subfolders: [`main`, `config`, `data`, `postgres`, `redis`, `mariadb`]
+  subfolders: [`main`, `config`, `data`, `postgres`, `redis`, `mariadb`],
 };

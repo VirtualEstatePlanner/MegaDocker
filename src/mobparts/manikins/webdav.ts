@@ -21,10 +21,10 @@ export const webdavManikin: IManikin = {
   isSelected: false,
   folder: `webdav`,
   manikinIcon: webdavIcon,
-  manikinIndex: 24,
+  manikinIndex: 28,
   memories: [webdavUser, webdavPassword],
   mites: [webdavServiceMite, webdavNetworkMite],
   name: `WebDAV`,
   ports: [],
-  subfolders: [`data`]
+  subfolders: [`data`],
 };

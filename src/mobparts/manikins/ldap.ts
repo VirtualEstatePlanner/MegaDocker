@@ -7,7 +7,7 @@
 import { IManikin } from '../../interfaces/IManikin';
 
 import { ldapAdminPassword } from '../memories/ldapAdminPassword';
-// import { ldapAdminUsername } from '../memories/ldapAdminUsername';
+import { ldapAdminUsername } from '../memories/ldapAdminUsername';
 import { ldapConfigurationPassword } from '../memories/ldapConfigurationPassword';
 import { ldapServiceMite } from '../mites/service/ldapServiceMite';
 import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';
@@ -23,18 +23,27 @@ export const ldapManikin: IManikin = {
   folder: `ldap`,
   isCore: true,
   isSelected: true,
-  // isCore: false,
-  // isSelected: false,
   manikinIcon: ldapIcon,
-  manikinIndex: 11,
+  manikinIndex: 12,
   memories: [
-    //    ldapAdminUsername,
+    ldapAdminUsername,
     ldapAdminPassword,
     ldapConfigurationPassword,
-    ldapOrganisation
+    ldapOrganisation,
   ],
   mites: [ldapServiceMite, ldapNetworkMite, ldapBootstrapMegaDockerDotLdifMite],
   name: `LDAP`,
   ports: [],
-  subfolders: [`conf`, `pages`, `log`, `certs`, `lib`, `ldif-files`, `slapd.d`]
+  subfolders: [
+    `authelia-conf`,
+    `authelia-data`,
+    `authelia-mariadb`,
+    `conf`,
+    `pages`,
+    `log`,
+    `certs`,
+    `lib`,
+    `ldif-files`,
+    `slapd.d`,
+  ],
 };

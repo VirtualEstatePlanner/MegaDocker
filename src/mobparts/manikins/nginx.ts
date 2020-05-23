@@ -22,16 +22,16 @@ export const nginxManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: nginxIcon,
-  manikinIndex: 14,
+  manikinIndex: 17,
   memories: [],
   mites: [
     nginxServiceMite,
     nginxNetworkMite,
     //    nginxDefaultDotConfMite,
     //    nginxDefaultDotConfDotTemplate,
-    nginxDefaultIndexHtml
+    nginxDefaultIndexHtml,
   ],
   name: `Nginx`,
   ports: [],
-  subfolders: [/*`conf, `*/ `pages`, `log`]
+  subfolders: [/*`conf, `*/ `pages`, `log`],
 };

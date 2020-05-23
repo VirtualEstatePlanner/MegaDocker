@@ -2,7 +2,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const plexNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1011,
+  miteIndex: 1018,
   miteString: `
 
 # Begin Plex Network Section
@@ -12,5 +12,5 @@ export const plexNetworkMite: IMite = {
 
 # End Plex Network Section
   
-`
+`,
 };

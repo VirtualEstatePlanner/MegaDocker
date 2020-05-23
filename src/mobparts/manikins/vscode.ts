@@ -21,10 +21,10 @@ export const vsCodeManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: vsCodeIcon,
-  manikinIndex: 23,
+  manikinIndex: 27,
   memories: [vsCodePassword],
   mites: [vsCodeServiceMite, vsCodeNetworkMite, vsCodeIndexDotHtmlMite],
   name: `VS Code`,
   ports: [],
-  subfolders: [`project`, `pages`]
+  subfolders: [`project`, `pages`],
 };

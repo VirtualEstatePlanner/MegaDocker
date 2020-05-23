@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const ldapNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1006,
+  miteIndex: 1011,
   miteString: `
 
 #Begin LDAP Network Section
@@ -18,5 +18,5 @@ export const ldapNetworkMite: IMite = {
 
 #End LDAP Network Section
 
-`
+`,
 };

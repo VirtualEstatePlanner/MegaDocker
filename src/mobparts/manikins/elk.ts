@@ -28,7 +28,7 @@ export const elkManikin: IManikin = {
   // isCore: true,
   // isSelected: true,
   manikinIcon: elkIcon,
-  manikinIndex: 4,
+  manikinIndex: 5,
   memories: [kibanaUser, kibanaPassword],
   mites: [
     elkServiceMite,
@@ -37,7 +37,7 @@ export const elkManikin: IManikin = {
     elasticsearchDotYmlMite,
     elasticsearchJvmDotOptionsMite,
     elasticsearchLog4j2DotPropertiesMite,
-    filebeatDotYmlMite
+    filebeatDotYmlMite,
   ],
   name: `ELK`,
   ports: [],
@@ -47,6 +47,6 @@ export const elkManikin: IManikin = {
     `filebeat-config`,
     `filebeat-modules`,
     `kibana-config`,
-    `logfiles`
-  ]
+    `logfiles`,
+  ],
 };

@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const drupalNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1001,
+  miteIndex: 1003,
   miteString: `
 
 #Begin Drupal Network Section
@@ -18,5 +18,5 @@ export const drupalNetworkMite: IMite = {
   
 #End Drupal Network Section
   
-  `
+  `,
 };

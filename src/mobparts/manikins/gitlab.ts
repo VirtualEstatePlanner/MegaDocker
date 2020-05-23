@@ -25,15 +25,15 @@ export const gitlabManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: gitlabIcon,
-  manikinIndex: 7,
+  manikinIndex: 8,
   memories: [
     gitlabPostgresPassword,
     gitlabPostgresUser,
     gitlabRootEmail,
-    gitlabRootPassword
+    gitlabRootPassword,
   ],
   mites: [gitlabServiceMite, gitlabNetworkMite],
   name: `GitLab`,
   ports: [],
-  subfolders: [`config`, `data`, `logs`, `postgresql`, `redis`]
+  subfolders: [`config`, `data`, `logs`, `postgresql`, `redis`],
 };

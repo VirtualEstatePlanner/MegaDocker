@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const nginxNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1009,
+  miteIndex: 1015,
   miteString: `
 
 #Begin Nginx Network Section
@@ -18,5 +18,5 @@ export const nginxNetworkMite: IMite = {
 
 #End Nginx Network Section
 
-`
+`,
 };

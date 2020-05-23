@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const ldapServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2006,
+  miteIndex: 2011,
   miteString: `
 
 # Begin LDAP Service Section
@@ -84,6 +84,52 @@ export const ldapServiceMite: IMite = {
     - 'traefik.http.services.ldapadmin-https.loadbalancer.server.port=80'
     - 'com.MegaDocker.description=LDAP user authentication server'
 
+    authelia-app:
+    image: authelia/authelia
+    networks:
+     - ldap
+     - traefik
+    environment:
+     - TZ=America/New_York
+    volumes:
+     - ./ldap/authelia-data:/var/lib/authelia
+     - ./ldap/authelia-config/configuration.yml:/etc/authelia/configuration.yml:ro
+    deploy:
+     restart_policy:
+      condition: on-failure
+     labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.authelia.entrypoints=plainhttp'
+      - 'traefik.http.services.authelia.loadbalancer.server.port=9091'
+      - 'traefik.http.routers.authelia.rule=Host("authelia.[[PRIMARYDOMAIN]]")'
+      - 'traefik.http.middlewares.authelia-force-secure.redirectscheme.scheme=https'
+      - 'traefik.http.routers.authelia.middlewares=ldapadmin-force-secure'
+      - 'traefik.http.routers.authelia.service=authelia'
+      - 'traefik.http.routers.authelia-https.entrypoints=encryptedhttp'
+      - 'traefik.http.routers.authelia-https.rule=Host("authelia.[[PRIMARTYDOMAIN]]")'
+      - 'traefik.http.routers.authelia-https.service=authelia'
+      - 'traefik.http.routers.authelia-https.tls=true'
+      - 'traefik.http.services.authelia-https.loadbalancer.server.port=9091'
+      - 'com.MegaDocker.description=Authelia - authentication front-end'
+  
+   authelia-mariadb:
+    image: mariadb
+    networks:
+     - ldap
+    volumes:
+     - ./ldap/authelia-mariadb:/var/lib/mysql
+    environment:
+     - MYSQL_ROOT_PASSWORD=[[AUTHELIAMARIADBROOTPASSWORD]]
+     - MYSQL_DATABASE=authelia
+     - MYSQL_USER=[[AUTHELIAMARIADBUSER]]
+     - MYSQL_PASSWORD=[[AUTHELIAMARIADBPASSWORD]]
+    deploy:
+     restart_policy:
+      condition: on-failure
+     labels:
+      - 'com.MegaDocker.description=Authelia MariaDB - MariaDB database to store Authelia data'
+  
+  
 # End LDAP Service Section
 
 `,

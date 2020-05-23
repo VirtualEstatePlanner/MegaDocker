@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const heimdallServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2013,
+  miteIndex: 2009,
   miteString: `
 
   #Begin Portal Service Section

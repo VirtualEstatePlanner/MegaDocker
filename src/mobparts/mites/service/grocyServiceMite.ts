@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const grocyServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2001,
+  miteIndex: 2008,
   miteString: `
 
   # Begin Grocy Service Section

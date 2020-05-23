@@ -19,10 +19,10 @@ export const owncloudManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: owncloudIcon,
-  manikinIndex: 15,
+  manikinIndex: 18,
   memories: [],
   mites: [owncloudServiceMite, owncloudNetworkMite],
   name: `Owncloud`,
   ports: [],
-  subfolders: [`apps`, `config`, `data`, `postgres`, `redis`, `mariadb`]
+  subfolders: [`apps`, `config`, `data`, `postgres`, `redis`, `mariadb`],
 };

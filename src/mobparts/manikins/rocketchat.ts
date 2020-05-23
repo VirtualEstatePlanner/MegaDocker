@@ -24,10 +24,10 @@ export const rocketchatManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: rocketchatIcon,
-  manikinIndex: 18,
+  manikinIndex: 21,
   memories: [rocketchatBotPassword, rocketchatBotUsername],
   mites: [rocketchatServiceMite, rocketchatNetworkMite],
   name: `RocketChat`,
   ports: [],
-  subfolders: [`database`, `dump`, `hubot-scripts`, `uploads`]
+  subfolders: [`database`, `dump`, `hubot-scripts`, `uploads`],
 };

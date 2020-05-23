@@ -19,10 +19,10 @@ export const grocyManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: grocyIcon,
-  manikinIndex: 8,
+  manikinIndex: 9,
   memories: [],
   mites: [grocyServiceMite, grocyNetworkMite],
   name: `Grocy`,
   ports: [],
-  subfolders: [`app`, `barcodebuddy`]
+  subfolders: [`app`, `barcodebuddy`],
 };

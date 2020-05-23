@@ -18,7 +18,7 @@ export const duplicatiManikin: IManikin = {
   isCore: true,
   isSelected: true,
   manikinIcon: duplicatiIcon,
-  manikinIndex: 3,
+  manikinIndex: 4,
   memories: [],
   mites: [duplicatiServiceMite],
   name: `Duplicati`,

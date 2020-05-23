@@ -21,10 +21,10 @@ export const skoposManikin: IManikin = {
   // isCore: false,
   // isSelected: false,
   manikinIcon: skoposIcon,
-  manikinIndex: 19,
+  manikinIndex: 22,
   memories: [],
   mites: [skoposServiceMite, skoposNetworkMite],
   name: `Skopos`,
   subfolders: [],
-  ports: []
+  ports: [],
 };

@@ -22,10 +22,10 @@ export const drupalManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: drupalIcon,
-  manikinIndex: 2,
+  manikinIndex: 3,
   memories: [drupalPostgresUser, drupalPostgresPassword],
   mites: [drupalServiceMite, drupalNetworkMite, ldapNetworkMite],
   name: `Drupal`,
   ports: [],
-  subfolders: [`modules`, `profiles`, `themes`, `sites`, `database`]
+  subfolders: [`modules`, `profiles`, `themes`, `sites`, `database`],
 };

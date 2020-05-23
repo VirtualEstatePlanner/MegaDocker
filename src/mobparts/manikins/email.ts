@@ -19,10 +19,10 @@ export const emailManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: emailIcon,
-  manikinIndex: 5,
+  manikinIndex: 6,
   memories: [],
   mites: [emailServiceMite, emailNetworkMite],
   name: `E-mail`,
   ports: [],
-  subfolders: [`config`, `maildata`, `mailstate`, `rainloop`]
+  subfolders: [`config`, `maildata`, `mailstate`, `rainloop`],
 };

@@ -19,10 +19,10 @@ export const portainerManikin: IManikin = {
   isSelected: false,
   isCore: false,
   manikinIcon: portainerIcon,
-  manikinIndex: 17,
+  manikinIndex: 20,
   memories: [],
   mites: [portainerServiceMite, portainerNetworkMite],
   name: `Portainer`,
   ports: [],
-  subfolders: []
+  subfolders: [],
 };

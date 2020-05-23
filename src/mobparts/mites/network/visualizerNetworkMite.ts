@@ -2,7 +2,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const visualizerNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1018,
+  miteIndex: 1024,
   miteString: `
 
 #Begin Visualizer Network Section
@@ -12,5 +12,5 @@ export const visualizerNetworkMite: IMite = {
 
 #End Webdav Network Section
 
-`
+`,
 };

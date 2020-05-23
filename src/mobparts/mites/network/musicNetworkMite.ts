@@ -6,17 +6,17 @@
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const ombiNetworkMite: IMite = {
+export const musicNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1010,
+  miteIndex: 1013,
   miteString: `
 
-# Begin Ombi Network Section
+# Begin Music Network Section
 
- ombi:
+ music:
   driver: overlay
 
-# End Ombi Network Section
+# End Music Network Section
 
-`
+`,
 };

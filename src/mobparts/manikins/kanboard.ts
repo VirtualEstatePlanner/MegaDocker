@@ -22,14 +22,14 @@ export const kanboardManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: kanboardIcon,
-  manikinIndex: 10,
+  manikinIndex: 11,
   memories: [
     kanboardMariaDBPassword,
     kanboardMariaDBRootPassword,
-    kanboardMariaDBUser
+    kanboardMariaDBUser,
   ],
   mites: [kanboardServiceMite, kanboardNetworkMite],
   name: `Kanboard`,
   ports: [],
-  subfolders: [`kanboard-data`, `kanboard-plugins`, `mariadb`]
+  subfolders: [`kanboard-data`, `kanboard-plugins`, `mariadb`],
 };

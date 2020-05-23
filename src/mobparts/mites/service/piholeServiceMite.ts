@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const piholeServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2011,
+  miteIndex: 2019,
   miteString: `
   
 # Begin pihole service section

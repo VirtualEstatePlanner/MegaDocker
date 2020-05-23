@@ -20,10 +20,10 @@ export const piholeManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: piholeIcon,
-  manikinIndex: 16,
+  manikinIndex: 19,
   memories: [piholePassword],
   mites: [piholeServiceMite, piholeNetworkMite],
   name: `Pihole`,
   ports: [],
-  subfolders: [`etc-pihole`, `etc-dnsmasq`]
+  subfolders: [`etc-pihole`, `etc-dnsmasq`],
 };

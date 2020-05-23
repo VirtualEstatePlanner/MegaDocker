@@ -1,0 +1,48 @@
+//  drupalServiceMite.ts
+//  MegaDocker
+//  Network Mite for Drupal
+//  Created by George Georgulas IV on 1/26/19.
+//  Copyright © 2019 The MegaDocker Group. All rights reserved.
+
+import { IMite } from '../../../interfaces/IMite';
+
+export const tvServiceMite: IMite = {
+  type: `DockerSwarmService`,
+  miteIndex: 2025,
+  miteString: `
+
+# Begin TV Service Section
+
+ tv:
+  image: linuxserver/sonarr:latest
+  networks:
+  - traefik
+  - tv
+  volumes:
+   - ./media/tv-config:/config
+   - ./media/content:/media
+  environment:
+   - GUID=501
+   - PUID=501
+  deploy:
+   restart_policy:
+    condition: on-failure
+   labels:
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.tv.entrypoints=plainhttp'
+    - 'traefik.http.services.tv.loadbalancer.server.port=80'
+    - 'traefik.http.routers.tv.rule=Host("tv.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.middlewares.tv-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.tv.middlewares=tv-force-secure'
+    - 'traefik.http.routers.tv.service=tv'
+    - 'traefik.http.routers.tv-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.tv-https.rule=Host("tv.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.tv-https.service=tv'
+    - 'traefik.http.routers.tv-https.tls=true'
+    - 'traefik.http.services.tv-https.loadbalancer.server.port=443'
+    - 'com.MegaDocker.description=Sonarr - a tv episode search tool'
+
+# End AutoTV Service Section
+
+`,
+};

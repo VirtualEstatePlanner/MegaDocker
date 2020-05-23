@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const rocketchatServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2014,
+  miteIndex: 2022,
   miteString: `
 
 # Begin Rocketchat Service Section
