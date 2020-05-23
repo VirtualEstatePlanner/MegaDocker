@@ -6,8 +6,8 @@
 
 import { IManikin } from '../../interfaces/IManikin';
 
+import { mediaRequestsServiceMite } from '../mites/service/mediaRequestsServiceMite';
 import { moviesServiceMite } from '../mites/service/moviesServiceMite';
-import { mediaRequestsServiceMite } from '../mites/service/mediarequestsServiceMite';
 import { moviesNetworkMite } from '../mites/network/moviesNetworkMite';
 import { plexServiceMite } from '../mites/service/plexServiceMite';
 import { plexNetworkMite } from '../mites/network/plexNetworkMite';

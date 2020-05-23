@@ -7,7 +7,7 @@
 import { IManikin } from '../../interfaces/IManikin';
 
 import { comicsServiceMite } from '../mites/service/comicsServiceMite';
-import { mediaRequestsServiceMite } from '../mites/service/mediarequestsServiceMite';
+import { mediaRequestsServiceMite } from '../mites/service/mediaRequestsServiceMite';
 import { comicsNetworkMite } from '../mites/network/comicsNetworkMite';
 import { plexServiceMite } from '../mites/service/plexServiceMite';
 import { plexNetworkMite } from '../mites/network/plexNetworkMite';

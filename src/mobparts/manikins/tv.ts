@@ -7,7 +7,7 @@
 import { IManikin } from '../../interfaces/IManikin';
 
 import { tvServiceMite } from '../mites/service/tvServiceMite';
-import { mediaRequestsServiceMite } from '../mites/service/mediarequestsServiceMite';
+import { mediaRequestsServiceMite } from '../mites/service/mediaRequestsServiceMite';
 import { tvNetworkMite } from '../mites/network/tvNetworkMite';
 import { plexServiceMite } from '../mites/service/plexServiceMite';
 import { plexNetworkMite } from '../mites/network/plexNetworkMite';
