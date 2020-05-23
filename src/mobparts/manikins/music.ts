@@ -37,7 +37,7 @@ export const musicManikin: IManikin = {
     tvNetworkMite,
     plexNetworkMite,
   ],
-  name: `TV`,
+  name: `Music`,
   ports: [],
   subfolders: [
     `content-music`,

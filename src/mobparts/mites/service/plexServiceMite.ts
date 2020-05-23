@@ -16,8 +16,7 @@ export const plexServiceMite: IMite = {
  plex:
   image: plexinc/pms-docker
   networks:
-   - traefik_public
-   - internal
+   - traefik
   ports:
    - 32469:32469
    - 32400:32400
@@ -30,10 +29,8 @@ export const plexServiceMite: IMite = {
    - 32413:32413/udp
    - 32414:32414/udp
   volumes:
-   - ./plex/plex-config:/config
-   - ./plex/plex-movies:/media/movies
-   - ./plex/plex-music:/media/music
-   - ./plex/plex-tv:/media/tv
+   - ./media/plex-config:/config
+   - ./media/content
   deploy:
    restart_policy:
     condition: on-failure

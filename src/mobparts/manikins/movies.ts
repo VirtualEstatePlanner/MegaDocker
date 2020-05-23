@@ -11,7 +11,7 @@ import { moviesServiceMite } from '../mites/service/moviesServiceMite';
 import { moviesNetworkMite } from '../mites/network/moviesNetworkMite';
 import { plexServiceMite } from '../mites/service/plexServiceMite';
 import { plexNetworkMite } from '../mites/network/plexNetworkMite';
-import * as tvIcon from '../../images/manikin-icons/tvIcon.png';
+import * as moviesIcon from '../../images/manikin-icons/moviesIcon.png';
 import { booksNetworkMite } from '../mites/network/booksNetworkMite';
 import { comicsNetworkMite } from '../mites/network/comicsNetworkMite';
 import { musicNetworkMite } from '../mites/network/musicNetworkMite';
@@ -21,11 +21,11 @@ import { tvNetworkMite } from '../mites/network/tvNetworkMite';
  * drupal Manikin
  */
 export const moviesManikin: IManikin = {
-  description: `Automatic TV downloader`,
+  description: `Automatic movie downloader`,
   folder: `media`,
   isCore: false,
   isSelected: false,
-  manikinIcon: tvIcon,
+  manikinIcon: moviesIcon,
   manikinIndex: 14,
   memories: [],
   mites: [
@@ -39,7 +39,7 @@ export const moviesManikin: IManikin = {
     tvNetworkMite,
     plexNetworkMite,
   ],
-  name: `TV`,
+  name: `Movies`,
   ports: [],
   subfolders: [`content-tv`, `requests-config`, `plex-config`, `tv-config`],
 };
