@@ -31,9 +31,11 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     primaryDomain
   );
 
-  const mites: IMite[] = zipManikins.flatMap((eachManikin: IManikin) =>
+  const rawMites: IMite[] = zipManikins.flatMap((eachManikin: IManikin) =>
     eachManikin.mites.map((eachMite: IMite) => eachMite)
   );
+
+  const mites: IMite[] = Array.from(new Set(rawMites));
 
   const serviceMites: string[] = mites
     .filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`)
@@ -126,7 +128,7 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     servicesFooterSectionString,
     mobNetworksSectionString,
     ...networkMites,
-    mobNetworkFooterSectionString
+    mobNetworkFooterSectionString,
   ];
 
   let ymlString: string = ymlOutputArray.join(``);
@@ -151,7 +153,7 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
           );
         });
         const output = await zip.generateAsync({
-          type: `binarystring`
+          type: `binarystring`,
         });
 
         return output;
@@ -215,9 +217,9 @@ docker stack deploy -c ${zipManikins[traefikIndex].memories[mobNameIndex].value}
       compression: `DEFLATE`,
       compressionOptions: { level: 9 },
       platform: `UNIX`,
-      type: `blob`
+      type: `blob`,
     })
-    .then(function(content) {
+    .then(function (content) {
       fileSaver.saveAs(
         content,
         `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip`
