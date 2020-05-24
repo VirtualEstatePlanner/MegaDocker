@@ -42,9 +42,13 @@ export const booksManikin: IManikin = {
   name: `Books`,
   ports: [],
   subfolders: [
-    `content-books`,
-    `requests-config`,
     `books-config`,
+    `content`,
+    `newsgroups-config`,
+    `newsgroup-indexer-config`,
     `plex-config`,
+    `requests-config`,
+    `torrent-config`,
+    `torrent-indexer-config`,
   ],
 };

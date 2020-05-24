@@ -40,9 +40,13 @@ export const musicManikin: IManikin = {
   name: `Music`,
   ports: [],
   subfolders: [
-    `content-music`,
-    `requests-config`,
+    `content`,
     `music-config`,
+    `newsgroups-config`,
+    `newsgroup-indexer-config`,
     `plex-config`,
+    `requests-config`,
+    `torrent-config`,
+    `torrent-indexer-config`,
   ],
 };

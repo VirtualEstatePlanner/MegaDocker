@@ -41,5 +41,14 @@ export const moviesManikin: IManikin = {
   ],
   name: `Movies`,
   ports: [],
-  subfolders: [`content-tv`, `requests-config`, `plex-config`, `tv-config`],
+  subfolders: [
+    `content`,
+    `movies-config`,
+    `newsgroups-config`,
+    `newsgroup-indexer-config`,
+    `plex-config`,
+    `requests-config`,
+    `torrent-config`,
+    `torrent-indexer-config`,
+  ],
 };
