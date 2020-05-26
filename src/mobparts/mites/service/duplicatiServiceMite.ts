@@ -19,7 +19,8 @@ networks:
  - traefik
 environment:
  - TZ=America/New_York
- - PUID=501
+ - PUID=$HOSTUSERID
+ - PGID=$HOSTUSERGID
 volumes:
  - ./:/source
  - ./backups/data/:/backups

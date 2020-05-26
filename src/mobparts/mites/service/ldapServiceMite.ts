@@ -90,7 +90,7 @@ export const ldapServiceMite: IMite = {
    - ldap
    - traefik
   environment:
-   - TZ=America/New_York
+   - TZ=HOSTTIMEZONE
   volumes:
    - ./ldap/authelia-data:/var/lib/authelia
    - ./ldap/authelia-config/configuration.yml:/etc/authelia/configuration.yml:ro

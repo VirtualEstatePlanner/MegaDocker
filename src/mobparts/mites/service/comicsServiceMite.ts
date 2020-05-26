@@ -20,29 +20,30 @@ export const comicsServiceMite: IMite = {
    - traefik
   volumes:
    - ./media/comics-config:/config
-   - ./media/content:/media
+   - ./media/comics-data:/media
   environment:
-   - GUID=501
-   - PUID=501
+   - PUID=$HOSTUSERID
+   - PGID=$HOSTUSERGID
   deploy:
    restart_policy:
     condition: on-failure
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.comics.entrypoints=plainhttp'
-    - 'traefik.http.services.comics.loadbalancer.server.port=80'
+    - 'traefik.http.services.comics.loadbalancer.server.port=8090'
     - 'traefik.http.routers.comics.rule=Host("comics.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.comics-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.comics.middlewares=comics-force-secure'
     - 'traefik.http.routers.comics.service=comics'
-    - 'traefik.http.routers.comics-https.entrypoints=encryptedhttp' 
+    - 'traefik.http.routers.comics-https.entrypoints=encryptedhttp'
     - 'traefik.http.routers.comics-https.rule=Host("comics.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.comics-https.service=comics'
     - 'traefik.http.routers.comics-https.tls=true'
-    - 'traefik.http.services.comics-https.loadbalancer.server.port=443'
+    - 'traefik.http.services.comics-https.loadbalancer.server.port=8090'
     - 'com.MegaDocker.description=Mylar - a comics search tool'
 
 # End Comics Service Section
+ 
 
 `,
 };

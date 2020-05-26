@@ -188,6 +188,25 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
         .file(
           `launchstack.sh`,
           `#!/bin/sh
+export HOSTUSERID=$(id -u)
+export HOSTUSERGID=$(id -g)
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  export HOSTTIMEZONE=$(wget -q -O - https://ipapi.co/timezone)
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  export HOSTTIMEZONE=$(curl -s https://ipapi.co/timezone)
+elif [[ "$OSTYPE" == "win32" ]]; then
+  export HOSTTIMEZONE=$(curl https://ipapi.co/timezone)
+else
+  echo "Setting default timezone as 'America/New_York' because we couldn't determine OS type"
+  export HOSTTIMEZONE=America/New_York
+fi
+
+echo
+echo "We seem to be running on $OSTYPE"
+echo "         with user id of $HOSTUSERID"
+echo "    and user group id of $HOSTUSERGID"
+echo "         in the timezone $HOSTTIMEZONE."
+echo
 docker stack deploy -c ${zipManikins[traefikIndex].memories[mobNameIndex].value}.yml ${zipManikins[traefikIndex].memories[mobNameIndex].value}
 `,
           { unixPermissions: `755` }

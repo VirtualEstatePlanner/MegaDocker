@@ -18,9 +18,9 @@ export const heimdallServiceMite: IMite = {
   networks:
    - traefik
   environment:
-   - PUID=501
-   - PGID=20
-   - TZ=America/New_York
+   - PUID=$HOSTUSERID
+   - PGID=$HOSTUSERGID
+   - TZ=HOSTTIMEZONE
   volumes:
    - ./logs/heimdall:/loglocation
    - ./traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/config/keys/[[PRIMARYDOMAIN]].crt

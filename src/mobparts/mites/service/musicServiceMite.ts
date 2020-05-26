@@ -14,23 +14,23 @@ export const musicServiceMite: IMite = {
 # Begin Music Service Section
 
  music:
-  image: linuxserver/lidarr:latest
+  image: linuxserver/lidarr
   networks:
-   - music
+   - movies
    - traefik
-  environment:
-   - GUID=501
-   - PUID=501
   volumes:
    - ./media/music-config:/config
-   - ./media/content:/media
+   - ./media/music-data:/media
+  environment:
+   - PUID=$HOSTUSERID
+   - PGID=$HOSTUSERGID
   deploy:
    restart_policy:
     condition: on-failure
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.music.entrypoints=plainhttp'
-    - 'traefik.http.services.music.loadbalancer.server.port=80'
+    - 'traefik.http.services.music.loadbalancer.server.port=8686'
     - 'traefik.http.routers.music.rule=Host("music.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.music-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.music.middlewares=music-force-secure'
@@ -39,8 +39,8 @@ export const musicServiceMite: IMite = {
     - 'traefik.http.routers.music-https.rule=Host("music.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.music-https.service=music'
     - 'traefik.http.routers.music-https.tls=true'
-    - 'traefik.http.services.music-https.loadbalancer.server.port=443'
-    - 'com.MegaDocker.description=Lidarr - a music episode search tool'
+    - 'traefik.http.services.music-https.loadbalancer.server.port=8686'
+    - 'com.MegaDocker.description=Lidarr - a music search tool'
 
 # End Music Service Section
 

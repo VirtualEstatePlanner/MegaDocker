@@ -22,8 +22,8 @@ export const moviesServiceMite: IMite = {
    - ./media/movies-config:/config
    - ./media/content:/media
   environment:
-   - GUID=501
-   - PUID=501
+   - PUID=$HOSTUSERID
+   - PGID=$HOSTUSERGID
   deploy:
    restart_policy:
     condition: on-failure

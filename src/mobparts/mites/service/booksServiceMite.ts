@@ -20,17 +20,17 @@ export const booksServiceMite: IMite = {
    - traefik
   volumes:
    - ./media/books-config:/config
-   - ./media/content:/media
+   - ./media/books-data:/media
   environment:
-   - GUID=501
-   - PUID=501
+   - PUID=$HOSTUSERID
+   - PGID=$HOSTUSERGID
   deploy:
    restart_policy:
     condition: on-failure
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.books.entrypoints=plainhttp'
-    - 'traefik.http.services.books.loadbalancer.server.port=80'
+    - 'traefik.http.services.books.loadbalancer.server.port=5299'
     - 'traefik.http.routers.books.rule=Host("books.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.books-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.books.middlewares=books-force-secure'
@@ -39,10 +39,10 @@ export const booksServiceMite: IMite = {
     - 'traefik.http.routers.books-https.rule=Host("books.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.books-https.service=books'
     - 'traefik.http.routers.books-https.tls=true'
-    - 'traefik.http.services.books-https.loadbalancer.server.port=443'
+    - 'traefik.http.services.books-https.loadbalancer.server.port=5299'
     - 'com.MegaDocker.description=LazyLibrarian - a books search tool'
 
-# End Books Service Section
+# End Books Service Section 
 
 `,
 };
