@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { mobnameValidator } from '../../functions/validators/mobnameValidator';
 
 export const mobName: IMemory = {
-  memoryIndex: 1022,
+  memoryIndex: 1025,
   memoryMarker: `[[MOBNAME]]`,
   shouldAutocomplete: false,
   name: `Mob Name`,
@@ -16,5 +16,5 @@ export const mobName: IMemory = {
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: mobnameValidator
+  validator: mobnameValidator,
 };

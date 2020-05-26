@@ -9,7 +9,7 @@ import { ldapAdminUsername } from './ldapAdminUsername';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const ldapAdminPassword: IMemory = {
-  memoryIndex: 1015,
+  memoryIndex: 1018,
   memoryMarker: `[[LDAPADMINPASSWORD]]`,
   shouldAutocomplete: false,
   name: `LDAP Admin password`,
@@ -17,5 +17,5 @@ export const ldapAdminPassword: IMemory = {
   value: ``,
   valueType: 'password',
   isReady: false,
-  validator: passwordValidator
+  validator: passwordValidator,
 };

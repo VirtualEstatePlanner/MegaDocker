@@ -14,7 +14,7 @@ export const elkServiceMite: IMite = {
 # Begin ELK Service Section
  
  elasticsearch:
-  image: elasticsearch:7.6.0
+  image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
   environment:
    - bootstrap.memory_lock=true
    - cluster.name="[[MOBNAME]]-docker-cluster"
@@ -27,13 +27,13 @@ export const elkServiceMite: IMite = {
   networks:
    - elk
   volumes:
-   - ./logs/elk:/loglocation
+   - ./logs/elk-elasticsearch:/loglocation
    - ./elk/elasticsearch-config:/usr/share/elasticsearch/configs
    - ./elk/elasticsearch-data:/usr/share/elasticsearch/data
    - ./elk/logfiles:/usr/share/elasticsearch/logs
 
  filebeat:
-  image: docker.elastic.co/beats/filebeat:7.6.0
+  image: docker.elastic.co/beats/filebeat:7.7.0
   command: filebeat run --modules traefik
   environment:
    - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
@@ -43,21 +43,21 @@ export const elkServiceMite: IMite = {
   networks:
    - elk
   volumes:
-  - ./logs/elk:/loglocation
+  - ./logs/elk-filebeats:/loglocation
   - ./elk/filebeat-config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
   - ./elk/filebeat-modules:/usr/share/filebeat/modules.d
   - /var/lib/docker/containers:/var/lib/docker/containers:ro
   - /var/run/docker.sock:/var/run/docker.sock
 
  kibana:
-  image: kibana:7.6.0
+  image: docker.elastic.co/kibana/kibana:7.7.0
   networks:
    - traefik
    - elk
   environment:
    - SERVER_NAME=[[MOBNAME]]_elasticsearch:9200
   volumes:
-   - ./logs/elk:/loglocation
+   - ./logs/elk-kibana:/loglocation
   deploy:
    restart_policy:
     condition: on-failure

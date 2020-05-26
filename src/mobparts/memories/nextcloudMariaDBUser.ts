@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const nextcloudMariaDBUser: IMemory = {
-  memoryIndex: 1025,
+  memoryIndex: 1028,
   memoryMarker: `[[NEXTCLOUDMARIADBUSER]]`,
   shouldAutocomplete: false,
   name: `Nextcloud MariaDB User`,
@@ -16,5 +16,5 @@ export const nextcloudMariaDBUser: IMemory = {
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: noWhitespaceOrSymbolsValidator
+  validator: noWhitespaceOrSymbolsValidator,
 };

@@ -14,29 +14,29 @@ export const grocyServiceMite: IMite = {
 # Begin Grocy Service Section
 
  grocy-app:
- image: linuxserver/grocy
- networks:
-  - grocy
-  - traefik
- volumes:
-  - ./grocy/app:/config
- deploy:
-  restart_policy:
-   condition: on-failure
-  labels:
-   - 'traefik.enable=true'
-   - 'traefik.http.routers.grocy-app.entrypoints=plainhttp'
-   - 'traefik.http.services.grocy-app.loadbalancer.server.port=80'
-   - 'traefik.http.routers.grocy-app.rule=Host("groceries.[[PRIMARYDOMAIN]]")'
-   - 'traefik.http.middlewares.grocy-app-force-secure.redirectscheme.scheme=https'
-   - 'traefik.http.routers.grocy-app.middlewares=grocy-app-force-secure'
-   - 'traefik.http.routers.grocy-app.service=grocy-app'
-   - 'traefik.http.routers.grocy-app-https.entrypoints=encryptedhttp'
-   - 'traefik.http.routers.grocy-app-https.rule=Host("groceries.[[PRIMARYDOMAIN]]")'
-   - 'traefik.http.routers.grocy-app-https.service=grocy-app'
-   - 'traefik.http.routers.grocy-app-https.tls=true'
-   - 'traefik.http.services.grocy-app-https.loadbalancer.server.port=443'
-   - 'com.MegaDocker.description=Grocy Web Server - home Enterprise Resource Planning software'
+  image: linuxserver/grocy
+  networks:
+   - grocy
+   - traefik
+  volumes:
+   - ./grocy/app:/config
+  deploy:
+   restart_policy:
+    condition: on-failure
+   labels:
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.grocy-app.entrypoints=plainhttp'
+    - 'traefik.http.services.grocy-app.loadbalancer.server.port=80'
+    - 'traefik.http.routers.grocy-app.rule=Host("groceries.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.middlewares.grocy-app-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.grocy-app.middlewares=grocy-app-force-secure'
+    - 'traefik.http.routers.grocy-app.service=grocy-app'
+    - 'traefik.http.routers.grocy-app-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.grocy-app-https.rule=Host("groceries.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.grocy-app-https.service=grocy-app'
+    - 'traefik.http.routers.grocy-app-https.tls=true'
+    - 'traefik.http.services.grocy-app-https.loadbalancer.server.port=443'
+    - 'com.MegaDocker.description=Grocy Web Server - home Enterprise Resource Planning software'
 
  grocy-barcode-buddy:
   image: f0rc3/barcodebuddy-docker
@@ -64,7 +64,6 @@ export const grocyServiceMite: IMite = {
     - 'com.MegaDocker.description=Barcode Buddy - barcode scanner add-on for grocy'
 
 # End Grocy Service Section
-
 
 `,
 };

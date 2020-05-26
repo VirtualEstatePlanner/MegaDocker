@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const gitlabPostgresUser: IMemory = {
-  memoryIndex: 1007,
+  memoryIndex: 1010,
   memoryMarker: `[[GITLABPOSTGRESUSER]]`,
   shouldAutocomplete: false,
   name: `GitLab Postgres User`,
@@ -16,5 +16,5 @@ export const gitlabPostgresUser: IMemory = {
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: noWhitespaceOrSymbolsValidator
+  validator: noWhitespaceOrSymbolsValidator,
 };

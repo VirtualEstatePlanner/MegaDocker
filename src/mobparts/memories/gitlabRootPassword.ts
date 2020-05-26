@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const gitlabRootPassword: IMemory = {
-  memoryIndex: 1009,
+  memoryIndex: 1012,
   memoryMarker: `[[GITLABROOTPASSWORD]]`,
   shouldAutocomplete: false,
   name: `Gitlab Root Password`,
@@ -16,5 +16,5 @@ export const gitlabRootPassword: IMemory = {
   value: ``,
   valueType: 'password',
   isReady: false,
-  validator: passwordValidator
+  validator: passwordValidator,
 };

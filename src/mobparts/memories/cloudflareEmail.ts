@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { emailValidator } from '../../functions/validators/emailValidator';
 
 export const cloudflareEmail: IMemory = {
-  memoryIndex: 1002,
+  memoryIndex: 1005,
   memoryMarker: `[[CLOUDFLAREEMAIL]]`,
   shouldAutocomplete: true,
   name: `CloudFlare Email`,
@@ -16,5 +16,5 @@ export const cloudflareEmail: IMemory = {
   value: ``,
   valueType: 'email',
   isReady: false,
-  validator: emailValidator
+  validator: emailValidator,
 };

@@ -9,7 +9,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noValidator } from '../../functions/validators/noValidator';
 
 export const ldapOrganisation: IMemory = {
-  memoryIndex: 1018,
+  memoryIndex: 1021,
   memoryMarker: `[[LDAPORGANISATION]]`,
   shouldAutocomplete: false,
   name: `LDAP Organisation`,
@@ -18,5 +18,5 @@ export const ldapOrganisation: IMemory = {
   valueType: 'text',
   isReady: false,
   // TODO: create a validator that allows whitespace
-  validator: noValidator
+  validator: noValidator,
 };

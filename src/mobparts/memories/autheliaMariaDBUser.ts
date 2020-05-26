@@ -7,12 +7,12 @@
 import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
-export const webdavUser: IMemory = {
-  memoryIndex: 1038,
-  memoryMarker: `[[WEBDAVUSER]]`,
+export const autheliaMariaDBUser: IMemory = {
+  memoryIndex: 1002,
+  memoryMarker: `[[AUTHELIAMARIADBUSER]]`,
   shouldAutocomplete: false,
-  name: `WebDAV User`,
-  tooltip: `Please enter the username to access WebDAV here`,
+  name: `Authelia MariaDB User`,
+  tooltip: `Please enter your Authelia MariaDB username here`,
   value: ``,
   valueType: 'text',
   isReady: false,

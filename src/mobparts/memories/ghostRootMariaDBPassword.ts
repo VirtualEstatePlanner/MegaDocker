@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const ghostMariaDBRootPassword: IMemory = {
-  memoryIndex: 1005,
+  memoryIndex: 1008,
   memoryMarker: `[[GHOSTMARIADBROOTPASSWORD]]`,
   shouldAutocomplete: false,
   name: `Ghost MariaDB root password`,
@@ -16,5 +16,5 @@ export const ghostMariaDBRootPassword: IMemory = {
   value: ``,
   valueType: 'password',
   isReady: false,
-  validator: passwordValidator
+  validator: passwordValidator,
 };

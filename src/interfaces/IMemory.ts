@@ -21,6 +21,9 @@ export interface IMemory {
   isReady: boolean;
   memoryIndex: number;
   memoryMarker:
+    | `[[AUTHELIAMARIADBPASSWORD]]`
+    | `[[AUTHELIAMARIADBROOTPASSWORD]]`
+    | `[[AUTHELIAMARIADBUSER]]`
     | `[[CLOUDFLAREAPIKEY]]`
     | `[[CLOUDFLAREAPITOKEN]]`
     | `[[CLOUDFLAREEMAIL]]`

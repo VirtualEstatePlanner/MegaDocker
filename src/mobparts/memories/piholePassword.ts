@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const piholePassword: IMemory = {
-  memoryIndex: 1028,
+  memoryIndex: 1031,
   memoryMarker: `[[PIHOLEPASSWORD]]`,
   shouldAutocomplete: false,
   name: `Pihole Password`,
@@ -16,5 +16,5 @@ export const piholePassword: IMemory = {
   value: ``,
   valueType: 'password',
   isReady: false,
-  validator: passwordValidator
+  validator: passwordValidator,
 };

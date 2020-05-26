@@ -1,18 +1,18 @@
-//  drupalPostgresPassword.ts
+//  ghostRootMariaDBPassword.ts
 //  MegaDocker
-//  The variable for
+//  The variable for Ghost's MariaDB root user's password
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
-export const drupalPostgresPassword: IMemory = {
-  memoryIndex: 1006,
-  memoryMarker: `[[DRUPALPOSTGRESPASSWORD]]`,
+export const autheliaMariaDBRootPassword: IMemory = {
+  memoryIndex: 1001,
+  memoryMarker: `[[AUTHELIAMARIADBROOTPASSWORD]]`,
   shouldAutocomplete: false,
-  name: `Drupal Postgres Password`,
-  tooltip: `Choose a password for Drupal to connect to it's PostgreSQL database.`,
+  name: `Authelia MariaDB root password`,
+  tooltip: `The password for the Authelia MariaDB root user`,
   value: ``,
   valueType: 'password',
   isReady: false,

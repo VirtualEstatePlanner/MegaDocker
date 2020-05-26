@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const ldapAdminUsername: IMemory = {
-  memoryIndex: 1016,
+  memoryIndex: 1019,
   memoryMarker: `[[LDAPADMINUSERNAME]]`,
   shouldAutocomplete: false,
   name: `LDAP Admin username`,
@@ -16,5 +16,5 @@ export const ldapAdminUsername: IMemory = {
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: noWhitespaceOrSymbolsValidator
+  validator: noWhitespaceOrSymbolsValidator,
 };
