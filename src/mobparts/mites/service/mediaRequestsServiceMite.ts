@@ -10,6 +10,7 @@ export const mediaRequestsServiceMite: IMite = {
   type: `DockerSwarmService`,
   miteIndex: 2013,
   miteString: `
+
 # Begin Media Requests Service Sections
 
  requests:
@@ -18,7 +19,7 @@ export const mediaRequestsServiceMite: IMite = {
    - ./media/requests-config:/config
   networks:
    - books
-   - comic
+   - comics
    - movies
    - music
    - traefik
@@ -41,13 +42,13 @@ export const mediaRequestsServiceMite: IMite = {
     - 'traefik.http.services.requests-https.loadbalancer.server.port=443'
     - 'com.MegaDocker.description=Ombi - media download request app'
 
- torrentindexer:
+ torrent-indexer:
   image: linuxserver/jackett
   volumes:
    - ./media/torrent-indexer-config:/config
   networks:
    - books
-   - comic
+   - comics
    - movies
    - music
    - traefik
@@ -57,38 +58,53 @@ export const mediaRequestsServiceMite: IMite = {
     condition: on-failure
    labels:
     - 'traefik.enable=true'
-    - 'traefik.http.routers.torrentindexer.entrypoints=plainhttp'
-    - 'traefik.http.services.torrentindexer.loadbalancer.server.port=80'
-    - 'traefik.http.routers.torrentindexer.rule=Host("torrentindexer.[[PRIMARYDOMAIN]]")'
-    - 'traefik.http.middlewares.torrentindexer-force-secure.redirectscheme.scheme=https'
-    - 'traefik.http.routers.torrentindexer.middlewares=torrentindexer-force-secure'
-    - 'traefik.http.routers.torrentindexer.service=torrentindexer'
-    - 'traefik.http.routers.torrentindexer-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.torrentindexer-https.rule=Host("torrentindexer.[[PRIMARYDOMAIN]]")'
-    - 'traefik.http.routers.torrentindexer-https.service=torrentindexer'
-    - 'traefik.http.routers.torrentindexer-https.tls=true'
-    - 'traefik.http.services.torrentindexer-https.loadbalancer.server.port=443'
+    - 'traefik.http.routers.torrent-indexer.entrypoints=plainhttp'
+    - 'traefik.http.services.torrent-indexer.loadbalancer.server.port=9117'
+    - 'traefik.http.routers.torrent-indexer.rule=Host("torrent-indexer.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.middlewares.torrent-indexer-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.torrent-indexer.middlewares=torrent-indexer-force-secure'
+    - 'traefik.http.routers.torrent-indexer.service=torrent-indexer'
+    - 'traefik.http.routers.torrent-indexer-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.torrent-indexer-https.rule=Host("torrent-indexer.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.torrent-indexer-https.service=torrent-indexer'
+    - 'traefik.http.routers.torrent-indexer-https.tls=true'
+    - 'traefik.http.services.torrent-indexer-https.loadbalancer.server.port=9117'
     - 'com.MegaDocker.description=Jackett - torrent indexer'
 
  torrent:
-  image: linuxserver/rutorrent
+  image: linuxserver/qbittorrent
   volumes:
    - ./media/torrent-config:/config
-   - ./media/content:/media
+   - ./media/torrent-downloads:/downloads
+   - ./media/books-data:/media/books
+   - ./media/comics-data:/media/comics
+   - ./media/movies-data:/media/movies
+   - ./media/music-data:/media/music
+   - ./media/tv-data:/media/tv
+   - /Volumes/Drobo/Fileshare/plex:/plex
+  environment:
+   - PUID=$HOSTUSERID
+   - PGID=$HOSTUSERGID
+   - UMASK_SET=022
+   - WEBUI_PORT=8080
+   - TZ=$HOSTTIMEZONE
   networks:
    - books
-   - comic
+   - comics
    - movies
    - music
    - traefik
    - tv
+  ports:
+   - 6881:6881
+   - 6881:6881/udp
   deploy:
    restart_policy:
     condition: on-failure
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.torrent.entrypoints=plainhttp'
-    - 'traefik.http.services.torrent.loadbalancer.server.port=80'
+    - 'traefik.http.services.torrent.loadbalancer.server.port=8080'
     - 'traefik.http.routers.torrent.rule=Host("torrent.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.torrent-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.torrent.middlewares=torrent-force-secure'
@@ -97,48 +113,46 @@ export const mediaRequestsServiceMite: IMite = {
     - 'traefik.http.routers.torrent-https.rule=Host("torrent.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.torrent-https.service=torrent'
     - 'traefik.http.routers.torrent-https.tls=true'
-    - 'traefik.http.services.torrent-https.loadbalancer.server.port=443'
+    - 'traefik.http.services.torrent-https.loadbalancer.server.port=8080'
     - 'com.MegaDocker.description=ruTorrent - torrent downloader'
 
-    newsgroups:
-    image: linuxserver/nzbget
-    volumes:
-     - ./media/newsgroups-config:/config
-     - ./media/content:/media
-    networks:
-     - books
-     - comic
-     - movies
-     - music
-     - traefik
-     - tv
-    deploy:
-     restart_policy:
-      condition: on-failure
-     labels:
-      - 'traefik.enable=true'
-      - 'traefik.http.routers.newsgroups.entrypoints=plainhttp'
-      - 'traefik.http.services.newsgroups.loadbalancer.server.port=80'
-      - 'traefik.http.routers.newsgroups.rule=Host("newsgroups.[[PRIMARYDOMAIN]]")'
-      - 'traefik.http.middlewares.newsgroups-force-secure.redirectscheme.scheme=https'
-      - 'traefik.http.routers.newsgroups.middlewares=newsgroups-force-secure'
-      - 'traefik.http.routers.newsgroups.service=newsgroups'
-      - 'traefik.http.routers.newsgroups-https.entrypoints=encryptedhttp'
-      - 'traefik.http.routers.newsgroups-https.rule=Host("newsgroups.[[PRIMARYDOMAIN]]")'
-      - 'traefik.http.routers.newsgroups-https.service=newsgroups'
-      - 'traefik.http.routers.newsgroups-https.tls=true'
-      - 'traefik.http.services.newsgroups-https.loadbalancer.server.port=443'
-      - 'com.MegaDocker.description=NZBGet - newsgroups downloader'
-  
-  # End Media Requests Service Section
+ newsgroups:
+  image: linuxserver/nzbget
+  volumes:
+   - ./media/newsgroups-config:/config
+   - ./media/newsgroups-downloads:/media
+  networks:
+   - books
+   - comics
+   - movies
+   - music
+   - traefik
+   - tv
+  deploy:
+   restart_policy:
+    condition: on-failure
+   labels:
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.newsgroups.entrypoints=plainhttp'
+    - 'traefik.http.services.newsgroups.loadbalancer.server.port=80'
+    - 'traefik.http.routers.newsgroups.rule=Host("newsgroups.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.middlewares.newsgroups-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.newsgroups.middlewares=newsgroups-force-secure'
+    - 'traefik.http.routers.newsgroups.service=newsgroups'
+    - 'traefik.http.routers.newsgroups-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.newsgroups-https.rule=Host("newsgroups.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.newsgroups-https.service=newsgroups'
+    - 'traefik.http.routers.newsgroups-https.tls=true'
+    - 'traefik.http.services.newsgroups-https.loadbalancer.server.port=443'
+    - 'com.MegaDocker.description=NZBGet - newsgroups downloader'
 
  newsgroup-indexer:
   image: linuxserver/hydra2
   volumes:
-   - ./media/newsgroup-indexer-config:/config
+   - ./media/newsgroups-indexer-config:/config
   networks:
    - books
-   - comic
+   - comics
    - movies
    - music
    - traefik
@@ -160,6 +174,8 @@ export const mediaRequestsServiceMite: IMite = {
     - 'traefik.http.routers.newsgroup-indexer-https.tls=true'
     - 'traefik.http.services.newsgroup-indexer-https.loadbalancer.server.port=443'
     - 'com.MegaDocker.description=NZBGet - newsgroup indexer'
+
+# End Media Requests Service Section
 
 `,
 };
