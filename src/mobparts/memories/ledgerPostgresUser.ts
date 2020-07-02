@@ -1,18 +1,18 @@
-//  wordpressMariaDBUser.ts
+//  rocketchatBotUsername.ts
 //  MegaDocker
-//  The variable for the Wordpress MariaDB username
+//  The variable for
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
-export const wordpressMariaDBUser: IMemory = {
-  memoryIndex: 1042,
-  memoryMarker: `[[WORDPRESSMARIADBUSER]]`,
+export const ledgerPostgresUser: IMemory = {
+  memoryIndex: 1023,
+  memoryMarker: `[[LEDGERPOSTGRESUSER]]`,
   shouldAutocomplete: false,
-  name: `WP MariaDB User`,
-  tooltip: `Please enter your WordPress MariaDB username here`,
+  name: `Ledger Postgres User`,
+  tooltip: `Choose the user Ledger will use to connect to it's Postgres database.`,
   value: ``,
   valueType: 'text',
   isReady: false,

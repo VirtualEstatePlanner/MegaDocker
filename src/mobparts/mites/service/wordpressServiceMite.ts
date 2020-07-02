@@ -11,7 +11,7 @@ export const wordpressServiceMite: IMite = {
   miteIndex: 2029,
   miteString: `
 
-#Begin WordPress Service Section
+# Begin WordPress Service Section
 
  wordpress:
   image: wordpress
@@ -60,7 +60,7 @@ export const wordpressServiceMite: IMite = {
    restart_policy:
     condition: on-failure
 
-#End WordPress Service Section
+# End WordPress Service Section
 
 `,
 };

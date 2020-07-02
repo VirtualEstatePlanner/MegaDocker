@@ -13,17 +13,24 @@ export const nextcloudServiceMite: IMite = {
 
 # Begin NextCloud Service Sections
 
- nextcloud:
+nextcloud:
   image: nextcloud
   networks:
-   - traefik
    - nextcloud
+   - traefik
   volumes:
-  - ./logs/nextcloud:/loglocation
-  - ./nextcloud/main/:/var/www/html
+   - ./nextcloud/application:/var/www/html
+  environment:
+   - MYSQL_HOST=[[MOBNAME]]_nextcloud_mariadb
+   - MYSQL_PASSWORD=[[NEXTCLOUDMARIADBPASSWORD]]
+   - MYSQL_DATABASE=nextcloud
+   - MYSQL_USER=[[NEXTCLOUDMARIADBUSER]]
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
+   placement:
+    constraints:
+     - node.role == manager
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.nextcloud.entrypoints=plainhttp'
@@ -36,39 +43,29 @@ export const nextcloudServiceMite: IMite = {
     - 'traefik.http.routers.nextcloud-https.rule=Host("nextcloud.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.nextcloud-https.service=nextcloud'
     - 'traefik.http.routers.nextcloud-https.tls=true'
-    - 'traefik.http.services.nextcloud-https.loadbalancer.server.port=80'
+    - 'traefik.http.services.nextcloud-https.loadbalancer.server.port=443'
     - 'com.MegaDocker.description=Nextcloud office suite'
-
- nextcloud-postgres:
-  image: postgres:alpine
-  environment:
-   - POSTGRES_PASSWORD=[[NEXTCLOUDPOSTGRESPASSWORD]]
-   - POSTGRES_USER=[[NEXTCLOUDPOSTGRESUSER]]
-   - POSTGRES_DB=nextcloud
-  networks:
-   - nextcloud
-  volumes:
-  - ./logs/nextcloud:/loglocation
-  - ./nextcloud/postgres:/var/lib/postgresql
-  deploy:
-   restart_policy:
-    condition: on-failure
 
  nextcloud-mariadb:
   image: mariadb
-  environment:
-   - MYSQL_USER=[[NEXTCLOUDMARIADBUSER]]
-   - MYSQL_PASSWORD=[[NEXTCLOUDMARIADBPASSWORD]]
-   - MYSQL_ROOT_PASSWORD=[[NEXTCLOUDMARIADBROOTPASSWORD]]
-   - MYSQL_DATABASE=nextcloud
-  volumes:
-  - ./logs/nextcloud:/loglocation
-  - ./nextcloud/mariadb:/var/lib/mysql
-  deploy:
-   restart_policy:
-    condition: on-failure
   networks:
    - nextcloud
+  command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
+  volumes:
+   - ./nextcloud/mariadb:/var/lib/mysql
+  environment:
+   - MYSQL_ROOT_PASSWORD=[[NEXTCLOUDMARIADBROOTPASSWORD]]
+   - MYSQL_PASSWORD=[[NEXTCLOUDMARIADBPASSWORD]]
+   - MYSQL_DATABASE=nextcloud
+   - MYSQL_USER=[[NEXTCLOUDMARIADBUSER]]
+  deploy:
+   restart_policy:
+    condition: any
+   labels:
+    - "com.MegaDocker.description=MariaDB - Storage for NextCloud"
+  placement:
+   constraints:
+    - node.role == manager
 
 # End NextCloud Service Section
 

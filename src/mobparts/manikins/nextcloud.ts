@@ -12,8 +12,6 @@ import nextcloudIcon from '../../images/manikin-icons/nextcloudIcon.png';
 import { nextcloudMariaDBPassword } from '../memories/nextcloudMariaDBPassword';
 import { nextcloudMariaDBRootPassword } from '../memories/nextcloudMariaDBRootPassword';
 import { nextcloudMariaDBUser } from '../memories/nextcloudMariaDBUser';
-import { nextcloudPostgresPassword } from '../memories/nextcloudPostgresPassword';
-import { nextcloudPostgresUser } from '../memories/nextcloudPostgresUser';
 
 /**
  * nextcloud Manikin
@@ -29,11 +27,9 @@ export const nextcloudManikin: IManikin = {
     nextcloudMariaDBPassword,
     nextcloudMariaDBRootPassword,
     nextcloudMariaDBUser,
-    nextcloudPostgresPassword,
-    nextcloudPostgresUser,
   ],
   mites: [nextcloudServiceMite, nextcloudNetworkMite],
   name: `Nextcloud`,
   ports: [],
-  subfolders: [`main`, `config`, `data`, `postgres`, `redis`, `mariadb`],
+  subfolders: [`application`, `mariadb`],
 };

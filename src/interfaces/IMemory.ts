@@ -50,6 +50,7 @@ export interface IMemory {
     | `[[LDAPSMTPHOST]]`
     | `[[LDAPSMTPASSWORD]]`
     | `[[LEDGERPOSTGRESPASSWORD]]`
+    | `[[LEDGERPOSTGRESUSER]]`
     | `[[LETSENCRYPTEMAIL]]`
     | `[[MOBFOLDERPATH]]`
     | `[[MOBNAME]]`

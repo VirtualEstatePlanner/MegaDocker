@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const swarmpitCouchbasePassword: IMemory = {
-  memoryIndex: 1035,
+  memoryIndex: 1036,
   memoryMarker: `[[SWARMPITCOUCHBASEPASSWORD]]`,
   shouldAutocomplete: false,
   name: `Swarmpit Couchbase Password`,

@@ -10,7 +10,7 @@ import { webdavServiceMite } from '../mites/service/webdavServiceMite';
 import { webdavNetworkMite } from '../mites/network/webdavNetworkMite';
 import webdavIcon from '../../images/manikin-icons/webdavIcon.png';
 import { webdavUser } from '../memories/webdavUser';
-import { webdavPassword } from '../memories/webdavPassword ';
+import { webdavPassword } from '../memories/webdavPassword';
 
 /**
  * webdav Manikin
