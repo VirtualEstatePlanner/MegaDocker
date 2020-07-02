@@ -10,7 +10,8 @@ import { grocyManikin } from '../mobparts/manikins/grocy';
 import { heimdallManikin } from '../mobparts/manikins/heimdall';
 import { kanboardManikin } from '../mobparts/manikins/kanboard';
 import { ldapManikin } from '../mobparts/manikins/ldap';
-// import { nextcloudManikin } from '../mobparts/manikins/nextcloud';
+import { ledgerManikin } from '../mobparts/manikins/ledger';
+import { nextcloudManikin } from '../mobparts/manikins/nextcloud';
 import { nginxManikin } from '../mobparts/manikins/nginx';
 // import { owncloudManikin } from '../mobparts/manikins/owncloud';
 import { piholeManikin } from '../mobparts/manikins/pihole';
@@ -44,9 +45,10 @@ export const workingManikins: IManikin[] = [
   heimdallManikin,
   kanboardManikin,
   ldapManikin,
+  ledgerManikin,
   moviesManikin,
   musicManikin,
-  // nextcloudManikin,
+  nextcloudManikin,
   nginxManikin,
   // owncloudManikin,
   piholeManikin,
