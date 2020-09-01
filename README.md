@@ -12,6 +12,7 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
+- Windows build from macOS works again
 - Added NextCloud
 - Added LedgerSMB
 
