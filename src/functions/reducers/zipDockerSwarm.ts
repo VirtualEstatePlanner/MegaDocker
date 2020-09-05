@@ -140,7 +140,7 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     const makeZip = async (): Promise<string> => {
       try {
         zip
-          .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
+          .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!
           .file(
             `${zipManikins[traefikIndex].memories[mobNameIndex].value}.yml`,
             `${insertMemoryValues(ymlString, zipMemories)}`
@@ -173,18 +173,18 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     zipManikins.map((eachManikin: IManikin) => {
       const subs = eachManikin.subfolders;
       zip
-        .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
-        .folder(`logs`)
+        .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!
+        .folder(`logs`)!
         .folder(eachManikin.folder);
       for (let eachSubfolder in subs) {
         zip
-          .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
-          .folder(eachManikin.folder)
+          .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!
+          .folder(eachManikin.folder)!
           .folder(subs[eachSubfolder]);
       }
 
       zip
-        .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
+        .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!
         .file(
           `launchstack.sh`,
           `#!/bin/sh
@@ -212,7 +212,7 @@ docker stack deploy -c ${zipManikins[traefikIndex].memories[mobNameIndex].value}
           { unixPermissions: `755` }
         );
       zip
-        .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
+        .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!
         .file(
           //         .file(
           `stopstack.sh`,
@@ -229,7 +229,7 @@ docker stack deploy -c ${zipManikins[traefikIndex].memories[mobNameIndex].value}
   makeFoldersAndConvenienceScripts();
 
   zip
-    .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)
+    .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!
     .file(`traefik/acme.json`, ``, { unixPermissions: `600` });
   zip
     .generateAsync({
