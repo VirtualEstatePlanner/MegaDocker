@@ -12,6 +12,7 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
+- removed chuff from old versions
 - fixed strictNullChecks issue
 - Windows build from macOS works again
 - Added NextCloud
