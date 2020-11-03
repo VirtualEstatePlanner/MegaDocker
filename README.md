@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019 The MegaDocker Group. All rights reserved.'
 
-# MegaDocker v0.3.2-beta
+# MegaDocker v0.3.3-beta
 
 Modular Enterprise-Grade Automated Docker
 
@@ -59,7 +59,7 @@ MEGADocker makes microservices using 4 fundamental building blocks:
 
 You'll use MEGADocker to make your **Mob** of **Manikins**. MEGADocker manages the **Mites**, and tells you what **Memories** you **Mob** mandates, and where you might find that information. Then you just tell your **Mob** their **Memories** and make them march out to do your magnificent bidding.
 
-You can also make your own **Mites** and mold them into all manner of **Manikins** to make your **Mobs** mightier.
+You can also make your own **Mites** and mold them into all manner of **Manikins** to make your **Mobs** much mightier.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 
