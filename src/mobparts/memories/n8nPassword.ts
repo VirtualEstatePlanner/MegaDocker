@@ -1,18 +1,18 @@
-//  primaryDomain.ts
+//  n8nPassword.ts
 //  MegaDocker
-//  The variable for the domain name of your primary web domain
+//  The variable for the n8n administrative password
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
-export const nextcloudMariaDBPassword: IMemory = {
-  memoryIndex: 1029,
-  memoryMarker: `[[NEXTCLOUDMARIADBPASSWORD]]`,
+export const n8nPassword: IMemory = {
+  memoryIndex: 1027,
+  memoryMarker: `[[N8NPASSWORD]]`,
   shouldAutocomplete: false,
-  name: `Nextcloud MariaDB Password`,
-  tooltip: `Choose a password for nextcloud to connect to it's MariaDB database`,
+  name: `n8n Password`,
+  tooltip: `Choose a password for the n8n administrative user`,
   value: ``,
   valueType: 'password',
   isReady: false,

@@ -54,6 +54,8 @@ export interface IMemory {
     | `[[LETSENCRYPTEMAIL]]`
     | `[[MOBFOLDERPATH]]`
     | `[[MOBNAME]]`
+    | `[[N8NUSERNAME]]`
+    | `[[N8NPASSWORD]]`
     | `[[NEXTCLOUDMARIADBPASSWORD]]`
     | `[[NEXTCLOUDMARIADBROOTPASSWORD]]`
     | `[[NEXTCLOUDMARIADBUSER]]`
