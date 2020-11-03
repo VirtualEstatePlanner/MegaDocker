@@ -10,7 +10,7 @@ import { wordpressNetworkMite } from '../mites/network/wordpressNetworkMite';
 import { wordpressMariaDBPassword } from '../memories/wordpressMariaDBPassword';
 import { wordpressMariaDBRootPassword } from '../memories/wordpressMariaDBRootPassword';
 import { wordpressMariaDBUser } from '../memories/wordpressMariaDBUser';
-import * as wordpressIcon from '../../images/manikin-icons/wordpressIcon.png';
+import wordpressIcon from '../../images/manikin-icons/wordpressIcon.png';
 
 export const wordpressManikin: IManikin = {
   description: `Wordpress Blogging Platform`,

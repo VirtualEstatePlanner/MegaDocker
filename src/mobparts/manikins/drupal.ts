@@ -8,7 +8,7 @@ import { IManikin } from '../../interfaces/IManikin';
 
 import { drupalServiceMite } from '../mites/service/drupalServiceMite';
 import { drupalNetworkMite } from '../mites/network/drupalNetworkMite';
-import * as drupalIcon from '../../images/manikin-icons/drupalIcon.png';
+import drupalIcon from '../../images/manikin-icons/drupalIcon.png';
 import { drupalPostgresUser } from '../memories/drupalPostgresUser';
 import { drupalPostgresPassword } from '../memories/drupalPostgresPassword';
 import { ldapNetworkMite } from '../mites/network/ldapNetworkMite';

@@ -9,7 +9,7 @@ import { IManikin } from '../../interfaces/IManikin';
 import { piholeServiceMite } from '../mites/service/piholeServiceMite';
 import { piholeNetworkMite } from '../mites/network/piholeNetworkMite';
 import { piholePassword } from '../memories/piholePassword';
-import * as piholeIcon from '../../images/manikin-icons/piholeIcon.png';
+import piholeIcon from '../../images/manikin-icons/piholeIcon.png';
 
 /**
  * drupal Manikin

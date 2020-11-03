@@ -8,7 +8,7 @@ import { IManikin } from '../../interfaces/IManikin';
 
 import { grocyServiceMite } from '../mites/service/grocyServiceMite';
 import { grocyNetworkMite } from '../mites/network/grocyNetworkMite';
-import * as grocyIcon from '../../images/manikin-icons/grocyIcon.png';
+import grocyIcon from '../../images/manikin-icons/grocyIcon.png';
 
 /**
  * drupal Manikin

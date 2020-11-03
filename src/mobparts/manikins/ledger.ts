@@ -9,7 +9,7 @@ import { IManikin } from '../../interfaces/IManikin';
 import { ledgerServiceMite } from '../mites/service/ledgerServiceMite';
 import { ledgerNetworkMite } from '../mites/network/ledgerNetworkMite';
 import { ledgerPostgresPassword } from '../memories/ledgerPostgresPassword';
-import * as ledgerIcon from '../../images/manikin-icons/ledgerIcon.png';
+import ledgerIcon from '../../images/manikin-icons/ledgerIcon.png';
 
 /**
  * elk Manikin

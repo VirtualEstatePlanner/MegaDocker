@@ -8,7 +8,7 @@ import { IManikin } from '../../interfaces/IManikin';
 
 import { emailServiceMite } from '../mites/service/emailServiceMite';
 import { emailNetworkMite } from '../mites/network/emailNetworkMite';
-import * as emailIcon from '../../images/manikin-icons/emailIcon.png';
+import emailIcon from '../../images/manikin-icons/emailIcon.png';
 
 /**
  * elk Manikin

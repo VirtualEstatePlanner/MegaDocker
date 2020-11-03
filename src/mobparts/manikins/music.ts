@@ -10,7 +10,7 @@ import { mediaRequestsServiceMite } from '../mites/service/mediaRequestsServiceM
 import { musicNetworkMite } from '../mites/network/musicNetworkMite';
 import { plexServiceMite } from '../mites/service/plexServiceMite';
 import { plexNetworkMite } from '../mites/network/plexNetworkMite';
-import * as musicIcon from '../../images/manikin-icons/musicIcon.png';
+import musicIcon from '../../images/manikin-icons/musicIcon.png';
 import { booksNetworkMite } from '../mites/network/booksNetworkMite';
 import { comicsNetworkMite } from '../mites/network/comicsNetworkMite';
 import { moviesNetworkMite } from '../mites/network/moviesNetworkMite';

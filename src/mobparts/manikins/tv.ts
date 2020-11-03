@@ -11,7 +11,7 @@ import { mediaRequestsServiceMite } from '../mites/service/mediaRequestsServiceM
 import { tvNetworkMite } from '../mites/network/tvNetworkMite';
 import { plexServiceMite } from '../mites/service/plexServiceMite';
 import { plexNetworkMite } from '../mites/network/plexNetworkMite';
-import * as tvIcon from '../../images/manikin-icons/tvIcon.png';
+import tvIcon from '../../images/manikin-icons/tvIcon.png';
 import { booksNetworkMite } from '../mites/network/booksNetworkMite';
 import { comicsNetworkMite } from '../mites/network/comicsNetworkMite';
 import { moviesNetworkMite } from '../mites/network/moviesNetworkMite';

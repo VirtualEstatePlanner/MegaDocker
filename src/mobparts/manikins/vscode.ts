@@ -8,7 +8,7 @@ import { IManikin } from '../../interfaces/IManikin';
 
 import { vsCodeServiceMite } from '../mites/service/vsCodeServiceMite';
 import { vsCodeNetworkMite } from '../mites/network/vsCodeNetworkMite';
-import * as vsCodeIcon from '../../images/manikin-icons/vsCodeIcon.png';
+import vsCodeIcon from '../../images/manikin-icons/vsCodeIcon.png';
 import { vsCodePassword } from '../memories/vsCodePassword';
 import { vsCodeIndexDotHtmlMite } from '../mites/custom/vsCodeIndexDotHtmlMite';
 
