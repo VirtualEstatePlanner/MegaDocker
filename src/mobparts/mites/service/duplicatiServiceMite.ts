@@ -18,7 +18,7 @@ export const duplicatiServiceMite: IMite = {
   networks:
    - traefik
   environment:
-   - TZ=America/New_York
+   - TZ=$HOSTTIMEZONE
    - PUID=$HOSTUSERID
    - PGID=$HOSTUSERGID
   volumes:

@@ -12,6 +12,7 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
+- added n8n Manikin for service integration
 - removed chuff from old versions
 - fixed strictNullChecks issue
 - Windows build from macOS works again

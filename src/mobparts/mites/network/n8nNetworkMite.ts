@@ -1,22 +1,22 @@
-//  wordpressNetworkMite.ts
+//  n8nNetworkMite.ts
 //  MegaDocker
-//  Network Mite for WordPress
+//  Network Mite for n8n
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const wordpressNetworkMite: IMite = {
+export const n8nNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1028,
+  miteIndex: 1014,
   miteString: `
 
-#Begin WordPress Network Section
- 
- wordpress:
+#Begin n8n Network Section
+
+ n8n:
   driver: overlay
-  
-#End WordPress Network Section
-  
-  `,
+
+#End n8n Network Section
+
+`,
 };

@@ -20,7 +20,7 @@ export const heimdallServiceMite: IMite = {
   environment:
    - PUID=$HOSTUSERID
    - PGID=$HOSTUSERGID
-   - TZ=HOSTTIMEZONE
+   - TZ=$HOSTTIMEZONE
   volumes:
    - ./logs/heimdall:/loglocation
    - ./traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/config/keys/[[PRIMARYDOMAIN]].crt

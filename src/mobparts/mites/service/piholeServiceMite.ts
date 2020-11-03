@@ -21,8 +21,8 @@ export const piholeServiceMite: IMite = {
    - 53:53/tcp
    - 53:53/udp
   environment:
-   TZ: "America/New York"
-   WEBPASSWORD: "[[PIHOLEPASSWORD]]"
+   TZ=$HOSTTIMEZONE
+   WEBPASSWORD=[[PIHOLEPASSWORD]]
   volumes:
    - ./logs/pihole:/loglocation
    - ./pihole/etc-pihole/:/etc/pihole/

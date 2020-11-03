@@ -11,6 +11,7 @@ import { heimdallManikin } from '../mobparts/manikins/heimdall';
 import { kanboardManikin } from '../mobparts/manikins/kanboard';
 import { ldapManikin } from '../mobparts/manikins/ldap';
 import { ledgerManikin } from '../mobparts/manikins/ledger';
+import { n8nManikin } from '../mobparts/manikins/n8n';
 import { nextcloudManikin } from '../mobparts/manikins/nextcloud';
 import { nginxManikin } from '../mobparts/manikins/nginx';
 // import { owncloudManikin } from '../mobparts/manikins/owncloud';
@@ -48,6 +49,7 @@ export const workingManikins: IManikin[] = [
   ledgerManikin,
   moviesManikin,
   musicManikin,
+  n8nManikin,
   nextcloudManikin,
   nginxManikin,
   // owncloudManikin,

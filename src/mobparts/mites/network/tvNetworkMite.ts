@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const tvNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1023,
+  miteIndex: 1024,
   miteString: `
 
 # Begin TV Network Section
