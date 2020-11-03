@@ -6,8 +6,8 @@
 /node_modules
 /out
 /.vscode
-electron.ts
 **/*.js
+electron.ts
 **/*/testfile*.*
 !public/preload.js
 **/*/.DS_Store
