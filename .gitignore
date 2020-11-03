@@ -7,7 +7,6 @@
 /out
 /.vscode
 **/*.js
-electron.ts
 **/*/testfile*.*
 !public/preload.js
 **/*/.DS_Store
