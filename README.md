@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019 The MegaDocker Group. All rights reserved.'
 
-# MegaDocker v0.3.3-beta
+# MegaDocker v0.3.4-beta
 
 Modular Enterprise-Grade Automated Docker
 
@@ -12,12 +12,13 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
+- added Styleguidist Manikin
 - added n8n Manikin for service integration
 - removed chuff from old versions
 - fixed strictNullChecks issue
 - Windows build from macOS works again
-- Added NextCloud
-- Added LedgerSMB
+- Added NextCloud Manikin
+- Added LedgerSMB Manikin
 
 ![alt text](./src/images/icons/icon.png 'MegaDockerLogo')
 
