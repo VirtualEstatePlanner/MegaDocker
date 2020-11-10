@@ -19,7 +19,7 @@ export const visualizerManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: visualizerIcon,
-  manikinIndex: 26,
+  manikinIndex: 27,
   memories: [],
   mites: [visualizerServiceMite, visualizerNetworkMite],
   name: `Visualizer`,

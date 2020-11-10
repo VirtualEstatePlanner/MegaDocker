@@ -18,7 +18,7 @@ export const wordpressManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: wordpressIcon,
-  manikinIndex: 29,
+  manikinIndex: 30,
   memories: [
     wordpressMariaDBRootPassword,
     wordpressMariaDBUser,

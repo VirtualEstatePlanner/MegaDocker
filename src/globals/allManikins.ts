@@ -22,6 +22,7 @@ import { owncloudManikin } from '../mobparts/manikins/owncloud';
 import { piholeManikin } from '../mobparts/manikins/pihole';
 import { portainerManikin } from '../mobparts/manikins/portainer';
 import { rocketchatManikin } from '../mobparts/manikins/rocketchat';
+import { styleguidistManikin } from '../mobparts/manikins/styleguidist';
 import { swarmpitManikin } from '../mobparts/manikins/swarmpit';
 import { traefikManikin } from '../mobparts/manikins/traefik';
 import { tvManikin } from '../mobparts/manikins/tv';
@@ -56,6 +57,7 @@ export const allManikins: IManikin[] = [
   piholeManikin,
   portainerManikin,
   rocketchatManikin,
+  styleguidistManikin,
   swarmpitManikin,
   traefikManikin,
   tvManikin,

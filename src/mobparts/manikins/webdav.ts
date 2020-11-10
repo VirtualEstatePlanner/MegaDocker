@@ -21,7 +21,7 @@ export const webdavManikin: IManikin = {
   isSelected: false,
   folder: `webdav`,
   manikinIcon: webdavIcon,
-  manikinIndex: 28,
+  manikinIndex: 29,
   memories: [webdavUser, webdavPassword],
   mites: [webdavServiceMite, webdavNetworkMite],
   name: `WebDAV`,

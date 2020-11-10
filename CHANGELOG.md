@@ -2,7 +2,8 @@
 
 ## a list of changes per version number
 
-- `v0.3.3-beta` : **added n8n Manikin, removed crufty code**
+- `v0.3.4-beta` : **added Styleguidist Manikin**
+- `v0.3.3-beta` : added n8n Manikin, removed crufty code
 - `v0.3.2-beta` : added NextCloud and LedgerSMB Manikins
 - `v0.3.1-beta` : removed Skopos
 - `v0.3.0-beta` : fixed Electron builds, updated dependency versions
