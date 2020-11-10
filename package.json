@@ -108,6 +108,7 @@
   "productName": "MEGADocker",
   "description": "A tool to easily create docker swarm stacks",
   "keywords": [
+    "authelia",
     "docker",
     "drupal",
     "duplicati",
@@ -134,6 +135,7 @@
     "radarr",
     "rocketchat",
     "sonarr",
+    "styleguidist",
     "swarmpit",
     "traefik",
     "wordpress"
