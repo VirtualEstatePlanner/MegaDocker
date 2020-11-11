@@ -24,5 +24,5 @@ export const styleguidistManikin: IManikin = {
   name: `Styleguidist`,
   mites: [styleguidistServiceMite, styleguidistNetworkMite],
   ports: [],
-  subfolders: [`components`, `typings`],
+  subfolders: [`assets`, `components`, `interfaces`, `typings`],
 };

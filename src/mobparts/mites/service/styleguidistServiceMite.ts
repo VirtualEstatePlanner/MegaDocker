@@ -10,8 +10,10 @@ export const styleguidistServiceMite: IMite = {
  styleguidist:
   image: georgegeorgulasiv/component-library
   volumes:
-   - ./styleguidist/src:/app/src
-   - ./styleguidist/typings:/app/typings
+   - ./styleguidist/components:/app/src/shared/components
+   - ./styleguidist/typings:/app/src/shared/typings
+   - ./styleguidist/interfaces:/app/src/shared/interfaces
+   - ./styleguidist/assets:/app/src/shared/assets
   networks:
    - styleguidist
    - traefik
