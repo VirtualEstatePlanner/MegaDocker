@@ -26,6 +26,10 @@
   font-size: smaller;
 }
 
+.ManikinRow {
+  background-color: #ffffff;
+}
+
 .CoreManikinRow {
   background-color: #eeeeee;
 }
