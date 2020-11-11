@@ -34,7 +34,19 @@ const updateInfoContent = (info: string): string => {
     return info
 }
 
-const initialTableManikins: IManikin[] = [...workingManikins]
+const getCoreManikins = (manikins: IManikin[]): IManikin[] => {
+    return manikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? true : false))
+}
+
+const getSelectableManikins = (manikins: IManikin[]): IManikin[] => {
+    return manikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? false : true))
+}
+
+const coreManikins: IManikin[] = getCoreManikins(workingManikins)
+const selectableManikins: IManikin[] = getSelectableManikins(workingManikins)
+const sortedManikins: IManikin[] = [...coreManikins, ...selectableManikins]
+
+const initialTableManikins: IManikin[] = sortedManikins
 const initialSelectedManikins: IManikin[] = updateSelectedManikins(initialTableManikins)
 const initialMemoryTableContents: IMemory[] = updateMemories(initialSelectedManikins)
 const initialMobMites: IMite[] = updateMobMites(initialSelectedManikins)
@@ -46,17 +58,6 @@ const initialCustomMites: IMite[][] = [updateCustomMites(initialMobMites)]
 const initialInfoContent: string = updateInfoContent(`This is the Information Pane.  You can read more about the selected item here.`);
 const initialYmlOutput: string = updateYML(initialDServiceMites, initialDNetworkMites)
 
-const getCoreManikins = (manikins: IManikin[]): IManikin[] => {
-    return manikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? true : false))
-}
-
-const getSelectableManikins = (manikins: IManikin[]): IManikin[] => {
-    return manikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? false : true))
-}
-
-const coreManikins: IManikin[] = getCoreManikins(initialTableManikins)
-const selectableManikins: IManikin[] = getSelectableManikins(initialTableManikins)
-const sortedManikins: IManikin[] = [...coreManikins, ...selectableManikins]
 
 export const initialMegaDockerState: IMegaDockerState = {
     manikinTable: sortedManikins,
