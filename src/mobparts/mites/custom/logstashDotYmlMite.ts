@@ -3,7 +3,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite';
 export const logstashDotYmlMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 3006,
+  miteIndex: 3008,
   miteFile: {
     path: `elk/logstash-config`,
     name: `logstash`,

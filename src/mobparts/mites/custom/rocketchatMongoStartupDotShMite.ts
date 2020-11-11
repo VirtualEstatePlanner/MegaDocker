@@ -3,7 +3,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite';
 export const rocketchatMongoStartupDotShMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 3000,
+  miteIndex: 3012,
   miteFile: {
     path: `rocketchat/mongo-startup`,
     name: `startup`,

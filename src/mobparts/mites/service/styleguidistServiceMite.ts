@@ -14,6 +14,11 @@ export const styleguidistServiceMite: IMite = {
    - ./styleguidist/typings:/app/src/shared/typings
    - ./styleguidist/interfaces:/app/src/shared/interfaces
    - ./styleguidist/assets:/app/src/shared/assets
+   - ./styleguidist/objects:/app/src/shared/objects
+   - ./styleguidist/configs/package.json:/app/package.json
+   - ./styleguidist/configs/styleguide.config.js:/app/styleguide.config.js
+   - ./styleguidist/configs/tsconfig.json:/app/tsconfig.json
+   - ./styleguidist/configs/webpack.config.js:/app/webpack.config.js
   networks:
    - styleguidist
    - traefik

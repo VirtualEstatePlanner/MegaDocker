@@ -9,7 +9,10 @@ import { IManikin } from '../../interfaces/IManikin';
 import { styleguidistServiceMite } from '../mites/service/styleguidistServiceMite';
 import { styleguidistNetworkMite } from '../mites/network/styleguidistNetworkMite';
 import styleguidistIcon from '../../images/manikin-icons/styleguidistIcon.png';
-
+import { styleguidistPackageDotJsonMite } from '../mites/custom/styleguidistPackageDotJsonMite';
+import { styleguidistStyleguideDotConfigDotJsMite } from '../mites/custom/styleguidistStyleguideDotConfigDotJsMite';
+import { styleguidistTsconfigDotJsonMite } from '../mites/custom/styleguidistTsconfigDotJsonMite';
+import { styleguidistWebpackDotConfigDotJsMite } from '../mites/custom/styleguidistWebpackDotConfigDotJsMite'
 /**
  * styleguidist Manikin
  */
@@ -22,7 +25,20 @@ export const styleguidistManikin: IManikin = {
   manikinIndex: 23,
   memories: [],
   name: `Styleguidist`,
-  mites: [styleguidistServiceMite, styleguidistNetworkMite],
+  mites: [
+    styleguidistServiceMite,
+    styleguidistNetworkMite,
+    styleguidistPackageDotJsonMite,
+    styleguidistStyleguideDotConfigDotJsMite,
+    styleguidistTsconfigDotJsonMite,
+    styleguidistWebpackDotConfigDotJsMite],
   ports: [],
-  subfolders: [`assets`, `components`, `interfaces`, `typings`],
+  subfolders: [
+    `assets`,
+    `components`,
+    `configs`,
+    `docs`,
+    `interfaces`,
+    `objects`,
+    `typings`],
 };
