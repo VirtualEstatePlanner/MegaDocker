@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019 The MegaDocker Group. All rights reserved.'
 
-# MegaDocker v0.3.4-beta
+# MegaDocker v0.3.5-beta
 
 Modular Enterprise-Grade Automated Docker
 
@@ -12,6 +12,7 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
+- gorgeous neomorphic design
 - added Styleguidist Manikin
 - added n8n Manikin for service integration
 - removed chuff from old versions

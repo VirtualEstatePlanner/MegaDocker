@@ -1,6 +1,6 @@
 {
-  "version": "0.3.4-beta",
-  "buildVersion": "0.3.4-beta",
+  "version": "0.3.5-beta",
+  "buildVersion": "0.3.5-beta",
   "author": "George Georgulas IV <georgegeorgulas@gmail.com> (https://github.com/VirtualEstatePlanner)",
   "copyright": "© 2020 The MEGADocker Group",
   "private": true,
@@ -145,7 +145,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.9.14",
     "file-saver": "^2.0.2",
-    "fontsource-asap": "latest",
+    "fontsource-asap": "^3.0.9",
     "jszip": "^3.4.0",
     "opener": "^1.5.1",
     "react": "^16.13.1",
