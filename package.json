@@ -145,6 +145,7 @@
     "@material-ui/icons": "^4.9.1",
     "@material-ui/styles": "^4.9.14",
     "file-saver": "^2.0.2",
+    "fontsource-asap": "latest",
     "jszip": "^3.4.0",
     "opener": "^1.5.1",
     "react": "^16.13.1",
