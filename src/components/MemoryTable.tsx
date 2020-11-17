@@ -8,8 +8,8 @@ import {
     TextField,
     Tooltip
 } from "@material-ui/core";
-import * as checkmarkIcon from "../images/indicators/checkmarkIcon.png"
-import * as xmarkIcon from "../images/indicators/xmarkIcon.png"
+import * as checkmarkIndicator from "../images/indicators/checkmarkIndicator.png"
+import * as circleIndicator from "../images/indicators/circleIndicator.png"
 import { MegaContext } from './MegaContext';
 import { IMegaDockerState } from "../interfaces/IMegaDockerState";
 import { IMemory } from "../interfaces/IMemory";
@@ -56,7 +56,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                         className="MemoryHeaderRow">
                         <TableCell variant='head' style={{ width: '15%' }}>Settings</TableCell>
                         <TableCell variant='head' style={{ width: '80%' }} />
-                        <TableCell variant='head' style={{ width: '5%' }} ><img alt="" src={fullyValidated ? checkmarkIcon : xmarkIcon} height={20} width={20} /></TableCell>
+                        <TableCell variant='head' style={{ width: '5%' }} ><img alt="" src={fullyValidated ? checkmarkIndicator : circleIndicator} height={20} width={20} /></TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody
@@ -92,7 +92,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                                         alt='ready indicator'
                                         height={20}
                                         width={20}
-                                        src={thisMemory.value === `` ? xmarkIcon : (thisMemory.validator(thisMemory.value).valueOf() ? checkmarkIcon : xmarkIcon)} />
+                                        src={thisMemory.value === `` ? circleIndicator : (thisMemory.validator(thisMemory.value).valueOf() ? checkmarkIndicator : circleIndicator)} />
                                 </TableCell>
                             </TableRow>
                         </Tooltip>
