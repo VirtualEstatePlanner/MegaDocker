@@ -29,7 +29,7 @@ export const MemoryRow: React.FC = (): React.ReactElement => {
     return (
         <TableRow className="MemoryRow" hover>
             <TableCell>IMemory.name</TableCell>
-            <TableCell><Input className={classes.input} classes={{ focused: classes.inputFocused}} value={memoryValue} placeholder="IMemory.value" onChange={changeEvent => setMemoryValue(changeEvent.target.value)} /* size={50} */ /></TableCell>
+            <TableCell><Input className={classes.input} classes={{ focused: classes.inputFocused }} value={memoryValue} placeholder="IMemory.value" onChange={changeEvent => setMemoryValue(changeEvent.target.value)} /* size={50} */ /></TableCell>
             <TableCell>IMemory.tooltip</TableCell>
             <TableCell><img alt='ready indicator' height={20} width={20} src={memoryValue ? checkmarkIcon : xmarkIcon} /></TableCell>
         </TableRow>)
