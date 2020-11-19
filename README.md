@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019 The MegaDocker Group. All rights reserved.'
 
-# MegaDocker v0.3.5-beta
+# MegaDocker v0.3.6-beta
 
 Modular Enterprise-Grade Automated Docker
 
