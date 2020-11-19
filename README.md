@@ -12,6 +12,7 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
+- bleeding-edge "latest" dependencies
 - gorgeous neomorphic design
 - added Styleguidist Manikin
 - added n8n Manikin for service integration
