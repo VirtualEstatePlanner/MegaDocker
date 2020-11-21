@@ -7,16 +7,7 @@ files:
   - 'build/**/*'
   - 'node_modules/node-notifier/vendor/snoreToast/SnoreToast.exe'
 compression: maximum
-dmg:
-  title: MEGADocker
-  icon: './src/images/icons/icon.icns'
-  iconSize: 128
-  contents:
-    - { x: 400, y: 150, type: link, path: /Applications }
-    - { x: 150, y: 150, type: file }
-mac:
-  category: public.app-category.developer-tools
+win:
   target:
-    - { target: 'dmg', arch: 'x64' }
-  icon: './src/images/icons/icon.icns'
-  identity: null
+    - { target: 'portable', arch: 'arm64' }
+  icon: './src/images/icons/icon.ico'
