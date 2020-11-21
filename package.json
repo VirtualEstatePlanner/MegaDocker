@@ -48,7 +48,9 @@
     "dist:win-arm64-docker": "yarn warning:docker-only && yarn undist && docker run --rm --env ELECTRON_CACHE='/root/.cache/electron' --env ELECTRON_BUILDER_CACHE='/root/.cache/electron-builder' -v ${PWD}:/project -v ${PWD}/cache/electron:/root/.cache/electron -v ${PWD}/cache/electron-builder:/root/.cache/electron-builder electronuserland/builder:wine-mono yarn dist:win-arm64",
     "dist:win-docker": "run-s dist:win-intel64-docker dist:win-arm64-docker",
     "dist:all": "run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win-docker",
-    "postdist:all": "say 'All distributables output to binaries directory.'"
+    "postdist:all": "say 'All distributables output to binaries directory.'",
+    "dist:all-working": "run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win-docker",
+    "postdist:all-working": "say 'All distributables output to binaries directory.'"
   },
   "keywords": [
     "authelia",
