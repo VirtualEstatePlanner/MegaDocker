@@ -1,5 +1,5 @@
 appId: com.VirtualEstatePlanner.MEGADocker
-artifactName: ${productName}-${version}.${ext}
+artifactName: ${productName}-${version}-${os}-${arch}.${ext}
 asar: true
 directories:
   output: ./dist
