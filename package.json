@@ -8,22 +8,22 @@
   "license": "Unlicense",
   "homepage": ".",
   "scripts": {
-    "postinstall": "yarn build-transpile && electron-builder install-app-deps && echo && echo 'yarn install: environment updated and prepared for build' && echo",
+    "postinstall": "yarn build-transpile && electron-builder install-app-deps && echo && echo 'yarn install: environment updated and prepared for electron build' && echo",
     "install-homebrew": "/usr/bin/ruby -e $(curl -fsSl https://raw.githubusercontent.com/Homebrew/install/master/install)",
     "brew-install-gettext": "brew install gettext",
     "homebrew-gettext": "run-s install-homebrew brew-install-gettext",
-    "unbinaries": "rm -rf binaries && mkdir binaries && echo && echo 'unbinaries: binary artifacts deleted' && echo",
-    "uncache": "rm -rf cache/electron/* && rm -rf cache/electron-builder/* && echo && echo 'uncache: removed electron end elctron-builder for windows caches' && echo",
+    "unbinaries": "rm -rf binaries && mkdir -p binaries/mac/intel binaries/mac/arm binaries/win/intel binaries/win/arm binaries/linux/intel binaries/linux/arm && echo && echo 'unbinaries: binary artifacts deleted' && echo",
     "unbuild": "rm -rf build && mkdir build && echo && echo 'unbuild: build artifacts deleted' && echo",
+    "uncache": "rm -rf cache && mkdir -p cache/electron cache/electron-builder && echo && echo 'uncache: removed electron end elctron-builder for windows caches' && echo",
     "undist": "rm -rf dist && mkdir dist && echo && echo 'undist: distribution artifacts deleted' && echo",
+    "undocker": "run-s -l unbuild uncache unelectron",
     "unerror": "rm -rf yarn-error.log && echo && echo 'unerror: yarn error log deleted' && echo",
     "unelectron": "rm -rf public/electron.js && rm -rf electron.js && rm -rf preload.js && echo && echo 'unelectron: electron.js artifacts deleted' && echo",
     "uninstall": "rm -rf yarn.lock && rm -rf node_modules && echo && echo 'uninstall: node modules and yarn lockfiles deleted' && echo",
-    "clean": "run-s -l unbinaries uncache undist unelectron unerror && echo && echo 'clean: all artifacts deleted' && echo",
-    "purge": "run-s -l unbinaries unbuild uncache undist unelectron unerror uninstall && echo && echo 'purge: all modules and artifacts deleted' && echo",
+    "clean": "run-p -l unbinaries uncache undist unelectron unerror && echo && echo 'clean: all artifacts deleted' && echo",
     "tsc-build": "tsc public/electron.ts && echo && echo 'tsc-build: transpiled public/electron.js'",
     "tsc-dev": "cp public/preload.js . && cp public/electron.ts . && tsc electron.ts -w && echo && echo 'tsc-dev: watching and transpiling electron.js'",
-    "reinstall": "yarn purge && yarn && echo && echo 'reinstall: rebuilt node_modules && echo'",
+    "reinstall": "yarn clean && rm -rf node_modules && yarn && echo && echo 'reinstall: rebuilt node_modules && echo'",
     "react-start": "react-scripts start",
     "react-dev": "cross-env BROWSER=none yarn react-start",
     "electron-dev": "sleep 15 && wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .",
@@ -32,77 +32,31 @@
     "react-test-coverage": "react-scripts test --coverage --env=jsdom",
     "react-eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                             react-scripts eject' && echo && echo",
     "react-build": "IMAGE_INLINE_SIZE_LIMIT=0 react-scripts build && echo && echo 'react-build: built artifacts in build/' && echo",
-    "macos-warning": "echo && echo 'macos-warning: This npm script will only function on macos' && echo",
-    "not-macos-warning": "echo && echo 'not-macos-warning: This npm script will not function on macos except in docker' && echo",
-    "cr-build": "cross-env NODE_ENV=production electron-builder",
-    "cr-build-most": "yarn cr-build -lw",
     "build-transpile": "run-s unbuild tsc-build react-build",
-    "dist-most": "run-s -l not-macos-warning clean build-transpile cr-build-most",
-    "postdist-most": "run-p -l move-l move-w",
-    "cr-build-lmw": "yarn macos-warning && yarn cr-build -lm && yarn cr-build-w-docker",
-    "dist-all": "run-s -l macos-warning clean build-transpile cr-build-lmw",
-    "postdist-all": "run-p -l move-l move-m move-w && say 'All distributables output to binaries directory.'",
-    "cr-build-l": "yarn cr-build -l",
-    "dist-l": "run-s -l unelectron build-transpile cr-build-l && echo && echo 'dist-l: built linux .AppImage' && echo",
-    "move-l": "mv dist/*.AppImage binaries/ && echo && echo 'move-l: moved linux .AppImage to binaries/' && echo",
-    "postdist-l": "yarn move-l",
-    "cr-build-m": "yarn cr-build -m",
-    "dist-m": "run-s -l unelectron build-transpile cr-build-m && echo && echo 'dist-m: built mac .dmg' && echo",
-    "move-m": "mv dist/*.dmg binaries/ && echo && echo 'move-m: moved mac .dmg to binaries/' && echo",
-    "postdist-m": "yarn move-m",
-    "cr-build-w": "yarn not-macos-warning && yarn cr-build -w",
-    "dist-w": "run-s -l unelectron build-transpile cr-build-w && echo && echo 'dist-w: built windows .exe' && echo",
-    "move-w": "mv dist/*.exe binaries/ && echo && echo 'move-w: moved windows .exe to binaries/' && echo",
-    "cr-build-w-docker": "docker run --rm --env ELECTRON_CACHE='/root/.cache/electron' --env ELECTRON_BUILDER_CACHE='/root/.cache/electron-builder' -v ${PWD}:/project -v ${PWD}/cache/electron:/root/.cache/electron -v ${PWD}/cache/electron-builder:/root/.cache/electron-builder electronuserland/builder:wine-mono yarn cr-build-w",
-    "precr-build-w-docker": "rm -rf cache && mkdir cache && mkdir cache/electron && mkdir cache/electron-builder",
-    "dist-w-docker": "run-s -l build-transpile cr-build-w-docker && echo && echo 'dist-docker: built windows .exe' && echo",
-    "undocker": "run-s -l unbuild uncache unelectron",
-    "predist-w-docker": "echo && echo 'did you want to run yarn undocker first?' && echo",
-    "postdist-w-docker": "yarn move-w",
-    "postdist-w": "yarn move-w"
-  },
-  "build": {
-    "appId": "com.VirtualEstatePlanner.MEGADocker",
-    "asar": true,
-    "files": [
-      "node_modules/node-notifier/vendor/snoreToast/SnoreToast.exe"
-    ],
-    "dmg": {
-      "title": "MEGADocker",
-      "contents": [
-        {
-          "x": 400,
-          "y": 150,
-          "type": "link",
-          "path": "/Applications"
-        },
-        {
-          "x": 150,
-          "y": 150,
-          "type": "file"
-        }
-      ]
-    },
-    "mac": {
-      "target": [
-        "dmg"
-      ],
-      "category": "public.app-category.developer-tools",
-      "icon": "./src/images/icons/icon.icns",
-      "identity": null
-    },
-    "win": {
-      "target": [
-        "portable"
-      ],
-      "icon": "./src/images/icons/icon.ico"
-    },
-    "linux": {
-      "target": [
-        "AppImage"
-      ],
-      "category": "Development"
-    }
+
+    "dist:mac-intel64": "cross-env NODE_ENV=production electron-builder --config ./electron-configs/mac-intel-64.yml && mv dist/*.dmg binaries/mac/intel/",
+    "dist:mac-arm64": "cross-env NODE_ENV=production electron-builder --config ./electron-configs/mac-arm-64.yml && mv dist/*.dmg binaries/mac/arm/",
+    "dist:mac": "run-s dist:mac-intel64 dist:mac-arm64",
+
+    "dist:win-intel64": "cross-env NODE_ENV=production electron-builder --config ./electron-configs/win-intel-64.yml && mv dist/*.exe binaries/win/intel/",
+    "dist:win-arm64": "cross-env NODE_ENV=production electron-builder --config ./electron-configs/win-arm-64.yml && mv dist/*.exe binaries/win/arm/",
+    "dist:win": "run-s dist:win-intel64 dist:win-arm64",
+    
+    "dist:win-intel64-docker": "yarn warning:docker-only && docker run --rm --env ELECTRON_CACHE='/root/.cache/electron' --env ELECTRON_BUILDER_CACHE='/root/.cache/electron-builder' -v ${PWD}:/project -v ${PWD}/cache/electron:/root/.cache/electron -v ${PWD}/cache/electron-builder:/root/.cache/electron-builder electronuserland/builder:wine-mono yarn dist:win-intel64",
+    "dist:win-arm64-docker": "yarn warning:docker-only && docker run --rm --env ELECTRON_CACHE='/root/.cache/electron' --env ELECTRON_BUILDER_CACHE='/root/.cache/electron-builder' -v ${PWD}:/project -v ${PWD}/cache/electron:/root/.cache/electron -v ${PWD}/cache/electron-builder:/root/.cache/electron-builder electronuserland/builder:wine-mono yarn dist:win-arm64",
+    "dist:win-docker": "run-s dist:win-intel64-docker dist:win-arm64-docker",
+
+    "dist:linux-intel64": "cross-env NODE_ENV=production electron-builder --config ./electron-configs/linux-intel-64.yml && mv dist/*.AppImage binaries/linux/intel/",
+    "dist:linux-arm64": "cross-env NODE_ENV=production electron-builder --config ./electron-configs/linux-arm-64.yml && mv dist/*.AppImage binaries/linux/arm/",
+    "dist:linux": "run-s dist:linux-intel64 dist:linux-arm64",
+
+    "warning:mac-only": "echo && echo 'CRATE warning: This script will only function on macOS' && echo",
+    "warning:docker-only": "echo && echo 'CRATE warning: This script will not function on macOS without docker' && echo",
+    "dist:all": "run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win-docker",
+    "postdist:all": "say 'All distributables output to binaries directory.'",
+
+    "cr-build-w": "run-s warning:docker-only dist-w-docker"
+    
   },
   "name": "megadocker",
   "productName": "MEGADocker",
