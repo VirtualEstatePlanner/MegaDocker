@@ -82,7 +82,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     case `DOCKER_SWARM_OUTPUT`: // TODO: for docker swarm export button
       zipDockerSwarm({
         manikins: newState.selectedManikins,
-        memories: newState.memories
+        memories: newState.memories,
       });
       return newState;
 
@@ -92,14 +92,14 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         ymlOutput: zipKubernetesDeployment(
           newState.mobKServiceMites,
           newState.mobKNetworkMites
-        )
+        ),
       };
       return newState;
 
     case `UPDATE_INFO_CONTENT`: // to dispatch user hints to info pane
       newState = {
         ...newState,
-        infoContent: updateInfoContent(action.payload)
+        infoContent: updateInfoContent(action.payload),
       };
       return newState;
 

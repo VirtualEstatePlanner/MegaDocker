@@ -9,5 +9,5 @@ import { IManikinPort } from '../../interfaces/IManikinPort';
 export const httpPortUDP: IManikinPort = {
   externalPort: 80,
   internalPort: 80,
-  isUDP: true
+  isUDP: true,
 };

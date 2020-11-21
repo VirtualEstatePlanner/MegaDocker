@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 // import { saveFile } from "../functions/core/saveFile";
-import Button from "@material-ui/core/Button"
-import { IMegaDockerState } from "../interfaces/IMegaDockerState";
-import { IMegaDockerAction } from "../interfaces/IMegaDockerAction";
-import { MegaContext } from "./MegaContext";
+import Button from '@material-ui/core/Button';
+import { IMegaDockerState } from '../interfaces/IMegaDockerState';
+import { IMegaDockerAction } from '../interfaces/IMegaDockerAction';
+import { MegaContext } from './MegaContext';
 
 // saveFile(
 //     `${process.env.PWD}`,
@@ -13,14 +13,24 @@ import { MegaContext } from "./MegaContext";
 // );
 
 export const ButtonSaveMob: React.FC = (): React.ReactElement => {
+  const {
+    state,
+    dispatch,
+  }: {
+    state: IMegaDockerState;
+    dispatch: React.Dispatch<IMegaDockerAction>;
+  } = React.useContext(MegaContext);
 
-    const { state, dispatch }: { state: IMegaDockerState, dispatch: React.Dispatch<IMegaDockerAction> } = React.useContext(MegaContext)
+  const buttonClicked = (): void => {
+    dispatch({
+      type: `SAVE_MOB_FILE`,
+      payload: { manikins: state.selectedManikins, memories: state.memories },
+    });
+  };
 
-    const buttonClicked = (): void => {
-        dispatch({ type: `SAVE_MOB_FILE`, payload: { manikins: state.selectedManikins, memories: state.memories } })
-    }
-
-    return (
-        <Button variant="contained" onClick={buttonClicked}>Save this Mob</Button>
-    )
-}
+  return (
+    <Button variant='contained' onClick={buttonClicked}>
+      Save this Mob
+    </Button>
+  );
+};

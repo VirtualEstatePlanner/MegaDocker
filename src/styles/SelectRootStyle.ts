@@ -1,7 +1,7 @@
-import { CSSProperties } from '@material-ui/styles'
+import { CSSProperties } from '@material-ui/styles';
 
 const SelectRootStyle: CSSProperties = {
-  marginLeft: `12px`
-}
+  marginLeft: `12px`,
+};
 
-export default SelectRootStyle
+export default SelectRootStyle;

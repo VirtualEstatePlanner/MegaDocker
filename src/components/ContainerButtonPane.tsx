@@ -1,5 +1,5 @@
-import React from "react";
-import { ButtonExportDockerSwarm } from './ButtonExportDockerSwarm'
+import React from 'react';
+import { ButtonExportDockerSwarm } from './ButtonExportDockerSwarm';
 // import { ButtonExportKubernetes } from './ButtonExportKubernetes'
 // import { ButtonOpenMob } from './ButtonOpenMob'
 // import { ButtonSaveMob } from './ButtonSaveMob'
@@ -7,7 +7,8 @@ import { ButtonExportDockerSwarm } from './ButtonExportDockerSwarm'
 /* <ButtonOpenMob />
 <ButtonSaveMob />
 <ButtonExportKubernetes /> */
-export const ButtonPane: React.FC = (): React.ReactElement =>
-    <div className="ButtonPane">
-        <ButtonExportDockerSwarm />
-    </div>
+export const ButtonPane: React.FC = (): React.ReactElement => (
+  <div className='ButtonPane'>
+    <ButtonExportDockerSwarm />
+  </div>
+);

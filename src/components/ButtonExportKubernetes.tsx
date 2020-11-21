@@ -4,7 +4,6 @@ import { MegaContext } from './MegaContext';
 import { IMegaDockerState } from '../interfaces/IMegaDockerState';
 import { IMegaDockerAction } from '../interfaces/IMegaDockerAction';
 
-
 // old buttonClick code
 //saveFile(userMegaDockerFolder, mobName.value, `yml`, userMob.mobManikins.toString())
 // saveFile(
@@ -15,14 +14,26 @@ import { IMegaDockerAction } from '../interfaces/IMegaDockerAction';
 // );
 
 export const ButtonExportKubernetes: React.FC = (): React.ReactElement => {
+  const {
+    state,
+    dispatch,
+  }: {
+    state: IMegaDockerState;
+    dispatch: React.Dispatch<IMegaDockerAction>;
+  } = React.useContext(MegaContext);
 
-    const { state, dispatch }: { state: IMegaDockerState, dispatch: React.Dispatch<IMegaDockerAction> } = React.useContext(MegaContext)
+  const fullyValidated: boolean = state.memories.every(
+    (memory) => memory.isReady
+  );
 
-    const fullyValidated: boolean = state.memories.every((memory) => memory.isReady)
+  const buttonClicked = (): void => dispatch({ type: `KUBERNETES_OUTPUT` });
 
-    const buttonClicked = (): void => dispatch({ type: `KUBERNETES_OUTPUT` })
-
-    return (
-        <Button disabled={fullyValidated ? false : true} variant="contained" onClick={buttonClicked} >Zip for Kubernetes Deployment</ Button>
-    )
-}
+  return (
+    <Button
+      disabled={fullyValidated ? false : true}
+      variant='contained'
+      onClick={buttonClicked}>
+      Zip for Kubernetes Deployment
+    </Button>
+  );
+};

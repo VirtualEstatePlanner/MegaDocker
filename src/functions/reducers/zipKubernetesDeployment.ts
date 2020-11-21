@@ -27,7 +27,7 @@ export const zipKubernetesDeployment = (
     servicesFooterSectionString,
     mobNetworksSectionString,
     ...tempNetworksYML,
-    mobNetworkFooterSectionString
+    mobNetworkFooterSectionString,
   ];
   const ymlString: string = ymlOutputArray.join(``);
   return ymlString;

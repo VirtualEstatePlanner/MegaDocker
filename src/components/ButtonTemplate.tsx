@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-function buttonClicked() {
-}
+function buttonClicked() {}
 
 export const Button: React.FC = (): React.ReactElement => {
-    return (
-        <div className="Button">{}
-            <button onClick={buttonClicked}>Button</button>
-        </div>
-    );
+  return (
+    <div className='Button'>
+      {}
+      <button onClick={buttonClicked}>Button</button>
+    </div>
+  );
 };

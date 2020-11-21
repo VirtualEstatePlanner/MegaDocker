@@ -9,5 +9,5 @@ import { IManikinPort } from '../../interfaces/IManikinPort';
 export const httpsPortUDP: IManikinPort = {
   externalPort: 443,
   internalPort: 443,
-  isUDP: false
+  isUDP: false,
 };

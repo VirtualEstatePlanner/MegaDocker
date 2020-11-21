@@ -1,9 +1,9 @@
-import { CSSProperties } from '@material-ui/styles'
+import { CSSProperties } from '@material-ui/styles';
 
 const SwitchRootStyle: CSSProperties = {
   switch: {
-    padding: 10
-  }
-}
+    padding: 10,
+  },
+};
 
-export default SwitchRootStyle
+export default SwitchRootStyle;

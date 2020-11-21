@@ -12,7 +12,7 @@ import styleguidistIcon from '../../images/manikin-icons/styleguidistIcon.png';
 import { styleguidistPackageDotJsonMite } from '../mites/custom/styleguidistPackageDotJsonMite';
 import { styleguidistStyleguideDotConfigDotJsMite } from '../mites/custom/styleguidistStyleguideDotConfigDotJsMite';
 import { styleguidistTsconfigDotJsonMite } from '../mites/custom/styleguidistTsconfigDotJsonMite';
-import { styleguidistWebpackDotConfigDotJsMite } from '../mites/custom/styleguidistWebpackDotConfigDotJsMite'
+import { styleguidistWebpackDotConfigDotJsMite } from '../mites/custom/styleguidistWebpackDotConfigDotJsMite';
 /**
  * styleguidist Manikin
  */
@@ -31,7 +31,8 @@ export const styleguidistManikin: IManikin = {
     styleguidistPackageDotJsonMite,
     styleguidistStyleguideDotConfigDotJsMite,
     styleguidistTsconfigDotJsonMite,
-    styleguidistWebpackDotConfigDotJsMite],
+    styleguidistWebpackDotConfigDotJsMite,
+  ],
   ports: [],
   subfolders: [
     `assets`,
@@ -40,5 +41,6 @@ export const styleguidistManikin: IManikin = {
     `docs`,
     `interfaces`,
     `objects`,
-    `typings`],
+    `typings`,
+  ],
 };

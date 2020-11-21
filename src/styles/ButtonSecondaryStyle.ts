@@ -1,5 +1,5 @@
-import { lightBlue } from '@material-ui/core/colors'
-import { CSSProperties } from '@material-ui/styles'
+import { lightBlue } from '@material-ui/core/colors';
+import { CSSProperties } from '@material-ui/styles';
 
 const ButtonSecondaryStyle: CSSProperties = {
   boxShadow: `5px 5px 10px #D8D8DB, -5px -5px 10px white`,
@@ -7,8 +7,8 @@ const ButtonSecondaryStyle: CSSProperties = {
   '&:hover': {
     backgroundColor: lightBlue[200],
     color: `#000000`,
-    boxShadow: `inset -3px -3px 7px #ffffff, inset 3px 3px 5px #D8D8DB`
-  }
-}
+    boxShadow: `inset -3px -3px 7px #ffffff, inset 3px 3px 5px #D8D8DB`,
+  },
+};
 
-export default ButtonSecondaryStyle
+export default ButtonSecondaryStyle;
