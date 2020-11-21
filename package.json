@@ -7,6 +7,9 @@
   "main": "electron.js",
   "license": "Unlicense",
   "homepage": ".",
+  "name": "megadocker",
+  "productName": "MEGADocker",
+  "description": "A tool to easily create docker swarm stacks",
   "scripts": {
     "postinstall": "yarn build-transpile && electron-builder install-app-deps",
     "unbinaries": "rm -rf binaries && mkdir -p binaries/mac/intel binaries/mac/arm binaries/win/intel binaries/win/arm binaries/linux/intel binaries/linux/arm",
@@ -47,9 +50,6 @@
     "dist:all": "run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win-docker",
     "postdist:all": "say 'All distributables output to binaries directory.'"
   },
-  "name": "megadocker",
-  "productName": "MEGADocker",
-  "description": "A tool to easily create docker swarm stacks",
   "keywords": [
     "authelia",
     "docker",
