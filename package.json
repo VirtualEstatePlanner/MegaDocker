@@ -84,9 +84,11 @@
     "wordpress"
   ],
   "dependencies": {
-    "@material-ui/core": "latest",
-    "@material-ui/icons": "latest",
-    "@material-ui/styles": "latest",
+    "@material-ui/core": "^5.0.0-alpha.16",
+    "@material-ui/icons": "^5.0.0-alpha.15",
+    "@material-ui/styles": "^5.0.0-alpha.15",
+    "@emotion/react": "11.1.1",
+    "@emotion/styled": "11.0.0",
     "file-saver": "latest",
     "fontsource-asap": "latest",
     "jszip": "latest",
@@ -99,8 +101,9 @@
     "@types/electron-devtools-installer": "latest",
     "@types/file-saver": "latest",
     "@types/jest": "latest",
-    "@types/node": "latest",
+    "@types/material-ui": "^0.21.8",
     "@types/opener": "latest",
+    "@types/prettier": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "cross-env": "latest",
@@ -108,10 +111,9 @@
     "electron-builder": "latest",
     "electron-devtools-installer": "latest",
     "electron-is-dev": "latest",
-    "node": "latest",
     "npm-run-all": "latest",
     "prettier": "latest",
-    "typescript": "latest",
+    "typescript": "4.0.5",
     "wait-on": "latest"
   },
   "eslintConfig": {

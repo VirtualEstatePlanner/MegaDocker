@@ -15,6 +15,7 @@ import ButtonRootStyle from '../styles/ButtonRootStyle'
 import ButtonIconRootStyle from '../styles/ButtonIconRootStyle'
 import ButtonIconInheritStyle from '../styles/ButtonIconInheritStyle'
 import SwitchRootStyle from '../styles/SwitchRootStyle'
+import ListItemRootStyle from '../styles/ListItemRootStyle'
 
 const MegaTheme: Theme = createMuiTheme({
   /*  props: {
@@ -37,54 +38,82 @@ const MegaTheme: Theme = createMuiTheme({
     fontFamily: 'Montserrat'
   },
   palette: {
-    type: `light`,
     background: PaletteBackgroundStyle,
     primary: PalettePrimaryStyle,
     secondary: PaletteSecondaryStyle
   },
-  overrides: {
+  components: {
     MuiAppBar: {
+      styleOverrides: {
       root: {
-        // TODO add white to transparent gradient and backdrop blur    color: "transparent",
-        boxShadow: `none`
+        boxShadow: `0 40px 20px -20px #F0F0F3`
       }
+    }
     },
     MuiButton: {
-      root: ButtonRootStyle,
+      styleOverrides: {
+        root: ButtonRootStyle,
       containedPrimary: ButtonPrimaryStyle,
       containedSecondary: ButtonSecondaryStyle
-    },
-    MuiCssBaseline: {
-      '@global': {
-        '@font-face': AsapFont
       }
     },
+    MuiCssBaseline: {
+      styleOverrides: {
+        '@global': {
+        '@font-face': AsapFont
+      }
+    }
+    },
     MuiFormHelperText: {
-      root: FormHelperRootTextStyle
+      styleOverrides: {
+        root: FormHelperRootTextStyle
+      }
     },
     MuiIconButton: {
-      root: ButtonIconRootStyle,
+      styleOverrides: {
+        root: ButtonIconRootStyle,
       colorInherit: ButtonIconInheritStyle,
       colorPrimary: ButtonPrimaryStyle,
       colorSecondary: ButtonSecondaryStyle
+      }
     },
     MuiInputBase: {
+      styleOverrides: {
       root: InputBaseRootStyle
+      }
     },
     MuiInputLabel: {
-      root: InputLabelRootStyle
+      styleOverrides: {
+        root: InputLabelRootStyle
+      }
     },
     MuiNativeSelect: {
-      root: NativeSelectRootStyle
+      styleOverrides: {
+        root: NativeSelectRootStyle,
+      filled: NativeSelectRootStyle,
+      disabled: NativeSelectRootStyle,
+      select: NativeSelectRootStyle
+      }
     },
     MuiPaper: {
-      root: PaperRootStyle
+      styleOverrides: {
+        root: PaperRootStyle
+      }
     },
     MuiSelect: {
-      root: SelectRootStyle
+      styleOverrides: {
+        root: SelectRootStyle
+      }
     },
     MuiSwitch: {
-      root: SwitchRootStyle
+      styleOverrides: {
+        root: SwitchRootStyle
+      }
+    },
+    MuiListItem: {
+      styleOverrides: {
+        root: ListItemRootStyle
+      }
     }
   }
 })
