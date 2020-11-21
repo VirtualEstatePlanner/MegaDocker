@@ -49,7 +49,7 @@
     "dist:win-docker": "run-s dist:win-intel64-docker dist:win-arm64-docker",
     "dist:all": "run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win-docker",
     "postdist:all": "say 'All distributables output to binaries directory.'",
-    "dist:all-working": "run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win-docker",
+    "dist:all-working": "run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win-intel64-docker",
     "postdist:all-working": "say 'All distributables output to binaries directory.'"
   },
   "keywords": [
