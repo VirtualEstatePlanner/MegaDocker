@@ -8,8 +8,8 @@ import {
   TextField,
   Tooltip,
 } from '@material-ui/core';
-import * as checkmarkIndicator from '../images/indicators/checkmarkIndicator.png';
-import * as circleIndicator from '../images/indicators/circleIndicator.png';
+import checkmarkIndicator from '../images/indicators/checkmarkIndicator.png';
+import circleIndicator from '../images/indicators/circleIndicator.png';
 import { MegaContext } from './MegaContext';
 import { IMegaDockerState } from '../interfaces/IMegaDockerState';
 import { IMemory } from '../interfaces/IMemory';
@@ -82,12 +82,12 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
             <Tooltip title={thisMemory.tooltip} key={thisMemory.memoryIndex}>
               <TableRow hover>
                 <TableCell
-                  style={{ width: '15%' }}
+                  style={{ width: '15%', height: '10%' }}
                   padding='checkbox'
                   variant='body'>
                   {thisMemory.name}
                 </TableCell>
-                <TableCell variant='body'>
+                <TableCell variant='body' style={{ height: '10%' }}>
                   <TextField
                     fullWidth
                     required={true}
@@ -106,7 +106,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                   />
                 </TableCell>
                 <TableCell
-                  style={{ width: '5%' }}
+                  style={{ width: '5%', height: '10%' }}
                   className='ManikinReadyIcon'
                   variant='body'>
                   <img
