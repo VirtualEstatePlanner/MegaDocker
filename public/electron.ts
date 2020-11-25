@@ -13,10 +13,11 @@ function createWindow() {
     width: 1100,
     height: 800,
     webPreferences: {
-      nodeIntegration: false,
       allowRunningInsecureContent: false,
-      preload: __dirname + '/preload.js'
-    }
+      contextIsolation: true,
+      nodeIntegration: false,
+      preload: __dirname + '/preload.js',
+    },
   });
 
   if (process.env.NODE_ENV === 'development') {
@@ -26,7 +27,7 @@ function createWindow() {
       format({
         pathname: indexpath,
         protocol: 'file:',
-        slashes: true
+        slashes: true,
       })
     );
   }
