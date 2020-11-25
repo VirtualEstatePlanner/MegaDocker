@@ -3,8 +3,8 @@ import Input from '@material-ui/core/Input';
 import PropTypes from 'prop-types';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
-import * as checkmarkIcon from '../images/indicators/checkmarkIcon.png';
-import * as xmarkIcon from '../images/indicators/xmarkIcon.png';
+import checkmarkIndicator from '../images/indicators/checkmarkIndicator.png';
+import circleIndicator from '../images/indicators/circleIndicator.png';
 import classes from '*.module.css';
 
 const Inputs = (props: any) => {
@@ -48,7 +48,7 @@ export const MemoryRow: React.FC = (): React.ReactElement => {
           alt='ready indicator'
           height={20}
           width={20}
-          src={memoryValue ? checkmarkIcon : xmarkIcon}
+          src={memoryValue ? checkmarkIndicator : circleIndicator}
         />
       </TableCell>
     </TableRow>
