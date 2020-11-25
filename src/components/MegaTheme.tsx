@@ -19,7 +19,7 @@ import ListItemRootStyle from '../styles/ListItemRootStyle';
 
 const MegaTheme: Theme = createMuiTheme({
   typography: {
-    fontFamily: 'Montserrat',
+    fontFamily: 'Asap',
   },
   palette: {
     background: PaletteBackgroundStyle,
