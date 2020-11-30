@@ -46,8 +46,7 @@ export const ManikinTable: React.FC = (): React.ReactElement => {
                 <img
                   alt={eachManikin.name}
                   src={eachManikin.manikinIcon}
-                  height='20'
-                  width='20'
+                  height='28vh'
                 />
               </TableCell>
               <TableCell key={`${eachManikin.name}CheckboxCell`}>

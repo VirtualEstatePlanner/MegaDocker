@@ -59,16 +59,15 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
       <Table className='MemoryTable' size='small' stickyHeader>
         <TableHead>
           <TableRow className='MemoryHeaderRow'>
-            <TableCell variant='head' style={{ width: '15%' }}>
+            <TableCell variant='head' style={{ width: '20%' }}>
               Settings
             </TableCell>
-            <TableCell variant='head' style={{ width: '80%' }} />
-            <TableCell variant='head' style={{ width: '5%' }}>
+            <TableCell variant='head' style={{ width: '70%' }} />
+            <TableCell variant='head' style={{ width: '10%' }}>
               <img
                 alt=''
                 src={fullyValidated ? checkmarkIndicator : circleIndicator}
-                height={20}
-                width={20}
+                height='25vh'
               />
             </TableCell>
           </TableRow>
@@ -82,12 +81,12 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
             <Tooltip title={thisMemory.tooltip} key={thisMemory.memoryIndex}>
               <TableRow hover>
                 <TableCell
-                  style={{ width: '15%', height: '10%' }}
+                  style={{ width: '25%' }}
                   padding='checkbox'
                   variant='body'>
                   {thisMemory.name}
                 </TableCell>
-                <TableCell variant='body' style={{ height: '10%' }}>
+                <TableCell variant='body' style={{}}>
                   <TextField
                     fullWidth
                     required={true}
@@ -106,13 +105,12 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                   />
                 </TableCell>
                 <TableCell
-                  style={{ width: '5%', height: '10%' }}
+                  style={{ width: '5%' }}
                   className='ManikinReadyIcon'
                   variant='body'>
                   <img
                     alt='ready indicator'
-                    height={20}
-                    width={20}
+                    height='25vh'
                     src={
                       thisMemory.value === ``
                         ? circleIndicator
