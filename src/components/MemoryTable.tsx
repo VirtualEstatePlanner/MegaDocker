@@ -33,6 +33,10 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
     (memory) => memory.isReady
   );
 
+  const sortedMemories: IMemory[] = state.memories.sort(
+    (a: IMemory, b: IMemory) => a.name.localeCompare(b.name)
+  );
+
   /**
    *  generates the payload to reduce
    * @param memory the IMemory that will be reduced against the state
@@ -59,11 +63,11 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
       <Table className='MemoryTable' size='small' stickyHeader>
         <TableHead>
           <TableRow className='MemoryHeaderRow'>
-            <TableCell size='small' variant='head' style={{ width: '20%' }}>
+            <TableCell size='small' variant='head' style={{ width: '15%' }}>
               Settings
             </TableCell>
-            <TableCell size='small' variant='head' style={{ width: '70%' }} />
-            <TableCell size='small' variant='head' style={{ width: '10%' }}>
+            <TableCell size='small' variant='head' style={{ width: '80%' }} />
+            <TableCell size='small' variant='head' style={{ width: '5%' }}>
               <img
                 alt=''
                 src={fullyValidated ? checkmarkIndicator : circleIndicator}
@@ -77,11 +81,11 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
           style={{
             width: '100%',
           }}>
-          {state.memories.map((thisMemory: IMemory) => (
+          {sortedMemories.map((thisMemory: IMemory) => (
             <Tooltip title={thisMemory.tooltip} key={thisMemory.memoryIndex}>
               <TableRow hover>
                 <TableCell
-                  style={{ width: '25%' }}
+                  style={{ width: '1%' }}
                   padding='checkbox'
                   variant='body'
                   size='small'>
