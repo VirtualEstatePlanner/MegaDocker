@@ -24,6 +24,7 @@ export const gitlabManikin: IManikin = {
   // isSelected: true,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Development`],
   manikinIcon: gitlabIcon,
   manikinIndex: 8,
   memories: [

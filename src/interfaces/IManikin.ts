@@ -16,17 +16,32 @@ import { IManikinPort } from './IManikinPort';
  * @isSelected boolean - if true, this IManikin is in the Mob
  * @manikinIcon icon of this IManikin in the Manikin table
  * @manikinIndex unique identifier of this IManikin
+ * @manikinGroup category of this manikin in the Manikin Table
  * @memories array of IMemories this IManikin needs
  * @mites array of IMites this IManikin needs
  * @name the human-readable name of this manikin
  * @ports array of IManikinPorts this IManikin needs
  * @subfolders array of folders inside the data folder
  */
+
+type manikinGroup =
+  | `Content`
+  | `Core`
+  | `Development`
+  | `Financial`
+  | `Infrastructure`
+  | `Monitoring`
+  | `Network`
+  | `Organization`
+  | `Productivity`
+  | `Utility`;
+
 export interface IManikin {
   description: string;
   folder: string;
   isCore: boolean;
   isSelected: boolean;
+  manikinGroups: manikinGroup[];
   manikinIcon: string;
   manikinIndex: number;
   memories: IMemory[];

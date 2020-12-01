@@ -17,6 +17,7 @@ export const duplicatiManikin: IManikin = {
   folder: `duplicati`,
   isCore: true,
   isSelected: true,
+  manikinGroups: [`Core`, `Utility`],
   manikinIcon: duplicatiIcon,
   manikinIndex: 4,
   memories: [],

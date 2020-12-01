@@ -21,6 +21,7 @@ export const rocketchatManikin: IManikin = {
   folder: `rocketchat`,
   // isCore: true,
   // isSelected: true,
+  manikinGroups: [`Utility`, `Organization`, `Productivity`],
   isCore: false,
   isSelected: false,
   manikinIcon: rocketchatIcon,

@@ -23,6 +23,7 @@ export const traefikManikin: IManikin = {
   folder: `traefik`,
   isCore: true,
   isSelected: true,
+  manikinGroups: [`Core`, `Network`],
   manikinIcon: traefikIcon,
   manikinIndex: 25,
   memories: [

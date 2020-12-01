@@ -18,6 +18,7 @@ export const emailManikin: IManikin = {
   folder: `email`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Utility`],
   manikinIcon: emailIcon,
   manikinIndex: 6,
   memories: [],

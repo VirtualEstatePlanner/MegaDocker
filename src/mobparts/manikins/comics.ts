@@ -25,6 +25,7 @@ export const comicsManikin: IManikin = {
   folder: `media`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Content`],
   manikinIcon: comicsIcon,
   manikinIndex: 2,
   memories: [],

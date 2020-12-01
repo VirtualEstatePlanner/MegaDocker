@@ -19,6 +19,7 @@ export const ledgerManikin: IManikin = {
   folder: `ledger`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Utility`, `Financial`, `Organization`, `Productivity`],
   manikinIcon: ledgerIcon,
   manikinIndex: 13,
   memories: [ledgerPostgresPassword],

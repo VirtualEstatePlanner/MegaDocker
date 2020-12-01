@@ -20,6 +20,7 @@ export const swarmpitManikin: IManikin = {
   isSelected: true,
   // isCore: false,
   // isSelected: false,
+  manikinGroups: [`Development`, `Utility`, `Organization`, `Productivity`],
   folder: `swarmpit`,
   manikinIcon: swarmpitIcon,
   manikinIndex: 24,

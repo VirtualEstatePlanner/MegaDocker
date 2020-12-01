@@ -21,6 +21,7 @@ export const nginxManikin: IManikin = {
   folder: `nginx`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Utility`],
   manikinIcon: nginxIcon,
   manikinIndex: 18,
   memories: [],

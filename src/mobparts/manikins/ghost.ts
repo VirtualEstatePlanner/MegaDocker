@@ -20,6 +20,7 @@ export const ghostManikin: IManikin = {
   folder: `ghost`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Content`, `Development`],
   manikinIcon: ghostIcon,
   manikinIndex: 7,
   memories: [ghostMariaDBRootPassword],

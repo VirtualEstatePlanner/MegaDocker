@@ -19,6 +19,7 @@ export const piholeManikin: IManikin = {
   folder: `pihole`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Utility`, `Network`],
   manikinIcon: piholeIcon,
   manikinIndex: 20,
   memories: [piholePassword],

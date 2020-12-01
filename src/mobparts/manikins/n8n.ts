@@ -19,6 +19,7 @@ export const n8nManikin: IManikin = {
   folder: `n8n`,
   isCore: true,
   isSelected: true,
+  manikinGroups: [`Utility`],
   manikinIcon: n8nIcon,
   manikinIndex: 16,
   memories: [n8nUser, n8nPassword],

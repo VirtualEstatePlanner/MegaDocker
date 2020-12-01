@@ -24,6 +24,7 @@ export const musicManikin: IManikin = {
   folder: `media`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Content`],
   manikinIcon: musicIcon,
   manikinIndex: 15,
   memories: [],

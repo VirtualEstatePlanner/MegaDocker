@@ -18,6 +18,7 @@ export const heimdallManikin: IManikin = {
   folder: `heimdall`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Utility`],
   manikinIcon: heimdallIcon,
   manikinIndex: 10,
   memories: [],

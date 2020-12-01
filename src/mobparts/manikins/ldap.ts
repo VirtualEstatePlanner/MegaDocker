@@ -24,6 +24,7 @@ export const ldapManikin: IManikin = {
   folder: `ldap`,
   isCore: true,
   isSelected: true,
+  manikinGroups: [`Core`, `Utility`],
   manikinIcon: ldapIcon,
   manikinIndex: 12,
   memories: [

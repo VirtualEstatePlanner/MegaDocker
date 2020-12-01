@@ -18,6 +18,7 @@ export const visualizerManikin: IManikin = {
   folder: `visualizer`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Monitoring`, `Utility`],
   manikinIcon: visualizerIcon,
   manikinIndex: 27,
   memories: [],

@@ -21,6 +21,7 @@ export const drupalManikin: IManikin = {
   folder: `drupal`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Content`, `Development`],
   manikinIcon: drupalIcon,
   manikinIndex: 3,
   memories: [drupalPostgresUser, drupalPostgresPassword],

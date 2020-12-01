@@ -18,6 +18,7 @@ export const grocyManikin: IManikin = {
   folder: `grocy`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Monitoring`, `Utility`],
   manikinIcon: grocyIcon,
   manikinIndex: 9,
   memories: [],

@@ -21,6 +21,7 @@ export const styleguidistManikin: IManikin = {
   isCore: false,
   isSelected: false,
   folder: `styleguidist`,
+  manikinGroups: [`Development`, `Utility`, `Organization`, `Productivity`],
   manikinIcon: styleguidistIcon,
   manikinIndex: 23,
   memories: [],

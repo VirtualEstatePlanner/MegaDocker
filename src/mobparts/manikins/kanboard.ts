@@ -21,6 +21,7 @@ export const kanboardManikin: IManikin = {
   folder: `kanboard`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Utility`, `Organization`, `Productivity`],
   manikinIcon: kanboardIcon,
   manikinIndex: 11,
   memories: [

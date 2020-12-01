@@ -27,6 +27,7 @@ export const elkManikin: IManikin = {
   isSelected: false,
   // isCore: true,
   // isSelected: true,
+  manikinGroups: [`Monitoring`],
   manikinIcon: elkIcon,
   manikinIndex: 5,
   memories: [kibanaUser, kibanaPassword],

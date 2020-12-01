@@ -21,6 +21,7 @@ export const nextcloudManikin: IManikin = {
   folder: `nextcloud`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Utility`, `Organization`, `Productivity`],
   manikinIcon: nextcloudIcon,
   manikinIndex: 17,
   memories: [

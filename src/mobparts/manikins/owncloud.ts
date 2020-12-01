@@ -18,6 +18,7 @@ export const owncloudManikin: IManikin = {
   folder: `owncloud`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Utility`, `Organization`, `Productivity`],
   manikinIcon: owncloudIcon,
   manikinIndex: 19,
   memories: [],

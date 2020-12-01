@@ -25,6 +25,7 @@ export const booksManikin: IManikin = {
   folder: `media`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Content`],
   manikinIcon: booksIcon,
   manikinIndex: 1,
   memories: [],

@@ -25,6 +25,7 @@ export const tvManikin: IManikin = {
   folder: `media`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Content`],
   manikinIcon: tvIcon,
   manikinIndex: 26,
   memories: [],

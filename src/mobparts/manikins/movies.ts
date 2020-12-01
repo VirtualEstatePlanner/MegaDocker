@@ -25,6 +25,7 @@ export const moviesManikin: IManikin = {
   folder: `media`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Content`],
   manikinIcon: moviesIcon,
   manikinIndex: 14,
   memories: [],

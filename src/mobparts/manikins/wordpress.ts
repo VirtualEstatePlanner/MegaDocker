@@ -17,6 +17,7 @@ export const wordpressManikin: IManikin = {
   folder: `wordpress`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Content`, `Development`],
   manikinIcon: wordpressIcon,
   manikinIndex: 30,
   memories: [

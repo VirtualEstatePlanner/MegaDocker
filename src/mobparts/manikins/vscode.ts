@@ -20,6 +20,7 @@ export const vsCodeManikin: IManikin = {
   folder: `vscode`,
   isCore: false,
   isSelected: false,
+  manikinGroups: [`Development`],
   manikinIcon: vsCodeIcon,
   manikinIndex: 28,
   memories: [vsCodePassword],

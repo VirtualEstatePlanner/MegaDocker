@@ -18,6 +18,7 @@ export const portainerManikin: IManikin = {
   folder: `portainer`,
   isSelected: false,
   isCore: false,
+  manikinGroups: [`Infrastructure`, `Utility`, `Monitoring`, `Network`],
   manikinIcon: portainerIcon,
   manikinIndex: 21,
   memories: [],
