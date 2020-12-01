@@ -2,7 +2,8 @@
 
 ## a list of changes per version number
 
-- `v0.3.7-beta` : **React 17, Material UI 5, Apple Silicon and linux arm native versions**
+- `v0.3.8-beta` : **even more neomorphic shinyness**
+- `v0.3.7-beta` : React 17, Material UI 5, Apple Silicon and linux arm native versions
 - `v0.3.6-beta` : moved all dependencies back to "latest"
 - `v0.3.5-beta` : added neomorphic theme [all credit is due to Joe](https://github.com/jpt-1)
 - `v0.3.4-beta` : added Styleguidist Manikin

@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019 The MegaDocker Group. All rights reserved.'
 
-# MegaDocker v0.3.7-beta
+# MegaDocker v0.3.8-beta
 
 Modular Enterprise-Grade Automated Docker
 
@@ -12,6 +12,7 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
+- even more neomorphic, even more gorgeous
 - Supports Apple Silicon and Linux arm64
 - React 17 and Material UI 5
 - gorgeous neomorphic design
