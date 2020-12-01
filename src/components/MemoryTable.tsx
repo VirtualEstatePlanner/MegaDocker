@@ -59,11 +59,11 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
       <Table className='MemoryTable' size='small' stickyHeader>
         <TableHead>
           <TableRow className='MemoryHeaderRow'>
-            <TableCell variant='head' style={{ width: '20%' }}>
+            <TableCell size='small' variant='head' style={{ width: '20%' }}>
               Settings
             </TableCell>
-            <TableCell variant='head' style={{ width: '70%' }} />
-            <TableCell variant='head' style={{ width: '10%' }}>
+            <TableCell size='small' variant='head' style={{ width: '70%' }} />
+            <TableCell size='small' variant='head' style={{ width: '10%' }}>
               <img
                 alt=''
                 src={fullyValidated ? checkmarkIndicator : circleIndicator}
@@ -83,12 +83,14 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                 <TableCell
                   style={{ width: '25%' }}
                   padding='checkbox'
-                  variant='body'>
+                  variant='body'
+                  size='small'>
                   {thisMemory.name}
                 </TableCell>
-                <TableCell variant='body' style={{}}>
+                <TableCell variant='body' style={{}} size='small'>
                   <TextField
                     fullWidth
+                    size='small'
                     required={true}
                     value={thisMemory.value}
                     type={thisMemory.valueType}
@@ -107,7 +109,8 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                 <TableCell
                   style={{ width: '5%' }}
                   className='ManikinReadyIcon'
-                  variant='body'>
+                  variant='body'
+                  size='small'>
                   <img
                     alt='ready indicator'
                     height='25vh'
