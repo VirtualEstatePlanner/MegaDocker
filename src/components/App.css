@@ -44,7 +44,7 @@
 .MainArea {
   display: flex;
   height: 100vh;
-  width: 100vw;
+  width: 80vw;
   flex-direction: column;
   justify-content: flex-start;
 }
@@ -53,7 +53,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 35vw;
+  width: 20vw;
   justify-content: flex-start;
   overflow: auto;
 }
@@ -77,8 +77,8 @@
   display: fixed;
   flex-direction: column;
   overflow: auto;
-  height: 92vh;
-  width: 75vw;
+  height: 90vh;
+  width: 80vw;
 }
 
 .MemoryTable {
