@@ -1,5 +1,5 @@
 import { BaseCSSProperties } from '@material-ui/styles';
-import 'fontsource-asap';
+import '@fontsource/asap';
 
 const AsapFont: BaseCSSProperties = {
   fontFamily: 'Asap',

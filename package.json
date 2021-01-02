@@ -2,7 +2,7 @@
   "version": "0.3.8-beta",
   "buildVersion": "0.3.8-beta",
   "author": "George Georgulas IV <georgegeorgulas@gmail.com> (https://github.com/VirtualEstatePlanner)",
-  "copyright": "© 2020 The MEGADocker Group",
+  "copyright": "© 2019-2021 The MEGADocker Group",
   "private": true,
   "main": "electron.js",
   "license": "Unlicense",
@@ -86,13 +86,13 @@
     "wordpress"
   ],
   "dependencies": {
-    "@material-ui/core": "^5.0.0-alpha.16",
-    "@material-ui/icons": "^5.0.0-alpha.15",
-    "@material-ui/styles": "^5.0.0-alpha.15",
-    "@emotion/react": "11.1.1",
-    "@emotion/styled": "11.0.0",
+    "@material-ui/core": "^5.0.0-alpha.21",
+    "@material-ui/icons": "^5.0.0-alpha.21",
+    "@material-ui/styles": "^5.0.0-alpha.21",
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@fontsource/asap": "latest",
     "file-saver": "latest",
-    "fontsource-asap": "latest",
     "jszip": "latest",
     "opener": "latest",
     "react": "latest",
@@ -115,7 +115,7 @@
     "electron-is-dev": "latest",
     "npm-run-all": "latest",
     "prettier": "latest",
-    "typescript": "4.0.5",
+    "typescript": "latest",
     "wait-on": "latest"
   },
   "eslintConfig": {

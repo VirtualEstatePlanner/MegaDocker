@@ -18,3 +18,4 @@ yarn.lock
 .eslintcache
 electron.ts
 .prettierrc
+.VSCodeCounter/
