@@ -8,15 +8,15 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const portainerNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1020,
+  miteIndex: 1022,
   miteString: `
 
-#Begin Portainer Network Section
+# Begin Portainer Network Section
 
  portainer:
   driver: overlay
 
-#End Portainer Network Section
+# End Portainer Network Section
 
 `,
 };

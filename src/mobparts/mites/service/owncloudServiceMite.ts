@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const owncloudServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2018,
+  miteIndex: 2020,
   miteString: `
  #Begin Owncloud Service Sections
 

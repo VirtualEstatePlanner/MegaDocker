@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const nginxServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2017,
+  miteIndex: 2019,
   miteString: `
 
 #Begin Nginx Service Sections

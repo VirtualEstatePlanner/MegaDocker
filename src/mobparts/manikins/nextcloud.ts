@@ -23,7 +23,7 @@ export const nextcloudManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Utility`, `Organization`, `Productivity`],
   manikinIcon: nextcloudIcon,
-  manikinIndex: 17,
+  manikinIndex: 18,
   memories: [
     nextcloudMariaDBPassword,
     nextcloudMariaDBRootPassword,

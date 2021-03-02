@@ -8,15 +8,15 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const wordpressNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1029,
+  miteIndex: 1031,
   miteString: `
 
-#Begin WordPress Network Section
+# Begin WordPress Network Section
  
  wordpress:
   driver: overlay
   
-#End WordPress Network Section
+# End WordPress Network Section
   
   `,
 };

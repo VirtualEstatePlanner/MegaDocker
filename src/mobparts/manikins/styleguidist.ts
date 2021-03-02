@@ -23,7 +23,7 @@ export const styleguidistManikin: IManikin = {
   folder: `styleguidist`,
   manikinGroups: [`Development`, `Utility`, `Organization`, `Productivity`],
   manikinIcon: styleguidistIcon,
-  manikinIndex: 23,
+  manikinIndex: 24,
   memories: [],
   name: `Styleguidist`,
   mites: [

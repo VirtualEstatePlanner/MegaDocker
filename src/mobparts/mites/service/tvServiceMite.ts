@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const tvServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2026,
+  miteIndex: 2029,
   miteString: `
 
 # Begin TV Service Section

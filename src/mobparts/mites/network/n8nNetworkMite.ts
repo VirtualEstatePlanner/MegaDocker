@@ -8,15 +8,15 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const n8nNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1014,
+  miteIndex: 1016,
   miteString: `
 
-#Begin n8n Network Section
+# Begin n8n Network Section
 
  n8n:
   driver: overlay
 
-#End n8n Network Section
+# End n8n Network Section
 
 `,
 };

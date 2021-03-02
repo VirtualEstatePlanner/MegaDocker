@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const musicNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1013,
+  miteIndex: 1015,
   miteString: `
 
 # Begin Music Network Section

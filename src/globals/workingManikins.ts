@@ -1,5 +1,7 @@
 import { IManikin } from '../interfaces/IManikin';
 // import manikins
+import { booksManikin } from '../mobparts/manikins/books';
+import { comicsManikin } from '../mobparts/manikins/comics';
 import { duplicatiManikin } from '../mobparts/manikins/duplicati';
 import { drupalManikin } from '../mobparts/manikins/drupal';
 import { elkManikin } from '../mobparts/manikins/elk';
@@ -11,6 +13,7 @@ import { heimdallManikin } from '../mobparts/manikins/heimdall';
 import { kanboardManikin } from '../mobparts/manikins/kanboard';
 import { ldapManikin } from '../mobparts/manikins/ldap';
 import { ledgerManikin } from '../mobparts/manikins/ledger';
+import { mealieManikin } from '../mobparts/manikins/mealie';
 import { n8nManikin } from '../mobparts/manikins/n8n';
 import { nextcloudManikin } from '../mobparts/manikins/nextcloud';
 import { nginxManikin } from '../mobparts/manikins/nginx';
@@ -20,16 +23,15 @@ import { portainerManikin } from '../mobparts/manikins/portainer';
 import { rocketchatManikin } from '../mobparts/manikins/rocketchat';
 import { styleguidistManikin } from '../mobparts/manikins/styleguidist';
 import { swarmpitManikin } from '../mobparts/manikins/swarmpit';
+import { syncthingManikin } from '../mobparts/manikins/syncthing';
 import { traefikManikin } from '../mobparts/manikins/traefik';
+import { tvManikin } from '../mobparts/manikins/tv';
 import { visualizerManikin } from '../mobparts/manikins/visualizer';
 // import { vsCodeManikin } from '../mobparts/manikins/vscode';
 // import { webdavManikin } from '../mobparts/manikins/webdav';
 import { wordpressManikin } from '../mobparts/manikins/wordpress';
 import { moviesManikin } from '../mobparts/manikins/movies';
 import { musicManikin } from '../mobparts/manikins/music';
-import { tvManikin } from '../mobparts/manikins/tv';
-import { booksManikin } from '../mobparts/manikins/books';
-import { comicsManikin } from '../mobparts/manikins/comics';
 
 /**
  * an array containing all Manikins available in MEGADocker
@@ -48,6 +50,7 @@ export const workingManikins: IManikin[] = [
   kanboardManikin,
   ldapManikin,
   ledgerManikin,
+  mealieManikin,
   moviesManikin,
   musicManikin,
   n8nManikin,
@@ -58,6 +61,7 @@ export const workingManikins: IManikin[] = [
   portainerManikin,
   rocketchatManikin,
   styleguidistManikin,
+  syncthingManikin,
   swarmpitManikin,
   traefikManikin,
   tvManikin,

@@ -2,7 +2,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const styleguidistServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2023,
+  miteIndex: 2025,
   miteString: `
 
 # Begin Styleguidist Service Section

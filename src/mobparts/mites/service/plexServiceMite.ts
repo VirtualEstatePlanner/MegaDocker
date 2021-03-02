@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const plexServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2020,
+  miteIndex: 2022,
   miteString: `
 
 # Begin Plex Service Section

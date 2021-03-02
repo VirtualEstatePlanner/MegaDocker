@@ -2,15 +2,15 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const swarmpitNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1023,
+  miteIndex: 1025,
   miteString: `
 
-#Begin Swarmpit Network Section
+# Begin Swarmpit Network Section
 
  swarmpit:
   driver: overlay
 
-#End Swarmpit Network Section
+# End Swarmpit Network Section
 
 `,
 };

@@ -8,15 +8,15 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const rocketchatNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1021,
+  miteIndex: 1023,
   miteString: `
 
-#Begin RocketChat Network Section
+# Begin RocketChat Network Section
 
  rocketchat:
   driver: overlay
 
-#End RocketChat Network Section
+# End RocketChat Network Section
 
 `,
 };

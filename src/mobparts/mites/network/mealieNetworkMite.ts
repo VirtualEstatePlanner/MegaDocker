@@ -1,22 +1,22 @@
-//  serviceMite.ts
+//  traefikNetworkMite.ts
 //  MegaDocker
-//  Network Mite for Nginx
+//  Network Mite for NextCloud
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../interfaces/IMite';
 
-export const nginxNetworkMite: IMite = {
+export const mealieNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1018,
+  miteIndex: 1013,
   miteString: `
 
-# Begin Nginx Network Section
+# Begin Mealie Network Section
 
- nginx:
+ mealie:
   driver: overlay
 
-# End Nginx Network Section
+# End Mealie Network Section
 
 `,
 };

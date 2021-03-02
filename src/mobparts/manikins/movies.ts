@@ -27,7 +27,7 @@ export const moviesManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Content`],
   manikinIcon: moviesIcon,
-  manikinIndex: 14,
+  manikinIndex: 15,
   memories: [],
   mites: [
     mediaRequestsServiceMite,

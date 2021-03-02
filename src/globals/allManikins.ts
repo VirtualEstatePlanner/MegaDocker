@@ -24,6 +24,7 @@ import { portainerManikin } from '../mobparts/manikins/portainer';
 import { rocketchatManikin } from '../mobparts/manikins/rocketchat';
 import { styleguidistManikin } from '../mobparts/manikins/styleguidist';
 import { swarmpitManikin } from '../mobparts/manikins/swarmpit';
+import { syncthingManikin } from '../mobparts/manikins/syncthing';
 import { traefikManikin } from '../mobparts/manikins/traefik';
 import { tvManikin } from '../mobparts/manikins/tv';
 import { visualizerManikin } from '../mobparts/manikins/visualizer';
@@ -59,6 +60,7 @@ export const allManikins: IManikin[] = [
   rocketchatManikin,
   styleguidistManikin,
   swarmpitManikin,
+  syncthingManikin,
   traefikManikin,
   tvManikin,
   visualizerManikin,
