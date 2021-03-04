@@ -1,14 +1,14 @@
 //  elkServiceMite.ts
 //  MegaDocker
 //  Service Mite for Elk
-//  Created by George Georgulas IV on 1/26/19.
-//  Copyright © 2019 The MegaDocker Group. All rights reserved.
+//  Created by George Georgulas IV on 3/03/21.
+//  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../interfaces/IMite';
 
 export const syncthingServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2027,
+  miteIndex: 2028,
   miteString: `
 
   # Begin Syncthing Service Section

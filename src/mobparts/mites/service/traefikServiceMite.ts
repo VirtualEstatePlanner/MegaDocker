@@ -7,10 +7,11 @@
 import { IMite } from '../../../interfaces/IMite';
 
 // TODO: fix traefik authorization to use ldap
+// TODO: hash password for login
 
 export const traefikServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2028,
+  miteIndex: 2029,
   miteString: `
 
 # Begin Traefik Service Section

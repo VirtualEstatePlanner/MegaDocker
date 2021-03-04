@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const wordpressNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1031,
+  miteIndex: 1032,
   miteString: `
 
 # Begin WordPress Network Section

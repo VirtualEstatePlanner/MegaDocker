@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const vsCodeServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2031,
+  miteIndex: 2032,
   miteString: `
 
 # Begin VS Code Service Section

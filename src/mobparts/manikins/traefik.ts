@@ -25,7 +25,7 @@ export const traefikManikin: IManikin = {
   isSelected: true,
   manikinGroups: [`Core`, `Network`],
   manikinIcon: traefikIcon,
-  manikinIndex: 27,
+  manikinIndex: 28,
   memories: [
     mobName,
     letsEncryptEmail,

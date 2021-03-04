@@ -27,7 +27,7 @@ export const tvManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Content`],
   manikinIcon: tvIcon,
-  manikinIndex: 28,
+  manikinIndex: 29,
   memories: [],
   mites: [
     tvServiceMite,

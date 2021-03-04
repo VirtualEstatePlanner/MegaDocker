@@ -19,7 +19,7 @@ export const syncthingManikin: IManikin = {
   folder: `syncthing`,
   manikinGroups: [`Development`, `Utility`, `Organization`, `Productivity`],
   manikinIcon: syncthingIcon,
-  manikinIndex: 26,
+  manikinIndex: 27,
   memories: [],
   name: `Syncthing`,
   mites: [syncthingServiceMite],

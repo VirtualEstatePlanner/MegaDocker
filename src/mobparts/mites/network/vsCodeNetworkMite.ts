@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const vsCodeNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1029,
+  miteIndex: 1030,
   miteString: `
 
 # Begin VS Code Network Section
