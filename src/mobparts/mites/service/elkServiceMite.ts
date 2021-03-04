@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const elkServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2004,
+  miteIndex: 30004,
   miteString: `
 
 # Begin ELK Service Section

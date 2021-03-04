@@ -2,7 +2,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const piholeNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1021,
+  miteIndex: 40021,
   miteString: `
 
 # Begin PiHole Network Section

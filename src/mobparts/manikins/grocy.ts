@@ -20,7 +20,7 @@ export const grocyManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Monitoring`, `Utility`],
   manikinIcon: grocyIcon,
-  manikinIndex: 9,
+  manikinIndex: 10008,
   memories: [],
   mites: [grocyServiceMite, grocyNetworkMite],
   name: `Grocy`,

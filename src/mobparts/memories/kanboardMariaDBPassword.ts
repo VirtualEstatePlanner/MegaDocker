@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const kanboardMariaDBPassword: IMemory = {
-  memoryIndex: 1013,
+  memoryIndex: 20013,
   memoryMarker: `[[KANBOARDMARIADBPASSWORD]]`,
   shouldAutocomplete: false,
   name: `Kanboard MariaDB password`,

@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const wordpressServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2034,
+  miteIndex: 30034,
   miteString: `
 
 # Begin WordPress Service Section

@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const duplicatiServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2003,
+  miteIndex: 30003,
   miteString: `
 
 # Begin Backup Service Section

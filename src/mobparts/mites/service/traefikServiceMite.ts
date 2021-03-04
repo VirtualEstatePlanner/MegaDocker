@@ -11,7 +11,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const traefikServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2029,
+  miteIndex: 30029,
   miteString: `
 
 # Begin Traefik Service Section

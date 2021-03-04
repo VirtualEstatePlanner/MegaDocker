@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const gitlabNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1007,
+  miteIndex: 40007,
   miteString: `
 
 #Begin GitLab Network Section

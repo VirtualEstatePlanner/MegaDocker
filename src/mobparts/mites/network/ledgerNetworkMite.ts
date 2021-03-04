@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const ledgerNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1012,
+  miteIndex: 40012,
   miteString: `
 
 #Begin Ledger Network Section

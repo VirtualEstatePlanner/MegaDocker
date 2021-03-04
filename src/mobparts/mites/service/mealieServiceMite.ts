@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const mealieServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2013,
+  miteIndex: 30013,
   miteString: `
 
 # Begin Mealie Service Section

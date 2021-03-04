@@ -2,7 +2,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const swarmpitServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2027,
+  miteIndex: 30027,
   miteString: `
 
 #Begin Swarmpit Service Section

@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const portainerServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2024,
+  miteIndex: 30024,
   miteString: `
 
 #Begin Portainer Service Section

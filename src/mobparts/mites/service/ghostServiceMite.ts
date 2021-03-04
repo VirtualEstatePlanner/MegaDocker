@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const ghostServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2006,
+  miteIndex: 30006,
   miteString: `
 
 #Begin Ghost Service Section

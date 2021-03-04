@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const autheliaMariaDBUser: IMemory = {
-  memoryIndex: 1002,
+  memoryIndex: 20002,
   memoryMarker: `[[AUTHELIAMARIADBUSER]]`,
   shouldAutocomplete: false,
   name: `Authelia MariaDB User`,

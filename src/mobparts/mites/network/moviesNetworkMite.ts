@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const moviesNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1014,
+  miteIndex: 40015,
   miteString: `
 
 # Begin Movies Network Section

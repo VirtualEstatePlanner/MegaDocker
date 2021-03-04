@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const heimdallNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1009,
+  miteIndex: 40009,
   miteString: `
 
 #Begin Heimdall Network Section

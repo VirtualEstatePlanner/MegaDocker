@@ -19,7 +19,7 @@ export const mealieManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Organization`],
   manikinIcon: mealieIcon,
-  manikinIndex: 14,
+  manikinIndex: 10013,
   memories: [],
   mites: [mealieServiceMite],
   name: `Mealie`,

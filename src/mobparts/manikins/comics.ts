@@ -27,7 +27,7 @@ export const comicsManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Content`],
   manikinIcon: comicsIcon,
-  manikinIndex: 2,
+  manikinIndex: 10001,
   memories: [],
   mites: [
     comicsServiceMite,

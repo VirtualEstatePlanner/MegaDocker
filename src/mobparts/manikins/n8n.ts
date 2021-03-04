@@ -21,7 +21,7 @@ export const n8nManikin: IManikin = {
   isSelected: true,
   manikinGroups: [`Utility`],
   manikinIcon: n8nIcon,
-  manikinIndex: 17,
+  manikinIndex: 10017,
   memories: [n8nUser, n8nPassword],
   mites: [n8nServiceMite, n8nNetworkMite],
   name: `n8n`,

@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const kanboardMariaDBUser: IMemory = {
-  memoryIndex: 1015,
+  memoryIndex: 20015,
   memoryMarker: `[[KANBOARDMARIADBUSER]]`,
   shouldAutocomplete: false,
   name: `Kanboard MariaDB User`,

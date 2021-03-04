@@ -3,7 +3,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite';
 export const vsCodeIndexDotHtmlMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 3018,
+  miteIndex: 50018,
   miteFile: {
     path: `vscode/pages`,
     name: `index`,

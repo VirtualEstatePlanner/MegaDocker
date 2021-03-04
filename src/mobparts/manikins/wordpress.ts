@@ -19,7 +19,7 @@ export const wordpressManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Content`, `Development`],
   manikinIcon: wordpressIcon,
-  manikinIndex: 33,
+  manikinIndex: 10032,
   memories: [
     wordpressMariaDBRootPassword,
     wordpressMariaDBUser,

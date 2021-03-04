@@ -2,44 +2,48 @@
 
 reindexmanikins() {
     declare -i manikinIndex=10000;
-    for file in ./src/mobparts/manikins/*.ts;
-        do sed -i '' "s/  manikinIndex: ..,/  manikinIndex: ${manikinIndex},/" ${file};
+    for manikin in ./src/mobparts/manikins/*.ts;
+        do sed -i '' "s/  manikinIndex: .....,/  manikinIndex: ${manikinIndex},/" ${manikin};
         ((manikinIndex++));
     done;
+    echo "manikins indexed from 10000 to $manikinIndex"
 }
 
 reindexmemories() {
     declare -i memoryIndex=20000;
-    for file in ./src/mobparts/mite/network*.ts;
-        do sed -i '' "s/  memoryIndex: ....,/  memoryIndex: ${memoryIndex},/" ${file};
+    for memory in ./src/mobparts/memories/*.ts;
+        do sed -i '' "s/  memoryIndex: .....,/  memoryIndex: ${memoryIndex},/" ${memory};
         ((memoryIndex++));
     done;
+    echo "memories indexed from 20000 to $memoryIndex"
 }
 
 reindexservicemites() {
     declare -i servicemiteIndex=30000;
-    for file in ./src/mobparts/mite/service/*.ts;
-        do sed -i '' "s/  miteIndex: ....,/  miteIndex: ${servicemiteIndex},/" ${file};
+    for servicemite in ./src/mobparts/mites/service/*.ts;
+        do sed -i '' "s/  miteIndex: .....,/  miteIndex: ${servicemiteIndex},/" ${servicemite};
         ((servicemiteIndex++));
     done;
+    echo "service mites indexed from 30000 to $servicemiteIndex"
 }
 
 reindexnetworkmites() {
     declare -i networkmiteIndex=40000;
-    for file in ./src/mobparts/mite/network*.ts;
-        do sed -i '' "s/  miteIndex: ....,/  miteIndex: ${networkmiteIndex},/" ${file};
+    for networkmite in ./src/mobparts/mites/network/*.ts;
+        do sed -i '' "s/  miteIndex: .....,/  miteIndex: ${networkmiteIndex},/" ${networkmite};
         ((networkmiteIndex++));
     done;
+    echo "network mites indexed from 40000 to $networkmiteIndex"
 }
 
 reindexcustommites() {
-    declare -i networkmiteIndex=50000;
-    for file in ./src/mobparts/mite/network*.ts;
-        do sed -i '' "s/  miteIndex: ....,/  miteIndex: ${networkmiteIndex},/" ${file};
-        ((networkmiteIndex++));
+    declare -i custommiteIndex=50000;
+    for custommite in ./src/mobparts/mites/custom/*.ts;
+        do sed -i '' "s/  miteIndex: ....,/  miteIndex: ${custommiteIndex},/" ${custommite};
+        ((custommiteIndex++));
     done;
+    echo "custom mites indexed from 50000 to $custommiteIndex"
 }
-
 
 reindexproject() {
     reindexmanikins
@@ -48,3 +52,5 @@ reindexproject() {
     reindexcustommites
     reindexmemories
 }
+
+reindexproject

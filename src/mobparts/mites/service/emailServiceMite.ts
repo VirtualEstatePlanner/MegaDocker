@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const emailServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2005,
+  miteIndex: 30005,
   miteString: `
 
 # Begin MailServer section

@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const n8nPassword: IMemory = {
-  memoryIndex: 1027,
+  memoryIndex: 20027,
   memoryMarker: `[[N8NPASSWORD]]`,
   shouldAutocomplete: false,
   name: `n8n Password`,

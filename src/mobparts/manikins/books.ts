@@ -27,7 +27,7 @@ export const booksManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Content`],
   manikinIcon: booksIcon,
-  manikinIndex: 1,
+  manikinIndex: 10000,
   memories: [],
   mites: [
     booksServiceMite,

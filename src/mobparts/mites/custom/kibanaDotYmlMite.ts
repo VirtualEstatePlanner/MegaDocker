@@ -3,7 +3,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite';
 export const kibanaDotYmlMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 3005,
+  miteIndex: 50005,
   miteFile: {
     path: `elk/kibana-config`,
     name: `kibana`,

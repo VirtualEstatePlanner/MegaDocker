@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const comicsServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2001,
+  miteIndex: 30001,
   miteString: `
 
 # Begin Comics Service Section

@@ -3,7 +3,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite';
 export const nginxDefaultIndexHtml: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 3011,
+  miteIndex: 50011,
   miteFile: {
     path: `nginx/pages`,
     name: `index`,

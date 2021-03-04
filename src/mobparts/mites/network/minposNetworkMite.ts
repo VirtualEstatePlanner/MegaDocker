@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const minposNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1019,
+  miteIndex: 40014,
   miteString: `
 
 # Begin MinPOS Network Section

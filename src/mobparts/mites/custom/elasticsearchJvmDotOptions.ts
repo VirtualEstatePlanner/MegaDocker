@@ -3,7 +3,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite';
 export const elasticsearchJvmDotOptionsMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 3002,
+  miteIndex: 50002,
   miteFile: {
     path: `elk/elasticsearch-config`,
     name: `jvm`,

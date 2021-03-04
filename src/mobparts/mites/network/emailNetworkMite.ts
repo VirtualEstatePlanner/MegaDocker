@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const emailNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1005,
+  miteIndex: 40005,
   miteString: `
 
 #Begin ELK Network Section

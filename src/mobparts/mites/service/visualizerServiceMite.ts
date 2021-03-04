@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const visualizerServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2031,
+  miteIndex: 30031,
   miteString: `
 
 #Begin Visualizer Service Section

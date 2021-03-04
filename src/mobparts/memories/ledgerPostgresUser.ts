@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const ledgerPostgresUser: IMemory = {
-  memoryIndex: 1023,
+  memoryIndex: 20023,
   memoryMarker: `[[LEDGERPOSTGRESUSER]]`,
   shouldAutocomplete: false,
   name: `Ledger Postgres User`,

@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const nextcloudServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2018,
+  miteIndex: 30019,
   miteString: `
 
 # Begin NextCloud Service Sections

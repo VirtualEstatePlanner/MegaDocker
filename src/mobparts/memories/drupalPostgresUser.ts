@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const drupalPostgresUser: IMemory = {
-  memoryIndex: 1007,
+  memoryIndex: 20007,
   memoryMarker: `[[DRUPALPOSTGRESUSER]]`,
   shouldAutocomplete: false,
   name: `Drupal Postgres User`,

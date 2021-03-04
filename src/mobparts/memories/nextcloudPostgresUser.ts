@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const nextcloudPostgresUser: IMemory = {
-  memoryIndex: 1033,
+  memoryIndex: 20033,
   memoryMarker: `[[NEXTCLOUDPOSTGRESUSER]]`,
   shouldAutocomplete: false,
   name: `Nextcloud Postgres User`,

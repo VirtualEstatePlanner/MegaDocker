@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const mediaRequestsServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2014,
+  miteIndex: 30014,
   miteString: `
 
 # Begin Media Requests Service Sections

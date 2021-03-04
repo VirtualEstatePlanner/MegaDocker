@@ -2,7 +2,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const styleguidistNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1025,
+  miteIndex: 40025,
   miteString: `
 
 # Begin Styleguidist Network Section

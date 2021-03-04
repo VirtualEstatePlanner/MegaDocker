@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const drupalPostgresPassword: IMemory = {
-  memoryIndex: 1006,
+  memoryIndex: 20006,
   memoryMarker: `[[DRUPALPOSTGRESPASSWORD]]`,
   shouldAutocomplete: false,
   name: `Drupal Postgres Password`,

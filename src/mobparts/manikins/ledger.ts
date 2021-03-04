@@ -21,7 +21,7 @@ export const ledgerManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Utility`, `Financial`, `Organization`, `Productivity`],
   manikinIcon: ledgerIcon,
-  manikinIndex: 13,
+  manikinIndex: 10012,
   memories: [ledgerPostgresPassword],
   mites: [ledgerServiceMite, ledgerNetworkMite],
   name: `Ledger`,

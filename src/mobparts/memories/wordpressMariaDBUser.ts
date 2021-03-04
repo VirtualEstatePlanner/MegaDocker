@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const wordpressMariaDBUser: IMemory = {
-  memoryIndex: 1044,
+  memoryIndex: 20044,
   memoryMarker: `[[WORDPRESSMARIADBUSER]]`,
   shouldAutocomplete: false,
   name: `WP MariaDB User`,

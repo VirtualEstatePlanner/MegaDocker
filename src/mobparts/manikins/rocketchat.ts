@@ -25,7 +25,7 @@ export const rocketchatManikin: IManikin = {
   isCore: false,
   isSelected: false,
   manikinIcon: rocketchatIcon,
-  manikinIndex: 24,
+  manikinIndex: 10023,
   memories: [rocketchatBotPassword, rocketchatBotUsername],
   mites: [rocketchatServiceMite, rocketchatNetworkMite],
   name: `RocketChat`,

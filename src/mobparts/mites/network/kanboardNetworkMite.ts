@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const kanboardNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1010,
+  miteIndex: 40010,
   miteString: `
 
 # Begin Kanboard Network Section

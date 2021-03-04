@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const ldapConfigurationPassword: IMemory = {
-  memoryIndex: 1020,
+  memoryIndex: 20020,
   memoryMarker: `[[LDAPCONFIGURATIONPASSWORD]]`,
   shouldAutocomplete: false,
   name: `LDAP Configuration Password`,

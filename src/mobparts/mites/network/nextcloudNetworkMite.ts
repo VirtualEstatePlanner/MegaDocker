@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const nextcloudNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1017,
+  miteIndex: 40018,
   miteString: `
 
 # Begin Nextcloud Network Section

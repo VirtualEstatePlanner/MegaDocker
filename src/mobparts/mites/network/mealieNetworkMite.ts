@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const mealieNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1013,
+  miteIndex: 40013,
   miteString: `
 
 # Begin Mealie Network Section

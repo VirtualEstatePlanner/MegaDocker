@@ -3,7 +3,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite';
 export const styleguidistPackageDotJsonMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 3013,
+  miteIndex: 50013,
   miteFile: {
     path: `styleguidist/configs`,
     name: `package`,

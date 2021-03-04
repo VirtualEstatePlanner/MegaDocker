@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const moviesServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2015,
+  miteIndex: 30016,
   miteString: `
 
 # Begin Movie Service Section

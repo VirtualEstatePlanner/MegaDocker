@@ -2,7 +2,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const visualizerNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1029,
+  miteIndex: 40029,
   miteString: `
 
 # Begin Visualizer Network Section

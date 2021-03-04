@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const musicServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2016,
+  miteIndex: 30017,
   miteString: `
 
 # Begin Music Service Section

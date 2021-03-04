@@ -26,7 +26,7 @@ export const musicManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Content`],
   manikinIcon: musicIcon,
-  manikinIndex: 16,
+  manikinIndex: 10016,
   memories: [],
   mites: [
     mediaRequestsServiceMite,

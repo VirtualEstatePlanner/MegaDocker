@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const syncthingServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2028,
+  miteIndex: 30028,
   miteString: `
 
   # Begin Syncthing Service Section

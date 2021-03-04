@@ -20,7 +20,7 @@ export const minposManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Utility`, `Financial`],
   manikinIcon: minposIcon,
-  manikinIndex: 20,
+  manikinIndex: 10014,
   memories: [],
   mites: [minposServiceMite, minposNetworkMite],
   name: `MinPOS`,

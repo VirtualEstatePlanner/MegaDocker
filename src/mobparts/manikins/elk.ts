@@ -29,7 +29,7 @@ export const elkManikin: IManikin = {
   // isSelected: true,
   manikinGroups: [`Monitoring`],
   manikinIcon: elkIcon,
-  manikinIndex: 5,
+  manikinIndex: 10004,
   memories: [kibanaUser, kibanaPassword],
   mites: [
     elkServiceMite,

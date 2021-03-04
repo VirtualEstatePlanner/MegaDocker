@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const backupNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 1000,
+  miteIndex: 40000,
   miteString: `
 
 #Begin Backup Network Section

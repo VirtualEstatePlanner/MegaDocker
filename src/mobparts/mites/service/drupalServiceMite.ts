@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const drupalServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2002,
+  miteIndex: 30002,
   miteString: `
 
 #Begin Drupal Service Section

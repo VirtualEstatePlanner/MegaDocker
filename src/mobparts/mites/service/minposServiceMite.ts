@@ -8,7 +8,7 @@ import { IMite } from '../../../interfaces/IMite';
 
 export const minposServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 2020,
+  miteIndex: 30015,
   miteString: `
 
 # Begin MinPOS Service Sections

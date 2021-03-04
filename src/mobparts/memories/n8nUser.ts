@@ -8,7 +8,7 @@ import { IMemory } from '../../interfaces/IMemory';
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const n8nUser: IMemory = {
-  memoryIndex: 1028,
+  memoryIndex: 20028,
   memoryMarker: `[[N8NUSERNAME]]`,
   shouldAutocomplete: false,
   name: `n8n user name`,
