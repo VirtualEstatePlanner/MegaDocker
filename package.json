@@ -22,8 +22,8 @@
     "uninstall": "rm -rf yarn.lock && rm -rf node_modules",
     "clean": "run-p -l unbinaries uncache undist unelectron unerror",
     "reinstall": "yarn clean && yarn uninstall && yarn",
-    "reindex": "./reindex",
-    "tsc-build": "reindex && tsc public/electron.ts",
+    "reindex": "npx ts-node src/functions/utilities/reindex.ts",
+    "tsc-build": "yarn reindex && tsc public/electron.ts",
     "tsc-dev": "cp public/preload.js . && cp public/electron.ts . && tsc electron.ts -w",
     "react-start": "react-scripts start",
     "react-dev": "cross-env BROWSER=none yarn react-start",
@@ -116,6 +116,7 @@
     "electron-is-dev": "latest",
     "npm-run-all": "latest",
     "prettier": "latest",
+    "ts-node": "latest",
     "typescript": "latest",
     "wait-on": "latest"
   },
