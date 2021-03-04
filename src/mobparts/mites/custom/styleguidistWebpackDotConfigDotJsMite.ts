@@ -1,3 +1,6 @@
+/* eslint-disable no-useless-escape */
+// for lines 29 - 32
+
 import { ICustomMite } from '../../../interfaces/ICustomMite';
 
 export const styleguidistWebpackDotConfigDotJsMite: ICustomMite = {
@@ -32,6 +35,6 @@ export const styleguidistWebpackDotConfigDotJsMite: ICustomMite = {
           { test: /\.css$/, use: ["style-loader", "css-loader"] }
         ]
       }
-    };`
+    };`,
   },
 };
