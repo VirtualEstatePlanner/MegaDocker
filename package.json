@@ -86,12 +86,12 @@
     "wordpress"
   ],
   "dependencies": {
-    "@material-ui/core": "next",
-    "@material-ui/icons": "next",
-    "@material-ui/styles": "next",
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@fontsource/asap": "latest",
+    "@material-ui/core": "next",
+    "@material-ui/icons": "next",
+    "@material-ui/styles": "next",
     "file-saver": "latest",
     "jszip": "latest",
     "opener": "latest",
