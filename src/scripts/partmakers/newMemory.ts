@@ -1,9 +1,10 @@
 #!/usr/bin/env ts-node-script
+
 import * as fs from 'fs';
 import IMemoryValueType from '../../interfaces/IMemoryValueType';
 import readline from 'readline';
 
-let runtimeAnswers: IInput = {
+let runtimeMemoryAnswers: IMemoryInput = {
   autocomplete: false,
   description: `inputDesc`,
   name: `inputName`,
@@ -11,16 +12,16 @@ let runtimeAnswers: IInput = {
   validator: `no`,
 };
 
-const getData = readline.createInterface({
+const getMemoryData = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-getData.question(
+getMemoryData.question(
   `Name this memory (camelCase): `,
   function (memoryName: string) {
-    runtimeAnswers.name = memoryName;
-    console.log(runtimeAnswers.name);
-    getData.question(
+    runtimeMemoryAnswers.name = memoryName;
+    console.log(runtimeMemoryAnswers.name);
+    getMemoryData.question(
       `Choose a html input type for it (text, email, or password): `,
       function (htmltype: string) {
         if (['text', 'email', 'password'].includes(htmltype) == false) {
@@ -29,18 +30,18 @@ getData.question(
             `ERROR: ${htmltype} != 'text', or 'email', or 'password'.  Exiting script`
           );
         } else {
-          runtimeAnswers.type = htmltype as IMemoryValueType;
+          runtimeMemoryAnswers.type = htmltype as IMemoryValueType;
         }
-        getData.question(
+        getMemoryData.question(
           `Should it autocomplete ('true' or 'false'): `,
           function (auto: string) {
             switch (auto) {
               case 'true': {
-                runtimeAnswers.autocomplete = true;
+                runtimeMemoryAnswers.autocomplete = true;
                 break;
               }
               case 'false': {
-                runtimeAnswers.autocomplete = false;
+                runtimeMemoryAnswers.autocomplete = false;
                 break;
               }
               default: {
@@ -49,32 +50,32 @@ getData.question(
                 );
               }
             }
-            getData.question(
+            getMemoryData.question(
               `Enter a short description for it (one line of text or less): `,
               function (desc: string) {
-                runtimeAnswers.description = desc;
-                getData.question(
+                runtimeMemoryAnswers.description = desc;
+                getMemoryData.question(
                   `Choose a validator ('email', 'no', 'noWhitespace' 'noWhiteSpaceOrSymbols' 'password'): `,
                   function (validator: string) {
                     switch (validator) {
                       case 'email': {
-                        runtimeAnswers.validator = validator as IValidatorString;
+                        runtimeMemoryAnswers.validator = validator as IValidatorString;
                         break;
                       }
                       case 'no': {
-                        runtimeAnswers.validator = validator as IValidatorString;
+                        runtimeMemoryAnswers.validator = validator as IValidatorString;
                         break;
                       }
                       case 'noWhitespace': {
-                        runtimeAnswers.validator = validator as IValidatorString;
+                        runtimeMemoryAnswers.validator = validator as IValidatorString;
                         break;
                       }
                       case 'noWhiteSpaceOrSymbols': {
-                        runtimeAnswers.validator = validator as IValidatorString;
+                        runtimeMemoryAnswers.validator = validator as IValidatorString;
                         break;
                       }
                       case 'password': {
-                        runtimeAnswers.validator = validator as IValidatorString;
+                        runtimeMemoryAnswers.validator = validator as IValidatorString;
                         break;
                       }
                       default: {
@@ -83,8 +84,8 @@ getData.question(
                         );
                       }
                     }
-                    getData.close();
-                    let runtimeOptions = makeOptions(runtimeAnswers);
+                    getMemoryData.close();
+                    let runtimeOptions = makeOptions(runtimeMemoryAnswers);
 
                     const outputNewMemoryString: string = makeFileString(
                       runtimeOptions
@@ -109,7 +110,7 @@ type IValidatorString =
   //  | `domain`
   `email` | `no` | `noWhitespace` | `noWhiteSpaceOrSymbols` | `password`;
 
-interface IInput {
+interface IMemoryInput {
   autocomplete: boolean;
   description: string;
   name: string;
@@ -117,7 +118,7 @@ interface IInput {
   validator: IValidatorString;
 }
 
-interface ITemplateOptions {
+interface IMemoryTemplateOptions {
   autocomplete: boolean;
   date: Date;
   description: string;
@@ -129,11 +130,11 @@ interface ITemplateOptions {
   valueType: IMemoryValueType;
 }
 
-const makeOptions: Function = (input: IInput): ITemplateOptions => {
+const makeOptions: Function = (input: IMemoryInput): IMemoryTemplateOptions => {
   const now: Date = new Date();
   const marker: string = input.name.toUpperCase();
 
-  const inputOptions: ITemplateOptions = {
+  const inputOptions: IMemoryTemplateOptions = {
     autocomplete: input.autocomplete,
     date: now,
     description: input.description,
@@ -147,7 +148,7 @@ const makeOptions: Function = (input: IInput): ITemplateOptions => {
   return inputOptions;
 };
 
-const makeFileString: Function = (options: ITemplateOptions): string => {
+const makeFileString: Function = (options: IMemoryTemplateOptions): string => {
   const date: Date = new Date();
   const shortDate = date.toLocaleString().split(',')[0];
   const year: number = date.getFullYear();
@@ -171,8 +172,9 @@ export const ${options.memoryName}: IMemory = {
   isReady: false,
   validator: ${options.validator}Validator,
 };`;
-  console.log(template);
+
   console.log();
+  console.log(`created ${options.fileName}.ts`);
   console.log(
     `you still need to add "[[${options.memoryMarker}]]" to the IMemory.memoryMarker type`
   );
