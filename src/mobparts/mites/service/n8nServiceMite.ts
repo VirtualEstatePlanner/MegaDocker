@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const n8nServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30018,
+  miteIndex: 30017,
   miteString: `
 
 # Begin n8n Service Section

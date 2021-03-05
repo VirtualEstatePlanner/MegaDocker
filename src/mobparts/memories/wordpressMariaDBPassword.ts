@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const wordpressMariaDBPassword: IMemory = {
-  memoryIndex: 20042,
+  memoryIndex: 20046,
   memoryMarker: `[[WORDPRESSMARIADBPASSWORD]]`,
   shouldAutocomplete: false,
   name: `WP MariaDB password`,

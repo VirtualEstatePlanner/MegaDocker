@@ -28,7 +28,7 @@ export const musicManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Content`],
   manikinIcon: musicIcon,
-  manikinIndex: 10016,
+  manikinIndex: 10015,
   memories: [],
   mites: [mediaRequestsServiceMite, plexServiceMite, booksNetworkMite, comicsNetworkMite, moviesNetworkMite, musicNetworkMite, tvNetworkMite, plexNetworkMite],
   name: `Music`,

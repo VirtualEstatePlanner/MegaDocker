@@ -1,24 +1,24 @@
 /** @format */
 
-//  n8nNetworkMite.ts
+//  traefikNetworkMite.ts
 //  MegaDocker
-//  Network Mite for n8n
+//  Network Mite for OwnCloud
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../../interfaces/IMite'
 
-export const n8nNetworkMite: IMite = {
+export const opensourcePOSNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40016,
+  miteIndex: 40019,
   miteString: `
 
-# Begin n8n Network Section
+# Begin opensourcePOS Network Section
 
- n8n:
+ opensourcepos:
   driver: overlay
 
-# End n8n Network Section
+# End opensourcePOS Network Section
 
 `,
 }

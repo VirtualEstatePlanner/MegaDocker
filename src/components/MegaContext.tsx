@@ -5,7 +5,6 @@ import { IMegaDockerState } from '../interfaces/IMegaDockerState'
 import { IManikin } from '../interfaces/IManikin'
 import { IMemory } from '../interfaces/IMemory'
 import { IMite } from '../interfaces/IMite'
-//import { allManikins } from '../globals/allManikins';
 import { workingManikins } from '../globals/workingManikins'
 import { mobFileHeaderString } from '../mobparts/mites/headers/mobFileHeaderString'
 import { servicesFooterSectionString } from '../mobparts/mites/headers/servicesFooterSectionString'

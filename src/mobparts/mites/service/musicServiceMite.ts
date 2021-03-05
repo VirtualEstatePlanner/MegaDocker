@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const musicServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30017,
+  miteIndex: 30016,
   miteString: `
 
 # Begin Music Service Section

@@ -23,7 +23,7 @@ export const nginxManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Utility`],
   manikinIcon: nginxIcon,
-  manikinIndex: 10019,
+  manikinIndex: 10018,
   memories: [],
   mites: [nginxServiceMite, nginxNetworkMite, nginxDefaultIndexHtml],
   name: `Nginx`,

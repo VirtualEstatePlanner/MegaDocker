@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const nginxServiceMite: IMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30020,
+  miteIndex: 30019,
   miteString: `
 
 #Begin Nginx Service Sections

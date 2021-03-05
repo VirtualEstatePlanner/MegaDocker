@@ -20,6 +20,7 @@ import { musicManikin } from '../mobparts/manikins/music'
 import { n8nManikin } from '../mobparts/manikins/n8n'
 import { nextcloudManikin } from '../mobparts/manikins/nextcloud'
 import { nginxManikin } from '../mobparts/manikins/nginx'
+import { opensourceposManikin } from '../mobparts/manikins/opensourcePOS'
 import { owncloudManikin } from '../mobparts/manikins/owncloud'
 import { piholeManikin } from '../mobparts/manikins/pihole'
 import { portainerManikin } from '../mobparts/manikins/portainer'
@@ -56,6 +57,7 @@ export const allManikins: IManikin[] = [
   n8nManikin,
   nextcloudManikin,
   nginxManikin,
+  opensourceposManikin,
   owncloudManikin,
   piholeManikin,
   portainerManikin,
