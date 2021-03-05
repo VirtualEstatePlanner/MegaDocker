@@ -8,7 +8,7 @@ import { IMemory } from "../../interfaces/IMemory";
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
 
 export const opensourcePOSMariaDBUser: IMemory = {
-  memoryIndex: 20037,
+  memoryIndex: 20036,
   memoryMarker: "[[OPENSOURCEPOSMARIADBUSER]]",
   shouldAutocomplete: false,
   name: "osPOS MariaDB User",

@@ -19,7 +19,7 @@ import { opensourcePOSMariaDBRootPassword } from '../memories/opensourcePOSMaria
  * minpos Manikin
  */
 export const opensourceposManikin: IManikin = {
-  description: `opensourcePOS Point-of-Sale service`,
+  description: `opensourcePOS web Point-of-Sale service`,
   folder: `opensourcepos`,
   isCore: false,
   isSelected: false,

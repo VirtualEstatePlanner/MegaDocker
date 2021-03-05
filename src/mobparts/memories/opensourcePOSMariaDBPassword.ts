@@ -8,7 +8,7 @@ import { IMemory } from "../../interfaces/IMemory";
 import { passwordValidator } from '../../functions/validators/passwordValidator';
 
 export const opensourcePOSMariaDBPassword: IMemory = {
-  memoryIndex: 20035,
+  memoryIndex: 20034,
   memoryMarker: "[[OPENSOURCEPOSMARIADBPASSWORD]]",
   shouldAutocomplete: false,
   name: "osPOS MariaDB password",
