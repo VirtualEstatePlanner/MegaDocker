@@ -1,6 +1,6 @@
 #!/usr/bin/env ts-node-script
 import * as fs from 'fs';
-import IMemoryValueType from '../interfaces/IMemoryValueType';
+import IMemoryValueType from '../../interfaces/IMemoryValueType';
 import readline from 'readline';
 
 let runtimeAnswers: IInput = {
