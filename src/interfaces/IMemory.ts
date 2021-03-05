@@ -4,6 +4,8 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
+import IMemoryValueType from './IMemoryValueType';
+
 /**
  * interface for IMemory
  * @fromManikins manikinIndexes from IManikins this IMemory appears in
@@ -77,5 +79,5 @@ export interface IMemory {
   tooltip: string;
   validator(value: string): boolean;
   value: string;
-  valueType: 'password' | 'email' | 'text';
+  valueType: IMemoryValueType;
 }

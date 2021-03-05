@@ -23,6 +23,7 @@
     "clean": "run-p -l unbinaries uncache undist unelectron unerror",
     "reinstall": "yarn clean && yarn uninstall && yarn",
     "reindex": "cp src/scripts/commontsconfig/tsconfig.json . && npx ts-node src/scripts/reindex.ts",
+    "newmemory": "cp src/scripts/commontsconfig/tsconfig.json . && npx ts-node src/scripts/newMemory.ts",
     "tsc-build": "yarn reindex && tsc public/electron.ts",
     "tsc-dev": "cp public/preload.js . && cp public/electron.ts . && tsc electron.ts -w",
     "react-start": "react-scripts start",
