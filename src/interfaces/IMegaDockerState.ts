@@ -1,6 +1,8 @@
-import { IManikin } from './IManikin';
-import { IMemory } from './IMemory';
-import { IMite } from './IMite';
+/** @format */
+
+import { IManikin } from './IManikin'
+import { IMemory } from './IMemory'
+import { IMite } from './IMite'
 
 /**
  * the interface for the Application State
@@ -18,15 +20,15 @@ import { IMite } from './IMite';
  * @infoContent
  */
 export interface IMegaDockerState {
-  manikinTable: IManikin[];
-  selectedManikins: IManikin[];
-  memories: IMemory[];
-  allMobMites: IMite[];
-  mobDServiceMites: IMite[];
-  mobDNetworkMites: IMite[];
-  mobKServiceMites: IMite[];
-  mobKNetworkMites: IMite[];
-  mobCustomMites: IMite[][];
-  infoContent: string;
-  ymlOutput: string;
+  manikinTable: IManikin[]
+  selectedManikins: IManikin[]
+  memories: IMemory[]
+  allMobMites: IMite[]
+  mobDServiceMites: IMite[]
+  mobDNetworkMites: IMite[]
+  mobKServiceMites: IMite[]
+  mobKNetworkMites: IMite[]
+  mobCustomMites: IMite[][]
+  infoContent: string
+  ymlOutput: string
 }

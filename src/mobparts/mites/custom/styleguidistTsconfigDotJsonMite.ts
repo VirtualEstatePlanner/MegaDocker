@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const styleguidistTsconfigDotJsonMite: ICustomMite = {
   type: `Custom`,
@@ -29,4 +31,4 @@ export const styleguidistTsconfigDotJsonMite: ICustomMite = {
     }
     `,
   },
-};
+}

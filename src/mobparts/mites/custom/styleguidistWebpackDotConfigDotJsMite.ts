@@ -1,7 +1,12 @@
-/* eslint-disable no-useless-escape */
+/**
+ * /* eslint-disable no-useless-escape
+ *
+ * @format
+ */
+
 // for lines 29 - 32
 
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const styleguidistWebpackDotConfigDotJsMite: ICustomMite = {
   type: `Custom`,
@@ -37,4 +42,4 @@ export const styleguidistWebpackDotConfigDotJsMite: ICustomMite = {
       }
     };`,
   },
-};
+}

@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const autheliaDotConfMite: ICustomMite = {
   type: `Custom`,
@@ -71,4 +73,4 @@ storage:
 
         `,
   },
-};
+}

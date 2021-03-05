@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const elasticsearchDotYmlMite: ICustomMite = {
   type: `Custom`,
@@ -14,6 +16,6 @@ cluster.name: "[[MOBNAME]]-docker-cluster"
 network.host: 0.0.0.0
 path.data: /usr/share/elasticsearch/data
 path.logs: /usr/share/elasticsearch/logs
-    `
-  }
-};
+    `,
+  },
+}

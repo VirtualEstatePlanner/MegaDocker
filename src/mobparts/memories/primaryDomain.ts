@@ -1,11 +1,13 @@
+/** @format */
+
 //  primaryDomain.ts
 //  MegaDocker
 //  The variable for the domain name of your primary web domain
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from '../../interfaces/IMemory';
-import { domainValidator } from '../../functions/validators/domainValidator';
+import { IMemory } from '../../interfaces/IMemory'
+import { domainValidator } from '../../functions/validators/domainValidator'
 
 export const primaryDomain: IMemory = {
   memoryIndex: 20035,
@@ -17,4 +19,4 @@ export const primaryDomain: IMemory = {
   valueType: 'text',
   isReady: false,
   validator: domainValidator,
-};
+}

@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const kibanaDotYmlMite: ICustomMite = {
   type: `Custom`,
@@ -26,6 +28,6 @@ elasticsearch.logQueries: true
 logging.dest: stdout
 logging.json: true
 i18n.locale: "en"
-`
-  }
-};
+`,
+  },
+}

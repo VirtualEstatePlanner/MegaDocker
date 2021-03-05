@@ -1,18 +1,20 @@
+/** @format */
+
 //  IZipDockerCompose.ts
 //  MegaDocker
 //  an interface that represents a Manikin
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from './IMemory';
-import { IManikin } from './IManikin';
+import { IMemory } from './IMemory'
+import { IManikin } from './IManikin'
 /**
  * interface for docker compose zip
  *
  */
 export interface IZipDockerCompose {
-  memories: IMemory[];
-  manikins: IManikin[];
+  memories: IMemory[]
+  manikins: IManikin[]
 }
 
 // export interface INewManikin {

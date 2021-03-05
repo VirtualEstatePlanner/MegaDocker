@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const vsCodeIndexDotHtmlMite: ICustomMite = {
   type: `Custom`,
@@ -307,6 +309,6 @@ export const vsCodeIndexDotHtmlMite: ICustomMite = {
         <source src="app/sounds/bell.mp3" type="audio/mpeg">
     </audio>
   </body>
-</html>`
-  }
-};
+</html>`,
+  },
+}

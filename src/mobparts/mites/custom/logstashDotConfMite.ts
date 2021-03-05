@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const logstashDotConfMite: ICustomMite = {
   type: `Custom`,
@@ -31,6 +33,6 @@ output {
   index => "%{[@metadata][beat]}-%{[@metadata][version]}"
  }    
 }
-`
-  }
-};
+`,
+  },
+}

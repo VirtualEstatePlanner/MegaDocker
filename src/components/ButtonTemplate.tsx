@@ -1,4 +1,6 @@
-import React from 'react';
+/** @format */
+
+import React from 'react'
 
 function buttonClicked() {}
 
@@ -8,5 +10,5 @@ export const Button: React.FC = (): React.ReactElement => {
       {}
       <button onClick={buttonClicked}>Button</button>
     </div>
-  );
-};
+  )
+}

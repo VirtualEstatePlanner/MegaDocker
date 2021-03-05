@@ -1,10 +1,12 @@
+/** @format */
+
 //  serviceMite.ts
 //  MegaDocker
 //  Network Mite for Portal
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite';
+import { IMite } from '../../../interfaces/IMite'
 
 export const kanboardNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
@@ -19,4 +21,4 @@ export const kanboardNetworkMite: IMite = {
 # End Kanboard Network Section
 
 `,
-};
+}

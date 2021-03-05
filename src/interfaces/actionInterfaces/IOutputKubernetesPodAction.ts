@@ -1,3 +1,5 @@
+/** @format */
+
 export interface IOutputKubernetesPodAction {
-  type: `KUBERNETES_OUTPUT`;
+  type: `KUBERNETES_OUTPUT`
 }

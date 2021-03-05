@@ -1,3 +1,5 @@
+/** @format */
+
 export interface IOpenMobAction {
-  type: `OPEN_MOB_FILE`;
+  type: `OPEN_MOB_FILE`
 }

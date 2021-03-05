@@ -1,3 +1,5 @@
+/** @format */
+
 export interface IOutputDockerSwarmAction {
-  type: `DOCKER_SWARM_OUTPUT`;
+  type: `DOCKER_SWARM_OUTPUT`
 }

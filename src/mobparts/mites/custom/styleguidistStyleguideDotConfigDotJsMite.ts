@@ -1,9 +1,14 @@
-/* eslint-disable no-template-curly-in-string */
+/**
+ * /* eslint-disable no-template-curly-in-string
+ *
+ * @format
+ */
+
 // for line 26
 
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
-const pathObjectExtValue: string = '`.connect${pathObject.ext}`';
+const pathObjectExtValue: string = '`.connect${pathObject.ext}`'
 export const styleguidistStyleguideDotConfigDotJsMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
@@ -41,4 +46,4 @@ export const styleguidistStyleguideDotConfigDotJsMite: ICustomMite = {
     };
     `,
   },
-};
+}

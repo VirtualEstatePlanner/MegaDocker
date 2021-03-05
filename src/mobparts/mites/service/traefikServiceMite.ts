@@ -1,10 +1,12 @@
+/** @format */
+
 //  traefikServiceMite.ts
 //  MegaDocker
 //  Service Mite for Traefik
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite';
+import { IMite } from '../../../interfaces/IMite'
 
 // TODO: fix traefik authorization to use ldap
 // TODO: hash password for login
@@ -96,4 +98,4 @@ export const traefikServiceMite: IMite = {
 # End Traefik Service Section
 
 `,
-};
+}

@@ -1,10 +1,12 @@
+/** @format */
+
 //  emailServiceMite.ts
 //  MegaDocker
 //  Service Mite for email server
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite';
+import { IMite } from '../../../interfaces/IMite'
 
 export const emailServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -81,4 +83,4 @@ export const emailServiceMite: IMite = {
 # End Mailserver Service Section
 
 `,
-};
+}

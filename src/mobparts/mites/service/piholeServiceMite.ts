@@ -1,10 +1,12 @@
+/** @format */
+
 //  piholeServiceMite.ts
 //  MegaDocker
 //  Service Mite for Pihole
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite';
+import { IMite } from '../../../interfaces/IMite'
 
 export const piholeServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -53,4 +55,4 @@ export const piholeServiceMite: IMite = {
 
 # End pihole service section
 `,
-};
+}

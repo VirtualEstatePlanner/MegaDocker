@@ -1,6 +1,8 @@
-import { IMegaDockerState } from '../IMegaDockerState';
+/** @format */
+
+import { IMegaDockerState } from '../IMegaDockerState'
 
 export interface IApplicationStartAction {
-  type: `APPLICATION_START`;
-  payload: IMegaDockerState;
+  type: `APPLICATION_START`
+  payload: IMegaDockerState
 }

@@ -1,4 +1,6 @@
+/** @format */
+
 export interface IValidator {
-  thisRegexp: RegExp;
-  isValidated: boolean;
+  thisRegexp: RegExp
+  isValidated: boolean
 }

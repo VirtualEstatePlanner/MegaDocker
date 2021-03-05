@@ -1,39 +1,41 @@
-import AsapFont from '../fonts/Asap';
-import { createMuiTheme, Theme } from '@material-ui/core';
-import InputBaseRootStyle from '../styles/InputBaseRootStyle';
-import ButtonPrimaryStyle from '../styles/ButtonPrimaryStyle';
-import ButtonSecondaryStyle from '../styles/ButtonSecondaryStyle';
-import PaletteBackgroundStyle from '../styles/PaletteBackgroundStyle';
-import PalettePrimaryStyle from '../styles/PalettePrimaryStyle';
-import PaletteSecondaryStyle from '../styles/PaletteSecondaryStyle';
-import InputLabelRootStyle from '../styles/InputLabelRootStyle';
-import PaperRootStyle from '../styles/PaperRootStyle';
-import FormHelperTextRootStyle from '../styles/FormHelperTextRootStyle';
-import NativeSelectRootStyle from '../styles/NativeSelectRootStyle';
-import SelectRootStyle from '../styles/SelectRootStyle';
-import ButtonRootStyle from '../styles/ButtonRootStyle';
-import ButtonIconInheritStyle from '../styles/ButtonIconInheritStyle';
-import SwitchRootStyle from '../styles/SwitchRootStyle';
-import ListItemRootStyle from '../styles/ListItemRootStyle';
-import ButtonIconRootStyle from '../styles/ButtonIconRootStyle';
-import CardRootStyle from '../styles/CardRootStyle';
-import TablePaginationRootStyle from '../styles/TablePaginationRootStyle';
-import MenuRootStyle from '../styles/MenuRootStyle';
-import FabRootStyle from '../styles/FabRootStyle';
-import AppBarRootStyle from '../styles/AppBarRootStyle';
-import DrawerRootStyle from '../styles/DrawerRootStyle';
-import DrawerPaperStyle from '../styles/DrawerPaperStyle';
-import ListRootStyle from '../styles/ListRootStyle';
-import SpeedDialRootStyle from '../styles/FabRootStyle';
-import RadioRootStyle from '../styles/RadioRootStyle';
-import CheckboxRootStyle from '../styles/CheckboxRootStyle';
-import ImageListRootStyle from '../styles/ImageListRootStyle';
-import ImageListItemBarRootStyle from '../styles/ImageListItemBarRootStyle';
-import MuiInputAdornmentRootStyle from '../styles/MuiInputAdornmentRootStyle';
-import NativeSelectOutlinedStyle from '../styles/InputOutlinedRootStyle';
-import InputOutlinedRootStyle from '../styles/InputOutlinedRootStyle';
-import FormControlLabelRootStyle from '../styles/FormControlLabelRootStyle';
-import SliderRootStyle from '../styles/SliderRootStyle';
+/** @format */
+
+import AsapFont from '../fonts/Asap'
+import { createMuiTheme, Theme } from '@material-ui/core'
+import InputBaseRootStyle from '../styles/InputBaseRootStyle'
+import ButtonPrimaryStyle from '../styles/ButtonPrimaryStyle'
+import ButtonSecondaryStyle from '../styles/ButtonSecondaryStyle'
+import PaletteBackgroundStyle from '../styles/PaletteBackgroundStyle'
+import PalettePrimaryStyle from '../styles/PalettePrimaryStyle'
+import PaletteSecondaryStyle from '../styles/PaletteSecondaryStyle'
+import InputLabelRootStyle from '../styles/InputLabelRootStyle'
+import PaperRootStyle from '../styles/PaperRootStyle'
+import FormHelperTextRootStyle from '../styles/FormHelperTextRootStyle'
+import NativeSelectRootStyle from '../styles/NativeSelectRootStyle'
+import SelectRootStyle from '../styles/SelectRootStyle'
+import ButtonRootStyle from '../styles/ButtonRootStyle'
+import ButtonIconInheritStyle from '../styles/ButtonIconInheritStyle'
+import SwitchRootStyle from '../styles/SwitchRootStyle'
+import ListItemRootStyle from '../styles/ListItemRootStyle'
+import ButtonIconRootStyle from '../styles/ButtonIconRootStyle'
+import CardRootStyle from '../styles/CardRootStyle'
+import TablePaginationRootStyle from '../styles/TablePaginationRootStyle'
+import MenuRootStyle from '../styles/MenuRootStyle'
+import FabRootStyle from '../styles/FabRootStyle'
+import AppBarRootStyle from '../styles/AppBarRootStyle'
+import DrawerRootStyle from '../styles/DrawerRootStyle'
+import DrawerPaperStyle from '../styles/DrawerPaperStyle'
+import ListRootStyle from '../styles/ListRootStyle'
+import SpeedDialRootStyle from '../styles/FabRootStyle'
+import RadioRootStyle from '../styles/RadioRootStyle'
+import CheckboxRootStyle from '../styles/CheckboxRootStyle'
+import ImageListRootStyle from '../styles/ImageListRootStyle'
+import ImageListItemBarRootStyle from '../styles/ImageListItemBarRootStyle'
+import MuiInputAdornmentRootStyle from '../styles/MuiInputAdornmentRootStyle'
+import NativeSelectOutlinedStyle from '../styles/InputOutlinedRootStyle'
+import InputOutlinedRootStyle from '../styles/InputOutlinedRootStyle'
+import FormControlLabelRootStyle from '../styles/FormControlLabelRootStyle'
+import SliderRootStyle from '../styles/SliderRootStyle'
 
 const MegaTheme: Theme = createMuiTheme({
   typography: {
@@ -193,6 +195,6 @@ const MegaTheme: Theme = createMuiTheme({
       },
     },
   },
-});
+})
 
-export default MegaTheme;
+export default MegaTheme

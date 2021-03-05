@@ -1,3 +1,5 @@
+/** @format */
+
 //  IMemoryValueType.ts
 //  MegaDocker
 //  an interface that represents a variable used by a Manikin
@@ -7,6 +9,6 @@
 /**
  * interface for IMemoryValueType
  */
-type IMemoryValueType = 'password' | 'email' | 'text';
+type IMemoryValueType = 'password' | 'email' | 'text'
 
-export default IMemoryValueType;
+export default IMemoryValueType

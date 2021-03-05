@@ -1,10 +1,12 @@
+/** @format */
+
 //  ldapServiceMite.ts
 //  MegaDocker
 //  Network Mite for LDAP
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite';
+import { IMite } from '../../../interfaces/IMite'
 
 export const ldapServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -132,4 +134,4 @@ export const ldapServiceMite: IMite = {
 # End LDAP Service Section
 
 `,
-};
+}

@@ -1,11 +1,13 @@
+/** @format */
+
 //  mobName.ts
 //  MegaDocker
 //  The variable for the Mob name
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from '../../interfaces/IMemory';
-import { mobnameValidator } from '../../functions/validators/mobnameValidator';
+import { IMemory } from '../../interfaces/IMemory'
+import { mobnameValidator } from '../../functions/validators/mobnameValidator'
 
 export const mobName: IMemory = {
   memoryIndex: 20026,
@@ -17,4 +19,4 @@ export const mobName: IMemory = {
   valueType: 'text',
   isReady: false,
   validator: mobnameValidator,
-};
+}

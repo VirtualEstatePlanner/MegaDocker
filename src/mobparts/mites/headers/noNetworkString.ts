@@ -1,1 +1,3 @@
-export const noNetworkString: string = ``;
+/** @format */
+
+export const noNetworkString: string = ``

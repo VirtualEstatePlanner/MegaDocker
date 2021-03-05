@@ -1,15 +1,17 @@
+/** @format */
+
 //  ledger.ts
 //  MegaDocker
 //  A Manikin to generate a Ledger bookeeping service
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from '../../interfaces/IManikin';
+import { IManikin } from '../../interfaces/IManikin'
 
-import { ledgerServiceMite } from '../mites/service/ledgerServiceMite';
-import { ledgerNetworkMite } from '../mites/network/ledgerNetworkMite';
-import { ledgerPostgresPassword } from '../memories/ledgerPostgresPassword';
-import ledgerIcon from '../../images/manikin-icons/ledgerIcon.png';
+import { ledgerServiceMite } from '../mites/service/ledgerServiceMite'
+import { ledgerNetworkMite } from '../mites/network/ledgerNetworkMite'
+import { ledgerPostgresPassword } from '../memories/ledgerPostgresPassword'
+import ledgerIcon from '../../images/manikin-icons/ledgerIcon.png'
 
 /**
  * elk Manikin
@@ -27,4 +29,4 @@ export const ledgerManikin: IManikin = {
   name: `Ledger`,
   ports: [],
   subfolders: [`pgdata`],
-};
+}

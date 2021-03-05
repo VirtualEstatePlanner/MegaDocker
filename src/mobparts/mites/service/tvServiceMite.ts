@@ -1,10 +1,12 @@
+/** @format */
+
 //  drupalServiceMite.ts
 //  MegaDocker
 //  Network Mite for Drupal
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite';
+import { IMite } from '../../../interfaces/IMite'
 
 export const tvServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -47,4 +49,4 @@ export const tvServiceMite: IMite = {
 
 
 `,
-};
+}

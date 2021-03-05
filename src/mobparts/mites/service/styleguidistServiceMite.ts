@@ -1,4 +1,6 @@
-import { IMite } from '../../../interfaces/IMite';
+/** @format */
+
+import { IMite } from '../../../interfaces/IMite'
 
 export const styleguidistServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -43,4 +45,4 @@ export const styleguidistServiceMite: IMite = {
 # End Styleguidist Service Section
 
 `,
-};
+}

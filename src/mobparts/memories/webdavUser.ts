@@ -1,11 +1,13 @@
+/** @format */
+
 //  wordpressMariaDBUser.ts
 //  MegaDocker
 //  The variable for the Wordpress MariaDB username
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from '../../interfaces/IMemory';
-import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
+import { IMemory } from '../../interfaces/IMemory'
+import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'
 
 export const webdavUser: IMemory = {
   memoryIndex: 20041,
@@ -17,4 +19,4 @@ export const webdavUser: IMemory = {
   valueType: 'text',
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator,
-};
+}

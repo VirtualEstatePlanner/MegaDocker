@@ -1,4 +1,6 @@
-import { IMite } from '../../../interfaces/IMite';
+/** @format */
+
+import { IMite } from '../../../interfaces/IMite'
 
 export const piholeNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
@@ -13,4 +15,4 @@ export const piholeNetworkMite: IMite = {
 # End PiHole Network Section
   
 `,
-};
+}

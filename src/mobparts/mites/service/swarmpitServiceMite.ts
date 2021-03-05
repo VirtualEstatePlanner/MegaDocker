@@ -1,4 +1,6 @@
-import { IMite } from '../../../interfaces/IMite';
+/** @format */
+
+import { IMite } from '../../../interfaces/IMite'
 
 export const swarmpitServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -111,4 +113,4 @@ export const swarmpitServiceMite: IMite = {
 #End Swarmpit Service Section
 
 `,
-};
+}

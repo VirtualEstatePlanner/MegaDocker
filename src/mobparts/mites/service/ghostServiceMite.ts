@@ -1,10 +1,12 @@
+/** @format */
+
 //  ghostServiceMite.ts
 //  MegaDocker
 //  Service Mite for Ghost
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite';
+import { IMite } from '../../../interfaces/IMite'
 
 export const ghostServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -60,4 +62,4 @@ export const ghostServiceMite: IMite = {
 #End Ghost Service Section
 
 `,
-};
+}

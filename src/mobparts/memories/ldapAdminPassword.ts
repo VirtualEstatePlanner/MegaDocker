@@ -1,12 +1,14 @@
+/** @format */
+
 //  ldapAdminPassword.ts
 //  MegaDocker
 //  The variable for the LDAP administrative user's password
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from '../../interfaces/IMemory';
-import { ldapAdminUsername } from './ldapAdminUsername';
-import { passwordValidator } from '../../functions/validators/passwordValidator';
+import { IMemory } from '../../interfaces/IMemory'
+import { ldapAdminUsername } from './ldapAdminUsername'
+import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const ldapAdminPassword: IMemory = {
   memoryIndex: 20018,
@@ -18,4 +20,4 @@ export const ldapAdminPassword: IMemory = {
   valueType: 'password',
   isReady: false,
   validator: passwordValidator,
-};
+}

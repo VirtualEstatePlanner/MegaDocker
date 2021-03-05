@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const styleguidistPackageDotJsonMite: ICustomMite = {
   type: `Custom`,
@@ -57,4 +59,4 @@ export const styleguidistPackageDotJsonMite: ICustomMite = {
     }
     `,
   },
-};
+}

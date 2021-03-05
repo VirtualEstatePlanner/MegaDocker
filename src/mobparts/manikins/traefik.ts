@@ -1,19 +1,21 @@
+/** @format */
+
 //  traefik.ts
 //  MegaDocker
 //  A Manikin to generate a Traefik reverse proxy service
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from '../../interfaces/IManikin';
+import { IManikin } from '../../interfaces/IManikin'
 
-import { cloudflareAPIToken } from '../memories/cloudflareAPIToken';
-import { letsEncryptEmail } from '../memories/letsEncryptEmail';
-import { primaryDomain } from '../memories/primaryDomain';
+import { cloudflareAPIToken } from '../memories/cloudflareAPIToken'
+import { letsEncryptEmail } from '../memories/letsEncryptEmail'
+import { primaryDomain } from '../memories/primaryDomain'
 // import { secondaryDomain } from '../memories/secondaryDomain';
-import { traefikServiceMite } from '../mites/service/traefikServiceMite';
-import { traefikNetworkMite } from '../mites/network/traefikNetworkMite';
-import traefikIcon from '../../images/manikin-icons/traefikIcon.png';
-import { mobName } from '../memories/mobName';
+import { traefikServiceMite } from '../mites/service/traefikServiceMite'
+import { traefikNetworkMite } from '../mites/network/traefikNetworkMite'
+import traefikIcon from '../../images/manikin-icons/traefikIcon.png'
+import { mobName } from '../memories/mobName'
 
 /**
  * traefik Manikin
@@ -37,4 +39,4 @@ export const traefikManikin: IManikin = {
   mites: [traefikServiceMite, traefikNetworkMite],
   ports: [],
   subfolders: [`ssl`],
-};
+}

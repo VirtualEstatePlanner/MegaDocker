@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const rocketchatMongoStartupDotShMite: ICustomMite = {
   type: `Custom`,
@@ -16,6 +18,6 @@ replicate='rs.initiate(); sleep(1000); cfg = rs.conf(); cfg.members[0].host = "[
 echo "attempting to generate replica set"
 echo \${replicate} | mongo --host [[MOBNAME]]_mongo
 echo "we probably successfully generated the rocketchat mongodb replica set if you're reading this."
-`
-  }
-};
+`,
+  },
+}

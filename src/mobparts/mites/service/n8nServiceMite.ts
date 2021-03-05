@@ -1,10 +1,12 @@
+/** @format */
+
 //  n8nServiceMite.ts
 //  MegaDocker
 //  Service Mite for n8n
 //  Created by George Georgulas IV on 11/3/2020.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite';
+import { IMite } from '../../../interfaces/IMite'
 
 export const n8nServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -61,4 +63,4 @@ export const n8nServiceMite: IMite = {
 # End n8n Service Section 
 
 `,
-};
+}

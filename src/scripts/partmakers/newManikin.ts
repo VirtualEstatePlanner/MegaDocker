@@ -1,41 +1,70 @@
 #!/usr/bin/env ts-node-script
-import * as fs from 'fs';
-import readline from 'readline';
+/** @format */
+
+import * as fs from 'fs'
+import readline from 'readline'
 
 /*
 type manikinGroup = | `Content` | `Core` | `Development` | `Financial` | `Infrastructure` | `Monitoring` | `Network` | `Organization` | `Productivity` | `Utility`;*/
 
 interface IManikinInput {
-  description: string;
-  fileName: string;
-  uiName: string;
+  description: string
+  fileName: string
+  uiName: string
+}
+
+let runtimeManikinAnswers: IManikinInput = {
+  description: ``,
+  fileName: ``,
+  uiName: ``,
 }
 
 interface IManikinTemplateOptions {
-  date: Date;
-  description: string;
-  fileName: string;
-  uiName: string;
+  date: Date
+  description: string
+  fileName: string
+  uiName: string
 }
 
-const makeOptions: Function = (
-  input: IManikinInput
-): IManikinTemplateOptions => {
-  const now: Date = new Date();
+const makeOptions: Function = (input: IManikinInput): IManikinTemplateOptions => {
+  const now: Date = new Date()
 
   const inputOptions: IManikinTemplateOptions = {
     date: now,
     description: input.description,
     fileName: input.fileName,
     uiName: input.uiName,
-  };
-  return inputOptions;
-};
+  }
+  return inputOptions
+}
+
+const getManikinData = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+})
+getManikinData.question(`What is the full name of this service: `, function (manikinUIName: string) {
+  runtimeManikinAnswers.uiName = manikinUIName
+  getManikinData.question(`What will the file name for it be (camelCase): `, function (manikinName: string) {
+    runtimeManikinAnswers.fileName = manikinName
+    getManikinData.question(`a short description of what this service does: `, function (manikinDescription: string) {
+      runtimeManikinAnswers.description = manikinDescription
+      getManikinData.question(`Enter a short description for it (one line of text or less): `, function (desc: string) {
+        runtimeManikinAnswers.description = desc
+        getManikinData.close()
+        let manikinRuntimeOptions = makeOptions(runtimeManikinAnswers)
+
+        const outputNewManikinString: string = makeFileString(manikinRuntimeOptions)
+
+        fs.writeFileSync(`src/mobparts/memories/${manikinRuntimeOptions.fileName}.ts`, outputNewManikinString)
+      })
+    })
+  })
+})
 
 const makeFileString: Function = (options: IManikinTemplateOptions): string => {
-  const date: Date = new Date();
-  const shortDate = date.toLocaleString().split(',')[0];
-  const year: number = date.getFullYear();
+  const date: Date = new Date()
+  const shortDate = date.toLocaleString().split(',')[0]
+  const year: number = date.getFullYear()
   const template: string = `//  ${options.fileName}.ts
   //  MegaDocker
   //  ${options.description}
@@ -44,15 +73,9 @@ const makeFileString: Function = (options: IManikinTemplateOptions): string => {
   
   import { IManikin } from '../../interfaces/IManikin';
   
-  import { ${options.fileName}ServiceMite } from '../mites/service/${
-    options.fileName
-  }ServiceMite';
-  //import { ${options.fileName}NetworkMite } from '../mites/network/${
-    options.fileName
-  }NetworkMite';
-  import ${options.fileName}Icon from '../../images/manikin-icons/${
-    options.fileName
-  }Icon.png';
+  import { ${options.fileName}ServiceMite } from '../mites/service/${options.fileName}ServiceMite';
+  //import { ${options.fileName}NetworkMite } from '../mites/network/${options.fileName}NetworkMite';
+  import ${options.fileName}Icon from '../../images/manikin-icons/${options.fileName}Icon.png';
   
   /**
    * ${options.uiName} Manikin
@@ -70,6 +93,6 @@ const makeFileString: Function = (options: IManikinTemplateOptions): string => {
     name: "${options.fileName}",
     ports: [],
     subfolders: [],
-  };`;
-  return template;
-};
+  };`
+  return template
+}

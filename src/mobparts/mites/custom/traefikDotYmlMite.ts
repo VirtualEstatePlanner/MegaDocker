@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const traefikDotYmlMite: ICustomMite = {
   type: `Custom`,
@@ -58,4 +60,4 @@ certificatesResolvers:
 
 `,
   },
-};
+}

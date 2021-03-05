@@ -1,5 +1,10 @@
-/* eslint-disable no-useless-escape */
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/**
+ * /* eslint-disable no-useless-escape
+ *
+ * @format
+ */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const nginxDefaultDotConfMite: ICustomMite = {
   type: `Custom`,
@@ -131,4 +136,4 @@ types {
 }
 `,
   },
-};
+}

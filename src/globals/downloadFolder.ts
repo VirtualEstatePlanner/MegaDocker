@@ -1,6 +1,8 @@
-import { homeFolder } from './homeFolder';
+/** @format */
+
+import { homeFolder } from './homeFolder'
 
 /**
  * shortcut to the "Downloads" folder
  */
-export const downloadFolder: string = `${homeFolder}/Downloads`;
+export const downloadFolder: string = `${homeFolder}/Downloads`

@@ -1,3 +1,5 @@
+/** @format */
+
 //  IManikinPort.ts
 //  MegaDocker
 //  an interface that represents a port used by a Manikin
@@ -5,7 +7,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 export interface IManikinPort {
-  externalPort: number;
-  internalPort?: number;
-  isUDP: boolean;
+  externalPort: number
+  internalPort?: number
+  isUDP: boolean
 }

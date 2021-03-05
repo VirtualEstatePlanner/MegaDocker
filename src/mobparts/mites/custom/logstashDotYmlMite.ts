@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const logstashDotYmlMite: ICustomMite = {
   type: `Custom`,
@@ -15,6 +17,6 @@ xpack.monitoring.enabled: true
 xpack.monitoring.elasticsearch.hosts: [ "http://[[MOBNAME]]_elasticsearch:9200" ]
 xpack.monitoring.elasticsearch.username: [[KIBANAUSER]]
 xpack.monitoring.elasticsearch.password: [[KIBANAPASSWORD]]
-`
-  }
-};
+`,
+  },
+}

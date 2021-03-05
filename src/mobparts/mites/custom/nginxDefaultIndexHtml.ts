@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const nginxDefaultIndexHtml: ICustomMite = {
   type: `Custom`,
@@ -34,6 +36,6 @@ export const nginxDefaultIndexHtml: ICustomMite = {
     </div>
   </body>
 </html>
-    `
-  }
-};
+    `,
+  },
+}

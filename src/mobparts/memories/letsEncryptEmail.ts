@@ -1,11 +1,13 @@
+/** @format */
+
 //  letsEncryptEmail.ts
 //  MegaDocker
 //  The variable for the usert's Let's Encrypt account email address
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { IMemory } from '../../interfaces/IMemory'
+import { emailValidator } from '../../functions/validators/emailValidator'
 
 export const letsEncryptEmail: IMemory = {
   memoryIndex: 20024,
@@ -17,4 +19,4 @@ export const letsEncryptEmail: IMemory = {
   valueType: 'email',
   isReady: false,
   validator: emailValidator,
-};
+}

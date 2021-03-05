@@ -1,3 +1,5 @@
+/** @format */
+
 export const mobFileHeaderString: string = `
 # MegaDocker YML File
 version: '3.7'
@@ -8,4 +10,4 @@ version: '3.7'
 # Begin Services Section
 
 services:
-`;
+`

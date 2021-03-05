@@ -1,11 +1,13 @@
+/** @format */
+
 //  mobFolderPath.ts
 //  MegaDocker
 //  The variable for the location to save the Mob folder
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from '../../interfaces/IMemory';
-import { emailValidator } from '../../functions/validators/emailValidator';
+import { IMemory } from '../../interfaces/IMemory'
+import { emailValidator } from '../../functions/validators/emailValidator'
 
 export const mobFolderPath: IMemory = {
   memoryIndex: 20025,
@@ -17,4 +19,4 @@ export const mobFolderPath: IMemory = {
   valueType: 'text',
   isReady: false,
   validator: emailValidator,
-};
+}

@@ -1,11 +1,13 @@
+/** @format */
+
 //  cloudflareAPIKey.ts
 //  MegaDocker
 //  The variable for
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from '../../interfaces/IMemory';
-import { cloudflareApiTokenValidator } from '../../functions/validators/cloudflareApiTokenValidator';
+import { IMemory } from '../../interfaces/IMemory'
+import { cloudflareApiTokenValidator } from '../../functions/validators/cloudflareApiTokenValidator'
 
 export const cloudflareAPIKey: IMemory = {
   memoryIndex: 20003,
@@ -17,4 +19,4 @@ export const cloudflareAPIKey: IMemory = {
   valueType: 'password',
   isReady: false,
   validator: cloudflareApiTokenValidator,
-};
+}

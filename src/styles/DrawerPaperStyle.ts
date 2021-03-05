@@ -1,3 +1,5 @@
+/** @format */
+
 import { CSSProperties } from '@material-ui/styles'
 
 const drawerWidth = 240
@@ -9,7 +11,7 @@ const DrawerPaperStyle: CSSProperties = {
   marginTop: appBarHeight,
   borderRadius: '25px',
   backgroundColor: `#F0F0F3ED`,
-  boxShadow: `12px 12px 30px -6px #B4B4B5`
+  boxShadow: `12px 12px 30px -6px #B4B4B5`,
 }
 
 export default DrawerPaperStyle

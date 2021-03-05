@@ -1,8 +1,10 @@
-import React from 'react';
-import TableCell from '@material-ui/core/TableCell';
-import TableRow from '@material-ui/core/TableRow';
-import { ManikinIcon } from './ManikinIcon';
-import { ManikinSwitch } from './ManikinSwitch';
+/** @format */
+
+import React from 'react'
+import TableCell from '@material-ui/core/TableCell'
+import TableRow from '@material-ui/core/TableRow'
+import { ManikinIcon } from './ManikinIcon'
+import { ManikinSwitch } from './ManikinSwitch'
 
 export const ManikinRow: React.FC = (props: any): React.ReactElement => {
   return (
@@ -21,5 +23,5 @@ export const ManikinRow: React.FC = (props: any): React.ReactElement => {
         <ManikinSwitch />
       </TableCell>
     </TableRow>
-  );
-};
+  )
+}

@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const ldapBootstrapMegaDockerDotLdifMite: ICustomMite = {
   type: `Custom`,
@@ -84,4 +86,4 @@ dn: ou=HeimdallUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 `,
   },
-};
+}

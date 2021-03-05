@@ -1,10 +1,12 @@
+/** @format */
+
 //  minposServiceMite.ts
 //  MegaDocker
 //  Service Mite for MinPOS
 //  Created by George Georgulas IV on 03/04/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite';
+import { IMite } from '../../../interfaces/IMite'
 
 export const minposServiceMite: IMite = {
   type: `DockerSwarmService`,
@@ -57,4 +59,4 @@ export const minposServiceMite: IMite = {
 # End MinPOS Service Section
 
 `,
-};
+}

@@ -1,11 +1,13 @@
+/** @format */
+
 //  rocketchatBotUsername.ts
 //  MegaDocker
 //  The variable for
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from '../../interfaces/IMemory';
-import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator';
+import { IMemory } from '../../interfaces/IMemory'
+import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'
 
 export const rocketchatBotUsername: IMemory = {
   memoryIndex: 20037,
@@ -17,4 +19,4 @@ export const rocketchatBotUsername: IMemory = {
   valueType: 'text',
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator,
-};
+}

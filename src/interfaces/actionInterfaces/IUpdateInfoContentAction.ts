@@ -1,4 +1,6 @@
+/** @format */
+
 export interface IUpdateInfoContentAction {
-  type: `UPDATE_INFO_CONTENT`;
-  payload: string;
+  type: `UPDATE_INFO_CONTENT`
+  payload: string
 }

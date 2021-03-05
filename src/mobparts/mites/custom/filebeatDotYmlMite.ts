@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const filebeatDotYmlMite: ICustomMite = {
   type: `Custom`,
@@ -30,9 +32,9 @@ setup.kibana.protocol: "http"
 
 logging.json: true
 logging.metrics.enabled: false
-`
-  }
-};
+`,
+  },
+}
 
 // TODO: add modules to config
 // filebeat.modules:

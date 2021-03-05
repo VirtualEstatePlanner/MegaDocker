@@ -1,26 +1,21 @@
-import React from 'react';
-import {
-  Switch,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-} from '@material-ui/core';
-import { Tooltip } from '@material-ui/core';
-import { IManikin } from '../interfaces/IManikin';
-import { IMegaDockerAction } from '../interfaces/IMegaDockerAction';
-import { IMegaDockerState } from '../interfaces/IMegaDockerState';
-import { MegaContext } from './MegaContext';
+/** @format */
+
+import React from 'react'
+import { Switch, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core'
+import { Tooltip } from '@material-ui/core'
+import { IManikin } from '../interfaces/IManikin'
+import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
+import { IMegaDockerState } from '../interfaces/IMegaDockerState'
+import { MegaContext } from './MegaContext'
 
 export const ManikinTable: React.FC = (): React.ReactElement => {
   const {
     state,
     dispatch,
   }: {
-    state: IMegaDockerState;
-    dispatch: React.Dispatch<IMegaDockerAction>;
-  } = React.useContext(MegaContext);
+    state: IMegaDockerState
+    dispatch: React.Dispatch<IMegaDockerAction>
+  } = React.useContext(MegaContext)
 
   return (
     <Table className='ManikinTable' size='small' stickyHeader>
@@ -33,21 +28,11 @@ export const ManikinTable: React.FC = (): React.ReactElement => {
       </TableHead>
       <TableBody className='ManikinTableBody'>
         {state.manikinTable.map((eachManikin: IManikin) => (
-          <Tooltip
-            key={`${eachManikin.name}Row`}
-            title={eachManikin.description}>
-            <TableRow
-              className={eachManikin.isCore ? 'CoreManikinRow' : 'ManikinRow'}
-              hover={eachManikin.isCore ? false : true}>
-              <TableCell key={`${eachManikin.name}NameCell`}>
-                {eachManikin.name}
-              </TableCell>
+          <Tooltip key={`${eachManikin.name}Row`} title={eachManikin.description}>
+            <TableRow className={eachManikin.isCore ? 'CoreManikinRow' : 'ManikinRow'} hover={eachManikin.isCore ? false : true}>
+              <TableCell key={`${eachManikin.name}NameCell`}>{eachManikin.name}</TableCell>
               <TableCell key={`${eachManikin.name}Icon`}>
-                <img
-                  alt={eachManikin.name}
-                  src={eachManikin.manikinIcon}
-                  height='28vh'
-                />
+                <img alt={eachManikin.name} src={eachManikin.manikinIcon} height='28vh' />
               </TableCell>
               <TableCell key={`${eachManikin.name}CheckboxCell`}>
                 <Switch
@@ -67,5 +52,5 @@ export const ManikinTable: React.FC = (): React.ReactElement => {
         ))}
       </TableBody>
     </Table>
-  );
-};
+  )
+}

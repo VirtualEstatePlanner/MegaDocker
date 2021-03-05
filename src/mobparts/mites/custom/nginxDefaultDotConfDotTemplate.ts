@@ -1,4 +1,6 @@
-import { ICustomMite } from '../../../interfaces/ICustomMite';
+/** @format */
+
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const nginxDefaultDotConfDotTemplate: ICustomMite = {
   type: `Custom`,
@@ -11,6 +13,6 @@ export const nginxDefaultDotConfDotTemplate: ICustomMite = {
     permissions: `644`,
     contents: `
 #
-`
-  }
-};
+`,
+  },
+}
