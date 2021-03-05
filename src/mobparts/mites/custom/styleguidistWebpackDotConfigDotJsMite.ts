@@ -1,9 +1,8 @@
 /**
- * /* eslint-disable no-useless-escape
- *
  * @format
  */
 
+/* eslint-disable no-useless-escape */
 // for lines 29 - 32
 
 import { ICustomMite } from '../../../interfaces/ICustomMite'

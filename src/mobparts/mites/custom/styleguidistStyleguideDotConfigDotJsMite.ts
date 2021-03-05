@@ -1,9 +1,8 @@
 /**
- * /* eslint-disable no-template-curly-in-string
- *
  * @format
  */
 
+/* eslint-disable no-template-curly-in-string */
 // for line 26
 
 import { ICustomMite } from '../../../interfaces/ICustomMite'
