@@ -6,8 +6,12 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "commonjs",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
     "noEmit": true,
@@ -16,6 +20,11 @@
     "strict": true,
     "target": "ESNext"
   },
-  "include": ["public", "src/**/*"],
-  "exclude": ["src/scripts"]
+  "include": [
+    "public",
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/scripts"
+  ]
 }

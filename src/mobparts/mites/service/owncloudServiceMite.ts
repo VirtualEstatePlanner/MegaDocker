@@ -15,7 +15,7 @@ export const owncloudServiceMite: ITraefikedServiceMite = {
   miteIndex: 30021,
   webInterfaceHostnames: hostnames,
   miteString: `
- #Begin Owncloud Service Sections
+# Begin Owncloud Service Sections
 
  owncloud:
   image: owncloud:latest
@@ -89,7 +89,7 @@ owncloud-redis:
    restart_policy:
     condition: on-failure
 
-#End Owncloud Service Section
+# End Owncloud Service Section
 
 `,
 }
