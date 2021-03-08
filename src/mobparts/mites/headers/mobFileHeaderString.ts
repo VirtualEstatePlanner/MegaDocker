@@ -2,7 +2,7 @@
 
 export const mobFileHeaderString: string = `
 # MegaDocker YML File
-version: '3.7'
+version: '3.9'
 
 # Created by MegaDocker
 # Mob is named: [[MOBNAME]]
