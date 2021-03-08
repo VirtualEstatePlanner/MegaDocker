@@ -1,10 +1,11 @@
 /** @format */
 
-import { IMite } from '../../../interfaces/IMite'
+import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
-export const styleguidistServiceMite: IMite = {
+export const styleguidistServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30026,
+  webInterfaceHostnames: [`style`],
   miteString: `
 
 # Begin Styleguidist Service Section

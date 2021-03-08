@@ -6,11 +6,12 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite'
+import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
-export const wordpressServiceMite: IMite = {
+export const wordpressServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30034,
+  webInterfaceHostnames: [`wordpress`],
   miteString: `
 
 # Begin WordPress Service Section

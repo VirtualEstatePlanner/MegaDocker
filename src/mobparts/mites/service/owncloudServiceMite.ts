@@ -6,11 +6,12 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite'
+import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
-export const owncloudServiceMite: IMite = {
+export const owncloudServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30021,
+  webInterfaceHostnames: [`owncloud`],
   miteString: `
  #Begin Owncloud Service Sections
 

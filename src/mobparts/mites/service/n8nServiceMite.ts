@@ -6,11 +6,12 @@
 //  Created by George Georgulas IV on 11/3/2020.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite'
+import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
-export const n8nServiceMite: IMite = {
+export const n8nServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30017,
+  webInterfaceHostnames: [`n8n`],
   miteString: `
 
 # Begin n8n Service Section

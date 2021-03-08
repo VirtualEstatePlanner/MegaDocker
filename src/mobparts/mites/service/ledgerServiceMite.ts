@@ -6,11 +6,12 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite'
+import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
-export const ledgerServiceMite: IMite = {
+export const ledgerServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30012,
+  webInterfaceHostnames: [`ledger`],
   miteString: `
 
 # Begin Ledger Section

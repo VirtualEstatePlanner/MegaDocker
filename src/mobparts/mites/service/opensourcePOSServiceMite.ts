@@ -6,11 +6,12 @@
 //  Created by George Georgulas IV on 3/5/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite'
+import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
-export const opensourcePOSServiceMite: IMite = {
+export const opensourcePOSServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30020,
+  webInterfaceHostnames: [`opensourcepos`],
   miteString: `
 
 # Begin opensourcePOS Service Section

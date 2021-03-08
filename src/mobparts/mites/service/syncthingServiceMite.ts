@@ -6,11 +6,12 @@
 //  Created by George Georgulas IV on 3/03/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { IMite } from '../../../interfaces/IMite'
+import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
-export const syncthingServiceMite: IMite = {
+export const syncthingServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30028,
+  webInterfaceHostnames: [`syncthing`],
   miteString: `
 
   # Begin Syncthing Service Section

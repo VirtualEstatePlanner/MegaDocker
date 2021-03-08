@@ -1,10 +1,11 @@
 /** @format */
 
-import { IMite } from '../../../interfaces/IMite'
+import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
-export const swarmpitServiceMite: IMite = {
+export const swarmpitServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30027,
+  webInterfaceHostnames: [`swarmpit`],
   miteString: `
 
 #Begin Swarmpit Service Section
