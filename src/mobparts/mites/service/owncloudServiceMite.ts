@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`owncloud`]
+
 export const owncloudServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30021,
-  webInterfaceHostnames: [`owncloud`],
+  webInterfaceHostnames: hostnames,
   miteString: `
  #Begin Owncloud Service Sections
 
@@ -31,12 +33,12 @@ export const owncloudServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.owncloud.entrypoints=plainhttp'
     - 'traefik.http.services.owncloud.loadbalancer.server.port=80'
-    - 'traefik.http.routers.owncloud.rule=Host("owncloud.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.owncloud.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.owncloud-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.owncloud.middlewares=owncloud-force-secure'
     - 'traefik.http.routers.owncloud.service=owncloud'
     - 'traefik.http.routers.owncloud-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.owncloud-https.rule=Host("owncloud.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.owncloud-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.owncloud-https.service=owncloud'
     - 'traefik.http.routers.owncloud-https.tls=true'
     - 'traefik.http.services.owncloud-https.loadbalancer.server.port=80'

@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`drupal`]
+
 export const drupalServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30002,
-  webInterfaceHostnames: [`drupal`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 #Begin Drupal Service Section
@@ -42,12 +44,12 @@ export const drupalServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.drupal.entrypoints=plainhttp'
     - 'traefik.http.services.drupal.loadbalancer.server.port=80'
-    - 'traefik.http.routers.drupal.rule=Host("drupal.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.drupal.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.drupal-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.drupal.middlewares=drupal-force-secure'
     - 'traefik.http.routers.drupal.service=drupal'
     - 'traefik.http.routers.drupal-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.drupal-https.rule=Host("drupal.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.drupal-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.drupal-https.service=drupal'
     - 'traefik.http.routers.drupal-https.tls=true'
     - 'traefik.http.services.drupal-https.loadbalancer.server.port=80'

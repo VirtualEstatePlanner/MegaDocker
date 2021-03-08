@@ -2,10 +2,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`style`]
+
 export const styleguidistServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30026,
-  webInterfaceHostnames: [`style`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin Styleguidist Service Section
@@ -32,12 +34,12 @@ export const styleguidistServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.styleguidist.entrypoints=plainhttp'
     - 'traefik.http.services.styleguidist.loadbalancer.server.port=6060'
-    - 'traefik.http.routers.styleguidist.rule=Host("style.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.styleguidist.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.styleguidist-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.styleguidist.middlewares=styleguidist-force-secure'
     - 'traefik.http.routers.styleguidist.service=styleguidist'
     - 'traefik.http.routers.styleguidist-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.styleguidist-https.rule=Host("style.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.styleguidist-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.styleguidist-https.service=styleguidist'
     - 'traefik.http.routers.styleguidist-https.tls=true'
     - 'traefik.http.services.styleguidist-https.loadbalancer.server.port=6060'

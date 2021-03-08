@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`wordpress`]
+
 export const wordpressServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30034,
-  webInterfaceHostnames: [`wordpress`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin WordPress Service Section
@@ -37,12 +39,12 @@ export const wordpressServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.wordpress.entrypoints=plainhttp'
     - 'traefik.http.services.wordpress.loadbalancer.server.port=80'
-    - 'traefik.http.routers.wordpress.rule=Host("wordpress.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.wordpress.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.wordpress-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.wordpress.middlewares=wordpress-force-secure'
     - 'traefik.http.routers.wordpress.service=wordpress'
     - 'traefik.http.routers.wordpress-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.wordpress-https.rule=Host("wordpress.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.wordpress-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.wordpress-https.service=wordpress'
     - 'traefik.http.routers.wordpress-https.tls=true'
     - 'traefik.http.services.wordpress-https.loadbalancer.server.port=80'

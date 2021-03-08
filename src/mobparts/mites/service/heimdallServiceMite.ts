@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`portal`]
+
 export const heimdallServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30009,
-  webInterfaceHostnames: [`portal`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
   #Begin Portal Service Section
@@ -39,12 +41,12 @@ export const heimdallServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.heimdall.entrypoints=plainhttp'
     - 'traefik.http.services.heimdall.loadbalancer.server.port=80'
-    - 'traefik.http.routers.heimdall.rule=Host("heimdall.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.heimdall.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.heimdall-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.heimdall.middlewares=heimdall-force-secure'
     - 'traefik.http.routers.heimdall.service=heimdall'
     - 'traefik.http.routers.heimdall-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.heimdall-https.rule=Host("heimdall.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.heimdall-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.heimdall-https.service=heimdall'
     - 'traefik.http.routers.heimdall-https.tls=true'
     - 'traefik.http.services.heimdall-https.loadbalancer.server.port=80'

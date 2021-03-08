@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`tv`]
+
 export const tvServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30030,
-  webInterfaceHostnames: [`tv`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin TV Service Section
@@ -34,12 +36,12 @@ export const tvServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.tv.entrypoints=plainhttp'
      - 'traefik.http.services.tv.loadbalancer.server.port=8989'
-    - 'traefik.http.routers.tv.rule=Host("tv.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.tv.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.tv-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.tv.middlewares=tv-force-secure'
     - 'traefik.http.routers.tv.service=tv'
     - 'traefik.http.routers.tv-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.tv-https.rule=Host("tv.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.tv-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.tv-https.service=tv'
     - 'traefik.http.routers.tv-https.tls=true'
     - 'traefik.http.services.tv-https.loadbalancer.server.port=8989'

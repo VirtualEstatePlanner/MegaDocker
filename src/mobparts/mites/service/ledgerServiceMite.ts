@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`ledger`]
+
 export const ledgerServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30012,
-  webInterfaceHostnames: [`ledger`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin Ledger Section
@@ -31,12 +33,12 @@ export const ledgerServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.ledger.entrypoints=plainhttp'
     - 'traefik.http.services.ledger.loadbalancer.server.port=5762'
-    - 'traefik.http.routers.ledger.rule=Host("ledger.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.ledger.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.ledger-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.ledger.middlewares=ledger-force-secure'
     - 'traefik.http.routers.ledger.service=ledger'
     - 'traefik.http.routers.ledger-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.ledger-https.rule=Host("ledger.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.ledger-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.ledger-https.service=ledger'
     - 'traefik.http.routers.ledger-https.tls=true'
     - 'traefik.http.services.ledger-https.loadbalancer.server.port=5762'

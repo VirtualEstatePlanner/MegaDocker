@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`pihole`]
+
 export const piholeServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30022,
-  webInterfaceHostnames: [`pihole`],
+  webInterfaceHostnames: hostnames,
   miteString: `
   
 # Begin pihole service section
@@ -43,12 +45,12 @@ export const piholeServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.pihole.entrypoints=plainhttp'
     - 'traefik.http.services.pihole.loadbalancer.server.port=80'
-    - 'traefik.http.routers.pihole.rule=Host("pihole.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.pihole.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.pihole-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.pihole.middlewares=pihole-force-secure'
     - 'traefik.http.routers.pihole.service=pihole'
     - 'traefik.http.routers.pihole-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.pihole-https.rule=Host("pihole.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.pihole-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.pihole-https.service=pihole'
     - 'traefik.http.routers.pihole-https.tls=true'
     - 'traefik.http.services.pihole-https.loadbalancer.server.port=80'

@@ -7,11 +7,14 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
+import { ldapServiceMite } from './ldapServiceMite'
+
+const hostnames: string[] = [`gitlab`, `dockerhub`]
 
 export const gitlabServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30007,
-  webInterfaceHostnames: [`gitlab`, `dockerhub`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin GitLab Service Section
@@ -31,16 +34,16 @@ export const gitlabServiceMite: ITraefikedServiceMite = {
    - GITLAB_TIMEZONE=New York
    - GITLAB_HTTPS=true
    - SSL_SELF_SIGNED=false
-   - GITLAB_HOST=gitlab.[[PRIMARYDOMAIN]]
+   - GITLAB_HOST=${hostnames[0]}.[[PRIMARYDOMAIN]]
    - GITLAB_REGISTRY_ENABLED=true
-   - GITLAB_REGISTRY_HOST=dockerhub.[[PRIMARYDOMAIN]]
-   - GITLAB_REGISTRY_API_URL=http://dockerhub.[[PRIMARYDOMAIN]]:5000
+   - GITLAB_REGISTRY_HOST=${hostnames[1]}.[[PRIMARYDOMAIN]]
+   - GITLAB_REGISTRY_API_URL=http://${hostnames[1]}.[[PRIMARYDOMAIN]]:5000
    - GITLAB_ROOT_PASSWORD=[[GITLABROOTPASSWORD]]
    - GITLAB_ROOT_EMAIL=[[GITLABROOTEMAIL]]
    - GITLAB_SSH_PORT=22
-   - EXTERNAL_URL=http://gitlab.[[PRIMARYDOMAIN]]
+   - EXTERNAL_URL=http://${hostnames[0]}.[[PRIMARYDOMAIN]]
    - LDAP_ENABLED=true
-   - LDAP_HOST=[[MOBNAME]]_ldap.[[PRIMARYDOMAIN]]
+   - LDAP_HOST=[[MOBNAME]]_${ldapServiceMite.webInterfaceHostnames[2]}.[[PRIMARYDOMAIN]]
    - LDAP_PORT=636
    - LDAP_UID=email
    - LDAP_METHOD=start_tls
@@ -48,12 +51,12 @@ export const gitlabServiceMite: ITraefikedServiceMite = {
    - LDAP_CA_FILE=/ldapcerts/[[PRIMARYDOMAIN]].crt
    - LDAP_SSL_VERSION=TLSv1_2
 #   - LDAP_BIND_DN=dc=ldap,[[LDAPDOMAINASDCS]]
-   - LDAP_BIND_DN=dc=megadocker,dc=net
+   - LDAP_BIND_DN=[[LDAPDOMAINASDCS]]
    - LDAP_PASS=[[LDAPADMINPASSWORD]]
    - LDAP_ACTIVE_DIRECTORY=false
    - LDAP_ALLOW_USERNAME_OR_EMAIL_LOGIN=true
-#   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,dc=ldap,[[LDAPDOMAINASDCS]]
-   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,dc=megadocker,dc=net
+#   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,dc=${ldapServiceMite.webInterfaceHostnames[2]},[[LDAPDOMAINASDCS]]
+   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
 #   - LDAP_USER_FILTER=
   volumes:
    - ./logs/gitlab:/var/log/gitlab
@@ -73,12 +76,12 @@ export const gitlabServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.gitlab.entrypoints=plainhttp'
     - 'traefik.http.services.gitlab.loadbalancer.server.port=80'
-    - 'traefik.http.routers.gitlab.rule=Host("gitlab.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.gitlab.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.gitlab-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.gitlab.middlewares=gitlab-force-secure'
     - 'traefik.http.routers.gitlab.service=gitlab'
     - 'traefik.http.routers.gitlab-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.gitlab-https.rule=Host("gitlab.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.gitlab-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.gitlab-https.service=gitlab'
     - 'traefik.http.routers.gitlab-https.tls=true'
     - 'traefik.http.services.gitlab-https.loadbalancer.server.port=80'

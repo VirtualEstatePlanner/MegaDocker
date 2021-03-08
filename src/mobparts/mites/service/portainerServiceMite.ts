@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`portainer`]
+
 export const portainerServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30024,
-  webInterfaceHostnames: [`portainer`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 #Begin Portainer Service Section
@@ -32,12 +34,12 @@ export const portainerServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.portainer.entrypoints=plainhttp'
     - 'traefik.http.services.portainer.loadbalancer.server.port=9000'
-    - 'traefik.http.routers.portainer.rule=Host("portainer.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.portainer.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.portainer-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.portainer.middlewares=portainer-force-secure'
     - 'traefik.http.routers.portainer.service=portainer'
     - 'traefik.http.routers.portainer-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.portainer-https.rule=Host("portainer.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.portainer-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.portainer-https.service=portainer'
     - 'traefik.http.routers.portainer-https.tls=true'
     - 'traefik.http.services.portainer-https.loadbalancer.server.port=9000'

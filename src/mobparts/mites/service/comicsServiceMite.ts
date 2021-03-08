@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`comics`]
+
 export const comicsServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30001,
-  webInterfaceHostnames: [`comics`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin Comics Service Section
@@ -34,12 +36,12 @@ export const comicsServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.comics.entrypoints=plainhttp'
     - 'traefik.http.services.comics.loadbalancer.server.port=8090'
-    - 'traefik.http.routers.comics.rule=Host("comics.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.comics.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.comics-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.comics.middlewares=comics-force-secure'
     - 'traefik.http.routers.comics.service=comics'
     - 'traefik.http.routers.comics-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.comics-https.rule=Host("comics.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.comics-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.comics-https.service=comics'
     - 'traefik.http.routers.comics-https.tls=true'
     - 'traefik.http.services.comics-https.loadbalancer.server.port=8090'

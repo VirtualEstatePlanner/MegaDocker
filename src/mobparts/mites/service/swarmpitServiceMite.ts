@@ -2,10 +2,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`swarmpit`]
+
 export const swarmpitServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30027,
-  webInterfaceHostnames: [`swarmpit`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 #Begin Swarmpit Service Section
@@ -28,12 +30,12 @@ export const swarmpitServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.swarmpit.entrypoints=plainhttp'
     - 'traefik.http.services.swarmpit.loadbalancer.server.port=8080'
-    - 'traefik.http.routers.swarmpit.rule=Host("swarmpit.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.swarmpit.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.swarmpit-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.swarmpit.middlewares=swarmpit-force-secure'
     - 'traefik.http.routers.swarmpit.service=swarmpit'
     - 'traefik.http.routers.swarmpit-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.swarmpit-https.rule=Host("swarmpit.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.swarmpit-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.swarmpit-https.service=swarmpit'
     - 'traefik.http.routers.swarmpit-https.tls=true'
     - 'traefik.http.services.swarmpit-https.loadbalancer.server.port=8080'

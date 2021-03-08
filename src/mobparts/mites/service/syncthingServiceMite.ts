@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`syncthing`]
+
 export const syncthingServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30028,
-  webInterfaceHostnames: [`syncthing`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
   # Begin Syncthing Service Section
@@ -32,12 +34,12 @@ export const syncthingServiceMite: ITraefikedServiceMite = {
      - 'traefik.enable=true'
      - 'traefik.http.routers.syncthing.entrypoints=plainhttp'
      - 'traefik.http.services.syncthing.loadbalancer.server.port=8384'
-     - 'traefik.http.routers.syncthing.rule=Host("syncthing.[[PRIMARYDOMAIN]]")'
+     - 'traefik.http.routers.syncthing.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
      - 'traefik.http.middlewares.syncthing-force-secure.redirectscheme.scheme=https'
      - 'traefik.http.routers.syncthing.middlewares=syncthing-force-secure'
      - 'traefik.http.routers.syncthing.service=syncthing'
      - 'traefik.http.routers.syncthing-https.entrypoints=encryptedhttp'
-     - 'traefik.http.routers.syncthing-https.rule=Host("syncthing.[[PRIMARYDOMAIN]]")'
+     - 'traefik.http.routers.syncthing-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
      - 'traefik.http.routers.syncthing-https.service=syncthing'
      - 'traefik.http.routers.syncthing-https.tls=true'
      - 'traefik.http.services.syncthing-https.loadbalancer.server.port=8384'

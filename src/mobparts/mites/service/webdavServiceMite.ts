@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`webdav`]
+
 export const webdavServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30033,
-  webInterfaceHostnames: [`webdav`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin WebDAV Service Section
@@ -34,12 +36,12 @@ export const webdavServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.webdav.entrypoints=plainhttp'
     - 'traefik.http.services.webdav.loadbalancer.server.port=0'
-    - 'traefik.http.routers.webdav.rule=Host("webdav.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.webdav.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.webdav-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.webdav.middlewares=webdav-force-secure'
     - 'traefik.http.routers.webdav.service=webdav'
     - 'traefik.http.routers.webdav-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.webdav-https.rule=Host("webdav.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.webdav-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.webdav-https.service=webdav'
     - 'traefik.http.routers.webdav-https.tls=true'
     - 'traefik.http.services.webdav-https.loadbalancer.server.port=80'

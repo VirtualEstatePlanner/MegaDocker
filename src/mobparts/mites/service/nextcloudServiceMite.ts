@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`nextcloud`]
+
 export const nextcloudServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30018,
-  webInterfaceHostnames: [`nextcloud`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin NextCloud Service Sections
@@ -38,12 +40,12 @@ nextcloud:
     - 'traefik.enable=true'
     - 'traefik.http.routers.nextcloud.entrypoints=plainhttp'
     - 'traefik.http.services.nextcloud.loadbalancer.server.port=80'
-    - 'traefik.http.routers.nextcloud.rule=Host("nextcloud.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.nextcloud.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.nextcloud-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.nextcloud.middlewares=nextcloud-force-secure'
     - 'traefik.http.routers.nextcloud.service=nextcloud'
     - 'traefik.http.routers.nextcloud-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.nextcloud-https.rule=Host("nextcloud.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.nextcloud-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.nextcloud-https.service=nextcloud'
     - 'traefik.http.routers.nextcloud-https.tls=true'
     - 'traefik.http.services.nextcloud-https.loadbalancer.server.port=443'

@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`rocketchat`]
+
 export const rocketchatServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30025,
-  webInterfaceHostnames: [`rocketchat`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin Rocketchat Service Section
@@ -51,12 +53,12 @@ export const rocketchatServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.rocketchat.entrypoints=plainhttp'
     - 'traefik.http.services.rocketchat.loadbalancer.server.port=3000'
-    - 'traefik.http.routers.rocketchat.rule=Host("rocketchat.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.rocketchat.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.rocketchat-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.rocketchat.middlewares=rocketchat-force-secure'
     - 'traefik.http.routers.rocketchat.service=rocketchat'
     - 'traefik.http.routers.rocketchat-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.rocketchat-https.rule=Host("rocketchat.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.rocketchat-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.rocketchat-https.service=rocketchat'
     - 'traefik.http.routers.rocketchat-https.tls=true'
     - 'traefik.http.services.rocketchat-https.loadbalancer.server.port=3000'

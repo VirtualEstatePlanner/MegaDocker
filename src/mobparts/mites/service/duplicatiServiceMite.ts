@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`backup`]
+
 export const duplicatiServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30003,
-  webInterfaceHostnames: [`backup`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin Backup Service Section
@@ -35,12 +37,12 @@ export const duplicatiServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.backup.entrypoints=plainhttp'
     - 'traefik.http.services.backup.loadbalancer.server.port=8200'
-    - 'traefik.http.routers.backup.rule=Host("backup.megadocker.net") || Host("backup.megadocker.info")'
+    - 'traefik.http.routers.backup.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.backup-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.backup.middlewares=backup-force-secure'
     - 'traefik.http.routers.backup.service=backup'
     - 'traefik.http.routers.backup-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.backup-https.rule=Host("backup.megadocker.net") || Host("backup.megadocker.info")'
+    - 'traefik.http.routers.backup-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.backup-https.service=backup'
     - 'traefik.http.routers.backup-https.tls=true'
     - 'traefik.http.services.backup-interface-https.loadbalancer.server.port=8200'

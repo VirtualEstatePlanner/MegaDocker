@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`opensourcepos`]
+
 export const opensourcePOSServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30020,
-  webInterfaceHostnames: [`opensourcepos`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin opensourcePOS Service Section
@@ -39,12 +41,12 @@ export const opensourcePOSServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.opensourcepos.entrypoints=plainhttp'
     - 'traefik.http.services.opensourcepos.loadbalancer.server.port=80'
-    - 'traefik.http.routers.opensourcepos.rule=Host("opensourcepos.[[PRIMARYDOMAIN]]") || Host("opensourcepos.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.opensourcepos.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.opensourcepos-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.opensourcepos.middlewares=opensourcepos-force-secure'
     - 'traefik.http.routers.opensourcepos.service=opensourcepos'
     - 'traefik.http.routers.opensourcepos-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.opensourcepos-https.rule=Host("opensourcepos.[[PRIMARYDOMAIN]]") || Host("opensourcepos.[[SECONDARYDOMAIN]]")'
+    - 'traefik.http.routers.opensourcepos-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.opensourcepos-https.service=opensourcepos'
     - 'traefik.http.routers.opensourcepos-https.tls=true'
     - 'traefik.http.services.opensourcepos-interface-https.loadbalancer.server.port=80'

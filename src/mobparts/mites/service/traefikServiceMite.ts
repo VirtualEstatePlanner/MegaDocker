@@ -11,10 +11,12 @@ import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite
 // TODO: fix traefik authorization to use ldap
 // TODO: hash password for login
 
+const hostnames: string[] = [`traefik`]
+
 export const traefikServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30029,
-  webInterfaceHostnames: [`traefik`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin Traefik Service Section
@@ -59,7 +61,7 @@ export const traefikServiceMite: ITraefikedServiceMite = {
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.traefik.entrypoints=plainhttp'
-    - 'traefik.http.routers.traefik.rule=Host("traefik.[[PRIMARYDOMAIN]]") && (PathPrefix("/api") || PathPrefix("/dashboard"))'
+    - 'traefik.http.routers.traefik.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]") && (PathPrefix("/api") || PathPrefix("/dashboard"))'
 ## TODO: create a traefik login and password with an htpassword compatible JS library, or integrate ldap auth
 ##    - 'traefik.http.middlewares.traefik-auth.basicauth.users=[[TRAEFIKUSER]]:[[TRAEFIKPASSWORD]]'
     - 'traefik.http.middlewares.traefik-auth.basicauth.users=traefikuser:$$apr1$$OG8S9BgU$$7BwcoMe3X.gpi.aRLljDd.'
@@ -67,7 +69,7 @@ export const traefikServiceMite: ITraefikedServiceMite = {
     - 'traefik.http.middlewares.traefik-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.traefik.middlewares=traefik-force-secure'
     - 'traefik.http.routers.traefik-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.traefik-https.rule=Host("traefik.[[PRIMARYDOMAIN]]") && (PathPrefix("/api") || PathPrefix("/dashboard"))'
+    - 'traefik.http.routers.traefik-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]") && (PathPrefix("/api") || PathPrefix("/dashboard"))'
     - 'traefik.http.services.traefik.loadbalancer.server.port=8080'
     - 'traefik.http.routers.traefik-https.service=api@internal'
     - 'traefik.http.routers.traefik-https.tls=true'

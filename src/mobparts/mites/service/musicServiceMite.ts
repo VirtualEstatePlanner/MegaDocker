@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`music`]
+
 export const musicServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30016,
-  webInterfaceHostnames: [`music`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin Music Service Section
@@ -34,12 +36,12 @@ export const musicServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.music.entrypoints=plainhttp'
     - 'traefik.http.services.music.loadbalancer.server.port=8686'
-    - 'traefik.http.routers.music.rule=Host("music.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.music.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.music-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.music.middlewares=music-force-secure'
     - 'traefik.http.routers.music.service=music'
     - 'traefik.http.routers.music-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.music-https.rule=Host("music.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.music-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.music-https.service=music'
     - 'traefik.http.routers.music-https.tls=true'
     - 'traefik.http.services.music-https.loadbalancer.server.port=8686'

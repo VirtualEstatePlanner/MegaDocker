@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`books`]
+
 export const booksServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30000,
-  webInterfaceHostnames: [`books`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin Books Service Section
@@ -34,12 +36,12 @@ export const booksServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.books.entrypoints=plainhttp'
     - 'traefik.http.services.books.loadbalancer.server.port=5299'
-    - 'traefik.http.routers.books.rule=Host("books.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.books.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.books-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.books.middlewares=books-force-secure'
     - 'traefik.http.routers.books.service=books'
     - 'traefik.http.routers.books-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.books-https.rule=Host("books.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.books-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.books-https.service=books'
     - 'traefik.http.routers.books-https.tls=true'
     - 'traefik.http.services.books-https.loadbalancer.server.port=5299'

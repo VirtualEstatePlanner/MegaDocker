@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`ldapadmin`, `authelia`, `ldap`]
+
 export const ldapServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30011,
-  webInterfaceHostnames: [`ldapadmin`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin LDAP Service Section
@@ -76,12 +78,12 @@ export const ldapServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.ldapadmin.entrypoints=plainhttp'
     - 'traefik.http.services.ldapadmin.loadbalancer.server.port=80'
-    - 'traefik.http.routers.ldapadmin.rule=Host("ldapadmin.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.ldapadmin.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.ldapadmin-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.ldapadmin.middlewares=ldapadmin-force-secure'
     - 'traefik.http.routers.ldapadmin.service=ldapadmin'
     - 'traefik.http.routers.ldapadmin-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.ldapadmin-https.rule=Host("ldapadmin.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.ldapadmin-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.ldapadmin-https.service=ldapadmin'
     - 'traefik.http.routers.ldapadmin-https.tls=true'
     - 'traefik.http.services.ldapadmin-https.loadbalancer.server.port=80'

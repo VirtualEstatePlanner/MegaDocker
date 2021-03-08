@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`ghost`]
+
 export const ghostServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30006,
-  webInterfaceHostnames: [`ghost`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 #Begin Ghost Service Section
@@ -36,12 +38,12 @@ export const ghostServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.ghost.entrypoints=plainhttp'
     - 'traefik.http.services.ghost.loadbalancer.server.port=2368'
-    - 'traefik.http.routers.ghost.rule=Host("ghost.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.ghost.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.ghost-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.ghost.middlewares=ghost-force-secure'
     - 'traefik.http.routers.ghost.service=ghost'
     - 'traefik.http.routers.ghost-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.ghost-https.rule=Host("ghost.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.ghost-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.ghost-https.service=ghost'
     - 'traefik.http.routers.ghost-https.tls=true'
     - 'traefik.http.services.ghost-https.loadbalancer.server.port=2368'

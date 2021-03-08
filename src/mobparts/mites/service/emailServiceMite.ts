@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`webmail`, `mail`]
+
 export const emailServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30005,
-  webInterfaceHostnames: [`webmail`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin MailServer section
@@ -38,8 +40,8 @@ export const emailServiceMite: ITraefikedServiceMite = {
    - ENABLE_POSTGREY=0
    - ONE_DIR=1
    - DOMAIN=[[PRIMARYDOMAIN]]
-   - OVERRIDE_HOSTNAME=mail.[[PRIMARYDOMAIN]]
-   - OVERRIDE_DOMAINNAME=mail.[[PRIMARYDOMAIN]]
+   - OVERRIDE_HOSTNAME=${hostnames[1]}.[[PRIMARYDOMAIN]]
+   - OVERRIDE_DOMAINNAME=${hostnames[1]}.[[PRIMARYDOMAIN]]
    - POSTMASTER_ADDRESS=postmaster@[[PRIMARYDOMAIN]]
    - PERMIT_DOCKER=network
    - SSL_TYPE=manual
@@ -67,12 +69,12 @@ export const emailServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.rainloop.entrypoints=plainhttp'
     - 'traefik.http.services.rainloop.loadbalancer.server.port=80'
-    - 'traefik.http.routers.rainloop.rule=Host("webmail.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.rainloop.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.rainloop-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.rainloop.middlewares=rainloop-force-secure'
     - 'traefik.http.routers.rainloop.service=rainloop'
     - 'traefik.http.routers.rainloop-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.rainloop-https.rule=Host("webmail.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.rainloop-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.rainloop-https.service=rainloop'
     - 'traefik.http.routers.rainloop-https.tls=true'
     - 'traefik.http.services.rainloop-https.loadbalancer.server.port=80'

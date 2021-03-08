@@ -8,10 +8,12 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
+const hostnames: string[] = [`vscode`]
+
 export const vsCodeServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
   miteIndex: 30032,
-  webInterfaceHostnames: [`vscode`],
+  webInterfaceHostnames: hostnames,
   miteString: `
 
 # Begin VS Code Service Section
@@ -32,12 +34,12 @@ export const vsCodeServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.vscode.entrypoints=plainhttp'
     - 'traefik.http.services.vscode.loadbalancer.server.port=6080'
-    - 'traefik.http.routers.vscode.rule=Host("vscode.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.vscode.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.vscode-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.vscode.middlewares=vscode-force-secure'
     - 'traefik.http.routers.vscode.service=vscode'
     - 'traefik.http.routers.vscode-https.entrypoints=encryptedhttp'
-    - 'traefik.http.routers.vscode-https.rule=Host("vscode.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.vscode-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.routers.vscode-https.service=vscode'
     - 'traefik.http.routers.vscode-https.tls=true'
     - 'traefik.http.services.vscode-https.loadbalancer.server.port=6080'
