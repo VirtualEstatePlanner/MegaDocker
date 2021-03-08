@@ -170,6 +170,7 @@ docker stack deploy -c ${zipManikins[traefikIndex].memories[mobNameIndex].value}
 `,
         { unixPermissions: `755` }
       )
+      // makes stopstack.sh script
       zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!.file(
         `stopstack.sh`,
         `#!/bin/sh
@@ -177,6 +178,48 @@ docker stack deploy -c ${zipManikins[traefikIndex].memories[mobNameIndex].value}
         `,
         { unixPermissions: `755` }
       )
+      /*
+      // makes setupdns.sh script
+      zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!.file(
+        `setupdns.sh`,
+        `#!/bin/sh
+
+## begin pseudocode
+  ## before shell script
+            # check if dynamicDNS manikin is selected (dynamicdns check)
+              # this requires:
+                # create dynamicDNS manikin
+            # if dynamicdns check, call typescript function to generate updatedynamicdns.sh script in zip
+              # this requires:
+                # write function
+            # get value from primaryDomain Memory for use as "zoneid" in script
+            # get all selected Manikins' hostnames for DNS
+              # this requires:
+                # changing the Manikin interface to include a property "host: string"
+                # updating all Manikins with property "host: string"
+                # updating newManikin script to include "host: string"
+                # changing the serviceMite strings traefik labels to use "manikin.host"
+  ## during shell script
+            # curl check to get "zoneid" by domain name (zoneexistence check)
+              # if !zoneexistence check, error
+              # curl check for host "megadockerswarm" in zone "zoneid"
+                # check response for type A
+                # curl add type A record for megadockerswarm if selected and doesn't exist
+              # for loop through selected Manikins
+                # curl check if record already exists (hostexists check)
+                # if hostexists
+                  # check response for type CNAME (hosttype check)
+                    # if hosttype is not CNAME, error
+                    # if hosttype is CNAME, update CNAME to point to megadockerswarm
+                # if !hostexists
+                  # curl add CNAME records pointing to megadockerswarm
+
+## end pseudocode
+
+        `,
+        { unixPermissions: `755` }
+      )
+      */
     })
   }
 
