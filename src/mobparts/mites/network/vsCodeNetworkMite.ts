@@ -13,12 +13,12 @@ export const vsCodeNetworkMite: IMite = {
   miteIndex: 40030,
   miteString: `
 
-# Begin VS Code Network Section
+# Begin VSCode Network Section
  
  vscode:
   driver: overlay
   
-# End VS Code Network Section
+# End VSCode Network Section
   
   `,
 }

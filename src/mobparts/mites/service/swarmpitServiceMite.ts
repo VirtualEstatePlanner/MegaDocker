@@ -10,7 +10,7 @@ export const swarmpitServiceMite: ITraefikedServiceMite = {
   webInterfaceHostnames: hostnames,
   miteString: `
 
-#Begin Swarmpit Service Section
+# Begin Swarmpit Service Section
 
  swarmpit-app:
   image: swarmpit/swarmpit
@@ -113,7 +113,7 @@ export const swarmpitServiceMite: ITraefikedServiceMite = {
      cpus: '0.05'
      memory: 32M
 
-#End Swarmpit Service Section
+# End Swarmpit Service Section
 
 `,
 }

@@ -13,12 +13,12 @@ export const heimdallNetworkMite: IMite = {
   miteIndex: 40009,
   miteString: `
 
-#Begin Heimdall Network Section
+# Begin Heimdall Network Section
 
  heimdall:
   driver: overlay
 
-#End Heimdall Network Section
+# End Heimdall Network Section
 
 `,
 }

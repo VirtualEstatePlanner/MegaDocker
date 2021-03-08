@@ -16,7 +16,7 @@ export const visualizerServiceMite: ITraefikedServiceMite = {
   webInterfaceHostnames: hostnames,
   miteString: `
 
-#Begin Visualizer Service Section
+# Begin Visualizer Service Section
 
  visualizer:
   image: dockersamples/visualizer
@@ -46,7 +46,7 @@ export const visualizerServiceMite: ITraefikedServiceMite = {
      - node.role == manager
 
 
-#End Visualizer Service Section
+# End Visualizer Service Section
 
 `,
 }

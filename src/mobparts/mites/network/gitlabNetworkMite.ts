@@ -13,12 +13,12 @@ export const gitlabNetworkMite: IMite = {
   miteIndex: 40007,
   miteString: `
 
-#Begin GitLab Network Section
+# Begin GitLab Network Section
 
  gitlab:
   driver: overlay
 
-#End GitLab Network Section
+# End GitLab Network Section
 
 `,
 }

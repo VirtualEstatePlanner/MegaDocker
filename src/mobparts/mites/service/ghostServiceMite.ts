@@ -16,7 +16,7 @@ export const ghostServiceMite: ITraefikedServiceMite = {
   webInterfaceHostnames: hostnames,
   miteString: `
 
-#Begin Ghost Service Section
+# Begin Ghost Service Section
 
  ghost:
   image: ghost
@@ -62,7 +62,7 @@ export const ghostServiceMite: ITraefikedServiceMite = {
    restart_policy:
     condition: on-failure
 
-#End Ghost Service Section
+# End Ghost Service Section
 
 `,
 }

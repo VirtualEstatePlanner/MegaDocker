@@ -13,12 +13,12 @@ export const ledgerNetworkMite: IMite = {
   miteIndex: 40012,
   miteString: `
 
-#Begin Ledger Network Section
+# Begin Ledger Network Section
 
  ledger:
   driver: overlay
 
-#End Ledger Network Section
+# End Ledger Network Section
 
 `,
 }

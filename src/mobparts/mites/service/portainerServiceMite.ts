@@ -16,7 +16,7 @@ export const portainerServiceMite: ITraefikedServiceMite = {
   webInterfaceHostnames: hostnames,
   miteString: `
 
-#Begin Portainer Service Section
+# Begin Portainer Service Section
 
  portainer:
   image: portainer/portainer
@@ -49,7 +49,7 @@ export const portainerServiceMite: ITraefikedServiceMite = {
      - node.role == manager
 
 
-#End Portainer Service Section
+# End Portainer Service Section
 
 `,
 }

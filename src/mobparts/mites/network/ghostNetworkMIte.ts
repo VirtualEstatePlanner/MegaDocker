@@ -13,12 +13,12 @@ export const ghostNetworkMite: IMite = {
   miteIndex: 40006,
   miteString: `
 
-#Begin Ghost Network Section
+# Begin Ghost Network Section
 
  ghost:
   driver: overlay
 
-#End Ghost Network Section
+# End Ghost Network Section
 
 `,
 }

@@ -16,7 +16,7 @@ export const heimdallServiceMite: ITraefikedServiceMite = {
   webInterfaceHostnames: hostnames,
   miteString: `
 
-  #Begin Portal Service Section
+# Begin Portal Service Section
 
  heimdall:
   image: linuxserver/heimdall
@@ -52,7 +52,7 @@ export const heimdallServiceMite: ITraefikedServiceMite = {
     - 'traefik.http.services.heimdall-https.loadbalancer.server.port=80'
     - 'com.MegaDocker.description=Heimdall - a portal for your MegaDocker interface pages'
   
-  #End Portal Service Section
+  # End Portal Service Section
   
   `,
 }

@@ -13,12 +13,12 @@ export const drupalNetworkMite: IMite = {
   miteIndex: 40003,
   miteString: `
 
-#Begin Drupal Network Section
+# Begin Drupal Network Section
  
  drupal:
   driver: overlay
   
-#End Drupal Network Section
+# End Drupal Network Section
   
   `,
 }

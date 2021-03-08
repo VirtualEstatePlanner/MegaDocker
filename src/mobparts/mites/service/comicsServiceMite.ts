@@ -48,7 +48,6 @@ export const comicsServiceMite: ITraefikedServiceMite = {
     - 'com.MegaDocker.description=Mylar - a comics search tool'
 
 # End Comics Service Section
- 
 
 `,
 }

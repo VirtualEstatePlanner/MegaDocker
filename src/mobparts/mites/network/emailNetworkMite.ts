@@ -13,12 +13,12 @@ export const emailNetworkMite: IMite = {
   miteIndex: 40005,
   miteString: `
 
-#Begin ELK Network Section
+# Begin email Network Section
 
  email:
   driver: overlay
 
-#End ELK Network Section
+# End email Network Section
 
 `,
 }

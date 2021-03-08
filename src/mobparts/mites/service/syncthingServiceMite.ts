@@ -16,7 +16,7 @@ export const syncthingServiceMite: ITraefikedServiceMite = {
   webInterfaceHostnames: hostnames,
   miteString: `
 
-  # Begin Syncthing Service Section
+# Begin Syncthing Service Section
 
   syncthing:
    image: syncthing/syncthing:latest
@@ -45,7 +45,7 @@ export const syncthingServiceMite: ITraefikedServiceMite = {
      - 'traefik.http.services.syncthing-https.loadbalancer.server.port=8384'
      - 'com.MegaDocker.description=syncthing - syncthing filesharing for video files'
  
- # End Syncthing Service Section
+# End Syncthing Service Section
  
 
 `,

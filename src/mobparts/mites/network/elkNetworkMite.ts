@@ -13,12 +13,12 @@ export const elkNetworkMite: IMite = {
   miteIndex: 40004,
   miteString: `
 
-#Begin ELK Network Section
+# Begin ELK Network Section
 
  elk:
   driver: overlay
 
-#End ELK Network Section
+# End ELK Network Section
 
 `,
 }

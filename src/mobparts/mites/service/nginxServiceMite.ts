@@ -16,7 +16,7 @@ export const nginxServiceMite: ITraefikedServiceMite = {
   webInterfaceHostnames: hostnames,
   miteString: `
 
-#Begin Nginx Service Sections
+# Begin Nginx Service Sections
 
  nginx:
   image: nginx:alpine
@@ -47,7 +47,7 @@ export const nginxServiceMite: ITraefikedServiceMite = {
     - 'traefik.http.services.nginx-https.loadbalancer.server.port=80'
     - 'com.MegaDocker.description=nginx - Nginx web server'
 
-#End Nginx Service Section
+# End Nginx Service Section
 
 `,
 }

@@ -7,12 +7,12 @@ export const webdavNetworkMite: IMite = {
   miteIndex: 40031,
   miteString: `
 
-# Begin Webdav Network Section
+# Begin WebDAV Network Section
 
  webdav:
   driver: overlay
 
-# End Webdav Network Section
+# End WebDAV Network Section
 
 `,
 }

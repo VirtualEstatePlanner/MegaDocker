@@ -13,12 +13,12 @@ export const ldapNetworkMite: IMite = {
   miteIndex: 40011,
   miteString: `
 
-#Begin LDAP Network Section
+# Begin LDAP Network Section
 
  ldap:
   driver: overlay
 
-#End LDAP Network Section
+# End LDAP Network Section
 
 `,
 }

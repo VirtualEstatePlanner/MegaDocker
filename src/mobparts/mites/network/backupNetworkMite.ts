@@ -13,12 +13,12 @@ export const backupNetworkMite: IMite = {
   miteIndex: 40000,
   miteString: `
 
-#Begin Backup Network Section
+# Begin Backup Network Section
 
  backup:
   driver: overlay
 
-#End Backup Network Section
+# End Backup Network Section
 
 `,
 }

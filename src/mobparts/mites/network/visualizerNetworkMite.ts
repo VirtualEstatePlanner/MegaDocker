@@ -12,7 +12,7 @@ export const visualizerNetworkMite: IMite = {
  visualizer:
   driver: overlay
 
-# End Webdav Network Section
+# End Visualizer Network Section
 
 `,
 }

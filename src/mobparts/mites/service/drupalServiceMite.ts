@@ -16,7 +16,7 @@ export const drupalServiceMite: ITraefikedServiceMite = {
   webInterfaceHostnames: hostnames,
   miteString: `
 
-#Begin Drupal Service Section
+# Begin Drupal Service Section
 
  drupal:
   image: drupal
@@ -77,7 +77,7 @@ export const drupalServiceMite: ITraefikedServiceMite = {
    restart_policy:
     condition: on-failure
 
-#End Drupal Service Section
+# End Drupal Service Section
 
 `,
 }
