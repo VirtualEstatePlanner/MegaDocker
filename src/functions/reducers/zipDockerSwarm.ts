@@ -15,6 +15,8 @@ import { traefikManikin } from '../../mobparts/manikins/traefik'
 import { mobName } from '../../mobparts/memories/mobName'
 import { ldapBootstrapMegaDockerDotLdifMite } from '../../mobparts/mites/custom/ldapBootstrapMegaDockerDotLdifMite'
 import { primaryDomain } from '../../mobparts/memories/primaryDomain'
+import { ITraefikedServiceMite } from '../../interfaces/ITraefikedServiceMite'
+import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
 
 /**
  * makes .zip file for docker-compose
@@ -22,12 +24,14 @@ import { primaryDomain } from '../../mobparts/memories/primaryDomain'
 export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
   let zip: JSZip = JSZip()
 
-  let zipMemories: IMemory[] = [...zipCompose.memories]
   let zipManikins: IManikin[] = [...zipCompose.manikins]
+  let zipMemories: IMemory[] = [...zipCompose.memories]
 
   const traefikIndex: number = zipManikins.indexOf(traefikManikin)
   const mobNameIndex: number = zipManikins[traefikIndex].memories.indexOf(mobName)
   const domainIndex: number = zipManikins[traefikIndex].memories.indexOf(primaryDomain)
+  const cloudflareAPITokenIndex: number = zipManikins[traefikIndex].memories.indexOf(cloudflareAPIToken)
+  const cloudflareAPITokenValue: string = zipManikins[traefikIndex].memories[cloudflareAPITokenIndex].value.toString().split(',').join('" "')
 
   const rawMites: IMite[] = zipManikins.flatMap((eachManikin: IManikin) => eachManikin.mites.map((eachMite: IMite) => eachMite))
 
@@ -45,6 +49,15 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
       return 0
     })
     .map((eachMite: IMite) => eachMite.miteString)
+
+  const traefikMites: ITraefikedServiceMite[] = mites.filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`) as ITraefikedServiceMite[]
+
+  const cloudflareHosts: string = traefikMites
+    .map((eachTraefikedMite: ITraefikedServiceMite) => eachTraefikedMite.webInterfaceHostnames)
+    .flat()
+    .join()
+    .split(',')
+    .join('" "')
 
   const networkMites: string[] = mites
     .filter((eachMite: IMite) => eachMite.type === `DockerSwarmNetwork`)
@@ -171,6 +184,7 @@ docker stack deploy -c ${zipManikins[traefikIndex].memories[mobNameIndex].value}
 `,
         { unixPermissions: `755` }
       )
+
       // makes stopstack.sh script
       zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!.file(
         `stopstack.sh`,
@@ -179,48 +193,98 @@ docker stack deploy -c ${zipManikins[traefikIndex].memories[mobNameIndex].value}
         `,
         { unixPermissions: `755` }
       )
-      /*
+
       // makes setupdns.sh script
       zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!.file(
         `setupdns.sh`,
         `#!/bin/sh
-
-## begin pseudocode
-  ## before shell script
-            # check if dynamicDNS manikin is selected (dynamicdns check)
-              # this requires:
-                # create dynamicDNS manikin
-            # if dynamicdns check, call typescript function to generate updatedynamicdns.sh script in zip
-              # this requires:
-                # write function
-            # get value from primaryDomain Memory for use as "zoneid" in script
-            # get all selected Manikins' hostnames for DNS
-              # this requires:
-                # changing the Manikin interface to include a property "host: string"
-                # updating all Manikins with property "host: string"
-                # updating newManikin script to include "host: string"
-                # changing the serviceMite strings traefik labels to use "manikin.host"
-  ## during shell script
-            # curl check to get "zoneid" by domain name (zoneexistence check)
-              # if !zoneexistence check, error
-              # curl check for host "megadockerswarm" in zone "zoneid"
-                # check response for type A
-                # curl add type A record for megadockerswarm if selected and doesn't exist
-              # for loop through selected Manikins
-                # curl check if record already exists (hostexists check)
-                # if hostexists
-                  # check response for type CNAME (hosttype check)
-                    # if hosttype is not CNAME, error
-                    # if hosttype is CNAME, update CNAME to point to megadockerswarm
-                # if !hostexists
-                  # curl add CNAME records pointing to megadockerswarm
-
-## end pseudocode
-
+        ISJQINSTALLED=$(which jq)
+        if [ "\${ISJQINSTALLED}" = 'jq not found' ]; then
+            echo;
+            echo "Error: exiting with status 1 (Couldn't find jq binary).  You must install jq to use this script.";
+            echo "Try 'sudo apt install jq' on Debian/Ubuntu/Mint.";
+            echo "Try 'sudo yum install jq' on CentOS/Fedore/RedHat";
+            echo "Try 'sudo apk install jq' on Alpine";
+            echo "Try 'brew install jq' on macOS";
+            echo;
+            exit 1;
+        else
+            echo "Found jq binary at \${ISJQINSTALLED}"...;
+        fi;
+        echo "Setting script variables...";
+        echo "Setting domain name...";
+        DOMAIN="megadocker.net";
+        echo "Setting CNAME target...";
+        CNAMETARGET="megadockerswarm.\${DOMAIN}";
+        echo "Setting hostnames...";
+        HOSTS=("${cloudflareHosts}")
+        echo "Setting Cloudflare API Token...";
+        CLOUDFLAREAPITOKEN="${cloudflareAPITokenValue}";
+        echo "Getting our external IP address...";
+        EXTERNALIPADDRESS=$(curl -s https://api.ipify.org);
+        echo "Setting Zone ID for domain \${DOMAIN}...";
+        ZONEIDRESULT=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=\${DOMAIN}" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type: application/json");
+        ZONEIDSUCCEEDED=$(echo "\${ZONEIDRESULT}" | jq | grep "success");
+        if [ "\${ZONEIDSUCCEEDED}" = '  "success": true,' ]; then
+          ZONEID=$(echo "\${ZONEIDRESULT}" | jq -r | grep "id" | sed 1q | sed 's/^.............//' | sed 's/..$//');
+        else
+          echo;
+          echo "Error: exiting with status 2 (Couldn't determine Cloudflare Zone for \${DOMAIN})";
+          echo "Please confirm that this domain is managed by your Cloudflare account.";
+          echo "Please confirm that your Cloudflare API Token has 'Zone: Read' and 'DNS: Edit' privileges for \${DOMAIN}.";
+          echo;
+          echo "https://dash.cloudflare.com";
+          echo;
+          exit 2;
+        fi;
+        echo "Getting Host ID for \${CNAMETARGET} A record...";
+        DOMAINHOSTSRESULT=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records?type=A&name=megadockerswarm.\${DOMAIN}" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type: application/json");
+        DOMAINHOSTSUCCEEDED=$(echo "\${DOMAINHOSTSRESULT}" | jq | grep success);
+        if [ "\${DOMAINHOSTSUCCEEDED}" = '  "success": true,' ]; then
+          DOMAINHOSTID=$(echo "\${DOMAINHOSTSRESULT}" | jq -r | grep id | sed 1q | sed 's/^.............//' | sed 's/..$//');
+          if [ "\${DOMAINHOSTID}" != ""  ]; then
+            DOMAINHOSTIPADDRESS=$(echo "\${DOMAINHOSTSRESULT}" | jq -r | grep content| sed 's/^..................//' | sed 's/..$//');
+            if [ "\${DOMAINHOSTIPADDRESS}" == "\${EXTERNALIPADDRESS}" ]; then
+              echo "The A record for \${CNAMETARGET} appears to be configured correctly.";
+            else
+              echo "Updating A record for \${CNAMETARGET} to point to \${EXTERNALIPADDRESS}...";
+            DATAFLAG="{\\"type\\":\\"A\\",\\"name\\":\\"megadockerswarm\\",\\"content\\":\\"\${EXTERNALIPADDRESS}\\",\\"ttl\\":1,\\"priority\\":10,\\"proxied\\":false}";
+            UPDATEMEGADOCKERSWARMRECORDRESULT=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records/\${DOMAINHOSTID}" -H "Content-Type:application/json" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" --data \${DATAFLAG});
+            fi;
+          fi;
+          if [ "\${DOMAINHOSTID}" == "" ]; then
+            echo "Creating an A record for megadockerswarm.\${DOMAIN}";
+            CREATEMEGADOCKERSWARMRECORDRESULT=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records" -H "Content-Type:application/json" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" --data '{"type":"A","name":"megadockerswarm","content":"'"\${EXTERNALIPADDRESS}"'","ttl":1,"proxied":false}');
+            MEGADOCKERSWARMHOSTID=$(echo "\${CREATEMEGADOCKERSWARMRECORDRESULT}" | jq | grep id | sed 1q | sed 's/^..//' | sed 's/..$//');
+          fi;
+        fi;
+        for EACHHOST in \${HOSTS[@]}; do
+          DATAFLAG="{\\"type\\":\\"CNAME\\",\\"name\\":\\"\${EACHHOST}\\",\\"content\\":\\"\${CNAMETARGET}\\",\\"ttl\\":1,\\"priority\\":10,\\"proxied\\":false}"
+          HOSTCNAMEEXISTSRESULTS=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records?type=CNAME&name=\${EACHHOST}.\${DOMAIN}&match=all" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type:application/json");
+          HOSTCNAMEID=$(echo \${HOSTCNAMEEXISTSRESULTS} | jq | grep id | sed 1q | sed 's/^.............//' | sed 's/..$//');
+          if [ "\${HOSTCNAMEID}" != "" ]; then
+            HOSTCONTENTRESULTS=$(echo \${HOSTCNAMEEXISTSRESULTS} | jq | grep content | sed 's/^..................//' | sed 's/..$//');
+            if [ "\${HOSTCONTENTRESULTS}" = "\${CNAMETARGET}" ]; then
+              echo "\${EACHHOST} appears to be configured already.";
+            elif [ "\${HOSTCONTENTRESULTS}" != "\${CNAMETARGET}" ]; then
+              echo "Updating \${EACHHOST}.\${DOMAIN} to point to \${CNAMETARGET}..."
+              UPDATEHOSTRESULT=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records/\${HOSTCNAMEID}" -H "Content-Type:application/json" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" --data \${DATAFLAG});
+            fi;
+          fi;
+          if [ "\${HOSTCNAMEID}" == "" ]; then
+            echo "Creating \${EACHHOST} CNAME record..."
+            CREATEHOSTRESULT=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records" -H "Content-Type:application/json" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" --data \${DATAFLAG});
+          fi;
+        done;
+        
+        echo "Your MEGADocker mob's DNS is probably configured correctly.";
+        echo "Run './launchstack.sh' and then visit any of the following addresses:";
+        for EACHHOST in \${HOSTS[@]}; do
+          echo "https://$EACHHOST.\${DOMAIN}";
+    done;
         `,
         { unixPermissions: `755` }
       )
-      */
     })
   }
 
