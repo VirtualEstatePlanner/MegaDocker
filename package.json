@@ -40,7 +40,6 @@
     "react-build": "IMAGE_INLINE_SIZE_LIMIT=0 react-scripts build && rm build/electron.ts",
     "build-transpile": "run-s unbuild tsc-build react-build",
     "warning:mac-only": "echo && echo 'CRATE warning: This script will only function on macOS' && echo",
-    "warning:docker-only": "echo && echo 'CRATE warning: This script will not function without docker' && echo",
     "dist:linux-intel64": "yarn undist && cross-env NODE_ENV=production electron-builder -l -c ./electron-configs/linux-intel-64.yml && mv dist/*.AppImage binaries/linux/intel/",
     "dist:linux-arm64": "yarn undist && cross-env NODE_ENV=production electron-builder -l -c ./electron-configs/linux-arm-64.yml && mv dist/*.AppImage binaries/linux/arm/",
     "dist:linux": "run-s dist:linux-intel64 dist:linux-arm64",
@@ -50,13 +49,8 @@
     "dist:win-intel64": "yarn undist && cross-env NODE_ENV=production electron-builder -w -c ./electron-configs/win-intel-64.yml && mv dist/*.exe binaries/win/intel/",
     "dist:win-arm64": "yarn undist && cross-env NODE_ENV=production electron-builder -w -c ./electron-configs/win-arm-64.yml && mv dist/*.exe binaries/win/arm/",
     "dist:win": "run-s dist:win-intel64 dist:win-arm64",
-    "dist:win-intel64-docker": "yarn warning:docker-only && yarn undist && docker run --rm --env ELECTRON_CACHE='/root/.cache/electron' --env ELECTRON_BUILDER_CACHE='/root/.cache/electron-builder' -v ${PWD}:/project -v ${PWD}/cache/electron:/root/.cache/electron -v ${PWD}/cache/electron-builder:/root/.cache/electron-builder electronuserland/builder:wine-mono yarn dist:win-intel64",
-    "dist:win-arm64-docker": "yarn warning:docker-only && yarn undist && docker run --rm --env ELECTRON_BUILDING_WOA=1 --env ELECTRON_CACHE='/root/.cache/electron' --env ELECTRON_BUILDER_CACHE='/root/.cache/electron-builder' --env npm_config_arch='arm64' -v ${PWD}:/project -v ${PWD}/cache/electron:/root/.cache/electron -v ${PWD}/cache/electron-builder:/root/.cache/electron-builder electronuserland/builder:wine-mono yarn dist:win-arm64",
-    "dist:win-docker": "run-s dist:win-intel64-docker dist:win-arm64-docker",
-    "dist:all": "run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win-docker",
-    "postdist:all": "say 'All distributables output to binaries directory.'",
-    "dist:all-working": "run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win-intel64-docker",
-    "postdist:all-working": "say 'All distributables output to binaries directory.'"
+    "dist:all": "run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win",
+    "postdist:all": "say 'All distributables output to binaries directory.'"
   },
   "keywords": [
     "authelia",
@@ -75,6 +69,7 @@
     "ledger",
     "lidarr",
     "logstash",
+    "mealie",
     "mylar",
     "n8n",
     "nextcloud",
@@ -88,6 +83,7 @@
     "sonarr",
     "styleguidist",
     "swarmpit",
+    "syncthing",
     "traefik",
     "wordpress"
   ],
