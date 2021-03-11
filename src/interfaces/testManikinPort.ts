@@ -10,9 +10,9 @@ import { IManikinPort } from './IManikinPort'
 
 export const testManikinPort: Function = (portToTest: IManikinPort) =>
   it('has all 3 values', () => {
-    expect(portToTest.externalPort).toBeDefined()
-    expect(portToTest.externalPort).toBeTruthy()
-    expect(portToTest.internalPort).toBeDefined()
-    expect(portToTest.internalPort).toBeTruthy()
+    expect(portToTest.externalPort).toBeGreaterThanOrEqual(0)
+    expect(portToTest.externalPort).toBeLessThanOrEqual(65536)
+    expect(portToTest.internalPort).toBeGreaterThanOrEqual(0)
+    expect(portToTest.internalPort).toBeLessThanOrEqual(65536)
     expect(portToTest.isUDP).toBeDefined()
   })
