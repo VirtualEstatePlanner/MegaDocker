@@ -1,6 +1,6 @@
 /** @format */
 
-export const mobNetworksSectionString: string = `
+export const mobNetworkHeaderSectionString: string = `
 
 # Begin Networks Section
 

@@ -9,7 +9,7 @@ import { ICustomMite } from '../../interfaces/ICustomMite'
 import { IZipDockerCompose } from '../../interfaces/IZipDockerCompose'
 import { mobFileHeaderString } from '../../mobparts/mites/headers/mobFileHeaderString'
 import { servicesFooterSectionString } from '../../mobparts/mites/headers/servicesFooterSectionString'
-import { mobNetworksSectionString } from '../../mobparts/mites/headers/mobNetworksSectionString'
+import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobNetworkHeaderSectionString'
 import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString'
 import { traefikManikin } from '../../mobparts/manikins/traefik'
 import { mobName } from '../../mobparts/memories/mobName'
@@ -115,7 +115,7 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     return newFileContents
   })
 
-  const ymlOutputArray: string[] = [mobFileHeaderString, ...serviceMites, servicesFooterSectionString, mobNetworksSectionString, ...networkMites, mobNetworkFooterSectionString]
+  const ymlOutputArray: string[] = [mobFileHeaderString, ...serviceMites, servicesFooterSectionString, mobNetworkHeaderSectionString, ...networkMites, mobNetworkFooterSectionString]
 
   let ymlString: string = ymlOutputArray.join(``)
 

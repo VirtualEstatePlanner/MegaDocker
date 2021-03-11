@@ -9,7 +9,7 @@ import { workingManikins } from '../globals/workingManikins'
 import { mobFileHeaderString } from '../mobparts/mites/headers/mobFileHeaderString'
 import { servicesFooterSectionString } from '../mobparts/mites/headers/servicesFooterSectionString'
 import { mobNetworkFooterSectionString } from '../mobparts/mites/headers/mobNetworkFooterSectionString'
-import { mobNetworksSectionString } from '../mobparts/mites/headers/mobNetworksSectionString'
+import { mobNetworkHeaderSectionString } from '../mobparts/mites/headers/mobNetworkHeaderSectionString'
 import { megaReducer } from '../functions/reducers/megaReducer'
 
 const updateSelectedManikins = (manikinArray: IManikin[]): IManikin[] => manikinArray.filter((eachManikin) => eachManikin.isSelected === true)
@@ -23,7 +23,7 @@ const updateCustomMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eac
 const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
   const tempServicesYML: string[] = serviceMites.flatMap((eachMite) => eachMite.miteString)
   const tempNetworksYML: string[] = networkMites.flatMap((eachMite) => eachMite.miteString)
-  const ymlOutputArray: string[] = [mobFileHeaderString, ...tempServicesYML, servicesFooterSectionString, mobNetworksSectionString, ...tempNetworksYML, mobNetworkFooterSectionString]
+  const ymlOutputArray: string[] = [mobFileHeaderString, ...tempServicesYML, servicesFooterSectionString, mobNetworkHeaderSectionString, ...tempNetworksYML, mobNetworkFooterSectionString]
   const ymlString: string = ymlOutputArray.join(``)
   return ymlString
 }
