@@ -58,6 +58,7 @@ export const owncloudServiceMite: ITraefikedServiceMite = {
   networks:
    - owncloud
   volumes:
+## TODO: implement fix for /etc/localtime on macOS
 #   - /etc/localtime:/etc/localtime:ro
    - \${PWD}/owncloud/postgres:/var/lib/postgresql
   deploy:
