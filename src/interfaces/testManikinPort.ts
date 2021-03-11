@@ -8,11 +8,16 @@
 
 import { IManikinPort } from './IManikinPort'
 
-export const testManikinPort: Function = (portToTest: IManikinPort) =>
-  it('has all 3 values', () => {
+export const testManikinPort: Function = (portToTest: IManikinPort) => {
+  it('has an external port within range 0-65535', () => {
     expect(portToTest.externalPort).toBeGreaterThanOrEqual(0)
     expect(portToTest.externalPort).toBeLessThanOrEqual(65536)
+  })
+  it('has an internal port within range 0-65535', () => {
     expect(portToTest.internalPort).toBeGreaterThanOrEqual(0)
     expect(portToTest.internalPort).toBeLessThanOrEqual(65536)
+  })
+  it('has a UDP value', () => {
     expect(portToTest.isUDP).toBeDefined()
   })
+}
