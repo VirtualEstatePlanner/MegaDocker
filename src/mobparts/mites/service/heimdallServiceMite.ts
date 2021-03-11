@@ -52,7 +52,7 @@ export const heimdallServiceMite: ITraefikedServiceMite = {
     - 'traefik.http.services.heimdall-https.loadbalancer.server.port=80'
     - 'com.MegaDocker.description=Heimdall - a portal for your MegaDocker interface pages'
   
-  # End Heimdall Service Section
+# End Heimdall Service Section
   
-  `,
+`,
 }

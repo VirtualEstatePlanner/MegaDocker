@@ -12,7 +12,7 @@ export const elasticsearchJvmDotOptionsMite: ICustomMite = {
     extension: `options`,
     permissions: `644`,
     contents: `
-#
+
 `,
   },
 }

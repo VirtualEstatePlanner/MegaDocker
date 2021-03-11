@@ -63,8 +63,6 @@ export const drupalServiceMite: ITraefikedServiceMite = {
   image: postgres
   networks:
    - drupal
-#  ports:
-#   - 5432:5432
   volumes:
    - \${PWD}/logs/drupal:/loglocation
    - \${PWD}/drupal/database:/var/lib/postgresql/data

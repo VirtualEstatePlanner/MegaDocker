@@ -12,7 +12,7 @@ export const elasticsearchLog4j2DotPropertiesMite: ICustomMite = {
     extension: `properties`,
     permissions: `644`,
     contents: `
-#
+
 `,
   },
 }

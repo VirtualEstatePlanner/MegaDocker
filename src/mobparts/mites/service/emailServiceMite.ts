@@ -29,6 +29,7 @@ export const emailServiceMite: ITraefikedServiceMite = {
    - \${PWD}/email/maildata:/var/mail
    - \${PWD}/email/mailstate:/var/mail-state
    - \${PWD}/email/config:/tmp/docker-mailserver
+## TODO: mount certs correctly
 #   - \${PWD}/traefik/ssl/certs:/certs:ro
 #   - \${PWD}/traefik/ssl/pem/*.[[PRIMARYDOMAIN]].pem:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]].pem:ro
 #   - \${PWD}/traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]]/key:ro

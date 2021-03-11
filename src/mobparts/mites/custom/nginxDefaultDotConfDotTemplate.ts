@@ -12,7 +12,7 @@ export const nginxDefaultDotConfDotTemplate: ICustomMite = {
     extension: `conf`,
     permissions: `644`,
     contents: `
-#
+
 `,
   },
 }
