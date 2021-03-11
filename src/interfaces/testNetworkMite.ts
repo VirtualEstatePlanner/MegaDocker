@@ -8,9 +8,11 @@
 
 import { IMite } from './IMite'
 
-export const testNetworkMite: Function = (miteToTest: IMite) =>
-  it('matches 4 template strings, has correct type, is in index range', () => {
+export const testNetworkMite: Function = (miteToTest: IMite) => {
+  it('has correct type', () => {
     expect(miteToTest.type).toStrictEqual(`DockerSwarmNetwork`)
+  })
+  it('contains all of the neccessary strings', () => {
     expect(miteToTest.miteString).toContain(`
 
 # Begin`)
@@ -24,6 +26,9 @@ export const testNetworkMite: Function = (miteToTest: IMite) =>
     expect(miteToTest.miteString).toContain(` Network Section
 
 `)
+  })
+  it('has an index in the appropriate range', () => {
     expect(miteToTest.miteIndex).toBeGreaterThanOrEqual(40000)
     expect(miteToTest.miteIndex).toBeLessThanOrEqual(49999)
   })
+}
