@@ -28,8 +28,8 @@ export const drupalServiceMite: ITraefikedServiceMite = {
    - SERVER_NAME=drupal.[[PRIMARYDOMAIN]]
    - DRUPAL_PROFILE=standard
    - DRUPAL_SITE_NAME=Drupal
-   - DRUPAL_USER=drupaluser
-   - DRUPAL_PASS=drupalpass
+   - DRUPAL_USER=[[DRUPALPOSTGRESUSER]]
+   - DRUPAL_PASS=[[DRUPALPOSTGRESPASSWORD]]
    - DRUPAL_DBURL=postgres://drupal:drupaluser@[[MOBNAME]]_drupal-postgres:5432/drupaldb
   volumes:
    - \${PWD}/logs/drupal:/loglocation
@@ -68,7 +68,7 @@ export const drupalServiceMite: ITraefikedServiceMite = {
    - \${PWD}/drupal/database:/var/lib/postgresql/data
   environment:
    - POSTGRES_DB=drupaldb
-   - POSTGRES_USER=[[DRUPALUSER]]
+   - POSTGRES_USER=[[DRUPALPOSTGRESUSER]]
    - POSTGRES_PASSWORD=[[DRUPALPOSTGRESPASSWORD]]
   deploy:
    replicas: 1
