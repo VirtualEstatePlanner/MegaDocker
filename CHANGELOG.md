@@ -2,7 +2,8 @@
 
 ## a list of changes per version number
 
-- `v0.4.0-beta` : **Generates a script to setup Cloudflare hosts for you automatically**
+- `v0.4.1-beta` : **A jillion little bugfixes in one morning, with more coming today**
+- `v0.4.0-beta` : Generates a script to setup Cloudflare hosts for you automatically
 - `v0.3.9-beta` : added Mealie and Syncthing Manikins
 - `v0.3.8-beta` : even more neomorphic shinyness
 - `v0.3.7-beta` : React 17, Material UI 5, Apple Silicon and linux arm native versions

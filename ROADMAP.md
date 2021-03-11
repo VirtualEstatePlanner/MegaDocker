@@ -2,7 +2,7 @@
 
 ## a list of features to be added and tasks to be done by version number
 
-The line in **bold** is the current version
+The line in **bold** is the approximate current version
 
 - `v0.1.0-alpha` : Build and distribution framework in place written in pure `TypeScript`
 - `v0.1.5-alpha` : imported `swift`, ported lots of it, marked `TODO` program holes
