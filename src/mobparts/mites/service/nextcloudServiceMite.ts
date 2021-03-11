@@ -18,7 +18,7 @@ export const nextcloudServiceMite: ITraefikedServiceMite = {
 
 # Begin NextCloud Service Sections
 
-nextcloud:
+ nextcloud:
   image: nextcloud
   networks:
    - nextcloud
