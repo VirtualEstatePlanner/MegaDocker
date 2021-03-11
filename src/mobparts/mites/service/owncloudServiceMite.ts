@@ -23,9 +23,9 @@ export const owncloudServiceMite: ITraefikedServiceMite = {
    - traefik
    - owncloud
   volumes:
-   - ./owncloud/apps/:/var/www/html/apps
-   - ./owncloud/config/:/var/www/html/config
-   - ./owncloud/data/:/var/www/html/data
+   - \${PWD}/owncloud/apps/:/var/www/html/apps
+   - \${PWD}/owncloud/config/:/var/www/html/config
+   - \${PWD}/owncloud/data/:/var/www/html/data
   deploy:
    restart_policy:
     condition: on-failure
@@ -59,7 +59,7 @@ export const owncloudServiceMite: ITraefikedServiceMite = {
    - owncloud
   volumes:
 #   - /etc/localtime:/etc/localtime:ro
-   - ./owncloud/postgres:/var/lib/postgresql
+   - \${PWD}/owncloud/postgres:/var/lib/postgresql
   deploy:
    restart_policy:
     condition: on-failure
@@ -72,7 +72,7 @@ export const owncloudServiceMite: ITraefikedServiceMite = {
    - MYSQL_ROOT_PASSWORD=owncloud
    - MYSQL_DATABASE=owncloud
   volumes:
-   - ./owncloud/mariadb:/var/lib/mysql
+   - \${PWD}/owncloud/mariadb:/var/lib/mysql
   deploy:
    restart_policy:
     condition: on-failure
@@ -82,7 +82,7 @@ export const owncloudServiceMite: ITraefikedServiceMite = {
 owncloud-redis:
   image: redis
   volumes:
-   - ./owncloud/redis:/var/lib/mysql
+   - \${PWD}/owncloud/redis:/var/lib/mysql
   networks:
    - owncloud
   deploy:

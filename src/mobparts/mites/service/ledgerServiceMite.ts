@@ -53,7 +53,7 @@ export const ledgerServiceMite: ITraefikedServiceMite = {
    - POSTGRES_PASSWORD=[[LEDGERPOSTGRESPASSWORD]]
    - PGDATA=/var/lib/postgresql/data/pgdata
   volumes:
-   - ./ledger:/var/lib/postgresql/data
+   - \${PWD}/ledger:/var/lib/postgresql/data
 
 # End Ledger Section
 

@@ -24,7 +24,7 @@ export const portainerServiceMite: ITraefikedServiceMite = {
    - traefik
   command: '--no-auth'
   volumes:
-   - ./logs/portainer:/loglocation
+   - \${PWD}/logs/portainer:/loglocation
    - /var/run/docker.sock:/var/run/docker.sock
   deploy:
    mode: global

@@ -27,9 +27,9 @@ export const duplicatiServiceMite: ITraefikedServiceMite = {
    - PUID=$HOSTUSERID
    - PGID=$HOSTUSERGID
   volumes:
-   - ./:/source
-   - ./backups/data/:/backups
-   - ./backups/Duplicati/:/data/Duplicati
+   - \${PWD}/:/source
+   - \${PWD}/backups/data/:/backups
+   - \${PWD}/backups/Duplicati/:/data/Duplicati
   deploy:
    restart_policy:
     condition: on-failure

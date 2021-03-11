@@ -32,11 +32,11 @@ export const drupalServiceMite: ITraefikedServiceMite = {
    - DRUPAL_PASS=drupalpass
    - DRUPAL_DBURL=postgres://drupal:drupaluser@[[MOBNAME]]_drupal-postgres:5432/drupaldb
   volumes:
-   - ./logs/drupal:/loglocation
-   - ./drupal/modules:/var/www/html/modules
-   - ./drupal/profiles:/var/www/html/profiles
-   - ./drupal/themes:/var/www/html/themes
-   - ./drupal/sites:/var/www/html/sites
+   - \${PWD}/logs/drupal:/loglocation
+   - \${PWD}/drupal/modules:/var/www/html/modules
+   - \${PWD}/drupal/profiles:/var/www/html/profiles
+   - \${PWD}/drupal/themes:/var/www/html/themes
+   - \${PWD}/drupal/sites:/var/www/html/sites
   deploy:
    restart_policy:
     condition: on-failure
@@ -66,8 +66,8 @@ export const drupalServiceMite: ITraefikedServiceMite = {
 #  ports:
 #   - 5432:5432
   volumes:
-   - ./logs/drupal:/loglocation
-   - ./drupal/database:/var/lib/postgresql/data
+   - \${PWD}/logs/drupal:/loglocation
+   - \${PWD}/drupal/database:/var/lib/postgresql/data
   environment:
    - POSTGRES_DB=drupaldb
    - POSTGRES_USER=[[DRUPALUSER]]

@@ -31,7 +31,7 @@ export const wordpressServiceMite: ITraefikedServiceMite = {
    - WORDPRESS_DB_PASSWORD=[[WORDPRESSMARIADBPASSWORD]]
    - WORDPRESS_DB_NAME=wordpress
   volumes:
-   - ./wordpress/php:/var/www/html
+   - \${PWD}/wordpress/php:/var/www/html
   deploy:
    restart_policy:
     condition: on-failure
@@ -60,7 +60,7 @@ export const wordpressServiceMite: ITraefikedServiceMite = {
    - MYSQL_USER=[[WORDPRESSMARIADBUSER]]
    - MYSQL_PASSWORD=[[WORDPRESSMARIADBPASSWORD]]
   volumes:
-   - ./wordpress/mariadb:/var/lib/mysql
+   - \${PWD}/wordpress/mariadb:/var/lib/mysql
   deploy:
    restart_policy:
     condition: on-failure

@@ -49,8 +49,8 @@ export const traefikServiceMite: ITraefikedServiceMite = {
    - 443:443
    - 8080:8080
   volumes:
-   - ./logs/traefik:/var/log/traefik
-   - ./traefik/acme.json:/acme.json
+   - \${PWD}/logs/traefik:/var/log/traefik
+   - \${PWD}/traefik/acme.json:/acme.json
    - /var/run/docker.sock:/var/run/docker.sock:ro
   environment:
    - CF_DNS_API_TOKEN=[[CLOUDFLAREAPITOKEN]]
@@ -86,9 +86,9 @@ export const traefikServiceMite: ITraefikedServiceMite = {
   networks:
    - traefik
   volumes:
-   - ./logs/traefik:/loglocation
-   - ./traefik/acme.json/:/acme.json
-   - ./traefik/ssl:/output
+   - \${PWD}/logs/traefik:/loglocation
+   - \${PWD}/traefik/acme.json/:/acme.json
+   - \${PWD}/traefik/ssl:/output
   command: >
    file
    --watch

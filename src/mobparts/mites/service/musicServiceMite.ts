@@ -24,8 +24,8 @@ export const musicServiceMite: ITraefikedServiceMite = {
    - movies
    - traefik
   volumes:
-   - ./media/music-config:/config
-   - ./media/music-data:/media
+   - \${PWD}/media/music-config:/config
+   - \${PWD}/media/music-data:/media
   environment:
    - PUID=$HOSTUSERID
    - PGID=$HOSTUSERGID

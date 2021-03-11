@@ -26,7 +26,7 @@ export const syncthingServiceMite: ITraefikedServiceMite = {
     - PUID=$HOSTUSERID
     - PGID=$HOSTUSERGID
    volumes:
-    - ./syncthing/data:/var/syncthing
+    - \${PWD}/syncthing/data:/var/syncthing
    deploy:
     restart_policy:
      condition: on-failure

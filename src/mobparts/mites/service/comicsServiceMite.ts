@@ -24,8 +24,8 @@ export const comicsServiceMite: ITraefikedServiceMite = {
    - comics
    - traefik
   volumes:
-   - ./media/comics-config:/config
-   - ./media/comics-data:/media
+   - \${PWD}/media/comics-config:/config
+   - \${PWD}/media/comics-data:/media
   environment:
    - PUID=$HOSTUSERID
    - PGID=$HOSTUSERGID

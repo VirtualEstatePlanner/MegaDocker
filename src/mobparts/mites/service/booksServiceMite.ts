@@ -24,8 +24,8 @@ export const booksServiceMite: ITraefikedServiceMite = {
    - books
    - traefik
   volumes:
-   - ./media/books-config:/config
-   - ./media/books-data:/media
+   - \${PWD}/media/books-config:/config
+   - \${PWD}/media/books-data:/media
   environment:
    - PUID=$HOSTUSERID
    - PGID=$HOSTUSERGID

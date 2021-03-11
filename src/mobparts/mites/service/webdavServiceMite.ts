@@ -28,7 +28,7 @@ export const webdavServiceMite: ITraefikedServiceMite = {
    - PASSWORD=[[WEBDAVPASSWORD]]
    - SERVER_NAMES=webdav.[[PRIMARYDOMAIN]]
   volumes:
-   - ./webdav/data:/var/lib/dav
+   - \${PWD}/webdav/data:/var/lib/dav
   deploy:
    restart_policy:
     condition: on-failure

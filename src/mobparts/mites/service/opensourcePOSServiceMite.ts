@@ -57,7 +57,7 @@ export const opensourcePOSServiceMite: ITraefikedServiceMite = {
   networks:
    - opensourcepos
   volumes:
-   - ./database/database.sql:/docker-entrypoint-initdb.d/database.sql
+   - \${PWD}/database/database.sql:/docker-entrypoint-initdb.d/database.sql
    - mysql:/var/lib/mysql:rw
   environment:
    - MYSQL_ROOT_PASSWORD=[[OPENSOURCEPOSMARIADBROOTPASSWORD]]

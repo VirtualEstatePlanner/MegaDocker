@@ -29,9 +29,9 @@ export const piholeServiceMite: ITraefikedServiceMite = {
    TZ=$HOSTTIMEZONE
    WEBPASSWORD=[[PIHOLEPASSWORD]]
   volumes:
-   - ./logs/pihole:/loglocation
-   - ./pihole/etc-pihole/:/etc/pihole/
-   - ./pihole/etc-dnsmasq/:/etc/dnsmasq.d/
+   - \${PWD}/logs/pihole:/loglocation
+   - \${PWD}/pihole/etc-pihole/:/etc/pihole/
+   - \${PWD}/pihole/etc-dnsmasq/:/etc/dnsmasq.d/
   dns:
    - 9.9.9.9
    - 8.8.8.8

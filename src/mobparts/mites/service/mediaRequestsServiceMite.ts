@@ -21,7 +21,7 @@ export const mediaRequestsServiceMite: ITraefikedServiceMite = {
  requests:
   image: linuxserver/ombi
   volumes:
-   - ./media/requests-config:/config
+   - \${PWD}/media/requests-config:/config
   networks:
    - books
    - comics
@@ -50,7 +50,7 @@ export const mediaRequestsServiceMite: ITraefikedServiceMite = {
  torrent-indexer:
   image: linuxserver/jackett
   volumes:
-   - ./media/torrent-indexer-config:/config
+   - \${PWD}/media/torrent-indexer-config:/config
   networks:
    - books
    - comics
@@ -79,13 +79,13 @@ export const mediaRequestsServiceMite: ITraefikedServiceMite = {
  torrent:
   image: linuxserver/qbittorrent
   volumes:
-   - ./media/torrent-config:/config
-   - ./media/torrent-downloads:/downloads
-   - ./media/books-data:/media/books
-   - ./media/comics-data:/media/comics
-   - ./media/movies-data:/media/movies
-   - ./media/music-data:/media/music
-   - ./media/tv-data:/media/tv
+   - \${PWD}/media/torrent-config:/config
+   - \${PWD}/media/torrent-downloads:/downloads
+   - \${PWD}/media/books-data:/media/books
+   - \${PWD}/media/comics-data:/media/comics
+   - \${PWD}/media/movies-data:/media/movies
+   - \${PWD}/media/music-data:/media/music
+   - \${PWD}/media/tv-data:/media/tv
    - /Volumes/Drobo/Fileshare/plex:/plex
   environment:
    - PUID=$HOSTUSERID
@@ -124,8 +124,8 @@ export const mediaRequestsServiceMite: ITraefikedServiceMite = {
  newsgroups:
   image: linuxserver/nzbget
   volumes:
-   - ./media/newsgroups-config:/config
-   - ./media/newsgroups-downloads:/media
+   - \${PWD}/media/newsgroups-config:/config
+   - \${PWD}/media/newsgroups-downloads:/media
   networks:
    - books
    - comics
@@ -154,7 +154,7 @@ export const mediaRequestsServiceMite: ITraefikedServiceMite = {
  newsgroup-indexer:
   image: linuxserver/hydra2
   volumes:
-   - ./media/newsgroups-indexer-config:/config
+   - \${PWD}/media/newsgroups-indexer-config:/config
   networks:
    - books
    - comics

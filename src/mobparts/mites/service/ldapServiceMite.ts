@@ -38,12 +38,12 @@ export const ldapServiceMite: ITraefikedServiceMite = {
   tty: true
   stdin_open: true
   volumes:
-   - ./logs/ldap:/var/log/ldap
-   - ./ldap/ldif-files:/container/service/slapd/assets/config/bootstrap/ldif/custom
-   - ./ldap/lib:/var/lib/ldap
-   - ./ldap/slapd.d:/etc/ldap/slapd.d
-   - ./traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/container/service/slapd/assets/certs/[[PRIMARYDOMAIN]].crt:ro
-   - ./traefik/ssl/private/[[PRIMARYDOMAIN]].key:/container/service/slapd/assets/certs/[[PRIMARYDOMAIN]].key:ro
+   - \${PWD}/logs/ldap:/var/log/ldap
+   - \${PWD}/ldap/ldif-files:/container/service/slapd/assets/config/bootstrap/ldif/custom
+   - \${PWD}/ldap/lib:/var/lib/ldap
+   - \${PWD}/ldap/slapd.d:/etc/ldap/slapd.d
+   - \${PWD}/traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/container/service/slapd/assets/certs/[[PRIMARYDOMAIN]].crt:ro
+   - \${PWD}/traefik/ssl/private/[[PRIMARYDOMAIN]].key:/container/service/slapd/assets/certs/[[PRIMARYDOMAIN]].key:ro
   ports:
    - 389:389
    - 636:636
@@ -61,13 +61,13 @@ export const ldapServiceMite: ITraefikedServiceMite = {
    - PHPLDAPADMIN_HTTPS_KEY_FILENAME=private/[[PRIMARYDOMAIN]].key
    - PHPLDAPADMIN_HTTPS_CA_CRT_FILENAME=certs/[[PRIMARYDOMAIN]].crt
   volumes:
-   - ./logs/ldap:/loglocation
-   - ./traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/container/service/phpldapadmin/assets/apache2/certs/certs/[[PRIMARYDOMAIN]].crt:ro
-   - ./traefik/ssl/private/[[PRIMARYDOMAIN]].key:/container/service/phpldapadmin/assets/apache2/certs/private/[[PRIMARYDOMAIN]].key:ro
-   - ./traefik/ssl/private/letsencrypt.key:/container/service/phpldapadmin/assets/apache2/certs/certs/letsencrypt.key:ro
-   - ./traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/container/service/ldap-client/assets/certs/[[PRIMARYDOMAIN]].crt:ro
-   - ./traefik/ssl/private/[[PRIMARYDOMAIN]].key:/container/service/ldap-client/assets/certs/[[PRIMARYDOMAIN]].key:ro
-   - ./traefik/ssl/private/letsencrypt.key:/container/service/ldap-client/assets/certs/letsencrypt.key:ro
+   - \${PWD}/logs/ldap:/loglocation
+   - \${PWD}/traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/container/service/phpldapadmin/assets/apache2/certs/certs/[[PRIMARYDOMAIN]].crt:ro
+   - \${PWD}/traefik/ssl/private/[[PRIMARYDOMAIN]].key:/container/service/phpldapadmin/assets/apache2/certs/private/[[PRIMARYDOMAIN]].key:ro
+   - \${PWD}/traefik/ssl/private/letsencrypt.key:/container/service/phpldapadmin/assets/apache2/certs/certs/letsencrypt.key:ro
+   - \${PWD}/traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/container/service/ldap-client/assets/certs/[[PRIMARYDOMAIN]].crt:ro
+   - \${PWD}/traefik/ssl/private/[[PRIMARYDOMAIN]].key:/container/service/ldap-client/assets/certs/[[PRIMARYDOMAIN]].key:ro
+   - \${PWD}/traefik/ssl/private/letsencrypt.key:/container/service/ldap-client/assets/certs/letsencrypt.key:ro
   networks:
    - ldap
    - traefik
@@ -97,8 +97,8 @@ export const ldapServiceMite: ITraefikedServiceMite = {
   environment:
    - TZ=$HOSTTIMEZONE
   volumes:
-   - ./ldap/authelia-data:/var/lib/authelia
-   - ./ldap/authelia-config/configuration.yml:/etc/authelia/configuration.yml:ro
+   - \${PWD}/ldap/authelia-data:/var/lib/authelia
+   - \${PWD}/ldap/authelia-config/configuration.yml:/etc/authelia/configuration.yml:ro
   deploy:
    restart_policy:
     condition: on-failure
@@ -122,7 +122,7 @@ export const ldapServiceMite: ITraefikedServiceMite = {
   networks:
    - ldap
   volumes:
-   - ./ldap/authelia-mariadb:/var/lib/mysql
+   - \${PWD}/ldap/authelia-mariadb:/var/lib/mysql
   environment:
    - MYSQL_ROOT_PASSWORD=[[AUTHELIAMARIADBROOTPASSWORD]]
    - MYSQL_DATABASE=authelia

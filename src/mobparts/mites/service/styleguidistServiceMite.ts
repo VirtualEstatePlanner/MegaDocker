@@ -15,15 +15,15 @@ export const styleguidistServiceMite: ITraefikedServiceMite = {
  styleguidist:
   image: georgegeorgulasiv/component-library
   volumes:
-   - ./styleguidist/components:/app/src/shared/components
-   - ./styleguidist/typings:/app/src/shared/typings
-   - ./styleguidist/interfaces:/app/src/shared/interfaces
-   - ./styleguidist/assets:/app/src/shared/assets
-   - ./styleguidist/objects:/app/src/shared/objects
-   - ./styleguidist/configs/package.json:/app/package.json
-   - ./styleguidist/configs/styleguide.config.js:/app/styleguide.config.js
-   - ./styleguidist/configs/tsconfig.json:/app/tsconfig.json
-   - ./styleguidist/configs/webpack.config.js:/app/webpack.config.js
+   - \${PWD}/styleguidist/components:/app/src/shared/components
+   - \${PWD}/styleguidist/typings:/app/src/shared/typings
+   - \${PWD}/styleguidist/interfaces:/app/src/shared/interfaces
+   - \${PWD}/styleguidist/assets:/app/src/shared/assets
+   - \${PWD}/styleguidist/objects:/app/src/shared/objects
+   - \${PWD}/styleguidist/configs/package.json:/app/package.json
+   - \${PWD}/styleguidist/configs/styleguide.config.js:/app/styleguide.config.js
+   - \${PWD}/styleguidist/configs/tsconfig.json:/app/tsconfig.json
+   - \${PWD}/styleguidist/configs/webpack.config.js:/app/webpack.config.js
   networks:
    - styleguidist
    - traefik

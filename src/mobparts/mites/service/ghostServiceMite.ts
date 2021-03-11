@@ -24,7 +24,7 @@ export const ghostServiceMite: ITraefikedServiceMite = {
    - ghost
    - traefik
   volumes:
-   - ./logs/ghost:/loglocation
+   - \${PWD}/logs/ghost:/loglocation
   environment:
    - database__client=mysql
    - database__connection__host=[[MOBNAME]]_ghost-mariadb
@@ -54,8 +54,8 @@ export const ghostServiceMite: ITraefikedServiceMite = {
   networks:
    - ghost
   volumes:
-   - ./logs/ghost:/loglocation
-   - ./ghost/mariadb:/var/lib/mysql
+   - \${PWD}/logs/ghost:/loglocation
+   - \${PWD}/ghost/mariadb:/var/lib/mysql
   environment:
    - MYSQL_ROOT_PASSWORD=[[GHOSTMARIADBROOTPASSWORD]]
   deploy:

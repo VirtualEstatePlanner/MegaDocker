@@ -25,15 +25,15 @@ export const emailServiceMite: ITraefikedServiceMite = {
    - 587:587
    - 993:993
   volumes:
-   - ./logs/email:/loglocation
-   - ./email/maildata:/var/mail
-   - ./email/mailstate:/var/mail-state
-   - ./email/config:/tmp/docker-mailserver
-#   - ./traefik/ssl/certs:/certs:ro
-#   - ./traefik/ssl/pem/*.[[PRIMARYDOMAIN]].pem:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]].pem:ro
-#   - ./traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]]/key:ro
-#   - ./traefik/ssl/private/letsencrypt.key:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/letsencrypt.key:ro
-   - ./traefik/ssl:/etc/letsencrypt:ro
+   - \${PWD}/logs/email:/loglocation
+   - \${PWD}/email/maildata:/var/mail
+   - \${PWD}/email/mailstate:/var/mail-state
+   - \${PWD}/email/config:/tmp/docker-mailserver
+#   - \${PWD}/traefik/ssl/certs:/certs:ro
+#   - \${PWD}/traefik/ssl/pem/*.[[PRIMARYDOMAIN]].pem:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]].pem:ro
+#   - \${PWD}/traefik/ssl/private/*.[[PRIMARYDOMAIN]].key:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/*.[[PRIMARYDOMAIN]]/key:ro
+#   - \${PWD}/traefik/ssl/private/letsencrypt.key:/etc/letsencrypt/live/*.[[PRIMARYDOMAIN]]/letsencrypt.key:ro
+   - \${PWD}/traefik/ssl:/etc/letsencrypt:ro
   environment:
    - ENABLE_SPAMASSASSIN=1
    - ENABLE_CLAMAV=1
@@ -60,8 +60,8 @@ export const emailServiceMite: ITraefikedServiceMite = {
    - email
    - traefik
   volumes:
-   - ./logs/email:/loglocation
-   - ./email/rainloop:/rainloop/data
+   - \${PWD}/logs/email:/loglocation
+   - \${PWD}/email/rainloop:/rainloop/data
   deploy:
    restart_policy:
     condition: on-failure

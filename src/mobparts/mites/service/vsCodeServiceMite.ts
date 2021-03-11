@@ -21,8 +21,8 @@ export const vsCodeServiceMite: ITraefikedServiceMite = {
  vscode:
   image: beneventsur/visual-studio-code
   volumes:
-   - ./vscode/pages/index.html:/noVNC/index.html
-   - ./vscode/project:/root/project
+   - \${PWD}/vscode/pages/index.html:/noVNC/index.html
+   - \${PWD}/vscode/project:/root/project
   networks:
    - traefik
   environment:

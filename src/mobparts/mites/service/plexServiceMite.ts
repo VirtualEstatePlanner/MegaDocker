@@ -34,8 +34,8 @@ export const plexServiceMite: ITraefikedServiceMite = {
    - 32413:32413/udp
    - 32414:32414/udp
   volumes:
-   - ./media/plex-config:/config
-   - ./media/content
+   - \${PWD}/media/plex-config:/config
+   - \${PWD}/media/content
   deploy:
    restart_policy:
     condition: on-failure

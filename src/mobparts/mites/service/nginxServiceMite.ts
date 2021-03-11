@@ -23,9 +23,9 @@ export const nginxServiceMite: ITraefikedServiceMite = {
   networks:
    - traefik
   volumes:
-   - ./logs/nginx:/loglocation
-   - ./nginx/pages:/usr/share/nginx/html
-   - ./nginx/log:/var/log/nginx/log
+   - \${PWD}/logs/nginx:/loglocation
+   - \${PWD}/nginx/pages:/usr/share/nginx/html
+   - \${PWD}/nginx/log:/var/log/nginx/log
   environment:
    - NGINX_HOST=www.[[PRIMARYDOMAIN]]
   deploy:

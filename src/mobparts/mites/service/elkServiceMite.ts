@@ -32,10 +32,10 @@ export const elkServiceMite: ITraefikedServiceMite = {
   networks:
    - elk
   volumes:
-   - ./logs/elk-elasticsearch:/loglocation
-   - ./elk/elasticsearch-config:/usr/share/elasticsearch/configs
-   - ./elk/elasticsearch-data:/usr/share/elasticsearch/data
-   - ./elk/logfiles:/usr/share/elasticsearch/logs
+   - \${PWD}/logs/elk-elasticsearch:/loglocation
+   - \${PWD}/elk/elasticsearch-config:/usr/share/elasticsearch/configs
+   - \${PWD}/elk/elasticsearch-data:/usr/share/elasticsearch/data
+   - \${PWD}/elk/logfiles:/usr/share/elasticsearch/logs
 
  filebeat:
   image: docker.elastic.co/beats/filebeat:7.7.0
@@ -62,7 +62,7 @@ export const elkServiceMite: ITraefikedServiceMite = {
   environment:
    - SERVER_NAME=[[MOBNAME]]_elasticsearch:9200
   volumes:
-   - ./logs/elk-kibana:/loglocation
+   - \${PWD}/logs/elk-kibana:/loglocation
   deploy:
    restart_policy:
     condition: on-failure

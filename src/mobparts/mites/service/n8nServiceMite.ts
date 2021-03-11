@@ -43,8 +43,8 @@ export const n8nServiceMite: ITraefikedServiceMite = {
    - SUBDOMAIN=${hostnames[0]}
   volumes:
    - /var/run/docker.sock:/var/run/docker.sock:ro
-   - ./n8n/data:/root/n8n
-   - ./n8n/settings:/root/.n8n
+   - \${PWD}/n8n/data:/root/n8n
+   - \${PWD}/n8n/settings:/root/.n8n
   deploy:
    restart_policy:
     condition: on-failure

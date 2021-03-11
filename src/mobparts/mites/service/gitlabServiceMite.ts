@@ -59,10 +59,10 @@ export const gitlabServiceMite: ITraefikedServiceMite = {
    - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
 #   - LDAP_USER_FILTER=
   volumes:
-   - ./logs/gitlab:/var/log/gitlab
-   - ./traefik/ssl:/ldapcerts/:ro
-   - ./gitlab/config:/etc/gitlab
-   - ./gitlab/data:/var/opt/gitlab
+   - \${PWD}/logs/gitlab:/var/log/gitlab
+   - \${PWD}/traefik/ssl:/ldapcerts/:ro
+   - \${PWD}/gitlab/config:/etc/gitlab
+   - \${PWD}/gitlab/data:/var/opt/gitlab
   ports:
    - 22:22
   networks:
@@ -97,8 +97,8 @@ export const gitlabServiceMite: ITraefikedServiceMite = {
    - POSTGRES_PASSWORD=[[GITLABPOSTGRESPASSWORD]]
    - POSTGRES_DB=gitlabhq_production
   volumes:
-   - ./logs/gitlab:/var/log/postgres
-   - ./gitlab/postgresql:/var/lib/postgresql:rw
+   - \${PWD}/logs/gitlab:/var/log/postgres
+   - \${PWD}/gitlab/postgresql:/var/lib/postgresql:rw
   networks:
    - gitlab
  
@@ -106,8 +106,8 @@ export const gitlabServiceMite: ITraefikedServiceMite = {
   image: redis:alpine
   volumes:
 # maybe wrong log location  
-   - ./logs/gitlab:/var/log/redis
-   - ./gitlab/redis:/data
+   - \${PWD}/logs/gitlab:/var/log/redis
+   - \${PWD}/gitlab/redis:/data
   networks:
    - gitlab
 

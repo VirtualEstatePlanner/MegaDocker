@@ -24,7 +24,7 @@ export const grocyServiceMite: ITraefikedServiceMite = {
    - grocy
    - traefik
   volumes:
-   - ./grocy/app:/config
+   - \${PWD}/grocy/app:/config
   deploy:
    restart_policy:
     condition: on-failure
@@ -49,7 +49,7 @@ export const grocyServiceMite: ITraefikedServiceMite = {
    - grocy
    - traefik
   volumes:
-   - ./grocy/barcodebuddy:/config
+   - \${PWD}/grocy/barcodebuddy:/config
   deploy:
    restart_policy:
     condition: on-failure

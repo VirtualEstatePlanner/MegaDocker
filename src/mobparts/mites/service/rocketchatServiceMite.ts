@@ -24,8 +24,8 @@ export const rocketchatServiceMite: ITraefikedServiceMite = {
    - rocketchat
   command: mongod --replSet rocketchat
   volumes:
-   - ./rocketchat/database:/data/db
-   - ./rocketchat/dump:/dump
+   - \${PWD}/rocketchat/database:/data/db
+   - \${PWD}/rocketchat/dump:/dump
   deploy:
    restart_policy:
     condition: any
@@ -64,7 +64,7 @@ export const rocketchatServiceMite: ITraefikedServiceMite = {
     - 'traefik.http.services.rocketchat-https.loadbalancer.server.port=3000'
     - 'com.MegaDocker.description=RockeChat team management software'
   volumes:
-   - ./rocketchat/uploads:/app/uploads
+   - \${PWD}/rocketchat/uploads:/app/uploads
   environment:
    - PORT=3000
    - ROOT_URL=https://rocketchat.[[PRIMARYDOMAIN]]
@@ -85,7 +85,7 @@ export const rocketchatServiceMite: ITraefikedServiceMite = {
   # you can add more scripts as you'd like here, they need to be installable by npm
    - EXTERNAL_SCRIPTS=hubot-help,hubot-seen,hubot-links,hubot-diagnostics
   volumes:
-   - ./rocketchat/hubot-scripts:/home/hubot/scripts
+   - \${PWD}/rocketchat/hubot-scripts:/home/hubot/scripts
 # this is used to expose the hubot port for notifications on the host on port 3001, e.g. for hubot-jenkins-notifier, and should be forwarded through traefik over tcp
   ports:
    - 3001:8080

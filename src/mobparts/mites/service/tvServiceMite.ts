@@ -24,8 +24,8 @@ export const tvServiceMite: ITraefikedServiceMite = {
    - traefik
    - tv
   volumes:
-   - ./media/tv-config:/config
-   - ./media/tv-data:/media
+   - \${PWD}/media/tv-config:/config
+   - \${PWD}/media/tv-data:/media
   environment:
    - PUID=$HOSTUSERID
    - PGID=$HOSTUSERGID

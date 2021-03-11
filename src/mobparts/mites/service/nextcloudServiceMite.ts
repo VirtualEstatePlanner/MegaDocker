@@ -24,7 +24,7 @@ nextcloud:
    - nextcloud
    - traefik
   volumes:
-   - ./nextcloud/application:/var/www/html
+   - \${PWD}/nextcloud/application:/var/www/html
   environment:
    - MYSQL_HOST=[[MOBNAME]]_nextcloud_mariadb
    - MYSQL_PASSWORD=[[NEXTCLOUDMARIADBPASSWORD]]
@@ -57,7 +57,7 @@ nextcloud:
    - nextcloud
   command: --transaction-isolation=READ-COMMITTED --binlog-format=ROW
   volumes:
-   - ./nextcloud/mariadb:/var/lib/mysql
+   - \${PWD}/nextcloud/mariadb:/var/lib/mysql
   environment:
    - MYSQL_ROOT_PASSWORD=[[NEXTCLOUDMARIADBROOTPASSWORD]]
    - MYSQL_PASSWORD=[[NEXTCLOUDMARIADBPASSWORD]]

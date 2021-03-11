@@ -27,13 +27,13 @@ export const heimdallServiceMite: ITraefikedServiceMite = {
    - PGID=$HOSTUSERGID
    - TZ=$HOSTTIMEZONE
   volumes:
-   - ./logs/heimdall:/loglocation
-   - ./traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/config/keys/[[PRIMARYDOMAIN]].crt
-   - ./traefik/ssl/private/[[PRIMARYDOMAIN]].key:/config/keys/[[PRIMARYDOMAIN]].key
-   - ./heimdall/php:/config/php
-   - ./heimdall/www:/config/www
-   - ./heimdall/log:/config/log
-   - ./heimdall/nginx:/config/nginx
+   - \${PWD}/logs/heimdall:/loglocation
+   - \${PWD}/traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/config/keys/[[PRIMARYDOMAIN]].crt
+   - \${PWD}/traefik/ssl/private/[[PRIMARYDOMAIN]].key:/config/keys/[[PRIMARYDOMAIN]].key
+   - \${PWD}/heimdall/php:/config/php
+   - \${PWD}/heimdall/www:/config/www
+   - \${PWD}/heimdall/log:/config/log
+   - \${PWD}/heimdall/nginx:/config/nginx
   deploy:
    restart_policy:
     condition: on-failure

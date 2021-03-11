@@ -26,9 +26,9 @@ export const kanboardServiceMite: ITraefikedServiceMite = {
   environment:
    - DATABASE_URL=mysql://[[KANBOARDMARIADBUSER]]:[[KANBOARDMARIADBPASSWORD]]@[[MOBNAME]]_kanboard-mariadb/kanboard
   volumes:
-   - ./logs/kanboard:/loglocation
-   - ./kanboard/kanboard-data:/var/www/app/data
-   - ./kanboard/kanboard-plugins:/var/www/app/plugins
+   - \${PWD}/logs/kanboard:/loglocation
+   - \${PWD}/kanboard/kanboard-data:/var/www/app/data
+   - \${PWD}/kanboard/kanboard-plugins:/var/www/app/plugins
   deploy:
    restart_policy:
     condition: on-failure
@@ -52,8 +52,8 @@ export const kanboardServiceMite: ITraefikedServiceMite = {
   networks:
    - kanboard
   volumes:
-   - ./logs/kanboard:/loglocation
-   - ./kanboard/mariadb:/var/lib/mysql
+   - \${PWD}/logs/kanboard:/loglocation
+   - \${PWD}/kanboard/mariadb:/var/lib/mysql
   environment:
    - MYSQL_ROOT_PASSWORD=[[KANBOARDMARIADBROOTPASSWORD]]
    - MYSQL_DATABASE=kanboard
