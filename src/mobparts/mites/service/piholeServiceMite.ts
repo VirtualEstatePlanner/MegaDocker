@@ -57,5 +57,6 @@ export const piholeServiceMite: ITraefikedServiceMite = {
     - 'com.MegaDocker.description=Pihole DNS-based adblocker'
 
 # End pihole service section
+
 `,
 }

@@ -46,7 +46,6 @@ export const syncthingServiceMite: ITraefikedServiceMite = {
      - 'com.MegaDocker.description=syncthing - syncthing filesharing for video files'
  
 # End Syncthing Service Section
- 
 
 `,
 }

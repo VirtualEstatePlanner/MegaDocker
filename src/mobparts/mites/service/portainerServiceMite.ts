@@ -48,7 +48,6 @@ export const portainerServiceMite: ITraefikedServiceMite = {
     constraints:
      - node.role == manager
 
-
 # End Portainer Service Section
 
 `,

@@ -35,7 +35,7 @@ export const tvServiceMite: ITraefikedServiceMite = {
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.tv.entrypoints=plainhttp'
-     - 'traefik.http.services.tv.loadbalancer.server.port=8989'
+    - 'traefik.http.services.tv.loadbalancer.server.port=8989'
     - 'traefik.http.routers.tv.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
     - 'traefik.http.middlewares.tv-force-secure.redirectscheme.scheme=https'
     - 'traefik.http.routers.tv.middlewares=tv-force-secure'
@@ -48,8 +48,6 @@ export const tvServiceMite: ITraefikedServiceMite = {
     - 'com.MegaDocker.description=Sonarr - a tv episode search tool'
 
 # End TV Service Section
-   
-
 
 `,
 }
