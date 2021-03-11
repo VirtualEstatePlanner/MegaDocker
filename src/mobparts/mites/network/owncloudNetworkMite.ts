@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const owncloudNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40041,
+  miteIndex: 40020,
   miteString: `
 
 # Begin Owncloud Network Section

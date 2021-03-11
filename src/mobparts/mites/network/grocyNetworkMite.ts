@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const grocyNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40017,
+  miteIndex: 40008,
   miteString: `
 
 # Begin Grocy Network Section

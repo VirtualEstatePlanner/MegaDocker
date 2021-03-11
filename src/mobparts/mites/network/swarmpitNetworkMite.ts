@@ -4,7 +4,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const swarmpitNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40053,
+  miteIndex: 40026,
   miteString: `
 
 # Begin Swarmpit Network Section
