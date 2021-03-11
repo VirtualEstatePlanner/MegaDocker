@@ -19,7 +19,7 @@ export const drupalServiceMite: ITraefikedServiceMite = {
 # Begin Drupal Service Section
 
  drupal:
-  image: drupal
+  image: drupal:8.9.13-php7.4-fpm-alpine
   networks:
    - ldap
    - traefik
