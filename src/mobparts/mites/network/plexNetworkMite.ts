@@ -4,7 +4,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const plexNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40022,
+  miteIndex: 40045,
   miteString: `
 
 # Begin Plex Network Section
@@ -13,6 +13,6 @@ export const plexNetworkMite: IMite = {
   driver: overlay
 
 # End Plex Network Section
-  
+
 `,
 }

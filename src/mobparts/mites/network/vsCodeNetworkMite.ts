@@ -10,15 +10,15 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const vsCodeNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40030,
+  miteIndex: 40061,
   miteString: `
 
 # Begin VSCode Network Section
- 
+
  vscode:
   driver: overlay
-  
+
 # End VSCode Network Section
-  
+
   `,
 }

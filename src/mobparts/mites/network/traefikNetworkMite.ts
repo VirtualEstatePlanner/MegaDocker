@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const traefikNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40027,
+  miteIndex: 40055,
   miteString: `
 
 # Begin Traefik Network Section

@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const booksNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40001,
+  miteIndex: 40003,
   miteString: `
 
 # Begin Books Network Section

@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const opensourcePOSNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40019,
+  miteIndex: 40039,
   miteString: `
 
 # Begin opensourcePOS Network Section

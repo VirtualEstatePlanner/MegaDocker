@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const kanboardNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40010,
+  miteIndex: 40021,
   miteString: `
 
 # Begin Kanboard Network Section

@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const n8nNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40016,
+  miteIndex: 40033,
   miteString: `
 
 # Begin n8n Network Section

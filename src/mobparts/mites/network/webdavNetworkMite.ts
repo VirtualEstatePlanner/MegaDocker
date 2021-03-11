@@ -4,7 +4,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const webdavNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40031,
+  miteIndex: 40063,
   miteString: `
 
 # Begin WebDAV Network Section

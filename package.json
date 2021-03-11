@@ -33,11 +33,13 @@
     "react-start": "react-scripts start",
     "react-dev": "cross-env BROWSER=none yarn react-start",
     "electron-dev": "sleep 15 && wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .",
-    "develop": "cross-env NODE_ENV=development run-p -l tsc-dev react-dev electron-dev",
+    "develop": "cross-env NODE_ENV=development run-p -l test-dev tsc-dev react-dev electron-dev",
     "react-test": "react-scripts test --env=jsdom",
     "react-test-coverage": "react-scripts test --coverage --env=jsdom",
     "react-eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                                 react-scripts eject' && echo",
     "react-build": "IMAGE_INLINE_SIZE_LIMIT=0 react-scripts build && rm build/electron.ts",
+    "test": "jest",
+    "test-dev": "jest --watch",
     "build-transpile": "run-s unbuild tsc-build react-build",
     "warning:mac-only": "echo && echo 'CRATE warning: This script will only function on macOS' && echo",
     "dist:linux-intel64": "yarn undist && cross-env NODE_ENV=production electron-builder -l -c ./electron-configs/linux-intel-64.yml && mv dist/*.AppImage binaries/linux/intel/",
@@ -102,10 +104,13 @@
     "react-scripts": "latest"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
     "@types/electron-devtools-installer": "latest",
     "@types/file-saver": "latest",
     "@types/jest": "latest",
     "@types/material-ui": "latest",
+    "@types/node": "latest",
     "@types/opener": "latest",
     "@types/prettier": "latest",
     "@types/react": "latest",
@@ -117,9 +122,21 @@
     "electron-is-dev": "latest",
     "npm-run-all": "latest",
     "prettier": "latest",
+    "ts-jest": "latest",
     "ts-node": "latest",
     "typescript": "latest",
     "wait-on": "latest"
+  },
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"

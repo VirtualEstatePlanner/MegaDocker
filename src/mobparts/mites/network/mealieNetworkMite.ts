@@ -1,8 +1,8 @@
 /** @format */
 
-//  traefikNetworkMite.ts
+//  mealieNetworkMite.ts
 //  MegaDocker
-//  Network Mite for NextCloud
+//  Network Mite for Mealie
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const mealieNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40013,
+  miteIndex: 40027,
   miteString: `
 
 # Begin Mealie Network Section

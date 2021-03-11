@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const portainerNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40023,
+  miteIndex: 40047,
   miteString: `
 
 # Begin Portainer Network Section

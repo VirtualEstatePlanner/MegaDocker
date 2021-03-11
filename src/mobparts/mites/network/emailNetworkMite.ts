@@ -10,7 +10,7 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const emailNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40005,
+  miteIndex: 40011,
   miteString: `
 
 # Begin email Network Section

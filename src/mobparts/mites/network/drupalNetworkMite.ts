@@ -10,15 +10,15 @@ import { IMite } from '../../../interfaces/IMite'
 
 export const drupalNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,
-  miteIndex: 40003,
+  miteIndex: 40007,
   miteString: `
 
 # Begin Drupal Network Section
- 
+
  drupal:
   driver: overlay
-  
+
 # End Drupal Network Section
-  
+
   `,
 }
