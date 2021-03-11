@@ -70,7 +70,7 @@ export const swarmpitServiceMite: ITraefikedServiceMite = {
      memory: 128M
 
  swarmpit-influx-db:
-  image: influxdb
+  image: influxdb:1.7
   volumes:
    - \${PWD}/logs/swarmpit:/loglocation
    - \${PWD}/swarmpit/influx-data:/var/lib/influxdb
