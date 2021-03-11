@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { IMite } from './IMite'
+import { IMite } from '../interfaces/IMite'
 
 export const testNetworkMite: Function = (miteToTest: IMite) => {
   it('has correct type', () => {

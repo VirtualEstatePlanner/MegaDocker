@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { ITraefikedServiceMite } from './ITraefikedServiceMite'
+import { ITraefikedServiceMite } from '../interfaces/ITraefikedServiceMite'
 
 export const testTraefikedServiceMite: Function = (traefikedServiceMiteToTest: ITraefikedServiceMite) => {
   it('has an index in the appropriate range', () => {

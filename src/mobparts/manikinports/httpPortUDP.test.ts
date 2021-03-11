@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { testManikinPort } from '../../interfaces/testManikinPort'
+import { testManikinPort } from '../../tests/testManikinPort'
 import { httpPortUDP } from './httpPortUDP'
 
 testManikinPort(httpPortUDP)

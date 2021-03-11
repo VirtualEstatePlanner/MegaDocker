@@ -11,7 +11,6 @@ import { IManikin } from '../../interfaces/IManikin'
 import { cloudflareAPIToken } from '../memories/cloudflareAPIToken'
 import { letsEncryptEmail } from '../memories/letsEncryptEmail'
 import { primaryDomain } from '../memories/primaryDomain'
-// import { secondaryDomain } from '../memories/secondaryDomain';
 import { traefikServiceMite } from '../mites/service/traefikServiceMite'
 import { traefikNetworkMite } from '../mites/network/traefikNetworkMite'
 import traefikIcon from '../../images/manikin-icons/traefikIcon.png'
@@ -28,13 +27,7 @@ export const traefikManikin: IManikin = {
   manikinGroups: [`Core`, `Network`],
   manikinIcon: traefikIcon,
   manikinIndex: 10027,
-  memories: [
-    mobName,
-    letsEncryptEmail,
-    cloudflareAPIToken,
-    primaryDomain,
-    //    secondaryDomain
-  ],
+  memories: [mobName, letsEncryptEmail, cloudflareAPIToken, primaryDomain],
   name: `Traefik`,
   mites: [traefikServiceMite, traefikNetworkMite],
   ports: [],

@@ -1,9 +1,6 @@
 #!/usr/bin/env ts-node-script
 /** @format */
 
-import * as fs from 'fs'
-import readline from 'readline'
-
 interface ICustomMiteInput {
   autocomplete: boolean
   description: string

@@ -8,9 +8,10 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 
-import { IManikin } from './IManikin';
+import { IManikin } from '../interfaces/IManikin';
+import { IMemory } from '../interfaces/IMemory';
 
-export const testManikin: Function = (ManikinToTest: IManikin) => {
+export const testManikin: Function = (ManikinToTest: IManikin, memories?: IMemory[]) => {
   it(`has all necessary properties defined`, () => {
     expect(ManikinToTest.name).toBeDefined();
     expect(ManikinToTest.manikinIcon).toBeDefined();

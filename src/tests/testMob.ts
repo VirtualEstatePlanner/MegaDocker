@@ -7,7 +7,7 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { workingManikins } from '../globals/workingManikins'
-import { IMob } from './IMob'
+import { IMob } from '../interfaces/IMob'
 
 export const testMob: Function = (mobToTest: IMob) => {
   it('should have all 3 values', () => {

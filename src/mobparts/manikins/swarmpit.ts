@@ -11,7 +11,6 @@ import { IManikin } from '../../interfaces/IManikin'
 import { swarmpitServiceMite } from '../mites/service/swarmpitServiceMite'
 import { swarmpitNetworkMite } from '../mites/network/swarmpitNetworkMite'
 import swarmpitIcon from '../../images/manikin-icons/swarmpitIcon.png'
-//import { swarmpitCouchbasePassword } from '../memories/swarmpitCouchbasePassword';
 
 /**
  * swarmpit Manikin
@@ -20,15 +19,11 @@ export const swarmpitManikin: IManikin = {
   description: `Swarmpit Docker swarm mode GUI service`,
   isCore: true,
   isSelected: true,
-  // isCore: false,
-  // isSelected: false,
   manikinGroups: [`Development`, `Utility`, `Organization`, `Productivity`],
   folder: `swarmpit`,
   manikinIcon: swarmpitIcon,
   manikinIndex: 10025,
-  memories: [
-    /*swarmpitCouchbasePassword*/
-  ],
+  memories: [],
   name: `Swarmpit`,
   mites: [swarmpitServiceMite, swarmpitNetworkMite],
   ports: [],

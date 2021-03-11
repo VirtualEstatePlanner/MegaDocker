@@ -136,7 +136,11 @@
     },
     "setupFilesAfterEnv": [
       "@testing-library/jest-dom/extend-expect"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(css)$": "<rootDir>/src/typings/css.d.ts",
+      "\\.(png)$": "<rootDir>/src/typings/png.d.ts"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
