@@ -18,14 +18,14 @@ export const opensourcePOSServiceMite: ITraefikedServiceMite = {
 
 # Begin opensourcePOS Service Section
 
- opensourcepos:
+ opensourcepos-app:
   image: jekkos/opensourcepos:latest
   networks:
    - opensourcepos
    - traefik
   volumes:
-   - uploads:/app/public/uploads
-   - logs:/app/application/logs
+   - \${PWD}/opensourcepos/app:/app/public/uploads
+#   - \${PWD}/logs/opensourcepos/app:/app/application/logs
   environment:
    - CI_ENV=production
    - FORCE_HTTPS=true
@@ -33,7 +33,7 @@ export const opensourcePOSServiceMite: ITraefikedServiceMite = {
    - MYSQL_USERNAME=[[OPENSOURCEPOSMARIADBUSER]]
    - MYSQL_PASSWORD=[[OPENSOURCEPOSMARIADBPASSWORD]]
    - MYSQL_DB_NAME=opensourcepos
-   - MYSQL_HOST_NAME=mariadb
+   - MYSQL_HOST_NAME=[[MOBNAME]]_opensourcepos-mariadb
   deploy:
    restart_policy:
     condition: on-failure
@@ -52,13 +52,14 @@ export const opensourcePOSServiceMite: ITraefikedServiceMite = {
     - 'traefik.http.services.opensourcepos-interface-https.loadbalancer.server.port=80'
     - 'com.MegaDocker.description=opensourcePOS - Point of Sale system'
 
- mariadb:
+ opensourcepos-mariadb:
   image: mariadb:latest
   networks:
    - opensourcepos
   volumes:
-   - \${PWD}/database/database.sql:/docker-entrypoint-initdb.d/database.sql
-   - mysql:/var/lib/mysql:rw
+## TODO: add database.sql customMite
+   - \${PWD}/opensourcepos/database/database.sql:/docker-entrypoint-initdb.d/database.sql
+   - \${PWD}/opensourcepos/mariadb:/var/lib/mysql
   environment:
    - MYSQL_ROOT_PASSWORD=[[OPENSOURCEPOSMARIADBROOTPASSWORD]]
    - MYSQL_DATABASE=opensourcepos
