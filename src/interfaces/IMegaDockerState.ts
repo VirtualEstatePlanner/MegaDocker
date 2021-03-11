@@ -1,5 +1,11 @@
 /** @format */
 
+//  IMegaDockerState.ts
+//  MegaDocker
+//  an interface to represent the entire application state
+//  Created by George Georgulas IV on 4/15/19.
+//  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
+
 import { IManikin } from './IManikin'
 import { IMemory } from './IMemory'
 import { IMite } from './IMite'
