@@ -5,7 +5,7 @@
 - `v0.4.1-beta` : **A jillion little bugfixes in one morning, with more coming today**
 - `v0.4.0-beta` : Generates a script to setup Cloudflare hosts for you automatically
 - `v0.3.9-beta` : added Mealie and Syncthing Manikins
-- `v0.3.8-beta` : even more neomorphic shinyness
+- `v0.3.8-beta` : even more neomorphic shinyness [all credit is still due to Joe](https://github.com/jpt-1)
 - `v0.3.7-beta` : React 17, Material UI 5, Apple Silicon and linux arm native versions
 - `v0.3.6-beta` : moved all dependencies back to "latest"
 - `v0.3.5-beta` : added neomorphic theme [all credit is due to Joe](https://github.com/jpt-1)
