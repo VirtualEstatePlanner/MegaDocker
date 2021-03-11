@@ -19,7 +19,7 @@ export const elkServiceMite: ITraefikedServiceMite = {
 # Begin ELK Service Section
  
  elasticsearch:
-  image: docker.elastic.co/elasticsearch/elasticsearch:7.7.0
+  image: docker.elastic.co/elasticsearch/elasticsearch:7.11.2
   environment:
    - bootstrap.memory_lock=true
    - cluster.name="[[MOBNAME]]-docker-cluster"
@@ -38,7 +38,7 @@ export const elkServiceMite: ITraefikedServiceMite = {
    - \${PWD}/elk/logfiles:/usr/share/elasticsearch/logs
 
  filebeat:
-  image: docker.elastic.co/beats/filebeat:7.7.0
+  image: docker.elastic.co/beats/filebeat:7.11.2
   command: filebeat run --modules traefik
   environment:
    - 'ES_JAVA_OPTS=-Xms512m -Xmx512m'
@@ -55,7 +55,7 @@ export const elkServiceMite: ITraefikedServiceMite = {
   - /var/run/docker.sock:/var/run/docker.sock
 
  kibana:
-  image: docker.elastic.co/kibana/kibana:7.7.0
+  image: docker.elastic.co/kibana/kibana:7.11.2
   networks:
    - traefik
    - elk
