@@ -8,7 +8,7 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
-const hostnames: string[] = [`portal`]
+const hostnames: string[] = [`heimdall`]
 
 export const heimdallServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
@@ -16,7 +16,7 @@ export const heimdallServiceMite: ITraefikedServiceMite = {
   webInterfaceHostnames: hostnames,
   miteString: `
 
-# Begin Portal Service Section
+# Begin Heimdall Service Section
 
  heimdall:
   image: linuxserver/heimdall
@@ -52,7 +52,7 @@ export const heimdallServiceMite: ITraefikedServiceMite = {
     - 'traefik.http.services.heimdall-https.loadbalancer.server.port=80'
     - 'com.MegaDocker.description=Heimdall - a portal for your MegaDocker interface pages'
   
-  # End Portal Service Section
+  # End Heimdall Service Section
   
   `,
 }
