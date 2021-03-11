@@ -41,6 +41,8 @@ export const emailServiceMite: ITraefikedServiceMite = {
    - ENABLE_POSTGREY=0
    - ONE_DIR=1
    - DOMAIN=[[PRIMARYDOMAIN]]
+## TODO: add MX hosts option to ITraefikedServiceMite
+## TODO: add zipDockerSwarm function to generate MX record in dnssetup.sh
    - OVERRIDE_HOSTNAME=${hostnames[1]}.[[PRIMARYDOMAIN]]
    - OVERRIDE_DOMAINNAME=${hostnames[1]}.[[PRIMARYDOMAIN]]
    - POSTMASTER_ADDRESS=postmaster@[[PRIMARYDOMAIN]]
