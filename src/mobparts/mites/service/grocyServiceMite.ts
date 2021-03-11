@@ -8,7 +8,7 @@
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
-const hostnames: string[] = [`groceries`, `barcodes`]
+const hostnames: string[] = [`grocy`, `barcodes`]
 
 export const grocyServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
