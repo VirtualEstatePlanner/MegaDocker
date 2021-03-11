@@ -31,7 +31,7 @@ export const opensourcePOSServiceMite: ITraefikedServiceMite = {
    - FORCE_HTTPS=true
    - PHP_TIMEZONE=UTC
    - MYSQL_USERNAME=[[OPENSOURCEPOSMARIADBUSER]]
-   - MYSQL_PASSWORD=[[OSPOSMARIADBPASSWORD]]
+   - MYSQL_PASSWORD=[[OPENSOURCEPOSMARIADBPASSWORD]]
    - MYSQL_DB_NAME=opensourcepos
    - MYSQL_HOST_NAME=mariadb
   deploy:
@@ -63,7 +63,7 @@ export const opensourcePOSServiceMite: ITraefikedServiceMite = {
    - MYSQL_ROOT_PASSWORD=[[OPENSOURCEPOSMARIADBROOTPASSWORD]]
    - MYSQL_DATABASE=opensourcepos
    - MYSQL_USER=[[OPENSOURCEPOSMARIADBUSER]]
-   - MYSQL_PASSWORD=[[OSPOSMARIADBPASSWORD]]
+   - MYSQL_PASSWORD=[[OPENSOURCEPOSMARIADBPASSWORD]]
   deploy:
    restart_policy:
     condition: on-failure
