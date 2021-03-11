@@ -16,6 +16,7 @@ export const styleguidistServiceMite: ITraefikedServiceMite = {
   image: georgegeorgulasiv/component-library
   volumes:
    - \${PWD}/styleguidist/components:/app/src/shared/components
+## TODO: add mite for image typings
    - \${PWD}/styleguidist/typings:/app/src/shared/typings
    - \${PWD}/styleguidist/interfaces:/app/src/shared/interfaces
    - \${PWD}/styleguidist/assets:/app/src/shared/assets
