@@ -1,6 +1,6 @@
 /** @format */
 
-export const mobFileHeaderString: string = `
+export const mobFileHeaderSectionString: string = `
 # MegaDocker YML File
 version: '3.8'
 
