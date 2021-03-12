@@ -1,12 +1,12 @@
 /** @format */
 
-//  wordpressMariaDBUser.test.ts
+//  autheliaMariaDBPassword.test.ts
 //  MegaDocker
 //  an automated test
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { testMemory } from '../../tests/testMemory'
-import { wordpressMariaDBUser } from './wordpressMariaDBUser'
+import { autheliaMariaDBPassword } from './autheliaMariaDBPassword'
 
-testMemory(wordpressMariaDBUser)
+testMemory(autheliaMariaDBPassword)
