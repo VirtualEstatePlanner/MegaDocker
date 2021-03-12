@@ -1,6 +1,6 @@
 /** @format */
 
-export const mobSecretsSectionString: string = `
+export const mobSecretsHeaderSectionString: string = `
 
 # Begin Secrets Section
 
