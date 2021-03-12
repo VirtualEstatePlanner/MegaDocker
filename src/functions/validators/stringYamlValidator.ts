@@ -7,12 +7,11 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import YAML from 'yaml'
-import { IMite } from '../../interfaces/IMite'
 import fs from 'fs'
 
-export const miteYamlValidator: Function = (miteToValidate: IMite): boolean => {
-  const temporaryFileName: string = `/tmp/mite-${miteToValidate.miteIndex}-temporaryFile`
-  fs.writeFileSync(temporaryFileName, miteToValidate.miteString, { encoding: 'utf8' })
+export const stringYamlValidator: Function = (stringToValidate: string): boolean => {
+  const temporaryFileName: string = `/tmp/string-someString-temporaryFile`
+  fs.writeFileSync(temporaryFileName, stringToValidate, { encoding: 'utf8' })
   const isValidated: boolean = YAML.parse(temporaryFileName)
   return isValidated
 }
