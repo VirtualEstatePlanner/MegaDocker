@@ -2,7 +2,7 @@
 
 //  IMemoryMarker.ts
 //  MegaDocker
-//  a union type of strings that represent a memory value in the mites
+//  a union type of strings that represent the location of a memory value in the mites
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
