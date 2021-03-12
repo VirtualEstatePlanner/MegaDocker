@@ -18,5 +18,5 @@ export const autheliaMariaDBUser: IMemory = {
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: noWhitespaceOrSymbolsValidator,
+  validator: noWhitespaceOrSymbolsValidator(),
 }

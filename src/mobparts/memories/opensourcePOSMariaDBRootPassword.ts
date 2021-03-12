@@ -16,5 +16,5 @@ export const opensourcePOSMariaDBRootPassword: IMemory = {
   value: "",
   valueType: "password",
   isReady: false,
-  validator: passwordValidator,
+  validator: passwordValidator(),
 };

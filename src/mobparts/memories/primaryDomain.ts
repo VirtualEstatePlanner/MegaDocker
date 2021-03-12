@@ -18,5 +18,5 @@ export const primaryDomain: IMemory = {
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: domainValidator,
+  validator: domainValidator(),
 }
