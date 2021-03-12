@@ -1,6 +1,6 @@
 /** @format */
 
-export const passwordValidator = (password: string): boolean => {
+export const passwordValidator: Function = (password: string): boolean => {
   const passwordRegex: RegExp = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})')
 
   const isValidated: boolean = passwordRegex.test(password) ? true : false

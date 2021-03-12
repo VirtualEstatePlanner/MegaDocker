@@ -1,6 +1,6 @@
 /** @format */
 
-export const mobnameValidator = (mobnameString: string): boolean => {
+export const mobnameValidator: Function = (mobnameString: string): boolean => {
   const noWhiteSpaceRegex: RegExp = new RegExp(`^[sa-z0-9]*$`)
   const hasNoWhiteSpaceOrSymbols: boolean = noWhiteSpaceRegex.test(mobnameString) ? true : false
   const nameLengthRequirements: boolean = mobnameString.length < 20

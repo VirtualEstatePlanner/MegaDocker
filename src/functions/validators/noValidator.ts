@@ -1,5 +1,5 @@
 /** @format */
 
-export const noValidator = (): boolean => {
+export const noValidator: Function = (): boolean => {
   return true
 }
