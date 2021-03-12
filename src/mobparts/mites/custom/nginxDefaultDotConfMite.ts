@@ -9,7 +9,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const nginxDefaultDotConfMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 50010,
+  miteIndex: 50009,
   miteFile: {
     path: `nginx/conf`,
     name: `nginx`,
