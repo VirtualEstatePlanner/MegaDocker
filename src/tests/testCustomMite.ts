@@ -31,9 +31,9 @@ export const testCustomMite: Function = (customMiteToTest: ICustomMite, manikin:
     expect(customMiteToTest.miteFile.extension).toStrictEqual(extension)
   })
   it(`has reasonable permissions set`, () => {
-    expect(customMiteToTest.miteFile.permissions).toHaveLength(3)
     expect(customMiteToTest.miteFile.permissions).toBeDefined()
-    //    expect((customMiteToTest.miteFile.permissions as unknown) as number).toBeGreaterThanOrEqual(0)
-    //    expect((customMiteToTest.miteFile.permissions as unknown) as number).toBeLessThanOrEqual(777)
+    expect(customMiteToTest.miteFile.permissions).toHaveLength(3)
+    expect(parseInt(customMiteToTest.miteFile.permissions)).toBeGreaterThanOrEqual(0)
+    expect(parseInt(customMiteToTest.miteFile.permissions)).toBeLessThanOrEqual(777)
   })
 }
