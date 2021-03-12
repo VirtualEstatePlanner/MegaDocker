@@ -1,8 +1,8 @@
 /** @format */
 
-//  ghostRootMariaDBPassword.ts
+//  autheliaMariaDBRootPassword.ts
 //  MegaDocker
-//  The variable for Ghost's MariaDB root user's password
+//  The variable for authelia's MariaDB root user's password
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
