@@ -2,7 +2,7 @@
 /** @format */
 
 import * as fs from 'fs'
-import IMemoryValueType from '../../interfaces/IMemoryValueType'
+import { IMemoryValueType } from '../../interfaces/IMemoryValueType'
 import readline from 'readline'
 
 let runtimeMemoryAnswers: IMemoryInput = {
