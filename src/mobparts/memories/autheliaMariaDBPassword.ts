@@ -9,9 +9,9 @@
 import { IMemory } from '../../interfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
-export const autheliaMariaDBRootPassword: IMemory = {
+export const autheliaMariaDBPassword: IMemory = {
   memoryIndex: 20000,
-  memoryMarker: `[[AUTHELIAMARIADBROOTPASSWORD]]`,
+  memoryMarker: `[[AUTHELIAMARIADBPASSWORD]]`,
   shouldAutocomplete: false,
   name: `Authelia MariaDB root password`,
   tooltip: `The password for the Authelia MariaDB root user`,
