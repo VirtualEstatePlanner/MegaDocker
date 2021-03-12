@@ -4,7 +4,7 @@
 // import JSZip from 'jszip';
 import { IMite } from '../../interfaces/IMite'
 import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
-import { servicesFooterSectionString } from '../../mobparts/mites/headers/servicesFooterSectionString'
+import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
 import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobNetworkHeaderSectionString'
 import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString'
 
@@ -16,7 +16,7 @@ export const zipKubernetesDeployment = (serviceMites: IMite[], networkMites: IMi
   console.log(`this is still not outputting for kubernetes`)
   const tempServicesYML: string[] = serviceMites.flatMap((eachMite) => eachMite.miteString)
   const tempNetworksYML: string[] = networkMites.flatMap((eachMite) => eachMite.miteString)
-  const ymlOutputArray: string[] = [mobFileHeaderSectionString, ...tempServicesYML, servicesFooterSectionString, mobNetworkHeaderSectionString, ...tempNetworksYML, mobNetworkFooterSectionString]
+  const ymlOutputArray: string[] = [mobFileHeaderSectionString, ...tempServicesYML, mobServicesFooterSectionString, mobNetworkHeaderSectionString, ...tempNetworksYML, mobNetworkFooterSectionString]
   const ymlString: string = ymlOutputArray.join(``)
   return ymlString
 }
