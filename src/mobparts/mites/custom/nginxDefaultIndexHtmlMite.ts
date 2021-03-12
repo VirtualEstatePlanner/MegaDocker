@@ -2,7 +2,7 @@
 
 import { ICustomMite } from '../../../interfaces/ICustomMite'
 
-export const nginxDefaultIndexHtml: ICustomMite = {
+export const nginxDefaultIndexHtmlMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
   miteIndex: 50011,

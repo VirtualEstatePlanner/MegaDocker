@@ -11,7 +11,7 @@ import { IManikin } from '../../interfaces/IManikin'
 import { nginxServiceMite } from '../mites/service/nginxServiceMite'
 import { nginxNetworkMite } from '../mites/network/nginxNetworkMite'
 import nginxIcon from '../../images/manikin-icons/nginxIcon.png'
-import { nginxDefaultIndexHtml } from '../mites/custom/nginxDefaultIndexHtml'
+import { nginxDefaultIndexHtmlMite } from '../mites/custom/nginxDefaultIndexHtmlMite'
 
 /**
  * nginx Manikin
@@ -25,7 +25,7 @@ export const nginxManikin: IManikin = {
   manikinIcon: nginxIcon,
   manikinIndex: 10018,
   memories: [],
-  mites: [nginxServiceMite, nginxNetworkMite, nginxDefaultIndexHtml],
+  mites: [nginxServiceMite, nginxNetworkMite, nginxDefaultIndexHtmlMite],
   name: `Nginx`,
   ports: [],
   subfolders: [`pages`, `log`],

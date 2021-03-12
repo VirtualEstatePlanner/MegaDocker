@@ -15,7 +15,7 @@ import elkIcon from '../../images/manikin-icons/elkIcon.png'
 import { kibanaUser } from '../memories/kibanaUser'
 import { kibanaPassword } from '../memories/kibanaPassword'
 import { elasticsearchDotYmlMite } from '../mites/custom/elasticsearchDotYmlMite'
-import { elasticsearchJvmDotOptionsMite } from '../mites/custom/elasticsearchJvmDotOptions'
+import { elasticsearchJvmDotOptionsMite } from '../mites/custom/elasticsearchJvmDotOptionsMite'
 import { elasticsearchLog4j2DotPropertiesMite } from '../mites/custom/elasticsearchLog4j2DotPropertiesMite'
 import { filebeatDotYmlMite } from '../mites/custom/filebeatDotYmlMite'
 
@@ -27,8 +27,6 @@ export const elkManikin: IManikin = {
   folder: `elk`,
   isCore: false,
   isSelected: false,
-  // isCore: true,
-  // isSelected: true,
   manikinGroups: [`Monitoring`],
   manikinIcon: elkIcon,
   manikinIndex: 10004,

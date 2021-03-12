@@ -1,5 +1,7 @@
 /** @format */
 
+import { IMiteType } from './IMiteType'
+
 //  IMite.ts
 //  MegaDocker
 //  an interface that represents a Mite
@@ -13,7 +15,7 @@
  * @miteString the IMite's data
  */
 export interface IMite {
-  type: `DockerSwarmNetwork` | `DockerSwarmService` | `KubernetesService` | `KubernetesNetwork` | `Custom`
+  type: IMiteType
   miteIndex: number
   miteString: string
 }

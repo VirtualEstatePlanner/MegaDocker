@@ -7,25 +7,33 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { ICustomMite } from '../interfaces/ICustomMite'
+import { IFileExtension } from '../interfaces/IFileExtension'
+import { IManikin } from '../interfaces/IManikin'
 
-const testCustomMite: ICustomMite = {
-  miteIndex: 4589967145,
-  type: `Custom`,
-  miteString: `this could be empty`,
-  miteFile: {
-    permissions: `600`,
-    path: `somePath/toSome/otherDirectory`,
-    name: `someCustomFile`,
-    extension: `txt`,
-    contents: `this should contain text`,
-  },
+export const testCustomMite: Function = (customMiteToTest: ICustomMite, manikin: IManikin, extension: IFileExtension) => {
+  it(`matches IMiteType`, () => {
+    expect(customMiteToTest.type).toStrictEqual(`Custom`)
+  })
+  it(`has an index in the correct range`, () => {
+    expect(customMiteToTest.miteIndex).toBeGreaterThanOrEqual(50000)
+    expect(customMiteToTest.miteIndex).toBeLessThanOrEqual(59999)
+  })
+  it(`is in the correct Manikin folder`, () => {
+    expect(customMiteToTest.miteFile.path).toContain(manikin.folder)
+  })
+  it(`has non-empty contents`, () => {
+    expect(customMiteToTest.miteString).toBeDefined()
+  })
+  it(`has a file name`, () => {
+    expect(customMiteToTest.miteFile.name).toBeDefined()
+  })
+  it(`has the correct file extension`, () => {
+    expect(customMiteToTest.miteFile.extension).toStrictEqual(extension)
+  })
+  it(`has reasonable permissions set`, () => {
+    expect(customMiteToTest.miteFile.permissions).toHaveLength(3)
+    expect(customMiteToTest.miteFile.permissions).toBeDefined()
+    //    expect((customMiteToTest.miteFile.permissions as unknown) as number).toBeGreaterThanOrEqual(0)
+    //    expect((customMiteToTest.miteFile.permissions as unknown) as number).toBeLessThanOrEqual(777)
+  })
 }
-
-it(`should have a type, string, a path, and a file`, () => {
-  expect(testCustomMite.type).toStrictEqual(`Custom`)
-  expect(testCustomMite.miteString).toStrictEqual(`this could be empty`)
-  expect(testCustomMite.miteFile.name).toStrictEqual(`someCustomFile`)
-  expect(testCustomMite.miteFile.path).toStrictEqual(`somePath/toSome/otherDirectory`)
-  expect(testCustomMite.miteFile.extension).toStrictEqual(`txt`)
-  expect(testCustomMite.miteFile.contents).toStrictEqual(`this should contain text`)
-})

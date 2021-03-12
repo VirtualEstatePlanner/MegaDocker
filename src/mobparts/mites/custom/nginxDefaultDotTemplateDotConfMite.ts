@@ -2,7 +2,7 @@
 
 import { ICustomMite } from '../../../interfaces/ICustomMite'
 
-export const nginxDefaultDotConfDotTemplate: ICustomMite = {
+export const nginxDefaultDotTemplateDotConfMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
   miteIndex: 50009,
