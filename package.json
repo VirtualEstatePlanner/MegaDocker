@@ -40,6 +40,7 @@
     "react-build": "IMAGE_INLINE_SIZE_LIMIT=0 react-scripts build && rm build/electron.ts",
     "test": "jest",
     "test-dev": "jest --watch",
+    "test-coverage": "jest --coverage",
     "build-transpile": "run-s unbuild tsc-build react-build",
     "warning:mac-only": "echo && echo 'CRATE warning: This script will only function on macOS' && echo",
     "dist:linux-intel64": "yarn undist && cross-env NODE_ENV=production electron-builder -l -c ./electron-configs/linux-intel-64.yml && mv dist/*.AppImage binaries/linux/intel/",
