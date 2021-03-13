@@ -9,4 +9,7 @@
 import { noValidator } from '../../../functions/validators/noValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-testValidator(`1234123412341234123412341234123412341234`, noValidator)
+const passingStrings: string[] = [``, ``, ``]
+const failingStrings: string[] = [``, ``, ``]
+
+testValidator(passingStrings, failingStrings, noValidator)

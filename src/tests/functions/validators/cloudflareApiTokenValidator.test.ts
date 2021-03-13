@@ -9,4 +9,7 @@
 import { cloudflareApiTokenValidator } from '../../../functions/validators/cloudflareApiTokenValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-testValidator(`1234123412341234123412341234123412341234`, cloudflareApiTokenValidator)
+const passingStrings: string[] = [``, ``, ``]
+const failingStrings: string[] = [``, ``, ``]
+
+testValidator(passingStrings, failingStrings, cloudflareApiTokenValidator)

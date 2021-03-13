@@ -9,4 +9,7 @@
 import { domainValidator } from '../../../functions/validators/domainValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-testValidator(`megadocker.net`, domainValidator)
+const passingStrings: string[] = [``, ``, ``]
+const failingStrings: string[] = [``, ``, ``]
+
+testValidator(passingStrings, failingStrings, domainValidator)

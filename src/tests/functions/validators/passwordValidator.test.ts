@@ -9,4 +9,7 @@
 import { passwordValidator } from '../../../functions/validators/passwordValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-testValidator(`1234123412341234123412341234123412341234`, passwordValidator)
+const passingStrings: string[] = [``, ``, ``]
+const failingStrings: string[] = [``, ``, ``]
+
+testValidator(passingStrings, failingStrings, passwordValidator)

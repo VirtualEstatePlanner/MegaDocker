@@ -9,4 +9,7 @@
 import { noWhitespaceOrSymbolsValidator } from '../../../functions/validators/noWhitespaceOrSymbolsValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-testValidator(`1234123412341234123412341234123412341234`, noWhitespaceOrSymbolsValidator)
+const passingStrings: string[] = [``, ``, ``]
+const failingStrings: string[] = [``, ``, ``]
+
+testValidator(passingStrings, failingStrings, noWhitespaceOrSymbolsValidator)

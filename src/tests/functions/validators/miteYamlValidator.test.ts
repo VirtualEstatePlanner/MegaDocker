@@ -11,4 +11,8 @@ import { testValidator } from '../../test-functions/testValidator'
 
 // need to pass this version of the function a mite, not a string
 // so create a few dummy mites in this file
-// testValidator(`1234123412341234123412341234123412341234`, miteYamlValidator)
+
+//const passingStrings: string[] = []
+//const failingStrings: string[] = []
+
+//testValidator(passingStrings, failingStrings, miteYamlValidator)
