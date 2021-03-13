@@ -9,15 +9,13 @@
 import YAML from 'yaml'
 import fs from 'fs'
 
+const temporaryFileName: string = `/tmp/stringYamlValidatorTestTempfile`
 export const stringYamlValidator: Function = (stringToValidate: string): boolean => {
-  if (!stringToValidate) {
+  if (!stringToValidate || stringToValidate.length == 0) {
     return false
+  } else {
+    fs.writeFileSync(temporaryFileName, stringToValidate, { encoding: 'utf8' })
   }
-  if (stringToValidate.length == 0) {
-    return false
-  }
-  const temporaryFileName: string = `/tmp/string-someString-temporaryFile`
-  fs.writeFileSync(temporaryFileName, stringToValidate, { encoding: 'utf8' })
   const isValidated: boolean = YAML.parse(temporaryFileName)
   return isValidated
 }
