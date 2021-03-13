@@ -7,7 +7,6 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import React from 'react'
-import './App.css'
 import { ContainerManikinPane } from './ContainerManikinPane'
 import { ContainerMainArea } from './ContainerMainArea'
 import { MegaProvider } from './MegaContext'
