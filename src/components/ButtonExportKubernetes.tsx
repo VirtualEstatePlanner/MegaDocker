@@ -1,19 +1,16 @@
 /** @format */
 
+//  ButtonExportKubernetes.tsx
+//  MegaDocker
+//  a React Button Component that downloads a Kubernetes deployment zip file
+//  Created by George Georgulas IV on 3/17/19.
+//  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
+
 import React from 'react'
 import Button from '@material-ui/core/Button'
 import { MegaContext } from './MegaContext'
 import { IMegaDockerState } from '../interfaces/IMegaDockerState'
 import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
-
-// old buttonClick code
-//saveFile(userMegaDockerFolder, mobName.value, `yml`, userMob.mobManikins.toString())
-// saveFile(
-//     `${process.env.PWD}`,
-//     `testfilename`,
-//     `yml`,
-//     `so what the hell does this yml even say?`
-// );
 
 export const ButtonExportKubernetes: React.FC = (): React.ReactElement => {
   const {

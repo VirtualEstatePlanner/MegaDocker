@@ -1,5 +1,11 @@
 /** @format */
 
+//  ButtonExportDockerSwarm.tsx
+//  MegaDocker
+//  a React Button Component that downloads a Docker Swarm zip file
+//  Created by George Georgulas IV on 3/17/19.
+//  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
+
 import React from 'react'
 import Button from '@material-ui/core/Button'
 import { MegaContext } from './MegaContext'

@@ -1,5 +1,11 @@
 /** @format */
 
+//  MegaTheme.tsx
+//  MegaDocker
+//  a React Component that
+//  Created by George Georgulas IV on 8/15/20.
+//  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
+
 import AsapFont from '../fonts/Asap'
 import { createMuiTheme, Theme } from '@material-ui/core'
 import InputBaseRootStyle from '../styles/InputBaseRootStyle'
@@ -37,7 +43,7 @@ import InputOutlinedRootStyle from '../styles/InputOutlinedRootStyle'
 import FormControlLabelRootStyle from '../styles/FormControlLabelRootStyle'
 import SliderRootStyle from '../styles/SliderRootStyle'
 
-const MegaTheme: Theme = createMuiTheme({
+export const MegaTheme: Theme = createMuiTheme({
   typography: {
     fontFamily: 'Asap',
   },
@@ -196,5 +202,3 @@ const MegaTheme: Theme = createMuiTheme({
     },
   },
 })
-
-export default MegaTheme

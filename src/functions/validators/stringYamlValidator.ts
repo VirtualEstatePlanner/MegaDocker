@@ -1,6 +1,6 @@
 /** @format */
 
-//  miteYamlValidator.ts
+//  stringYamlValidator.ts
 //  MegaDocker
 //  A function to check if a mite's miteString is valid yaml
 //  Created by George Georgulas IV on 3/12/21.
