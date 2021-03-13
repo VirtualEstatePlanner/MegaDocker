@@ -9,7 +9,16 @@
 import { noWhitespaceValidator } from '../../../functions/validators/noWhitespaceValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-const passingStrings: string[] = [``, ``, ``]
-const failingStrings: string[] = [``, ``, ``]
+const passingStrings: string[] = [`abc`, `abc123`, `123ABC`]
+const failingStrings: string[] = [
+  `this string contains spaces`,
+  `this   string   contains    tabs`,
+  `this
+string
+contains
+carriage
+returns
+`,
+]
 
-testValidator(passingStrings, failingStrings, noWhitespaceValidator)
+testValidator(passingStrings, noWhitespaceValidator, failingStrings)

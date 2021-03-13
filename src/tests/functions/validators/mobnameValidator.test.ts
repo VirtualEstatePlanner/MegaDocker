@@ -9,7 +9,7 @@
 import { mobnameValidator } from '../../../functions/validators/mobnameValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-const passingStrings: string[] = [``, ``, ``]
-const failingStrings: string[] = [``, ``, ``]
+const passingStrings: string[] = [`somevalidmobname`, `othervalidmobname`, `anothervalidmobname`]
+const failingStrings: string[] = [`nope`, `not correct`, `thismobnameiswaytoolongtobeconsiderdvalid`]
 
-testValidator(passingStrings, failingStrings, mobnameValidator)
+testValidator(passingStrings, mobnameValidator, failingStrings)

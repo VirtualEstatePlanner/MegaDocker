@@ -15,4 +15,4 @@ import { testValidator } from '../../test-functions/testValidator'
 //const passingStrings: string[] = []
 //const failingStrings: string[] = []
 
-//testValidator(passingStrings, failingStrings, miteYamlValidator)
+//testValidator(passingStrings, miteYamlValidator, failingStrings)

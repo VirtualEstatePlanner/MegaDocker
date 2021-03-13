@@ -9,7 +9,7 @@
 import { cloudflareApiTokenValidator } from '../../../functions/validators/cloudflareApiTokenValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-const passingStrings: string[] = [``, ``, ``]
-const failingStrings: string[] = [``, ``, ``]
+const passingStrings: string[] = [`qwer1234qwer1234WQER1234QWER1234qw12er34`, `1234qwerasdfzxcvPOIULKJH9087mn56bg674rfv`, `plokijuhygtfrdeswaqzxcvbnm1234567890abcd`]
+const failingStrings: string[] = [`1234!@#|1234qwerQWERqwerASDFZXCVasdfzcv`, `ZXCVASDFQWERASDFZXCVQWERASDFZXCV+WER[RFV`, `1029384756qpwoeirutyalskdjfhgbmznxc01928l`]
 
-testValidator(passingStrings, failingStrings, cloudflareApiTokenValidator)
+testValidator(passingStrings, cloudflareApiTokenValidator, failingStrings)

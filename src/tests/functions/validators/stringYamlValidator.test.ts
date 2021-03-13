@@ -9,7 +9,40 @@
 import { stringYamlValidator } from '../../../functions/validators/stringYamlValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-const passingStrings: string[] = [``, ``, ``]
-const failingStrings: string[] = [``, ``, ``]
+const passingStrings: string[] = [
+  `
+services:
+version:
+`,
+  `
+ services:
+ version:
+ `,
+  `
+services:
+ image:
+ environment:
+  - someflag=whatever
+`,
+]
 
-testValidator(passingStrings, failingStrings, stringYamlValidator)
+const failingStrings: string[] = [
+  `
+ services:
+version:
+`,
+  `
+ services:
+ version:
+ version:
+ `,
+  `
+services:
+ image:
+ environment:
+  - someflag=whatever
+   - someflag=whatever
+`,
+]
+
+testValidator(passingStrings, stringYamlValidator, failingStrings)

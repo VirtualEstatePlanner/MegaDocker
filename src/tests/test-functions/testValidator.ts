@@ -6,15 +6,20 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-export const testValidator: Function = (stringsThatPass: string[], stringsThatFail: string[], validatorToTest: (stringToValidate: string) => boolean) => {
+export const testValidator: Function = (stringsThatPass: string[], validatorToTest: (stringToValidate: string) => boolean, stringsThatFail?: string[]) => {
   it('should be true', () => {
     stringsThatPass.forEach((passingString) => {
       expect(validatorToTest(passingString)).toStrictEqual(true)
     })
   })
-  it('should be false', () => {
-    stringsThatFail.forEach((failingString) => {
-      expect(validatorToTest(failingString)).toStrictEqual(false)
-    })
+  it('should return false on null', () => {
+    expect(validatorToTest(null!)).toStrictEqual(false)
   })
+  if (stringsThatFail) {
+    it('should be false', () => {
+      stringsThatFail.forEach((failingString) => {
+        expect(validatorToTest(failingString)).toStrictEqual(false)
+      })
+    })
+  }
 }
