@@ -32,7 +32,7 @@ export const ButtonExportDockerSwarm: React.FC = (): React.ReactElement => {
   const mobname: string = state.memories[mobnameIndex].value
 
   return (
-    <Button /*style={{maxHeight: '60px', minWidth: '300px'}}*/ disabled={fullyValidated ? false : true} variant='contained' onClick={buttonClicked}>
+    <Button disabled={fullyValidated ? false : true} variant='contained' onClick={buttonClicked}>
       'download {mobname}.zip'
     </Button>
   )
