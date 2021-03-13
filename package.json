@@ -99,7 +99,6 @@
     "@material-ui/styles": "next",
     "file-saver": "latest",
     "jszip": "latest",
-    "opener": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "latest"
@@ -112,7 +111,6 @@
     "@types/jest": "latest",
     "@types/material-ui": "latest",
     "@types/node": "latest",
-    "@types/opener": "latest",
     "@types/prettier": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
