@@ -7,3 +7,16 @@
 //  Copyright © 2020-2021 The MegaDocker Group. All rights reserved.
 
 import { MegaTheme } from './MegaTheme'
+import { render } from '@testing-library/react'
+import { ThemeProvider } from '@material-ui/core'
+import { ButtonTemplate } from './ButtonTemplate'
+
+test('renders the MegaTheme component', () => {
+  render(
+    <div>
+      <ThemeProvider theme={MegaTheme}>
+        <ButtonTemplate />
+      </ThemeProvider>
+    </div>
+  )
+})
