@@ -7,3 +7,12 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { InfoCard } from './InfoCard'
+import { render } from '@testing-library/react'
+
+test('renders the InfoCard component', () => {
+  render(
+    <div>
+      <InfoCard />
+    </div>
+  )
+})

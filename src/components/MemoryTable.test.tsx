@@ -7,3 +7,12 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { MemoryTable } from './MemoryTable'
+import { render } from '@testing-library/react'
+
+test('renders the MemoryTable component', () => {
+  render(
+    <div>
+      <MemoryTable />
+    </div>
+  )
+})

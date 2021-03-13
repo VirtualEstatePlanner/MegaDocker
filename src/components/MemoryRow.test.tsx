@@ -7,3 +7,12 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { MemoryRow } from './MemoryRow'
+import { render } from '@testing-library/react'
+
+test('renders the MemoryRow component', () => {
+  render(
+    <div>
+      <MemoryRow />
+    </div>
+  )
+})

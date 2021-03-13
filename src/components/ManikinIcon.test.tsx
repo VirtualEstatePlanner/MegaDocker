@@ -7,3 +7,12 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { ManikinIcon } from './ManikinIcon'
+import { render } from '@testing-library/react'
+
+test('renders the ManikinIcon component', () => {
+  render(
+    <div>
+      <ManikinIcon />
+    </div>
+  )
+})

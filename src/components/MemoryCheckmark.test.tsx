@@ -7,3 +7,12 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { MemoryCheckmark } from './MemoryCheckmark'
+import { render } from '@testing-library/react'
+
+test('renders the MemoryCheckmark component', () => {
+  render(
+    <div>
+      <MemoryCheckmark />
+    </div>
+  )
+})

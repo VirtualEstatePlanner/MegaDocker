@@ -7,3 +7,12 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { ContainerMainArea } from './ContainerMainArea'
+import { render } from '@testing-library/react'
+
+test('renders the ContainerMainArea component', () => {
+  render(
+    <div>
+      <ContainerMainArea />
+    </div>
+  )
+})

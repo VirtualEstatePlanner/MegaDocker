@@ -7,3 +7,12 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { ManikinRow } from './ManikinRow'
+import { render } from '@testing-library/react'
+
+test('renders the ManikinRow component', () => {
+  render(
+    <div>
+      <ManikinRow />
+    </div>
+  )
+})

@@ -7,3 +7,12 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { ManikinSwitch } from './ManikinSwitch'
+import { render } from '@testing-library/react'
+
+test('renders the ManikinSwitch component', () => {
+  render(
+    <div>
+      <ManikinSwitch />
+    </div>
+  )
+})

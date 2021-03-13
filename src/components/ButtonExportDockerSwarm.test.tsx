@@ -7,3 +7,12 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { ButtonExportDockerSwarm } from './ButtonExportDockerSwarm'
+import { render } from '@testing-library/react'
+
+test('renders the ButtonExportDockerSwarm component', () => {
+  render(
+    <div>
+      <ButtonExportDockerSwarm />
+    </div>
+  )
+})

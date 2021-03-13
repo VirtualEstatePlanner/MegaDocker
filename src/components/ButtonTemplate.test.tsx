@@ -7,3 +7,12 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { ButtonTemplate } from './ButtonTemplate'
+import { render } from '@testing-library/react'
+
+test('renders the ButtonTemplate component', () => {
+  render(
+    <div>
+      <ButtonTemplate />
+    </div>
+  )
+})
