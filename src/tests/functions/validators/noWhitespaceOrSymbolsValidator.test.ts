@@ -10,6 +10,6 @@ import { noWhitespaceOrSymbolsValidator } from '../../../functions/validators/no
 import { testValidator } from '../../test-functions/testValidator'
 
 const passingStrings: string[] = [`abc`, `123`, `ABC`]
-const failingStrings: string[] = [`!@#`, `1 2 3`, `abc 123`]
+const failingStrings: string[] = [`!@#`, `1\u000A23`, `abc\u000C123`]
 
 testValidator(passingStrings, noWhitespaceOrSymbolsValidator, failingStrings)

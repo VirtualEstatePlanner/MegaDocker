@@ -9,6 +9,6 @@
 import { noValidator } from '../../../functions/validators/noValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-const passingStrings: string[] = [`anything`, `whatsoever`, `shouldpass`]
+const passingStrings: string[] = [`anything`, `whatsoever`, `should`, `pass`]
 
 testValidator(passingStrings, noValidator)
