@@ -18,5 +18,5 @@ export const kibanaUser: IMemory = {
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: noWhitespaceOrSymbolsValidator(),
+  validator: noWhitespaceOrSymbolsValidator,
 }

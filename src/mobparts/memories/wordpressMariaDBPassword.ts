@@ -18,5 +18,5 @@ export const wordpressMariaDBPassword: IMemory = {
   value: ``,
   valueType: 'password',
   isReady: false,
-  validator: passwordValidator(),
+  validator: passwordValidator,
 }

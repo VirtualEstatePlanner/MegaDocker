@@ -18,5 +18,5 @@ export const mobName: IMemory = {
   value: ``,
   valueType: 'text',
   isReady: false,
-  validator: mobnameValidator(),
+  validator: mobnameValidator,
 }

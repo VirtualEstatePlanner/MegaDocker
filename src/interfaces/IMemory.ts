@@ -29,7 +29,7 @@ export interface IMemory {
   name: string
   shouldAutocomplete: boolean
   tooltip: string
-  validator(value: string): boolean
+  validator: Function
   value: string
   valueType: IMemoryValueType
 }
