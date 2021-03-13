@@ -9,7 +9,7 @@
 import { passwordValidator } from '../../../functions/validators/passwordValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-const passingStrings: string[] = [``, ``, ``]
-const failingStrings: string[] = [``, ``, ``]
+const passingStrings: string[] = [`asdfASDF1234!@#$`, `12#$qwER`, `1qaz@WSX`]
+const failingStrings: string[] = [`alllowercase`, `ALLCAPS`, `2Sh0rt`, `1234!@#$`]
 
-testValidator(passingStrings, failingStrings, passwordValidator)
+testValidator(passingStrings, passwordValidator, failingStrings)

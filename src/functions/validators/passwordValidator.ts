@@ -11,6 +11,8 @@ export const passwordValidator: Function = (stringToValidate: string): boolean =
     return false
   }
   const passwordRegex: RegExp = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})')
-  const isValidated: boolean = passwordRegex.test(stringToValidate) ? true : false
+  const passesRegex: boolean = passwordRegex.test(stringToValidate) ? true : false
+  const isAtLeast8Characters: boolean = stringToValidate.length > 7
+  const isValidated: boolean = passesRegex && isAtLeast8Characters
   return isValidated
 }

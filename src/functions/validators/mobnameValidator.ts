@@ -10,6 +10,9 @@ export const mobnameValidator: Function = (stringToValidate: string): boolean =>
   if (!stringToValidate) {
     return false
   }
+  if (stringToValidate.length == 0) {
+    return false
+  }
   const noWhiteSpaceRegex: RegExp = new RegExp(`^[sa-z0-9]*$`)
   const hasNoWhiteSpaceOrSymbols: boolean = noWhiteSpaceRegex.test(stringToValidate) ? true : false
   const nameLengthRequirements: boolean = stringToValidate.length < 20 && stringToValidate.length > 4
