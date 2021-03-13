@@ -2,7 +2,7 @@
 
 //  MemoryTable.tsx
 //  MegaDocker
-//  a React Component that
+//  a React Component that renders the table of Memories for the Manikins selected in the Manikin Table
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 

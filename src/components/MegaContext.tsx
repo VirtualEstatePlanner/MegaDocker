@@ -2,7 +2,7 @@
 
 //  MegaContext.tsx
 //  MegaDocker
-//  a React Component that
+//  a React Component that handles React context for the MEGADocker application
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 

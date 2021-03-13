@@ -2,8 +2,8 @@
 
 //  MegaTheme.tsx
 //  MegaDocker
-//  a React Component that
-//  Created by George Georgulas IV on 8/15/20.
+//  a React Component that themes the MEGADocker application, based on the orb.run neomorphic design library
+//  Created by Joseph Treanor II on 8/15/20.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import AsapFont from '../fonts/Asap'
