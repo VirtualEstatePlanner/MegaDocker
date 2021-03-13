@@ -1,5 +1,11 @@
 /** @format */
 
+//  getCustomMites.ts
+//  MegaDocker
+//  a validator function for domain names
+//  Created by George Georgulas IV on 1/26/19.
+//  Copyright © 2019 The MegaDocker Group. All rights reserved.
+
 export const domainValidator: Function = (stringToValidate: string): boolean => {
   if (!stringToValidate) {
     return false

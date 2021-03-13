@@ -1,5 +1,11 @@
 /** @format */
 
+//  passwordValidator.ts
+//  MegaDocker
+//  a validator function for passwords
+//  Created by George Georgulas IV on 1/26/19.
+//  Copyright © 2019 The MegaDocker Group. All rights reserved.
+
 export const passwordValidator: Function = (stringToValidate: string): boolean => {
   if (!stringToValidate) {
     return false

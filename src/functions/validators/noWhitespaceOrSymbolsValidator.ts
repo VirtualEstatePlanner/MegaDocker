@@ -1,5 +1,11 @@
 /** @format */
 
+//  getCustomMites.ts
+//  MegaDocker
+//  a validator function that disallows whitespace and symbols
+//  Created by George Georgulas IV on 1/26/19.
+//  Copyright © 2019 The MegaDocker Group. All rights reserved.
+
 export const noWhitespaceOrSymbolsValidator: Function = (stringToValidate: string): boolean => {
   if (!stringToValidate) {
     return false

@@ -1,5 +1,11 @@
 /** @format */
 
+//  getMites.ts
+//  MegaDocker
+//  a function that pulls the Mites from an array of Manikins
+//  Created by George Georgulas IV on 1/26/19.
+//  Copyright © 2019 The MegaDocker Group. All rights reserved.
+
 import { IManikin } from '../../interfaces/IManikin'
 import { IMite } from '../../interfaces/IMite'
 

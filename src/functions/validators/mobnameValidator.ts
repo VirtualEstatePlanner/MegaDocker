@@ -1,5 +1,11 @@
 /** @format */
 
+//  getCustomMites.ts
+//  MegaDocker
+//  a validator function that disallows whitespace, symbols, and lengths greath than 20
+//  Created by George Georgulas IV on 1/26/19.
+//  Copyright © 2019 The MegaDocker Group. All rights reserved.
+
 export const mobnameValidator: Function = (stringToValidate: string): boolean => {
   if (!stringToValidate) {
     return false

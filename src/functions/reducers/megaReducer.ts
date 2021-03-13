@@ -1,13 +1,15 @@
 /** @format */
 
+//  megaReducer.ts
+//  MegaDocker
+//  a function that handles React Context state changes for {IMegaDockerAction, IMegaDockerState} React Hooks
+//  Created by George Georgulas IV on 1/26/19.
+//  Copyright © 2019 The MegaDocker Group. All rights reserved.
+
 import React from 'react'
-// interfaces
 import { IMegaDockerAction } from '../../interfaces/IMegaDockerAction'
 import { IMegaDockerState } from '../../interfaces/IMegaDockerState'
-// global consts
-// import { allManikins } from '../../globals/allManikins';
 import { workingManikins } from '../../globals/workingManikins'
-// reducer operation functions
 import { getManikins } from './getManikins'
 import { getMemories } from './getMemories'
 import { getMites } from './getMites'
@@ -46,15 +48,15 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.ymlOutput = `newState`
       return newState
 
-    case `TOGGLE_MANIKIN`: // to de/select a manikin
+    case `TOGGLE_MANIKIN`: // to select or deselect a manikin
       newState.manikinTable[action.payload].isSelected = !state.manikinTable[action.payload].isSelected // reverses the selected boolean in the manikin passed to it
-      newState.selectedManikins = getManikins(newState.manikinTable) // rebuilds selected Manikins
-      newState.memories = getMemories(newState.selectedManikins) // rebuilds Memories
-      newState.allMobMites = getMites(newState.selectedManikins) // rebuilds Mites
-      newState.mobDServiceMites = getDServiceMites(newState.allMobMites) // docker swarm network Mites
-      newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites) // docker swarm service Mites
-      newState.mobKServiceMites = getKServiceMites(newState.allMobMites)
-      newState.mobKNetworkMites = getKNetworkMites(newState.allMobMites)
+      newState.selectedManikins = getManikins(newState.manikinTable) // rebuilds selected Manikins array
+      newState.memories = getMemories(newState.selectedManikins) // rebuilds Memories array
+      newState.allMobMites = getMites(newState.selectedManikins) // rebuilds Mites array
+      newState.mobDServiceMites = getDServiceMites(newState.allMobMites) // rebuilds Docker Swarm network Mites array
+      newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites) // rebuilds Docker Swarm service Mites array
+      newState.mobKServiceMites = getKServiceMites(newState.allMobMites) // rebuilds Kubernetes service Mites array
+      newState.mobKNetworkMites = getKNetworkMites(newState.allMobMites) // rebuilds Kubernetes network Mites array
       newState.mobCustomMites = getCustomMites(newState.allMobMites) // custom mite file-based Mite[]
       newState.infoContent = `Toggled ${newState.manikinTable[action.payload].name} .isSelected to ${newState.manikinTable[action.payload].isSelected}`
       return newState
@@ -72,7 +74,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     case `SAVE_MOB_FILE`: // TODO: for open button
       return newState
 
-    case `DOCKER_SWARM_OUTPUT`: // TODO: for docker swarm export button
+    case `DOCKER_SWARM_OUTPUT`: // handles creation and download of Docker Swarm zip file
       zipDockerSwarm({
         manikins: newState.selectedManikins,
         memories: newState.memories,
@@ -86,7 +88,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       }
       return newState
 
-    case `UPDATE_INFO_CONTENT`: // to dispatch user hints to info pane
+    case `UPDATE_INFO_CONTENT`: // to dispatch user hints to info pane - deprecated
       newState = {
         ...newState,
         infoContent: updateInfoContent(action.payload),
@@ -94,6 +96,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       return newState
 
     default:
-      throw new Error(`megaReducer Error: hit default case in action.type switch`)
+      throw new Error(`megaReducer Error: hit default case in action.type switch`) // to prevent non-standard actions being passed
   }
 }
