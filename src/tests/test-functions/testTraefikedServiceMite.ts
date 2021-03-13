@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { miteYamlValidator } from '../../functions/validators/miteYamlValidator'
+import { stringYamlValidator } from '../../functions/validators/stringYamlValidator'
 import { ITraefikedServiceMite } from '../../interfaces/ITraefikedServiceMite'
 
 export const testTraefikedServiceMite: Function = (traefikedServiceMiteToTest: ITraefikedServiceMite) => {
@@ -21,7 +21,7 @@ export const testTraefikedServiceMite: Function = (traefikedServiceMiteToTest: I
     expect(traefikedServiceMiteToTest.webInterfaceHostnames.length).toBeGreaterThan(0)
   })
   it('has a valid YAML miteString', () => {
-    expect(miteYamlValidator(traefikedServiceMiteToTest)).toBeTruthy()
+    expect(stringYamlValidator(traefikedServiceMiteToTest.miteString)).toBeTruthy()
     expect(traefikedServiceMiteToTest.miteString).toBeDefined()
   })
 }
