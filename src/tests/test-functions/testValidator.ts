@@ -9,10 +9,10 @@
 export const testValidator: Function = (stringsThatShouldPass: string[], stringsThatShouldFail: string[], validatorToTest: (stringToValidate: string) => boolean) => {
   it('should be truthy', () => {
     stringsThatShouldPass.forEach((passingString) => {
-      expect(validatorToTest(passingString)).toBeTruthy()
+      expect(validatorToTest(passingString)).toStrictEqual(true)
     })
     stringsThatShouldFail.forEach((failingString) => {
-      expect(validatorToTest(failingString)).toBeFalsy()
+      expect(validatorToTest(failingString)).toStrictEqual(false)
     })
   })
 }
