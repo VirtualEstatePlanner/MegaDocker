@@ -1,7 +1,7 @@
 /** @format */
 
 import { BaseCSSProperties } from '@material-ui/styles'
-import '@fontsource/asap/300.css'
+import '@fontsource/asap'
 
 const AsapFont: BaseCSSProperties = {
   fontFamily: 'Asap',
