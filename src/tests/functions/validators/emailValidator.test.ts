@@ -7,3 +7,6 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { emailValidator } from '../../../functions/validators/emailValidator'
+import { testValidator } from '../../test-functions/testValidator'
+
+testValidator(`georgegeorgulas@gmail.com`, emailValidator)

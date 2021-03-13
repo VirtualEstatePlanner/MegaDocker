@@ -7,3 +7,6 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { domainValidator } from '../../../functions/validators/domainValidator'
+import { testValidator } from '../../test-functions/testValidator'
+
+testValidator(`megadocker.net`, domainValidator)

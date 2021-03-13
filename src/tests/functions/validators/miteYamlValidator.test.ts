@@ -7,3 +7,8 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { miteYamlValidator } from '../../../functions/validators/miteYamlValidator'
+import { testValidator } from '../../test-functions/testValidator'
+
+// need to pass this version of the function a mite, not a string
+// so create a few dummy mites in this file
+// testValidator(`1234123412341234123412341234123412341234`, miteYamlValidator)

@@ -7,3 +7,6 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { noWhitespaceValidator } from '../../../functions/validators/noWhitespaceValidator'
+import { testValidator } from '../../test-functions/testValidator'
+
+testValidator(`1234123412341234123412341234123412341234`, noWhitespaceValidator)
