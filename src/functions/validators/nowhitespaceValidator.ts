@@ -10,7 +10,11 @@ export const noWhitespaceValidator: Function = (stringToValidate: string): boole
   if (!stringToValidate) {
     return false
   }
-  const noWhiteSpaceRegex: RegExp = new RegExp(`^[s]*$`)
-  const isValidated: boolean = noWhiteSpaceRegex.test(stringToValidate) ? true : false
+  const spacesDetected: boolean = stringToValidate.includes(` `)
+  const tabsDetected: boolean = stringToValidate.includes(`\t`)
+  const carriageReturnsDetected: boolean = stringToValidate.includes(`
+`)
+  const whiteSpaceDetected: boolean = spacesDetected && tabsDetected && carriageReturnsDetected
+  const isValidated: boolean = !whiteSpaceDetected
   return isValidated
 }

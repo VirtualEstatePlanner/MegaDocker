@@ -7,10 +7,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 export const cloudflareApiTokenValidator: Function = (stringToValidate: string): boolean => {
-  if (!stringToValidate) {
-    return false
-  }
-  if (stringToValidate.length == 0) {
+  if (!stringToValidate || stringToValidate.length == 0) {
     return false
   }
   const isExactlyFortyCharacters: boolean = stringToValidate.length === 40

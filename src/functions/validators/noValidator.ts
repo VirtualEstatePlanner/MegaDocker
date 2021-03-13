@@ -7,10 +7,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 export const noValidator: Function = (stringToValidate: string): boolean => {
-  if (!stringToValidate) {
-    return false
-  }
-  if (stringToValidate.length == 0) {
+  if (!stringToValidate || stringToValidate.length == 0) {
     return false
   }
   console.log(`noValidator.ts: this validator function is only for use in development`)
