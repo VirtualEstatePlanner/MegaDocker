@@ -9,7 +9,7 @@
 import { emailValidator } from '../../../functions/validators/emailValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
-const passingStrings: string[] = [``, ``, ``]
-const failingStrings: string[] = [``, ``, ``]
+const passingStrings: string[] = [`georgegeorgulas@gmail.com`, `george_georgulas@me.com`, `george@orb.run`]
+const failingStrings: string[] = [`georgegeorgulasatgmaildotcom`, `george_georgulasatmedotcom`, `georgeatorbdotrun`]
 
 testValidator(passingStrings, failingStrings, emailValidator)
