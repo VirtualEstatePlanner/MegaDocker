@@ -12,7 +12,7 @@ import fs from 'fs'
 const temporaryFileName: string = `/tmp/stringYamlValidatorTestTempfile`
 export const stringYamlValidator: Function = (stringToValidate: string): boolean => {
   let isValidated: boolean = false
-  if (!stringToValidate || stringToValidate.length == 0) {
+  if (!stringToValidate || stringToValidate.length === 0) {
     return isValidated
   } else {
     fs.writeFileSync(temporaryFileName, stringToValidate, { encoding: 'utf8' })

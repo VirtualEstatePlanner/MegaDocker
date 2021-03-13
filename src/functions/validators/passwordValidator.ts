@@ -7,7 +7,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 export const passwordValidator: Function = (stringToValidate: string): boolean => {
-  if (!stringToValidate || stringToValidate.length == 0) {
+  if (!stringToValidate || stringToValidate.length === 0) {
     return false
   }
   const passwordRegex: RegExp = new RegExp('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(?=.{8,})')

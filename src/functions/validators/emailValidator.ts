@@ -8,7 +8,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 export const emailValidator: Function = (stringToValidate: string): boolean => {
-  if (!stringToValidate || stringToValidate.length == 0) {
+  if (!stringToValidate || stringToValidate.length === 0) {
     return false
   }
   const emailRegex: RegExp = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')
