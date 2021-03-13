@@ -12,7 +12,11 @@ import { render } from '@testing-library/react'
 test('renders the MemoryRow component', () => {
   render(
     <div>
-      <MemoryRow />
+      <table>
+        <tbody>
+          <MemoryRow />
+        </tbody>
+      </table>
     </div>
   )
 })
