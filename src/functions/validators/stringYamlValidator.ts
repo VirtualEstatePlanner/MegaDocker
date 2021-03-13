@@ -10,6 +10,9 @@ import YAML from 'yaml'
 import fs from 'fs'
 
 export const stringYamlValidator: Function = (stringToValidate: string): boolean => {
+  if (!stringToValidate) {
+    return false
+  }
   const temporaryFileName: string = `/tmp/string-someString-temporaryFile`
   fs.writeFileSync(temporaryFileName, stringToValidate, { encoding: 'utf8' })
   const isValidated: boolean = YAML.parse(temporaryFileName)
