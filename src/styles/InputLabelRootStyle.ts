@@ -1,6 +1,6 @@
 /** @format */
 
-import grey from '@material-ui/core/colors/grey'
+import grey from '@material-ui/core/colors/grey.css'
 import { CSSProperties } from '@material-ui/styles'
 
 const InputLabelRootStyle: CSSProperties = {
