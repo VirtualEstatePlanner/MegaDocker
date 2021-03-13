@@ -1,6 +1,6 @@
 /** @format */
 
-//  getCustomMites.ts
+//  noWhitespaceOrSymbolsValidator.ts
 //  MegaDocker
 //  a validator function that disallows whitespace and symbols
 //  Created by George Georgulas IV on 1/26/19.

@@ -1,6 +1,6 @@
 /** @format */
 
-//  getCustomMites.ts
+//  cloudflareApiTokenValidator.ts
 //  MegaDocker
 //  a validator function for Cloudflare API tokens
 //  Created by George Georgulas IV on 1/26/19.

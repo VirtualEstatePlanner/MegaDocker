@@ -1,6 +1,6 @@
 /** @format */
 
-//  getCustomMites.ts
+//  noValidator.ts
 //  MegaDocker
 //  a dummy validator function that allows anything
 //  Created by George Georgulas IV on 1/26/19.

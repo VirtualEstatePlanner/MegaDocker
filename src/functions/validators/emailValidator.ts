@@ -1,6 +1,6 @@
 /** @format */
 
-//  getCustomMites.ts
+//  emailValidator.ts
 //  MegaDocker
 //  a validator function for email addresses
 

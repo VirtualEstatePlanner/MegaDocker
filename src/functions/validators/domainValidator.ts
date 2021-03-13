@@ -1,6 +1,6 @@
 /** @format */
 
-//  getCustomMites.ts
+//  domainValidator.ts
 //  MegaDocker
 //  a validator function for domain names
 //  Created by George Georgulas IV on 1/26/19.

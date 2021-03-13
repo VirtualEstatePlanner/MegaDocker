@@ -1,6 +1,6 @@
 /** @format */
 
-//  getCustomMites.ts
+//  mobnameValidator.ts
 //  MegaDocker
 //  a validator function that disallows whitespace, symbols, and lengths greath than 20
 //  Created by George Georgulas IV on 1/26/19.
