@@ -12,6 +12,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const gitlabPostgresUser: IMemory = {
   memoryIndex: 20010,
   memoryMarker: `[[GITLABPOSTGRESUSER]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `GitLab Postgres User`,
   tooltip: `Choose a user account for Gitlab to connect to the postgres database`,

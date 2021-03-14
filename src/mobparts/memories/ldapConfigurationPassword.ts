@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const ldapConfigurationPassword: IMemory = {
   memoryIndex: 20020,
   memoryMarker: `[[LDAPCONFIGURATIONPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `LDAP Configuration Password`,
   tooltip: `Choose a configuration password for the LDAP server.`,

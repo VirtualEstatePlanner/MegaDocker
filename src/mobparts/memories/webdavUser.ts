@@ -12,6 +12,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const webdavUser: IMemory = {
   memoryIndex: 20044,
   memoryMarker: `[[WEBDAVUSER]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `WebDAV User`,
   tooltip: `Please enter the username to access WebDAV here`,

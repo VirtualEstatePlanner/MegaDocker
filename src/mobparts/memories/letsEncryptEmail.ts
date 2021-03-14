@@ -12,6 +12,7 @@ import { emailValidator } from '../../functions/validators/emailValidator'
 export const letsEncryptEmail: IMemory = {
   memoryIndex: 20024,
   memoryMarker: `[[LETSENCRYPTEMAIL]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: true,
   name: `Let'sEncrypt Email`,
   tooltip: `The email address used to register your domains`,

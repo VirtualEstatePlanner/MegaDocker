@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const ledgerPostgresPassword: IMemory = {
   memoryIndex: 20022,
   memoryMarker: `[[LEDGERPOSTGRESPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Ledger Postgres Password`,
   tooltip: `Choose the password for Ledger to connect to it's Postgres database`,

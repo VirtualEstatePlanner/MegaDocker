@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const gitlabPostgresPassword: IMemory = {
   memoryIndex: 20009,
   memoryMarker: `[[GITLABPOSTGRESPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Gitlab Postgres Password`,
   tooltip: `Choose the password GitLab will use to connect to the postgres database`,

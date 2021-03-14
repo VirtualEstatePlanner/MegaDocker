@@ -13,6 +13,7 @@ import { noValidator } from '../../functions/validators/noValidator'
 export const ldapOrganisation: IMemory = {
   memoryIndex: 20021,
   memoryMarker: `[[LDAPORGANISATION]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `LDAP Organisation`,
   tooltip: `Choose the organization name for your LDAP server.`,

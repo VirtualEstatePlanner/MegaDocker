@@ -12,6 +12,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const autheliaMariaDBUser: IMemory = {
   memoryIndex: 20002,
   memoryMarker: `[[AUTHELIAMARIADBUSER]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Authelia MariaDB User`,
   tooltip: `Please enter your Authelia MariaDB username here`,

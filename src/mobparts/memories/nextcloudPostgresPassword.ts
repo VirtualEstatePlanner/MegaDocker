@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const nextcloudPostgresPassword: IMemory = {
   memoryIndex: 20032,
   memoryMarker: `[[NEXTCLOUDPOSTGRESPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Nextcloud Postgres Password`,
   tooltip: `Choose a password for nextcloud to connect to it's postgres database`,

@@ -12,6 +12,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const ldapAdminUsername: IMemory = {
   memoryIndex: 20019,
   memoryMarker: `[[LDAPADMINUSERNAME]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `LDAP Admin username`,
   tooltip: `Choose the administrator username for your LDAP server.`,

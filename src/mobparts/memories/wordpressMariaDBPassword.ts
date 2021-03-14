@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const wordpressMariaDBPassword: IMemory = {
   memoryIndex: 20045,
   memoryMarker: `[[WORDPRESSMARIADBPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `WP MariaDB password`,
   tooltip: `Please enter your WordPress MariaDB Password here`,

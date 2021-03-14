@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const nextcloudMariaDBPassword: IMemory = {
   memoryIndex: 20029,
   memoryMarker: `[[NEXTCLOUDMARIADBPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Nextcloud MariaDB Password`,
   tooltip: `Choose a password for nextcloud to connect to it's MariaDB database`,

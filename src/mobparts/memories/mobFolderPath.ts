@@ -12,6 +12,7 @@ import { emailValidator } from '../../functions/validators/emailValidator'
 export const mobFolderPath: IMemory = {
   memoryIndex: 20025,
   memoryMarker: `[[MOBFOLDERPATH]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Mob Folder Location`,
   tooltip: `The file path to your Mob's folder.`,

@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const autheliaMariaDBPassword: IMemory = {
   memoryIndex: 20000,
   memoryMarker: `[[AUTHELIAMARIADBPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Authelia MariaDB root password`,
   tooltip: `The password for the Authelia MariaDB root user`,

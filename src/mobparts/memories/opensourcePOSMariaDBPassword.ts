@@ -10,6 +10,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const opensourcePOSMariaDBPassword: IMemory = {
   memoryIndex: 20034,
   memoryMarker: "[[OPENSOURCEPOSMARIADBPASSWORD]]",
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: "osPOS MariaDB password",
   tooltip: "The password that osPOS will use to connect to it's MariaDB database",

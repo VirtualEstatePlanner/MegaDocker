@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const n8nPassword: IMemory = {
   memoryIndex: 20027,
   memoryMarker: `[[N8NPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `n8n Password`,
   tooltip: `Choose a password for the n8n administrative user`,

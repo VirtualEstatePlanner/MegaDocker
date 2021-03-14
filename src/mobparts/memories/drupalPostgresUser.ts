@@ -12,6 +12,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const drupalPostgresUser: IMemory = {
   memoryIndex: 20007,
   memoryMarker: `[[DRUPALPOSTGRESUSER]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Drupal Postgres User`,
   tooltip: `Choose a username for Drupal to connect to it's PostgreSQL database.`,

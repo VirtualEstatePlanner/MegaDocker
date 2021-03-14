@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const kanboardMariaDBRootPassword: IMemory = {
   memoryIndex: 20014,
   memoryMarker: `[[KANBOARDMARIADBROOTPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Kanboard MariaDB Root Password`,
   tooltip: `Please enter your Kanboard MariaDB Root Password here`,

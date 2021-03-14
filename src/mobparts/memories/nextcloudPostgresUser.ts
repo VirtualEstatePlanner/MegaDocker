@@ -12,6 +12,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const nextcloudPostgresUser: IMemory = {
   memoryIndex: 20033,
   memoryMarker: `[[NEXTCLOUDPOSTGRESUSER]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Nextcloud Postgres User`,
   tooltip: `Choose the user Nextcloud will use to connect to it's Postgres database.`,

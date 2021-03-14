@@ -10,6 +10,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const opensourcePOSMariaDBUser: IMemory = {
   memoryIndex: 20036,
   memoryMarker: "[[OPENSOURCEPOSMARIADBUSER]]",
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: "osPOS MariaDB User",
   tooltip: "The user osPOS will use to connect to it's MariaDB database",

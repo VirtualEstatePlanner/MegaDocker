@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const kibanaPassword: IMemory = {
   memoryIndex: 20016,
   memoryMarker: `[[KIBANAPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Kibana Password`,
   tooltip: `Choose the password to login to Kibana`,

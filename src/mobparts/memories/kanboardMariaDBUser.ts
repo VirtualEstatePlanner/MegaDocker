@@ -12,6 +12,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const kanboardMariaDBUser: IMemory = {
   memoryIndex: 20015,
   memoryMarker: `[[KANBOARDMARIADBUSER]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Kanboard MariaDB User`,
   tooltip: `Please enter your Kanboard MariaDB username here`,

@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const rocketchatBotPassword: IMemory = {
   memoryIndex: 20039,
   memoryMarker: `[[ROCKETCHATBOTPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `RocketChat bot password`,
   tooltip: `Choose the password of the RocketChat bot user.`,

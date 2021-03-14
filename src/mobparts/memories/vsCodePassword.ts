@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const vsCodePassword: IMemory = {
   memoryIndex: 20042,
   memoryMarker: `[[VSCODEPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `VS Code Password`,
   tooltip: `Choose the password to access VS Code through noVNC`,

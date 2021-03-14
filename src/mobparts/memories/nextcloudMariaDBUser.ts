@@ -12,6 +12,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const nextcloudMariaDBUser: IMemory = {
   memoryIndex: 20031,
   memoryMarker: `[[NEXTCLOUDMARIADBUSER]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Nextcloud MariaDB User`,
   tooltip: `Choose the username nextcloud will use to connect to it's MariDB database.`,

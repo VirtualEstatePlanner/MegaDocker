@@ -12,6 +12,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const kibanaUser: IMemory = {
   memoryIndex: 20017,
   memoryMarker: `[[KIBANAUSER]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Kibana User`,
   tooltip: `Choose a user account for Kibana to connect to it's Elasticsearch database`,

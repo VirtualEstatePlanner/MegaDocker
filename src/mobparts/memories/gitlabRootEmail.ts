@@ -12,6 +12,7 @@ import { emailValidator } from '../../functions/validators/emailValidator'
 export const gitlabRootEmail: IMemory = {
   memoryIndex: 20011,
   memoryMarker: `[[GITLABROOTEMAIL]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: true,
   name: `GitLab Root Email`,
   tooltip: `The email address for the root account in GitLab`,

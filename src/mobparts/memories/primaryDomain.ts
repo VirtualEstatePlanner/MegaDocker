@@ -12,6 +12,7 @@ import { domainValidator } from '../../functions/validators/domainValidator'
 export const primaryDomain: IMemory = {
   memoryIndex: 20038,
   memoryMarker: `[[PRIMARYDOMAIN]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Web Domain`,
   tooltip: `Your domain name, such as 'example.com' or 'myawesomemob.org'.`,

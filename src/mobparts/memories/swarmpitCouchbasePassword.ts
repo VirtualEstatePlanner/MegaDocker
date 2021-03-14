@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const swarmpitCouchbasePassword: IMemory = {
   memoryIndex: 20041,
   memoryMarker: `[[SWARMPITCOUCHBASEPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Swarmpit Couchbase Password`,
   tooltip: `Choose a password for Swarmpit to connect to it's main database`,

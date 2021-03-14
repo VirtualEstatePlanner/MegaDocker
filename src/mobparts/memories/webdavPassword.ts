@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const webdavPassword: IMemory = {
   memoryIndex: 20043,
   memoryMarker: `[[WEBDAVPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `WebDAV password`,
   tooltip: `Please the password to access WebDav here`,

@@ -12,6 +12,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const n8nUser: IMemory = {
   memoryIndex: 20028,
   memoryMarker: `[[N8NUSERNAME]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `n8n user name`,
   tooltip: `Choose a username for the n8n administrator`,

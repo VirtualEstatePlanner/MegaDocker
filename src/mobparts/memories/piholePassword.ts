@@ -12,6 +12,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 export const piholePassword: IMemory = {
   memoryIndex: 20037,
   memoryMarker: `[[PIHOLEPASSWORD]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Pihole Password`,
   tooltip: `Choose a password for the Pihole admin account to login to the web interface`,

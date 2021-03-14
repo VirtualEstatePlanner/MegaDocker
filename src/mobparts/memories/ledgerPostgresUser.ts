@@ -12,6 +12,7 @@ import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhi
 export const ledgerPostgresUser: IMemory = {
   memoryIndex: 20023,
   memoryMarker: `[[LEDGERPOSTGRESUSER]]`,
+  memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Ledger Postgres User`,
   tooltip: `Choose the user Ledger will use to connect to it's Postgres database.`,

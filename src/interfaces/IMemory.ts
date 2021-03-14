@@ -7,6 +7,7 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemoryMarker } from './IMemoryMarker'
+import { IMemoryType } from './IMemoryType'
 import { IMemoryValueType } from './IMemoryValueType'
 
 /**
@@ -26,6 +27,7 @@ export interface IMemory {
   isReady: boolean
   memoryIndex: number
   memoryMarker: IMemoryMarker
+  memoryType: IMemoryType
   name: string
   shouldAutocomplete: boolean
   tooltip: string

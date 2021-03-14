@@ -12,6 +12,7 @@ import { cloudflareApiTokenValidator } from '../../functions/validators/cloudfla
 export const cloudflareAPIToken: IMemory = {
   memoryIndex: 20004,
   memoryMarker: `[[CLOUDFLAREAPITOKEN]]`,
+  memoryType: `SecretMemory`,
   shouldAutocomplete: true,
   name: `CloudFlare Token`,
   tooltip: `A CloudFlare API token with "DNS: Edit" and "Zone: Read" privileges for your domains`,
