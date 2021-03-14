@@ -13,16 +13,27 @@ import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFile
 import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
 import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobNetworkHeaderSectionString'
 import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString'
+import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobSecretsHeaderSectionString'
+import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
 
 /**
  * makes Kubernetes Pod .zip file
  */
 export const zipKubernetesDeployment = (serviceMites: IMite[], networkMites: IMite[]): string => {
   // TODO: re-write this function to zip for kubernetes and remove the console.log() below
-  console.log(`this is still outputting for  Docker Swarm, not Kubernetes`)
+  console.log(`this is still outputting for Docker Swarm, not Kubernetes`)
   const tempServicesYML: string[] = serviceMites.flatMap((eachMite) => eachMite.miteString)
   const tempNetworksYML: string[] = networkMites.flatMap((eachMite) => eachMite.miteString)
-  const ymlOutputArray: string[] = [mobFileHeaderSectionString, ...tempServicesYML, mobServicesFooterSectionString, mobNetworkHeaderSectionString, ...tempNetworksYML, mobNetworkFooterSectionString]
+  const ymlOutputArray: string[] = [
+    mobFileHeaderSectionString.miteString,
+    ...tempServicesYML,
+    mobServicesFooterSectionString.miteString,
+    mobNetworkHeaderSectionString.miteString,
+    ...tempNetworksYML,
+    mobNetworkFooterSectionString.miteString,
+    mobSecretsHeaderSectionString.miteString,
+    mobSecretsFooterSectionString.miteString,
+  ]
   const ymlString: string = ymlOutputArray.join(``)
   return ymlString
 }

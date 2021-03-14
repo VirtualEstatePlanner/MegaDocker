@@ -10,6 +10,6 @@ import { emailValidator } from '../../../functions/validators/emailValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
 const passingStrings: string[] = [`georgegeorgulas@gmail.com`, `george_georgulas@me.com`, `george@orb.run`]
-const failingStrings: string[] = [`georgegeorgulasatgmail.com`, `george_georgulas@medotcom`, `george?@orb.run`]
+const failingStrings: string[] = [`georgegeorgulasatgmail.]dotcom`, `george_georgulas_medotcom`, `george?@orb.run`]
 
 testValidator(passingStrings, emailValidator, failingStrings)

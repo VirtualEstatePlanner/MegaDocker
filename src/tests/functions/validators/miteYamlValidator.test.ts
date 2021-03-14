@@ -11,18 +11,26 @@ import { testValidator } from '../../test-functions/testValidator'
 
 const passingStrings: string[] = [
   `
+version: 'some docker-compose version'
+
 services:
-version:
+ networks:
+  - firstnetwork
+  - secondnetwork
+
 `,
   `
- services:
- version:
- `,
+services:
+version: '3.8'
+
+`,
   `
 services:
- image:
+ image: someuser/someimage:sometag
  environment:
   - someflag=whatever
+  - someotherflag=whatever
+
 `,
 ]
 

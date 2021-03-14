@@ -11,8 +11,10 @@ export const cloudflareApiTokenValidator: Function = (stringToValidate: string):
     return false
   }
   const isExactlyFortyCharacters: boolean = stringToValidate.length === 40
-  const isAlphanumericRegex: RegExp = new RegExp(`[a-zA-Z0-9_-]`)
-  const containsOnlyAlphanumerics: boolean = isAlphanumericRegex.test(stringToValidate!) ? true : false
+  console.log(`this string is the correct length: ${isExactlyFortyCharacters}`)
+  const isAlphanumericRegex: RegExp = new RegExp(`^[a-zA-Z0-9_]*$`)
+  const containsOnlyAlphanumerics: boolean = isAlphanumericRegex.test(stringToValidate!)
+  console.log(`this string contains only alphanumerics: ${containsOnlyAlphanumerics}`)
   const isValidated: boolean = containsOnlyAlphanumerics && isExactlyFortyCharacters
   return isValidated
 }

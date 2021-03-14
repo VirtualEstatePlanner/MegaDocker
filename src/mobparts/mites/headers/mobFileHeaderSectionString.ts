@@ -1,6 +1,11 @@
 /** @format */
 
-export const mobFileHeaderSectionString: string = `
+import { IHeaderMite } from '../../../interfaces/IHeaderMite'
+
+export const mobFileHeaderSectionString: IHeaderMite = {
+  type: `DockerSwarmHeader`,
+  miteIndex: 29999,
+  miteString: `
 # MegaDocker YML File
 version: '3.8'
 
@@ -10,4 +15,5 @@ version: '3.8'
 # Begin Services Section
 
 services:
-`
+`,
+}

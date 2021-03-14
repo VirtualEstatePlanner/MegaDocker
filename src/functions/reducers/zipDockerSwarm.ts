@@ -23,6 +23,8 @@ import { ldapBootstrapMegaDockerDotLdifMite } from '../../mobparts/mites/custom/
 import { primaryDomain } from '../../mobparts/memories/primaryDomain'
 import { ITraefikedServiceMite } from '../../interfaces/ITraefikedServiceMite'
 import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
+import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobSecretsHeaderSectionString'
+import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
 
 /**
  * makes .zip file for docker-compose
@@ -121,7 +123,16 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     return newFileContents
   })
 
-  const ymlOutputArray: string[] = [mobFileHeaderSectionString, ...serviceMites, mobServicesFooterSectionString, mobNetworkHeaderSectionString, ...networkMites, mobNetworkFooterSectionString]
+  const ymlOutputArray: string[] = [
+    mobFileHeaderSectionString.miteString,
+    ...serviceMites,
+    mobServicesFooterSectionString.miteString,
+    mobNetworkHeaderSectionString.miteString,
+    ...networkMites,
+    mobNetworkFooterSectionString.miteString,
+    mobSecretsHeaderSectionString.miteString,
+    mobSecretsFooterSectionString.miteString,
+  ]
 
   let ymlString: string = ymlOutputArray.join(``)
 
