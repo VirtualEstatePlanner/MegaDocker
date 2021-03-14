@@ -9,5 +9,10 @@
 import { getMemories } from '../../../functions/reducers/getMemories'
 import { workingManikins } from '../../../globals/workingManikins'
 import { IMemory } from '../../../interfaces/IMemory'
+import { testMemory } from '../../test-functions/testMemory'
 
 const testingMemories: IMemory[] = getMemories(workingManikins)
+
+testingMemories.forEach((memory) => {
+  testMemory(memory)
+})

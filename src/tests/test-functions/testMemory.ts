@@ -19,6 +19,10 @@ export const testMemory: Function = (memoryToTest: IMemory) => {
   it('has a name', () => {
     expect(memoryToTest.name).toBeDefined()
   })
+  it('has a valid IMemoryType', () => {
+    expect(memoryToTest.memoryType).toBeDefined()
+    expect(memoryToTest.memoryType === `NormalMemory` || memoryToTest.memoryType === `SecretMemory`).toStrictEqual(true)
+  })
   it('has a valid memoryMarker', () => {
     expect(memoryToTest.memoryMarker).toBeDefined()
   })

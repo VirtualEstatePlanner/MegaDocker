@@ -9,5 +9,10 @@
 import { getManikins } from '../../../functions/reducers/getManikins'
 import { workingManikins } from '../../../globals/workingManikins'
 import { IManikin } from '../../../interfaces/IManikin'
+import { testManikin } from '../../test-functions/testManikin'
 
 const testingManikins: IManikin[] = getManikins(workingManikins)
+
+testingManikins.forEach((manikin) => {
+  testManikin(manikin)
+})

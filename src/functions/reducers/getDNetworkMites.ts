@@ -7,8 +7,9 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../interfaces/IMite'
+import { INetworkMite } from '../../interfaces/INetworkMite'
 
 /**
  * updates networkMites array based on application state
  */
-export const getDNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `DockerSwarmNetwork`)
+export const getDNetworkMites = (miteArray: IMite[]): INetworkMite[] => miteArray.filter((eachMite) => eachMite.type === `DockerSwarmNetwork`) as INetworkMite[]

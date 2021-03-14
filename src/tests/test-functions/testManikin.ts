@@ -11,17 +11,19 @@
 import { IManikin } from '../../interfaces/IManikin';
 import { IMemory } from '../../interfaces/IMemory';
 
-export const testManikin: Function = (ManikinToTest: IManikin, memories?: IMemory[]) => {
-  it(`has all necessary properties defined`, () => {
-    expect(ManikinToTest.name).toBeDefined();
-    expect(ManikinToTest.manikinIcon).toBeDefined();
-    expect(ManikinToTest.description).toBeDefined();
-    expect(ManikinToTest.isCore).toBeDefined;
-    expect(ManikinToTest.isSelected).toBeDefined;
-    expect(ManikinToTest.mites).toBeDefined();
-    expect(ManikinToTest.ports).toBeDefined();
-    expect(ManikinToTest.folder).toBeDefined();
-    expect(ManikinToTest.subfolders).toBeDefined();
-    expect(ManikinToTest.memories).toBeDefined();
+export const testManikin: Function = (manikinToTest: IManikin, memories?: IMemory[]) => {
+  it(`has all properties defined`, () => {
+    expect(manikinToTest.name).toBeDefined();
+    expect(manikinToTest.manikinIcon).toBeDefined();
+    expect(manikinToTest.description).toBeDefined();
+    expect(manikinToTest.description.length).toBeGreaterThan(0);
+    expect(manikinToTest.isCore).toBeDefined;
+    expect(manikinToTest.isSelected).toBeDefined;
+    expect(manikinToTest.mites).toBeDefined();
+    expect(manikinToTest.mites.length).toBeGreaterThan(0);
+    expect(manikinToTest.ports.length).toBeGreaterThan(-1);
+    expect(manikinToTest.folder).toBeDefined();
+    expect(manikinToTest.subfolders.length).toBeGreaterThan(-1);
+    expect(manikinToTest.memories.length).toBeGreaterThan(-1);
   })
 }

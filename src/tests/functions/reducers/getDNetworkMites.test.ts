@@ -10,5 +10,10 @@ import { getDNetworkMites } from '../../../functions/reducers/getDNetworkMites'
 import { getMites } from '../../../functions/reducers/getMites'
 import { workingManikins } from '../../../globals/workingManikins'
 import { IMite } from '../../../interfaces/IMite'
+import { testNetworkMite } from '../../test-functions/testNetworkMite'
 
-const testingMites: IMite[] = getMites(workingManikins)
+const testingMites: IMite[] = getDNetworkMites(getMites(workingManikins))
+
+testingMites.forEach((mite) => {
+  testNetworkMite(mite)
+})
