@@ -13,6 +13,18 @@ export const elasticsearchJvmDotOptionsMite: ICustomMite = {
     permissions: `644`,
     contents: `
 
+
+
+
+
+
+
+
+
+
+
+
+
 `,
   },
 }
