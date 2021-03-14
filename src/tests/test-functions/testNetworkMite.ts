@@ -6,8 +6,9 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { stringYamlValidator } from '../../functions/validators/stringYamlValidator'
+import { miteYamlValidator } from '../../functions/validators/miteYamlValidator'
 import { IMite } from '../../interfaces/IMite'
+import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
 
 export const testNetworkMite: Function = (miteToTest: IMite) => {
   it('has correct type', () => {
@@ -24,12 +25,9 @@ export const testNetworkMite: Function = (miteToTest: IMite) => {
     expect(miteToTest.miteString).toContain(` Network Section
 
 `)
-    expect(miteToTest.miteString).toContain(` Network Section
-
-`)
   })
   it('has a valid YAML miteString', () => {
-    expect(stringYamlValidator(miteToTest.miteString)).toBeTruthy()
+    expect(miteYamlValidator(miteToTest.miteString)).toStrictEqual(true)
     expect(miteToTest.miteString).toBeDefined()
   })
   it('has an index in the appropriate range', () => {
