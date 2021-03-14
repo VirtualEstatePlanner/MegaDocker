@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/12/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { stringYamlValidator } from '../../../functions/validators/stringYamlValidator'
+import { miteYamlValidator } from '../../../functions/validators/miteYamlValidator'
 import { testValidator } from '../../test-functions/testValidator'
 
 const passingStrings: string[] = [
@@ -45,4 +45,4 @@ services:
 `,
 ]
 
-testValidator(passingStrings, stringYamlValidator, failingStrings)
+testValidator(passingStrings, miteYamlValidator, failingStrings)
