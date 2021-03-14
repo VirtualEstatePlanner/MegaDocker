@@ -22,8 +22,8 @@ export const stringYamlValidator: Function = (stringToValidate: string): boolean
     }
     fs.writeFileSync(temporaryYamlFileName, stringToValidate, { encoding: 'utf8' })
 
-    class YamlValidatorWithErrors extends YamlValidator {
-      validateAndReturnBoolean: Function = (files: string[]): boolean => {
+    class YamlValidatorForTesting extends YamlValidator {
+      testValidation: Function = (files: string[]): boolean => {
         let validatePassed: boolean
         try {
           super.validate(files)
@@ -34,9 +34,9 @@ export const stringYamlValidator: Function = (stringToValidate: string): boolean
         return validatePassed
       }
     }
-    const validator: YamlValidatorWithErrors = new YamlValidatorWithErrors()
+    const validator: YamlValidatorForTesting = new YamlValidatorForTesting()
 
-    const isValidated = validator.validateAndReturnBoolean([temporaryYamlFileName])
+    const isValidated = validator.testValidation([temporaryYamlFileName])
     return isValidated
   }
 }

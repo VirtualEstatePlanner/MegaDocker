@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { miteYamlValidator } from '../../functions/validators/miteYamlValidator'
+import { stringYamlValidator } from '../../functions/validators/stringYamlValidator'
 import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
 import { INetworkMite } from '../../interfaces/INetworkMite'
 
@@ -24,6 +24,6 @@ export const testNetworkMite: Function = (networkMiteToTest: INetworkMite) => {
     expect(testableMite.type).toStrictEqual(`DockerSwarmNetwork`)
   })
   it('has a valid YAML miteString', () => {
-    expect(miteYamlValidator(testableMite)).toStrictEqual(true)
+    expect(stringYamlValidator(testableMite.miteString)).toStrictEqual(true)
   })
 }

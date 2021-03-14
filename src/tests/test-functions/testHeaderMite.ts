@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { miteYamlValidator } from '../../functions/validators/miteYamlValidator'
+import { stringYamlValidator } from '../../functions/validators/stringYamlValidator'
 import { IHeaderMite } from '../../interfaces/IHeaderMite'
 
 export const testHeaderMite: Function = (headerMiteToTest: IHeaderMite) => {
@@ -18,6 +18,6 @@ export const testHeaderMite: Function = (headerMiteToTest: IHeaderMite) => {
     expect(headerMiteToTest.type).toStrictEqual(`DockerSwarmHeader`)
   })
   it('has a valid YAML miteString', () => {
-    expect(miteYamlValidator(headerMiteToTest)).toStrictEqual(true)
+    expect(stringYamlValidator(headerMiteToTest.miteString)).toStrictEqual(true)
   })
 }
