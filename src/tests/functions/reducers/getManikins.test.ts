@@ -7,3 +7,7 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { getManikins } from '../../../functions/reducers/getManikins'
+import { workingManikins } from '../../../globals/workingManikins'
+import { IManikin } from '../../../interfaces/IManikin'
+
+const testingManikins: IManikin[] = getManikins(workingManikins)

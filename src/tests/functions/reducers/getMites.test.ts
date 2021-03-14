@@ -7,3 +7,7 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { getMites } from '../../../functions/reducers/getMites'
+import { workingManikins } from '../../../globals/workingManikins'
+import { IMite } from '../../../interfaces/IMite'
+
+const testingMites: IMite[] = getMites(workingManikins)

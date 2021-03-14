@@ -7,3 +7,5 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { updateInfoContent } from '../../../functions/reducers/updateInfoContent'
+
+const testingString: string = `some string to test the updateInfoContent function`
