@@ -8,30 +8,30 @@
 
 import YamlValidator from 'yaml-validator'
 import fs from 'fs'
-import { IMite } from '../../interfaces/IMite'
 
-export const miteYamlValidator: Function = (miteToValidate: IMite): boolean => {
-  if (!miteToValidate || !miteToValidate.miteString || miteToValidate.miteString.length === 0) {
+export const stringYamlValidator: Function = (stringToValidate: string): boolean => {
+  if (!stringToValidate || stringToValidate.length === 0) {
     return false
   } else {
-    const temporaryYamlFileName: string = `/tmp/YamlValidator/mite-${miteToValidate.miteIndex}-Testfile.yml`
+    const temporaryYamlFileName: string = `/tmp/YamlValidator/mite-somestring-Testfile.yml`
     if (!fs.existsSync(`/tmp/YamlValidator`)) {
       fs.mkdirSync(`/tmp/YamlValidator`)
     }
     if (fs.existsSync(temporaryYamlFileName)) {
       fs.unlinkSync(temporaryYamlFileName)
     }
-    fs.writeFileSync(temporaryYamlFileName, miteToValidate.miteString, { encoding: 'utf8' })
+    fs.writeFileSync(temporaryYamlFileName, stringToValidate, { encoding: 'utf8' })
 
     class YamlValidatorWithErrors extends YamlValidator {
       validateAndReturnBoolean: Function = (files: string[]): boolean => {
-        let didValidate: boolean | undefined = undefined
+        let validatePassed: boolean
         try {
           super.validate(files)
+          validatePassed = true
         } catch (error) {
-          didValidate = false
+          validatePassed = false
         }
-        return didValidate || true
+        return validatePassed
       }
     }
     const validator: YamlValidatorWithErrors = new YamlValidatorWithErrors()

@@ -13,14 +13,18 @@ export const testValidator: Function = (stringsThatPass: string[], validatorToTe
   })
   it('should return true for valid strings', () => {
     stringsThatPass.forEach((passingString) => {
-      console.log(passingString)
+      if (validatorToTest(passingString) != true) {
+        console.log(passingString)
+      }
       expect(validatorToTest(passingString)).toStrictEqual(true)
     })
   })
   if (stringsThatFail) {
     it('should return false for invalid strings', () => {
       stringsThatFail.forEach((failingString) => {
-        console.log(failingString)
+        if (validatorToTest(failingString) != false) {
+          console.log(failingString)
+        }
         expect(validatorToTest(failingString)).toStrictEqual(false)
       })
     })
