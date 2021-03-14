@@ -11,23 +11,22 @@ import { ITraefikedServiceMite } from '../../interfaces/ITraefikedServiceMite'
 import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
 
 export const testTraefikedServiceMite: Function = (traefikedServiceMiteToTest: ITraefikedServiceMite) => {
-  const makeTestableManikin: Function = (mite: ITraefikedServiceMite): ITraefikedServiceMite => {
+  const makeTestableMiteFromString: Function = (mite: ITraefikedServiceMite): ITraefikedServiceMite => {
     const testableMiteString: string = mobFileHeaderSectionString + mite.miteString
     return { ...mite, miteString: testableMiteString }
   }
-  const testableManikin = makeTestableManikin(traefikedServiceMiteToTest)
+  const testableMite: ITraefikedServiceMite = makeTestableMiteFromString(traefikedServiceMiteToTest)
   it('has an index in the appropriate range', () => {
-    expect(testableManikin.miteIndex).toBeGreaterThanOrEqual(30000)
-    expect(testableManikin.miteIndex).toBeLessThanOrEqual(39999)
+    expect(testableMite.miteIndex).toBeGreaterThanOrEqual(30000)
+    expect(testableMite.miteIndex).toBeLessThanOrEqual(39999)
   })
   it('has the correct type', () => {
-    expect(testableManikin.type).toStrictEqual(`DockerSwarmService`)
+    expect(testableMite.type).toStrictEqual(`DockerSwarmService`)
   })
   it('has at least one host name', () => {
-    expect(testableManikin.webInterfaceHostnames.length).toBeGreaterThan(0)
+    expect(testableMite.webInterfaceHostnames.length).toBeGreaterThan(0)
   })
   it('has a valid YAML miteString', () => {
-    expect(miteYamlValidator(testableManikin)).toStrictEqual(true)
-    expect(testableManikin.miteString).toBeDefined()
+    expect(miteYamlValidator(testableMite)).toStrictEqual(true)
   })
 }

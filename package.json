@@ -130,7 +130,7 @@
     "ts-node": "latest",
     "typescript": "latest",
     "wait-on": "latest",
-    "yaml": "latest"
+    "yaml-validator": "latest"
   },
   "jest": {
     "roots": [
