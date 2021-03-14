@@ -8,7 +8,6 @@
 
 import { miteYamlValidator } from '../../functions/validators/miteYamlValidator'
 import { IMite } from '../../interfaces/IMite'
-import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
 
 export const testNetworkMite: Function = (miteToTest: IMite) => {
   it('has correct type', () => {
