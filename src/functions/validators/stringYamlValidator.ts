@@ -17,9 +17,6 @@ export const stringYamlValidator: Function = (stringToValidate: string): boolean
     if (!fs.existsSync(`/tmp/YamlValidator`)) {
       fs.mkdirSync(`/tmp/YamlValidator`)
     }
-    if (fs.existsSync(temporaryYamlFileName)) {
-      fs.unlinkSync(temporaryYamlFileName)
-    }
     fs.writeFileSync(temporaryYamlFileName, stringToValidate, { encoding: 'utf8' })
 
     class YamlValidatorForTesting extends YamlValidator {
