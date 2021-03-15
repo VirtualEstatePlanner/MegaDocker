@@ -9,6 +9,14 @@
 import { App } from '../../components/App'
 import { render } from '@testing-library/react'
 
+jest.mock('@fontsource/asap', () => ({
+  fontsourceAsap: '',
+}))
+
+jest.mock('@material-ui/core/colors/grey', () => ({
+  greyColor: '',
+}))
+
 test('renders the App component', () => {
   render(
     <div className='App'>

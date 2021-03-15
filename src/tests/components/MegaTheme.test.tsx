@@ -11,6 +11,14 @@ import { render } from '@testing-library/react'
 import { ThemeProvider } from '@material-ui/core'
 import { ButtonTemplate } from '../../components/ButtonTemplate'
 
+jest.mock('@fontsource/asap', () => ({
+  fontsourceAsap: '',
+}))
+
+jest.mock('@material-ui/core/colors/grey', () => ({
+  greyColor: '',
+}))
+
 test('renders the MegaTheme component', () => {
   render(
     <div>
