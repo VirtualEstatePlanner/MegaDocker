@@ -47,7 +47,6 @@ it('the correct number of mites are present', () => {
 })
 testingCustomMites.forEach((miteArray) => {
   miteArray.forEach((mite) => {
-    console.log(mite.miteIndex)
     it('every mite string is at least 10 characters', () => {
       expect(mite.miteFile.contents.length).toBeGreaterThanOrEqual(10)
     })
@@ -57,7 +56,6 @@ testingCustomMites.forEach((miteArray) => {
     })
   })
   testingNetworkMites.forEach((mite) => {
-    console.log(mite.miteIndex)
     it('every mite string is at least 10 characters', () => {
       expect(mite.miteString.length).toBeGreaterThanOrEqual(10)
     })
@@ -67,7 +65,6 @@ testingCustomMites.forEach((miteArray) => {
     })
   })
   testingServiceMites.forEach((mite) => {
-    console.log(mite.miteIndex)
     it('every mite string is at least 10 characters', () => {
       expect(mite.miteString.length).toBeGreaterThanOrEqual(10)
     })

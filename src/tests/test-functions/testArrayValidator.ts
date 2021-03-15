@@ -14,13 +14,11 @@ export const testArrayValidator: Function = (
 ) => {
   stringsThatPass.forEach((passingString) => {
     it('should return true for every valid', () => {
-      console.log(`tested ${passingString}`)
       expect(validatorToTest(passingString)).toStrictEqual(true)
     })
   })
   if (stringsThatAreEmpty) {
     stringsThatAreEmpty.forEach((nonexistentString) => {
-      console.log(`tested ${nonexistentString}`)
       it('should return false on null or empty string', () => {
         expect(validatorToTest(nonexistentString)).toStrictEqual(false)
       })
@@ -28,7 +26,6 @@ export const testArrayValidator: Function = (
   }
   if (stringsThatFail) {
     stringsThatFail.forEach((failingString) => {
-      console.log(`tested ${failingString}`)
       it('should return false for invalid strings', () => {
         expect(validatorToTest(failingString)).toStrictEqual(false)
       })

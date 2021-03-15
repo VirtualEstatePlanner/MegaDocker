@@ -20,8 +20,7 @@ import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobS
  * makes Kubernetes Pod .zip file
  */
 export const zipKubernetesDeployment = (serviceMites: IMite[], networkMites: IMite[]): string => {
-  // TODO: re-write this function to zip for kubernetes and remove the console.log() below
-  console.log(`this is still outputting for Docker Swarm, not Kubernetes`)
+  // TODO: re-write this function to zip for kubernetes
   const tempServicesYML: string[] = serviceMites.flatMap((eachMite) => eachMite.miteString)
   const tempNetworksYML: string[] = networkMites.flatMap((eachMite) => eachMite.miteString)
   const ymlOutputArray: string[] = [

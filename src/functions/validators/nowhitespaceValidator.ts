@@ -15,19 +15,15 @@ export const noWhitespaceValidator: Function = (stringToValidate: string): boole
   const lineFeedsDetected: boolean = stringToValidate.includes(`\u000A`)
   const formFeedsDetected: boolean = stringToValidate.includes(`\u000C`)
   if (spacesDetected) {
-    console.log(`contains spaces`)
     return false
   }
   if (tabsDetected) {
-    console.log(`contains tabs`)
     return false
   }
   if (lineFeedsDetected) {
-    console.log(`contains line feeds`)
     return false
   }
   if (formFeedsDetected) {
-    console.log(`contains form feeds`)
     return false
   }
   const whiteSpaceDetected: boolean = spacesDetected || tabsDetected || lineFeedsDetected || formFeedsDetected

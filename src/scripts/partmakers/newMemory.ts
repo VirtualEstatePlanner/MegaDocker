@@ -20,10 +20,8 @@ const getMemoryData = readline.createInterface({
 
 getMemoryData.question(`Name this memory (camelCase): `, function (memoryName: string) {
   runtimeMemoryAnswers.name = memoryName
-  console.log(runtimeMemoryAnswers.name)
   getMemoryData.question(`Choose a html input type for it (text, email, or password): `, function (htmltype: string) {
     if (['text', 'email', 'password'].includes(htmltype) == false) {
-      console.log(htmltype)
       throw new Error(`ERROR: ${htmltype} != 'text', or 'email', or 'password'.  Exiting script`)
     } else {
       runtimeMemoryAnswers.type = htmltype as IMemoryValueType
@@ -146,11 +144,6 @@ export const ${options.memoryName}: IMemory = {
   isReady: false,
   validator: ${options.validator}Validator,
 };`
-
-  console.log()
-  console.log(`created ${options.fileName}.ts`)
-  console.log(`you still need to add "[[${options.memoryMarker}]]" to the IMemory.memoryMarker type`)
-  console.log()
 
   return template
 }

@@ -64,7 +64,6 @@ const reindexFiles: Function = (options: IindexerOptions): void => {
     }
   })
   indexCount--
-  console.log(`contents of ${options.directory} indexed from ${options.start} to ${indexCount}`)
 }
 
 const reindexProject: Function = (): void => {

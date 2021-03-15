@@ -10,8 +10,6 @@ export const noValidator: Function = (stringToValidate: string): boolean => {
   if (!stringToValidate || stringToValidate.length === 0) {
     return false
   }
-  console.log(`noValidator.ts: this validator function is only for use in development`)
-  console.log(`noValidator.ts: ${stringToValidate} automatically returned true`)
-  console.log(`noValidator.ts: please use a real validator function`)
+  //TODO: replace all instances of this validator function with a real one
   return true
 }
