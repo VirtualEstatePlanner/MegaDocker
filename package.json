@@ -33,7 +33,7 @@
     "react-start": "react-scripts start",
     "react-dev": "cross-env BROWSER=none yarn react-start",
     "electron-dev": "sleep 15 && wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .",
-    "develop": "cross-env NODE_ENV=development run-p -l test-dev tsc-dev react-dev electron-dev",
+    "develop": "cross-env NODE_ENV=development run-p -l tsc-dev react-dev electron-dev",
     "react-test": "react-scripts test --env=jsdom",
     "react-test-coverage": "react-scripts test --coverage --env=jsdom",
     "react-eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                                 react-scripts eject' && echo",
