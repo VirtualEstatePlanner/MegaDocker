@@ -15,11 +15,8 @@ import { getMemories } from './getMemories'
 import { getMites } from './getMites'
 import { getDServiceMites } from './getDServiceMites'
 import { getDNetworkMites } from './getDNetworkMites'
-import { getKServiceMites } from './getKServiceMites'
-import { getKNetworkMites } from './getKNetworkMites'
 import { getCustomMites } from './getCustomMites'
 import { zipDockerSwarm } from './zipDockerSwarm'
-import { zipKubernetesDeployment } from './zipKubernetesDeployment'
 
 /**
  * Updates application state
@@ -41,8 +38,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         allMobMites: getMites(newState.selectedManikins),
         mobDServiceMites: getDServiceMites(newState.allMobMites),
         mobDNetworkMites: getDNetworkMites(newState.allMobMites),
-        mobKServiceMites: getKServiceMites(newState.allMobMites),
-        mobKNetworkMites: getKNetworkMites(newState.allMobMites),
         mobCustomMites: getCustomMites(newState.allMobMites),
         ymlOutput: `appStartState`,
       }
@@ -55,8 +50,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.allMobMites = getMites(newState.selectedManikins) // rebuilds Mites array
       newState.mobDServiceMites = getDServiceMites(newState.allMobMites) // rebuilds Docker Swarm network Mites array
       newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites) // rebuilds Docker Swarm service Mites array
-      newState.mobKServiceMites = getKServiceMites(newState.allMobMites) // rebuilds Kubernetes service Mites array
-      newState.mobKNetworkMites = getKNetworkMites(newState.allMobMites) // rebuilds Kubernetes network Mites array
       newState.mobCustomMites = getCustomMites(newState.allMobMites) // custom mite file-based Mite[]
       return newState
 
@@ -77,13 +70,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         manikins: newState.selectedManikins,
         memories: newState.memories,
       })
-      return newState
-
-    case `KUBERNETES_OUTPUT`: // TODO: for kubernetes export button
-      newState = {
-        ...newState,
-        ymlOutput: zipKubernetesDeployment(newState.mobKServiceMites, newState.mobKNetworkMites),
-      }
       return newState
 
     default:

@@ -17,11 +17,8 @@ import { IMite } from '../../interfaces/IMite'
  * @memoryTableContents the menu on the right - the memories for the mob
  * @allMobMites every mite in the mob (to Array.filter against)
  * @dockerComposeMites every docker compose mite
- * @kubernetesMites every kubernetes mite
  * @mobDServiceMites docker-compose service yml mites
  * @mobDNetworkMites docker-compose network yml mites
- * @mobKServiceMites docker-compose service yml mites
- * @mobKNetworkMites docker-compose network yml mites
  * @mobCustomMites an array of arrays of non-yml mites
  */
 export interface IMegaDockerState {
@@ -31,8 +28,6 @@ export interface IMegaDockerState {
   allMobMites: IMite[]
   mobDServiceMites: IMite[]
   mobDNetworkMites: IMite[]
-  mobKServiceMites: IMite[]
-  mobKNetworkMites: IMite[]
   mobCustomMites: IMite[][]
   ymlOutput: string
 }

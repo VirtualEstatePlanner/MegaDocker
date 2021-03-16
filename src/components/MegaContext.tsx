@@ -25,8 +25,6 @@ const updateMemories = (manikinArray: IManikin[]): IMemory[] => manikinArray.fil
 const updateMobMites = (manikins: IManikin[]): IMite[] => manikins.flatMap((eachManikin) => eachManikin.mites.flatMap((eachMite) => eachMite))
 const updateDServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `DockerSwarmService`)
 const updateDNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `DockerSwarmNetwork`)
-const updateKServiceMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `KubernetesService`)
-const updateKNetworkMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `KubernetesNetwork`)
 const updateCustomMites = (miteArray: IMite[]): IMite[] => miteArray.filter((eachMite) => eachMite.type === `Custom`)
 const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
   const tempServicesYML: string[] = serviceMites.flatMap((eachMite) => eachMite.miteString)
@@ -63,8 +61,6 @@ const initialMemoryTableContents: IMemory[] = updateMemories(initialSelectedMani
 const initialMobMites: IMite[] = updateMobMites(initialSelectedManikins)
 const initialDServiceMites: IMite[] = updateDServiceMites(initialMobMites)
 const initialDNetworkMites: IMite[] = updateDNetworkMites(initialMobMites)
-const initialKServiceMites: IMite[] = updateKServiceMites(initialMobMites)
-const initialKNetworkMites: IMite[] = updateKNetworkMites(initialMobMites)
 const initialCustomMites: IMite[][] = [updateCustomMites(initialMobMites)]
 const initialYmlOutput: string = updateYML(initialDServiceMites, initialDNetworkMites)
 
@@ -75,8 +71,6 @@ export const initialMegaDockerState: IMegaDockerState = {
   allMobMites: initialMobMites,
   mobDServiceMites: initialDServiceMites,
   mobDNetworkMites: initialDNetworkMites,
-  mobKServiceMites: initialKServiceMites,
-  mobKNetworkMites: initialKNetworkMites,
   mobCustomMites: initialCustomMites,
   ymlOutput: initialYmlOutput,
 }

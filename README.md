@@ -91,7 +91,7 @@ You can also make your own **Mites** and mold them into all manner of **Manikins
 
 ### Manikins
 
-**Manikins** are microservices running in your [Docker](https://www.docker.com) swarm or [Kubernetes](https://kubernetes.io) cluster.
+**Manikins** are microservices running in your [Docker](https://www.docker.com) swarm.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
 

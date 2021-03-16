@@ -8,10 +8,9 @@
 
 import { IApplicationStartAction } from '../../interfaces/actionInterfaces/IApplicationStartAction'
 import { IOutputDockerSwarmAction } from '../../interfaces/actionInterfaces/IOutputDockerSwarmAction'
-import { IOutputKubernetesPodAction } from '../../interfaces/actionInterfaces/IOutputKubernetesPodAction'
 import { ISaveMobAction } from '../../interfaces/actionInterfaces/ISaveMobAction'
 import { IOpenMobAction } from '../../interfaces/actionInterfaces/IOpenMobAction'
 import { IToggleManikinAction } from '../../interfaces/actionInterfaces/IToggleManikinAction'
 import { IUpdateMemoryValueAction } from '../../interfaces/actionInterfaces/IUpdateMemoryValueAction'
 
-export type IMegaDockerAction = IApplicationStartAction | IOutputDockerSwarmAction | IOutputKubernetesPodAction | ISaveMobAction | IOpenMobAction | IToggleManikinAction | IUpdateMemoryValueAction
+export type IMegaDockerAction = IApplicationStartAction | IOutputDockerSwarmAction | ISaveMobAction | IOpenMobAction | IToggleManikinAction | IUpdateMemoryValueAction

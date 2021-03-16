@@ -9,8 +9,6 @@
 import { getCustomMites } from '../../../functions/reducers/getCustomMites'
 import { getDNetworkMites } from '../../../functions/reducers/getDNetworkMites'
 import { getDServiceMites } from '../../../functions/reducers/getDServiceMites'
-import { getKNetworkMites } from '../../../functions/reducers/getKNetworkMites'
-import { getKServiceMites } from '../../../functions/reducers/getKServiceMites'
 import { getManikins } from '../../../functions/reducers/getManikins'
 import { getMemories } from '../../../functions/reducers/getMemories'
 import { getMites } from '../../../functions/reducers/getMites'
@@ -24,8 +22,6 @@ const memories = getMemories(selectedManikins)
 const allMobMites = getMites(selectedManikins)
 const mobDServiceMites = getDServiceMites(allMobMites)
 const mobDNetworkMites = getDNetworkMites(allMobMites)
-const mobKServiceMites = getKServiceMites(allMobMites)
-const mobKNetworkMites = getKNetworkMites(allMobMites)
 const mobCustomMites = getCustomMites(allMobMites)
 const ymlOutput = `testingState`
 
@@ -36,8 +32,6 @@ const testingState: IMegaDockerState = {
   allMobMites: allMobMites,
   mobDServiceMites: mobDServiceMites,
   mobDNetworkMites: mobDNetworkMites,
-  mobKServiceMites: mobKServiceMites,
-  mobKNetworkMites: mobKNetworkMites,
   mobCustomMites: mobCustomMites,
   ymlOutput: ymlOutput,
 }
