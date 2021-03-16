@@ -95,3 +95,7 @@ export const MegaProvider: React.FC = (props: any): React.ReactElement => {
 
   return <MegaContext.Provider value={{ state, dispatch }}>{props.children}</MegaContext.Provider>
 }
+
+export const MegaConsumer: React.FC = (props: any): React.ReactElement => {
+  return <MegaContext.Consumer>{props.children}</MegaContext.Consumer>
+}
