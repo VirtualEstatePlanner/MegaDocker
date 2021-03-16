@@ -44,9 +44,6 @@ const updateYML = (serviceMites: IMite[], networkMites: IMite[]): string => {
   const ymlString: string = ymlOutputArray.join(``)
   return ymlString
 }
-const updateInfoContent = (info: string): string => {
-  return info
-}
 
 const getCoreManikins = (manikins: IManikin[]): IManikin[] => {
   return manikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? true : false))
@@ -69,7 +66,6 @@ const initialDNetworkMites: IMite[] = updateDNetworkMites(initialMobMites)
 const initialKServiceMites: IMite[] = updateKServiceMites(initialMobMites)
 const initialKNetworkMites: IMite[] = updateKNetworkMites(initialMobMites)
 const initialCustomMites: IMite[][] = [updateCustomMites(initialMobMites)]
-const initialInfoContent: string = updateInfoContent(`This is the Information Pane.  You can read more about the selected item here.`)
 const initialYmlOutput: string = updateYML(initialDServiceMites, initialDNetworkMites)
 
 export const initialMegaDockerState: IMegaDockerState = {
@@ -82,7 +78,6 @@ export const initialMegaDockerState: IMegaDockerState = {
   mobKServiceMites: initialKServiceMites,
   mobKNetworkMites: initialKNetworkMites,
   mobCustomMites: initialCustomMites,
-  infoContent: initialInfoContent,
   ymlOutput: initialYmlOutput,
 }
 

@@ -27,7 +27,6 @@ const mobDNetworkMites = getDNetworkMites(allMobMites)
 const mobKServiceMites = getKServiceMites(allMobMites)
 const mobKNetworkMites = getKNetworkMites(allMobMites)
 const mobCustomMites = getCustomMites(allMobMites)
-const infoContent = `This is testing information.`
 const ymlOutput = `testingState`
 
 const testingState: IMegaDockerState = {
@@ -40,6 +39,5 @@ const testingState: IMegaDockerState = {
   mobKServiceMites: mobKServiceMites,
   mobKNetworkMites: mobKNetworkMites,
   mobCustomMites: mobCustomMites,
-  infoContent: infoContent,
   ymlOutput: ymlOutput,
 }

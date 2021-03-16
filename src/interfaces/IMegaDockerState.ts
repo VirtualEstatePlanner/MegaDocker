@@ -23,7 +23,6 @@ import { IMite } from './IMite'
  * @mobKServiceMites docker-compose service yml mites
  * @mobKNetworkMites docker-compose network yml mites
  * @mobCustomMites an array of arrays of non-yml mites
- * @infoContent
  */
 export interface IMegaDockerState {
   manikinTable: IManikin[]
@@ -35,6 +34,5 @@ export interface IMegaDockerState {
   mobKServiceMites: IMite[]
   mobKNetworkMites: IMite[]
   mobCustomMites: IMite[][]
-  infoContent: string
   ymlOutput: string
 }

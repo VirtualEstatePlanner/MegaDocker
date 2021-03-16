@@ -18,7 +18,6 @@ import { getDNetworkMites } from './getDNetworkMites'
 import { getKServiceMites } from './getKServiceMites'
 import { getKNetworkMites } from './getKNetworkMites'
 import { getCustomMites } from './getCustomMites'
-import { updateInfoContent } from './updateInfoContent'
 import { zipDockerSwarm } from './zipDockerSwarm'
 import { zipKubernetesDeployment } from './zipKubernetesDeployment'
 
@@ -45,7 +44,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         mobKServiceMites: getKServiceMites(newState.allMobMites),
         mobKNetworkMites: getKNetworkMites(newState.allMobMites),
         mobCustomMites: getCustomMites(newState.allMobMites),
-        infoContent: `This is the Information Pane.  You can read these about the selected item here.`,
         ymlOutput: `appStartState`,
       }
       return appStartState
@@ -60,14 +58,12 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.mobKServiceMites = getKServiceMites(newState.allMobMites) // rebuilds Kubernetes service Mites array
       newState.mobKNetworkMites = getKNetworkMites(newState.allMobMites) // rebuilds Kubernetes network Mites array
       newState.mobCustomMites = getCustomMites(newState.allMobMites) // custom mite file-based Mite[]
-      newState.infoContent = `Toggled ${newState.manikinTable[action.payload].name} .isSelected to ${newState.manikinTable[action.payload].isSelected}`
       return newState
 
     case `UPDATE_MEMORY_VALUE`: // to handle changing data in a memory's value
       const memoryIndex = newState.memories.indexOf(action.payload.memory)
       newState.memories[memoryIndex].value = action.payload.value
       newState.memories[memoryIndex].isReady = newState.memories[memoryIndex].validator(newState.memories[memoryIndex].value)
-      newState.infoContent = `${action.payload.memory.name} was updated`
       return newState
 
     case `OPEN_MOB_FILE`: // TODO: for save button
@@ -87,13 +83,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState = {
         ...newState,
         ymlOutput: zipKubernetesDeployment(newState.mobKServiceMites, newState.mobKNetworkMites),
-      }
-      return newState
-
-    case `UPDATE_INFO_CONTENT`: // to dispatch user hints to info pane - deprecated
-      newState = {
-        ...newState,
-        infoContent: updateInfoContent(action.payload),
       }
       return newState
 

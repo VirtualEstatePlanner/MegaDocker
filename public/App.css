@@ -36,13 +36,6 @@
   background-color: #eeeeee;
 }
 
-.InfoPane {
-  display: flex;
-  flex-direction: row;
-  height: 20vh;
-  width: 75vw;
-}
-
 .MainArea {
   display: flex;
   height: 100vh;

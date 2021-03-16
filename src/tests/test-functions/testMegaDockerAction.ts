@@ -12,15 +12,6 @@ import { IOutputKubernetesPodAction } from '../../interfaces/actionInterfaces/IO
 import { ISaveMobAction } from '../../interfaces/actionInterfaces/ISaveMobAction'
 import { IOpenMobAction } from '../../interfaces/actionInterfaces/IOpenMobAction'
 import { IToggleManikinAction } from '../../interfaces/actionInterfaces/IToggleManikinAction'
-import { IUpdateInfoContentAction } from '../../interfaces/actionInterfaces/IUpdateInfoContentAction'
 import { IUpdateMemoryValueAction } from '../../interfaces/actionInterfaces/IUpdateMemoryValueAction'
 
-export type IMegaDockerAction =
-  | IApplicationStartAction
-  | IOutputDockerSwarmAction
-  | IOutputKubernetesPodAction
-  | ISaveMobAction
-  | IOpenMobAction
-  | IToggleManikinAction
-  | IUpdateInfoContentAction
-  | IUpdateMemoryValueAction
+export type IMegaDockerAction = IApplicationStartAction | IOutputDockerSwarmAction | IOutputKubernetesPodAction | ISaveMobAction | IOpenMobAction | IToggleManikinAction | IUpdateMemoryValueAction
