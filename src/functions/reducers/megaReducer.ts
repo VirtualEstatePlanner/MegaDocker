@@ -35,18 +35,20 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     action.type // check which modification to make to state
   ) {
     case `APPLICATION_START`: // to start the program with only core manikins selected
-      newState.manikinTable = workingManikins
-      newState.selectedManikins = getManikins(workingManikins)
-      newState.memories = getMemories(newState.selectedManikins)
-      newState.allMobMites = getMites(newState.selectedManikins)
-      newState.mobDServiceMites = getDServiceMites(newState.allMobMites)
-      newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites)
-      newState.mobKServiceMites = getKServiceMites(newState.allMobMites)
-      newState.mobKNetworkMites = getKNetworkMites(newState.allMobMites)
-      newState.mobCustomMites = getCustomMites(newState.allMobMites)
-      newState.infoContent = `This is the Information Pane.  You can read these about the selected item here.`
-      newState.ymlOutput = `newState`
-      return newState
+      const appStartState: IMegaDockerState = {
+        manikinTable: workingManikins,
+        selectedManikins: getManikins(workingManikins),
+        memories: getMemories(newState.selectedManikins),
+        allMobMites: getMites(newState.selectedManikins),
+        mobDServiceMites: getDServiceMites(newState.allMobMites),
+        mobDNetworkMites: getDNetworkMites(newState.allMobMites),
+        mobKServiceMites: getKServiceMites(newState.allMobMites),
+        mobKNetworkMites: getKNetworkMites(newState.allMobMites),
+        mobCustomMites: getCustomMites(newState.allMobMites),
+        infoContent: `This is the Information Pane.  You can read these about the selected item here.`,
+        ymlOutput: `appStartState`,
+      }
+      return appStartState
 
     case `TOGGLE_MANIKIN`: // to select or deselect a manikin
       newState.manikinTable[action.payload].isSelected = !state.manikinTable[action.payload].isSelected // reverses the selected boolean in the manikin passed to it
