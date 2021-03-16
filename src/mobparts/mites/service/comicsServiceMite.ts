@@ -31,7 +31,7 @@ export const comicsServiceMite: ITraefikedServiceMite = {
    - PGID=$HOSTUSERGID
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.comics.entrypoints=plainhttp'
