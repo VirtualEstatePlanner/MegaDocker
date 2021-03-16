@@ -12,7 +12,7 @@ import { MemoryTable } from './MemoryTable'
 export const ContainerMemoryPane: React.FC = (): React.ReactElement => {
   return (
     <div className='MemoryPane'>
-      <MemoryTable></MemoryTable>
+      <MemoryTable />
     </div>
   )
 }
