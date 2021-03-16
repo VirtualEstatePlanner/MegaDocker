@@ -13,7 +13,6 @@ function buttonClicked() {}
 export const ButtonTemplate: React.FC = (): React.ReactElement => {
   return (
     <div className='Button'>
-      {}
       <button onClick={buttonClicked}>Button</button>
     </div>
   )
