@@ -47,7 +47,7 @@ export const n8nServiceMite: ITraefikedServiceMite = {
    - \${PWD}/n8n/settings:/root/.n8n
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.n8n.entrypoints=plainhttp'

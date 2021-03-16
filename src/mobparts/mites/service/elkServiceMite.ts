@@ -65,7 +65,7 @@ export const elkServiceMite: ITraefikedServiceMite = {
    - \${PWD}/logs/elk-kibana:/loglocation
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.kibana.entrypoints=plainhttp'

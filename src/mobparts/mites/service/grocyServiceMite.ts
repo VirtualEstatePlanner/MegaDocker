@@ -27,7 +27,7 @@ export const grocyServiceMite: ITraefikedServiceMite = {
    - \${PWD}/grocy/app:/config
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.grocy-app.entrypoints=plainhttp'
@@ -52,7 +52,7 @@ export const grocyServiceMite: ITraefikedServiceMite = {
    - \${PWD}/grocy/barcodebuddy:/config
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.grocy-barcode-buddy.entrypoints=plainhttp'

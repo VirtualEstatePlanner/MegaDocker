@@ -31,7 +31,7 @@ export const webdavServiceMite: ITraefikedServiceMite = {
    - \${PWD}/webdav/data:/var/lib/dav
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.webdav.entrypoints=plainhttp'

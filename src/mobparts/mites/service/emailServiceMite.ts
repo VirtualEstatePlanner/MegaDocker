@@ -55,7 +55,7 @@ export const emailServiceMite: ITraefikedServiceMite = {
   deploy:
    replicas: 1
    restart_policy:
-    condition: on-failure
+    condition: any
 
  rainloop:
   image: hardware/rainloop
@@ -67,7 +67,7 @@ export const emailServiceMite: ITraefikedServiceMite = {
    - \${PWD}/email/rainloop:/rainloop/data
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.rainloop.entrypoints=plainhttp'

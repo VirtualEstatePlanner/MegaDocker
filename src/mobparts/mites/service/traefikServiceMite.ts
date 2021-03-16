@@ -97,7 +97,7 @@ export const traefikServiceMite: ITraefikedServiceMite = {
    --dest /output
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
  
 # End Traefik Service Section
 

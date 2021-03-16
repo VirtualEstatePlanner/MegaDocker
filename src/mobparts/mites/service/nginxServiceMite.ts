@@ -31,7 +31,7 @@ export const nginxServiceMite: ITraefikedServiceMite = {
   deploy:
    replicas: 1
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.nginx.entrypoints=plainhttp'

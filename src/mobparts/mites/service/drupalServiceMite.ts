@@ -39,7 +39,7 @@ export const drupalServiceMite: ITraefikedServiceMite = {
    - \${PWD}/drupal/sites:/var/www/html/sites
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.drupal.entrypoints=plainhttp'
@@ -73,7 +73,7 @@ export const drupalServiceMite: ITraefikedServiceMite = {
   deploy:
    replicas: 1
    restart_policy:
-    condition: on-failure
+    condition: any
 
 # End Drupal Service Section
 

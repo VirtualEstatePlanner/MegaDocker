@@ -33,7 +33,7 @@ export const ghostServiceMite: ITraefikedServiceMite = {
    - database__connection__database=[[MOBNAME]]_ghost-mariadb
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.ghost.entrypoints=plainhttp'
@@ -60,7 +60,7 @@ export const ghostServiceMite: ITraefikedServiceMite = {
    - MYSQL_ROOT_PASSWORD=[[GHOSTMARIADBROOTPASSWORD]]
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
 
 # End Ghost Service Section
 

@@ -31,7 +31,7 @@ export const mediaRequestsServiceMite: ITraefikedServiceMite = {
    - tv
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.requests.entrypoints=plainhttp'
@@ -60,7 +60,7 @@ export const mediaRequestsServiceMite: ITraefikedServiceMite = {
    - tv
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.torrent-indexer.entrypoints=plainhttp'
@@ -105,7 +105,7 @@ export const mediaRequestsServiceMite: ITraefikedServiceMite = {
    - 6881:6881/udp
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.torrent.entrypoints=plainhttp'
@@ -135,7 +135,7 @@ export const mediaRequestsServiceMite: ITraefikedServiceMite = {
    - tv
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.newsgroups.entrypoints=plainhttp'
@@ -164,7 +164,7 @@ export const mediaRequestsServiceMite: ITraefikedServiceMite = {
    - tv
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.newsgroup-indexer.entrypoints=plainhttp'

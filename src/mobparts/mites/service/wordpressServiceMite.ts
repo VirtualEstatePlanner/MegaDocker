@@ -34,7 +34,7 @@ export const wordpressServiceMite: ITraefikedServiceMite = {
    - \${PWD}/wordpress/php:/var/www/html
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.wordpress.entrypoints=plainhttp'
@@ -63,7 +63,7 @@ export const wordpressServiceMite: ITraefikedServiceMite = {
    - \${PWD}/wordpress/mariadb:/var/lib/mysql
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
 
 # End WordPress Service Section
 

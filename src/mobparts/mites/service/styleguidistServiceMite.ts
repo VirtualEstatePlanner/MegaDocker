@@ -30,7 +30,7 @@ export const styleguidistServiceMite: ITraefikedServiceMite = {
    - traefik
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.styleguidist.entrypoints=plainhttp'

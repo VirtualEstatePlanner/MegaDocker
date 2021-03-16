@@ -71,7 +71,7 @@ export const gitlabServiceMite: ITraefikedServiceMite = {
    - traefik
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.gitlab.entrypoints=plainhttp'

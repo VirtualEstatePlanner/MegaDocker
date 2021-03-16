@@ -73,7 +73,7 @@ export const ldapServiceMite: ITraefikedServiceMite = {
    - traefik
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.ldapadmin.entrypoints=plainhttp'
@@ -101,7 +101,7 @@ export const ldapServiceMite: ITraefikedServiceMite = {
    - \${PWD}/ldap/authelia-config/configuration.yml:/etc/authelia/configuration.yml:ro
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.authelia.entrypoints=plainhttp'
@@ -130,7 +130,7 @@ export const ldapServiceMite: ITraefikedServiceMite = {
    - MYSQL_PASSWORD=[[AUTHELIAMARIADBPASSWORD]]
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'com.MegaDocker.description=Authelia MariaDB - MariaDB database to store Authelia data'
   

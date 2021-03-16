@@ -32,7 +32,7 @@ export const duplicatiServiceMite: ITraefikedServiceMite = {
    - \${PWD}/backups/Duplicati/:/data/Duplicati
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.backup.entrypoints=plainhttp'

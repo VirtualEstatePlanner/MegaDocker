@@ -36,7 +36,7 @@ export const heimdallServiceMite: ITraefikedServiceMite = {
    - \${PWD}/heimdall/nginx:/config/nginx
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.heimdall.entrypoints=plainhttp'

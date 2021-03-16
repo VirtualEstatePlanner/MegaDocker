@@ -28,7 +28,7 @@ export const owncloudServiceMite: ITraefikedServiceMite = {
    - \${PWD}/owncloud/data/:/var/www/html/data
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.owncloud.entrypoints=plainhttp'
@@ -63,7 +63,7 @@ export const owncloudServiceMite: ITraefikedServiceMite = {
    - \${PWD}/owncloud/postgres:/var/lib/postgresql
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
 
  owncloud-mariadb:
   image: mariadb
@@ -76,7 +76,7 @@ export const owncloudServiceMite: ITraefikedServiceMite = {
    - \${PWD}/owncloud/mariadb:/var/lib/mysql
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
   networks:
    - owncloud
 
@@ -88,7 +88,7 @@ owncloud-redis:
    - owncloud
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
 
 # End Owncloud Service Section
 

@@ -31,7 +31,7 @@ export const kanboardServiceMite: ITraefikedServiceMite = {
    - \${PWD}/kanboard/kanboard-plugins:/var/www/app/plugins
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.kanboard.entrypoints=plainhttp'

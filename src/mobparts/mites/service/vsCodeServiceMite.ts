@@ -29,7 +29,7 @@ export const vsCodeServiceMite: ITraefikedServiceMite = {
    - PASSWORD=[[VSCODEPASSWORD]]
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.vscode.entrypoints=plainhttp'

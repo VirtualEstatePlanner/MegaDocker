@@ -29,7 +29,7 @@ export const syncthingServiceMite: ITraefikedServiceMite = {
     - \${PWD}/syncthing/data:/var/syncthing
    deploy:
     restart_policy:
-     condition: on-failure
+     condition: any
     labels:
      - 'traefik.enable=true'
      - 'traefik.http.routers.syncthing.entrypoints=plainhttp'

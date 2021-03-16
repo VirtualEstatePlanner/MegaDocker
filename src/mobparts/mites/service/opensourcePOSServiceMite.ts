@@ -36,7 +36,7 @@ export const opensourcePOSServiceMite: ITraefikedServiceMite = {
    - MYSQL_HOST_NAME=[[MOBNAME]]_opensourcepos-mariadb
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.opensourcepos.entrypoints=plainhttp'
@@ -67,7 +67,7 @@ export const opensourcePOSServiceMite: ITraefikedServiceMite = {
    - MYSQL_PASSWORD=[[OPENSOURCEPOSMARIADBPASSWORD]]
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
 
 # End opensourcePOS Service Section
 

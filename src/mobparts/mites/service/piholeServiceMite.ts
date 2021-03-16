@@ -40,7 +40,7 @@ export const piholeServiceMite: ITraefikedServiceMite = {
    - 1.0.0.1
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.pihole.entrypoints=plainhttp'

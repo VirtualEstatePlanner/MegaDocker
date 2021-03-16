@@ -38,7 +38,7 @@ export const plexServiceMite: ITraefikedServiceMite = {
    - \${PWD}/media/content
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.plex.entrypoints=plainhttp'

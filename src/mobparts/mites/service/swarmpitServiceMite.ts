@@ -25,7 +25,7 @@ export const swarmpitServiceMite: ITraefikedServiceMite = {
    - swarmpit
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.swarmpit.entrypoints=plainhttp'
@@ -80,7 +80,7 @@ export const swarmpitServiceMite: ITraefikedServiceMite = {
    labels:
     - 'com.MegaDocker.description=Swarmpit Influx - Swarmpit influx database'
    restart_policy:
-    condition: on-failure
+    condition: any
    resources:
     limits:
      cpus: '0.60'
@@ -100,7 +100,7 @@ export const swarmpitServiceMite: ITraefikedServiceMite = {
    - swarmpit
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    mode: global
    labels:
     - 'swarmpit.agent=true'

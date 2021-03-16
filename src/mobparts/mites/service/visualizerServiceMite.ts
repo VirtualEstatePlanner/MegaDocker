@@ -26,7 +26,7 @@ export const visualizerServiceMite: ITraefikedServiceMite = {
    - /var/run/docker.sock:/var/run/docker.sock:ro
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.visualizer.entrypoints=plainhttp'

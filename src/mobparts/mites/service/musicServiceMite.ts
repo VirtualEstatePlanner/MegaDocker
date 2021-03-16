@@ -31,7 +31,7 @@ export const musicServiceMite: ITraefikedServiceMite = {
    - PGID=$HOSTUSERGID
   deploy:
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.music.entrypoints=plainhttp'

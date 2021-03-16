@@ -29,7 +29,7 @@ export const portainerServiceMite: ITraefikedServiceMite = {
   deploy:
    mode: global
    restart_policy:
-    condition: on-failure
+    condition: any
    labels:
     - 'traefik.enable=true'
     - 'traefik.http.routers.portainer.entrypoints=plainhttp'
