@@ -59,12 +59,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.memories[memoryIndex].isReady = newState.memories[memoryIndex].validator(newState.memories[memoryIndex].value)
       return newState
 
-    //  case `OPEN_MOB_FILE`: // TODO: for open button
-    //    return state
-
-    //  case `SAVE_MOB_FILE`: // TODO: for save button
-    //    return state
-
     case `DOCKER_SWARM_OUTPUT`: // handles creation and download of Docker Swarm zip file
       zipDockerSwarm({
         manikins: state.selectedManikins,
