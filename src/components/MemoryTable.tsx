@@ -15,6 +15,7 @@ import { IMegaDockerState } from '../interfaces/IMegaDockerState'
 import { IMemory } from '../interfaces/IMemory'
 import { IUpdateMemoryValueAction } from '../interfaces/actionInterfaces/IUpdateMemoryValueAction'
 import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
+import { MemoryRow } from './MemoryRow'
 
 /**
  * generates the memories table
@@ -38,7 +39,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
    * @param memory the IMemory that will be reduced against the state
    * @param newValue the IMemory.value to reduce against
    */
-  const createMemoryValueAction = (memoryToUpdate: IMemory, newValue: string): IUpdateMemoryValueAction => {
+  const createMemoryValueAction: Function = (memoryToUpdate: IMemory, newValue: string): IUpdateMemoryValueAction => {
     return {
       type: `UPDATE_MEMORY_VALUE`,
       payload: {
@@ -70,8 +71,9 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
           style={{
             width: '100%',
           }}>
-          {sortedMemories.map((thisMemory: IMemory) => (
-            <Tooltip title={thisMemory.tooltip} key={thisMemory.memoryIndex}>
+          {sortedMemories.map((thisMemory: IMemory) =>
+            MemoryRow(thisMemory)
+            /*            <Tooltip title={thisMemory.tooltip} key={thisMemory.memoryIndex}>
               <TableRow hover>
                 <TableCell style={{ width: '1%' }} padding='checkbox' variant='body' size='small'>
                   {thisMemory.name}
@@ -93,7 +95,8 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
                 </TableCell>
               </TableRow>
             </Tooltip>
-          ))}
+*/
+          )}
         </TableBody>
       </Table>
     </div>

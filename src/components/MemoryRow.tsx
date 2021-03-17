@@ -13,9 +13,15 @@ import TableRow from '@material-ui/core/TableRow'
 import TableCell from '@material-ui/core/TableCell'
 import checkmarkIndicator from '../images/indicators/checkmarkIndicator.png'
 import circleIndicator from '../images/indicators/circleIndicator.png'
-import classes from '*.module.css'
+//import classes from '*.module.css'
+import { IMemory } from '../interfaces/IMemory'
+import { TextField, Tooltip } from '@material-ui/core'
+import { IUpdateMemoryValueAction } from '../interfaces/actionInterfaces/IUpdateMemoryValueAction'
+import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
+import { IMegaDockerState } from '../interfaces/IMegaDockerState'
+import { MegaContext } from './MegaContext'
 
-const Inputs = (props: any) => {
+/*const Inputs = (props: any) => {
   const { classes } = props
   return (
     <div className={classes.container}>
@@ -26,26 +32,45 @@ const Inputs = (props: any) => {
 
 Inputs.propTypes = {
   classes: PropTypes.object.isRequired,
+}*/
+const createMemoryValueAction: Function = (memoryToUpdate: IMemory, newValue: string): IUpdateMemoryValueAction => {
+  return {
+    type: `UPDATE_MEMORY_VALUE`,
+    payload: {
+      memory: memoryToUpdate,
+      value: newValue,
+    },
+  }
 }
 
-export const MemoryRow: React.FC = (): React.ReactElement => {
-  const [memoryValue, setMemoryValue]: [string | undefined, React.Dispatch<React.SetStateAction<string | undefined>>] = React.useState()
+export const MemoryRow: React.FC<IMemory> = (memory: IMemory): React.ReactElement<IMemory> => {
+  const {
+    state,
+    dispatch,
+  }: {
+    state: IMegaDockerState
+    dispatch: React.Dispatch<IMegaDockerAction>
+  } = React.useContext(MegaContext)
   return (
-    <TableRow className='MemoryRow' hover>
-      <TableCell>IMemory.name</TableCell>
-      <TableCell>
-        <Input
-          className={classes.input}
-          classes={{ focused: classes.inputFocused }}
-          value={memoryValue}
-          placeholder='IMemory.value'
-          onChange={(changeEvent) => setMemoryValue(changeEvent.target.value)} /* size={50} */
-        />
-      </TableCell>
-      <TableCell>IMemory.tooltip</TableCell>
-      <TableCell>
-        <img alt='ready indicator' height={20} width={20} src={memoryValue ? checkmarkIndicator : circleIndicator} />
-      </TableCell>
-    </TableRow>
+    <Tooltip title={memory.tooltip} key={memory.memoryIndex}>
+      <TableRow className='MemoryRow' hover>
+        <TableCell>{memory.name}</TableCell>
+        <TableCell variant='body' style={{}} size='small'>
+          <TextField
+            fullWidth
+            size='small'
+            required={true}
+            value={memory.value}
+            type={memory.valueType}
+            placeholder={`Please enter your ${memory.name} here`}
+            autoComplete={memory.shouldAutocomplete.toString()}
+            onChange={(changeEvent) => dispatch(createMemoryValueAction(memory, changeEvent.target.value))}
+          />
+        </TableCell>
+        <TableCell style={{ width: '5%' }} className='ManikinReadyIcon' variant='body' size='small'>
+          <img alt='ready indicator' height='25vh' src={memory.value === `` ? circleIndicator : memory.validator(memory.value).valueOf() ? checkmarkIndicator : circleIndicator} />
+        </TableCell>{' '}
+      </TableRow>
+    </Tooltip>
   )
 }
