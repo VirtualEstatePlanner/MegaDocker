@@ -53,7 +53,7 @@
     "dist:win-intel64": "yarn undist && cross-env NODE_ENV=production electron-builder -w -c ./electron-configs/win-intel-64.yml && mv dist/*.exe binaries/win/intel/",
     "dist:win-arm64": "yarn undist && cross-env NODE_ENV=production electron-builder -w -c ./electron-configs/win-arm-64.yml && mv dist/*.exe binaries/win/arm/",
     "dist:win": "run-s dist:win-intel64 dist:win-arm64",
-    "dist:all": "yarn dist:web && run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win",
+    "dist:all": "run-s -l warning:mac-only clean dist:web build-transpile dist:linux dist:mac dist:win",
     "postdist:all": "say 'All distributables output to binaries directory.'"
   },
   "keywords": [
