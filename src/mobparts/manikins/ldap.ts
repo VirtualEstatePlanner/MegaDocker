@@ -17,6 +17,9 @@ import ldapIcon from '../../images/manikin-icons/ldapIcon.png'
 import { ldapOrganisation } from '../memories/ldapOrganisation'
 import { ldapBootstrapMegaDockerDotLdifMite } from '../mites/custom/ldapBootstrapMegaDockerDotLdifMite'
 import { autheliaDotConfMite } from '../mites/custom/autheliaDotConfMite'
+import { autheliaMariaDBPassword } from '../memories/autheliaMariaDBPassword'
+import { autheliaMariaDBRootPassword } from '../memories/autheliaMariaDBRootPassword'
+import { autheliaMariaDBUser } from '../memories/autheliaMariaDBUser'
 
 /**
  * ldap Manikin
@@ -29,7 +32,7 @@ export const ldapManikin: IManikin = {
   manikinGroups: [`Core`, `Utility`],
   manikinIcon: ldapIcon,
   manikinIndex: 10011,
-  memories: [ldapAdminUsername, ldapAdminPassword, ldapConfigurationPassword, ldapOrganisation],
+  memories: [autheliaMariaDBPassword, autheliaMariaDBRootPassword, autheliaMariaDBUser, ldapAdminUsername, ldapAdminPassword, ldapConfigurationPassword, ldapOrganisation],
   mites: [autheliaDotConfMite, ldapServiceMite, ldapNetworkMite, ldapBootstrapMegaDockerDotLdifMite],
   name: `LDAP`,
   ports: [],
