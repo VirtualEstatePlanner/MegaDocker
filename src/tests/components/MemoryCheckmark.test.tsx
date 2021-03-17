@@ -6,13 +6,12 @@
 //  Created by George Georgulas IV on 3/12/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { MemoryCheckmark } from '../../components/MemoryCheckmark'
 import { render } from '@testing-library/react'
+import { MemoryValidationIcon } from '../../components/MemoryValidationIcon'
+import { IMemory } from '../../interfaces/IMemory'
 
-test('renders the MemoryCheckmark component', () => {
-  render(
-    <div>
-      <MemoryCheckmark />
-    </div>
-  )
+test('renders the MemoryValidationIcon component', () => {
+  ;(memory: IMemory) => {
+    render(<div>{MemoryValidationIcon(memory)}</div>)
+  }
 })

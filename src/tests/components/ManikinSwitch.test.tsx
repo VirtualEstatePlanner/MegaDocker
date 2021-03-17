@@ -6,13 +6,12 @@
 //  Created by George Georgulas IV on 3/12/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { ManikinSwitch } from '../../components/ManikinSwitch'
 import { render } from '@testing-library/react'
+import { ManikinSwitch } from '../../components/ManikinSwitch'
+import { IManikin } from '../../interfaces/IManikin'
 
-test('renders the ManikinSwitch component', () => {
-  render(
-    <div>
-      <ManikinSwitch />
-    </div>
-  )
+it('renders the ManikinSwitch component', () => {
+  ;(manikin: IManikin) => {
+    render(<div>{ManikinSwitch(manikin)}</div>)
+  }
 })
