@@ -14,7 +14,7 @@ export const ghostMariaDBRootPassword: IMemory = {
   memoryMarker: `[[GHOSTMARIADBROOTPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `Ghost MariaDB Root password`,
+  name: `Ghost MariaDB Root Password`,
   tooltip: `The password for the Ghost MariaDB root user`,
   value: ``,
   valueType: 'password',

@@ -14,7 +14,7 @@ export const cloudflareAPIToken: IMemory = {
   memoryMarker: `[[CLOUDFLAREAPITOKEN]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: true,
-  name: `CloudFlare Token`,
+  name: `CloudFlare API Token`,
   tooltip: `A CloudFlare API token with "DNS: Edit" and "Zone: Read" privileges for your domains`,
   value: ``,
   valueType: 'password',

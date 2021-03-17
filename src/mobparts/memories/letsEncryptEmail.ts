@@ -14,7 +14,7 @@ export const letsEncryptEmail: IMemory = {
   memoryMarker: `[[LETSENCRYPTEMAIL]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,
-  name: `Let'sEncrypt Email`,
+  name: `Let's Encrypt Email Address`,
   tooltip: `The email address used to register your domains`,
   value: ``,
   valueType: 'email',

@@ -14,7 +14,7 @@ export const webdavPassword: IMemory = {
   memoryMarker: `[[WEBDAVPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `WebDAV password`,
+  name: `WebDAV Password`,
   tooltip: `Please the password to access WebDav here`,
   value: ``,
   valueType: 'password',

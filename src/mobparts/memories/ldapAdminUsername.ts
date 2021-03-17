@@ -14,7 +14,7 @@ export const ldapAdminUsername: IMemory = {
   memoryMarker: `[[LDAPADMINUSERNAME]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
-  name: `LDAP Admin username`,
+  name: `LDAP Admin User`,
   tooltip: `Choose the administrator username for your LDAP server.`,
   value: ``,
   valueType: 'text',

@@ -14,7 +14,7 @@ export const n8nUser: IMemory = {
   memoryMarker: `[[N8NUSERNAME]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
-  name: `n8n user name`,
+  name: `n8n User`,
   tooltip: `Choose a username for the n8n administrator`,
   value: ``,
   valueType: 'text',
