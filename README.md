@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019-2021 The MegaDocker Group. All rights reserved.'
 
-# MegaDocker v0.4.1-beta
+# MegaDocker v0.4.2-beta
 
 Modular Enterprise-Grade Automated Docker
 
@@ -12,6 +12,7 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
+- added automated testing
 - a ton of bugfixes
 - generates a script to setup your Cloudflare hosts for you
 - added Mealie and Syncthing Manikins
