@@ -9,10 +9,16 @@
 import { App } from '../../components/App'
 import { render } from '@testing-library/react'
 
+/*
+ * mocks css for Asap font
+ */
 jest.mock('@fontsource/asap', () => ({
   fontsourceAsap: '',
 }))
 
+/*
+ * mocks css for gray color
+ */
 jest.mock('@material-ui/core/colors/grey', () => ({
   greyColor: '',
 }))
