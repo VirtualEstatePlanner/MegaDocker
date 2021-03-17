@@ -19,7 +19,7 @@ import { styleguidistWebpackDotConfigDotJsMite } from '../mites/custom/styleguid
  * styleguidist Manikin
  */
 export const styleguidistManikin: IManikin = {
-  description: `Styleguidist react component library service`,
+  description: `React Component Library`,
   isCore: false,
   isSelected: false,
   folder: `styleguidist`,

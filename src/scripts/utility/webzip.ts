@@ -1,6 +1,7 @@
 import fs from 'fs'
 import JSZip from 'jszip';
 import path from 'path';
+import { version } from '../../../package.json';
 
 const getFilePathsRecursively = (directoryPath: string): string[] => {
   
@@ -46,7 +47,7 @@ const getFilePathsRecursively = (directoryPath: string): string[] => {
         type: `nodebuffer`,
       })
       .then(function (content) {
-        fs.writeFileSync(`./binaries/web/web.zip`, content)
+        fs.writeFileSync(`./binaries/web/MEGADocker-${version}-web.zip`, content)
       })
   
     return zip;

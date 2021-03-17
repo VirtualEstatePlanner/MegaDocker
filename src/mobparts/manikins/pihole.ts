@@ -17,7 +17,7 @@ import piholeIcon from '../../images/manikin-icons/piholeIcon.png'
  * drupal Manikin
  */
 export const piholeManikin: IManikin = {
-  description: `Pihole DNS-based adblocker`,
+  description: `Network Ad Blocker`,
   folder: `pihole`,
   isCore: false,
   isSelected: false,

@@ -19,7 +19,7 @@ import { nextcloudMariaDBUser } from '../memories/nextcloudMariaDBUser'
  * nextcloud Manikin
  */
 export const nextcloudManikin: IManikin = {
-  description: `Nextcloud file-sharing service`,
+  description: `Filesharing`,
   folder: `nextcloud`,
   isCore: false,
   isSelected: false,

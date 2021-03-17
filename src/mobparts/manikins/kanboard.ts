@@ -19,7 +19,7 @@ import { kanboardMariaDBUser } from '../memories/kanboardMariaDBUser'
  * portal Manikin
  */
 export const kanboardManikin: IManikin = {
-  description: `Kanban board for task sharing`,
+  description: `Task Sharing`,
   folder: `kanboard`,
   isCore: false,
   isSelected: false,

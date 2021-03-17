@@ -18,7 +18,7 @@ import { ledgerPostgresUser } from '../memories/ledgerPostgresUser'
  * elk Manikin
  */
 export const ledgerManikin: IManikin = {
-  description: `bookkeeping service`,
+  description: `Bookkeeping`,
   folder: `ledger`,
   isCore: false,
   isSelected: false,

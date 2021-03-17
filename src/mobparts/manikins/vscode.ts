@@ -18,7 +18,7 @@ import { vsCodeIndexDotHtmlMite } from '../mites/custom/vsCodeIndexDotHtmlMite'
  * visualizer Manikin
  */
 export const vsCodeManikin: IManikin = {
-  description: `Containerized VS Code IDE`,
+  description: `Integrated Development Environment`,
   folder: `vscode`,
   isCore: false,
   isSelected: false,

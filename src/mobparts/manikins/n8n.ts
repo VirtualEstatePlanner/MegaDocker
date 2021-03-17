@@ -17,7 +17,7 @@ import { n8nPassword } from '../memories/n8nPassword'
  * n8n Manikin
  */
 export const n8nManikin: IManikin = {
-  description: `Service integration system`,
+  description: `Automation and Integration`,
   folder: `n8n`,
   isCore: true,
   isSelected: true,

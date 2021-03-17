@@ -23,7 +23,7 @@ import { tvNetworkMite } from '../mites/network/tvNetworkMite'
  * drupal Manikin
  */
 export const booksManikin: IManikin = {
-  description: `Automatic books downloader`,
+  description: `Automatic Books Downloader`,
   folder: `media`,
   isCore: false,
   isSelected: false,

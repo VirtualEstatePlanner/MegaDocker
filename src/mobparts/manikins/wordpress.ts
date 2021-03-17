@@ -15,7 +15,7 @@ import { wordpressMariaDBUser } from '../memories/wordpressMariaDBUser'
 import wordpressIcon from '../../images/manikin-icons/wordpressIcon.png'
 
 export const wordpressManikin: IManikin = {
-  description: `Wordpress Blogging Platform`,
+  description: `Wordpress Blog`,
   folder: `wordpress`,
   isCore: false,
   isSelected: false,

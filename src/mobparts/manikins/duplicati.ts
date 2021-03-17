@@ -15,7 +15,7 @@ import duplicatiIcon from '../../images/manikin-icons/duplicatiIcon.png'
  * drupal Manikin
  */
 export const duplicatiManikin: IManikin = {
-  description: `Duplicati backup service`,
+  description: `Incremental Backup`,
   folder: `duplicati`,
   isCore: true,
   isSelected: true,

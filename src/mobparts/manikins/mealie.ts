@@ -15,7 +15,7 @@ import mealieIcon from '../../images/manikin-icons/mealieIcon.png'
  * elk Manikin
  */
 export const mealieManikin: IManikin = {
-  description: `recipe manager and meal planner`,
+  description: `Recipe Manager and Meal Planning`,
   folder: ``,
   isCore: false,
   isSelected: false,

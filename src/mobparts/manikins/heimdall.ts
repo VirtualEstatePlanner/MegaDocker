@@ -16,7 +16,7 @@ import heimdallIcon from '../../images/manikin-icons/heimdallIcon.png'
  * portal Manikin
  */
 export const heimdallManikin: IManikin = {
-  description: `Heimdall web portal`,
+  description: `Web Portal`,
   folder: `heimdall`,
   isCore: false,
   isSelected: false,

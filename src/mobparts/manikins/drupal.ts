@@ -19,7 +19,7 @@ import { ldapNetworkMite } from '../mites/network/ldapNetworkMite'
  * drupal Manikin
  */
 export const drupalManikin: IManikin = {
-  description: `Drupal blog service`,
+  description: `Drupal Blog`,
   folder: `drupal`,
   isCore: false,
   isSelected: false,

@@ -18,7 +18,7 @@ import { webdavPassword } from '../memories/webdavPassword'
  * webdav Manikin
  */
 export const webdavManikin: IManikin = {
-  description: `WebDAV file-sharing service`,
+  description: `WebDAV Filesharing`,
   isCore: false,
   isSelected: false,
   folder: `webdav`,

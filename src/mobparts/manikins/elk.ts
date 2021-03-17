@@ -23,7 +23,7 @@ import { filebeatDotYmlMite } from '../mites/custom/filebeatDotYmlMite'
  * elk Manikin
  */
 export const elkManikin: IManikin = {
-  description: `ElasticSearch/Logstash/Kibana Monitoring service`,
+  description: `Log Monitoring`,
   folder: `elk`,
   isCore: false,
   isSelected: false,

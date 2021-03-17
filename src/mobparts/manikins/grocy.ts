@@ -16,7 +16,7 @@ import grocyIcon from '../../images/manikin-icons/grocyIcon.png'
  * drupal Manikin
  */
 export const grocyManikin: IManikin = {
-  description: `Grocy home management service`,
+  description: `Home Resource Planning`,
   folder: `grocy`,
   isCore: false,
   isSelected: false,

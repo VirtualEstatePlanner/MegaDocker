@@ -15,7 +15,7 @@ import syncthingIcon from '../../images/manikin-icons/syncthingIcon.png'
  * styleguidist Manikin
  */
 export const syncthingManikin: IManikin = {
-  description: `Syncthing folder synchronization service`,
+  description: `Folder Synchronization`,
   isCore: false,
   isSelected: false,
   folder: `syncthing`,

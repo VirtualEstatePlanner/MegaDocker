@@ -25,7 +25,7 @@ import { autheliaMariaDBUser } from '../memories/autheliaMariaDBUser'
  * ldap Manikin
  */
 export const ldapManikin: IManikin = {
-  description: `Lightweight Directory Authentication Protocol authentication service`,
+  description: `Authentication`,
   folder: `ldap`,
   isCore: true,
   isSelected: true,

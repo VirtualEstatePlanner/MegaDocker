@@ -16,7 +16,7 @@ import visualizerIcon from '../../images/manikin-icons/visualizerIcon.png'
  * visualizer Manikin
  */
 export const visualizerManikin: IManikin = {
-  description: `Docker swarm mode container placement visualization service`,
+  description: `Docker Swarm Container Placement Visualization`,
   folder: `visualizer`,
   isCore: false,
   isSelected: false,

@@ -17,7 +17,7 @@ import { nginxDefaultIndexHtmlMite } from '../mites/custom/nginxDefaultIndexHtml
  * nginx Manikin
  */
 export const nginxManikin: IManikin = {
-  description: `Nginx http service`,
+  description: `HTTP/S Web Server`,
   folder: `nginx`,
   isCore: false,
   isSelected: false,

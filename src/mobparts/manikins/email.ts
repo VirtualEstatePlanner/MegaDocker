@@ -16,7 +16,7 @@ import emailIcon from '../../images/manikin-icons/emailIcon.png'
  * elk Manikin
  */
 export const emailManikin: IManikin = {
-  description: `email server`,
+  description: `Email and Webmail`,
   folder: `email`,
   isCore: false,
   isSelected: false,
