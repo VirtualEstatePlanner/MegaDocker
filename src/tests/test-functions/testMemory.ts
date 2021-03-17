@@ -9,28 +9,30 @@
 import { IMemory } from '../../interfaces/IMemory'
 
 export const testMemory: Function = (memoryToTest: IMemory) => {
-  it('is not ready', () => {
-    expect(memoryToTest.isReady).toBeFalsy()
-  })
-  it('has an index in the correct range', () => {
-    expect(memoryToTest.memoryIndex).toBeGreaterThanOrEqual(20000)
-    expect(memoryToTest.memoryIndex).toBeLessThanOrEqual(29999)
-  })
-  it('has a name', () => {
-    expect(memoryToTest.name).toBeDefined()
-  })
-  it('has a valid IMemoryType', () => {
-    expect(memoryToTest.memoryType).toBeDefined()
-    expect(memoryToTest.memoryType === `NormalMemory` || memoryToTest.memoryType === `SecretMemory`).toStrictEqual(true)
-  })
-  it('has a valid memoryMarker', () => {
-    expect(memoryToTest.memoryMarker).toBeDefined()
-  })
-  it('has a tooltip', () => {
-    expect(memoryToTest.tooltip).toBeDefined()
-  })
-  it('has an empty value', () => {
-    expect(memoryToTest.value).toBeDefined()
-    expect(memoryToTest.value).toHaveLength(0)
+  describe('tests a memory component with hooks', () => {
+    it('is not ready', () => {
+      expect(memoryToTest.isReady).toBeFalsy()
+    })
+    it('has an index in the correct range', () => {
+      expect(memoryToTest.memoryIndex).toBeGreaterThanOrEqual(20000)
+      expect(memoryToTest.memoryIndex).toBeLessThanOrEqual(29999)
+    })
+    it('has a name', () => {
+      expect(memoryToTest.name).toBeDefined()
+    })
+    it('has a valid IMemoryType', () => {
+      expect(memoryToTest.memoryType).toBeDefined()
+      expect(memoryToTest.memoryType === `NormalMemory` || memoryToTest.memoryType === `SecretMemory`).toStrictEqual(true)
+    })
+    it('has a valid memoryMarker', () => {
+      expect(memoryToTest.memoryMarker).toBeDefined()
+    })
+    it('has a tooltip', () => {
+      expect(memoryToTest.tooltip).toBeDefined()
+    })
+    it('has an empty value', () => {
+      expect(memoryToTest.value).toBeDefined()
+      expect(memoryToTest.value).toHaveLength(0)
+    })
   })
 }

@@ -16,17 +16,19 @@ export const testTraefikedServiceMite: Function = (traefikedServiceMiteToTest: I
     return { ...mite, miteString: testableMiteString }
   }
   const testableMite: ITraefikedServiceMite = makeTestableMiteFromString(traefikedServiceMiteToTest)
-  it('has an index in the appropriate range', () => {
-    expect(testableMite.miteIndex).toBeGreaterThanOrEqual(30000)
-    expect(testableMite.miteIndex).toBeLessThanOrEqual(39999)
-  })
-  it('has the correct type', () => {
-    expect(testableMite.type).toStrictEqual(`DockerSwarmService`)
-  })
-  it('has at least one host name', () => {
-    expect(testableMite.webInterfaceHostnames.length).toBeGreaterThan(0)
-  })
-  it('has a valid YAML miteString', () => {
-    expect(stringYamlValidator(testableMite.miteString)).toStrictEqual(true)
+  describe('tests a service mite that should sit behind traefik', () => {
+    it('has an index in the appropriate range', () => {
+      expect(testableMite.miteIndex).toBeGreaterThanOrEqual(30000)
+      expect(testableMite.miteIndex).toBeLessThanOrEqual(39999)
+    })
+    it('has the correct type', () => {
+      expect(testableMite.type).toStrictEqual(`DockerSwarmService`)
+    })
+    it('has at least one host name', () => {
+      expect(testableMite.webInterfaceHostnames.length).toBeGreaterThan(0)
+    })
+    it('has a valid YAML miteString', () => {
+      expect(stringYamlValidator(testableMite.miteString)).toStrictEqual(true)
+    })
   })
 }

@@ -13,4 +13,4 @@ import { IOpenMobAction } from '../../interfaces/actionInterfaces/IOpenMobAction
 import { IToggleManikinAction } from '../../interfaces/actionInterfaces/IToggleManikinAction'
 import { IUpdateMemoryValueAction } from '../../interfaces/actionInterfaces/IUpdateMemoryValueAction'
 
-export type IMegaDockerAction = IApplicationStartAction | IOutputDockerSwarmAction | ISaveMobAction | IOpenMobAction | IToggleManikinAction | IUpdateMemoryValueAction
+export const testMegaDockerAction = () => describe('tests each possible MegaDockerAction', () => {})

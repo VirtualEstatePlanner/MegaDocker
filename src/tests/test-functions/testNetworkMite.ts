@@ -16,14 +16,16 @@ export const testNetworkMite: Function = (networkMiteToTest: INetworkMite) => {
     return { ...mite, miteString: testableMiteString }
   }
   const testableMite: INetworkMite = makeTestableMiteFromString(networkMiteToTest)
-  it('has an index in the appropriate range', () => {
-    expect(testableMite.miteIndex).toBeGreaterThanOrEqual(40000)
-    expect(testableMite.miteIndex).toBeLessThanOrEqual(49999)
-  })
-  it('has the correct type', () => {
-    expect(testableMite.type).toStrictEqual(`DockerSwarmNetwork`)
-  })
-  it('has a valid YAML miteString', () => {
-    expect(stringYamlValidator(testableMite.miteString)).toStrictEqual(true)
+  describe('tests a network mite', () => {
+    it('has an index in the appropriate range', () => {
+      expect(testableMite.miteIndex).toBeGreaterThanOrEqual(40000)
+      expect(testableMite.miteIndex).toBeLessThanOrEqual(49999)
+    })
+    it('has the correct type', () => {
+      expect(testableMite.type).toStrictEqual(`DockerSwarmNetwork`)
+    })
+    it('has a valid YAML miteString', () => {
+      expect(stringYamlValidator(testableMite.miteString)).toStrictEqual(true)
+    })
   })
 }

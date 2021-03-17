@@ -21,13 +21,5 @@ import { IMite } from '../../interfaces/IMite'
  * @mobDNetworkMites docker-compose network yml mites
  * @mobCustomMites an array of arrays of non-yml mites
  */
-export interface IMegaDockerState {
-  manikinTable: IManikin[]
-  selectedManikins: IManikin[]
-  memories: IMemory[]
-  allMobMites: IMite[]
-  mobDServiceMites: IMite[]
-  mobDNetworkMites: IMite[]
-  mobCustomMites: IMite[][]
-  ymlOutput: string
-}
+
+export const testMegaDockerState = () => describe('tests each possible MegaDockerState property', () => {})

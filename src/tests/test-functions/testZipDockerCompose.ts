@@ -10,8 +10,10 @@ import { IZipDockerCompose } from '../../interfaces/IZipDockerCompose'
 import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
 
 export const testDcokerComposeZip: Function = (zipToTest: IZipDockerCompose) => {
-  it('should have all 3 values', () => {
-    expect(zipToTest.memories).toContain(cloudflareAPIToken)
-    expect(zipToTest.manikins.length).toStrictEqual(5)
+  describe('tests the docker-compose download button', () => {
+    it('should have all 3 values', () => {
+      expect(zipToTest.memories).toContain(cloudflareAPIToken)
+      expect(zipToTest.manikins.length).toStrictEqual(5)
+    })
   })
 }

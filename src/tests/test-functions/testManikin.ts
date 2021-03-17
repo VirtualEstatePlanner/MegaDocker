@@ -12,7 +12,8 @@ import { IManikin } from '../../interfaces/IManikin';
 import { IMemory } from '../../interfaces/IMemory';
 
 export const testManikin: Function = (manikinToTest: IManikin, memories?: IMemory[]) => {
-  it(`has all properties defined`, () => {
+  describe('tests a manikin for validity', () => {
+    it(`has all properties defined`, () => {
     expect(manikinToTest.name).toBeDefined();
     expect(manikinToTest.manikinIcon).toBeDefined();
     expect(manikinToTest.description).toBeDefined();
@@ -25,5 +26,6 @@ export const testManikin: Function = (manikinToTest: IManikin, memories?: IMemor
     expect(manikinToTest.folder).toBeDefined();
     expect(manikinToTest.subfolders.length).toBeGreaterThan(-1);
     expect(manikinToTest.memories.length).toBeGreaterThan(-1);
+  })
   })
 }

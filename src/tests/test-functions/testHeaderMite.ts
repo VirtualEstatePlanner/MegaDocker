@@ -11,13 +11,15 @@ import { IHeaderMite } from '../../interfaces/IHeaderMite'
 
 export const testHeaderMite: Function = (headerMiteToTest: IHeaderMite) => {
   const lastFourDigitsOfMiteIndex: boolean = headerMiteToTest.miteIndex.toString().endsWith(`9999`)
-  it('has an index in the appropriate range', () => {
-    expect(lastFourDigitsOfMiteIndex).toStrictEqual(true)
-  })
-  it('has the correct type', () => {
-    expect(headerMiteToTest.type).toStrictEqual(`DockerSwarmHeader`)
-  })
-  it('has a valid YAML miteString', () => {
-    expect(stringYamlValidator(headerMiteToTest.miteString)).toStrictEqual(true)
+  describe('tests a header mite for validity', () => {
+    it('has an index in the appropriate range', () => {
+      expect(lastFourDigitsOfMiteIndex).toStrictEqual(true)
+    })
+    it('has the correct type', () => {
+      expect(headerMiteToTest.type).toStrictEqual(`DockerSwarmHeader`)
+    })
+    it('has a valid YAML miteString', () => {
+      expect(stringYamlValidator(headerMiteToTest.miteString)).toStrictEqual(true)
+    })
   })
 }

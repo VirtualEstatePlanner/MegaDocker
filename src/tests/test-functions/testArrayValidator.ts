@@ -13,22 +13,24 @@ export const testArrayValidator: Function = (
   stringsThatAreEmpty?: (null | undefined)[]
 ) => {
   stringsThatPass.forEach((passingString) => {
-    it('should return true for every valid', () => {
-      expect(validatorToTest(passingString)).toStrictEqual(true)
+    describe('tests an array of strings for validity', () => {
+      it('should return true for every valid string', () => {
+        expect(validatorToTest(passingString)).toStrictEqual(true)
+      })
     })
+    if (stringsThatAreEmpty) {
+      stringsThatAreEmpty.forEach((nonexistentString) => {
+        it('should return false on null or empty string', () => {
+          expect(validatorToTest(nonexistentString)).toStrictEqual(false)
+        })
+      })
+    }
+    if (stringsThatFail) {
+      stringsThatFail.forEach((failingString) => {
+        it('should return false for invalid strings', () => {
+          expect(validatorToTest(failingString)).toStrictEqual(false)
+        })
+      })
+    }
   })
-  if (stringsThatAreEmpty) {
-    stringsThatAreEmpty.forEach((nonexistentString) => {
-      it('should return false on null or empty string', () => {
-        expect(validatorToTest(nonexistentString)).toStrictEqual(false)
-      })
-    })
-  }
-  if (stringsThatFail) {
-    stringsThatFail.forEach((failingString) => {
-      it('should return false for invalid strings', () => {
-        expect(validatorToTest(failingString)).toStrictEqual(false)
-      })
-    })
-  }
 }
