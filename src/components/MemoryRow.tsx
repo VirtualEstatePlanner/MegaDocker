@@ -7,16 +7,14 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import React from 'react'
-import TableRow from '@material-ui/core/TableRow'
-import TableCell from '@material-ui/core/TableCell'
-import checkmarkIndicator from '../images/indicators/checkmarkIndicator.png'
-import circleIndicator from '../images/indicators/circleIndicator.png'
+import { TableCell, TableRow } from '@material-ui/core'
 import { IMemory } from '../interfaces/IMemory'
 import { TextField, Tooltip } from '@material-ui/core'
 import { IUpdateMemoryValueAction } from '../interfaces/actionInterfaces/IUpdateMemoryValueAction'
 import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/IMegaDockerState'
 import { MegaContext } from './MegaContext'
+import { MemoryValidationIcon } from './MemoryValidationIcon'
 
 /**
  *  generates the payload to reduce
@@ -60,9 +58,7 @@ export const MemoryRow: React.FC<IMemory> = (memory: IMemory): React.ReactElemen
             onChange={(changeEvent) => dispatch(createMemoryValueAction(memory, changeEvent.target.value))}
           />
         </TableCell>
-        <TableCell className='MemoryReadyIcon' variant='body' size='small'>
-          <img alt='ready indicator' height='25vh' src={memory.value === `` ? circleIndicator : memory.validator(memory.value).valueOf() ? checkmarkIndicator : circleIndicator} />
-        </TableCell>
+        {MemoryValidationIcon(memory)}
       </TableRow>
     </Tooltip>
   )
