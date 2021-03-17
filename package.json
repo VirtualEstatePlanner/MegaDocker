@@ -38,7 +38,7 @@
     "react-test-coverage": "react-scripts test --coverage --env=jsdom",
     "react-eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                                 react-scripts eject' && echo",
     "react-build": "IMAGE_INLINE_SIZE_LIMIT=0 react-scripts build && rm build/electron.ts",
-    "test": "jest",
+    "test": "yarn test-coverage && yarn test-dev",
     "test-dev": "jest --watch",
     "test-coverage": "jest --coverage",
     "build-transpile": "run-s unbuild tsc-build react-build",
