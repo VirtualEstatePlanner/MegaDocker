@@ -8,14 +8,13 @@
 
 import { MemoryRow } from '../../components/MemoryRow'
 import { render } from '@testing-library/react'
+import { ldapConfigurationPassword } from '../../mobparts/memories/ldapConfigurationPassword'
 
 test('renders the MemoryRow component', () => {
   render(
     <div>
       <table>
-        <tbody>
-          <MemoryRow />
-        </tbody>
+        <tbody>{MemoryRow(ldapConfigurationPassword)}</tbody>
       </table>
     </div>
   )
