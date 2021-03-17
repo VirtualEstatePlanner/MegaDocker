@@ -11,6 +11,8 @@ import { getMites } from '../../../functions/reducers/getMites'
 import { workingManikins } from '../../../globals/workingManikins'
 import { IMite } from '../../../interfaces/IMite'
 import { testNetworkMite } from '../../test-functions/testNetworkMite'
+import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
+import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
 
 const testingMites: IMite[] = getDNetworkMites(getMites(workingManikins))
 
