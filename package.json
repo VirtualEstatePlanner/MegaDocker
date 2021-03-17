@@ -12,7 +12,7 @@
   "description": "A tool to easily create docker swarm stacks",
   "scripts": {
     "postinstall": "yarn build-transpile && electron-builder install-app-deps",
-    "unbinaries": "rm -rf binaries && mkdir -p binaries/mac/intel binaries/mac/arm binaries/win/intel binaries/win/arm binaries/linux/intel binaries/linux/arm",
+    "unbinaries": "rm -rf binaries && mkdir -p binaries/web binaries/mac/intel binaries/mac/arm binaries/win/intel binaries/win/arm binaries/linux/intel binaries/linux/arm",
     "unbuild": "rm -rf build/*",
     "uncache": "rm -rf cache/electron/* cache/electron-builder/*",
     "undist": "rm -rf dist/*",
@@ -43,6 +43,7 @@
     "test-coverage": "jest --coverage",
     "build-transpile": "run-s unbuild tsc-build react-build",
     "warning:mac-only": "echo && echo 'CRATE warning: This script will only function on macOS' && echo",
+    "dist:web": "cp src/scripts/tsnode/tsconfig.json . && yarn undist && npx ts-node src/scripts/utility/webzip.ts",
     "dist:linux-intel64": "yarn undist && cross-env NODE_ENV=production electron-builder -l -c ./electron-configs/linux-intel-64.yml && mv dist/*.AppImage binaries/linux/intel/",
     "dist:linux-arm64": "yarn undist && cross-env NODE_ENV=production electron-builder -l -c ./electron-configs/linux-arm-64.yml && mv dist/*.AppImage binaries/linux/arm/",
     "dist:linux": "run-s dist:linux-intel64 dist:linux-arm64",
@@ -52,7 +53,7 @@
     "dist:win-intel64": "yarn undist && cross-env NODE_ENV=production electron-builder -w -c ./electron-configs/win-intel-64.yml && mv dist/*.exe binaries/win/intel/",
     "dist:win-arm64": "yarn undist && cross-env NODE_ENV=production electron-builder -w -c ./electron-configs/win-arm-64.yml && mv dist/*.exe binaries/win/arm/",
     "dist:win": "run-s dist:win-intel64 dist:win-arm64",
-    "dist:all": "run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win",
+    "dist:all": "yarn dist:web && run-s -l warning:mac-only clean build-transpile dist:linux dist:mac dist:win",
     "postdist:all": "say 'All distributables output to binaries directory.'"
   },
   "keywords": [
