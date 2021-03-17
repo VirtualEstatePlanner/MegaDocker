@@ -7,27 +7,21 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import React from 'react'
-import TableCell from '@material-ui/core/TableCell'
-import TableRow from '@material-ui/core/TableRow'
+import { TableCell, TableRow, Tooltip } from '@material-ui/core'
 import { ManikinIcon } from './ManikinIcon'
 import { ManikinSwitch } from './ManikinSwitch'
+import { IManikin } from '../interfaces/IManikin'
 
-export const ManikinRow: React.FC = (props: any): React.ReactElement => {
+export const ManikinRow: React.FC<IManikin> = (manikin: IManikin): React.ReactElement => {
   return (
-    <TableRow className='ManikinRow'>
-      {props.children}
-      <TableCell>
-        {props.children}
-        {'manikinname'}
-      </TableCell>
-      <TableCell>
-        {props.children}
-        <ManikinIcon />
-      </TableCell>
-      <TableCell padding='checkbox'>
-        {props.children}
-        <ManikinSwitch />
-      </TableCell>
-    </TableRow>
+    <Tooltip key={`${manikin.name}Row`} title={manikin.description}>
+      <TableRow className={manikin.isCore ? 'CoreManikinRow' : 'ManikinRow'} hover={manikin.isCore ? false : true}>
+        <TableCell size='small' key={`${manikin.name}NameCell`}>
+          {manikin.name}
+        </TableCell>
+        {ManikinIcon(manikin)}
+        {ManikinSwitch(manikin)}
+      </TableRow>
+    </Tooltip>
   )
 }

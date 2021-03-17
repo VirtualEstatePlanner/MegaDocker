@@ -6,14 +6,14 @@
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
+import { TableCell } from '@material-ui/core'
 import React from 'react'
-import defaultIcon from '../images/manikin-icons/defaultIcon.png'
+import { IManikin } from '../interfaces/IManikin'
 
-export const ManikinIcon: React.FC = (props: any): React.ReactElement => {
+export const ManikinIcon: React.FC<IManikin> = (manikin: IManikin): React.ReactElement => {
   return (
-    <div className='ManikinIcon'>
-      {props.children}
-      <img src={defaultIcon} alt='' height='15' width='15' />
-    </div>
+    <TableCell className='ManikinIcon'>
+      <img src={manikin.manikinIcon} alt={`${manikin.name} Icon`} height='15' width='15' />
+    </TableCell>
   )
 }

@@ -18,6 +18,11 @@ import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/IMegaDockerState'
 import { MegaContext } from './MegaContext'
 
+/**
+ *  generates the payload to reduce
+ * @param memory the IMemory that will be reduced against the state
+ * @param newValue the IMemory.value to reduce against
+ */
 const createMemoryValueAction: Function = (memoryToUpdate: IMemory, newValue: string): IUpdateMemoryValueAction => {
   return {
     type: `UPDATE_MEMORY_VALUE`,
@@ -30,6 +35,7 @@ const createMemoryValueAction: Function = (memoryToUpdate: IMemory, newValue: st
 
 export const MemoryRow: React.FC<IMemory> = (memory: IMemory): React.ReactElement<IMemory> => {
   const {
+    // eslint-disable-next-line
     state,
     dispatch,
   }: {
@@ -39,10 +45,10 @@ export const MemoryRow: React.FC<IMemory> = (memory: IMemory): React.ReactElemen
   return (
     <Tooltip title={memory.tooltip} key={memory.memoryIndex}>
       <TableRow hover>
-        <TableCell style={{ width: '1%' }} padding='checkbox' variant='body' size='small'>
+        <TableCell padding='checkbox' variant='body' size='small'>
           {memory.name}
         </TableCell>
-        <TableCell variant='body' style={{}} size='small'>
+        <TableCell variant='body' size='small'>
           <TextField
             fullWidth
             size='small'
@@ -54,7 +60,7 @@ export const MemoryRow: React.FC<IMemory> = (memory: IMemory): React.ReactElemen
             onChange={(changeEvent) => dispatch(createMemoryValueAction(memory, changeEvent.target.value))}
           />
         </TableCell>
-        <TableCell style={{ width: '5%' }} className='ManikinReadyIcon' variant='body' size='small'>
+        <TableCell className='MemoryReadyIcon' variant='body' size='small'>
           <img alt='ready indicator' height='25vh' src={memory.value === `` ? circleIndicator : memory.validator(memory.value).valueOf() ? checkmarkIndicator : circleIndicator} />
         </TableCell>
       </TableRow>
