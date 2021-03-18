@@ -1,6 +1,6 @@
 /** @format */
 
-//  MegaDocker
+//  MEGADocker
 //  miscellaneous-objects.ts
 //  some other objects we care about
 //  Created by George Georgulas IV on 1/26/19.

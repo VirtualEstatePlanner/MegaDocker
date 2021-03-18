@@ -1,5 +1,5 @@
 //  opensourcePOSMariaDBPassword.ts
-//  MegaDocker
+//  MEGADocker
 //  The password that opensourcePOS will use to connect to it's MariaDB database
 //  Created by George Georgulas IV on 3/5/2021.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.

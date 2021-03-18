@@ -1,7 +1,7 @@
 /** @format */
 
 //  IMegaDockerState.ts
-//  MegaDocker
+//  MEGADocker
 //  an interface to represent the entire application state
 //  Created by George Georgulas IV on 4/15/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.

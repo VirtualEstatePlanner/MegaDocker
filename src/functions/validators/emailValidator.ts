@@ -1,7 +1,7 @@
 /** @format */
 
 //  emailValidator.ts
-//  MegaDocker
+//  MEGADocker
 //  a validator function for email addresses
 
 //  Created by George Georgulas IV on 1/26/19.

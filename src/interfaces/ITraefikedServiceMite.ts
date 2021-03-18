@@ -3,7 +3,7 @@
 import { IMite } from './IMite'
 
 //  ITraefikedServiceMite.ts
-//  MegaDocker
+//  MEGADocker
 //  an interface that represents a Mite with a service that sits behind Traefik
 //  Created by George Georgulas IV on 3/8/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.

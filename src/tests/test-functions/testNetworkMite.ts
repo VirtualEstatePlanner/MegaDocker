@@ -1,7 +1,7 @@
 /** @format */
 
 //  testNetworkMite.ts
-//  MegaDocker
+//  MEGADocker
 //  an automated test to be called by testing networkMites
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.

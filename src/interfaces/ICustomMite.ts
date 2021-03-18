@@ -1,7 +1,7 @@
 /** @format */
 
 //  ICustomMite.ts
-//  MegaDocker
+//  MEGADocker
 //  an interface that represents a non-YML Mite
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.

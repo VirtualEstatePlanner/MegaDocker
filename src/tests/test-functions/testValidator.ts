@@ -1,7 +1,7 @@
 /** @format */
 
 //  IValidator.ts
-//  MegaDocker
+//  MEGADocker
 //  a interface for a validator function to validate input in a memory
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.

@@ -1,7 +1,7 @@
 /** @format */
 
 //  primaryDomain.ts
-//  MegaDocker
+//  MEGADocker
 //  The variable for the domain name of your primary web domain
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.

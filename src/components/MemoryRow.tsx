@@ -1,7 +1,7 @@
 /** @format */
 
 //  MemoryRow.tsx
-//  MegaDocker
+//  MEGADocker
 //  a React Component that renders one row of the Memory Table
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.

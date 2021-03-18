@@ -1,7 +1,7 @@
 /** @format */
 
 //  letsEncryptEmail.ts
-//  MegaDocker
+//  MEGADocker
 //  The variable for the usert's Let's Encrypt account email address
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.

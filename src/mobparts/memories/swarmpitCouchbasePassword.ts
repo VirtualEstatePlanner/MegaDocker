@@ -1,7 +1,7 @@
 /** @format */
 
 //  swarmpitCouchbasePassword.ts
-//  MegaDocker
+//  MEGADocker
 //  The variable for the admin password of swampit's CouchDB
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.

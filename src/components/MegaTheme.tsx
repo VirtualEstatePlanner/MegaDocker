@@ -1,7 +1,7 @@
 /** @format */
 
 //  MegaTheme.tsx
-//  MegaDocker
+//  MEGADocker
 //  a React Component that themes the MEGADocker application, based on the orb.run neomorphic design library
 //  Created by Joseph Treanor II on 8/15/20.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.

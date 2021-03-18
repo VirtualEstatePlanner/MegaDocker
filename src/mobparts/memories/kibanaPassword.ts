@@ -1,7 +1,7 @@
 /** @format */
 
 //  ldapAdminPassword.ts
-//  MegaDocker
+//  MEGADocker
 //  The variable for the LDAP administrative user's password
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
