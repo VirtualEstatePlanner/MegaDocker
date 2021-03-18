@@ -9,7 +9,7 @@
 import { ContainerMainArea } from '../../components/ContainerMainArea'
 import { render } from '@testing-library/react'
 
-test('renders the ContainerMainArea component', () => {
+it('renders the ContainerMainArea component', () => {
   render(
     <div>
       <ContainerMainArea />

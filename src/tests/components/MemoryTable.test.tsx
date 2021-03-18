@@ -8,11 +8,14 @@
 
 import { MemoryTable } from '../../components/MemoryTable'
 import { render } from '@testing-library/react'
+import { MegaProvider } from '../../components/MegaContext'
 
-test('renders the MemoryTable component', () => {
+it('renders the MemoryTable component', () => {
   render(
     <div>
-      <MemoryTable />
+      <MegaProvider>
+        <MemoryTable />
+      </MegaProvider>
     </div>
   )
 })

@@ -9,7 +9,7 @@
 import { ButtonGetDocker } from '../../components/ButtonGetDocker'
 import { render } from '@testing-library/react'
 
-test('renders the ButtonGetDocker component', () => {
+it('renders the ButtonGetDocker component', () => {
   render(
     <div>
       <ButtonGetDocker />

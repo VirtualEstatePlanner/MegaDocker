@@ -9,7 +9,7 @@
 import { ButtonExportDockerSwarm } from '../../components/ButtonExportDockerSwarm'
 import { render } from '@testing-library/react'
 
-test('renders the ButtonExportDockerSwarm component', () => {
+it('renders the ButtonExportDockerSwarm component', () => {
   render(
     <div>
       <ButtonExportDockerSwarm />

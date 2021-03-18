@@ -8,11 +8,22 @@
 
 import { ManikinIcon } from '../../components/ManikinIcon'
 import { render } from '@testing-library/react'
+import { IManikin } from '../../interfaces/IManikin'
+import { Table, TableBody, TableCell } from '@material-ui/core'
+import { MegaProvider } from '../../components/MegaContext'
 
-test('renders the ManikinIcon component', () => {
-  render(
-    <div>
-      <ManikinIcon />
-    </div>
-  )
+it('renders the ManikinIcon component', () => {
+  ;(manikin: IManikin) => {
+    render(
+      <div>
+        <MegaProvider>
+          <Table>
+            <TableBody>
+              <TableCell>{ManikinIcon(manikin)}</TableCell>
+            </TableBody>
+          </Table>
+        </MegaProvider>
+      </div>
+    )
+  }
 })

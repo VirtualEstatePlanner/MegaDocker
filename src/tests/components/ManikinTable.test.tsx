@@ -8,11 +8,14 @@
 
 import { ManikinTable } from '../../components/ManikinTable'
 import { render } from '@testing-library/react'
+import { MegaProvider } from '../../components/MegaContext'
 
-test('renders the ManikinTable component', () => {
+it('renders the ManikinTable component', () => {
   render(
     <div>
-      <ManikinTable />
+      <MegaProvider>
+        <ManikinTable />
+      </MegaProvider>
     </div>
   )
 })

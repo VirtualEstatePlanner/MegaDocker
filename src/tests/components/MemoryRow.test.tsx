@@ -8,13 +8,20 @@
 
 import { MemoryRow } from '../../components/MemoryRow'
 import { render } from '@testing-library/react'
+import { Table, TableBody } from '@material-ui/core'
+import { IMemory } from '../../interfaces/IMemory'
+import { MegaProvider } from '../../components/MegaContext'
 
-test('renders the MemoryRow component', () => {
-  render(
-    <div>
-      <table>
-        <tbody>{MemoryRow}</tbody>
-      </table>
-    </div>
-  )
+it('renders the MemoryRow component', () => {
+  ;(memory: IMemory) => {
+    render(
+      <div>
+        <MegaProvider>
+          <Table>
+            <TableBody>{MemoryRow(memory)}</TableBody>
+          </Table>
+        </MegaProvider>
+      </div>
+    )
+  }
 })

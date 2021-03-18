@@ -9,7 +9,7 @@
 import { ButtonTemplate } from '../../components/ButtonTemplate'
 import { render } from '@testing-library/react'
 
-test('renders the ButtonTemplate component', () => {
+it('renders the ButtonTemplate component', () => {
   render(
     <div>
       <ButtonTemplate />

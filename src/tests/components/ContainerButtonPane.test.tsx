@@ -9,7 +9,7 @@
 import { ContainerButtonPane } from '../../components/ContainerButtonPane'
 import { render } from '@testing-library/react'
 
-test('renders the ContainerButtonPane component', () => {
+it('renders the ContainerButtonPane component', () => {
   render(
     <div>
       <ContainerButtonPane />

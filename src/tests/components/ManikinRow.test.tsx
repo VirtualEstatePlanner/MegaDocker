@@ -6,17 +6,22 @@
 //  Created by George Georgulas IV on 3/12/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { ManikinRow } from '../../components/ManikinRow'
 import { render } from '@testing-library/react'
+import { ManikinRow } from '../../components/ManikinRow'
+import { IManikin } from '../../interfaces/IManikin'
+import { Table, TableBody } from '@material-ui/core'
+import { MegaProvider } from '../../components/MegaContext'
 
-test('renders the ManikinRow component', () => {
-  render(
-    <div>
-      <table>
-        <tbody>
-          <ManikinRow />
-        </tbody>
-      </table>
-    </div>
-  )
+it('renders the ManikinRow component', () => {
+  ;(manikin: IManikin) => {
+    render(
+      <div>
+        <MegaProvider>
+          <Table>
+            <TableBody>{ManikinRow(manikin)}</TableBody>
+          </Table>
+        </MegaProvider>
+      </div>
+    )
+  }
 })

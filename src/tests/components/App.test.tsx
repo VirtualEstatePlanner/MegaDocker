@@ -23,7 +23,7 @@ jest.mock('@material-ui/core/colors/grey', () => ({
   greyColor: '',
 }))
 
-test('renders the App component', () => {
+it('renders the App component', () => {
   render(
     <div className='App'>
       <App />

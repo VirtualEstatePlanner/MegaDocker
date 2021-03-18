@@ -25,12 +25,10 @@ jest.mock('@material-ui/core/colors/grey', () => ({
   greyColor: '',
 }))
 
-test('renders the MegaTheme component', () => {
+it('renders the MegaTheme component', () => {
   render(
     <div>
-      <ThemeProvider theme={MegaTheme}>
-        <ButtonTemplate />
-      </ThemeProvider>
+      <ThemeProvider theme={MegaTheme} />
     </div>
   )
 })

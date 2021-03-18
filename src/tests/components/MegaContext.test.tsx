@@ -9,7 +9,7 @@
 import { MegaProvider } from '../../components/MegaContext'
 import { render } from '@testing-library/react'
 
-test('renders the MegaProvider component', () => {
+it('renders the MegaProvider component', () => {
   render(
     <div>
       <MegaProvider />

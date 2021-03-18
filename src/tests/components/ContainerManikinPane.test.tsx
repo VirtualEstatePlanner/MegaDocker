@@ -9,7 +9,7 @@
 import { ContainerManikinPane } from '../../components/ContainerManikinPane'
 import { render } from '@testing-library/react'
 
-test('renders the ContainerManikinPane component', () => {
+it('renders the ContainerManikinPane component', () => {
   render(
     <div>
       <ContainerManikinPane />

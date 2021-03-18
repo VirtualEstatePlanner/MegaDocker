@@ -9,7 +9,7 @@
 import { ContainerMemoryPane } from '../../components/ContainerMemoryPane'
 import { render } from '@testing-library/react'
 
-test('renders the ContainerMemoryPane component', () => {
+it('renders the ContainerMemoryPane component', () => {
   render(
     <div>
       <ContainerMemoryPane />
