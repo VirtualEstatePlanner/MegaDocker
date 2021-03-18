@@ -1,7 +1,7 @@
 /** @format */
 
 //  n8n.ts
-//  MegaDocker
+//  MEGADocker
 //  A Manikin to create the n8n middleware
 //  Created by George Georgulas IV on 11/3/2020.
 //  Copyright © 2020 The MegaDocker Group. All rights reserved.

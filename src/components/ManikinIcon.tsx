@@ -1,7 +1,7 @@
 /** @format */
 
 //  ManikinIcon.tsx
-//  MegaDocker
+//  MEGADocker
 //  a React Component that renders the icon for a Manikin
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.

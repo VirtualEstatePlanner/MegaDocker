@@ -1,7 +1,7 @@
 /** @format */
 
 //  n8nServiceMite.ts
-//  MegaDocker
+//  MEGADocker
 //  Service Mite for n8n
 //  Created by George Georgulas IV on 11/3/2020.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.

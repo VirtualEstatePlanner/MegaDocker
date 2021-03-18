@@ -1,7 +1,7 @@
 /** @format */
 
 //  mealieServiceMite.ts
-//  MegaDocker
+//  MEGADocker
 //  Service Mite for Mealie
 //  Created by George Georgulas IV on 3/5/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.

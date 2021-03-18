@@ -1,10 +1,10 @@
 [//]: # 'README.md'
-[//]: # 'MegaDocker'
+[//]: # 'MEGADocker'
 [//]: # 'a standard github markdown readme file'
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019-2021 The MegaDocker Group. All rights reserved.'
 
-# MegaDocker v0.4.2-beta
+# MEGADocker v0.4.2-beta
 
 Modular Enterprise-Grade Automated Docker
 

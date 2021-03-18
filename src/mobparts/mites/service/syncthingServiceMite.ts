@@ -1,7 +1,7 @@
 /** @format */
 
 //  elkServiceMite.ts
-//  MegaDocker
+//  MEGADocker
 //  Service Mite for Elk
 //  Created by George Georgulas IV on 3/03/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.

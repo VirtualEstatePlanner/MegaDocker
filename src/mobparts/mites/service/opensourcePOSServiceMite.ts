@@ -1,7 +1,7 @@
 /** @format */
 
 //  opensourcePOSServiceMite.ts
-//  MegaDocker
+//  MEGADocker
 //  Service Mite for opensourcePOS
 //  Created by George Georgulas IV on 3/5/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.

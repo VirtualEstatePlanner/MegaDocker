@@ -1,7 +1,7 @@
 /** @format */
 
 //  IMiteType.ts
-//  MegaDocker
+//  MEGADocker
 //  an interface that represents type for an IMite
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
