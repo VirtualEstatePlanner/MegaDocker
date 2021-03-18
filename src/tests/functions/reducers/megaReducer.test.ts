@@ -39,8 +39,6 @@ const testingState: IMegaDockerState = {
   ymlOutput: ymlOutput,
 }
 
-const makeMegaContextWrapper: any = (value: any): React.FC => ({ children }: { children?: React.ReactNode }) => <MegaContext.Provider value={value}>{children}</MegaContext.Provider>
-
 describe('tests the megaReducer function', () => {
   testMegaDockerAction
   testMegaDockerState
