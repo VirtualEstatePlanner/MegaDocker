@@ -16,7 +16,7 @@ export const App: React.FC = (): React.ReactElement => {
   return (
     <div className='App'>
       <MegaProvider>
-        <Paper>
+        <Paper square>
           <ContainerManikinPane />
           <ContainerMainArea />
         </Paper>
