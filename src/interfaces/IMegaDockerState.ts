@@ -6,6 +6,7 @@
 //  Created by George Georgulas IV on 4/15/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
+import { Theme } from '@material-ui/core'
 import { IManikin } from './IManikin'
 import { IMemory } from './IMemory'
 import { IMite } from './IMite'
@@ -22,6 +23,7 @@ import { IMite } from './IMite'
  * @mobCustomMites an array of arrays of non-yml mites
  */
 export interface IMegaDockerState {
+  theme: Theme
   manikinTable: IManikin[]
   selectedManikins: IManikin[]
   memories: IMemory[]

@@ -7,7 +7,7 @@ export const mobFileHeaderSectionString: IHeaderMite = {
   miteIndex: 29999,
   miteString: `
 # MegaDocker YML File
-version: '3.8'
+version: '3.9'
 
 # Created by MegaDocker
 # Mob is named: [[MOBNAME]]
