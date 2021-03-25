@@ -2,7 +2,8 @@
 
 ## a list of changes per version number
 
-- `v0.4.2-beta` : **Testing, testing, 1, 2, 3.  Okay, testing 0.7, maybe.**
+- `v0.4.3-beta` : **Shiny new Dark Mode, and no more react nested hook errors**
+- `v0.4.2-beta` : Testing, testing, 1, 2, 3.  Okay, testing 0.7, maybe.
 - `v0.4.1-beta` : A jillion little bugfixes in one morning, with more coming today
 - `v0.4.0-beta` : Generates a script to setup Cloudflare hosts for you automatically
 - `v0.3.9-beta` : added Mealie and Syncthing Manikins

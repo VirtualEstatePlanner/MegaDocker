@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019-2021 The MegaDocker Group. All rights reserved.'
 
-# MEGADocker v0.4.2-beta
+# MEGADocker v0.4.3-beta
 
 Modular Enterprise-Grade Automated Docker
 
@@ -12,6 +12,8 @@ Modular Enterprise-Grade Automated Docker
 
 Most recent changes:
 
+- gorgeous dark mode neomorphic design with convenient toggle switch
+- fixed react nested hooks error in memory table
 - added automated testing
 - a ton of bugfixes
 - generates a script to setup your Cloudflare hosts for you
