@@ -4,9 +4,6 @@
 import * as fs from 'fs'
 import readline from 'readline'
 
-/*
-type manikinGroup = | `Content` | `Core` | `Development` | `Financial` | `Infrastructure` | `Monitoring` | `Network` | `Organization` | `Productivity` | `Utility`;*/
-
 interface IManikinInput {
   description: string
   fileName: string

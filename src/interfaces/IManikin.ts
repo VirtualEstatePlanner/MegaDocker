@@ -8,6 +8,7 @@
 
 import { IMite } from './IMite'
 import { IMemory } from './IMemory'
+import { IManikinGroup } from './IManikinGroup'
 import { IManikinPort } from './IManikinPort'
 
 /**
@@ -26,14 +27,12 @@ import { IManikinPort } from './IManikinPort'
  * @subfolders array of folders inside the data folder
  */
 
-type manikinGroup = `Content` | `Core` | `Development` | `Financial` | `Infrastructure` | `Monitoring` | `Network` | `Organization` | `Productivity` | `Utility`
-
 export interface IManikin {
   description: string
   folder: string
   isCore: boolean
   isSelected: boolean
-  manikinGroups: manikinGroup[]
+  manikinGroups: IManikinGroup[]
   manikinIcon: string
   manikinIndex: number
   memories: IMemory[]
