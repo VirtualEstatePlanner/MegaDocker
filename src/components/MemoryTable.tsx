@@ -15,12 +15,29 @@ import circleIndicator from '../images/indicators/circleIndicator.png'
 import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/IMegaDockerState'
 import { IMemory } from '../interfaces/IMemory'
+import { IUpdateMemoryValueAction } from '../interfaces/actionInterfaces/IUpdateMemoryValueAction'
+import { workingManikins } from '../globals/workingManikins'
+import { getMemories } from '../functions/reducers/getMemories'
 
 /**
  * generates the memories table
  * @param props the component props
  */
 export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
+  /**
+   *  generates the payload to reduce
+   * @param memoryToUpdate the IMemory that will be reduced against the state
+   * @param newValue the IMemory.value to reduce against
+   */
+  const createMemoryValueAction: Function = (memoryToUpdate: IMemory, newValue: string): IUpdateMemoryValueAction => {
+    return {
+      type: `UPDATE_MEMORY_VALUE`,
+      payload: {
+        memory: memoryToUpdate,
+        value: newValue,
+      },
+    }
+  }
   const {
     state,
     // eslint-disable-next-line
@@ -32,7 +49,9 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
 
   const fullyValidated: boolean = state.memories.every((memory) => memory.isReady)
 
-  const sortedMemories: IMemory[] = state.memories.sort((a: IMemory, b: IMemory) => a.name.localeCompare(b.name))
+  const allMemories: IMemory[] = getMemories(workingManikins)
+
+  const sortedMemories: IMemory[] = allMemories.sort((a: IMemory, b: IMemory) => a.name.localeCompare(b.name))
 
   return (
     <div style={{ width: '100%' }}>
@@ -53,7 +72,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
           style={{
             width: '100%',
           }}>
-          {sortedMemories.map((thisMemory: IMemory) => MemoryRow(thisMemory))}
+          {sortedMemories.map((thisMemory: IMemory) => MemoryRow(thisMemory, (changeEvent: { target: { value: any } }) => dispatch(createMemoryValueAction(thisMemory, changeEvent.target.value))))}
         </TableBody>
       </Table>
     </div>

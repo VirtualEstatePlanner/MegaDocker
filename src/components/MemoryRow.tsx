@@ -9,40 +9,16 @@
 import * as React from 'react'
 import { TableCell, TableRow, TextField, Tooltip } from '@material-ui/core'
 import { IMemory } from '../interfaces/IMemory'
-import { MegaContext } from './MegaContext'
 import { MemoryValidationIcon } from './MemoryValidationIcon'
-import { IUpdateMemoryValueAction } from '../interfaces/actionInterfaces/IUpdateMemoryValueAction'
-import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
-import { IMegaDockerState } from '../interfaces/IMegaDockerState'
-
-/**
- *  generates the payload to reduce
- * @param memoryToUpdate the IMemory that will be reduced against the state
- * @param newValue the IMemory.value to reduce against
- */
-const createMemoryValueAction: Function = (memoryToUpdate: IMemory, newValue: string): IUpdateMemoryValueAction => {
-  return {
-    type: `UPDATE_MEMORY_VALUE`,
-    payload: {
-      memory: memoryToUpdate,
-      value: newValue,
-    },
-  }
-}
 
 /**
  * renders a row of the memory table
  * @param memory the memory to render
  */
-export const MemoryRow: React.FC<IMemory> = (memory: IMemory): React.ReactElement<IMemory> => {
-  const {
-    // eslint-disable-next-line
-    state,
-    dispatch,
-  }: {
-    state: IMegaDockerState
-    dispatch: React.Dispatch<IMegaDockerAction>
-  } = React.useContext(MegaContext)
+export const MemoryRow: React.FC<IMemory> = (
+  memory: IMemory,
+  handleChangeFunction: React.Dispatch<React.SetStateAction<React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>>>
+): React.ReactElement<IMemory> => {
   return (
     <Tooltip title={memory.tooltip} key={memory.memoryIndex}>
       <TableRow hover>
@@ -58,7 +34,7 @@ export const MemoryRow: React.FC<IMemory> = (memory: IMemory): React.ReactElemen
             type={memory.valueType}
             placeholder={`Please enter your ${memory.name} here`}
             autoComplete={memory.shouldAutocomplete.toString()}
-            onChange={(changeEvent) => dispatch(createMemoryValueAction(memory, changeEvent.target.value))}
+            onChange={handleChangeFunction}
           />
         </TableCell>
         {MemoryValidationIcon(memory)}
