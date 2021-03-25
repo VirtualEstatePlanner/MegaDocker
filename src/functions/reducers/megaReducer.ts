@@ -6,19 +6,19 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
-import React from 'react'
-import { IMegaDockerAction } from '../../interfaces/IMegaDockerAction'
-import { IMegaDockerState } from '../../interfaces/IMegaDockerState'
+import * as React from 'react'
+import { Theme } from '@material-ui/core'
 import { getManikins } from './getManikins'
 import { getMemories } from './getMemories'
 import { getMites } from './getMites'
 import { getDServiceMites } from './getDServiceMites'
 import { getDNetworkMites } from './getDNetworkMites'
 import { getCustomMites } from './getCustomMites'
-import { zipDockerSwarm } from './zipDockerSwarm'
-import { initialMegaDockerState } from '../../components/MegaContext'
-import { Theme } from '@material-ui/core'
 import { toggleTheme } from './toggleTheme'
+import { zipDockerSwarm } from './zipDockerSwarm'
+import { initialMegaDockerState } from '../../globals/initialMegaDockerState'
+import { IMegaDockerAction } from '../../interfaces/IMegaDockerAction'
+import { IMegaDockerState } from '../../interfaces/IMegaDockerState'
 
 /**
  * Updates application state

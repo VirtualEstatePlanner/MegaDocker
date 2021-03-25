@@ -6,8 +6,8 @@
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import React from 'react'
-import Button from '@material-ui/core/Button'
+import * as React from 'react'
+import { Button } from '@material-ui/core'
 import { MegaContext } from './MegaContext'
 import { IMegaDockerState } from '../interfaces/IMegaDockerState'
 import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'

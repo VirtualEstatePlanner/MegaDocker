@@ -6,15 +6,14 @@
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import React from 'react'
-import { TableCell, TableRow } from '@material-ui/core'
+import * as React from 'react'
+import { TableCell, TableRow, TextField, Tooltip } from '@material-ui/core'
 import { IMemory } from '../interfaces/IMemory'
-import { TextField, Tooltip } from '@material-ui/core'
+import { MegaContext } from './MegaContext'
+import { MemoryValidationIcon } from './MemoryValidationIcon'
 import { IUpdateMemoryValueAction } from '../interfaces/actionInterfaces/IUpdateMemoryValueAction'
 import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/IMegaDockerState'
-import { MegaContext } from './MegaContext'
-import { MemoryValidationIcon } from './MemoryValidationIcon'
 
 /**
  *  generates the payload to reduce

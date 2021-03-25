@@ -6,15 +6,15 @@
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import React from 'react'
+import * as React from 'react'
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core'
+import { MegaContext } from './MegaContext'
+import { MemoryRow } from './MemoryRow'
 import checkmarkIndicator from '../images/indicators/checkmarkIndicator.png'
 import circleIndicator from '../images/indicators/circleIndicator.png'
-import { MegaContext } from './MegaContext'
+import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/IMegaDockerState'
 import { IMemory } from '../interfaces/IMemory'
-import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
-import { MemoryRow } from './MemoryRow'
 
 /**
  * generates the memories table

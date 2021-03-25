@@ -6,14 +6,14 @@
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import React from 'react'
+import * as React from 'react'
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core'
+import { DarkModeSwitch } from './DarkModeSwitch'
+import { ManikinRow } from './ManikinRow'
+import { MegaContext } from './MegaContext'
 import { IManikin } from '../interfaces/IManikin'
 import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/IMegaDockerState'
-import { MegaContext } from './MegaContext'
-import { ManikinRow } from './ManikinRow'
-import { DarkModeSwitch } from './DarkModeSwitch'
 
 export const ManikinTable: React.FC = (): React.ReactElement => {
   const {

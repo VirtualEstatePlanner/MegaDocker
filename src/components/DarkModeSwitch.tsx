@@ -6,12 +6,11 @@
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import React from 'react'
-import { Switch, TableCell } from '@material-ui/core'
+import * as React from 'react'
+import { Switch, TableCell, Theme } from '@material-ui/core'
 import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/IMegaDockerState'
 import { MegaContext } from './MegaContext'
-import { Theme } from '@material-ui/core'
 import { OrbThemeDark } from './OrbThemeDark'
 
 export const DarkModeSwitch: React.FC = (): React.ReactElement => {
