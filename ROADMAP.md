@@ -4,11 +4,6 @@
 
 The line in **bold** is the approximate current version
 
-- `v0.1.0-alpha` : Build and distribution framework in place written in pure `TypeScript`
-- `v0.1.5-alpha` : imported `swift`, ported lots of it, marked `TODO` program holes
-- `v0.2.0-alpha` : import and translate all `swift` and `javascript` code to `typescript`
-- `v0.2.5-alpha` : build user interface prototype, start UI
-- `v0.3.0-beta` : create missing types for other required `node` libraries, add and implement `Portal` Manikin
 - **`v0.4.0-beta`** : implement `dockerode`, `fs`, etc. in functions without `run` wherever possible, translate all `shell` to `TypeScript`
 - `v0.5.0-beta` : implement installation, operation, and removal of `Docker` & `VirtualBox` modules
 - `v0.6.0-beta` : add support for `CloudFlare` domains API, add `Manikin` property for management subdomain
