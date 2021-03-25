@@ -8,23 +8,23 @@
 }
 
 .Paper {
+  height: 100vh;
+  width: 100vw;
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
 }
 
 .ButtonPane {
-  width: 75vw;
+  width: 85vw;
   height: 5vh;
 }
 
 .MainArea {
   height: 100vh;
-  width: 75vw;
+  width: 85vw;
   flex-direction: column;
-  justify-content: flex-start;
 }
 
 .ManikinPane {
@@ -42,7 +42,7 @@
   flex-direction: column;
   overflow: auto;
   height: 95vh;
-  width: 75vw;
+  width: 85vw;
 }
 
 .MemoryTable {
