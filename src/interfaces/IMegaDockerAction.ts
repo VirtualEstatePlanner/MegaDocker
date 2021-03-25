@@ -10,5 +10,6 @@ import { IApplicationStartAction } from '../interfaces/actionInterfaces/IApplica
 import { IOutputDockerSwarmAction } from './actionInterfaces/IOutputDockerSwarmAction'
 import { IToggleManikinAction } from './actionInterfaces/IToggleManikinAction'
 import { IUpdateMemoryValueAction } from '../interfaces/actionInterfaces/IUpdateMemoryValueAction'
+import { IToggleThemeAction } from './actionInterfaces/IToggleThemeAction'
 
-export type IMegaDockerAction = IApplicationStartAction | IOutputDockerSwarmAction | IToggleManikinAction | IUpdateMemoryValueAction
+export type IMegaDockerAction = IApplicationStartAction | IOutputDockerSwarmAction | IToggleManikinAction | IUpdateMemoryValueAction | IToggleThemeAction

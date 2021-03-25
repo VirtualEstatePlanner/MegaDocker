@@ -13,6 +13,7 @@ import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/IMegaDockerState'
 import { MegaContext } from './MegaContext'
 import { ManikinRow } from './ManikinRow'
+import { DarkModeSwitch } from './DarkModeSwitch'
 
 export const ManikinTable: React.FC = (): React.ReactElement => {
   const {
@@ -32,7 +33,7 @@ export const ManikinTable: React.FC = (): React.ReactElement => {
             Services
           </TableCell>
           <TableCell key='icon' style={{ width: '15%', height: '100%' }} />
-          <TableCell key='isSelected' style={{ width: '25%' }} />
+          <DarkModeSwitch />
         </TableRow>
       </TableHead>
       <TableBody className='ManikinTableBody'>{state.manikinTable.map((eachManikin: IManikin) => ManikinRow(eachManikin))}</TableBody>

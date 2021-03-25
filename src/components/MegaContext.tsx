@@ -12,12 +12,14 @@ import { IManikin } from '../interfaces/IManikin'
 import { IMite } from '../interfaces/IMite'
 import { workingManikins } from '../globals/workingManikins'
 import { megaReducer } from '../functions/reducers/megaReducer'
+import { OrbThemeLight } from './OrbThemeLight'
 
 const coreManikins: IManikin[] = workingManikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? true : false))
 const otherManikins: IManikin[] = workingManikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? false : true))
 const initialMobMites: IMite[] = coreManikins.flatMap((eachManikin) => eachManikin.mites.flatMap((eachMite) => eachMite))
 
 export const initialMegaDockerState: IMegaDockerState = {
+  theme: OrbThemeLight,
   manikinTable: [...coreManikins, ...otherManikins],
   selectedManikins: coreManikins,
   memories: coreManikins.flatMap((eachManikin) => eachManikin.memories),

@@ -11,8 +11,7 @@ import { ContainerManikinPane } from './ContainerManikinPane'
 import { ContainerMainArea } from './ContainerMainArea'
 import { MegaProvider } from './MegaContext'
 import { OrbThemeLight } from './OrbThemeLight'
-//import { ThemeProvider } from '@material-ui/core'
-import { OrbThemeDark } from './OrbThemeDark'
+//import { OrbThemeDark } from './OrbThemeDark'
 import { ThemeProvider } from '@material-ui/core'
 
 export const App: React.FC = (): React.ReactElement => {

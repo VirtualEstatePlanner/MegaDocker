@@ -9,7 +9,6 @@
 import React from 'react'
 import { IMegaDockerAction } from '../../interfaces/IMegaDockerAction'
 import { IMegaDockerState } from '../../interfaces/IMegaDockerState'
-import { workingManikins } from '../../globals/workingManikins'
 import { getManikins } from './getManikins'
 import { getMemories } from './getMemories'
 import { getMites } from './getMites'
@@ -17,6 +16,9 @@ import { getDServiceMites } from './getDServiceMites'
 import { getDNetworkMites } from './getDNetworkMites'
 import { getCustomMites } from './getCustomMites'
 import { zipDockerSwarm } from './zipDockerSwarm'
+import { initialMegaDockerState } from '../../components/MegaContext'
+import { Theme } from '@material-ui/core'
+import { toggleTheme } from './toggleTheme'
 
 /**
  * Updates application state
@@ -31,17 +33,12 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     action.type // check which modification to make to state
   ) {
     case `APPLICATION_START`: // to start the program with only core manikins selected
-      const appStartState: IMegaDockerState = {
-        manikinTable: workingManikins,
-        selectedManikins: getManikins(workingManikins),
-        memories: getMemories(newState.selectedManikins),
-        allMobMites: getMites(newState.selectedManikins),
-        mobDServiceMites: getDServiceMites(newState.allMobMites),
-        mobDNetworkMites: getDNetworkMites(newState.allMobMites),
-        mobCustomMites: getCustomMites(newState.allMobMites),
-        ymlOutput: `appStartState`,
-      }
-      return appStartState
+      return initialMegaDockerState
+
+    case `TOGGLE_THEME`:
+      const newTheme: Theme = toggleTheme(newState.theme) as Theme
+      newState.theme = newTheme
+      return newState
 
     case `TOGGLE_MANIKIN`: // to select or deselect a manikin
       newState.manikinTable[action.payload].isSelected = !state.manikinTable[action.payload].isSelected // reverses the selected boolean in the manikin passed to it
