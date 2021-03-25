@@ -1,3 +1,11 @@
+/** @format */
+
+//  OrbThemeDark.tsx
+//  MEGADocker
+//  a Theme for dark mode
+//  Created by Jospeh Treanor II on 12/24/20.
+//  Copyright © 2020-2021 Orb.Run, Inc. All rights reserved.
+
 import { createMuiTheme, Theme } from '@material-ui/core'
 import { grey } from '@material-ui/core/colors'
 import AsapFont from '../fonts/Asap'
@@ -73,212 +81,211 @@ import ToggleButtonGroupRootStyleDark from '../styles/dark/ToggleButtonGroupRoot
 import ToggleButtonRootStyleDark from '../styles/dark/ToggleButtonRootStyleDark'
 import TouchRippleRootStyleDark from '../styles/dark/TouchRippleRootStyleDark'
 
-
 export const OrbThemeDark: Theme = createMuiTheme({
   components: {
     MuiAccordion: {
       styleOverrides: {
         root: AccordionRootStyleDark,
-        expanded: AccordionExpandedStyleDark
-      }
+        expanded: AccordionExpandedStyleDark,
+      },
     },
     MuiAlert: {
       styleOverrides: {
-        root: AlertRootStyleDark
-      }
+        root: AlertRootStyleDark,
+      },
     },
     MuiAppBar: {
       styleOverrides: {
-        root: AppBarRootStyleDark
-      }
+        root: AppBarRootStyleDark,
+      },
     },
     MuiAutocomplete: {
       styleOverrides: {
         paper: AutocompletePaperStyleDark,
-        option: AutocompleteOptionStyleDark
-      }
+        option: AutocompleteOptionStyleDark,
+      },
     },
     MuiBottomNavigation: {
       styleOverrides: {
-        root: BottomNavigationRootStyleDark
-      }
+        root: BottomNavigationRootStyleDark,
+      },
     },
     MuiBottomNavigationAction: {
       styleOverrides: {
-        root: BottomNavigationActionRootStyleDark
-      }
+        root: BottomNavigationActionRootStyleDark,
+      },
     },
     MuiButton: {
       styleOverrides: {
         root: ButtonRootStyleDark,
         containedPrimary: ButtonPrimaryStyleDark,
-        containedSecondary: ButtonSecondaryStyleDark
-      }
+        containedSecondary: ButtonSecondaryStyleDark,
+      },
     },
     MuiCard: {
       styleOverrides: {
-        root: CardRootStyleDark
-      }
+        root: CardRootStyleDark,
+      },
     },
     MuiCheckbox: {
       styleOverrides: {
-        root: CheckboxRootStyleDark
-      }
+        root: CheckboxRootStyleDark,
+      },
     },
     MuiChip: {
       styleOverrides: {
-        root: ButtonPrimaryStyleDark
-      }
+        root: ButtonPrimaryStyleDark,
+      },
     },
     MuiCircularProgress: {
       styleOverrides: {
         root: CircularProgressRootStyleDark,
-        colorPrimary: CircularProgressPrimaryStyleDark
-      }
+        colorPrimary: CircularProgressPrimaryStyleDark,
+      },
     },
     MuiContainer: {
       styleOverrides: {
-        root: ContainerRootStyleDark
-      }
+        root: ContainerRootStyleDark,
+      },
     },
     MuiCssBaseline: {
       styleOverrides: {
         '@global': {
-          '@font-face': AsapFont
-        }
-      }
+          '@font-face': AsapFont,
+        },
+      },
     },
     MuiDialog: {
       styleOverrides: {
         paper: DialogPaperStyleDark,
-        root: DialogRootStyleDark
-      }
+        root: DialogRootStyleDark,
+      },
     },
     MuiDrawer: {
       styleOverrides: {
         paper: DrawerPaperStyleDark,
-        root: DrawerRootStyleDark
-      }
+        root: DrawerRootStyleDark,
+      },
     },
     MuiFab: {
       styleOverrides: {
-        root: FabRootStyleDark
-      }
+        root: FabRootStyleDark,
+      },
     },
     MuiFormControl: {
       styleOverrides: {
-        root: FormControlRootStyleDark
-      }
+        root: FormControlRootStyleDark,
+      },
     },
     MuiFormControlLabel: {
       styleOverrides: {
-        root: FormControlLabelRootStyleDark
-      }
+        root: FormControlLabelRootStyleDark,
+      },
     },
     MuiFormHelperText: {
       styleOverrides: {
-        root: FormHelperTextRootStyleDark
-      }
+        root: FormHelperTextRootStyleDark,
+      },
     },
     MuiIconButton: {
       styleOverrides: {
         root: ButtonIconRootStyleDark,
         colorInherit: ButtonIconInheritStyleDark,
         colorPrimary: ButtonPrimaryStyleDark,
-        colorSecondary: ButtonSecondaryStyleDark
-      }
+        colorSecondary: ButtonSecondaryStyleDark,
+      },
     },
     MuiIcon: {
       styleOverrides: {
-        root: IconRootStyleDark
-      }
+        root: IconRootStyleDark,
+      },
     },
     MuiImageList: {
       styleOverrides: {
-        root: ImageListRootStyleDark
-      }
+        root: ImageListRootStyleDark,
+      },
     },
     MuiImageListItemBar: {
       styleOverrides: {
-        root: ImageListItemBarRootStyleDark
-      }
+        root: ImageListItemBarRootStyleDark,
+      },
     },
     MuiInputAdornment: {
       styleOverrides: {
-        root: InputAdornmentRootStyleDark
-      }
+        root: InputAdornmentRootStyleDark,
+      },
     },
     MuiInputBase: {
       styleOverrides: {
-        root: InputBaseRootStyleDark
-      }
+        root: InputBaseRootStyleDark,
+      },
     },
     MuiInputLabel: {
       styleOverrides: {
-        root: InputLabelRootStyleDark
-      }
+        root: InputLabelRootStyleDark,
+      },
     },
     MuiList: {
       styleOverrides: {
-        root: ListRootStyleDark
-      }
+        root: ListRootStyleDark,
+      },
     },
     MuiListItem: {
       styleOverrides: {
-        root: ListItemRootStyleDark
-      }
+        root: ListItemRootStyleDark,
+      },
     },
     MuiMenu: {
       styleOverrides: {
-        paper: MenuRootStyleDark
-      }
+        paper: MenuRootStyleDark,
+      },
     },
     MuiMobileStepper: {
       styleOverrides: {
         dot: MobileStepperDotStyleDark,
         dotActive: MobileStepperDotActiveStyleDark,
-        progress: MobileStepperProgressStyleDark
-      }
+        progress: MobileStepperProgressStyleDark,
+      },
     },
     MuiNativeSelect: {
       styleOverrides: {
         root: NativeSelectRootStyleDark,
         filled: NativeSelectRootStyleDark,
         select: NativeSelectRootStyleDark,
-        outlined: NativeSelectRootStyleDark
-      }
+        outlined: NativeSelectRootStyleDark,
+      },
     },
     MuiOutlinedInput: {
       styleOverrides: {
         root: InputOutlinedRootStyleDark,
-        multiline: OutlinedInputMultilineStyleDark
-      }
+        multiline: OutlinedInputMultilineStyleDark,
+      },
     },
     MuiPaginationItem: {
       styleOverrides: {
-        root: TablePaginationItemRootStyleDark
-      }
+        root: TablePaginationItemRootStyleDark,
+      },
     },
     MuiPaper: {
       styleOverrides: {
-        root: PaperRootStyleDark
-      }
+        root: PaperRootStyleDark,
+      },
     },
     MuiPopover: {
       styleOverrides: {
-        paper: MenuRootStyleDark
-      }
+        paper: MenuRootStyleDark,
+      },
     },
     MuiRadio: {
       styleOverrides: {
-        root: RadioRootStyleDark
-      }
+        root: RadioRootStyleDark,
+      },
     },
     MuiSelect: {
       styleOverrides: {
         root: SelectRootStyleDark,
-        selectMenu: SelectMenuRootStyleDark
-      }
+        selectMenu: SelectMenuRootStyleDark,
+      },
     },
     MuiSlider: {
       styleOverrides: {
@@ -288,66 +295,66 @@ export const OrbThemeDark: Theme = createMuiTheme({
         track: SliderTrackStyleDark,
         rail: SliderRailStyleDark,
         mark: SliderMarkStyleDark,
-        markActive: SliderMarkActiveStyleDark
-      }
+        markActive: SliderMarkActiveStyleDark,
+      },
     },
     MuiSpeedDial: {
       styleOverrides: {
         root: SpeedDialIconRootStyleDark,
-        fab: ButtonPrimaryStyleDark
-      }
+        fab: ButtonPrimaryStyleDark,
+      },
     },
     MuiStepIcon: {
       styleOverrides: {
         root: StepIconRootStyleDark,
         active: StepIconActiveStyleDark,
-        completed: StepIconCompletedStyleDark
-      }
+        completed: StepIconCompletedStyleDark,
+      },
     },
     MuiSwitch: {
       styleOverrides: {
-        root: SwitchRootStyleDark
-      }
+        root: SwitchRootStyleDark,
+      },
     },
     MuiTab: {
       styleOverrides: {
         root: TabRootStyleDark,
         selected: TabSelectedStyleDark,
-        labelIcon: TabLabelIconStyleDark
-      }
+        labelIcon: TabLabelIconStyleDark,
+      },
     },
     MuiTabs: {
       styleOverrides: {
         root: TabsRootStyleDark,
-        indicator: TabSelectedStyleDark
-      }
+        indicator: TabSelectedStyleDark,
+      },
     },
     MuiTablePagination: {
       styleOverrides: {
         root: TablePaginationRootStyleDark,
-        selectRoot: TablePaginationSelectRootStyleDark
-      }
+        selectRoot: TablePaginationSelectRootStyleDark,
+      },
     },
     MuiTextField: {
       styleOverrides: {
-        root: TextAreaRootStyleDark
-      }
+        root: TextAreaRootStyleDark,
+      },
     },
     MuiToggleButton: {
       styleOverrides: {
-        root: ToggleButtonRootStyleDark
-      }
+        root: ToggleButtonRootStyleDark,
+      },
     },
     MuiToggleButtonGroup: {
       styleOverrides: {
-        root: ToggleButtonGroupRootStyleDark
-      }
+        root: ToggleButtonGroupRootStyleDark,
+      },
     },
     MuiTouchRipple: {
       styleOverrides: {
-        root: TouchRippleRootStyleDark
-      }
-    }
+        root: TouchRippleRootStyleDark,
+      },
+    },
   },
   palette: {
     mode: 'dark',
@@ -357,10 +364,10 @@ export const OrbThemeDark: Theme = createMuiTheme({
     text: {
       primary: grey[300],
       secondary: grey[500],
-      disabled: grey[700]
-    }
+      disabled: grey[700],
+    },
   },
   typography: {
-    fontFamily: 'Asap'
-  }
+    fontFamily: 'Asap',
+  },
 })

@@ -1,3 +1,11 @@
+/** @format */
+
+//  OrbThemeLight.tsx
+//  MEGADocker
+//  a Theme for light mode
+//  Created by Jospeh Treanor II on 12/24/20.
+//  Copyright © 2020-2021 Orb.Run, Inc. All rights reserved.
+
 import { createMuiTheme, Theme } from '@material-ui/core'
 import AsapFont from '../fonts/Asap'
 import AccordionExpandedStyle from '../styles/light/AccordionExpandedStyle'
@@ -72,212 +80,211 @@ import TextFieldRootStyle from '../styles/light/TextFieldRootStyle'
 import ToggleButtonGroupRootStyle from '../styles/light/ToggleButtonGroupRootStyle'
 import ToggleButtonRootStyle from '../styles/light/ToggleButtonRootStyle'
 
-
 export const OrbThemeLight: Theme = createMuiTheme({
   components: {
     MuiAccordion: {
       styleOverrides: {
         root: AccordionRootStyle,
-        expanded: AccordionExpandedStyle
-      }
+        expanded: AccordionExpandedStyle,
+      },
     },
     MuiAlert: {
       styleOverrides: {
-        root: AlertRootStyle
-      }
+        root: AlertRootStyle,
+      },
     },
     MuiAppBar: {
       styleOverrides: {
-        root: AppBarRootStyle
-      }
+        root: AppBarRootStyle,
+      },
     },
     MuiAutocomplete: {
       styleOverrides: {
         paper: AutocompletePaperStyle,
-        option: AutocompleteOptionStyle
-      }
+        option: AutocompleteOptionStyle,
+      },
     },
     MuiBottomNavigation: {
       styleOverrides: {
-        root: BottomNavigationRootStyle
-      }
+        root: BottomNavigationRootStyle,
+      },
     },
     MuiBottomNavigationAction: {
       styleOverrides: {
-        root: BottomNavigationActionRootStyle
-      }
+        root: BottomNavigationActionRootStyle,
+      },
     },
     MuiButton: {
       styleOverrides: {
         root: ButtonRootStyle,
         containedPrimary: ButtonPrimaryStyle,
-        containedSecondary: ButtonSecondaryStyle
-      }
+        containedSecondary: ButtonSecondaryStyle,
+      },
     },
     MuiCard: {
       styleOverrides: {
-        root: CardRootStyle
-      }
+        root: CardRootStyle,
+      },
     },
     MuiCheckbox: {
       styleOverrides: {
-        root: CheckboxRootStyle
-      }
+        root: CheckboxRootStyle,
+      },
     },
     MuiChip: {
       styleOverrides: {
-        root: ButtonPrimaryStyle
-      }
+        root: ButtonPrimaryStyle,
+      },
     },
     MuiCircularProgress: {
       styleOverrides: {
         root: CircularProgressRootStyle,
-        colorPrimary: CircularProgressPrimaryStyle
-      }
+        colorPrimary: CircularProgressPrimaryStyle,
+      },
     },
     MuiContainer: {
       styleOverrides: {
-        root: ContainerRootStyle
-      }
+        root: ContainerRootStyle,
+      },
     },
     MuiCssBaseline: {
       styleOverrides: {
         '@global': {
-          '@font-face': AsapFont
-        }
-      }
+          '@font-face': AsapFont,
+        },
+      },
     },
     MuiDialog: {
       styleOverrides: {
         root: DialogRootStyle,
-        paper: DialogPaperStyle
-      }
+        paper: DialogPaperStyle,
+      },
     },
     MuiDrawer: {
       styleOverrides: {
         root: DrawerRootStyle,
-        paper: DrawerPaperStyle
-      }
+        paper: DrawerPaperStyle,
+      },
     },
     MuiFab: {
       styleOverrides: {
-        root: FabRootStyle
-      }
+        root: FabRootStyle,
+      },
     },
     MuiFormControl: {
       styleOverrides: {
-        root: FormControlRootStyle
-      }
+        root: FormControlRootStyle,
+      },
     },
     MuiFormControlLabel: {
       styleOverrides: {
-        root: FormControlLabelRootStyle
-      }
+        root: FormControlLabelRootStyle,
+      },
     },
     MuiFormHelperText: {
       styleOverrides: {
-        root: FormHelperTextRootStyle
-      }
+        root: FormHelperTextRootStyle,
+      },
     },
     MuiIconButton: {
       styleOverrides: {
         root: ButtonIconRootStyle,
         colorInherit: ButtonIconInheritStyle,
         colorPrimary: ButtonPrimaryStyle,
-        colorSecondary: ButtonSecondaryStyle
-      }
+        colorSecondary: ButtonSecondaryStyle,
+      },
     },
     MuiIcon: {
       styleOverrides: {
-        root: IconRootStyle
-      }
+        root: IconRootStyle,
+      },
     },
     MuiImageList: {
       styleOverrides: {
-        root: ImageListRootStyle
-      }
+        root: ImageListRootStyle,
+      },
     },
     MuiImageListItemBar: {
       styleOverrides: {
-        root: ImageListItemBarRootStyle
-      }
+        root: ImageListItemBarRootStyle,
+      },
     },
     MuiInputAdornment: {
       styleOverrides: {
-        root: InputAdornmentRootStyle
-      }
+        root: InputAdornmentRootStyle,
+      },
     },
     MuiInputBase: {
       styleOverrides: {
-        root: InputBaseRootStyle
-      }
+        root: InputBaseRootStyle,
+      },
     },
     MuiInputLabel: {
       styleOverrides: {
-        root: InputLabelRootStyle
-      }
+        root: InputLabelRootStyle,
+      },
     },
     MuiList: {
       styleOverrides: {
-        root: ListRootStyle
-      }
+        root: ListRootStyle,
+      },
     },
     MuiListItem: {
       styleOverrides: {
-        root: ListItemRootStyle
-      }
+        root: ListItemRootStyle,
+      },
     },
     MuiMenu: {
       styleOverrides: {
-        paper: MenuRootStyle
-      }
+        paper: MenuRootStyle,
+      },
     },
     MuiMobileStepper: {
       styleOverrides: {
         dot: MobileStepperDotStyle,
         dotActive: MobileStepperDotActiveStyle,
-        progress: MobileStepperProgressStyle
-      }
+        progress: MobileStepperProgressStyle,
+      },
     },
     MuiNativeSelect: {
       styleOverrides: {
         root: NativeSelectRootStyle,
         filled: NativeSelectRootStyle,
         select: NativeSelectRootStyle,
-        outlined: NativeSelectRootStyle
-      }
+        outlined: NativeSelectRootStyle,
+      },
     },
     MuiOutlinedInput: {
       styleOverrides: {
         root: InputOutlinedRootStyle,
-        multiline: OutlinedInputMultilineStyle
-      }
+        multiline: OutlinedInputMultilineStyle,
+      },
     },
     MuiPaginationItem: {
       styleOverrides: {
-        root: TablePaginationItemRootStyle
-      }
+        root: TablePaginationItemRootStyle,
+      },
     },
     MuiPaper: {
       styleOverrides: {
-        root: PaperRootStyle
-      }
+        root: PaperRootStyle,
+      },
     },
     MuiPopover: {
       styleOverrides: {
-        paper: MenuRootStyle
-      }
+        paper: MenuRootStyle,
+      },
     },
     MuiRadio: {
       styleOverrides: {
-        root: RadioRootStyle
-      }
+        root: RadioRootStyle,
+      },
     },
     MuiSelect: {
       styleOverrides: {
         root: SelectRootStyle,
-        selectMenu: SelectMenuRootStyle
-      }
+        selectMenu: SelectMenuRootStyle,
+      },
     },
     MuiSlider: {
       styleOverrides: {
@@ -287,67 +294,67 @@ export const OrbThemeLight: Theme = createMuiTheme({
         track: SliderTrackStyle,
         rail: SliderRailStyle,
         mark: SliderMarkStyle,
-        markActive: SliderMarkActiveStyle
-      }
+        markActive: SliderMarkActiveStyle,
+      },
     },
     MuiSpeedDial: {
       styleOverrides: {
         root: SpeedDialIconRootStyle,
-        fab: ButtonPrimaryStyle
-      }
+        fab: ButtonPrimaryStyle,
+      },
     },
     MuiStepIcon: {
       styleOverrides: {
         root: StepIconRootStyle,
         active: StepIconActiveStyle,
-        completed: StepIconCompletedStyle
-      }
+        completed: StepIconCompletedStyle,
+      },
     },
     MuiSwitch: {
       styleOverrides: {
-        root: SwitchRootStyle
-      }
+        root: SwitchRootStyle,
+      },
     },
     MuiTab: {
       styleOverrides: {
         root: TabRootStyle,
         selected: TabSelectedStyle,
-        labelIcon: TabLabelIconStyle
-      }
+        labelIcon: TabLabelIconStyle,
+      },
     },
     MuiTabs: {
       styleOverrides: {
         root: TabsRootStyle,
-        indicator: TabSelectedStyle
-      }
+        indicator: TabSelectedStyle,
+      },
     },
     MuiTablePagination: {
       styleOverrides: {
         root: TablePaginationItemRootStyle,
-        selectRoot: TablePaginationSelectRootStyle
-      }
+        selectRoot: TablePaginationSelectRootStyle,
+      },
     },
     MuiTableRow: {
       styleOverrides: {
         root: TableRowRootStyle,
-        selected: TableRowSelectedStyle
-      }
+        selected: TableRowSelectedStyle,
+      },
     },
     MuiTextField: {
       styleOverrides: {
-        root: TextFieldRootStyle
-      }
+        root: TextFieldRootStyle,
+      },
     },
     MuiToggleButton: {
       styleOverrides: {
-        root: ToggleButtonRootStyle
-      }
+        root: ToggleButtonRootStyle,
+      },
     },
     MuiToggleButtonGroup: {
       styleOverrides: {
-        root: ToggleButtonGroupRootStyle
-      }
-    }
+        root: ToggleButtonGroupRootStyle,
+      },
+    },
   },
   palette: {
     mode: 'light',
@@ -355,15 +362,15 @@ export const OrbThemeLight: Theme = createMuiTheme({
     primary: PalettePrimaryStyle,
     secondary: PaletteSecondaryStyle,
     action: {
-      selected: `#C0C0C2`
+      selected: `#C0C0C2`,
     },
     text: {
       primary: `#000000`,
       secondary: `#646465`,
-      disabled: `#818182`
-    }
+      disabled: `#818182`,
+    },
   },
   typography: {
-    fontFamily: 'Asap'
-  }
+    fontFamily: 'Asap',
+  },
 })
