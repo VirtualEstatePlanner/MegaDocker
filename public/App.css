@@ -5,36 +5,25 @@
   align-items: center;
   font-family: 'Asap';
   justify-content: center;
-  box-sizing: border-box;
 }
 
-.App {
-  display: flex;
-  background-color: white;
-  min-width: 100vw;
-  flex-direction: row;
-  margin: 0 auto;
+.Paper {
   min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 }
 
 .ButtonPane {
-  width: 85vw;
-  width: 5vh;
-  justify-content: space-around;
-}
-
-.ManikinRow {
-  background-color: #ffffff;
-}
-
-.CoreManikinRow {
-  background-color: #eeeeee;
+  width: 75vw;
+  height: 5vh;
 }
 
 .MainArea {
   display: flex;
   height: 100vh;
-  width: 85vw;
+  width: 75vw;
   flex-direction: column;
   justify-content: flex-start;
 }
@@ -44,38 +33,24 @@
   flex-direction: column;
   height: 100vh;
   width: 15vw;
-  justify-content: flex-start;
   overflow: auto;
 }
 
-.MemoryReadyIcon {
-  justify-self: end;
-}
-
 .ManikinTable {
-  flex-direction: column;
   overflow: scroll;
-}
-
-.MemoryHeaderRow {
-  justify-content: space-between;
-}
-
-.ManikinHeaderRow {
-  justify-content: space-between;
 }
 
 .MemoryPane {
   display: fixed;
   flex-direction: column;
-  overflow: auto;
+  overflow: scroll;
   height: 95vh;
-  width: 85vw;
+  width: 75vw;
 }
 
 .MemoryTable {
   display: fixed;
-  height: 100%;
+  height: 95vh;
 }
 
 .MemoryTableBody {
