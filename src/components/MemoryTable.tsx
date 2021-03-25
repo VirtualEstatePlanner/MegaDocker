@@ -39,10 +39,10 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
       <Table className='MemoryTable' size='small' stickyHeader>
         <TableHead>
           <TableRow className='MemoryHeaderRow'>
-            <TableCell size='small' variant='head' style={{ width: '15%' }}>
+            <TableCell size='small' variant='head' style={{ width: '20%' }}>
               Settings
             </TableCell>
-            <TableCell size='small' variant='head' style={{ width: '80%' }} />
+            <TableCell size='small' variant='head' style={{ width: '75%' }} />
             <TableCell size='small' variant='head' style={{ width: '5%' }}>
               <img alt='' src={fullyValidated ? checkmarkIndicator : circleIndicator} height='25vh' />
             </TableCell>

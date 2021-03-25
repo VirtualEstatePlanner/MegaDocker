@@ -7,44 +7,29 @@
 }
 
 .Paper {
-  height: 100vh;
+  height: 98vh;
   width: 100vw;
-  max-height: 100vh;
-  max-width: 100vw;
-  min-height: 100vh;
-  min-width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
 }
 
 .ButtonPane {
-  width: 65vw;
   height: 5vh;
-  max-height: 5vh;
-  max-width: 65vw;
-  min-height: 5vh;
-  min-width: 65vw;
 }
 
 .MainArea {
-  height: 100vh;
-  width: 65vw;
-  max-height: 100vh;
-  max-width: 65vw;
-  min-height: 100vh;
-  min-width: 65vw;
+  height: 98vh;
+  width: 75vw;
   flex-direction: column;
+  overflow: auto;
+  justify-content: flex-start;
 }
 
 .ManikinPane {
   flex-direction: column;
-  height: 100vh;
+  height: 95vh;
   width: 15vw;
-  max-height: 100vh;
-  max-width: 15vw;
-  min-height: 100vh;
-  min-width: 15vw;
   overflow: auto;
 }
 
@@ -55,19 +40,11 @@
 .MemoryPane {
   flex-direction: column;
   overflow: auto;
-  width: 65vw;
-  max-height: 95vh;
-  max-width: 65vw;
-  min-width: 65vw;
+  height: 92vh;
 }
 
 .MemoryTable {
-  height: 95vh;
-  width: 65vw;
   max-height: 95vh;
-  max-width: 65vw;
-  min-height: 95vh;
-  min-width: 65vw;
 }
 
 .MemoryTableBody {
