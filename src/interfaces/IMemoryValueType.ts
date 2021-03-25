@@ -9,4 +9,4 @@
 /**
  * interface for IMemoryValueType
  */
-export type IMemoryValueType = 'password' | 'email' | 'text'
+export type IMemoryValueType = `password` | `email` | `text`
