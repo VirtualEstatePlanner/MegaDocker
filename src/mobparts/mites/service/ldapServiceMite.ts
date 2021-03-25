@@ -12,7 +12,7 @@ const hostnames: string[] = [`ldapadmin`, `authelia`, `ldap`]
 
 export const ldapServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30011,
+  miteIndex: 30012,
   webInterfaceHostnames: hostnames,
   miteString: `
 

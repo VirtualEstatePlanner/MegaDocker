@@ -23,7 +23,7 @@ export const piholeManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Utility`, `Network`],
   manikinIcon: piholeIcon,
-  manikinIndex: 10021,
+  manikinIndex: 10022,
   memories: [piholePassword],
   mites: [piholeServiceMite, piholeNetworkMite],
   name: `Pihole`,

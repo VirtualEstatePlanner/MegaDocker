@@ -31,7 +31,7 @@ export const ldapManikin: IManikin = {
   isSelected: true,
   manikinGroups: [`Core`, `Utility`],
   manikinIcon: ldapIcon,
-  manikinIndex: 10011,
+  manikinIndex: 10012,
   memories: [autheliaMariaDBPassword, autheliaMariaDBRootPassword, autheliaMariaDBUser, ldapAdminUsername, ldapAdminPassword, ldapConfigurationPassword, ldapOrganisation],
   mites: [autheliaDotConfMite, ldapServiceMite, ldapNetworkMite, ldapBootstrapMegaDockerDotLdifMite],
   name: `LDAP`,

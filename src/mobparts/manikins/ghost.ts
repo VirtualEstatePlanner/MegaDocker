@@ -24,7 +24,7 @@ export const ghostManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Content`, `Development`],
   manikinIcon: ghostIcon,
-  manikinIndex: 10006,
+  manikinIndex: 10007,
   memories: [ghostMariaDBRootPassword],
   mites: [ghostServiceMite, ghostNetworkMite],
   name: `Ghost`,

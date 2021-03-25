@@ -12,7 +12,7 @@ const hostnames: string[] = [`grocy`, `barcodes`]
 
 export const grocyServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30008,
+  miteIndex: 30009,
   webInterfaceHostnames: hostnames,
   miteString: `
 

@@ -8,6 +8,7 @@ import { duplicatiManikin } from '../mobparts/manikins/duplicati'
 import { drupalManikin } from '../mobparts/manikins/drupal'
 import { elkManikin } from '../mobparts/manikins/elk'
 import { emailManikin } from '../mobparts/manikins/email'
+import { filebrowserManikin } from '../mobparts/manikins/filebrowser'
 import { ghostManikin } from '../mobparts/manikins/ghost'
 import { grocyManikin } from '../mobparts/manikins/grocy'
 import { gitlabManikin } from '../mobparts/manikins/gitlab'
@@ -45,6 +46,7 @@ export const allManikins: IManikin[] = [
   drupalManikin,
   elkManikin,
   emailManikin,
+  filebrowserManikin,
   ghostManikin,
   grocyManikin,
   gitlabManikin,

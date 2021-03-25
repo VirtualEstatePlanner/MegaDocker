@@ -14,7 +14,7 @@ const hostnames: string[] = [`traefik`]
 
 export const traefikServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30029,
+  miteIndex: 30030,
   webInterfaceHostnames: hostnames,
   miteString: `
 

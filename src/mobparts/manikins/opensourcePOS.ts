@@ -25,7 +25,7 @@ export const opensourceposManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Utility`, `Financial`],
   manikinIcon: opensourceposIcon,
-  manikinIndex: 10019,
+  manikinIndex: 10020,
   memories: [opensourcePOSMariaDBPassword, opensourcePOSMariaDBUser, opensourcePOSMariaDBRootPassword],
   mites: [opensourcePOSServiceMite, opensourcePOSNetworkMite],
   name: `osPOS`,

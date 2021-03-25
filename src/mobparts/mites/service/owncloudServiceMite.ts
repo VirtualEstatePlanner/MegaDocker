@@ -12,7 +12,7 @@ const hostnames: string[] = [`owncloud`]
 
 export const owncloudServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30021,
+  miteIndex: 30022,
   webInterfaceHostnames: hostnames,
   miteString: `
 # Begin Owncloud Service Sections

@@ -12,7 +12,7 @@ const hostnames: string[] = [`webdav`]
 
 export const webdavServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30033,
+  miteIndex: 30034,
   webInterfaceHostnames: hostnames,
   miteString: `
 

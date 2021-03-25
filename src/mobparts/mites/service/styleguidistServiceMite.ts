@@ -6,7 +6,7 @@ const hostnames: string[] = [`style`]
 
 export const styleguidistServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30026,
+  miteIndex: 30027,
   webInterfaceHostnames: hostnames,
   miteString: `
 

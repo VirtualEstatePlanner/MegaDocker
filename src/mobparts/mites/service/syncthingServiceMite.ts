@@ -12,7 +12,7 @@ const hostnames: string[] = [`syncthing`]
 
 export const syncthingServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30028,
+  miteIndex: 30029,
   webInterfaceHostnames: hostnames,
   miteString: `
 

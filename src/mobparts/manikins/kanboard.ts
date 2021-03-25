@@ -25,7 +25,7 @@ export const kanboardManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Utility`, `Organization`, `Productivity`],
   manikinIcon: kanboardIcon,
-  manikinIndex: 10010,
+  manikinIndex: 10011,
   memories: [kanboardMariaDBPassword, kanboardMariaDBRootPassword, kanboardMariaDBUser],
   mites: [kanboardServiceMite, kanboardNetworkMite],
   name: `Kanboard`,

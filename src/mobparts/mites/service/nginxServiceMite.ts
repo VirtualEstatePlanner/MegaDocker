@@ -12,7 +12,7 @@ const hostnames: string[] = [`nginx`]
 
 export const nginxServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30019,
+  miteIndex: 30020,
   webInterfaceHostnames: hostnames,
   miteString: `
 

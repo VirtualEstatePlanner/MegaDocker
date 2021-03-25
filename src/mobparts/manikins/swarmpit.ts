@@ -22,7 +22,7 @@ export const swarmpitManikin: IManikin = {
   manikinGroups: [`Development`, `Utility`, `Organization`, `Productivity`],
   folder: `swarmpit`,
   manikinIcon: swarmpitIcon,
-  manikinIndex: 10025,
+  manikinIndex: 10026,
   memories: [],
   name: `Swarmpit`,
   mites: [swarmpitServiceMite, swarmpitNetworkMite],

@@ -6,7 +6,7 @@ const hostnames: string[] = [`swarmpit`]
 
 export const swarmpitServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30027,
+  miteIndex: 30028,
   webInterfaceHostnames: hostnames,
   miteString: `
 

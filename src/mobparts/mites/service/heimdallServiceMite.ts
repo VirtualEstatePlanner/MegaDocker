@@ -12,7 +12,7 @@ const hostnames: string[] = [`heimdall`]
 
 export const heimdallServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30009,
+  miteIndex: 30010,
   webInterfaceHostnames: hostnames,
   miteString: `
 

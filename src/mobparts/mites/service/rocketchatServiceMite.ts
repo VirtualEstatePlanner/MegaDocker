@@ -12,7 +12,7 @@ const hostnames: string[] = [`rocketchat`]
 
 export const rocketchatServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30025,
+  miteIndex: 30026,
   webInterfaceHostnames: hostnames,
   miteString: `
 

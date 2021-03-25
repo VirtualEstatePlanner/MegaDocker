@@ -5,7 +5,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const styleguidistTsconfigDotJsonMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 50015,
+  miteIndex: 50016,
   miteFile: {
     path: `styleguidist/configs`,
     name: `tsconfig`,

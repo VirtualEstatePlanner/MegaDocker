@@ -28,7 +28,7 @@ export const gitlabManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Development`],
   manikinIcon: gitlabIcon,
-  manikinIndex: 10007,
+  manikinIndex: 10008,
   memories: [gitlabPostgresPassword, gitlabPostgresUser, gitlabRootEmail, gitlabRootPassword],
   mites: [gitlabServiceMite, gitlabNetworkMite],
   name: `GitLab`,

@@ -24,7 +24,7 @@ export const vsCodeManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Development`],
   manikinIcon: vsCodeIcon,
-  manikinIndex: 10030,
+  manikinIndex: 10031,
   memories: [vsCodePassword],
   mites: [vsCodeServiceMite, vsCodeNetworkMite, vsCodeIndexDotHtmlMite],
   name: `VS Code`,

@@ -11,7 +11,7 @@ const pathObjectExtValue: string = '`.connect${pathObject.ext}`'
 export const styleguidistStyleguideDotConfigDotJsMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 50014,
+  miteIndex: 50015,
   miteFile: {
     path: `styleguidist/configs`,
     name: `styleguide.config`,

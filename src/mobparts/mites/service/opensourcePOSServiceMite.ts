@@ -12,7 +12,7 @@ const hostnames: string[] = [`opensourcepos`]
 
 export const opensourcePOSServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30020,
+  miteIndex: 30021,
   webInterfaceHostnames: hostnames,
   miteString: `
 

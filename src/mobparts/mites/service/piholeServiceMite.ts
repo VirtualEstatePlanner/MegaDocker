@@ -12,7 +12,7 @@ const hostnames: string[] = [`pihole`]
 
 export const piholeServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30022,
+  miteIndex: 30023,
   webInterfaceHostnames: hostnames,
   miteString: `
   

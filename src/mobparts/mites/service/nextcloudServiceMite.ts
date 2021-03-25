@@ -12,7 +12,7 @@ const hostnames: string[] = [`nextcloud`]
 
 export const nextcloudServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30018,
+  miteIndex: 30019,
   webInterfaceHostnames: hostnames,
   miteString: `
 

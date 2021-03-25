@@ -12,7 +12,7 @@ const hostnames: string[] = [`tv`]
 
 export const tvServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30030,
+  miteIndex: 30031,
   webInterfaceHostnames: hostnames,
   miteString: `
 

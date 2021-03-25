@@ -22,7 +22,7 @@ export const owncloudManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Utility`, `Organization`, `Productivity`],
   manikinIcon: owncloudIcon,
-  manikinIndex: 10020,
+  manikinIndex: 10021,
   memories: [],
   mites: [owncloudServiceMite, owncloudNetworkMite],
   name: `Owncloud`,

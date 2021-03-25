@@ -12,7 +12,7 @@ const hostnames: string[] = [`visualizer`]
 
 export const visualizerServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30031,
+  miteIndex: 30032,
   webInterfaceHostnames: hostnames,
   miteString: `
 

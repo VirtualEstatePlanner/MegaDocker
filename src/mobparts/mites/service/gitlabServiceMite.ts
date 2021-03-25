@@ -13,7 +13,7 @@ const hostnames: string[] = [`gitlab`, `dockerhub`]
 
 export const gitlabServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30007,
+  miteIndex: 30008,
   webInterfaceHostnames: hostnames,
   miteString: `
 

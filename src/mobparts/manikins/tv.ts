@@ -29,7 +29,7 @@ export const tvManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Content`],
   manikinIcon: tvIcon,
-  manikinIndex: 10028,
+  manikinIndex: 10029,
   memories: [],
   mites: [tvServiceMite, mediaRequestsServiceMite, plexServiceMite, booksNetworkMite, comicsNetworkMite, moviesNetworkMite, musicNetworkMite, tvNetworkMite, plexNetworkMite],
   name: `TV`,

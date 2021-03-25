@@ -12,7 +12,7 @@ const hostnames: string[] = [`n8n`]
 
 export const n8nServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30017,
+  miteIndex: 30018,
   webInterfaceHostnames: hostnames,
   miteString: `
 

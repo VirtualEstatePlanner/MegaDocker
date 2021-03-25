@@ -12,7 +12,7 @@ const hostnames: string[] = [`plex`]
 
 export const plexServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30023,
+  miteIndex: 30024,
   webInterfaceHostnames: hostnames,
   miteString: `
 

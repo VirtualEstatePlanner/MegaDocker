@@ -12,7 +12,7 @@ const hostnames: string[] = [`requests`, `torrent`, `newsgroups`, `newsgroup-ind
 
 export const mediaRequestsServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30014,
+  miteIndex: 30015,
   webInterfaceHostnames: hostnames,
   miteString: `
 

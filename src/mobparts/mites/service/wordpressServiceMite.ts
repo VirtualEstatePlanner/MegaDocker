@@ -12,7 +12,7 @@ const hostnames: string[] = [`wordpress`]
 
 export const wordpressServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30034,
+  miteIndex: 30035,
   webInterfaceHostnames: hostnames,
   miteString: `
 

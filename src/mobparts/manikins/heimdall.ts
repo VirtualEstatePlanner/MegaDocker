@@ -22,7 +22,7 @@ export const heimdallManikin: IManikin = {
   isSelected: false,
   manikinGroups: [`Utility`],
   manikinIcon: heimdallIcon,
-  manikinIndex: 10009,
+  manikinIndex: 10010,
   memories: [],
   mites: [heimdallServiceMite, heimdallNetworkMite],
   name: `Heimdall`,

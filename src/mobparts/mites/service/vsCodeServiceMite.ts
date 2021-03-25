@@ -12,7 +12,7 @@ const hostnames: string[] = [`vscode`]
 
 export const vsCodeServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30032,
+  miteIndex: 30033,
   webInterfaceHostnames: hostnames,
   miteString: `
 

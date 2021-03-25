@@ -26,7 +26,7 @@ export const traefikManikin: IManikin = {
   isSelected: true,
   manikinGroups: [`Core`, `Network`],
   manikinIcon: traefikIcon,
-  manikinIndex: 10027,
+  manikinIndex: 10028,
   memories: [mobName, letsEncryptEmail, cloudflareAPIToken, primaryDomain],
   name: `Traefik`,
   mites: [traefikServiceMite, traefikNetworkMite],

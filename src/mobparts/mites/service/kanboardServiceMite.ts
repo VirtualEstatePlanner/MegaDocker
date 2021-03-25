@@ -12,7 +12,7 @@ const hostnames: string[] = [`kanboard`]
 
 export const kanboardServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30010,
+  miteIndex: 30011,
   webInterfaceHostnames: hostnames,
   miteString: `
 

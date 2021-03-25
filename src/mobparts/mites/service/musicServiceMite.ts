@@ -12,7 +12,7 @@ const hostnames: string[] = [`music`]
 
 export const musicServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30016,
+  miteIndex: 30017,
   webInterfaceHostnames: hostnames,
   miteString: `
 

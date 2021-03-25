@@ -12,7 +12,7 @@ const hostnames: string[] = [`ledger`]
 
 export const ledgerServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30012,
+  miteIndex: 30013,
   webInterfaceHostnames: hostnames,
   miteString: `
 

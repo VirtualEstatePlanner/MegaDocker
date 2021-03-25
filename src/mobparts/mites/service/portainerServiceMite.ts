@@ -12,7 +12,7 @@ const hostnames: string[] = [`portainer`]
 
 export const portainerServiceMite: ITraefikedServiceMite = {
   type: `DockerSwarmService`,
-  miteIndex: 30024,
+  miteIndex: 30025,
   webInterfaceHostnames: hostnames,
   miteString: `
 
