@@ -33,7 +33,7 @@ export const ButtonExportDockerSwarm: React.FC = (): React.ReactElement => {
 
   return (
     <Button disabled={fullyValidated ? false : true} variant='contained' onClick={buttonClicked}>
-      'download {mobname}.zip'
+      download {mobname}.zip
     </Button>
   )
 }
