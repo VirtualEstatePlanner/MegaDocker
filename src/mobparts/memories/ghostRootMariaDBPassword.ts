@@ -17,7 +17,7 @@ export const ghostMariaDBRootPassword: IMemory = {
   name: `Ghost MariaDB Root Password`,
   tooltip: `The password for the Ghost MariaDB root user`,
   value: ``,
-  valueType: 'password',
+  valueType: `password`,
   isReady: false,
   validator: passwordValidator,
 }

@@ -15,9 +15,9 @@ export const kibanaPassword: IMemory = {
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Kibana Password`,
-  tooltip: `Choose the password to login to Kibana`,
+  tooltip: `The Kibana user's password`,
   value: ``,
-  valueType: 'password',
+  valueType: `password`,
   isReady: false,
   validator: passwordValidator,
 }

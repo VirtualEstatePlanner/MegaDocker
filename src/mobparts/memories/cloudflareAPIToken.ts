@@ -17,7 +17,7 @@ export const cloudflareAPIToken: IMemory = {
   name: `CloudFlare API Token`,
   tooltip: `A CloudFlare API token with "DNS: Edit" and "Zone: Read" privileges for your domains`,
   value: ``,
-  valueType: 'password',
+  valueType: `password`,
   isReady: false,
   validator: cloudflareApiTokenValidator,
 }

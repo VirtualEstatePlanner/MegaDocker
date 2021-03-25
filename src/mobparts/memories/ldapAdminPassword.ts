@@ -7,7 +7,6 @@
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/IMemory'
-import { ldapAdminUsername } from './ldapAdminUsername'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const ldapAdminPassword: IMemory = {
@@ -16,9 +15,9 @@ export const ldapAdminPassword: IMemory = {
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `LDAP Admin Password`,
-  tooltip: `Choose the password for the LDAP server administrative user (${ldapAdminUsername.value})`,
+  tooltip: `The LDAP admin user's password`,
   value: ``,
-  valueType: 'password',
+  valueType: `password`,
   isReady: false,
   validator: passwordValidator,
 }

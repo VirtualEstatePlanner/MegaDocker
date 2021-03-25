@@ -15,9 +15,9 @@ export const gitlabPostgresPassword: IMemory = {
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Gitlab Postgres Password`,
-  tooltip: `Choose the password GitLab will use to connect to the postgres database`,
+  tooltip: `The password for the GitLab Postgres user`,
   value: ``,
-  valueType: 'password',
+  valueType: `password`,
   isReady: false,
   validator: passwordValidator,
 }

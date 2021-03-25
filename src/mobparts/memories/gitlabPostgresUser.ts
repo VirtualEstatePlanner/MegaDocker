@@ -15,9 +15,9 @@ export const gitlabPostgresUser: IMemory = {
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `GitLab Postgres User`,
-  tooltip: `Choose a user account for Gitlab to connect to the postgres database`,
+  tooltip: `The GitLab Postgres user`,
   value: ``,
-  valueType: 'text',
+  valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator,
 }

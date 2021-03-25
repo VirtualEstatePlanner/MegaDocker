@@ -15,9 +15,9 @@ export const mobName: IMemory = {
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Mob Name`,
-  tooltip: `Name your MEGADocker Mob (only using lowercase letters or numbers).  This will also be the name of the folder that contains your Mob's persistent data inside of your 'Documents/MEGADocker' folder.`,
+  tooltip: `The name of your MEGADocker Mob (only using lowercase letters or numbers)`,
   value: ``,
-  valueType: 'text',
+  valueType: `text`,
   isReady: false,
   validator: mobnameValidator,
 }

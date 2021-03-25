@@ -15,9 +15,9 @@ export const wordpressMariaDBUser: IMemory = {
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `WP MariaDB User`,
-  tooltip: `Please enter your WordPress MariaDB username here`,
+  tooltip: `The WordPress MariaDB user`,
   value: ``,
-  valueType: 'text',
+  valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator,
 }

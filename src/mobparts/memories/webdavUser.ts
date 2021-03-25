@@ -15,9 +15,9 @@ export const webdavUser: IMemory = {
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `WebDAV User`,
-  tooltip: `Please enter the username to access WebDAV here`,
+  tooltip: `The WebDAV user`,
   value: ``,
-  valueType: 'text',
+  valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator,
 }

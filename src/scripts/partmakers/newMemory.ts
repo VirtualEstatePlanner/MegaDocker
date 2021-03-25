@@ -130,17 +130,17 @@ const makeFileString: Function = (options: IMemoryTemplateOptions): string => {
 //  Created by George Georgulas IV on ${shortDate}.
 //  Copyright © ${year} The MegaDocker Group. All rights reserved.
 
-import { IMemory } from "../../interfaces/IMemory";
+import { IMemory } from '../../interfaces/IMemory';
 import { ${options.validator}Validator } from '../../functions/validators/${options.validator}Validator';
 
 export const ${options.memoryName}: IMemory = {
   memoryIndex: 99999,
-  memoryMarker: "[[${options.memoryMarker}]]",
+  memoryMarker: \`[[${options.memoryMarker}]]\`,
   shouldAutocomplete: ${options.autocomplete},
-  name: "${options.description}",
-  tooltip: "${options.tooltip}",
-  value: "",
-  valueType: "${options.valueType}",
+  name: \`${options.description}\`,
+  tooltip: \`${options.tooltip}\`,
+  value: \`\`,
+  valueType: \`${options.valueType}\`,
   isReady: false,
   validator: ${options.validator}Validator,
 };`

@@ -15,9 +15,9 @@ export const kibanaUser: IMemory = {
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Kibana User`,
-  tooltip: `Choose a user account for Kibana to connect to it's Elasticsearch database`,
+  tooltip: `The Kibana user`,
   value: ``,
-  valueType: 'text',
+  valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator,
 }

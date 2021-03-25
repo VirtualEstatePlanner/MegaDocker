@@ -15,9 +15,9 @@ export const rocketchatBotUsername: IMemory = {
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `RocketChat Bot User`,
-  tooltip: `Choose the username of the RocketChat bot.`,
+  tooltip: `The RocketChat bot user`,
   value: ``,
-  valueType: 'text',
+  valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator,
 }

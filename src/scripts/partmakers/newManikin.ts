@@ -81,16 +81,16 @@ const makeFileString: Function = (options: IManikinTemplateOptions): string => {
    * ${options.uiName} Manikin
    */
   export const ${options.fileName}Manikin: IManikin = {
-    description: "${options.description}",
-    folder: "${options.fileName.toLowerCase()}",
+    description: \`${options.description}\`,
+    folder: \`${options.fileName.toLowerCase()}\`,
     isCore: false,
     isSelected: false,
     manikinGroups: [],
-    manikinIcon: "${options.uiName}Icon",
+    manikinIcon: \`${options.uiName}Icon\`,
     manikinIndex: 99999,
     memories: [],
     mites: [],
-    name: "${options.fileName}",
+    name: \`${options.fileName}\`,
     ports: [],
     subfolders: [],
   };`

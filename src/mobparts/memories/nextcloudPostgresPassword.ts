@@ -15,9 +15,9 @@ export const nextcloudPostgresPassword: IMemory = {
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Nextcloud Postgres Password`,
-  tooltip: `Choose a password for nextcloud to connect to it's postgres database`,
+  tooltip: `The Nextcloud Postgres user's password`,
   value: ``,
-  valueType: 'password',
+  valueType: `password`,
   isReady: false,
   validator: passwordValidator,
 }

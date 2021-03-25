@@ -15,9 +15,9 @@ export const nextcloudPostgresUser: IMemory = {
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Nextcloud Postgres User`,
-  tooltip: `Choose the user Nextcloud will use to connect to it's Postgres database.`,
+  tooltip: `The Nextcloud Postgres user`,
   value: ``,
-  valueType: 'text',
+  valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator,
 }

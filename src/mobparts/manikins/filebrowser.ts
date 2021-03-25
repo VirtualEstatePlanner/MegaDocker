@@ -16,8 +16,8 @@ import { filebrowserDatabaseDotDbMite } from '../mites/custom/filebrowserDatabas
  * elk Manikin
  */
 export const filebrowserManikin: IManikin = {
-  description: `Email and Webmail`,
-  folder: `email`,
+  description: `File Sharing`,
+  folder: `filebrowser`,
   isCore: false,
   isSelected: false,
   manikinGroups: [`Utility`],
@@ -25,7 +25,7 @@ export const filebrowserManikin: IManikin = {
   manikinIndex: 10006,
   memories: [],
   mites: [filebrowserServiceMite, filebrowserDatabaseDotDbMite],
-  name: `E-mail`,
+  name: `FileBrowser`,
   ports: [],
   subfolders: [`data`],
 }

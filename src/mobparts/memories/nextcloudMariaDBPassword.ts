@@ -15,9 +15,9 @@ export const nextcloudMariaDBPassword: IMemory = {
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Nextcloud MariaDB Password`,
-  tooltip: `Choose a password for nextcloud to connect to it's MariaDB database`,
+  tooltip: `The Nextcloud MariaDB password`,
   value: ``,
-  valueType: 'password',
+  valueType: `password`,
   isReady: false,
   validator: passwordValidator,
 }

@@ -16,9 +16,9 @@ export const ldapOrganisation: IMemory = {
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `LDAP Organisation Name`,
-  tooltip: `Choose the organization name for your LDAP server.`,
+  tooltip: `The top-level LDAP organization`,
   value: ``,
-  valueType: 'text',
+  valueType: `text`,
   isReady: false,
   // TODO: create a validator that allows whitespace
   validator: noValidator,

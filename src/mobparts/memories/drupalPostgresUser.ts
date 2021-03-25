@@ -15,9 +15,9 @@ export const drupalPostgresUser: IMemory = {
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `Drupal Postgres User`,
-  tooltip: `Choose a username for Drupal to connect to it's PostgreSQL database.`,
+  tooltip: `The Drupal Postgres user`,
   value: ``,
-  valueType: 'text',
+  valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator,
 }

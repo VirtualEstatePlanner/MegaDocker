@@ -15,9 +15,9 @@ export const rocketchatBotPassword: IMemory = {
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `RocketChat Bot Password`,
-  tooltip: `Choose the password of the RocketChat bot user.`,
+  tooltip: `The RocketChat bot user's password`,
   value: ``,
-  valueType: 'password',
+  valueType: `password`,
   isReady: false,
   validator: passwordValidator,
 }

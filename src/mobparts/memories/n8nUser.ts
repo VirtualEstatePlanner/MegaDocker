@@ -15,9 +15,9 @@ export const n8nUser: IMemory = {
   memoryType: `NormalMemory`,
   shouldAutocomplete: false,
   name: `n8n User`,
-  tooltip: `Choose a username for the n8n administrator`,
+  tooltip: `The n8n admin user`,
   value: ``,
-  valueType: 'text',
+  valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator,
 }

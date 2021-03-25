@@ -15,9 +15,9 @@ export const ledgerPostgresPassword: IMemory = {
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Ledger Postgres Password`,
-  tooltip: `Choose the password for Ledger to connect to it's Postgres database`,
+  tooltip: `The LedgerSMB Postgres user's password`,
   value: ``,
-  valueType: 'password',
+  valueType: `password`,
   isReady: false,
   validator: passwordValidator,
 }
