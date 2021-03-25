@@ -105,7 +105,7 @@ export const gitlabServiceMite: ITraefikedServiceMite = {
  gitlab-redis:
   image: redis:alpine
   volumes:
-# TODO: confirm log file location  
+# TODO: determine log file locations
    - \${PWD}/logs/gitlab:/var/log/redis
    - \${PWD}/gitlab/redis:/data
   networks:

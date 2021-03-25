@@ -9,7 +9,6 @@
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
 // TODO: fix traefik authorization to use ldap
-// TODO: hash password for login
 
 const hostnames: string[] = [`traefik`]
 
@@ -62,8 +61,7 @@ export const traefikServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.traefik.entrypoints=plainhttp'
     - 'traefik.http.routers.traefik.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]") && (PathPrefix("/api") || PathPrefix("/dashboard"))'
-## TODO: create a traefik login and password with an htpassword compatible JS library, or integrate LDAP auth
-## really integraet LDAP auth
+## TODO: integrate LDAP auth to get rid of this sloppiness
 ##    - 'traefik.http.middlewares.traefik-auth.basicauth.users=[[TRAEFIKUSER]]:[[TRAEFIKPASSWORD]]'
     - 'traefik.http.middlewares.traefik-auth.basicauth.users=traefikuser:$$apr1$$OG8S9BgU$$7BwcoMe3X.gpi.aRLljDd.'
     - 'traefik.http.routers.traefik-https.middlewares=traefik-auth'
