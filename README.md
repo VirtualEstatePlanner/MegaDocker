@@ -15,20 +15,12 @@ Most recent changes:
 - gorgeous dark mode neomorphic design with convenient toggle switch
 - fixed react nested hooks error in memory table
 - added automated testing
-- a ton of bugfixes
 - generates a script to setup your Cloudflare hosts for you
 - added Mealie and Syncthing Manikins
 - even more neomorphic, even more gorgeous
 - Supports Apple Silicon and Linux arm64
 - React 17 and Material UI 5
 - gorgeous neomorphic design
-- added Styleguidist Manikin
-- added n8n Manikin for service integration
-- removed chuff from old versions
-- fixed strictNullChecks issue
-- Windows build from macOS works again
-- Added NextCloud Manikin
-- Added LedgerSMB Manikin
 
 ![alt text](./src/images/icons/icon.png 'MegaDockerLogo')
 
