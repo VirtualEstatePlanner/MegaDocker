@@ -20,7 +20,7 @@
 
 .MainArea {
   height: 98vh;
-  width: 75vw;
+  width: 80vw;
   flex-direction: column;
   overflow: auto;
   justify-content: flex-start;
