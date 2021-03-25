@@ -1,8 +1,8 @@
 /** @format */
 
-//  ManikinTable.test.tsx
+//  DarkModeSwitch.tsx
 //  MEGADocker
-//  a React Component that renders a table for the Manikins
+//  a React Component that renders the toggle switch for dark mode
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 

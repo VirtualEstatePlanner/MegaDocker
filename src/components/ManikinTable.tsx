@@ -1,6 +1,6 @@
 /** @format */
 
-//  ManikinTable.test.tsx
+//  ManikinTable.tsx
 //  MEGADocker
 //  a React Component that renders a table for the Manikins
 //  Created by George Georgulas IV on 3/17/19.

@@ -1,6 +1,6 @@
 /** @format */
 
-//  ManikinSwitch.test.tsx
+//  ManikinSwitch.tsx
 //  MEGADocker
 //  a React Component that renders the toggle switch for a Manikin
 //  Created by George Georgulas IV on 3/17/19.

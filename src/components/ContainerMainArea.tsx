@@ -1,6 +1,6 @@
 /** @format */
 
-//  ContainerMainArea.test.tsx
+//  ContainerMainArea.tsx
 //  MEGADocker
 //  a React Component that renders a div that holds the right side of the application
 //  Created by George Georgulas IV on 3/17/19.

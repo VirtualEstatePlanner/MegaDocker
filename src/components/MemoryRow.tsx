@@ -17,7 +17,7 @@ import { IMegaDockerState } from '../interfaces/IMegaDockerState'
 
 /**
  *  generates the payload to reduce
- * @param memory the IMemory that will be reduced against the state
+ * @param memoryToUpdate the IMemory that will be reduced against the state
  * @param newValue the IMemory.value to reduce against
  */
 const createMemoryValueAction: Function = (memoryToUpdate: IMemory, newValue: string): IUpdateMemoryValueAction => {
@@ -30,6 +30,10 @@ const createMemoryValueAction: Function = (memoryToUpdate: IMemory, newValue: st
   }
 }
 
+/**
+ * renders a row of the memory table
+ * @param memory the memory to render
+ */
 export const MemoryRow: React.FC<IMemory> = (memory: IMemory): React.ReactElement<IMemory> => {
   const {
     // eslint-disable-next-line

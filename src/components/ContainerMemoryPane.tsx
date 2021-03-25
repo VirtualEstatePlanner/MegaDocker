@@ -1,6 +1,6 @@
 /** @format */
 
-//  ContainerMemoryPane.test.tsx
+//  ContainerMemoryPane.tsx
 //  MEGADocker
 //  a React Component that renders a div that holds the memory table
 //  Created by George Georgulas IV on 3/17/19.

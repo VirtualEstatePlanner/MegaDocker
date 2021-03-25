@@ -1,6 +1,6 @@
 /** @format */
 
-//  App.test.tsx
+//  ManikinRow.tsx
 //  MEGADocker
 //  a React Component that renders one row of the Manikin Table
 //  Created by George Georgulas IV on 3/17/19.
