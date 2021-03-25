@@ -13,6 +13,7 @@ import { IMite } from '../interfaces/IMite'
 import { workingManikins } from '../globals/workingManikins'
 import { megaReducer } from '../functions/reducers/megaReducer'
 import { OrbThemeLight } from './OrbThemeLight'
+import { ThemeProvider } from '@material-ui/core'
 
 const coreManikins: IManikin[] = workingManikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? true : false))
 const otherManikins: IManikin[] = workingManikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? false : true))
@@ -37,7 +38,11 @@ export const MegaContext: React.Context<any> = React.createContext({
 export const MegaProvider: React.FC = (props: any): React.ReactElement => {
   const [state, dispatch] = React.useReducer(megaReducer, initialMegaDockerState)
 
-  return <MegaContext.Provider value={{ state, dispatch }}>{props.children}</MegaContext.Provider>
+  return (
+    <MegaContext.Provider value={{ state, dispatch }}>
+      <ThemeProvider theme={state.theme}>{props.children}</ThemeProvider>
+    </MegaContext.Provider>
+  )
 }
 
 export const MegaConsumer: React.FC = (props: any): React.ReactElement => {

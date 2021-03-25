@@ -10,18 +10,13 @@ import React from 'react'
 import { ContainerManikinPane } from './ContainerManikinPane'
 import { ContainerMainArea } from './ContainerMainArea'
 import { MegaProvider } from './MegaContext'
-import { OrbThemeLight } from './OrbThemeLight'
-//import { OrbThemeDark } from './OrbThemeDark'
-import { ThemeProvider } from '@material-ui/core'
 
 export const App: React.FC = (): React.ReactElement => {
   return (
     <div className='App'>
       <MegaProvider>
-        <ThemeProvider theme={OrbThemeLight}>
-          <ContainerManikinPane />
-          <ContainerMainArea />
-        </ThemeProvider>
+        <ContainerManikinPane />
+        <ContainerMainArea />
       </MegaProvider>
     </div>
   )
