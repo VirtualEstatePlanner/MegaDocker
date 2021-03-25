@@ -1,6 +1,6 @@
 {
-  "version": "0.4.2-beta",
-  "buildVersion": "0.4.2-beta",
+  "version": "0.4.3-beta",
+  "buildVersion": "0.4.3-beta",
   "author": "George Georgulas IV <georgegeorgulas@gmail.com> (https://github.com/VirtualEstatePlanner)",
   "copyright": "© 2019-2021 The MEGADocker Group",
   "private": true,
@@ -22,6 +22,7 @@
     "uninstall": "rm -rf yarn.lock && rm -rf node_modules",
     "clean": "run-p -l unbinaries uncache undist unelectron unerror",
     "reinstall": "yarn clean && yarn uninstall && yarn",
+    "pretty": "node node_modules/.bin/prettier --write .",
     "reindex": "cp src/scripts/tsnode/tsconfig.json . && npx ts-node src/scripts/utility/reindex.ts",
     "new:man": "cp src/scripts/tsnode/tsconfig.json . && npx ts-node src/scripts/partmakers/newManikin.ts",
     "new:mem": "cp src/scripts/tsnode/tsconfig.json . && npx ts-node src/scripts/partmakers/newMemory.ts",
