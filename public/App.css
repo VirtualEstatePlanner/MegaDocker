@@ -21,7 +21,6 @@
 }
 
 .MainArea {
-  display: flex;
   height: 100vh;
   width: 75vw;
   flex-direction: column;
@@ -29,31 +28,27 @@
 }
 
 .ManikinPane {
-  display: flex;
   flex-direction: column;
   height: 100vh;
   width: 15vw;
   overflow: auto;
 }
 
-.ManikinTable {
+.ManikinTableBody {
   overflow: scroll;
 }
 
 .MemoryPane {
-  display: fixed;
   flex-direction: column;
-  overflow: scroll;
+  overflow: auto;
   height: 95vh;
   width: 75vw;
 }
 
 .MemoryTable {
-  display: fixed;
   height: 95vh;
 }
 
 .MemoryTableBody {
-  padding: 0 !important;
   overflow: scroll;
 }
