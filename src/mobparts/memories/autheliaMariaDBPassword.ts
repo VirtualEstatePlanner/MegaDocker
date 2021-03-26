@@ -17,7 +17,7 @@ export const autheliaMariaDBPassword: IMemory = {
   name: `Authelia MariaDB Password`,
   tooltip: `The password for the Authelia MariaDB user`,
   value: ``,
-  valueType: `text`,
+  valueType: `password`,
   isReady: false,
   validator: passwordValidator,
 }
