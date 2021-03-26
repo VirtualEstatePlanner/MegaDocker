@@ -6,12 +6,13 @@
 
 # MEGADocker v0.4.4-beta
 
-Modular Enterprise-Grade Automated Docker
+[Modular Enterprise-Grade Automated Docker](https://virtualestateplanner.github.io/MegaDocker/)
 
 ## Magically make microservices for the masses
 
 Most recent changes:
 
+- added application to [GitHub Pages](https://virtualestateplanner.github.io/MegaDocker/)
 - added filebrowser Manikin
 - gorgeous dark mode neomorphic design with convenient toggle switch
 - fixed react nested hooks error in memory table
