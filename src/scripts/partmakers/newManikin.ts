@@ -39,6 +39,7 @@ const getManikinData = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 })
+
 getManikinData.question(`What is the full name of this service: `, function (manikinUIName: string) {
   runtimeManikinAnswers.uiName = manikinUIName
   getManikinData.question(`What will the file name for it be (camelCase): `, function (manikinName: string) {
