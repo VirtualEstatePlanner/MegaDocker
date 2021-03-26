@@ -35,7 +35,7 @@ getManikinData.question(`What is the path to this file's location?: `, function 
 
         const outputNewManikinString: string = makeFileString(runtimeCustomMiteAnswers)
 
-        fs.writeFileSync(`src/mobparts/memories/${runtimeCustomMiteAnswers.fileName}.ts`, outputNewManikinString)
+        fs.writeFileSync(`src/mobparts/mites/custom/${runtimeCustomMiteAnswers.fileName}.ts`, outputNewManikinString)
       })
     })
   })

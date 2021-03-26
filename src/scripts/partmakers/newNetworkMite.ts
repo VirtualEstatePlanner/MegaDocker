@@ -62,7 +62,7 @@ getNetworkMiteData.question(`What is the name of this application: `, function (
 
       const outputNewManikinString: string = makeNetworkMiteFileString(runtimeNetworkMiteAnswers)
 
-      fs.writeFileSync(`src/mobparts/memories/${runtimeNetworkMiteAnswers.fileName}.ts`, outputNewManikinString)
+      fs.writeFileSync(`src/mobparts/mites/network/${runtimeNetworkMiteAnswers.fileName}.ts`, outputNewManikinString)
     })
   })
 })

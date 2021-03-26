@@ -53,7 +53,7 @@ getManikinData.question(`What is the full name of this service: `, function (man
 
         const outputNewManikinString: string = makeFileString(manikinRuntimeOptions)
 
-        fs.writeFileSync(`src/mobparts/memories/${manikinRuntimeOptions.fileName}.ts`, outputNewManikinString)
+        fs.writeFileSync(`src/mobparts/manikins/${manikinRuntimeOptions.fileName}.ts`, outputNewManikinString)
       })
     })
   })
