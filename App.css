@@ -1,0 +1,52 @@
+/** @format */
+
+* {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.Paper {
+  height: 98vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.ButtonPane {
+  height: 5vh;
+}
+
+.MainArea {
+  height: 98vh;
+  width: 80vw;
+  flex-direction: column;
+  overflow: auto;
+  justify-content: flex-start;
+}
+
+.ManikinPane {
+  flex-direction: column;
+  height: 95vh;
+  width: 15vw;
+  overflow: auto;
+}
+
+.ManikinTableBody {
+  overflow: scroll;
+}
+
+.MemoryPane {
+  flex-direction: column;
+  overflow: auto;
+  height: 92vh;
+}
+
+.MemoryTable {
+  max-height: 95vh;
+}
+
+.MemoryTableBody {
+  overflow: scroll;
+}
