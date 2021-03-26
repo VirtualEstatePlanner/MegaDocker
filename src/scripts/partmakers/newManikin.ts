@@ -62,7 +62,9 @@ const makeFileString: Function = (options: IManikinTemplateOptions): string => {
   const date: Date = new Date()
   const shortDate = date.toLocaleString().split(',')[0]
   const year: number = date.getFullYear()
-  const template: string = `//  ${options.fileName}.ts
+  const template: string = `/** @format */
+
+  //  ${options.fileName}.ts
   //  MEGADocker
   //  ${options.description}
   //  Created by George Georgulas IV on ${shortDate}.

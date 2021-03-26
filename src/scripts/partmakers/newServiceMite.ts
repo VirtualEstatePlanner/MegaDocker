@@ -20,13 +20,17 @@ interface IServiceMiteTemplateOptions {
   tooltip: string
 }
 
-const makeServiceMiteFileString: Function = (options: IServiceMiteTemplateOptions) => {
+const makeServiceMiteFileString: Function = (options: IServiceMiteTemplateOptions): string => {
   const date: Date = new Date()
   const shortDate = date.toLocaleString().split(',')[0]
   const year: number = date.getFullYear()
-  const template: string = `//  ${options.fileName}.ts
-  //  MEGADocker
-  //  ${options.description}
-  //  Created by George Georgulas IV on ${shortDate}.
-  //  Copyright © ${year} The MegaDocker Group. All rights reserved.`
+  const template: string = `/** @format */
+
+//  ${options.fileName}.ts
+//  MEGADocker
+//  ${options.description}
+//  Created by George Georgulas IV on ${shortDate}.
+//  Copyright © ${year} The MegaDocker Group. All rights reserved.`
+
+  return template
 }
