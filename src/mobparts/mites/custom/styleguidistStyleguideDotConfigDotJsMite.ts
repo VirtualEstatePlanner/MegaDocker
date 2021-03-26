@@ -7,7 +7,6 @@
 
 import { ICustomMite } from '../../../interfaces/ICustomMite'
 
-const pathObjectExtValue: string = '`.connect${pathObject.ext}`'
 export const styleguidistStyleguideDotConfigDotJsMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
@@ -28,7 +27,7 @@ export const styleguidistStyleguideDotConfigDotJsMite: ICustomMite = {
             return true
           } else {
             const pathObject = path.parse(file);
-            pathObject.ext = ${pathObjectExtValue}
+            pathObject.ext = \`.connect\${pathObject.ext}\`
             const { root, dir, ext, name } = pathObject;
             return !fs.existsSync(path.format({ root, dir, ext, name }));
           }
