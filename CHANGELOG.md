@@ -2,7 +2,7 @@
 
 ## a list of changes per version number
 
-- `v0.4.5-beta` : **bootstraps LDIF based on existing services, added LDIF Mite generator script**
+- `v0.4.5-beta` : **bootstraps LDIF based on existing services, added LDIF Mite generator script, cleaned up reindex script**
 - `v0.4.4-beta` : docker hub ELK images, filebrowser Manikin, finished convenience generator scripts
 - `v0.4.3-beta` : Shiny new Dark Mode, added "pretty" script to manually trigger prettier, no more React hook nesting errors
 - `v0.4.2-beta` : Testing, testing, 1, 2, 3.  Okay, testing 0.7, maybe.
