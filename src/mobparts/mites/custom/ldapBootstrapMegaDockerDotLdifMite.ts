@@ -43,9 +43,6 @@ objectclass: organizationalUnit
 dn: ou=GitlabUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=SwarmpitUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 dn: ou=SkoposUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
