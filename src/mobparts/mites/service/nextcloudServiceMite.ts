@@ -68,9 +68,9 @@ export const nextcloudServiceMite: ITraefikedServiceMite = {
     condition: any
    labels:
     - "com.MegaDocker.description=MariaDB - Storage for NextCloud"
-  placement:
-   constraints:
-    - node.role == manager
+   placement:
+    constraints:
+     - node.role == manager
 
 # End NextCloud Service Section
 

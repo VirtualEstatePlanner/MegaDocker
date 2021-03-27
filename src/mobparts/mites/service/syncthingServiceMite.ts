@@ -18,33 +18,33 @@ export const syncthingServiceMite: ITraefikedServiceMite = {
 
 # Begin Syncthing Service Section
 
-  syncthing:
-   image: syncthing/syncthing:latest
-   networks:
-    - traefik
-   environment:
-    - PUID=$HOSTUSERID
-    - PGID=$HOSTUSERGID
-   volumes:
-    - \${PWD}/syncthing/data:/var/syncthing
-   deploy:
-    restart_policy:
-     condition: any
-    labels:
-     - 'traefik.enable=true'
-     - 'traefik.http.routers.syncthing.entrypoints=plainhttp'
-     - 'traefik.http.services.syncthing.loadbalancer.server.port=8384'
-     - 'traefik.http.routers.syncthing.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
-     - 'traefik.http.middlewares.syncthing-force-secure.redirectscheme.scheme=https'
-     - 'traefik.http.routers.syncthing.middlewares=syncthing-force-secure'
-     - 'traefik.http.routers.syncthing.service=syncthing'
-     - 'traefik.http.routers.syncthing-https.entrypoints=encryptedhttp'
-     - 'traefik.http.routers.syncthing-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
-     - 'traefik.http.routers.syncthing-https.service=syncthing'
-     - 'traefik.http.routers.syncthing-https.tls=true'
-     - 'traefik.http.services.syncthing-https.loadbalancer.server.port=8384'
-     - 'com.MegaDocker.description=syncthing - syncthing filesharing for video files'
- 
+ syncthing:
+  image: syncthing/syncthing:latest
+  networks:
+   - traefik
+  environment:
+   - PUID=$HOSTUSERID
+   - PGID=$HOSTUSERGID
+  volumes:
+   - \${PWD}/syncthing/data:/var/syncthing
+  deploy:
+   restart_policy:
+    condition: any
+   labels:
+    - 'traefik.enable=true'
+    - 'traefik.http.routers.syncthing.entrypoints=plainhttp'
+    - 'traefik.http.services.syncthing.loadbalancer.server.port=8384'
+    - 'traefik.http.routers.syncthing.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.middlewares.syncthing-force-secure.redirectscheme.scheme=https'
+    - 'traefik.http.routers.syncthing.middlewares=syncthing-force-secure'
+    - 'traefik.http.routers.syncthing.service=syncthing'
+    - 'traefik.http.routers.syncthing-https.entrypoints=encryptedhttp'
+    - 'traefik.http.routers.syncthing-https.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]")'
+    - 'traefik.http.routers.syncthing-https.service=syncthing'
+    - 'traefik.http.routers.syncthing-https.tls=true'
+    - 'traefik.http.services.syncthing-https.loadbalancer.server.port=8384'
+    - 'com.MegaDocker.description=syncthing - syncthing filesharing for video files'
+
 # End Syncthing Service Section
 
 `,

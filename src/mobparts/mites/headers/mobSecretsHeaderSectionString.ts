@@ -9,7 +9,8 @@ export const mobSecretsHeaderSectionString: IHeaderMite = {
 
 # Begin Secrets Section
 
-secrets:
+## TODO - uncomment this when we implement docker secrets
+# secrets:
 
 `,
 }

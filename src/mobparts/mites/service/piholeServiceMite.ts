@@ -26,8 +26,8 @@ export const piholeServiceMite: ITraefikedServiceMite = {
    - 53:53/tcp
    - 53:53/udp
   environment:
-   TZ=$HOSTTIMEZONE
-   WEBPASSWORD=[[PIHOLEPASSWORD]]
+   - TZ=$HOSTTIMEZONE
+   - WEBPASSWORD=[[PIHOLEPASSWORD]]
   volumes:
    - \${PWD}/logs/pihole:/loglocation
    - \${PWD}/pihole/etc-pihole/:/etc/pihole/
