@@ -1,0 +1,856 @@
+# Customers ou
+dn: ou=Customers,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## Businesses-Customers ou
+dn: ou=Businesses,ou=Customers,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+### Domestic-Businesses-Customers ou
+dn: ou=Domestic,ou=Businesses,ou=Customers,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+### International-Businesses-Customers ou
+dn: ou=International,ou=Businesses,ou=Customers,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## Individuals-Customers-ou
+dn: ou=Individuals,ou=Customers,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+### Domestic-Individuals-Customers-ou
+dn: ou=Domestic,ou=Individuals,ou=Customers,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+### International-Individuals-Customers-ou
+dn: ou=International,ou=Individuals,ou=Customers,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+
+# Employees ou
+dn: ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## Staff-Employees ou
+dn: ou=Staff,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## Managers-Employees ou
+dn: ou=Managers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## Executives-Employees ou
+dn: ou=Executives,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## InternalUsers-Employees ou
+dn: ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+
+
+
+
+### LazyLibrarianUsers-InternalUsers-Employees
+dn: ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### LazyLibrarianAdmins-LazyLibrarianUsers-InternalUsers-Employees
+dn: ou=LazyLibrarianAdmins,ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### LazyLibrarianModerators-LazyLibrarianUsers-InternalUsers-Employees
+dn: ou=LazyLibrarianModerators,ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+### MylarUsers-InternalUsers-Employees
+dn: ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### MylarAdmins-MylarUsers-InternalUsers-Employees
+dn: ou=MylarAdmins,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### MylarModerators-MylarUsers-InternalUsers-Employees
+dn: ou=MylarModerators,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### DrupalUsers-InternalUsers-Employees
+dn: ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### DrupalAdmins-DrupalUsers-InternalUsers-Employees
+dn: ou=DrupalAdmins,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### DrupalModerators-DrupalUsers-InternalUsers-Employees
+dn: ou=DrupalModerators,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### EmailUsers-InternalUsers-Employees
+dn: ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### EmailAdmins-EmailUsers-InternalUsers-Employees
+dn: ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### GhostUsers-InternalUsers-Employees
+dn: ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### GhostModerators-GhostUsers-InternalUsers-Employees
+dn: ou=GhostModerators,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### GhostAdmins-GhostUsers-InternalUsers-Employees
+dn: ou=GhostAdmins,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### GitlabUsers-InternalUsers-Employees
+dn: ou=GitlabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### GitLabAdmins-GitlabUsers-InternalUsers-Employees
+dn: ou=GitLabAdmins,ou=GitlabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### HeimdallUsers-InternalUsers-Employees
+dn: ou=HeimdallUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### HeimdallAdmins-HeimdallUsers-InternalUsers-Employees
+dn: ou=HeimdallAdmins,ou=HeimdallUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### KanboardUsers-InternalUsers-Employees
+dn: ou=KanboardUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### KanboardAdmins-KanboardUsers-InternalUsers-Employees
+dn: ou=KanboardAdmins,ou=KanboardUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### KibanaUsers-InternalUsers-Employees
+dn: ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### KibanaAdmins-KibanaUsers-InternalUsers-Employees
+dn: ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### NextcloudUsers-InternalUsers-Employees
+dn: ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### NextcloudModerators-NextcloudUsers-InternalUsers-Employees
+dn: ou=NextcloudModerators,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### NextcloudAdmins-NextcloudUsers-InternalUsers-Employees
+dn: ou=NextcloudAdmins,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### OwncloudUsers-InternalUsers-Employees
+dn: ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### OwncloudModerators-OwncloudUsers-InternalUsers-Employees
+dn: ou=OwncloudModerators,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### OwncloudAdmins-OwncloudUsers-InternalUsers-Employees
+dn: ou=OwncloudAdmins,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### PiholeUsers-InternalUsers-Employees
+dn: ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### PiholeAdmins-PiholeUsers-InternalUsers-Employees
+dn: ou=PiholeAdmins,ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### PortainerUsers-InternalUsers-Employees
+dn: ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### PortainerAdmins-PortainerUsers-InternalUsers-Employees
+dn: ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### RocketchatUsers-InternalUsers-Employees
+dn: ou=RocketchatUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### RocketchatModerators-RocketchatUsers-InternalUsers-Employees
+dn: ou=RocketchatModerators,ou=RocketchatUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### RocketchatAdmins-RocketchatUsers-InternalUsers-Employees
+dn: ou=RocketchatAdmins,ou=RocketchatUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### SwarmpitUsers-InternalUsers-Employees
+dn: ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### SwarmpitAdmins-SwarmpitUsers-InternalUsers-Employees
+dn: ou=SwarmpitAdmins,ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### TraefikUsers-InternalUsers-Employees
+dn: ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### TraefikAdmins-TraefikUsers-InternalUsers-Employees
+dn: ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+### WordpressUsers-InternalUsers-Employees
+dn: ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### WordpressModerators-WordpressUsers-InternalUsers-Employees
+dn: ou=WordpressModerators,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### WordpressAdmins-WordpressUsers-InternalUsers-Employees
+dn: ou=WordpressAdmins,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+
+## Technicians-Employees ou
+dn: ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+### Moderators-Technicians-Employees ou
+dn: ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+### Administrators-Technicians-Employees ou
+dn: ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+
+# Users ou
+dn: ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## BotUsers-Users ou
+dn: ou=BotUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+### ExternalUsers-BotUsers-Users ou
+dn: ou=ExternalUsers,ou=BotUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+### InternalUsers-BotUsers-Users ou
+dn: ou=InternalUsers,ou=BotUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## HumanUsers-Users ou
+dn: ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+### ExternalUsers-HumanUsers-Users ou
+dn: ou=ExternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### RocketchatGuestUsers-ExternalUsers-HumanUsers-Users ou
+dn: ou=RocketchatGuestUsers,ou=ExternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### WordpressGuestUsers-ExternalUsers-HumanUsers-Users ou
+dn: ou=WordpressGuestUsers,ou=ExternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+### InternalUsers-HumanUsers-Users ou
+dn: ou=InternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+
+# Vendors ou
+dn: ou=Vendors,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## Domestic-Vendors
+dn: ou=Domestic,ou=Vendors,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## International-Vendors
+dn: ou=International,ou=Vendors,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+
+
+
+#* example users
+#* example admin
+dn: uid=george,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: George Georgulas IV
+sn: Georgulas
+givenname: George
+uid: george
+ou: Administrators
+ou: people
+description: It's a-me! Georgio!
+
+#* example moderator
+dn: uid=joe,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Jow Treanor II
+sn: Treanor
+givenname: Joe
+uid: joe
+ou: Administrators
+ou: people
+description: GO JOE!
+
+
+
+
+
+
+
+##### ITAdmins-TraefikAdmins-TraefikUsers-InternalUsers-Employees
+dn: ou=TraefikITAdmins,ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-GitLabAdmins-GitlabUsers-InternalUsers-Employees
+dn: ou=GitLabITAdmins,ou=GitLabAdmins,ou=GitlabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-SwarmpitAdmins-SwarmpitUsers-InternalUsers-Employees
+dn: ou=SwarmpitITAdmins,ou=SwarmpitAdmins,ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-KanboardAdmins-KanboardUsers-InternalUsers-Employees
+dn: ou=KanboardITAdmins,ou=KanboardAdmins,ou=KanboardUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-KibanaAdmins-KibanaUsers-InternalUsers-Employees
+dn: ou=KibanaITAdmins,ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-DrupalAdmins-DrupalUsers-InternalUsers-Employees
+dn: ou=DrupalITAdmins,ou=DrupalAdmins,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-GhostAdmins-GhostUsers-InternalUsers-Employees
+dn: ou=GhostITAdmins,ou=GhostAdmins,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-WordpressAdmins-WordpressUsers-InternalUsers-Employees
+dn: ou=WordpressITAdmins,ou=WordpressAdmins,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-PiholeAdmins-PiholeUsers-InternalUsers-Employees
+dn: ou=PiholeITAdmins,ou=PiholeAdmins,ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-EmailAdmins-EmailUsers-InternalUsers-Employees
+dn: ou=EmailITAdmins,ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-RocketchatAdmins-RocketchatUsers-InternalUsers-Employees
+dn: ou=RocketchatITAdmins,ou=RocketchatAdmins,ou=RocketchatUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-PortainerAdmins-PortainerUsers-InternalUsers-Employees
+dn: ou=PortainerITAdmins,ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-NextcloudAdmins-NextcloudUsers-InternalUsers-Employees
+dn: ou=NextcloudITAdmins,ou=NextcloudAdmins,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-OwncloudAdmins-OwncloudUsers-InternalUsers-Employees
+dn: ou=OwncloudITAdmins,ou=OwncloudAdmins,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITAdmins-HeimdallAdmins-HeimdallUsers-InternalUsers-Employees
+dn: ou=HeimdallITAdmins,ou=HeimdallAdmins,ou=HeimdallUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+
+##### ITModerators-DrupalModerators-DrupalUsers-InternalUsers-Employees
+dn: ou=DrupalITModerators,ou=DrupalModerators,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITModerators-GhostModerators-GhostUsers-InternalUsers-Employees
+dn: ou=GhostITModerators,ou=GhostModerators,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITModerators-WordpressModerators-WordpressUsers-InternalUsers-Employees
+dn: ou=WordpressITModerators,ou=WordpressModerators,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITModerators-RocketchatModerators-RocketchatUsers-InternalUsers-Employees
+dn: ou=RocketchatITModerators,ou=RocketchatModerators,ou=RocketchatUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITModerators-WordpressModerators-WordpressUsers-InternalUsers-Employees
+dn: ou=WordpressITModerators,ou=NextcloudModerators,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+##### ITModerators-WordpressModerators-WordpressUsers-InternalUsers-Employees
+dn: ou=ITModerators,ou=OwncloudModerators,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+
+
+#@@@ Aliases - ITAdmins
+
+#@@@ TraefikAdmins -> ITAdmins
+dn: ou=TraefikAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: TraefikAdmins
+aliasedObjectName: ou=TraefikITAdmins,ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ GitLabAdmins -> ITAdmins
+dn: ou=GitLabAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: GitLabAdmins
+aliasedObjectName: ou=GitLabITAdmins,ou=GitLabAdmins,ou=GitLabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ SwarmpitAdmins -> ITAdmins
+dn: ou=SwarmpitAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: SwarmpitAdmins
+aliasedObjectName: ou=SwarmpitITAdmins,ou=SwarmpitAdmins,ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ KanboardAdmins -> ITAdmins
+dn: ou=KanboardAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: KanboardAdmins
+aliasedObjectName: ou=KanboardITAdmins,ou=KanboardAdmins,ou=KanboardUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ KibanaAdmins -> ITAdmins
+dn: ou=KibanaAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: KibanaAdmins
+aliasedObjectName: ou=KibanaITAdmins,ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ DrupalAdmins -> ITAdmins
+dn: ou=DrupalAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: DrupalAdmins
+aliasedObjectName: ou=DrupalITAdmins,ou=DrupalAdmins,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ GhostAdmins -> ITAdmins
+dn: ou=GhostAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: GhostAdmins
+aliasedObjectName: ou=GhostITAdmins,ou=GhostAdmins,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ WordpressAdmins -> ITAdmins
+dn: ou=WordpressAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: WordpressAdmins
+aliasedObjectName: ou=WordpressITAdmins,ou=WordpressAdmins,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ PiholeAdmins -> ITAdmins
+dn: ou=PiholeAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: PiholeAdmins
+aliasedObjectName: ou=PiholeITAdmins,ou=PiholeAdmins,ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ EmailAdmins -> ITAdmins
+dn: ou=EmailAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: EmailAdmins
+aliasedObjectName: ou=EmailITAdmins,ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ RocketchatAdmins -> ITAdmins
+dn: ou=RocketchatAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: RocketchatAdmins
+aliasedObjectName: ou=RocketchatITAdmins,ou=RocketchatAdmins,ou=RocketchatUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ PortainerAdmins -> ITAdmins
+dn: ou=PortainerAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: PortainerAdmins
+aliasedObjectName: ou=PortainerITAdmins,ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ NextcloudAdmins -> ITAdmins
+dn: ou=NextcloudAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: NextcloudAdmins
+aliasedObjectName: ou=NextcloudITAdmins,ou=NextcloudAdmins,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ OwncloudAdmins -> ITAdmins
+dn: ou=OwncloudAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: OwncloudAdmins
+aliasedObjectName: ou=OwncloudITAdmins,ou=OwncloudAdmins,ou=OwnCloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ HeimdallAdmins -> ITAdmins
+dn: ou=HeimdallAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: HeimdallAdmins
+aliasedObjectName: ou=HeimdallITAdmins,ou=HeimdallAdmins,ou=HeimdallUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+
+
+#@@@ Aliases - ITModerators
+
+#@@@ DrupalModerators -> ITModerators
+dn: ou=DrupalModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: DrupalModerators
+aliasedObjectName: ou=DrupalITModerators,ou=DrupalModerators,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ GhostModerators -> ITModerators
+dn: ou=GhostModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: GhostModerators
+aliasedObjectName: ou=GhostITModerators,ou=GhostModerators,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ NextcloudModerators -> ITModerators
+dn: ou=NextcloudModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: NextcloudModerators
+aliasedObjectName: ou=NextcloudITModerators,ou=NextcloudModerators,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ OwncloudModerators -> ITModerators
+dn: ou=OwncloudModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: OwncloudModerators
+aliasedObjectName: ou=OwncloudITModerators,ou=OwncloudModerators,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ RocketchatModerators -> ITModerators
+dn: ou=RocketchatModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: RocketchatModerators
+aliasedObjectName: ou=RocketchatITModerators,ou=RocketchatModerators,ou=RocketchatUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+#@@@ WordpressModerators -> ITModerators
+dn: ou=WordpressModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: WordpressModerators
+aliasedObjectName: ou=WordpressITModerators,ou=WordpressModerators,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
