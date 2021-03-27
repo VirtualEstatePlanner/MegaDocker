@@ -11,5 +11,23 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const portainerLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 99999,
-  miteString: ``,
+  miteString: `# Begin Portainer Section
+
+dn: ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=PortainerITAdmins,ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=PortainerAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: PortainerAdmins
+aliasedObjectName: ou=PortainerITAdmins,ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End Portainer Section
+`,
 }

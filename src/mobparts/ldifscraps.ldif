@@ -286,14 +286,6 @@ objectclass: organizationalUnit
 dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-### PortainerUsers-InternalUsers-Employees
-dn: ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### PortainerAdmins-PortainerUsers-InternalUsers-Employees
-dn: ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
@@ -466,10 +458,6 @@ objectclass: organizationalUnit
 dn: ou=EmailITAdmins,ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-##### ITAdmins-PortainerAdmins-PortainerUsers-InternalUsers-Employees
-dn: ou=PortainerITAdmins,ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 
 #@@@ KibanaAdmins -> ITAdmins
 dn: ou=KibanaAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -484,11 +472,4 @@ objectclass: alias
 objectclass: extensibleobject
 ou: EmailAdmins
 aliasedObjectName: ou=EmailITAdmins,ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-
-#@@@ PortainerAdmins -> ITAdmins
-dn: ou=PortainerAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: PortainerAdmins
-aliasedObjectName: ou=PortainerITAdmins,ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 

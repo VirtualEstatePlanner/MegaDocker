@@ -37,16 +37,10 @@ objectclass: organizationalUnit
 dn: ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=SkoposUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 dn: ou=KibanaUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=EmailUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-dn: ou=PortainerUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 `,
