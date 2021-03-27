@@ -5,7 +5,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const autheliaDotConfMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 50000,
+  miteIndex: 60000,
   miteFile: {
     path: `ldap/authelia-conf`,
     name: `authelia`,

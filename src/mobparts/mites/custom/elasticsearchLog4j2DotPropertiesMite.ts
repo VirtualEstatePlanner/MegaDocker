@@ -5,7 +5,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const elasticsearchLog4j2DotPropertiesMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 50003,
+  miteIndex: 60003,
   miteFile: {
     path: `elk/elasticsearch-config`,
     name: `log4j2`,

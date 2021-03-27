@@ -5,7 +5,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const filebrowserDatabaseDotDbMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 50005,
+  miteIndex: 60005,
   miteFile: {
     path: `filebrowser`,
     name: `database`,

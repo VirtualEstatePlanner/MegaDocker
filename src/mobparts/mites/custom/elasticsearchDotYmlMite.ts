@@ -5,7 +5,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const elasticsearchDotYmlMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 50001,
+  miteIndex: 60001,
   miteFile: {
     path: `elk/elasticsearch-config`,
     name: `elasticsearch`,
