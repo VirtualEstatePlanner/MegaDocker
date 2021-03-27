@@ -10,7 +10,7 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const gitlabLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50008,
   miteString: `# Begin GitLab section
 
 dn: ou=GitlabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]

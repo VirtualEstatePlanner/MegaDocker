@@ -10,7 +10,7 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const portainerLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50027,
   miteString: `# Begin Portainer Section
 
 dn: ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]

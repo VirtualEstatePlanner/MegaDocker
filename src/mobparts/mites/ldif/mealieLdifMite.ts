@@ -10,6 +10,6 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const mealieLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50016,
   miteString: ``,
 }

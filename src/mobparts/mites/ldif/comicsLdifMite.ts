@@ -10,7 +10,7 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const comicsLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50001,
   miteString: `# Begin Mylar Section
 
 dn: ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]

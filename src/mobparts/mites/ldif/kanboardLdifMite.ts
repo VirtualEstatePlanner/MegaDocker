@@ -10,7 +10,7 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const kanboardLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50011,
   miteString: `# Begin Kanboard Section
 
 dn: ou=KanboardUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]

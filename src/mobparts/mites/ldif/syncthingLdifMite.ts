@@ -10,6 +10,6 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const syncthingLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50031,
   miteString: ``,
 }

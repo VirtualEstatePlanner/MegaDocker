@@ -10,6 +10,6 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const plexLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50026,
   miteString: ``,
 }

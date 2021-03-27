@@ -10,7 +10,7 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const wordpressLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50037,
   miteString: `# Begin WordPress Section
 
 

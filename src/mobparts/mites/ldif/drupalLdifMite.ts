@@ -10,7 +10,7 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const drupalLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50002,
   miteString: `# Begin Drupal Section
 
 dn: ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]

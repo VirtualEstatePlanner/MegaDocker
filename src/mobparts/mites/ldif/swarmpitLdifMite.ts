@@ -10,7 +10,7 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const swarmpitLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50030,
   miteString: `# Begin Swarmpit section
 
 dn: ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]

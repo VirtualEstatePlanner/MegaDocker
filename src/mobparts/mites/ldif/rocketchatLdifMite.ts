@@ -10,7 +10,7 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const rocketchatLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50028,
   miteString: `# Begin Rocketchat Section
 
 dn: ou=RocketchatUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]

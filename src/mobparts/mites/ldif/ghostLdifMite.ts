@@ -10,7 +10,7 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 
 export const ghostLdifMite: ILDIFMite = {
   type: `LDIF`,
-  miteIndex: 99999,
+  miteIndex: 50007,
   miteString: `# Begin Ghost Section
 
 dn: ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
