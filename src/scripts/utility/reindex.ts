@@ -43,8 +43,15 @@ const networkMiteOptions: IindexerOptions = {
   replace: `  miteIndex: `,
 }
 
-const customMiteOptions: IindexerOptions = {
+const ldifMiteOptions: IindexerOptions = {
   start: 50000,
+  directory: `mobparts/mites/ldif`,
+  regex: miteIndexRegExp,
+  replace: `  miteIndex: `,
+}
+
+const customMiteOptions: IindexerOptions = {
+  start: 60000,
   directory: `mobparts/mites/custom`,
   regex: miteIndexRegExp,
   replace: `  miteIndex: `,
@@ -71,6 +78,7 @@ const reindexProject: Function = (): void => {
   reindexFiles(memoryOptions)
   reindexFiles(serviceMiteOptions)
   reindexFiles(networkMiteOptions)
+  reindexFiles(ldifMiteOptions)
   reindexFiles(customMiteOptions)
 }
 
