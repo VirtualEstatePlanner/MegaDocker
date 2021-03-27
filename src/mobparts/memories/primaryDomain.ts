@@ -13,7 +13,7 @@ export const primaryDomain: IMemory = {
   memoryIndex: 20038,
   memoryMarker: `[[PRIMARYDOMAIN]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `Web Domain`,
   tooltip: `The domain name for your MEGADOCKER Mob (such as 'example.com' or 'myawesomemob.org')`,
   value: ``,

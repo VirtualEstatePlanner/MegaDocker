@@ -13,7 +13,7 @@ export const nextcloudMariaDBUser: IMemory = {
   memoryIndex: 20031,
   memoryMarker: `[[NEXTCLOUDMARIADBUSER]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `Nextcloud MariaDB User`,
   tooltip: `The Nextcloud MariDB user.`,
   value: ``,

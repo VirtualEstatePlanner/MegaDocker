@@ -13,7 +13,7 @@ export const gitlabPostgresUser: IMemory = {
   memoryIndex: 20010,
   memoryMarker: `[[GITLABPOSTGRESUSER]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `GitLab Postgres User`,
   tooltip: `The GitLab Postgres user`,
   value: ``,

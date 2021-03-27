@@ -13,7 +13,7 @@ export const kibanaUser: IMemory = {
   memoryIndex: 20017,
   memoryMarker: `[[KIBANAUSER]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `Kibana User`,
   tooltip: `The Kibana user`,
   value: ``,

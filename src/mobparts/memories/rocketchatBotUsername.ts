@@ -13,7 +13,7 @@ export const rocketchatBotUsername: IMemory = {
   memoryIndex: 20040,
   memoryMarker: `[[ROCKETCHATBOTUSERNAME]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `RocketChat Bot User`,
   tooltip: `The RocketChat bot user`,
   value: ``,

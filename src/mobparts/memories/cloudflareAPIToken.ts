@@ -13,7 +13,7 @@ export const cloudflareAPIToken: IMemory = {
   memoryIndex: 20004,
   memoryMarker: `[[CLOUDFLAREAPITOKEN]]`,
   memoryType: `SecretMemory`,
-  shouldAutocomplete: true,
+  shouldAutocomplete: false,
   name: `CloudFlare API Token`,
   tooltip: `A CloudFlare API token with "DNS: Edit" and "Zone: Read" privileges for your domains`,
   value: ``,

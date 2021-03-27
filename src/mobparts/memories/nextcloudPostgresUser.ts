@@ -13,7 +13,7 @@ export const nextcloudPostgresUser: IMemory = {
   memoryIndex: 20033,
   memoryMarker: `[[NEXTCLOUDPOSTGRESUSER]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `Nextcloud Postgres User`,
   tooltip: `The Nextcloud Postgres user`,
   value: ``,

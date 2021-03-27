@@ -13,7 +13,7 @@ export const mobName: IMemory = {
   memoryIndex: 20026,
   memoryMarker: `[[MOBNAME]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `Mob Name`,
   tooltip: `The name of your MEGADocker Mob (only using lowercase letters or numbers)`,
   value: ``,

@@ -13,7 +13,7 @@ export const n8nUser: IMemory = {
   memoryIndex: 20028,
   memoryMarker: `[[N8NUSERNAME]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `n8n User`,
   tooltip: `The n8n admin user`,
   value: ``,

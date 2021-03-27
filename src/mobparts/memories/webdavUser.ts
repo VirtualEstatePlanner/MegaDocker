@@ -13,7 +13,7 @@ export const webdavUser: IMemory = {
   memoryIndex: 20044,
   memoryMarker: `[[WEBDAVUSER]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `WebDAV User`,
   tooltip: `The WebDAV user`,
   value: ``,

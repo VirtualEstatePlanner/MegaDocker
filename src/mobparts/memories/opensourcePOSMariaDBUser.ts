@@ -13,7 +13,7 @@ export const opensourcePOSMariaDBUser: IMemory = {
   memoryIndex: 20036,
   memoryMarker: `[[OPENSOURCEPOSMARIADBUSER]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `osPOS MariaDB User`,
   tooltip: `The osPOS MariaDB user`,
   value: ``,

@@ -14,7 +14,7 @@ export const ldapOrganisation: IMemory = {
   memoryIndex: 20021,
   memoryMarker: `[[LDAPORGANISATION]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `LDAP Organisation Name`,
   tooltip: `The top-level LDAP organization`,
   value: ``,

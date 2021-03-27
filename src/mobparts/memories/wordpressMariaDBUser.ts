@@ -13,7 +13,7 @@ export const wordpressMariaDBUser: IMemory = {
   memoryIndex: 20047,
   memoryMarker: `[[WORDPRESSMARIADBUSER]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `WP MariaDB User`,
   tooltip: `The WordPress MariaDB user`,
   value: ``,

@@ -13,7 +13,7 @@ export const drupalPostgresUser: IMemory = {
   memoryIndex: 20007,
   memoryMarker: `[[DRUPALPOSTGRESUSER]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `Drupal Postgres User`,
   tooltip: `The Drupal Postgres user`,
   value: ``,

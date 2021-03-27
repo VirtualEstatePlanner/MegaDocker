@@ -13,7 +13,7 @@ export const ledgerPostgresUser: IMemory = {
   memoryIndex: 20023,
   memoryMarker: `[[LEDGERPOSTGRESUSER]]`,
   memoryType: `NormalMemory`,
-  shouldAutocomplete: false,
+  shouldAutocomplete: true,
   name: `Ledger Postgres User`,
   tooltip: `The LedgerSMB Postgres user`,
   value: ``,
