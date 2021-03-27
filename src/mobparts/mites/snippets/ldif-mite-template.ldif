@@ -1,32 +1,30 @@
-# Begin BLANK Section
+# Begin [[BLANK]] Section
 
-dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=[[BLANK]]Users,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=[[BLANK]]Admins,ou=[[BLANK]]Users,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=[[BLANK]]Moderators,ou=[[BLANK]]Users,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=BLANKAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=[[BLANK]]Admins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
-ou: BLANKAdmins
-aliasedObjectName: ou=BlankITAdmins,ou=BlankAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+ou: [[BLANK]]Admins
+aliasedObjectName: ou=[[BLANK]]ITAdmins,ou=[[BLANK]]Admins,ou=[[BLANK]]Users,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
-dn: ou=BLANKModeratorss,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=[[BLANK]]Moderatorss,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
-ou: BLANKModerators
-aliasedObjectName: ou=BlankITModerators,ou=BlankModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+ou: [[BLANK]]Moderators
+aliasedObjectName: ou=[[BLANK]]ITModerators,ou=[[BLANK]]Moderators,ou=[[BLANK]]Users,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
-# End BLANK Section
+# End [[BLANK]] Section
 
 
-
-#* example users
-#* example admin
+#* example administrator
 dn: uid=george,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: top
 objectclass: person
