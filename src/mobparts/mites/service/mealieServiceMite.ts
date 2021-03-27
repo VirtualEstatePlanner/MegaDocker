@@ -23,8 +23,9 @@ export const mealieServiceMite: ITraefikedServiceMite = {
   environment:
    - db_type=sqlite 
   volumes:
-   - /var/data/mealie:/app/data
-   - /etc/localtime:/etc/localtime:ro
+   - \${PWD}/mealie/data:/app/data
+## TODO: fix /etc/localtime bug on macOS
+##   - /etc/localtime:/etc/localtime:ro
   networks:
    - traefik
   deploy:
