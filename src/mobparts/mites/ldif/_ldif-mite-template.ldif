@@ -1,0 +1,57 @@
+# Begin BLANK Section
+
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=BLANKAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: BLANKAdmins
+aliasedObjectName: ou=BlankITAdmins,ou=BlankAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=BLANKModeratorss,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: BLANKModerators
+aliasedObjectName: ou=BlankITModerators,ou=BlankModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End BLANK Section
+
+
+
+#* example users
+#* example admin
+dn: uid=george,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: George Georgulas IV
+sn: Georgulas
+givenname: George
+uid: george
+ou: Administrators
+ou: people
+description: It's a-me! Georgio!
+
+#* example moderator
+dn: uid=joe,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: top
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Jow Treanor II
+sn: Treanor
+givenname: Joe
+uid: joe
+ou: Administrators
+ou: people
+description: GO JOE!
+
+
