@@ -49,9 +49,6 @@ objectclass: organizationalUnit
 dn: ou=PortainerUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=OwncloudUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 dn: ou=HeimdallUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 `,

@@ -27,7 +27,6 @@ dn: ou=International,ou=Individuals,ou=Customers,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 
-
 # Employees ou
 dn: ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
@@ -47,10 +46,6 @@ objectclass: organizationalUnit
 ## InternalUsers-Employees ou
 dn: ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
-
-
-
-
 
 
 ### LazyLibrarianUsers-InternalUsers-Employees
@@ -165,7 +160,6 @@ dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINA
 objectclass: organizationalUnit
 
 
-
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
@@ -186,7 +180,6 @@ objectclass: organizationalUnit
 #### HeimdallAdmins-HeimdallUsers-InternalUsers-Employees
 dn: ou=HeimdallAdmins,ou=HeimdallUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
-
 
 
 ### KibanaUsers-InternalUsers-Employees
@@ -276,7 +269,6 @@ dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINA
 objectclass: organizationalUnit
 
 
-
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
@@ -301,22 +293,6 @@ objectclass: organizationalUnit
 #### BLANKModerators-BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
-
-
-### OwncloudUsers-InternalUsers-Employees
-dn: ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### OwncloudModerators-OwncloudUsers-InternalUsers-Employees
-dn: ou=OwncloudModerators,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### OwncloudAdmins-OwncloudUsers-InternalUsers-Employees
-dn: ou=OwncloudAdmins,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-
-
 
 ### PortainerUsers-InternalUsers-Employees
 dn: ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -326,9 +302,6 @@ objectclass: organizationalUnit
 dn: ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-
-### RocketchatUsers-InternalUsers-Employees
-
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
@@ -340,22 +313,6 @@ objectclass: organizationalUnit
 #### BLANKModerators-BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
-
-
-
-### BLANKUsers-InternalUsers-Employees
-dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
-dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### BLANKModerators-BLANKUsers-InternalUsers-Employees
-dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-
 
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -409,6 +366,17 @@ dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINA
 objectclass: organizationalUnit
 
 
+### BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKAdmins-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKAdmins,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+#### BLANKModerators-BLANKUsers-InternalUsers-Employees
+dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
 
 
 ## Technicians-Employees ou
@@ -422,7 +390,6 @@ objectclass: organizationalUnit
 ### Administrators-Technicians-Employees ou
 dn: ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
-
 
 
 # Users ou
@@ -454,7 +421,6 @@ dn: ou=InternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 
-
 # Vendors ou
 dn: ou=Vendors,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
@@ -466,8 +432,6 @@ objectclass: organizationalUnit
 ## International-Vendors
 dn: ou=International,ou=Vendors,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
-
-
 
 
 
@@ -502,13 +466,6 @@ description: GO JOE!
 
 
 
-
-
-
-
-
-
-
 ##### ITAdmins-KibanaAdmins-KibanaUsers-InternalUsers-Employees
 dn: ou=KibanaITAdmins,ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
@@ -521,14 +478,9 @@ objectclass: organizationalUnit
 dn: ou=PortainerITAdmins,ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-##### ITAdmins-OwncloudAdmins-OwncloudUsers-InternalUsers-Employees
-dn: ou=OwncloudITAdmins,ou=OwncloudAdmins,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 ##### ITAdmins-HeimdallAdmins-HeimdallUsers-InternalUsers-Employees
 dn: ou=HeimdallITAdmins,ou=HeimdallAdmins,ou=HeimdallUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
-
 
 #@@@ KibanaAdmins -> ITAdmins
 dn: ou=KibanaAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -536,7 +488,6 @@ objectclass: alias
 objectclass: extensibleobject
 ou: KibanaAdmins
 aliasedObjectName: ou=KibanaITAdmins,ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-
 
 #@@@ EmailAdmins -> ITAdmins
 dn: ou=EmailAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -552,31 +503,9 @@ objectclass: extensibleobject
 ou: PortainerAdmins
 aliasedObjectName: ou=PortainerITAdmins,ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
-
-#@@@ OwncloudAdmins -> ITAdmins
-dn: ou=OwncloudAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: OwncloudAdmins
-aliasedObjectName: ou=OwncloudITAdmins,ou=OwncloudAdmins,ou=OwnCloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-
 #@@@ HeimdallAdmins -> ITAdmins
 dn: ou=HeimdallAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
 ou: HeimdallAdmins
 aliasedObjectName: ou=HeimdallITAdmins,ou=HeimdallAdmins,ou=HeimdallUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-
-#@@@ OwncloudModerators -> ITModerators
-dn: ou=OwncloudModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: OwncloudModerators
-aliasedObjectName: ou=OwncloudITModerators,ou=OwncloudModerators,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-
-#@@@ WordpressModerators -> ITModerators
-dn: ou=WordpressModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: WordpressModerators
-aliasedObjectName: ou=WordpressITModerators,ou=WordpressModerators,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
