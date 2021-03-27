@@ -11,5 +11,29 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const plexLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 50026,
-  miteString: ``,
+  miteString: `# Begin PlexMediaServer Section
+
+dn: ou=PlexMediaServerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=PlexMediaServerAdmins,ou=PlexMediaServerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=PlexMediaServerModerators,ou=PlexMediaServerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=PlexMediaServerAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: PlexMediaServerAdmins
+aliasedObjectName: ou=PlexMediaServerITAdmins,ou=PlexMediaServerAdmins,ou=PlexMediaServerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=PlexMediaServerModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: PlexMediaServerModerators
+aliasedObjectName: ou=PlexMediaServerITModerators,ou=PlexMediaServerModerators,ou=PlexMediaServerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End PlexMediaServer Section
+`,
 }

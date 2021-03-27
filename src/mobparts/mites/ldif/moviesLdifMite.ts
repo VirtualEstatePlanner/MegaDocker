@@ -11,5 +11,29 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const moviesLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 50018,
-  miteString: ``,
+  miteString: `# Begin Radarr Section
+
+dn: ou=RadarrUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=RadarrAdmins,ou=RadarrUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=RadarrModerators,ou=RadarrUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=RadarrAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: RadarrAdmins
+aliasedObjectName: ou=RadarrITAdmins,ou=RadarrAdmins,ou=RadarrUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=RadarrModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: RadarrModerators
+aliasedObjectName: ou=RadarrITModerators,ou=RadarrModerators,ou=RadarrUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End Radarr Section
+`,
 }

@@ -11,5 +11,29 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const n8nLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 50020,
-  miteString: ``,
+  miteString: `# Begin N8N Section
+
+dn: ou=N8NUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=N8NAdmins,ou=N8NUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=N8NModerators,ou=N8NUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=N8NAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: N8NAdmins
+aliasedObjectName: ou=N8NITAdmins,ou=N8NAdmins,ou=N8NUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=N8NModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: N8NModerators
+aliasedObjectName: ou=N8NITModerators,ou=N8NModerators,ou=N8NUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End N8N Section
+`,
 }

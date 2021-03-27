@@ -11,5 +11,29 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const filebrowserLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 50006,
-  miteString: ``,
+  miteString: `# Begin FileBrowser Section
+
+dn: ou=FileBrowserUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=FileBrowserAdmins,ou=FileBrowserUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=FileBrowserModerators,ou=FileBrowserUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=FileBrowserAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: FileBrowserAdmins
+aliasedObjectName: ou=FileBrowserITAdmins,ou=FileBrowserAdmins,ou=FileBrowserUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=FileBrowserModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: FileBrowserModerators
+aliasedObjectName: ou=FileBrowserITModerators,ou=FileBrowserModerators,ou=FileBrowserUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End FileBrowser Section
+`,
 }

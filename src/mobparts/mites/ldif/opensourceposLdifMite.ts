@@ -11,5 +11,29 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const opensourceposLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 50023,
-  miteString: ``,
+  miteString: `# Begin OSPOS Section
+
+dn: ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=OSPOSAdmins,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=OSPOSModerators,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=OSPOSAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: OSPOSAdmins
+aliasedObjectName: ou=OSPOSITAdmins,ou=OSPOSAdmins,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=OSPOSModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: OSPOSModerators
+aliasedObjectName: ou=OSPOSITModerators,ou=OSPOSModerators,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End OSPOS Section
+`,
 }

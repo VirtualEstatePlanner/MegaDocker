@@ -11,5 +11,29 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const ldapLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 50013,
-  miteString: ``,
+  miteString: `# Begin LDAP Section
+
+dn: ou=LDAPUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=LDAPAdmins,ou=LDAPUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=LDAPModerators,ou=LDAPUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=LDAPAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: LDAPAdmins
+aliasedObjectName: ou=LDAPITAdmins,ou=LDAPAdmins,ou=LDAPUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=LDAPModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: LDAPModerators
+aliasedObjectName: ou=LDAPITModerators,ou=LDAPModerators,ou=LDAPUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End LDAP Section
+`,
 }
