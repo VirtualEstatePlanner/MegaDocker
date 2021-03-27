@@ -42,9 +42,7 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
   const cloudflareAPITokenIndex: number = zipManikins[traefikIndex].memories.indexOf(cloudflareAPIToken)
   const cloudflareAPITokenValue: string = zipManikins[traefikIndex].memories[cloudflareAPITokenIndex].value.toString().split(',').join('" "')
 
-  const rawMites: IMite[] = zipManikins.flatMap((eachManikin: IManikin) => eachManikin.mites.map((eachMite: IMite) => eachMite))
-
-  const mites: IMite[] = Array.from(new Set(rawMites))
+  const mites: IMite[] = Array.from(new Set(zipManikins.flatMap((eachManikin: IManikin) => eachManikin.mites.map((eachMite: IMite) => eachMite))))
 
   const serviceMites: string[] = mites
     .filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`)
@@ -85,9 +83,9 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
 
   const customMites: ICustomMite[] = customs.map((mite: IMite) => mite as ICustomMite)
 
-  const ldifs: IMite[] = mites.filter((eachMite: IMite) => eachMite.type === `LDIF`)
+  const ldifs: ILDIFMite[] = mites.filter((eachMite: IMite) => eachMite.type === `LDIF`) as ILDIFMite[]
 
-  const ldifAdditions: string = ldifs.map((mite: IMite) => mite as ILDIFMite).join()
+  const ldifAdditions: string = ldifs.map((mite: IMite) => mite.miteString).join(``)
 
   const ldifIndex: number = customMites.indexOf(ldapBootstrapMegaDockerDotLdifMite)
 
