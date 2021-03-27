@@ -11,5 +11,23 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const piholeLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 99999,
-  miteString: ``,
+  miteString: `# Begin Pihole Section
+
+dn: ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=PiholeAdmins,ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=PiholeITAdmins,ou=PiholeAdmins,ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=PiholeAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: PiholeAdmins
+aliasedObjectName: ou=PiholeITAdmins,ou=PiholeAdmins,ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End Pihole Section
+`,
 }

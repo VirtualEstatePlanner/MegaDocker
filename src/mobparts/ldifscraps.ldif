@@ -336,13 +336,6 @@ dn: ou=OwncloudAdmins,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAI
 objectclass: organizationalUnit
 
 
-### PiholeUsers-InternalUsers-Employees
-dn: ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### PiholeAdmins-PiholeUsers-InternalUsers-Employees
-dn: ou=PiholeAdmins,ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
 
 
 ### PortainerUsers-InternalUsers-Employees
@@ -543,11 +536,6 @@ objectclass: organizationalUnit
 dn: ou=KibanaITAdmins,ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-
-##### ITAdmins-PiholeAdmins-PiholeUsers-InternalUsers-Employees
-dn: ou=PiholeITAdmins,ou=PiholeAdmins,ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 ##### ITAdmins-EmailAdmins-EmailUsers-InternalUsers-Employees
 dn: ou=EmailITAdmins,ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
@@ -595,12 +583,6 @@ objectclass: extensibleobject
 ou: KibanaAdmins
 aliasedObjectName: ou=KibanaITAdmins,ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
-#@@@ PiholeAdmins -> ITAdmins
-dn: ou=PiholeAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: PiholeAdmins
-aliasedObjectName: ou=PiholeITAdmins,ou=PiholeAdmins,ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
 #@@@ EmailAdmins -> ITAdmins
 dn: ou=EmailAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
