@@ -10,6 +10,7 @@ import { IManikin } from '../../interfaces/IManikin'
 
 import { mealieServiceMite } from '../mites/service/mealieServiceMite'
 import mealieIcon from '../../images/manikin-icons/mealieIcon.png'
+import { mealieLdifMite } from '../mites/ldif/mealieLdifMite'
 
 /**
  * elk Manikin
@@ -23,7 +24,7 @@ export const mealieManikin: IManikin = {
   manikinIcon: mealieIcon,
   manikinIndex: 10014,
   memories: [],
-  mites: [mealieServiceMite],
+  mites: [mealieLdifMite, mealieServiceMite],
   name: `Mealie`,
   ports: [],
   subfolders: [],

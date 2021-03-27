@@ -11,6 +11,7 @@ import { IManikin } from '../../interfaces/IManikin'
 import { visualizerServiceMite } from '../mites/service/visualizerServiceMite'
 import { visualizerNetworkMite } from '../mites/network/visualizerNetworkMite'
 import visualizerIcon from '../../images/manikin-icons/visualizerIcon.png'
+import { visualizerLdifMite } from '../mites/ldif/visualizerLdifMite'
 
 /**
  * visualizer Manikin
@@ -24,7 +25,7 @@ export const visualizerManikin: IManikin = {
   manikinIcon: visualizerIcon,
   manikinIndex: 10030,
   memories: [],
-  mites: [visualizerServiceMite, visualizerNetworkMite],
+  mites: [visualizerLdifMite, visualizerServiceMite, visualizerNetworkMite],
   name: `Visualizer`,
   ports: [],
   subfolders: [],

@@ -10,6 +10,7 @@ import { IManikin } from '../../interfaces/IManikin'
 
 import { syncthingServiceMite } from '../mites/service/syncthingServiceMite'
 import syncthingIcon from '../../images/manikin-icons/syncthingIcon.png'
+import { syncthingLdifMite } from '../mites/ldif/syncthingLdifMite'
 
 /**
  * styleguidist Manikin
@@ -24,7 +25,7 @@ export const syncthingManikin: IManikin = {
   manikinIndex: 10027,
   memories: [],
   name: `Syncthing`,
-  mites: [syncthingServiceMite],
+  mites: [syncthingLdifMite, syncthingServiceMite],
   ports: [],
   subfolders: [`data`],
 }

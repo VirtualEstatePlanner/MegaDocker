@@ -11,6 +11,7 @@ import { IManikin } from '../../interfaces/IManikin'
 import { heimdallServiceMite } from '../mites/service/heimdallServiceMite'
 import { heimdallNetworkMite } from '../mites/network/heimdallNetworkMite'
 import heimdallIcon from '../../images/manikin-icons/heimdallIcon.png'
+import { heimdallLdifMite } from '../mites/ldif/heimdallLdifMite'
 
 /**
  * portal Manikin
@@ -24,7 +25,7 @@ export const heimdallManikin: IManikin = {
   manikinIcon: heimdallIcon,
   manikinIndex: 10010,
   memories: [],
-  mites: [heimdallServiceMite, heimdallNetworkMite],
+  mites: [heimdallLdifMite, heimdallServiceMite, heimdallNetworkMite],
   name: `Heimdall`,
   ports: [],
   subfolders: [`log`, `nginx`, `php`, `www`],

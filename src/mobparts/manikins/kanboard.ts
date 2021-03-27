@@ -14,6 +14,7 @@ import kanboardIcon from '../../images/manikin-icons/kanboardIcon.png'
 import { kanboardMariaDBPassword } from '../memories/kanboardMariaDBPassword'
 import { kanboardMariaDBRootPassword } from '../memories/kanboardMariaDBRootPassword'
 import { kanboardMariaDBUser } from '../memories/kanboardMariaDBUser'
+import { kanboardLdifMite } from '../mites/ldif/kanboardLdifMite'
 
 /**
  * portal Manikin
@@ -27,7 +28,7 @@ export const kanboardManikin: IManikin = {
   manikinIcon: kanboardIcon,
   manikinIndex: 10011,
   memories: [kanboardMariaDBPassword, kanboardMariaDBRootPassword, kanboardMariaDBUser],
-  mites: [kanboardServiceMite, kanboardNetworkMite],
+  mites: [kanboardLdifMite, kanboardServiceMite, kanboardNetworkMite],
   name: `Kanboard`,
   ports: [],
   subfolders: [`kanboard-data`, `kanboard-plugins`, `mariadb`],

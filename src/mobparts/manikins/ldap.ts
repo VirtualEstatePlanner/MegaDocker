@@ -20,6 +20,7 @@ import { autheliaDotConfMite } from '../mites/custom/autheliaDotConfMite'
 import { autheliaMariaDBPassword } from '../memories/autheliaMariaDBPassword'
 import { autheliaMariaDBRootPassword } from '../memories/autheliaMariaDBRootPassword'
 import { autheliaMariaDBUser } from '../memories/autheliaMariaDBUser'
+import { ldapLdifMite } from '../mites/ldif/ldapLdifMite'
 
 /**
  * ldap Manikin
@@ -33,7 +34,7 @@ export const ldapManikin: IManikin = {
   manikinIcon: ldapIcon,
   manikinIndex: 10012,
   memories: [autheliaMariaDBPassword, autheliaMariaDBRootPassword, autheliaMariaDBUser, ldapAdminUsername, ldapAdminPassword, ldapConfigurationPassword, ldapOrganisation],
-  mites: [autheliaDotConfMite, ldapServiceMite, ldapNetworkMite, ldapBootstrapMegaDockerDotLdifMite],
+  mites: [ldapLdifMite, autheliaDotConfMite, ldapServiceMite, ldapNetworkMite, ldapBootstrapMegaDockerDotLdifMite],
   name: `LDAP`,
   ports: [],
   subfolders: [`authelia-conf`, `authelia-data`, `authelia-mariadb`, `conf`, `pages`, `log`, `certs`, `lib`, `ldif-files`, `slapd.d`],

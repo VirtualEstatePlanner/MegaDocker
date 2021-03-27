@@ -11,6 +11,7 @@ import { IManikin } from '../../interfaces/IManikin'
 import { swarmpitServiceMite } from '../mites/service/swarmpitServiceMite'
 import { swarmpitNetworkMite } from '../mites/network/swarmpitNetworkMite'
 import swarmpitIcon from '../../images/manikin-icons/swarmpitIcon.png'
+import { swarmpitLdifMite } from '../mites/ldif/swarmpitLdifMite'
 
 /**
  * swarmpit Manikin
@@ -25,7 +26,7 @@ export const swarmpitManikin: IManikin = {
   manikinIndex: 10026,
   memories: [],
   name: `Swarmpit`,
-  mites: [swarmpitServiceMite, swarmpitNetworkMite],
+  mites: [swarmpitLdifMite, swarmpitServiceMite, swarmpitNetworkMite],
   ports: [],
   subfolders: [`couchbase-data`, `influx-data`],
 }

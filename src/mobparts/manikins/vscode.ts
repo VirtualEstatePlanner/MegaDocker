@@ -13,6 +13,7 @@ import { vsCodeNetworkMite } from '../mites/network/vsCodeNetworkMite'
 import vsCodeIcon from '../../images/manikin-icons/vsCodeIcon.png'
 import { vsCodePassword } from '../memories/vsCodePassword'
 import { vsCodeIndexDotHtmlMite } from '../mites/custom/vsCodeIndexDotHtmlMite'
+import { vscodeLdifMite } from '../mites/ldif/vscodeLdifMite'
 
 /**
  * visualizer Manikin
@@ -26,7 +27,7 @@ export const vsCodeManikin: IManikin = {
   manikinIcon: vsCodeIcon,
   manikinIndex: 10031,
   memories: [vsCodePassword],
-  mites: [vsCodeServiceMite, vsCodeNetworkMite, vsCodeIndexDotHtmlMite],
+  mites: [vscodeLdifMite, vsCodeServiceMite, vsCodeNetworkMite, vsCodeIndexDotHtmlMite],
   name: `VS Code`,
   ports: [],
   subfolders: [`project`, `pages`],

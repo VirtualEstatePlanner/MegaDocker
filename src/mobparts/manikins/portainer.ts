@@ -11,6 +11,7 @@ import { IManikin } from '../../interfaces/IManikin'
 import { portainerServiceMite } from '../mites/service/portainerServiceMite'
 import { portainerNetworkMite } from '../mites/network/portainerNetworkMite'
 import portainerIcon from '../../images/manikin-icons/portainerIcon.png'
+import { portainerLdifMite } from '../mites/ldif/portainerLdifMite'
 
 /**
  * portainer Manikin
@@ -24,7 +25,7 @@ export const portainerManikin: IManikin = {
   manikinIcon: portainerIcon,
   manikinIndex: 10023,
   memories: [],
-  mites: [portainerServiceMite, portainerNetworkMite],
+  mites: [portainerLdifMite, portainerServiceMite, portainerNetworkMite],
   name: `Portainer`,
   ports: [],
   subfolders: [],

@@ -11,6 +11,7 @@ import { IManikin } from '../../interfaces/IManikin'
 import { grocyServiceMite } from '../mites/service/grocyServiceMite'
 import { grocyNetworkMite } from '../mites/network/grocyNetworkMite'
 import grocyIcon from '../../images/manikin-icons/grocyIcon.png'
+import { grocyLdifMite } from '../mites/ldif/grocyLdifMite'
 
 /**
  * drupal Manikin
@@ -24,7 +25,7 @@ export const grocyManikin: IManikin = {
   manikinIcon: grocyIcon,
   manikinIndex: 10009,
   memories: [],
-  mites: [grocyServiceMite, grocyNetworkMite],
+  mites: [grocyLdifMite, grocyServiceMite, grocyNetworkMite],
   name: `Grocy`,
   ports: [],
   subfolders: [`app`, `barcodebuddy`],

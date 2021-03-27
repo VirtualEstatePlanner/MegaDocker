@@ -18,6 +18,9 @@ import { elasticsearchDotYmlMite } from '../mites/custom/elasticsearchDotYmlMite
 import { elasticsearchJvmDotOptionsMite } from '../mites/custom/elasticsearchJvmDotOptionsMite'
 import { elasticsearchLog4j2DotPropertiesMite } from '../mites/custom/elasticsearchLog4j2DotPropertiesMite'
 import { filebeatDotYmlMite } from '../mites/custom/filebeatDotYmlMite'
+import { elasticsearchLdifMite } from '../mites/ldif/elasticsearchLdifMite'
+import { logstashLdifMite } from '../mites/ldif/logstashLdifMite'
+import { kibanaLdifMite } from '../mites/ldif/kibanaLdifMite'
 
 /**
  * elk Manikin
@@ -31,7 +34,18 @@ export const elkManikin: IManikin = {
   manikinIcon: elkIcon,
   manikinIndex: 10004,
   memories: [kibanaUser, kibanaPassword],
-  mites: [elkServiceMite, elkNetworkMite, kibanaDotYmlMite, elasticsearchDotYmlMite, elasticsearchJvmDotOptionsMite, elasticsearchLog4j2DotPropertiesMite, filebeatDotYmlMite],
+  mites: [
+    elasticsearchLdifMite,
+    logstashLdifMite,
+    kibanaLdifMite,
+    elkServiceMite,
+    elkNetworkMite,
+    kibanaDotYmlMite,
+    elasticsearchDotYmlMite,
+    elasticsearchJvmDotOptionsMite,
+    elasticsearchLog4j2DotPropertiesMite,
+    filebeatDotYmlMite,
+  ],
   name: `ELK`,
   ports: [],
   subfolders: [`elasticsearch-config`, `elasticsearch-data`, `filebeat-config`, `filebeat-modules`, `kibana-config`, `logfiles`],

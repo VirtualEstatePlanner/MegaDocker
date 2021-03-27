@@ -14,6 +14,7 @@ import { opensourcePOSServiceMite } from '../mites/service/opensourcePOSServiceM
 import { opensourcePOSMariaDBPassword } from '../memories/opensourcePOSMariaDBPassword'
 import { opensourcePOSMariaDBUser } from '../memories/opensourcePOSMariaDBUser'
 import { opensourcePOSMariaDBRootPassword } from '../memories/opensourcePOSMariaDBRootPassword'
+import { opensourceposLdifMite } from '../mites/ldif/opensourceposLdifMite'
 
 /**
  * minpos Manikin
@@ -27,7 +28,7 @@ export const opensourceposManikin: IManikin = {
   manikinIcon: opensourceposIcon,
   manikinIndex: 10020,
   memories: [opensourcePOSMariaDBPassword, opensourcePOSMariaDBUser, opensourcePOSMariaDBRootPassword],
-  mites: [opensourcePOSServiceMite, opensourcePOSNetworkMite],
+  mites: [opensourceposLdifMite, opensourcePOSServiceMite, opensourcePOSNetworkMite],
   name: `osPOS`,
   ports: [],
   subfolders: [`mariadb`, `opensourcepos`],

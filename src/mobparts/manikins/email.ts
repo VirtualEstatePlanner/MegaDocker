@@ -11,6 +11,7 @@ import { IManikin } from '../../interfaces/IManikin'
 import { emailServiceMite } from '../mites/service/emailServiceMite'
 import { emailNetworkMite } from '../mites/network/emailNetworkMite'
 import emailIcon from '../../images/manikin-icons/emailIcon.png'
+import { emailLdifMite } from '../mites/ldif/emailLdifMite'
 
 /**
  * elk Manikin
@@ -24,7 +25,7 @@ export const emailManikin: IManikin = {
   manikinIcon: emailIcon,
   manikinIndex: 10005,
   memories: [],
-  mites: [emailServiceMite, emailNetworkMite],
+  mites: [emailLdifMite, emailServiceMite, emailNetworkMite],
   name: `E-mail`,
   ports: [],
   subfolders: [`config`, `maildata`, `mailstate`, `rainloop`],

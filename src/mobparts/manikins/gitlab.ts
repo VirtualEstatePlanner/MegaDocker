@@ -15,6 +15,7 @@ import { gitlabPostgresUser } from '../memories/gitlabPostgresUser'
 import { gitlabRootEmail } from '../memories/gitlabRootEmail'
 import { gitlabRootPassword } from '../memories/gitlabRootPassword'
 import gitlabIcon from '../../images/manikin-icons/gitlabIcon.png'
+import { gitlabLdifMite } from '../mites/ldif/gitlabLdifMite'
 
 /**
  * git Manikin
@@ -30,7 +31,7 @@ export const gitlabManikin: IManikin = {
   manikinIcon: gitlabIcon,
   manikinIndex: 10008,
   memories: [gitlabPostgresPassword, gitlabPostgresUser, gitlabRootEmail, gitlabRootPassword],
-  mites: [gitlabServiceMite, gitlabNetworkMite],
+  mites: [gitlabLdifMite, gitlabServiceMite, gitlabNetworkMite],
   name: `GitLab`,
   ports: [],
   subfolders: [`config`, `data`, `logs`, `postgresql`, `redis`],

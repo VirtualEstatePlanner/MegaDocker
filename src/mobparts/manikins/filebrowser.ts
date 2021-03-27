@@ -11,6 +11,7 @@ import { IManikin } from '../../interfaces/IManikin'
 import { filebrowserServiceMite } from '../mites/service/filebrowserServiceMite'
 import filebrowserIcon from '../../images/manikin-icons/filebrowserIcon.png'
 import { filebrowserDatabaseDotDbMite } from '../mites/custom/filebrowserDatabaseDotDbMite'
+import { filebrowserLdifMite } from '../mites/ldif/filebrowserLdifMite'
 
 /**
  * elk Manikin
@@ -24,7 +25,7 @@ export const filebrowserManikin: IManikin = {
   manikinIcon: filebrowserIcon,
   manikinIndex: 10006,
   memories: [],
-  mites: [filebrowserServiceMite, filebrowserDatabaseDotDbMite],
+  mites: [filebrowserLdifMite, filebrowserServiceMite, filebrowserDatabaseDotDbMite],
   name: `FileBrowser`,
   ports: [],
   subfolders: [`data`],

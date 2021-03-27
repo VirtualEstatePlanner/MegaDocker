@@ -15,6 +15,7 @@ import { traefikServiceMite } from '../mites/service/traefikServiceMite'
 import { traefikNetworkMite } from '../mites/network/traefikNetworkMite'
 import traefikIcon from '../../images/manikin-icons/traefikIcon.png'
 import { mobName } from '../memories/mobName'
+import { traefikLdifMite } from '../mites/ldif/traefikLdifMite'
 
 /**
  * traefik Manikin
@@ -29,7 +30,7 @@ export const traefikManikin: IManikin = {
   manikinIndex: 10028,
   memories: [mobName, letsEncryptEmail, cloudflareAPIToken, primaryDomain],
   name: `Traefik`,
-  mites: [traefikServiceMite, traefikNetworkMite],
+  mites: [traefikLdifMite, traefikServiceMite, traefikNetworkMite],
   ports: [],
   subfolders: [`ssl`],
 }

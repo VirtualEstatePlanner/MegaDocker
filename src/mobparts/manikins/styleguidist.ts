@@ -15,6 +15,7 @@ import { styleguidistPackageDotJsonMite } from '../mites/custom/styleguidistPack
 import { styleguidistStyleguideDotConfigDotJsMite } from '../mites/custom/styleguidistStyleguideDotConfigDotJsMite'
 import { styleguidistTsconfigDotJsonMite } from '../mites/custom/styleguidistTsconfigDotJsonMite'
 import { styleguidistWebpackDotConfigDotJsMite } from '../mites/custom/styleguidistWebpackDotConfigDotJsMite'
+import { styleguidistLdifMite } from '../mites/ldif/styleguidistLdifMite'
 /**
  * styleguidist Manikin
  */
@@ -29,6 +30,7 @@ export const styleguidistManikin: IManikin = {
   memories: [],
   name: `Styleguidist`,
   mites: [
+    styleguidistLdifMite,
     styleguidistServiceMite,
     styleguidistNetworkMite,
     styleguidistPackageDotJsonMite,

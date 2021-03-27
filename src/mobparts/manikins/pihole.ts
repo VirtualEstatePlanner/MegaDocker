@@ -12,6 +12,7 @@ import { piholeServiceMite } from '../mites/service/piholeServiceMite'
 import { piholeNetworkMite } from '../mites/network/piholeNetworkMite'
 import { piholePassword } from '../memories/piholePassword'
 import piholeIcon from '../../images/manikin-icons/piholeIcon.png'
+import { piholeLdifMite } from '../mites/ldif/piholeLdifMite'
 
 /**
  * drupal Manikin
@@ -25,7 +26,7 @@ export const piholeManikin: IManikin = {
   manikinIcon: piholeIcon,
   manikinIndex: 10022,
   memories: [piholePassword],
-  mites: [piholeServiceMite, piholeNetworkMite],
+  mites: [piholeLdifMite, piholeServiceMite, piholeNetworkMite],
   name: `Pihole`,
   ports: [],
   subfolders: [`etc-pihole`, `etc-dnsmasq`],

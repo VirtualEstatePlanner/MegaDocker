@@ -14,6 +14,7 @@ import nextcloudIcon from '../../images/manikin-icons/nextcloudIcon.png'
 import { nextcloudMariaDBPassword } from '../memories/nextcloudMariaDBPassword'
 import { nextcloudMariaDBRootPassword } from '../memories/nextcloudMariaDBRootPassword'
 import { nextcloudMariaDBUser } from '../memories/nextcloudMariaDBUser'
+import { nextcloudLdifMite } from '../mites/ldif/nextcloudLdifMite'
 
 /**
  * nextcloud Manikin
@@ -27,7 +28,7 @@ export const nextcloudManikin: IManikin = {
   manikinIcon: nextcloudIcon,
   manikinIndex: 10018,
   memories: [nextcloudMariaDBPassword, nextcloudMariaDBRootPassword, nextcloudMariaDBUser],
-  mites: [nextcloudServiceMite, nextcloudNetworkMite],
+  mites: [nextcloudLdifMite, nextcloudServiceMite, nextcloudNetworkMite],
   name: `Nextcloud`,
   ports: [],
   subfolders: [`application`, `mariadb`],

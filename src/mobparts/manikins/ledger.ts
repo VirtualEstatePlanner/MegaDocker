@@ -13,6 +13,7 @@ import { ledgerNetworkMite } from '../mites/network/ledgerNetworkMite'
 import { ledgerPostgresPassword } from '../memories/ledgerPostgresPassword'
 import ledgerIcon from '../../images/manikin-icons/ledgerIcon.png'
 import { ledgerPostgresUser } from '../memories/ledgerPostgresUser'
+import { ledgerLdifMite } from '../mites/ldif/ledgerLdifMite'
 
 /**
  * elk Manikin
@@ -26,7 +27,7 @@ export const ledgerManikin: IManikin = {
   manikinIcon: ledgerIcon,
   manikinIndex: 10013,
   memories: [ledgerPostgresPassword, ledgerPostgresUser],
-  mites: [ledgerServiceMite, ledgerNetworkMite],
+  mites: [ledgerLdifMite, ledgerServiceMite, ledgerNetworkMite],
   name: `Ledger`,
   ports: [],
   subfolders: [`pgdata`],

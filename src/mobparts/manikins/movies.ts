@@ -18,6 +18,9 @@ import { booksNetworkMite } from '../mites/network/booksNetworkMite'
 import { comicsNetworkMite } from '../mites/network/comicsNetworkMite'
 import { musicNetworkMite } from '../mites/network/musicNetworkMite'
 import { tvNetworkMite } from '../mites/network/tvNetworkMite'
+import { moviesLdifMite } from '../mites/ldif/moviesLdifMite'
+import { plexLdifMite } from '../mites/ldif/plexLdifMite'
+import { mediarequestsLdifMite } from '../mites/ldif/mediarequestsLdifMite'
 
 /**
  * drupal Manikin
@@ -31,7 +34,20 @@ export const moviesManikin: IManikin = {
   manikinIcon: moviesIcon,
   manikinIndex: 10015,
   memories: [],
-  mites: [mediaRequestsServiceMite, moviesServiceMite, plexServiceMite, booksNetworkMite, comicsNetworkMite, moviesNetworkMite, musicNetworkMite, tvNetworkMite, plexNetworkMite],
+  mites: [
+    moviesLdifMite,
+    plexLdifMite,
+    mediarequestsLdifMite,
+    mediaRequestsServiceMite,
+    moviesServiceMite,
+    plexServiceMite,
+    booksNetworkMite,
+    comicsNetworkMite,
+    moviesNetworkMite,
+    musicNetworkMite,
+    tvNetworkMite,
+    plexNetworkMite,
+  ],
   name: `Movies`,
   ports: [],
   subfolders: [`content`, `movies-config`, `newsgroups-config`, `newsgroup-indexer-config`, `plex-config`, `requests-config`, `torrent-config`, `torrent-indexer-config`],

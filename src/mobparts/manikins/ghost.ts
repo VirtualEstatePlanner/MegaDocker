@@ -12,6 +12,7 @@ import { ghostServiceMite } from '../mites/service/ghostServiceMite'
 import { ghostNetworkMite } from '../mites/network/ghostNetworkMIte'
 import ghostIcon from '../../images/manikin-icons/ghostIcon.png'
 import { ghostMariaDBRootPassword } from '../memories/ghostRootMariaDBPassword'
+import { ghostLdifMite } from '../mites/ldif/ghostLdifMite'
 
 /**
  * ghost Manikin
@@ -26,7 +27,7 @@ export const ghostManikin: IManikin = {
   manikinIcon: ghostIcon,
   manikinIndex: 10007,
   memories: [ghostMariaDBRootPassword],
-  mites: [ghostServiceMite, ghostNetworkMite],
+  mites: [ghostLdifMite, ghostServiceMite, ghostNetworkMite],
   name: `Ghost`,
   ports: [],
   subfolders: [`mariadb`],

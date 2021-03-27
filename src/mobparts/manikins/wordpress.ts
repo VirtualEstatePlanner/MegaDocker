@@ -13,6 +13,7 @@ import { wordpressMariaDBPassword } from '../memories/wordpressMariaDBPassword'
 import { wordpressMariaDBRootPassword } from '../memories/wordpressMariaDBRootPassword'
 import { wordpressMariaDBUser } from '../memories/wordpressMariaDBUser'
 import wordpressIcon from '../../images/manikin-icons/wordpressIcon.png'
+import { wordpressLdifMite } from '../mites/ldif/wordpressLdifMite'
 
 export const wordpressManikin: IManikin = {
   description: `Wordpress Blog`,
@@ -23,7 +24,7 @@ export const wordpressManikin: IManikin = {
   manikinIcon: wordpressIcon,
   manikinIndex: 10033,
   memories: [wordpressMariaDBRootPassword, wordpressMariaDBUser, wordpressMariaDBPassword],
-  mites: [wordpressServiceMite, wordpressNetworkMite],
+  mites: [wordpressLdifMite, wordpressServiceMite, wordpressNetworkMite],
   name: `WordPress`,
   ports: [],
   subfolders: [`mariadb`, `php`],
