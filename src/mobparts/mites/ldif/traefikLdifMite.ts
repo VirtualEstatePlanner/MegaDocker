@@ -28,5 +28,5 @@ objectclass: extensibleobject
 ou: TraefikAdmins
 aliasedObjectName: ou=TraefikITAdmins,ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
-# End LDIF Section`,
+# End Traefik LDIF Section`,
 }
