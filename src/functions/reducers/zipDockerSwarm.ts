@@ -11,7 +11,9 @@ import fileSaver from 'file-saver'
 import { IMemory } from '../../interfaces/IMemory'
 import { IManikin } from '../../interfaces/IManikin'
 import { IMite } from '../../interfaces/IMite'
+import { ILDIFMite } from '../../interfaces/ILDIFMite'
 import { ICustomMite } from '../../interfaces/ICustomMite'
+import { ITraefikedServiceMite } from '../../interfaces/ITraefikedServiceMite'
 import { IZipDockerCompose } from '../../interfaces/IZipDockerCompose'
 import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
 import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
@@ -21,7 +23,6 @@ import { traefikManikin } from '../../mobparts/manikins/traefik'
 import { mobName } from '../../mobparts/memories/mobName'
 import { ldapBootstrapMegaDockerDotLdifMite } from '../../mobparts/mites/custom/ldapBootstrapMegaDockerDotLdifMite'
 import { primaryDomain } from '../../mobparts/memories/primaryDomain'
-import { ITraefikedServiceMite } from '../../interfaces/ITraefikedServiceMite'
 import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
 import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobSecretsHeaderSectionString'
 import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
@@ -84,6 +85,10 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
 
   const customMites: ICustomMite[] = customs.map((mite: IMite) => mite as ICustomMite)
 
+  const ldifs: IMite[] = mites.filter((eachMite: IMite) => eachMite.type === `LDIF`)
+
+  const ldifAdditions: string = customs.map((mite: IMite) => mite as ILDIFMite).join()
+
   const ldifIndex: number = customMites.indexOf(ldapBootstrapMegaDockerDotLdifMite)
 
   /**
@@ -93,11 +98,13 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
     const fullDomain: string = zipCompose.manikins[traefikIndex].memories[domainIndex].value
     const tld: string = fullDomain.split(`.`)[1]
     const domain: string = fullDomain.split(`.`)[0]
-    const workingLdif = ldapBootstrapMegaDockerDotLdifMite.miteFile.contents.split(`[[LDAPDOMAINASDCS]]`).join(`dc=${domain},dc=${tld}`)
+    const ldifContents: string = ldapBootstrapMegaDockerDotLdifMite.miteFile.contents + ldifAdditions
+    const workingLdif = ldifContents.split(`[[LDAPDOMAINASDCS]]`).join(`dc=${domain},dc=${tld}`)
 
     return workingLdif
   }
   customMites[ldifIndex].miteFile.contents = populateLdifDCs()
+
   /**
    * updates yml with variables from memories
    * @param ymlInput the initial string to change
