@@ -178,19 +178,6 @@ dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINA
 objectclass: organizationalUnit
 
 
-### GhostUsers-InternalUsers-Employees
-dn: ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### GhostModerators-GhostUsers-InternalUsers-Employees
-dn: ou=GhostModerators,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### GhostAdmins-GhostUsers-InternalUsers-Employees
-dn: ou=GhostAdmins,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-
 
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -573,9 +560,6 @@ objectclass: organizationalUnit
 dn: ou=DrupalITAdmins,ou=DrupalAdmins,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-##### ITAdmins-GhostAdmins-GhostUsers-InternalUsers-Employees
-dn: ou=GhostITAdmins,ou=GhostAdmins,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
 
 ##### ITAdmins-PiholeAdmins-PiholeUsers-InternalUsers-Employees
 dn: ou=PiholeITAdmins,ou=PiholeAdmins,ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -607,9 +591,6 @@ objectclass: organizationalUnit
 dn: ou=DrupalITModerators,ou=DrupalModerators,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-##### ITModerators-GhostModerators-GhostUsers-InternalUsers-Employees
-dn: ou=GhostITModerators,ou=GhostModerators,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
 
 
 
@@ -640,14 +621,6 @@ objectclass: alias
 objectclass: extensibleobject
 ou: DrupalAdmins
 aliasedObjectName: ou=DrupalITAdmins,ou=DrupalAdmins,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-
-#@@@ GhostAdmins -> ITAdmins
-dn: ou=GhostAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: GhostAdmins
-aliasedObjectName: ou=GhostITAdmins,ou=GhostAdmins,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-
 
 #@@@ PiholeAdmins -> ITAdmins
 dn: ou=PiholeAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -702,12 +675,6 @@ objectclass: extensibleobject
 ou: DrupalModerators
 aliasedObjectName: ou=DrupalITModerators,ou=DrupalModerators,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
-#@@@ GhostModerators -> ITModerators
-dn: ou=GhostModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: GhostModerators
-aliasedObjectName: ou=GhostITModerators,ou=GhostModerators,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
 #@@@ NextcloudModerators -> ITModerators
 dn: ou=NextcloudModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
