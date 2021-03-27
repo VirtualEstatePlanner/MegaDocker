@@ -191,14 +191,6 @@ dn: ou=GhostAdmins,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS
 objectclass: organizationalUnit
 
 
-### GitlabUsers-InternalUsers-Employees
-dn: ou=GitlabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### GitLabAdmins-GitlabUsers-InternalUsers-Employees
-dn: ou=GitLabAdmins,ou=GitlabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -414,14 +406,6 @@ dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINA
 objectclass: organizationalUnit
 
 
-### SwarmpitUsers-InternalUsers-Employees
-dn: ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### SwarmpitAdmins-SwarmpitUsers-InternalUsers-Employees
-dn: ou=SwarmpitAdmins,ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -618,13 +602,6 @@ description: GO JOE!
 dn: ou=TraefikITAdmins,ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-##### ITAdmins-GitLabAdmins-GitlabUsers-InternalUsers-Employees
-dn: ou=GitLabITAdmins,ou=GitLabAdmins,ou=GitlabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-##### ITAdmins-SwarmpitAdmins-SwarmpitUsers-InternalUsers-Employees
-dn: ou=SwarmpitITAdmins,ou=SwarmpitAdmins,ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
 
 ##### ITAdmins-KanboardAdmins-KanboardUsers-InternalUsers-Employees
 dn: ou=KanboardITAdmins,ou=KanboardAdmins,ou=KanboardUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -710,20 +687,6 @@ objectclass: alias
 objectclass: extensibleobject
 ou: TraefikAdmins
 aliasedObjectName: ou=TraefikITAdmins,ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-
-#@@@ GitLabAdmins -> ITAdmins
-dn: ou=GitLabAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: GitLabAdmins
-aliasedObjectName: ou=GitLabITAdmins,ou=GitLabAdmins,ou=GitLabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-
-#@@@ SwarmpitAdmins -> ITAdmins
-dn: ou=SwarmpitAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: SwarmpitAdmins
-aliasedObjectName: ou=SwarmpitITAdmins,ou=SwarmpitAdmins,ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
 #@@@ KanboardAdmins -> ITAdmins
 dn: ou=KanboardAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
