@@ -40,9 +40,6 @@ objectclass: organizationalUnit
 dn: ou=SkoposUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=KanboardUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 dn: ou=KibanaUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 

@@ -188,14 +188,6 @@ dn: ou=HeimdallAdmins,ou=HeimdallUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAI
 objectclass: organizationalUnit
 
 
-### KanboardUsers-InternalUsers-Employees
-dn: ou=KanboardUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### KanboardAdmins-KanboardUsers-InternalUsers-Employees
-dn: ou=KanboardAdmins,ou=KanboardUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 
 ### KibanaUsers-InternalUsers-Employees
 dn: ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -528,9 +520,6 @@ description: GO JOE!
 
 
 
-##### ITAdmins-KanboardAdmins-KanboardUsers-InternalUsers-Employees
-dn: ou=KanboardITAdmins,ou=KanboardAdmins,ou=KanboardUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
 
 ##### ITAdmins-KibanaAdmins-KibanaUsers-InternalUsers-Employees
 dn: ou=KibanaITAdmins,ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -556,25 +545,6 @@ objectclass: organizationalUnit
 dn: ou=HeimdallITAdmins,ou=HeimdallAdmins,ou=HeimdallUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-
-
-
-
-
-
-
-
-
-
-#@@@ Aliases - ITAdmins
-
-
-#@@@ KanboardAdmins -> ITAdmins
-dn: ou=KanboardAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: KanboardAdmins
-aliasedObjectName: ou=KanboardITAdmins,ou=KanboardAdmins,ou=KanboardUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
 #@@@ KibanaAdmins -> ITAdmins
 dn: ou=KibanaAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
