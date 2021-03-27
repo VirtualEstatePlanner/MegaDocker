@@ -48,17 +48,6 @@ dn: ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 
-### LazyLibrarianUsers-InternalUsers-Employees
-dn: ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### LazyLibrarianAdmins-LazyLibrarianUsers-InternalUsers-Employees
-dn: ou=LazyLibrarianAdmins,ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### LazyLibrarianModerators-LazyLibrarianUsers-InternalUsers-Employees
-dn: ou=LazyLibrarianModerators,ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
 
 
 ### BLANKUsers-InternalUsers-Employees
