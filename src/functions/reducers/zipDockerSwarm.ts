@@ -4,7 +4,7 @@
 //  MEGADocker
 //  a function that creates and downloads a zip file containing the user's Docker Swarm
 //  Created by George Georgulas IV on 1/26/19.
-//  Copyright © 2019 The MegaDocker Group. All rights reserved.
+//  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import JSZip from 'jszip'
 import fileSaver from 'file-saver'

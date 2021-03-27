@@ -4,7 +4,7 @@
 //  MEGADocker
 //  Service Mite for n8n
 //  Created by George Georgulas IV on 11/3/2020.
-//  Copyright © 2019 The MegaDocker Group. All rights reserved.
+//  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
