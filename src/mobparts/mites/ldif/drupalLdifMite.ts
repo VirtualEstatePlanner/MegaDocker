@@ -11,5 +11,36 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const drupalLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 99999,
-  miteString: ``,
+  miteString: `# Begin Drupal Section
+
+dn: ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=DrupalAdmins,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=DrupalModerators,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=DrupalITAdmins,ou=DrupalAdmins,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=DrupalITModerators,ou=DrupalModerators,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=DrupalAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: DrupalAdmins
+aliasedObjectName: ou=DrupalITAdmins,ou=DrupalAdmins,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=DrupalModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: DrupalModerators
+aliasedObjectName: ou=DrupalITModerators,ou=DrupalModerators,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+
+# End Drupal Section
+`,
 }

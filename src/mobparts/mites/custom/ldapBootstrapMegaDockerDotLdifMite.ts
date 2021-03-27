@@ -46,9 +46,6 @@ objectclass: organizationalUnit
 dn: ou=KibanaUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=DrupalUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 dn: ou=PiholeUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
