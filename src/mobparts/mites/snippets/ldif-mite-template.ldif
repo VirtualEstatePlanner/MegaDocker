@@ -44,7 +44,7 @@ objectclass: top
 objectclass: person
 objectclass: organizationalPerson
 objectclass: inetOrgPerson
-cn: Jow Treanor II
+cn: Jospeh Treanor II
 sn: Treanor
 givenname: Joe
 uid: joe
