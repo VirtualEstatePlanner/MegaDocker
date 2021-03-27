@@ -2,7 +2,7 @@
 
 //  LdifMite.ts
 //  MEGADocker
-//  LDIF Mite for Backup
+//  LDIF Mite for
 //  Created by George Georgulas IV on 3/27/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
