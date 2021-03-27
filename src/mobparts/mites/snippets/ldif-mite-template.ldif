@@ -26,7 +26,6 @@ aliasedObjectName: ou=[[BLANK]]ITModerators,ou=[[BLANK]]Moderators,ou=[[BLANK]]U
 
 #* example administrator
 dn: uid=george,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: top
 objectclass: person
 objectclass: organizationalPerson
 objectclass: inetOrgPerson
@@ -40,7 +39,6 @@ description: It's a-me! Georgio!
 
 #* example moderator
 dn: uid=joe,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: top
 objectclass: person
 objectclass: organizationalPerson
 objectclass: inetOrgPerson
