@@ -11,5 +11,17 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const booksLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 50000,
-  miteString: ``,
+  miteString: `# Begin LazyLibrarian Section
+
+dn: ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=LazyLibrarianAdmins,ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=LazyLibrarianModerators,ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+# End LazyLibrarian Section
+`,
 }
