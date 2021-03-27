@@ -87,7 +87,7 @@ export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
 
   const ldifs: IMite[] = mites.filter((eachMite: IMite) => eachMite.type === `LDIF`)
 
-  const ldifAdditions: string = customs.map((mite: IMite) => mite as ILDIFMite).join()
+  const ldifAdditions: string = ldifs.map((mite: IMite) => mite as ILDIFMite).join()
 
   const ldifIndex: number = customMites.indexOf(ldapBootstrapMegaDockerDotLdifMite)
 
