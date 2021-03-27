@@ -15,7 +15,7 @@ objectclass: extensibleobject
 ou: [[BLANK]]Admins
 aliasedObjectName: ou=[[BLANK]]ITAdmins,ou=[[BLANK]]Admins,ou=[[BLANK]]Users,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
-dn: ou=[[BLANK]]Moderatorss,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=[[BLANK]]Moderators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
 ou: [[BLANK]]Moderators
