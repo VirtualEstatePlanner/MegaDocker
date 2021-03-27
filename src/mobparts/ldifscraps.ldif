@@ -1,55 +1,3 @@
-# Customers ou
-dn: ou=Customers,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-## Businesses-Customers ou
-dn: ou=Businesses,ou=Customers,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-### Domestic-Businesses-Customers ou
-dn: ou=Domestic,ou=Businesses,ou=Customers,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-### International-Businesses-Customers ou
-dn: ou=International,ou=Businesses,ou=Customers,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-## Individuals-Customers-ou
-dn: ou=Individuals,ou=Customers,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-### Domestic-Individuals-Customers-ou
-dn: ou=Domestic,ou=Individuals,ou=Customers,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-### International-Individuals-Customers-ou
-dn: ou=International,ou=Individuals,ou=Customers,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-
-# Employees ou
-dn: ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-## Staff-Employees ou
-dn: ou=Staff,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-## Managers-Employees ou
-dn: ou=Managers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-## Executives-Employees ou
-dn: ou=Executives,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-## InternalUsers-Employees ou
-dn: ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-
-
-
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
@@ -65,88 +13,44 @@ objectclass: organizationalUnit
 
 
 
+# Begin Email Section
 
-### EmailUsers-InternalUsers-Employees
 dn: ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-#### EmailAdmins-EmailUsers-InternalUsers-Employees
 dn: ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
+dn: ou=EmailITAdmins,ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=EmailAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: EmailAdmins
+aliasedObjectName: ou=EmailITAdmins,ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End Email Section
 
 
+# Begin Kibana Section
 
-
-
-
-### KibanaUsers-InternalUsers-Employees
 dn: ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-#### KibanaAdmins-KibanaUsers-InternalUsers-Employees
 dn: ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-
-
-
-
-
-## Technicians-Employees ou
-dn: ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=KibanaITAdmins,ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-### Moderators-Technicians-Employees ou
-dn: ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
+dn: ou=KibanaAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: KibanaAdmins
+aliasedObjectName: ou=KibanaITAdmins,ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
-### Administrators-Technicians-Employees ou
-dn: ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-
-# Users ou
-dn: ou=Users,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-## BotUsers-Users ou
-dn: ou=BotUsers,ou=Users,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-### ExternalUsers-BotUsers-Users ou
-dn: ou=ExternalUsers,ou=BotUsers,ou=Users,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-### InternalUsers-BotUsers-Users ou
-dn: ou=InternalUsers,ou=BotUsers,ou=Users,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-## HumanUsers-Users ou
-dn: ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-### ExternalUsers-HumanUsers-Users ou
-dn: ou=ExternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-### InternalUsers-HumanUsers-Users ou
-dn: ou=InternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-
-# Vendors ou
-dn: ou=Vendors,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-## Domestic-Vendors
-dn: ou=Domestic,ou=Vendors,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-## International-Vendors
-dn: ou=International,ou=Vendors,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
+# End Kibana Section
 
 
 #* example users
@@ -178,28 +82,4 @@ ou: Administrators
 ou: people
 description: GO JOE!
 
-
-
-##### ITAdmins-KibanaAdmins-KibanaUsers-InternalUsers-Employees
-dn: ou=KibanaITAdmins,ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-##### ITAdmins-EmailAdmins-EmailUsers-InternalUsers-Employees
-dn: ou=EmailITAdmins,ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-
-#@@@ KibanaAdmins -> ITAdmins
-dn: ou=KibanaAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: KibanaAdmins
-aliasedObjectName: ou=KibanaITAdmins,ou=KibanaAdmins,ou=KibanaUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-
-#@@@ EmailAdmins -> ITAdmins
-dn: ou=EmailAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: EmailAdmins
-aliasedObjectName: ou=EmailITAdmins,ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 

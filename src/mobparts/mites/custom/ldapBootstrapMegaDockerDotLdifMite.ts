@@ -15,33 +15,101 @@ export const ldapBootstrapMegaDockerDotLdifMite: ICustomMite = {
 # base domain name for ldap was automatically generated from [[PRIMARYDOMAIN]]
 
 version: 1
+
+# Begin Customers Section
     
-dn: ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
+dn: ou=Customers,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=Customers,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
+dn: ou=Businesses,ou=Customers,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=Technicians,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
+dn: ou=Domestic,ou=Businesses,ou=Customers,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=Vendors,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
+dn: ou=International,ou=Businesses,ou=Customers,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=Employees,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
+dn: ou=Individuals,ou=Customers,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=Managers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
+dn: ou=Domestic,ou=Individuals,ou=Customers,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
+dn: ou=International,ou=Individuals,ou=Customers,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=KibanaUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
+# End Customers Section
+
+# Begin Employees Section
+
+dn: ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=EmailUsers,ou=Employees,ou=Users,ou=People,dc=ldap,[[LDAPDOMAINASDCS]]
+dn: ou=Staff,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
+
+dn: ou=Managers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=Executives,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+# End Employees Section
+
+# Begin Users Section
+
+dn: ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=BotUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=ExternalUsers,ou=BotUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=InternalUsers,ou=BotUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=ExternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=InternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+# End Users Section
+
+# Begin Vendors Section
+
+# Vendors ou
+dn: ou=Vendors,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## Domestic-Vendors
+dn: ou=Domestic,ou=Vendors,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+## International-Vendors
+dn: ou=International,ou=Vendors,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+# End Vendors Section
+
 
 `,
   },
