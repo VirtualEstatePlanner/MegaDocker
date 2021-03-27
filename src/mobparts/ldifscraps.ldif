@@ -276,18 +276,6 @@ dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINA
 objectclass: organizationalUnit
 
 
-### NextcloudUsers-InternalUsers-Employees
-dn: ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### NextcloudModerators-NextcloudUsers-InternalUsers-Employees
-dn: ou=NextcloudModerators,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### NextcloudAdmins-NextcloudUsers-InternalUsers-Employees
-dn: ou=NextcloudAdmins,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -533,10 +521,6 @@ objectclass: organizationalUnit
 dn: ou=PortainerITAdmins,ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-##### ITAdmins-NextcloudAdmins-NextcloudUsers-InternalUsers-Employees
-dn: ou=NextcloudITAdmins,ou=NextcloudAdmins,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 ##### ITAdmins-OwncloudAdmins-OwncloudUsers-InternalUsers-Employees
 dn: ou=OwncloudITAdmins,ou=OwncloudAdmins,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
@@ -568,12 +552,6 @@ objectclass: extensibleobject
 ou: PortainerAdmins
 aliasedObjectName: ou=PortainerITAdmins,ou=PortainerAdmins,ou=PortainerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
-#@@@ NextcloudAdmins -> ITAdmins
-dn: ou=NextcloudAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: NextcloudAdmins
-aliasedObjectName: ou=NextcloudITAdmins,ou=NextcloudAdmins,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
 #@@@ OwncloudAdmins -> ITAdmins
 dn: ou=OwncloudAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -588,13 +566,6 @@ objectclass: alias
 objectclass: extensibleobject
 ou: HeimdallAdmins
 aliasedObjectName: ou=HeimdallITAdmins,ou=HeimdallAdmins,ou=HeimdallUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-
-#@@@ NextcloudModerators -> ITModerators
-dn: ou=NextcloudModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: NextcloudModerators
-aliasedObjectName: ou=NextcloudITModerators,ou=NextcloudModerators,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
 #@@@ OwncloudModerators -> ITModerators
 dn: ou=OwncloudModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
