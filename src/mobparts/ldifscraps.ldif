@@ -473,18 +473,6 @@ dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINA
 objectclass: organizationalUnit
 
 
-### WordpressUsers-InternalUsers-Employees
-dn: ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### WordpressModerators-WordpressUsers-InternalUsers-Employees
-dn: ou=WordpressModerators,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### WordpressAdmins-WordpressUsers-InternalUsers-Employees
-dn: ou=WordpressAdmins,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 
 
 ## Technicians-Employees ou
@@ -529,9 +517,6 @@ objectclass: organizationalUnit
 dn: ou=RocketchatGuestUsers,ou=ExternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-#### WordpressGuestUsers-ExternalUsers-HumanUsers-Users ou
-dn: ou=WordpressGuestUsers,ou=ExternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
 
 ### InternalUsers-HumanUsers-Users ou
 dn: ou=InternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
@@ -608,10 +593,6 @@ objectclass: organizationalUnit
 dn: ou=GhostITAdmins,ou=GhostAdmins,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-##### ITAdmins-WordpressAdmins-WordpressUsers-InternalUsers-Employees
-dn: ou=WordpressITAdmins,ou=WordpressAdmins,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 ##### ITAdmins-PiholeAdmins-PiholeUsers-InternalUsers-Employees
 dn: ou=PiholeITAdmins,ou=PiholeAdmins,ou=PiholeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
@@ -650,21 +631,12 @@ objectclass: organizationalUnit
 dn: ou=GhostITModerators,ou=GhostModerators,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-##### ITModerators-WordpressModerators-WordpressUsers-InternalUsers-Employees
-dn: ou=WordpressITModerators,ou=WordpressModerators,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
+
 
 ##### ITModerators-RocketchatModerators-RocketchatUsers-InternalUsers-Employees
 dn: ou=RocketchatITModerators,ou=RocketchatModerators,ou=RocketchatUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-##### ITModerators-WordpressModerators-WordpressUsers-InternalUsers-Employees
-dn: ou=WordpressITModerators,ou=NextcloudModerators,ou=NextcloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-##### ITModerators-WordpressModerators-WordpressUsers-InternalUsers-Employees
-dn: ou=ITModerators,ou=OwncloudModerators,ou=OwncloudUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
 
 
 
@@ -699,12 +671,6 @@ objectclass: extensibleobject
 ou: GhostAdmins
 aliasedObjectName: ou=GhostITAdmins,ou=GhostAdmins,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
-#@@@ WordpressAdmins -> ITAdmins
-dn: ou=WordpressAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: WordpressAdmins
-aliasedObjectName: ou=WordpressITAdmins,ou=WordpressAdmins,ou=WordpressUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
 #@@@ PiholeAdmins -> ITAdmins
 dn: ou=PiholeAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
