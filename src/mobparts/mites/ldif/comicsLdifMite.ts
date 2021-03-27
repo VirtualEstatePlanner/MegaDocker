@@ -11,5 +11,20 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const comicsLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 99999,
-  miteString: ``,
+  miteString: `# Begin Mylar Section
+
+dn: ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=MylarAdmins,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=MylarAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: PortainerAdmins
+aliasedObjectName: ou=MylarITAdmins,ou=MylarAdmins,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End Mylar Section
+`,
 }

@@ -60,18 +60,6 @@ objectclass: organizationalUnit
 dn: ou=LazyLibrarianModerators,ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-### MylarUsers-InternalUsers-Employees
-dn: ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### MylarAdmins-MylarUsers-InternalUsers-Employees
-dn: ou=MylarAdmins,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### MylarModerators-MylarUsers-InternalUsers-Employees
-dn: ou=MylarModerators,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
