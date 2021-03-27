@@ -2,7 +2,7 @@
 
 ## a list of changes per version number
 
-- `v0.4.5-beta` : ** **
+- `v0.4.5-beta` : **bootstraps LDIF based on existing services, added LDIF Mite generator script**
 - `v0.4.4-beta` : docker hub ELK images, filebrowser Manikin, finished convenience generator scripts
 - `v0.4.3-beta` : Shiny new Dark Mode, added "pretty" script to manually trigger prettier, no more React hook nesting errors
 - `v0.4.2-beta` : Testing, testing, 1, 2, 3.  Okay, testing 0.7, maybe.
@@ -16,7 +16,7 @@
 - `v0.3.4-beta` : added Styleguidist Manikin
 - `v0.3.3-beta` : added n8n Manikin, removed crufty code
 - `v0.3.2-beta` : added NextCloud and LedgerSMB Manikins
-- `v0.3.1-beta` : removed Skopos
+- `v0.3.1-beta` : removed Skopos as they are no longer open-source
 - `v0.3.0-beta` : fixed Electron builds, updated dependency versions
 - `v0.2.9-alpha` : removed tests because they were getting irritating, will re-add in `v0.4`
 - `v0.2.8-alpha` : implemented zip file downloads
