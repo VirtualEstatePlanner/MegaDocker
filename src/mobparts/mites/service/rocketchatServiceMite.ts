@@ -1,6 +1,6 @@
 /** @format */
 
-//  serviceMite.ts
+//  rocketchatServiceMite.ts
 //  MEGADocker
 //  Service Mite for RocketChat
 //  Created by George Georgulas IV on 1/26/19.

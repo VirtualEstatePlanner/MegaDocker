@@ -1,8 +1,8 @@
 /** @format */
 
-//  elkServiceMite.ts
+//  syncthingServiceMite.ts
 //  MEGADocker
-//  Service Mite for Elk
+//  Service Mite for Syncthing
 //  Created by George Georgulas IV on 3/03/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 

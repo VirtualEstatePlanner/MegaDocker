@@ -1,6 +1,6 @@
 /** @format */
 
-//  serviceMite.ts
+//  portainerServiceMite.ts
 //  MEGADocker
 //  Service Mite for Portainer
 //  Created by George Georgulas IV on 1/26/19.

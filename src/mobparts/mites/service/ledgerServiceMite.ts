@@ -1,6 +1,6 @@
 /** @format */
 
-//  ledgererviceMite.ts
+//  ledgerServiceMite.ts
 //  MEGADocker
 //  Service Mite for Ledger
 //  Created by George Georgulas IV on 1/26/19.

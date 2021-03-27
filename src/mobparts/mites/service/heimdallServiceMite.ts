@@ -1,8 +1,8 @@
 /** @format */
 
-//  serviceMite.ts
+//  heimdallServiceMite.ts
 //  MEGADocker
-//  Service Mite for Portal
+//  Service Mite for Heimdall
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 

@@ -1,6 +1,6 @@
 /** @format */
 
-//  serviceMite.ts
+//  nextcloudServiceMite.ts
 //  MEGADocker
 //  Service Mite for NextCloud
 //  Created by George Georgulas IV on 1/26/19.

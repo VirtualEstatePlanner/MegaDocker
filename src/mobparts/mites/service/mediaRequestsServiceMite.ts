@@ -1,8 +1,8 @@
 /** @format */
 
-//  serviceMite.ts
+//  mediaRequestsServiceMite.ts
 //  MEGADocker
-//  Service Mite for Owncloud
+//  Service Mite for ombi
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019 The MegaDocker Group. All rights reserved.
 

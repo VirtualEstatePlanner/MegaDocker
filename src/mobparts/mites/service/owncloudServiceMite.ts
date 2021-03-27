@@ -1,6 +1,6 @@
 /** @format */
 
-//  serviceMite.ts
+//  owncloudServiceMite.ts
 //  MEGADocker
 //  Service Mite for Owncloud
 //  Created by George Georgulas IV on 1/26/19.

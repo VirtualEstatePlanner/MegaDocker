@@ -1,5 +1,11 @@
 /** @format */
 
+//  styleguidistServiceMite.ts
+//  MEGADocker
+//  Service Mite for Styleguidist
+//  Created by George Georgulas IV on 8/15/20.
+//  Copyright © 2020-2021 The MegaDocker Group. All rights reserved.
+
 import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
 
 const hostnames: string[] = [`style`]

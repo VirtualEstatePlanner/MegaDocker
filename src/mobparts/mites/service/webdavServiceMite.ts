@@ -1,6 +1,6 @@
 /** @format */
 
-//  serviceMite.ts
+//  webdavServiceMite.ts
 //  MEGADocker
 //  Service Mite for WebDAV
 //  Created by George Georgulas IV on 1/26/19.
