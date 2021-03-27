@@ -11,5 +11,22 @@ import { ILDIFMite } from '../../../interfaces/ILDIFMite'
 export const traefikLdifMite: ILDIFMite = {
   type: `LDIF`,
   miteIndex: 99999,
-  miteString: ``,
+  miteString: `# Begin Traefik Section
+
+dn: ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=TraefikITAdmins,ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=TraefikAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: TraefikAdmins
+aliasedObjectName: ou=TraefikITAdmins,ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+# End LDIF Section`,
 }

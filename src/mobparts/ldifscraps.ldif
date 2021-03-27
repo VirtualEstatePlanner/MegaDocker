@@ -420,14 +420,6 @@ dn: ou=BLANKModerators,ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINA
 objectclass: organizationalUnit
 
 
-### TraefikUsers-InternalUsers-Employees
-dn: ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-#### TraefikAdmins-TraefikUsers-InternalUsers-Employees
-dn: ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
 
 ### BLANKUsers-InternalUsers-Employees
 dn: ou=BLANKUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -598,9 +590,6 @@ description: GO JOE!
 
 
 
-##### ITAdmins-TraefikAdmins-TraefikUsers-InternalUsers-Employees
-dn: ou=TraefikITAdmins,ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
 
 
 ##### ITAdmins-KanboardAdmins-KanboardUsers-InternalUsers-Employees
@@ -681,12 +670,6 @@ objectclass: organizationalUnit
 
 #@@@ Aliases - ITAdmins
 
-#@@@ TraefikAdmins -> ITAdmins
-dn: ou=TraefikAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: alias
-objectclass: extensibleobject
-ou: TraefikAdmins
-aliasedObjectName: ou=TraefikITAdmins,ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
 #@@@ KanboardAdmins -> ITAdmins
 dn: ou=KanboardAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
