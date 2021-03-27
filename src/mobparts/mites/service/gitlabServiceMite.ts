@@ -50,13 +50,11 @@ export const gitlabServiceMite: ITraefikedServiceMite = {
    - LDAP_VERIFY_SSL=true
    - LDAP_CA_FILE=/ldapcerts/[[PRIMARYDOMAIN]].crt
    - LDAP_SSL_VERSION=TLSv1_2
-#   - LDAP_BIND_DN=dc=ldap,[[LDAPDOMAINASDCS]]
    - LDAP_BIND_DN=[[LDAPDOMAINASDCS]]
    - LDAP_PASS=[[LDAPADMINPASSWORD]]
    - LDAP_ACTIVE_DIRECTORY=false
    - LDAP_ALLOW_USERNAME_OR_EMAIL_LOGIN=true
-#   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,dc=${ldapServiceMite.webInterfaceHostnames[2]},[[LDAPDOMAINASDCS]]
-   - LDAP_BASE=ou=GitlabUsers,ou=UserGroups,[[LDAPDOMAINASDCS]]
+   - LDAP_BASE=ou=GitlabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 #   - LDAP_USER_FILTER=
   volumes:
    - \${PWD}/logs/gitlab:/var/log/gitlab
