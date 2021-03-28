@@ -133,7 +133,23 @@ export const ldapServiceMite: ITraefikedServiceMite = {
     condition: any
    labels:
     - 'com.MegaDocker.description=Authelia MariaDB - MariaDB database to store Authelia data'
-  
+ 
+ authelia-redis:
+  image: redis:alpine
+  volumes:
+   - \${PWD}/authelia/redis-data:/data
+   - \${PWD}/authelia/redis-conf/redis.conf:/usr/local/etc/redis/redis.conf
+  environment:
+   - =
+   - =
+  networks:
+   - ldap
+  deploy:
+   restart_policy:
+    condition: any
+   labels:
+    - 'com.MegaDocker.description=Authelia Redis DB - Redis database to store Authelia data'
+
 # End LDAP Service Section
 
 `,
