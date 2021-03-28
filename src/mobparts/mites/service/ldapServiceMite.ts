@@ -139,9 +139,6 @@ export const ldapServiceMite: ITraefikedServiceMite = {
   volumes:
    - \${PWD}/authelia/redis-data:/data
    - \${PWD}/authelia/redis-conf/redis.conf:/usr/local/etc/redis/redis.conf
-  environment:
-   - =
-   - =
   networks:
    - ldap
   deploy:
