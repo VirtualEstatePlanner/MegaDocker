@@ -10,7 +10,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const styleguidistWebpackDotConfigDotJsMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 60017,
+  miteIndex: 60018,
   miteFile: {
     path: `styleguidist/configs`,
     name: `webpack.config`,

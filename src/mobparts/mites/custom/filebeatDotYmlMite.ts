@@ -5,7 +5,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const filebeatDotYmlMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 60004,
+  miteIndex: 60005,
   miteFile: {
     path: `elk/filebeat-config`,
     name: `filebeat`,

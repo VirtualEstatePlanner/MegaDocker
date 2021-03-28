@@ -5,7 +5,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const ldapBootstrapMegaDockerDotLdifMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 60007,
+  miteIndex: 60008,
   miteFile: {
     path: `ldap/ldif-files`,
     name: `51-bootstrap-megadocker`,

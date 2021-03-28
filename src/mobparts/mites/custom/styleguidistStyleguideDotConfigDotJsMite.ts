@@ -10,7 +10,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const styleguidistStyleguideDotConfigDotJsMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 60015,
+  miteIndex: 60016,
   miteFile: {
     path: `styleguidist/configs`,
     name: `styleguide.config`,

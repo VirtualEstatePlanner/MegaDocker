@@ -5,7 +5,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const styleguidistPackageDotJsonMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 60014,
+  miteIndex: 60015,
   miteFile: {
     path: `styleguidist/configs`,
     name: `package`,
