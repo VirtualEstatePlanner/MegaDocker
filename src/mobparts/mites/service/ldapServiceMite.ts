@@ -47,6 +47,9 @@ export const ldapServiceMite: ITraefikedServiceMite = {
   ports:
    - 389:389
    - 636:636
+  deploy:
+   restart_policy:
+    condition: any
 
  ldapadmin:
   image: osixia/phpldapadmin:latest
