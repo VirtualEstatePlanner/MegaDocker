@@ -47,7 +47,7 @@ const makeFileString: Function = (options: ICustomMiteInput): string => {
   const year: number = date.getFullYear()
   const template: string = `/** @format */
 
-import { ICustomMite } from '../../interfaces/ICustomMite'
+import { ICustomMite } from '../../../interfaces/ICustomMite'
 
 export const filebrowserDatabaseDotDbMite: ICustomMite = {
   type: \`Custom\`,
