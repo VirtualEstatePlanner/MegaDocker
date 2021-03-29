@@ -69,6 +69,13 @@ objectclass: organizationalUnit
 
 # End Employees Section
 
+# Begin Groups Section
+
+dn: ou=Groups,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+# End Groups Section
+
 # Begin Hardware Section
 
 dn: ou=Hardware,[[LDAPDOMAINASDCS]]

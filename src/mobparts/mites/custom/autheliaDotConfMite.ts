@@ -26,9 +26,9 @@ totp:
   skip_verify: false
   base_dn: dc=ldap,[[LDAPDOMAINASDCS]]
   username_attribute: uid
-  additional_users_dn: ou=users
+  additional_users_dn: ou=Users
   users_filter: (&({username_attribute}={input})(objectClass=person))
-  additional_groups_dn: ou=groups
+  additional_groups_dn: ou=Groups
   groups_filter: (&(member={dn})(objectclass=groupOfNames))
   group_name_attribute: cn
   mail_attribute: mail
