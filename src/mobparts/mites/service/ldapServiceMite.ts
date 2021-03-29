@@ -39,9 +39,9 @@ export const ldapServiceMite: ITraefikedServiceMite = {
   stdin_open: true
   volumes:
    - \${PWD}/logs/ldap:/var/log/ldap
-   - \${PWD}/ldap/ldif-files:/container/service/slapd/assets/config/bootstrap/ldif/custom
-   - \${PWD}/ldap/lib:/var/lib/ldap
-   - \${PWD}/ldap/slapd.d:/etc/ldap/slapd.d
+   - \${PWD}/ldap/openldap-ldif-files:/container/service/slapd/assets/config/bootstrap/ldif/custom
+   - \${PWD}/ldap/openldap-lib:/var/lib/ldap
+   - \${PWD}/ldap/openldap-slapd.d:/etc/ldap/slapd.d
    - \${PWD}/traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/container/service/slapd/assets/certs/[[PRIMARYDOMAIN]].crt:ro
    - \${PWD}/traefik/ssl/private/[[PRIMARYDOMAIN]].key:/container/service/slapd/assets/certs/[[PRIMARYDOMAIN]].key:ro
   ports:
@@ -101,7 +101,7 @@ export const ldapServiceMite: ITraefikedServiceMite = {
    - TZ=$HOSTTIMEZONE
   volumes:
    - \${PWD}/ldap/authelia-data:/var/lib/authelia
-   - \${PWD}/ldap/authelia-config/configuration.yml:/etc/authelia/configuration.yml:ro
+   - \${PWD}/ldap/authelia-conf/configuration.yml:/etc/authelia/configuration.yml:ro
   deploy:
    restart_policy:
     condition: any
@@ -140,8 +140,13 @@ export const ldapServiceMite: ITraefikedServiceMite = {
  authelia-redis:
   image: redis:alpine
   volumes:
-   - \${PWD}/authelia/redis-data:/data
-   - \${PWD}/authelia/redis-conf/redis.conf:/usr/local/etc/redis/redis.conf
+   - \${PWD}/ldap/authelia-redis-data/:/data
+   - \${PWD}/ldap/authelia-redis-conf/redis.conf:/usr/local/etc/redis/redis.conf
+   - \${PWD}/ldap/authelia-redis-users/redis.conf:/etc/redis/users.acl
+   - \${PWD}/ldap/authelia-redis-dump/:/redis-dump
+   - \${PWD}/traefik/ssl/private/letsencrypt.key:/etc/ssl/letsencrypt.key:ro
+   - \${PWD}/traefik/ssl/certs/[[PRIMARYDOMAIN]].crt:/etc/ssl/[[PRIMARYDOMAIN]].crt:ro
+   - \${PWD}/traefik/ssl/private/[[PRIMARYDOMAIN]].key:/etc/ssl/[[PRIMARYDOMAIN]].key:ro
   networks:
    - ldap
   deploy:

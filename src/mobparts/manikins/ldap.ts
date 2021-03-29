@@ -38,5 +38,16 @@ export const ldapManikin: IManikin = {
   mites: [ldapLdifMite, autheliaDotConfMite, autheliaRedisDotConfMite, ldapServiceMite, ldapNetworkMite, ldapBootstrapMegaDockerDotLdifMite],
   name: `LDAP`,
   ports: [],
-  subfolders: [`authelia-conf`, `authelia-data`, `authelia-mariadb`, `conf`, `pages`, `log`, `certs`, `lib`, `ldif-files`, `slapd.d`],
+  subfolders: [
+    `authelia-conf`,
+    `authelia-data`,
+    `authelia-mariadb`,
+    `authelia-redis-conf`,
+    `authelia-redis-data`,
+    `authelia-redis-dump`,
+    `authelia-redis-users`,
+    `openldap-lib`,
+    `openldap-ldif-files`,
+    `openldap-slapd.d`,
+  ],
 }
