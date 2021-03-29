@@ -11,7 +11,7 @@ import { ICustomMite } from '../../../interfaces/ICustomMite'
 export const autheliaRedisDotConfMite: ICustomMite = {
   type: `Custom`,
   miteString: ``,
-  miteIndex: 60001,
+  miteIndex: 60002,
   miteFile: {
     path: `ldap/authelia-redis-etc`,
     name: `users`,
