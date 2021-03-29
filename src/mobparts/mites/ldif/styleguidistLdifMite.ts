@@ -19,7 +19,7 @@ objectclass: organizationalUnit
 dn: ou=StyleguidistAdmins,ou=StyleguidistUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=StyleguidistModerators,ou=StyleguidistUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=StyleguidistITAdmins,ou=StyleguidistAdmins,ou=StyleguidistUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=StyleguidistAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -27,6 +27,12 @@ objectclass: alias
 objectclass: extensibleobject
 ou: StyleguidistAdmins
 aliasedObjectName: ou=StyleguidistITAdmins,ou=StyleguidistAdmins,ou=StyleguidistUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=StyleguidistModerators,ou=StyleguidistUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=StyleguidistITModerators,ou=StyleguidistModerators,ou=StyleguidistUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
 
 dn: ou=StyleguidistModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias

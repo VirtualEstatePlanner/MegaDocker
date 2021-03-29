@@ -28,6 +28,18 @@ objectclass: extensibleobject
 ou: SwarmpitAdmins
 aliasedObjectName: ou=SwarmpitITAdmins,ou=SwarmpitAdmins,ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
+dn: ou=SwarmpitModerators,ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=SwarmpitITModerators,ou=SwarmpitModerators,ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=SwarmpitModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: SwarmpitModerators
+aliasedObjectName: ou=SwarmpitITModerators,ou=SwarmpitModerators,ou=SwarmpitUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
 # End Swarmpit Section
 `,
 }

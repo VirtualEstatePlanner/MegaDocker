@@ -19,7 +19,7 @@ objectclass: organizationalUnit
 dn: ou=MealieAdmins,ou=MealieUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=MealieModerators,ou=MealieUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=MealieITAdmins,ou=MealieAdmins,ou=MealieUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=MealieAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -27,6 +27,12 @@ objectclass: alias
 objectclass: extensibleobject
 ou: MealieAdmins
 aliasedObjectName: ou=MealieITAdmins,ou=MealieAdmins,ou=MealieUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=MealieModerators,ou=MealieUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=MealieITModerators,ou=MealieModerators,ou=MealieUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
 
 dn: ou=MealieModeratorss,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias

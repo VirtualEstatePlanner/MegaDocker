@@ -19,7 +19,7 @@ objectclass: organizationalUnit
 dn: ou=SyncthingAdmins,ou=SyncthingUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=SyncthingModerators,ou=SyncthingUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=SyncthingITAdmins,ou=SyncthingAdmins,ou=SyncthingUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=SyncthingAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -27,6 +27,12 @@ objectclass: alias
 objectclass: extensibleobject
 ou: SyncthingAdmins
 aliasedObjectName: ou=SyncthingITAdmins,ou=SyncthingAdmins,ou=SyncthingUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=SyncthingModerators,ou=SyncthingUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=SyncthingITModerators,ou=SyncthingModerators,ou=SyncthingUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
 
 dn: ou=SyncthingModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias

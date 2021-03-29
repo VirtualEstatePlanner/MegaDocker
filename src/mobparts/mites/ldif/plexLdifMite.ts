@@ -19,7 +19,7 @@ objectclass: organizationalUnit
 dn: ou=PlexMediaServerAdmins,ou=PlexMediaServerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=PlexMediaServerModerators,ou=PlexMediaServerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=PlexMediaServerITAdmins,ou=PlexMediaServerAdmins,ou=PlexMediaServerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=PlexMediaServerAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -27,6 +27,12 @@ objectclass: alias
 objectclass: extensibleobject
 ou: PlexMediaServerAdmins
 aliasedObjectName: ou=PlexMediaServerITAdmins,ou=PlexMediaServerAdmins,ou=PlexMediaServerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=PlexMediaServerModerators,ou=PlexMediaServerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=PlexMediaServerITModerators,ou=PlexMediaServerModerators,ou=PlexMediaServerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
 
 dn: ou=PlexMediaServerModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias

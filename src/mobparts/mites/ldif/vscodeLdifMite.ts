@@ -19,7 +19,7 @@ objectclass: organizationalUnit
 dn: ou=VSCodeAdmins,ou=VSCodeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=VSCodeModerators,ou=VSCodeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=VSCodeITAdmins,ou=VSCodeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=VSCodeAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -27,6 +27,12 @@ objectclass: alias
 objectclass: extensibleobject
 ou: VSCodeAdmins
 aliasedObjectName: ou=VSCodeITAdmins,ou=VSCodeAdmins,ou=VSCodeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=VSCodeModerators,ou=VSCodeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=VSCodeITModerators,ou=VSCodeModerators,ou=VSCodeUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
 
 dn: ou=VSCodeModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias

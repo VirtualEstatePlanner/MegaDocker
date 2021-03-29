@@ -19,14 +19,17 @@ objectclass: organizationalUnit
 dn: ou=VisualizerAdmins,ou=VisualizerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=VisualizerModerators,ou=VisualizerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
-
-dn: ou=VisualizerAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=VisualizerITAdmins,ou=VisualizerAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
 ou: VisualizerAdmins
 aliasedObjectName: ou=VisualizerITAdmins,ou=VisualizerAdmins,ou=VisualizerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=VisualizerModerators,ou=VisualizerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=VisualizerITModerators,ou=VisualizerModerators,ou=VisualizerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
 
 dn: ou=VisualizerModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias

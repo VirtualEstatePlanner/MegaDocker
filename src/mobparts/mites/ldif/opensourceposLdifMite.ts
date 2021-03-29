@@ -19,7 +19,7 @@ objectclass: organizationalUnit
 dn: ou=OSPOSAdmins,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=OSPOSModerators,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=OSPOSITAdmins,ou=OSPOSAdmins,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=OSPOSAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -27,6 +27,12 @@ objectclass: alias
 objectclass: extensibleobject
 ou: OSPOSAdmins
 aliasedObjectName: ou=OSPOSITAdmins,ou=OSPOSAdmins,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=OSPOSModerators,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=OSPOSITModerators,ou=OSPOSModerators,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
 
 dn: ou=OSPOSModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias

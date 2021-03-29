@@ -19,7 +19,7 @@ objectclass: organizationalUnit
 dn: ou=FileBrowserAdmins,ou=FileBrowserUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=FileBrowserModerators,ou=FileBrowserUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=FileBrowserITAdmins,ou=FileBrowserAdmins,ou=FileBrowserUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=FileBrowserAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -27,6 +27,12 @@ objectclass: alias
 objectclass: extensibleobject
 ou: FileBrowserAdmins
 aliasedObjectName: ou=FileBrowserITAdmins,ou=FileBrowserAdmins,ou=FileBrowserUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=FileBrowserModerators,ou=FileBrowserUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=FileBrowserITModerators,ou=FileBrowserUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
 
 dn: ou=FileBrowserModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias

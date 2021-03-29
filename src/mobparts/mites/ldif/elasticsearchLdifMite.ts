@@ -19,7 +19,7 @@ objectclass: organizationalUnit
 dn: ou=ElasticsearchAdmins,ou=ElasticsearchUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=ElasticsearchModerators,ou=ElasticsearchUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=ElasticsearchITAdmins,ou=ElasticsearchAdmins,ou=ElasticsearchUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=ElasticsearchAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -27,6 +27,12 @@ objectclass: alias
 objectclass: extensibleobject
 ou: ElasticsearchAdmins
 aliasedObjectName: ou=ElasticsearchITAdmins,ou=ElasticsearchAdmins,ou=ElasticsearchUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: ou=ElasticsearchModerators,ou=ElasticsearchUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=ElasticsearchITModerators,ou=ElasticsearchModerators,ou=ElasticsearchUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
 
 dn: ou=ElasticsearchModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias

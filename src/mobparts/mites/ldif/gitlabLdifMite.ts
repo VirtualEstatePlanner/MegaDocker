@@ -28,5 +28,17 @@ objectclass: extensibleobject
 ou: GitLabAdmins
 aliasedObjectName: ou=GitLabITAdmins,ou=GitLabAdmins,ou=GitLabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
+dn: ou=GitLabModerators,ou=GitlabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=GitLabITModerators,ou=GitLabModerators,ou=GitlabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
+dn: ou=GitLabModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+ou: GitLabAdmins
+aliasedObjectName: ou=GitLabITModerators,ou=GitLabModerators,ou=GitLabUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
 # End GitLab section`,
 }

@@ -7,12 +7,12 @@ export const ldapBootstrapMegaDockerDotLdifMite: ICustomMite = {
   miteString: ``,
   miteIndex: 60008,
   miteFile: {
-    path: `ldap/ldif-files`,
+    path: `ldap/openldap-ldif-files`,
     name: `51-bootstrap-megadocker`,
     extension: `ldif`,
     permissions: `644`,
     contents: `# MegaDocker 51-bootstrap-megadocker.ldif file for [[MOBNAME]]
-# base domain name for ldap was automatically generated from [[PRIMARYDOMAIN]]
+# base domain name '[[LDAPDOMAINASDCS]]' was automatically generated from [[PRIMARYDOMAIN]]
 
 version: 1
 
@@ -140,13 +140,13 @@ objectclass: organizationalUnit
 dn: ou=AMD64,ou=Windows,ou=Computers,ou=Hardware,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=Desktops,ou=AMD64ou=Windows,ou=Computers,ou=Hardware,[[LDAPDOMAINASDCS]]
+dn: ou=Desktops,ou=AMD64,ou=Windows,ou=Computers,ou=Hardware,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=Laptops,ou=AMD64ou=Windows,ou=Computers,ou=Hardware,[[LDAPDOMAINASDCS]]
+dn: ou=Laptops,ou=AMD64,ou=Windows,ou=Computers,ou=Hardware,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
-dn: ou=Servers,ou=AMD64ou=Windows,ou=Computers,ou=Hardware,[[LDAPDOMAINASDCS]]
+dn: ou=Servers,ou=AMD64,ou=Windows,ou=Computers,ou=Hardware,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=ARM64,ou=Windows,ou=Computers,ou=Hardware,[[LDAPDOMAINASDCS]]
