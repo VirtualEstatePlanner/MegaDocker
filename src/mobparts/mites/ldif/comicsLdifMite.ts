@@ -28,7 +28,7 @@ objectclass: extensibleobject
 ou: PortainerAdmins
 aliasedObjectName: ou=MylarITAdmins,ou=MylarAdmins,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
-dn: ou=MylarModeratorss,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: ou=MylarModerators,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
 dn: ou=MylarITModerators,ou=MylarModerators,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
