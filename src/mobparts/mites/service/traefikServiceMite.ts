@@ -61,7 +61,11 @@ export const traefikServiceMite: ITraefikedServiceMite = {
     - 'traefik.enable=true'
     - 'traefik.http.routers.traefik.entrypoints=plainhttp'
     - 'traefik.http.routers.traefik.rule=Host("${hostnames[0]}.[[PRIMARYDOMAIN]]") && (PathPrefix("/api") || PathPrefix("/dashboard"))'
-## TODO: integrate LDAP auth to get rid of this sloppiness
+## TODO: enable authelia forward-auth middleware
+##    - 'traefik.http.middlewares.authorization.forwardauth.address=https://authelia.[[LDAPDOMAINASDCS]]'
+##    - "traefik.http.middlewares.authorization.forwardauth.trustForwardHeader=true"
+##    - "traefik.http.middlewares.authorization.forwardauth.authResponseHeaders=Remote-User, Remote-Groups, Remote-Name, Remote-Email"
+## TODO: replace basic-auth with forward-auth
 ##    - 'traefik.http.middlewares.traefik-auth.basicauth.users=[[TRAEFIKUSER]]:[[TRAEFIKPASSWORD]]'
     - 'traefik.http.middlewares.traefik-auth.basicauth.users=traefikuser:$$apr1$$OG8S9BgU$$7BwcoMe3X.gpi.aRLljDd.'
     - 'traefik.http.routers.traefik-https.middlewares=traefik-auth'
