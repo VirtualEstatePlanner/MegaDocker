@@ -24,6 +24,7 @@ import { ldapLdifMite } from '../mites/ldif/ldapLdifMite'
 import { autheliaRedisDotConfMite } from '../mites/custom/autheliaRedisDotConfMite'
 import { autheliaRedisUsersDotAclMite } from '../mites/custom/autheliaRedisUsersDotAclMite'
 import { autheliaRedisPassword } from '../memories/autheliaRedisPassword'
+import { autheliaRedisUser } from '../memories/autheliaRedisUser'
 
 /**
  * ldap Manikin
@@ -41,7 +42,7 @@ export const ldapManikin: IManikin = {
     autheliaMariaDBRootPassword,
     autheliaMariaDBUser,
     autheliaRedisPassword,
-    autheliaRedisPassword,
+    autheliaRedisUser,
     ldapAdminUsername,
     ldapAdminPassword,
     ldapConfigurationPassword,
