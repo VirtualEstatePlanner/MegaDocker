@@ -108,6 +108,22 @@ objectclass: groupOfUniqueNames
 description: Technicians who can administrate every service
 uniqueMember: uid=superadmin,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 
+dn: cn=Employees,ou=Groups,[[LDAPDOMAINASDCS]]
+objectclass: groupOfUniqueNames
+description: People who are employed directly by [[LDAPORGANISATION]]
+
+dn: cn=Vendors,ou=Groups,[[LDAPDOMAINASDCS]]
+objectclass: groupOfUniqueNames
+description: People or Businesses that [[LDAPORGANISATION]] pays for goods or services
+
+dn: cn=Customers,ou=Groups,[[LDAPDOMAINASDCS]]
+objectclass: groupOfUniqueNames
+description: People or Businesses that pay [[LDAPORGANISATION]] for goods or services
+
+dn: cn=Devices,ou=Groups,[[LDAPDOMAINASDCS]]
+objectclass: groupOfUniqueNames
+description: Devices that are part of the [[LDAPORGANISATION]] technology pool
+
 # End Groups Section
 
 # Begin Hardware Section
