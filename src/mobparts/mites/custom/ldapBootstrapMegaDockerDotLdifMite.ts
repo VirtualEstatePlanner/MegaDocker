@@ -64,8 +64,33 @@ objectclass: organizationalUnit
 dn: ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
+dn: uid=supermod,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Super Moderator Account
+sn: Moderator
+givenname: Super
+uid: supermod
+ou: Moderators
+ou: people
+description: universal service moderator
+
 dn: ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
+
+dn: uid=superadmin,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+cn: Super Administrator Account
+sn: Admin
+givenname: Super
+uid: superadmin
+ou: Administrators
+ou: people
+description: universal service administrator
+
 
 # End Employees Section
 
