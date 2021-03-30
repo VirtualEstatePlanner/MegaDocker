@@ -22,6 +22,8 @@ import { autheliaMariaDBRootPassword } from '../memories/autheliaMariaDBRootPass
 import { autheliaMariaDBUser } from '../memories/autheliaMariaDBUser'
 import { ldapLdifMite } from '../mites/ldif/ldapLdifMite'
 import { autheliaRedisDotConfMite } from '../mites/custom/autheliaRedisDotConfMite'
+import { autheliaRedisUsersDotAclMite } from '../mites/custom/autheliaRedisUsersDotAclMite'
+import { autheliaRedisPassword } from '../memories/autheliaRedisPassword'
 
 /**
  * ldap Manikin
@@ -34,8 +36,18 @@ export const ldapManikin: IManikin = {
   manikinGroups: [`Core`, `Utility`],
   manikinIcon: ldapIcon,
   manikinIndex: 10012,
-  memories: [autheliaMariaDBPassword, autheliaMariaDBRootPassword, autheliaMariaDBUser, ldapAdminUsername, ldapAdminPassword, ldapConfigurationPassword, ldapOrganisation],
-  mites: [ldapLdifMite, autheliaDotConfMite, autheliaRedisDotConfMite, ldapServiceMite, ldapNetworkMite, ldapBootstrapMegaDockerDotLdifMite],
+  memories: [
+    autheliaMariaDBPassword,
+    autheliaMariaDBRootPassword,
+    autheliaMariaDBUser,
+    autheliaRedisPassword,
+    autheliaRedisPassword,
+    ldapAdminUsername,
+    ldapAdminPassword,
+    ldapConfigurationPassword,
+    ldapOrganisation,
+  ],
+  mites: [ldapLdifMite, autheliaDotConfMite, autheliaRedisDotConfMite, autheliaRedisDotConfMite, autheliaRedisUsersDotAclMite, ldapServiceMite, ldapNetworkMite, ldapBootstrapMegaDockerDotLdifMite],
   name: `LDAP`,
   ports: [],
   subfolders: [

@@ -24,7 +24,7 @@ totp:
  ldap:
   url: ldaps://[[MOBNAME]]_ldap
   skip_verify: false
-  base_dn: dc=ldap,[[LDAPDOMAINASDCS]]
+  base_dn: [[LDAPDOMAINASDCS]]
   username_attribute: uid
   additional_users_dn: ou=Users
   users_filter: (&({username_attribute}={input})(objectClass=person))
@@ -32,17 +32,14 @@ totp:
   groups_filter: (&(member={dn})(objectclass=groupOfNames))
   group_name_attribute: cn
   mail_attribute: mail
-  user: cn=[[LDAPADMINUSER]],dc=ldap,[[LDAPDOMAINASDCS]]
+  user: cn=[[LDAPADMINUSER]],[[LDAPDOMAINASDCS]]
   password: [[LDAPADMINPASSWORD]]
 
-notifier:
- smtp:
-  username: [[LDAPMAILUSERNAME]]
-  sender: [[LDAPMAILUSERNAME]]@[[LDAPMAILDOMAIN]]
-  password: [[LDAPSMTPASSWORD]]
-  host: [[LDAPSMTPHOST]]
-  port: 587
-
+ notifier:
+  disable_startup_check: true
+  filesystem:
+   filename: /config/notification.txt
+ 
 jwt_secret: [[LDAPJWTSECRET]]
 
 access_control:
@@ -71,6 +68,17 @@ storage:
   username: [[LDAPADMINUSER]]
   password: [[LDAPADMINPASSWORD]]
 
-        `,
+redis:
+ host: [[MOBNAME]]_authelia-redis
+ port: 6379
+ username: [[LDAPADMINUSER]]
+ password: [[LDAPADMINPASSWORD]]
+ database_index: 0
+ maximum_active_connections: 8
+ minimum_idle_connections: 0
+ tls:
+  server_name: myredis.example.com
+  skip_verify: false
+`,
   },
 }

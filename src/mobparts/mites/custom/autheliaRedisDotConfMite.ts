@@ -33,7 +33,7 @@ stop-writes-on-bgsave-error yes
 rdbcompression yes
 rdbchecksum yes
 sanitize-dump-payload no
-dbfilename /redis-dump/dump.rdb
+dbfilename dump.rdb
 rdb-del-sync-files yes
 dir ./
 replica-priority 100
@@ -45,7 +45,7 @@ port 0
 tls-port 6379
 tls-cert-file /etc/ssl/[[PRIMARYDOMAIN]].crt
 tls-key-file /etc/ssl/[[PRIMARYDOMAIN]].key
-tls-auth-clients optional
+tls-auth-clients no
 aclfile /etc/redis/users.acl
 acllog-max-len 128
 acl-pubsub-default resetchannels
