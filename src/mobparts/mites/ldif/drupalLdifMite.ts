@@ -40,6 +40,18 @@ objectclass: extensibleobject
 ou: DrupalModerators
 aliasedObjectName: ou=DrupalITModerators,ou=DrupalModerators,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
+dn: cn=SuperAdmins,ou=DrupalAdmins,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperAdmins
+aliasedObjectName: cn=SuperAdmins,ou=Groups,[[LDAPDOMAINASDCS]]
+
+dn: cn=SuperModerators,ou=DrupalModerators,ou=DrupalUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperModerators
+aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
+
 # End Drupal Section
 `,
 }

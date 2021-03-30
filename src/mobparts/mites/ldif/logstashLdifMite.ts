@@ -40,6 +40,18 @@ objectclass: extensibleobject
 ou: LogstashModerators
 aliasedObjectName: ou=LogstashITModerators,ou=LogstashModerators,ou=LogstashUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
+dn: cn=SuperAdmins,ou=LogstashAdmins,ou=LogstashUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperAdmins
+aliasedObjectName: cn=SuperAdmins,ou=Groups,[[LDAPDOMAINASDCS]]
+
+dn: cn=SuperModerators,ou=LogstashModerators,ou=LogstashUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperModerators
+aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
+
 # End Logstash Section
 `,
 }

@@ -40,5 +40,17 @@ objectclass: extensibleobject
 ou: TraefikModerators
 aliasedObjectName: ou=TraefikITModerators,ou=TraefikModerators,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
+dn: cn=SuperAdmins,ou=TraefikAdmins,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperAdmins
+aliasedObjectName: cn=SuperAdmins,ou=Groups,[[LDAPDOMAINASDCS]]
+
+dn: cn=SuperModerators,ou=TraefikModerators,ou=TraefikUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperModerators
+aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
+
 # End Traefik LDIF Section`,
 }

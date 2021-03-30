@@ -39,8 +39,20 @@ objectclass: organizationalUnit
 dn: ou=EmailModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
-ou: EmailAdmins
+ou: EmailModerators
 aliasedObjectName: ou=EmailITModerators,ou=EmailModerators,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: cn=SuperAdmins,ou=EmailAdmins,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperAdmins
+aliasedObjectName: cn=SuperAdmins,ou=Groups,[[LDAPDOMAINASDCS]]
+
+dn: cn=SuperModerators,ou=EmailModerators,ou=EmailUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperModerators
+aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
 
 # End Email Section
 

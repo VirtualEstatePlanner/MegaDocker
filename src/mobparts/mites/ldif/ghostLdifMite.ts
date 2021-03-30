@@ -40,6 +40,18 @@ objectclass: extensibleobject
 ou: GhostModerators
 aliasedObjectName: ou=GhostITModerators,ou=GhostModerators,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
+dn: cn=SuperAdmins,ou=GhostAdmins,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperAdmins
+aliasedObjectName: cn=SuperAdmins,ou=Groups,[[LDAPDOMAINASDCS]]
+
+dn: cn=SuperModerators,ou=GhostModerators,ou=GhostUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperModerators
+aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
+
 # End Ghost Section
 `,
 }

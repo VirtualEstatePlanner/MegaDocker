@@ -40,6 +40,18 @@ objectclass: extensibleobject
 ou: StyleguidistModerators
 aliasedObjectName: ou=StyleguidistITModerators,ou=StyleguidistModerators,ou=StyleguidistUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
+dn: cn=SuperAdmins,ou=StyleguidistAdmins,ou=StyleguidistUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperAdmins
+aliasedObjectName: cn=SuperAdmins,ou=Groups,[[LDAPDOMAINASDCS]]
+
+dn: cn=SuperModerators,ou=StyleguidistModerators,ou=StyleguidistUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperModerators
+aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
+
 # End Styleguidist Section
 `,
 }

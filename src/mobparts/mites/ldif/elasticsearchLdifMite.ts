@@ -40,6 +40,18 @@ objectclass: extensibleobject
 ou: ElasticsearchModerators
 aliasedObjectName: ou=ElasticsearchITModerators,ou=ElasticsearchModerators,ou=ElasticsearchUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
+dn: cn=SuperAdmins,ou=ElasticsearchAdmins,ou=ElasticsearchUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperAdmins
+aliasedObjectName: cn=SuperAdmins,ou=Groups,[[LDAPDOMAINASDCS]]
+
+dn: cn=SuperModerators,ou=ElasticsearchModerators,ou=ElasticsearchUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperModerators
+aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
+
 # End Elasticsearch Section
 `,
 }
