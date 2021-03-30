@@ -61,6 +61,9 @@ objectclass: organizationalUnit
 dn: ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
+dn: ou=Supers,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
 dn: ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
@@ -96,7 +99,7 @@ objectclass: groupOfUniqueNames
 description: Technicians who can moderate every service
 uniqueMember: uid=supermod,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 
-dn: cn=SuperAdministrators,ou=Supers,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: cn=SuperAdmins,ou=Supers,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: groupOfUniqueNames
 description: Technicians who can administrate every service
 uniqueMember: uid=superadmin,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
