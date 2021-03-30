@@ -46,7 +46,7 @@ objectclass: extensibleobject
 cn: SuperAdmins
 aliasedObjectName: cn=SuperAdmins,ou=Groups,[[LDAPDOMAINASDCS]]
 
-dn: cn=SuperModerators,ou=MylarModerators,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: cn=SuperModerators,ou=OSPOSModerators,ou=OSPOSUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
 cn: SuperModerators

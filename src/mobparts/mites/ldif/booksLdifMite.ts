@@ -40,18 +40,19 @@ objectclass: extensibleobject
 ou: PortainerAdmins
 aliasedObjectName: ou=LazyLibrarianITModerators,ou=Groups,[[LDAPDOMAINASDCS]]
 
-dn: cn=SuperAdmins,ou=LazyLibrarianAdmins,ou=DuplicatiUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: cn=SuperAdmins,ou=LazyLibrarianAdmins,ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
 cn: SuperAdmins
 aliasedObjectName: cn=SuperAdmins,ou=Groups,[[LDAPDOMAINASDCS]]
 
-dn: cn=SuperModerators,ou=LazyLibrarianModerators,ou=DuplicatiUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+dn: cn=SuperModerators,ou=LazyLibrarianModerators,ou=LazyLibrarianUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
 cn: SuperModerators
 aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
 
 # End LazyLibrarian Section
+
 `,
 }

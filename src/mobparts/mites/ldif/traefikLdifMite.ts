@@ -52,5 +52,6 @@ objectclass: extensibleobject
 cn: SuperModerators
 aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
 
-# End Traefik LDIF Section`,
+# End Traefik LDIF Section
+`,
 }

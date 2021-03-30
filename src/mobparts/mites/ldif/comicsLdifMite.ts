@@ -25,7 +25,7 @@ objectclass: organizationalUnit
 dn: ou=MylarAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
-ou: PortainerAdmins
+ou: MylarAdmins
 aliasedObjectName: ou=MylarITAdmins,ou=MylarAdmins,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
 dn: ou=MylarModerators,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -37,7 +37,7 @@ objectclass: organizationalUnit
 dn: ou=MylarModerators,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
-ou: PortainerAdmins
+ou: MylarModerators
 aliasedObjectName: ou=MylarITModerators,ou=MylarModerators,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
 dn: cn=SuperAdmins,ou=MylarAdmins,ou=MylarUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
@@ -53,5 +53,6 @@ cn: SuperModerators
 aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
 
 # End Mylar Section
+
 `,
 }

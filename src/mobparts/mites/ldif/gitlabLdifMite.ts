@@ -52,5 +52,7 @@ objectclass: extensibleobject
 cn: SuperModerators
 aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
 
-# End GitLab section`,
+# End GitLab section
+
+`,
 }

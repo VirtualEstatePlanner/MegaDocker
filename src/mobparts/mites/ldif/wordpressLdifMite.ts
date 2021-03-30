@@ -55,5 +55,7 @@ objectclass: extensibleobject
 cn: SuperModerators
 aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
 
-# End WordPress Section`,
+# End WordPress Section
+
+`,
 }
