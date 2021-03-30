@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'
 
 export const n8nUser: IMemory = {
-  memoryIndex: 20028,
+  memoryIndex: 20030,
   memoryMarker: `[[N8NUSERNAME]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,

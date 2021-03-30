@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const ldapAdminPassword: IMemory = {
-  memoryIndex: 20018,
+  memoryIndex: 20020,
   memoryMarker: `[[LDAPADMINPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,

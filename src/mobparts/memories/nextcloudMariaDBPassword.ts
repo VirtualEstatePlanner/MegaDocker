@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const nextcloudMariaDBPassword: IMemory = {
-  memoryIndex: 20029,
+  memoryIndex: 20031,
   memoryMarker: `[[NEXTCLOUDMARIADBPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,

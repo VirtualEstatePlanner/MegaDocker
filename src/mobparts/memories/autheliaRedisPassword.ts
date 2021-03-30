@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const autheliaRedisPassword: IMemory = {
-  memoryIndex: 20000,
+  memoryIndex: 20003,
   memoryMarker: `[[AUTHELIAREDISPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,

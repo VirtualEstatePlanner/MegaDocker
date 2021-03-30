@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'
 
 export const kanboardMariaDBUser: IMemory = {
-  memoryIndex: 20015,
+  memoryIndex: 20017,
   memoryMarker: `[[KANBOARDMARIADBUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,

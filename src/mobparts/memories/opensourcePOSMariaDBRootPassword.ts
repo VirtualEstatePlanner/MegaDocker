@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const opensourcePOSMariaDBRootPassword: IMemory = {
-  memoryIndex: 20035,
+  memoryIndex: 20037,
   memoryMarker: `[[OPENSOURCEPOSMARIADBROOTPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,

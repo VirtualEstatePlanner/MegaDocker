@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { emailValidator } from '../../functions/validators/emailValidator'
 
 export const mobFolderPath: IMemory = {
-  memoryIndex: 20025,
+  memoryIndex: 20027,
   memoryMarker: `[[MOBFOLDERPATH]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,

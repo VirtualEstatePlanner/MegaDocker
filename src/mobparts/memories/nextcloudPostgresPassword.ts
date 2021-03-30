@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const nextcloudPostgresPassword: IMemory = {
-  memoryIndex: 20032,
+  memoryIndex: 20034,
   memoryMarker: `[[NEXTCLOUDPOSTGRESPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,

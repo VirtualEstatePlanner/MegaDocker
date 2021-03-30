@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'
 
 export const webdavUser: IMemory = {
-  memoryIndex: 20044,
+  memoryIndex: 20046,
   memoryMarker: `[[WEBDAVUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,

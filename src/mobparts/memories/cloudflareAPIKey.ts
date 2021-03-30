@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { cloudflareApiTokenValidator } from '../../functions/validators/cloudflareApiTokenValidator'
 
 export const cloudflareAPIKey: IMemory = {
-  memoryIndex: 20003,
+  memoryIndex: 20005,
   memoryMarker: `[[CLOUDFLAREAPIKEY]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,

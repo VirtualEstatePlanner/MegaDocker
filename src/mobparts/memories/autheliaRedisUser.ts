@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'
 
 export const autheliaRedisUser: IMemory = {
-  memoryIndex: 20002,
+  memoryIndex: 20004,
   memoryMarker: `[[AUTHELIAREDISUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,

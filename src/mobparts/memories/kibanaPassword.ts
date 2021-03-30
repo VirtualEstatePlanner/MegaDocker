@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const kibanaPassword: IMemory = {
-  memoryIndex: 20016,
+  memoryIndex: 20018,
   memoryMarker: `[[KIBANAPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,

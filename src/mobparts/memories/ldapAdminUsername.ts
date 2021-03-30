@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'
 
 export const ldapAdminUsername: IMemory = {
-  memoryIndex: 20019,
+  memoryIndex: 20021,
   memoryMarker: `[[LDAPADMINUSERNAME]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,

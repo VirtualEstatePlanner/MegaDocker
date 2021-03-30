@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const webdavPassword: IMemory = {
-  memoryIndex: 20043,
+  memoryIndex: 20045,
   memoryMarker: `[[WEBDAVPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,

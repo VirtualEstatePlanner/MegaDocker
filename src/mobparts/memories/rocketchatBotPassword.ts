@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const rocketchatBotPassword: IMemory = {
-  memoryIndex: 20039,
+  memoryIndex: 20041,
   memoryMarker: `[[ROCKETCHATBOTPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,

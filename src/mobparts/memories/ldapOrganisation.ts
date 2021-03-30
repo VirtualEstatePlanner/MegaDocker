@@ -11,7 +11,7 @@ import { IMemory } from '../../interfaces/IMemory'
 import { noValidator } from '../../functions/validators/noValidator'
 
 export const ldapOrganisation: IMemory = {
-  memoryIndex: 20021,
+  memoryIndex: 20023,
   memoryMarker: `[[LDAPORGANISATION]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,
