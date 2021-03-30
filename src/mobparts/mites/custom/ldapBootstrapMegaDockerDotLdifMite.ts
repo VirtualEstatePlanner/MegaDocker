@@ -64,6 +64,9 @@ objectclass: organizationalUnit
 dn: ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
+dn: ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
 dn: uid=supermod,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: person
 objectclass: organizationalPerson
@@ -75,9 +78,6 @@ uid: supermod
 ou: Moderators
 ou: people
 description: universal service moderator
-
-dn: ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
-objectclass: organizationalUnit
 
 dn: uid=superadmin,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: person
@@ -91,6 +91,15 @@ ou: Administrators
 ou: people
 description: universal service administrator
 
+dn: cn=SuperModerators,ou=Supers,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: groupOfUniqueNames
+description: Technicians who can moderate every service
+uniqueMember: uid=supermod,ou=Moderators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+
+dn: cn=SuperAdministrators,ou=Supers,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: groupOfUniqueNames
+description: Technicians who can administrate every service
+uniqueMember: uid=superadmin,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 
 # End Employees Section
 
