@@ -298,7 +298,7 @@ objectclass: organizationalUnit
 dn: ou=ServiceUsers,ou=InternalUsers,ou=HumanUsers,ou=Users,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
-ou: KanboardAdmins
+ou: InternalUsers
 aliasedObjectName: ou=InternalUsers,ou=Employees
 
 # End Users Section
