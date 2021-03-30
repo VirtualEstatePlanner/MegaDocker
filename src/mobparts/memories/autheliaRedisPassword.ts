@@ -11,7 +11,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const autheliaRedisPassword: IMemory = {
   memoryIndex: 20000,
-  memoryMarker: `[[AUTHELIAMARIADBPASSWORD]]`,
+  memoryMarker: `[[AUTHELIAREDISPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Authelia Redis Password`,
