@@ -40,6 +40,18 @@ objectclass: extensibleobject
 ou: DuplicatiModerators
 aliasedObjectName: ou=DuplicatiITModerators,ou=DuplicatiModerators,ou=DuplicatiUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 
+dn: cn=SuperAdmins,ou=DuplicatiAdmins,ou=DuplicatiUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperAdmins
+aliasedObjectName: cn=SuperAdmins,ou=Groups,[[LDAPDOMAINASDCS]]
+
+dn: cn=SuperModerators,ou=DuplicatiModerators,ou=DuplicatiUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: alias
+objectclass: extensibleobject
+cn: SuperModerators
+aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
+
 # End Duplicati Section
 `,
 }
