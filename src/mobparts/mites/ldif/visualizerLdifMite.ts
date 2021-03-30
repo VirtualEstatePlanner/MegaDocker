@@ -19,6 +19,9 @@ objectclass: organizationalUnit
 dn: ou=VisualizerAdmins,ou=VisualizerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: organizationalUnit
 
+dn: ou=VisualizerITAdmins,ou=VisualizerAdmins,ou=VisualizerUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
+objectclass: organizationalUnit
+
 dn: ou=VisualizerITAdmins,ou=VisualizerAdmins,ou=Administrators,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
 objectclass: extensibleobject
