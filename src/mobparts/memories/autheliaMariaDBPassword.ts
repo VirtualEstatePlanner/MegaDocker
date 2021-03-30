@@ -2,7 +2,7 @@
 
 //  autheliaMariaDBPassword.ts
 //  MEGADocker
-//  The variable for authelia's MariaDB root user's password
+//  The variable for authelia's MariaDB user's password
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
@@ -11,7 +11,7 @@ import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const autheliaMariaDBPassword: IMemory = {
   memoryIndex: 20000,
-  memoryMarker: `[[AUTHELIAMARIADBPASSWORD]]`,
+  memoryMarker: `[[AUTHELIAREDISPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
   name: `Authelia MariaDB Password`,
