@@ -44,7 +44,7 @@ dn: cn=SuperAdmins,ou=LazyLibrarianAdmins,ou=DuplicatiUsers,ou=InternalUsers,ou=
 objectclass: alias
 objectclass: extensibleobject
 cn: SuperAdmins
-aliasedObjectName: cn=SuperAdmins,ou=Supers,ou=Technicians,ou=Employees,[[LDAPDOMAINASDCS]]
+aliasedObjectName: cn=SuperAdmins,ou=Groups,[[LDAPDOMAINASDCS]]
 
 dn: cn=SuperModerators,ou=LazyLibrarianModerators,ou=DuplicatiUsers,ou=InternalUsers,ou=Employees,[[LDAPDOMAINASDCS]]
 objectclass: alias
