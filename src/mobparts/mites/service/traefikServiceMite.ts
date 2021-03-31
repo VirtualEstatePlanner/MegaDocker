@@ -90,7 +90,7 @@ export const traefikServiceMite: ITraefikedServiceMite = {
    - traefik
   volumes:
    - \${PWD}/logs/traefik:/loglocation
-   - \${PWD}/traefik/acme.json/:/acme.json
+   - \${PWD}/traefik/acme.json:/acme.json
    - \${PWD}/traefik/ssl:/output
   command: >
    file
