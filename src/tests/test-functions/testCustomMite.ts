@@ -16,8 +16,8 @@ export const testCustomMite: Function = (customMiteToTest: ICustomMite, manikin:
       expect(customMiteToTest.type).toStrictEqual(`Custom`)
     })
     it(`has an index in the correct range`, () => {
-      expect(customMiteToTest.miteIndex).toBeGreaterThanOrEqual(50000)
-      expect(customMiteToTest.miteIndex).toBeLessThanOrEqual(59999)
+      expect(customMiteToTest.miteIndex).toBeGreaterThanOrEqual(60000)
+      expect(customMiteToTest.miteIndex).toBeLessThanOrEqual(69999)
     })
     it(`is in the correct Manikin folder`, () => {
       expect(customMiteToTest.miteFile.path).toContain(manikin.folder)
