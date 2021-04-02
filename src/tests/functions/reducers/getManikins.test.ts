@@ -8,10 +8,8 @@
 
 import { getManikins } from '../../../functions/reducers/getManikins'
 import { workingManikins } from '../../../globals/workingManikins'
-import { IManikin } from '../../../interfaces/IManikin'
+import { IManikin } from '../../../interfaces/objectInterfaces/IManikin'
 import { testManikin } from '../../test-functions/testManikin'
-import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
-import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
 
 const testingManikins: IManikin[] = getManikins(workingManikins)
 

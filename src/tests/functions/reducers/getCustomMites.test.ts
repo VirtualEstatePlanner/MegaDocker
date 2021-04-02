@@ -12,8 +12,6 @@ import { workingManikins } from '../../../globals/workingManikins'
 import { ICustomMite } from '../../../interfaces/miteTypeInterfaces/ICustomMite'
 import { IManikin } from '../../../interfaces/objectInterfaces/IManikin'
 import { testCustomMite } from '../../test-functions/testCustomMite'
-import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
-import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
 
 const testingManikins: IManikin[] = workingManikins
 
