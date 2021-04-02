@@ -1,6 +1,6 @@
 /** @format */
 
-import { IMite } from './IMite'
+import { IMite } from '../IMite'
 
 //  ITraefikedServiceMite.ts
 //  MEGADocker

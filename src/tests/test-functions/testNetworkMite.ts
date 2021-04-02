@@ -8,7 +8,7 @@
 
 import { stringYamlValidator } from '../../functions/validators/stringYamlValidator'
 import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
-import { INetworkMite } from '../../interfaces/INetworkMite'
+import { INetworkMite } from '../../interfaces/miteTypeInterfaces/INetworkMite'
 
 export const testNetworkMite: Function = (networkMiteToTest: INetworkMite) => {
   const makeTestableMiteFromString: Function = (mite: INetworkMite): INetworkMite => {

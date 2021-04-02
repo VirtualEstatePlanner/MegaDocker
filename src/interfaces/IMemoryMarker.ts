@@ -29,7 +29,7 @@ export type IMemoryMarker =
   | `[[KIBANAUSER]]`
   | `[[LDAPADMINPASSWORD]]`
   | `[[LDAPADMINUSERNAME]]`
-  | `[[LDAPDOMAINASDCS]]` // only used in ldif and conf files
+  | `[[LDAPDOMAINASDCS]]` // NOTE only used in ldif and conf files
   | `[[LDAPAUTHELIASESSIONSECRET]]`
   | `[[LDAPCONFIGURATIONPASSWORD]]`
   | `[[LDAPJWTSECRET]]`

@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/5/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
+import { ITraefikedServiceMite } from '../../../interfaces/miteTypeInterfaces/ITraefikedServiceMite'
 
 const hostnames: string[] = [`mealie`]
 

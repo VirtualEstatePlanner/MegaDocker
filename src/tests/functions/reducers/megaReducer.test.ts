@@ -14,7 +14,7 @@ import { getManikins } from '../../../functions/reducers/getManikins'
 import { getMemories } from '../../../functions/reducers/getMemories'
 import { getMites } from '../../../functions/reducers/getMites'
 import { workingManikins } from '../../../globals/workingManikins'
-import { IMegaDockerState } from '../../../interfaces/IMegaDockerState'
+import { IMegaDockerState } from '../../../interfaces/stateManagement/IMegaDockerState'
 import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
 import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
 

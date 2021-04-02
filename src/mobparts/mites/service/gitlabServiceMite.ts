@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import { ITraefikedServiceMite } from '../../../interfaces/ITraefikedServiceMite'
+import { ITraefikedServiceMite } from '../../../interfaces/miteTypeInterfaces/ITraefikedServiceMite'
 import { ldapServiceMite } from './ldapServiceMite'
 
 const hostnames: string[] = [`gitlab`, `dockerhub`]

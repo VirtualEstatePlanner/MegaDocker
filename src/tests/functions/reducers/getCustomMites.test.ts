@@ -9,7 +9,7 @@
 import { getCustomMites } from '../../../functions/reducers/getCustomMites'
 import { getMites } from '../../../functions/reducers/getMites'
 import { workingManikins } from '../../../globals/workingManikins'
-import { ICustomMite } from '../../../interfaces/ICustomMite'
+import { ICustomMite } from '../../../interfaces/miteTypeInterfaces/ICustomMite'
 import { IManikin } from '../../../interfaces/IManikin'
 import { testCustomMite } from '../../test-functions/testCustomMite'
 import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'

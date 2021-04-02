@@ -9,8 +9,8 @@
 import * as React from 'react'
 import { Button } from '@material-ui/core'
 import { MegaContext } from './MegaContext'
-import { IMegaDockerState } from '../interfaces/IMegaDockerState'
-import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
+import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
+import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
 import { mobName } from '../mobparts/memories/mobName'
 
 export const ButtonExportDockerSwarm: React.FC = (): React.ReactElement => {

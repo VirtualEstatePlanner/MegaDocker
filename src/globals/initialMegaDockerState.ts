@@ -8,7 +8,7 @@
 
 import { OrbThemeLight } from '../components/OrbThemeLight'
 import { IManikin } from '../interfaces/IManikin'
-import { IMegaDockerState } from '../interfaces/IMegaDockerState'
+import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 import { IMite } from '../interfaces/IMite'
 import { workingManikins } from './workingManikins'
 

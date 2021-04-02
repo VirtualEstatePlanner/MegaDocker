@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/27/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { ILDIFMite } from '../../../interfaces/ILDIFMite'
+import { ILDIFMite } from '../../../interfaces/miteTypeInterfaces/ILDIFMite'
 
 export const ghostLdifMite: ILDIFMite = {
   type: `LDIF`,

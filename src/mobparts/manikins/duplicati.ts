@@ -20,7 +20,7 @@ export const duplicatiManikin: IManikin = {
   folder: `duplicati`,
   isCore: true,
   isSelected: true,
-  manikinGroups: [`Core`, `Utility`],
+  manikinGroups: [`MegaDockerCore`, `Utility`],
   manikinIcon: duplicatiIcon,
   manikinIndex: 10003,
   memories: [],

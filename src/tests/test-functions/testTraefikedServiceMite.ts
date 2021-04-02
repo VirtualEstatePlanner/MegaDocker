@@ -7,7 +7,7 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { stringYamlValidator } from '../../functions/validators/stringYamlValidator'
-import { ITraefikedServiceMite } from '../../interfaces/ITraefikedServiceMite'
+import { ITraefikedServiceMite } from '../../interfaces/miteTypeInterfaces/ITraefikedServiceMite'
 import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
 
 export const testTraefikedServiceMite: Function = (traefikedServiceMiteToTest: ITraefikedServiceMite) => {

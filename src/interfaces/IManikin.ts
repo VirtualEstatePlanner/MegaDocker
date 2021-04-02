@@ -2,7 +2,7 @@
 
 //  IManikin.ts
 //  MEGADocker
-//  an interface that represents a Manikin
+//  an interface that represents a Manikin - a collection of microservices that define a complete web application
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 

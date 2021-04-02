@@ -5,7 +5,7 @@
 /* eslint-disable no-useless-escape */
 // for lines 29 - 32
 
-import { ICustomMite } from '../../../interfaces/ICustomMite'
+import { ICustomMite } from '../../../interfaces/miteTypeInterfaces/ICustomMite'
 
 export const styleguidistWebpackDotConfigDotJsMite: ICustomMite = {
   type: `Custom`,

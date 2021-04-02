@@ -5,7 +5,7 @@
 /* eslint-disable no-template-curly-in-string */
 // for line 26
 
-import { ICustomMite } from '../../../interfaces/ICustomMite'
+import { ICustomMite } from '../../../interfaces/miteTypeInterfaces/ICustomMite'
 
 export const styleguidistStyleguideDotConfigDotJsMite: ICustomMite = {
   type: `Custom`,

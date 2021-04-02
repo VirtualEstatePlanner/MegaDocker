@@ -10,8 +10,8 @@ import * as React from 'react'
 import { Switch, TableCell } from '@material-ui/core'
 import { MegaContext } from './MegaContext'
 import { IManikin } from '../interfaces/IManikin'
-import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
-import { IMegaDockerState } from '../interfaces/IMegaDockerState'
+import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
+import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 
 export const ManikinSwitch: React.FC<IManikin> = (manikin: IManikin): React.ReactElement => {
   const {
@@ -23,7 +23,7 @@ export const ManikinSwitch: React.FC<IManikin> = (manikin: IManikin): React.Reac
   } = React.useContext(MegaContext)
 
   return (
-    <div className='ManikinSwitch'>
+    <>
       <TableCell key={`${manikin.name}ToggleCell`}>
         <Switch
           key={`${manikin.name}Toggle`}
@@ -37,6 +37,6 @@ export const ManikinSwitch: React.FC<IManikin> = (manikin: IManikin): React.Reac
           }
         />
       </TableCell>
-    </div>
+    </>
   )
 }

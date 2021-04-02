@@ -1,6 +1,6 @@
 /** @format */
 
-import { ICustomMite } from '../../../interfaces/ICustomMite'
+import { ICustomMite } from '../../../interfaces/miteTypeInterfaces/ICustomMite'
 
 export const logstashDotYmlMite: ICustomMite = {
   type: `Custom`,

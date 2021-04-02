@@ -1,13 +1,14 @@
 /** @format */
 
-//  ICustomMite.ts
+//  IMissionMite.ts
 //  MEGADocker
-//  an interface that represents a non-YML Mite
+//  an interface that represents an
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import { IFileExtension } from './IFileExtension'
-import { IMite } from './IMite'
+import { IFileExtension } from '../templateLiteralUnionTypes/IFileExtension'
+import { IMite } from '../IMite'
+import { IN8NWorkflow } from '../IN8NWorkflow'
 
 /**
  * interface for a mite that represents a custom file
@@ -18,14 +19,7 @@ import { IMite } from './IMite'
  * @permissions the unix permissions of the file as a 3-digit string
  */
 
-export interface ICustomMite extends IMite {
-  type: `Custom`
-  miteString: string
-  miteFile: {
-    path: string
-    name: string
-    extension: IFileExtension
-    contents: string
-    permissions: string
-  }
+export interface IMissionMite extends IMite {
+  type: `N8N`
+  workflow: IN8NWorkflow
 }

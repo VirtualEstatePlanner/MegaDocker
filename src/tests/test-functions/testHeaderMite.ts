@@ -7,7 +7,7 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { stringYamlValidator } from '../../functions/validators/stringYamlValidator'
-import { IHeaderMite } from '../../interfaces/IHeaderMite'
+import { IHeaderMite } from '../../interfaces/miteTypeInterfaces/IHeaderMite'
 
 export const testHeaderMite: Function = (headerMiteToTest: IHeaderMite) => {
   const lastFourDigitsOfMiteIndex: boolean = headerMiteToTest.miteIndex.toString().endsWith(`9999`)

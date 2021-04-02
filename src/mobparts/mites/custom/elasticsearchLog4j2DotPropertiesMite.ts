@@ -1,6 +1,6 @@
 /** @format */
 
-import { ICustomMite } from '../../../interfaces/ICustomMite'
+import { ICustomMite } from '../../../interfaces/miteTypeInterfaces/ICustomMite'
 
 export const elasticsearchLog4j2DotPropertiesMite: ICustomMite = {
   type: `Custom`,

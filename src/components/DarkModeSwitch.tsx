@@ -8,8 +8,8 @@
 
 import * as React from 'react'
 import { Switch, TableCell, Theme } from '@material-ui/core'
-import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
-import { IMegaDockerState } from '../interfaces/IMegaDockerState'
+import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
+import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 import { MegaContext } from './MegaContext'
 import { OrbThemeDark } from './OrbThemeDark'
 

@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../../interfaces/IMite'
-import { INetworkMite } from '../../interfaces/INetworkMite'
+import { INetworkMite } from '../../interfaces/miteTypeInterfaces/INetworkMite'
 
 /**
  * updates networkMites array based on application state

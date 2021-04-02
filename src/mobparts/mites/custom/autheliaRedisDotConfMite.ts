@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/27/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { ICustomMite } from '../../../interfaces/ICustomMite'
+import { ICustomMite } from '../../../interfaces/miteTypeInterfaces/ICustomMite'
 
 export const autheliaRedisDotConfMite: ICustomMite = {
   type: `Custom`,

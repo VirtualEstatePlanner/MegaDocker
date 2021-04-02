@@ -17,8 +17,8 @@ import { getCustomMites } from './getCustomMites'
 import { toggleTheme } from './toggleTheme'
 import { zipDockerSwarm } from './zipDockerSwarm'
 import { initialMegaDockerState } from '../../globals/initialMegaDockerState'
-import { IMegaDockerAction } from '../../interfaces/IMegaDockerAction'
-import { IMegaDockerState } from '../../interfaces/IMegaDockerState'
+import { IMegaDockerAction } from '../../interfaces/stateManagement/IMegaDockerAction'
+import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerState'
 
 /**
  * Updates application state

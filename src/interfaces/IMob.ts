@@ -11,6 +11,6 @@ import { IMemory } from './IMemory'
 
 export interface IMob {
   mobManikins: IManikin[]
-  mobName: string
+  mobName: () => string
   mobMemories: IMemory[]
 }

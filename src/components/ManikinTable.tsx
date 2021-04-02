@@ -12,8 +12,8 @@ import { DarkModeSwitch } from './DarkModeSwitch'
 import { ManikinRow } from './ManikinRow'
 import { MegaContext } from './MegaContext'
 import { IManikin } from '../interfaces/IManikin'
-import { IMegaDockerAction } from '../interfaces/IMegaDockerAction'
-import { IMegaDockerState } from '../interfaces/IMegaDockerState'
+import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
+import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 
 export const ManikinTable: React.FC = (): React.ReactElement => {
   const {

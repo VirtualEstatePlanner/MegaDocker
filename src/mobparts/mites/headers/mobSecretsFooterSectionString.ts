@@ -1,6 +1,6 @@
 /** @format */
 
-import { IHeaderMite } from '../../../interfaces/IHeaderMite'
+import { IHeaderMite } from '../../../interfaces/miteTypeInterfaces/IHeaderMite'
 
 export const mobSecretsFooterSectionString: IHeaderMite = {
   type: `DockerSwarmHeader`,

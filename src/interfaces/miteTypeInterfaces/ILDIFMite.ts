@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/26/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { IMite } from './IMite'
+import { IMite } from '../IMite'
 
 /**
  * interface for a mite that represents a custom file

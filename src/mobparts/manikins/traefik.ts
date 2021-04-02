@@ -25,7 +25,7 @@ export const traefikManikin: IManikin = {
   folder: `traefik`,
   isCore: true,
   isSelected: true,
-  manikinGroups: [`Core`, `Network`],
+  manikinGroups: [`MegaDockerCore`, `Network`],
   manikinIcon: traefikIcon,
   manikinIndex: 10028,
   memories: [mobName, letsEncryptEmail, cloudflareAPIToken, primaryDomain],

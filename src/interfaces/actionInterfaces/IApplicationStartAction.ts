@@ -1,6 +1,6 @@
 /** @format */
 
-import { IMegaDockerState } from '../IMegaDockerState'
+import { IMegaDockerState } from '../stateManagement/IMegaDockerState'
 
 export interface IApplicationStartAction {
   type: `APPLICATION_START`

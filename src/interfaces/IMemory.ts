@@ -2,13 +2,13 @@
 
 //  IMemory.ts
 //  MEGADocker
-//  an interface that represents a variable used by a Manikin
+//  an interface that represents a variable used by a Manikin - data storage and input primitive for settings
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import { IMemoryMarker } from './IMemoryMarker'
-import { IMemoryType } from './IMemoryType'
-import { IMemoryValueType } from './IMemoryValueType'
+import { IMemoryType } from './templateLiteralUnionTypes/IMemoryType'
+import { IMemoryValueType } from './templateLiteralUnionTypes/IMemoryValueType'
 
 /**
  * interface for IMemory

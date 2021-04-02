@@ -34,7 +34,7 @@ export const ldapManikin: IManikin = {
   folder: `ldap`,
   isCore: true,
   isSelected: true,
-  manikinGroups: [`Core`, `Utility`],
+  manikinGroups: [`MegaDockerCore`, `Utility`],
   manikinIcon: ldapIcon,
   manikinIndex: 10012,
   memories: [
