@@ -10,6 +10,20 @@ import { ManikinTable } from '../../components/ManikinTable'
 import { render } from '@testing-library/react'
 import { MegaProvider } from '../../components/MegaContext'
 
+/*
+ * mocks css for Asap font
+ */
+jest.mock('@fontsource/asap', () => ({
+  fontsourceAsap: '',
+}))
+
+/*
+ * mocks css for gray color
+ */
+jest.mock('@material-ui/core/colors/grey', () => ({
+  greyColor: '',
+}))
+
 it('renders the ManikinTable component', () => {
   render(
     <div>

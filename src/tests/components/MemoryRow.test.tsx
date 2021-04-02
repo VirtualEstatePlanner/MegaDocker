@@ -12,6 +12,20 @@ import { Table, TableBody } from '@material-ui/core'
 import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { MegaProvider } from '../../components/MegaContext'
 
+/*
+ * mocks css for Asap font
+ */
+jest.mock('@fontsource/asap', () => ({
+  fontsourceAsap: '',
+}))
+
+/*
+ * mocks css for gray color
+ */
+jest.mock('@material-ui/core/colors/grey', () => ({
+  greyColor: '',
+}))
+
 it('renders the MemoryRow component', () => {
   ;(memory: IMemory) => {
     render(

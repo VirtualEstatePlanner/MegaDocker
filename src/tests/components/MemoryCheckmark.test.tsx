@@ -12,6 +12,20 @@ import { MegaProvider } from '../../components/MegaContext'
 import { MemoryValidationIcon } from '../../components/MemoryValidationIcon'
 import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 
+/*
+ * mocks css for Asap font
+ */
+jest.mock('@fontsource/asap', () => ({
+  fontsourceAsap: '',
+}))
+
+/*
+ * mocks css for gray color
+ */
+jest.mock('@material-ui/core/colors/grey', () => ({
+  greyColor: '',
+}))
+
 it('renders the MemoryValidationIcon component', () => {
   ;(memory: IMemory) => {
     render(

@@ -12,6 +12,20 @@ import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 import { Table, TableBody, TableCell } from '@material-ui/core'
 import { MegaProvider } from '../../components/MegaContext'
 
+/*
+ * mocks css for Asap font
+ */
+jest.mock('@fontsource/asap', () => ({
+  fontsourceAsap: '',
+}))
+
+/*
+ * mocks css for gray color
+ */
+jest.mock('@material-ui/core/colors/grey', () => ({
+  greyColor: '',
+}))
+
 it('renders the ManikinIcon component', () => {
   ;(manikin: IManikin) => {
     render(

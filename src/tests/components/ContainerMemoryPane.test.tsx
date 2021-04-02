@@ -9,6 +9,20 @@
 import { ContainerMemoryPane } from '../../components/ContainerMemoryPane'
 import { render } from '@testing-library/react'
 
+/*
+ * mocks css for Asap font
+ */
+jest.mock('@fontsource/asap', () => ({
+  fontsourceAsap: '',
+}))
+
+/*
+ * mocks css for gray color
+ */
+jest.mock('@material-ui/core/colors/grey', () => ({
+  greyColor: '',
+}))
+
 it('renders the ContainerMemoryPane component', () => {
   render(
     <div>

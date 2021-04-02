@@ -18,6 +18,20 @@ import { IMegaDockerState } from '../../../interfaces/stateManagement/IMegaDocke
 import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
 import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
 
+/*
+ * mocks css for Asap font
+ */
+jest.mock('@fontsource/asap', () => ({
+  fontsourceAsap: '',
+}))
+
+/*
+ * mocks css for gray color
+ */
+jest.mock('@material-ui/core/colors/grey', () => ({
+  greyColor: '',
+}))
+
 const selectedManikins = getManikins(workingManikins)
 const memories = getMemories(selectedManikins)
 const allMobMites = getMites(selectedManikins)
