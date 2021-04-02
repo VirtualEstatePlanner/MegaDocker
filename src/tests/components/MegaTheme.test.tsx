@@ -6,10 +6,10 @@
 //  Created by George Georgulas IV on 3/12/21.
 //  Copyright © 2020-2021 The MegaDocker Group. All rights reserved.
 
-import { MegaTheme } from '../../components/MegaTheme'
+import { OrbThemeDark } from '../../components/OrbThemeDark'
+import { OrbThemeLight } from '../../components/OrbThemeLight'
 import { render } from '@testing-library/react'
 import { ThemeProvider } from '@material-ui/core'
-import { ButtonTemplate } from '../../components/ButtonTemplate'
 
 /*
  * mocks css for Asap font
@@ -25,10 +25,18 @@ jest.mock('@material-ui/core/colors/grey', () => ({
   greyColor: '',
 }))
 
-it('renders the MegaTheme component', () => {
+it('renders light mode', () => {
   render(
     <div>
-      <ThemeProvider theme={MegaTheme} />
+      <ThemeProvider theme={OrbThemeLight} />
+    </div>
+  )
+})
+
+it('renders dark mode', () => {
+  render(
+    <div>
+      <ThemeProvider theme={OrbThemeDark} />
     </div>
   )
 })
