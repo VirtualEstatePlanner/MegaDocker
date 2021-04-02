@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019-2021 The MegaDocker Group. All rights reserved.'
 
-# MEGADocker v0.4.5-beta
+# MEGADocker v0.4.6-beta
 
 [Modular Enterprise-Grade Automated Docker](https://virtualestateplanner.github.io/MegaDocker/)
 
