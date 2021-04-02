@@ -44,7 +44,7 @@ const getTotalMiteCount = (): number => {
 }
 
 it('the correct number of mites are present', () => {
-  expect(getTotalMiteCount()).toStrictEqual(102)
+  expect(getTotalMiteCount()).toStrictEqual(108)
 })
 testingCustomMites.forEach((miteArray) => {
   miteArray.forEach((mite) => {
