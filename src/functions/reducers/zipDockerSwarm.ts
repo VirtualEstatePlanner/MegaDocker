@@ -8,9 +8,9 @@
 
 import JSZip from 'jszip'
 import fileSaver from 'file-saver'
-import { IMemory } from '../../interfaces/IMemory'
-import { IManikin } from '../../interfaces/IManikin'
-import { IMite } from '../../interfaces/IMite'
+import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
+import { IMite } from '../../interfaces/objectInterfaces/IMite'
 import { ILDIFMite } from '../../interfaces/miteTypeInterfaces/ILDIFMite'
 import { ICustomMite } from '../../interfaces/miteTypeInterfaces/ICustomMite'
 import { ITraefikedServiceMite } from '../../interfaces/miteTypeInterfaces/ITraefikedServiceMite'

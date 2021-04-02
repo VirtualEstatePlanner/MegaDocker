@@ -8,7 +8,7 @@
 
 import * as React from 'react'
 import { TableCell, TableRow, TextField, Tooltip } from '@material-ui/core'
-import { IMemory } from '../interfaces/IMemory'
+import { IMemory } from '../interfaces/objectInterfaces/IMemory'
 import { MemoryValidationIcon } from './MemoryValidationIcon'
 
 /**

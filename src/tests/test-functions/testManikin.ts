@@ -8,8 +8,8 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 
-import { IManikin } from '../../interfaces/IManikin';
-import { IMemory } from '../../interfaces/IMemory';
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin';
+import { IMemory } from '../../interfaces/objectInterfaces/IMemory';
 
 export const testManikin: Function = (manikinToTest: IManikin, memories?: IMemory[]) => {
   describe('tests a manikin for validity', () => {

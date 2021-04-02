@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from '../../interfaces/IManikin'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 
 import { mediaRequestsServiceMite } from '../mites/service/mediaRequestsServiceMite'
 import { musicNetworkMite } from '../mites/network/musicNetworkMite'

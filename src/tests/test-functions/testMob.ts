@@ -7,7 +7,7 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { workingManikins } from '../../globals/workingManikins'
-import { IMob } from '../../interfaces/IMob'
+import { IMob } from '../../interfaces/objectInterfaces/IMob'
 
 export const testMob: Function = (mobToTest: IMob) => {
   describe('tests a mob', () => {

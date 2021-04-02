@@ -8,7 +8,7 @@
 
 import * as React from 'react'
 import { TableCell } from '@material-ui/core'
-import { IMemory } from '../interfaces/IMemory'
+import { IMemory } from '../interfaces/objectInterfaces/IMemory'
 import checkmarkIndicator from '../images/indicators/checkmarkIndicator.png'
 import circleIndicator from '../images/indicators/circleIndicator.png'
 

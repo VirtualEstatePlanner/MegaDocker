@@ -8,7 +8,7 @@
 
 import { render } from '@testing-library/react'
 import { ManikinRow } from '../../components/ManikinRow'
-import { IManikin } from '../../interfaces/IManikin'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 import { Table, TableBody } from '@material-ui/core'
 import { MegaProvider } from '../../components/MegaContext'
 

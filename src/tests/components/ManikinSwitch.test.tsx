@@ -9,7 +9,7 @@
 import { render } from '@testing-library/react'
 import { Table, TableBody, TableCell } from '@material-ui/core'
 import { ManikinSwitch } from '../../components/ManikinSwitch'
-import { IManikin } from '../../interfaces/IManikin'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 import { MegaProvider } from '../../components/MegaContext'
 
 it('renders the ManikinSwitch component', () => {

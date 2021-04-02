@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 11/3/2020.
 //  Copyright © 2020 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from '../../interfaces/IManikin'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 import { n8nServiceMite } from '../mites/service/n8nServiceMite'
 import { n8nNetworkMite } from '../mites/network/n8nNetworkMite'
 import n8nIcon from '../../images/manikin-icons/n8nIcon.png'

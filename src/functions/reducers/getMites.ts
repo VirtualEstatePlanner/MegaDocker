@@ -6,8 +6,8 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from '../../interfaces/IManikin'
-import { IMite } from '../../interfaces/IMite'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
+import { IMite } from '../../interfaces/objectInterfaces/IMite'
 
 /**
  * updates allMobMites array based on application state

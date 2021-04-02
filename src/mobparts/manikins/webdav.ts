@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from '../../interfaces/IManikin'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 
 import { webdavServiceMite } from '../mites/service/webdavServiceMite'
 import { webdavNetworkMite } from '../mites/network/webdavNetworkMite'

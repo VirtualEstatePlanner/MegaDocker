@@ -12,7 +12,7 @@ import { getDServiceMites } from '../../../functions/reducers/getDServiceMites'
 import { getMites } from '../../../functions/reducers/getMites'
 import { workingManikins } from '../../../globals/workingManikins'
 import { ICustomMite } from '../../../interfaces/miteTypeInterfaces/ICustomMite'
-import { IMite } from '../../../interfaces/IMite'
+import { IMite } from '../../../interfaces/objectInterfaces/IMite'
 import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
 import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
 

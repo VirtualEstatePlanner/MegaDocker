@@ -1,7 +1,7 @@
 /** @format */
 
-import { IManikin } from '../IManikin'
-import { IMemory } from '../IMemory'
+import { IManikin } from '../objectInterfaces/IManikin'
+import { IMemory } from '../objectInterfaces/IMemory'
 
 export interface ISaveMobAction {
   type: `SAVE_MOB_FILE`

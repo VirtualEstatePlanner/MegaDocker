@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from '../../interfaces/IMemory'
+import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 
 export const testMemory: Function = (memoryToTest: IMemory) => {
   describe('tests a memory component with hooks', () => {

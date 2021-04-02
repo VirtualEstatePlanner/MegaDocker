@@ -71,7 +71,7 @@ const makeFileString: Function = (options: IManikinTemplateOptions): string => {
   //  Created by George Georgulas IV on ${shortDate}.
   //  Copyright © ${year} The MegaDocker Group. All rights reserved.
   
-  import { IManikin } from '../../interfaces/IManikin';
+  import { IManikin } from '../../interfaces/objectInterfaces/IManikin';
   
   import { ${options.fileName}ServiceMite } from '../mites/service/${options.fileName}ServiceMite';
   //import { ${options.fileName}NetworkMite } from '../mites/network/${options.fileName}NetworkMite';

@@ -1,6 +1,6 @@
 /** @format */
 
-import { IMiteType } from './templateLiteralUnionTypes/IMiteType'
+import { IMiteType } from '../templateLiteralUnionTypes/IMiteType'
 
 //  IMite.ts
 //  MEGADocker

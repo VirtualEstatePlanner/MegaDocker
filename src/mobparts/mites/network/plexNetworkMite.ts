@@ -1,6 +1,6 @@
 /** @format */
 
-import { IMite } from '../../../interfaces/IMite'
+import { IMite } from '../../../interfaces/objectInterfaces/IMite'
 
 export const plexNetworkMite: IMite = {
   type: `DockerSwarmNetwork`,

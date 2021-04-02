@@ -10,7 +10,7 @@ import * as React from 'react'
 import { TableCell, TableRow, Tooltip } from '@material-ui/core'
 import { ManikinIcon } from './ManikinIcon'
 import { ManikinSwitch } from './ManikinSwitch'
-import { IManikin } from '../interfaces/IManikin'
+import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 
 export const ManikinRow: React.FC<IManikin> = (manikin: IManikin): React.ReactElement => {
   return (

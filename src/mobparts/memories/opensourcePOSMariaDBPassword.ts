@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/5/2021.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from '../../interfaces/IMemory'
+import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const opensourcePOSMariaDBPassword: IMemory = {

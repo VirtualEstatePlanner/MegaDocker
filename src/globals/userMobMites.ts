@@ -1,6 +1,6 @@
 /** @format */
 
-import { IMite } from '../interfaces/IMite'
+import { IMite } from '../interfaces/objectInterfaces/IMite'
 
 /**
  * an array of all the Mites in the current Mob

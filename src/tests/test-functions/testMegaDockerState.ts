@@ -7,8 +7,8 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { IManikin } from '../../interfaces/IManikin'
-import { IMemory } from '../../interfaces/IMemory'
-import { IMite } from '../../interfaces/IMite'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
+import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
+import { IMite } from '../../interfaces/objectInterfaces/IMite'
 
 export const testMegaDockerState = () => describe('tests each possible MegaDockerState property', () => {})

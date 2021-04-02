@@ -10,7 +10,7 @@ import { Table, TableBody, TableCell, TableRow } from '@material-ui/core'
 import { render } from '@testing-library/react'
 import { MegaProvider } from '../../components/MegaContext'
 import { MemoryValidationIcon } from '../../components/MemoryValidationIcon'
-import { IMemory } from '../../interfaces/IMemory'
+import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 
 it('renders the MemoryValidationIcon component', () => {
   ;(memory: IMemory) => {

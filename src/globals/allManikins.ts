@@ -1,6 +1,6 @@
 /** @format */
 
-import { IManikin } from '../interfaces/IManikin'
+import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 // import manikins
 import { booksManikin } from '../mobparts/manikins/books'
 import { comicsManikin } from '../mobparts/manikins/comics'

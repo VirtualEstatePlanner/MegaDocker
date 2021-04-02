@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { IManikinPort } from '../../interfaces/IManikinPort'
+import { IManikinPort } from '../../interfaces/objectInterfaces/IManikinPort'
 
 export const testManikinPort: Function = (portToTest: IManikinPort) => {
   describe('tests a manikin port for validity', () => {

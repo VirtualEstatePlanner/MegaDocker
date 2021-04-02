@@ -9,7 +9,7 @@
 import { MemoryRow } from '../../components/MemoryRow'
 import { render } from '@testing-library/react'
 import { Table, TableBody } from '@material-ui/core'
-import { IMemory } from '../../interfaces/IMemory'
+import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { MegaProvider } from '../../components/MegaContext'
 
 it('renders the MemoryRow component', () => {

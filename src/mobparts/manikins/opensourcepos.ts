@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/04/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from '../../interfaces/IManikin'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 
 import opensourceposIcon from '../../images/manikin-icons/opensourceposIcon.png'
 import { opensourcePOSNetworkMite } from '../mites/network/opensourcePOSNetworkMite'

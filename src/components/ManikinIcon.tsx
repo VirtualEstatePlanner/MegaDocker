@@ -8,7 +8,7 @@
 
 import * as React from 'react'
 import { TableCell } from '@material-ui/core'
-import { IManikin } from '../interfaces/IManikin'
+import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 
 export const ManikinIcon: React.FC<IManikin> = (manikin: IManikin): React.ReactElement => {
   return (

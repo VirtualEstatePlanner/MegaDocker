@@ -7,8 +7,8 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import { IFileExtension } from '../templateLiteralUnionTypes/IFileExtension'
-import { IMite } from '../IMite'
-import { IN8NWorkflow } from '../IN8NWorkflow'
+import { IMite } from '../objectInterfaces/IMite'
+import { IN8NWorkflow } from '../objectInterfaces/IN8NWorkflow'
 
 /**
  * interface for a mite that represents a custom file

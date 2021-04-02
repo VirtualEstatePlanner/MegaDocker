@@ -8,7 +8,7 @@
 
 import { IMite } from './IMite'
 import { IMemory } from './IMemory'
-import { IManikinGroup } from './IManikinGroup'
+import { IManikinGroup } from '../templateLiteralUnionTypes/IManikinGroup'
 import { IManikinPort } from './IManikinPort'
 
 /**

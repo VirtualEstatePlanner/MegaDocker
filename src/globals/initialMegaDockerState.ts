@@ -7,10 +7,11 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import { OrbThemeLight } from '../components/OrbThemeLight'
-import { IManikin } from '../interfaces/IManikin'
+
 import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
-import { IMite } from '../interfaces/IMite'
+import { IMite } from '../interfaces/objectInterfaces/IMite'
 import { workingManikins } from './workingManikins'
+import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 
 const coreManikins: IManikin[] = workingManikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? true : false))
 const otherManikins: IManikin[] = workingManikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? false : true))

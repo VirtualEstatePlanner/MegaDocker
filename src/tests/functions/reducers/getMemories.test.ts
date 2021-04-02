@@ -8,7 +8,7 @@
 
 import { getMemories } from '../../../functions/reducers/getMemories'
 import { workingManikins } from '../../../globals/workingManikins'
-import { IMemory } from '../../../interfaces/IMemory'
+import { IMemory } from '../../../interfaces/objectInterfaces/IMemory'
 import { testMemory } from '../../test-functions/testMemory'
 import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
 import { testMegaDockerState } from '../../test-functions/testMegaDockerState'

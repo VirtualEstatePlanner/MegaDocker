@@ -1,6 +1,6 @@
 /** @format */
 
-import { IMite } from '../IMite'
+import { IMite } from '../objectInterfaces/IMite'
 
 //  INetworkMite.ts
 //  MEGADocker

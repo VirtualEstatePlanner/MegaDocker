@@ -8,7 +8,7 @@
 
 import { ICustomMite } from '../../interfaces/miteTypeInterfaces/ICustomMite'
 import { IFileExtension } from '../../interfaces/templateLiteralUnionTypes/IFileExtension'
-import { IManikin } from '../../interfaces/IManikin'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 
 export const testCustomMite: Function = (customMiteToTest: ICustomMite, manikin: IManikin, extension: IFileExtension) => {
   describe('tests a custom mite for validity', () => {

@@ -11,7 +11,7 @@ import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/c
 import { DarkModeSwitch } from './DarkModeSwitch'
 import { ManikinRow } from './ManikinRow'
 import { MegaContext } from './MegaContext'
-import { IManikin } from '../interfaces/IManikin'
+import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 

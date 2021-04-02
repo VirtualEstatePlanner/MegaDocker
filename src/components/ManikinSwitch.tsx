@@ -9,7 +9,7 @@
 import * as React from 'react'
 import { Switch, TableCell } from '@material-ui/core'
 import { MegaContext } from './MegaContext'
-import { IManikin } from '../interfaces/IManikin'
+import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 
