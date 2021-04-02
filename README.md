@@ -12,17 +12,10 @@
 
 Most recent changes:
 
-- added application to [GitHub Pages](https://virtualestateplanner.github.io/MegaDocker/)
-- added filebrowser Manikin
-- gorgeous dark mode neomorphic design with convenient toggle switch
-- fixed react nested hooks error in memory table
-- added automated testing
-- generates a script to setup your Cloudflare hosts for you
-- added Mealie and Syncthing Manikins
-- even more neomorphic, even more gorgeous
-- Supports Apple Silicon and Linux arm64
-- React 17 and Material UI 5
-- gorgeous neomorphic design
+- authelia is up and running
+- LDAP configuration is much more complete and much more targeted
+- code cleanup chores
+- see more in [CHANGELOG](./CHANGELOG.md)
 
 ![alt text](./src/images/icons/icon.png 'MegaDockerLogo')
 
