@@ -2,8 +2,29 @@
 
 //  IFileExtension.ts
 //  MEGADocker
-//  an interface that represents a potential file extension for an ICustomMite
+//  a union type of string literals that represents a potential file extension for an ICustomMite
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-export type IFileExtension = `acl` | `conf` | `config` | `db` | `html` | `js` | `json` | `ldif` | `options` | `properties` | `sh` | `txt` | `yml`
+export type IFileExtension =
+  | `acl`
+  | `conf`
+  | `config`
+  | `cron`
+  | `crt`
+  | `css`
+  | `csv`
+  | `db`
+  | `html`
+  | `js`
+  | `json`
+  | `key`
+  | `ldif`
+  | `options`
+  | `properties`
+  | `sh`
+  | `ts`
+  | `txt`
+  | `xml`
+  | `yml`
+  | `zip`

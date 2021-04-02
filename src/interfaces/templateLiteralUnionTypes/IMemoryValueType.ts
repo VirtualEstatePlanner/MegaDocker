@@ -2,7 +2,7 @@
 
 //  IMemoryValueType.ts
 //  MEGADocker
-//  an interface that represents a variable used by a Manikin
+//  a union type of string literals that represents a variable used by a Manikin
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
