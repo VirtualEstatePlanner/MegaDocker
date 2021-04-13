@@ -4,7 +4,7 @@
 
 The line in **bold** is the current version (to the first decimal point)
 
-- **`v0.4.0-beta`** : fully integrate all services with `LDAP` through `Traefik-auth`'s `authelia` middleware, categorize all Manikins
+- **`v0.4.0-beta`** : add `LDAP`, `Traefik-auth`, and `authelia` integrations, revamp manikin/ service structure, and add interfaces
 - `v0.5.0-beta` : create react components for manikin category and user creation, fully integrate all services with n8n
 - `v0.6.0-beta` :  add `Gitlab CI` support and use it for Core Manikins, fully integrate all applicable services with Heimdall
 - `v0.7.0-beta` : run every `Manikin` through `GitLabCI` except `GitLab` itself, create megadocker docker images for version stability
