@@ -273,7 +273,7 @@ const OrbThemeLight: Theme = createMuiTheme({
     MuiSelect: {
       styleOverrides: {
         root: SelectRootStyle,
-        selectMenu: SelectMenuRootStyle
+//        selectMenu: SelectMenuRootStyle
       }
     },
     MuiSlider: {
