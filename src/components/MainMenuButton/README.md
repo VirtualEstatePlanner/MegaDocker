@@ -1,3 +1,0 @@
-```
-<MainMenuButton />
-```
