@@ -3,7 +3,7 @@ import AccordionExpandedStyleDark from '../../stylesDark/AccordionExpandedStyleD
 import AccordionRootStyleDark from '../../stylesDark/AccordionRootStyleDark'
 import AlertRootStyleDark from '../../stylesDark/AlertRootStyleDark'
 import AppBarRootStyleDark from '../../stylesDark/AppBarRootStyleDark'
-//import Arciform from '../../fonts/Arciform.woff2'
+import AsapFont from '../../fonts/Asap'
 import AutocompleteOptionStyleDark from '../../stylesDark/AutocompleteOptionStyleDark'
 import AutocompletePaperStyleDark from '../../stylesDark/AutocompletePaperStyleDark'
 import BottomNavigationActionRootStyleDark from '../../stylesDark/BottomNavigationActionRootStyleDark'
@@ -41,7 +41,6 @@ import MenuRootStyleDark from '../../stylesDark/MenuRootStyleDark'
 import MobileStepperDotActiveStyleDark from '../../stylesDark/MobileStepperDotActiveStyleDark'
 import MobileStepperDotStyleDark from '../../stylesDark/MobileStepperDotStyleDark'
 import MobileStepperProgressStyleDark from '../../stylesDark/MobileStepperProgressStyleDark'
-import MontserratFont from '../../fonts/Montserrat'
 import NativeSelectRootStyleDark from '../../stylesDark/NativeSelectRootStyleDark'
 import OutlinedInputMultilineStyleDark from '../../stylesDark/OutlinedInputMultilineStyleDark'
 import PaperRootStyleDark from '../../stylesDark/PaperRootStyleDark'
@@ -143,7 +142,7 @@ const OrbThemeDark: Theme = createMuiTheme({
     },
     MuiCssBaseline: {
       styleOverrides: {
-        '@font-face': MontserratFont
+        '@font-face': AsapFont
       }
     },
     MuiDialog: {
@@ -370,7 +369,7 @@ const OrbThemeDark: Theme = createMuiTheme({
     }
   },
   typography: {
-    fontFamily: ['Montserrat', 'Arciform'].join(','),
+    fontFamily: ['Asap'].join(','),
     body1: {
       color: `#C1C1C1`
     },

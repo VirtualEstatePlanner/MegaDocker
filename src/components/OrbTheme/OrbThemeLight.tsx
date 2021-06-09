@@ -3,7 +3,7 @@ import AccordionExpandedStyle from '../../stylesLight/AccordionExpandedStyle'
 import AccordionRootStyle from '../../stylesLight/AccordionRootStyle'
 import AlertRootStyle from '../../stylesLight/AlertRootStyle'
 import AppBarRootStyle from '../../stylesLight/AppBarRootStyle'
-//import Arciform from '../../fonts/Arciform.woff2'
+import AsapFont from '../../fonts/Asap'
 import AutocompleteOptionStyle from '../../stylesLight/AutocompleteOptionStyle'
 import AutocompletePaperStyle from '../../stylesLight/AutocompletePaperStyle'
 import BottomNavigationActionRootStyle from '../../stylesLight/BottomNavigationActionRootStyle'
@@ -40,7 +40,6 @@ import MenuRootStyle from '../../stylesLight/MenuRootStyle'
 import MobileStepperDotActiveStyle from '../../stylesLight/MobileStepperDotActiveStyle'
 import MobileStepperDotStyle from '../../stylesLight/MobileStepperDotStyle'
 import MobileStepperProgressStyle from '../../stylesLight/MobileStepperProgressStyle'
-import MontserratFont from '../../fonts/Montserrat'
 import NativeSelectOutlinedStyle from '../../stylesLight/InputOutlinedRootStyle'
 import NativeSelectRootStyle from '../../stylesLight/NativeSelectRootStyle'
 import OutlinedInputMultilineStyle from '../../stylesLight/OutlinedInputMultilineStyle'
@@ -142,7 +141,7 @@ const OrbThemeLight: Theme = createMuiTheme({
     },
     MuiCssBaseline: {
       styleOverrides: {
-        '@font-face': MontserratFont
+        '@font-face': AsapFont
       }
     },
     MuiDialog: {
@@ -365,7 +364,7 @@ const OrbThemeLight: Theme = createMuiTheme({
     }
   },
   typography: {
-    fontFamily: ['Montserrat', 'Arciform'].join(','),
+    fontFamily: ['Asap'].join(','),
     body1: {
       color: `#202020`
     },
