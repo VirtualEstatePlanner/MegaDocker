@@ -1,8 +1,8 @@
 /** @format */
 
 import { Theme } from '@material-ui/core'
-import { OrbThemeDark } from '../../components/OrbThemeDark'
-import { OrbThemeLight } from '../../components/OrbThemeLight'
+import OrbThemeDark from '../../components/OrbTheme/OrbThemeDark'
+import OrbThemeLight from '../../components/OrbTheme/OrbThemeLight'
 
 //  toggleTheme.ts
 //  MEGADocker
