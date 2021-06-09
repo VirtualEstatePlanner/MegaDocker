@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import { OrbThemeLight } from '../components/OrbThemeLight'
+import OrbThemeLight from '../components/OrbTheme/OrbThemeLight'
 
 import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 import { IMite } from '../interfaces/objectInterfaces/IMite'
