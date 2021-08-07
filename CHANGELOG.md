@@ -2,7 +2,9 @@
 
 ## a list of changes per version number
 
-- `v0.4.6-beta` : **sorted interfaces, better LDIF bootstrapping, authelia works**
+- `v0.4.8-beta` : **removed Duplicati as it wasn't stable enough for use on ARM**
+- `v0.4.7-beta` : Let's say this one was move typescript to 4.3.2, but I really don't remember what the change was
+- `v0.4.6-beta` : sorted interfaces, better LDIF bootstrapping, authelia works
 - `v0.4.5-beta` : bootstraps LDIF based on existing services, added LDIF Mite generator script, cleaned up reindex script
 - `v0.4.4-beta` : docker hub ELK images, filebrowser Manikin, finished convenience generator scripts
 - `v0.4.3-beta` : Shiny new Dark Mode, added "pretty" script to manually trigger prettier, no more React hook nesting errors
