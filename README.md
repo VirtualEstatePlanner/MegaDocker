@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019-2021 The MegaDocker Group. All rights reserved.'
 
-# MEGADocker v0.4.6-beta
+# MEGADocker v0.4.8-beta
 
 [Modular Enterprise-Grade Automated Docker](https://virtualestateplanner.github.io/MegaDocker/)
 
@@ -12,9 +12,7 @@
 
 Most recent changes:
 
-- authelia is up and running
-- LDAP configuration is much more complete and much more targeted
-- code cleanup chores
+- removed Duplicati 1.0 for ARM instability
 - see more in [CHANGELOG](./CHANGELOG.md)
 
 ![alt text](./src/images/icons/icon.png 'MegaDockerLogo')
