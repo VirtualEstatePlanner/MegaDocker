@@ -4,7 +4,7 @@ import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 // import manikins
 import { booksManikin } from '../mobparts/manikins/books'
 import { comicsManikin } from '../mobparts/manikins/comics'
-import { duplicatiManikin } from '../mobparts/manikins/duplicati'
+// import { duplicatiManikin } from '../mobparts/manikins/duplicati'
 import { drupalManikin } from '../mobparts/manikins/drupal'
 import { elkManikin } from '../mobparts/manikins/elk'
 import { emailManikin } from '../mobparts/manikins/email'
@@ -43,7 +43,7 @@ import { musicManikin } from '../mobparts/manikins/music'
 export const workingManikins: IManikin[] = [
   booksManikin,
   comicsManikin,
-  duplicatiManikin,
+  // duplicatiManikin,
   drupalManikin,
   elkManikin,
   emailManikin,
