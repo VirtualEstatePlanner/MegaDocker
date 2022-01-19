@@ -1,0 +1,51 @@
+name: "cross-compile-tauri-binaries"
+on:
+  push:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [ubuntu-latest, macos-latest, windows-latest]
+
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: setup node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 16
+    - name: install Rust stable
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+    - name: install webkit2gtk (ubuntu only)
+      if: matrix.platform == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y webkit2gtk-4.0
+    - name: install example dependencies
+      run: yarn
+      working-directory: ./packages/action/__fixtures__/example
+    - uses: ./
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with: 
+        projectPath: ./packages/action/__fixtures__/example
+        iconPath: ./icon.png
+        tagName: example-v__VERSION__
+        releaseName: "Release example app v__VERSION__"
+        releaseBody: "See the assets to download this version and install."
+        releaseDraft: true
+        prerelease: false
+    - uses: ./
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with: 
+        projectPath: ./packages/action/__fixtures__/example-with-tauri
+        tagName: example-with-tauri-v__VERSION__
+        releaseName: "Release example with preconfigured Tauri app v__VERSION__"
+        releaseBody: "See the assets to download this version and install."
+        releaseDraft: true
+        prerelease: false
