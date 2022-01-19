@@ -23,7 +23,9 @@ jobs:
           toolchain: stable
       - name: apt install ubuntu-specific dependencies
         if: matrix.os == 'ubuntu-latest'
-        run: sudo apt update -y && sudo apt upgrade -y && sudo apt install -y webkit2gtk-4.0-37
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y webkit2gtk-4.0
       - name: install npm dependencies
         run: yarn --network-timeout 600000
       - name: bundle binary and add to GitHub draft release
