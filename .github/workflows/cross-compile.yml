@@ -9,6 +9,7 @@ jobs:
       fail-fast: false
       matrix:
         platform: [macos-latest, ubuntu-latest, windows-latest]
+#        platform: [ macos-10.15, macos-11, ubuntu-18.04, ubuntu-20.04, windows-2016, windows-2019, windows-2022 ]
 
     runs-on: ${{ matrix.platform }}
     steps:
@@ -27,7 +28,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y webkit2gtk-4.0
       - name: install app dependencies and build it
-        run: yarn && yarn bundle --verbose
+        run: yarn --network-timeout 100000 && yarn bundle --verbose
       - uses: tauri-apps/tauri-action@v0.1.3
         env:
           GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
