@@ -1,4 +1,4 @@
-import { createMuiTheme, Theme } from '@material-ui/core'
+import { createTheme, Theme } from '@material-ui/core'
 import AccordionExpandedStyle from '../../stylesLight/AccordionExpandedStyle'
 import AccordionRootStyle from '../../stylesLight/AccordionRootStyle'
 import AlertRootStyle from '../../stylesLight/AlertRootStyle'
@@ -45,7 +45,7 @@ import NativeSelectRootStyle from '../../stylesLight/NativeSelectRootStyle'
 import OutlinedInputMultilineStyle from '../../stylesLight/OutlinedInputMultilineStyle'
 import PaperRootStyle from '../../stylesLight/PaperRootStyle'
 import RadioRootStyle from '../../stylesLight/RadioRootStyle'
-import SelectMenuRootStyle from '../../stylesLight/SelectMenuRootStyle'
+//import SelectMenuRootStyle from '../../stylesLight/SelectMenuRootStyle'
 import SelectRootStyle from '../../stylesLight/SelectRootStyle'
 import SliderMarkActiveStyle from '../../stylesLight/SliderMarkActiveStyle'
 import SliderMarkStyle from '../../stylesLight/SliderMarkStyle'
@@ -56,9 +56,9 @@ import SliderTrackStyle from '../../stylesLight/SliderTrackStyle'
 import SliderValueLabelStyle from '../../stylesLight/SliderValueLabelStyle'
 import SpeedDialRootStyle from '../../stylesLight/FabRootStyle'
 import SpeedDialFabStyle from '../../stylesLight/SpeedDialFabStyle'
-import StepIconRootStyle from '../../stylesLight/StepIconRootStyle'
-import StepIconActiveStyle from '../../stylesLight/StepIconActiveStyle'
-import StepIconCompletedStyle from '../../stylesLight/StepIconCompletedStyle'
+//import StepIconRootStyle from '../../stylesLight/StepIconRootStyle'
+//import StepIconActiveStyle from '../../stylesLight/StepIconActiveStyle'
+//import StepIconCompletedStyle from '../../stylesLight/StepIconCompletedStyle'
 import SwitchRootStyle from '../../stylesLight/SwitchRootStyle'
 import TabLabelIconStyle from '../../stylesLight/TabLabelIconStyle'
 import TablePaginationItemRootStyle from '../../stylesLight/TablePaginationItemRootStyle'
@@ -71,7 +71,7 @@ import ToggleButtonGroupRootStyle from '../../stylesLight/ToggleButtonGroupRootS
 import ToggleButtonRootStyle from '../../stylesLight/ToggleButtonRootStyle'
 import TextFieldRootStyle from '../../stylesLight/TextFieldRootStyle'
 
-const OrbThemeLight: Theme = createMuiTheme({
+const OrbThemeLight: Theme = createTheme({
   components: {
     MuiAccordion: {
       styleOverrides: {
@@ -293,14 +293,14 @@ const OrbThemeLight: Theme = createMuiTheme({
         fab: SpeedDialFabStyle
       }
     },
-    MuiStepIcon: {
+/*    MuiStepIcon: {
       styleOverrides: {
         root: StepIconRootStyle,
         active: StepIconActiveStyle,
         completed: StepIconCompletedStyle
       }
     },
-    MuiSwitch: {
+*/    MuiSwitch: {
       styleOverrides: {
         root: SwitchRootStyle
       }

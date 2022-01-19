@@ -1,19 +1,19 @@
 {
   "package": {
     "productName": "megadocker",
-    "version": "0.1.0"
+    "version": "0.5.0"
   },
   "build": {
     "distDir": "../build",
     "devPath": "http://localhost:3000",
-    "beforeDevCommand": "",
-    "beforeBuildCommand": ""
+    "beforeDevCommand": "yarn start && sleep 10",
+    "beforeBuildCommand": "yarn build"
   },
   "tauri": {
     "bundle": {
       "active": true,
-      "targets": "all",
-      "identifier": "com.tauri.dev",
+      "targets": ["deb", "app", "msi", "appimage", "dmg"],
+      "identifier": "com.megadocker.app",
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -46,18 +46,24 @@
       }
     },
     "updater": {
-      "active": false
+      "active": true
     },
     "allowlist": {
-      "all": true
+      "all": false,
+      "fs": {
+        "writeBinaryFile": true,
+        "writeFile": true
+      }
     },
     "windows": [
       {
-        "title": "megadocker",
-        "width": 800,
-        "height": 600,
+        "title": "MEGADocker",
+        "height": 1200,
+        "minHeight": 768,
+        "width": 1600,
+        "minWidth": 1024,
         "resizable": true,
-        "fullscreen": false
+        "fullscreen": true
       }
     ],
     "security": {

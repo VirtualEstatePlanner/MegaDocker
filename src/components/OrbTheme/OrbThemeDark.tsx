@@ -1,4 +1,4 @@
-import { createMuiTheme, Theme } from '@material-ui/core'
+import { createTheme, Theme } from '@material-ui/core'
 import AccordionExpandedStyleDark from '../../stylesDark/AccordionExpandedStyleDark'
 import AccordionRootStyleDark from '../../stylesDark/AccordionRootStyleDark'
 import AlertRootStyleDark from '../../stylesDark/AlertRootStyleDark'
@@ -46,7 +46,7 @@ import OutlinedInputMultilineStyleDark from '../../stylesDark/OutlinedInputMulti
 import PaperRootStyleDark from '../../stylesDark/PaperRootStyleDark'
 import RadioRootStyleDark from '../../stylesDark/RadioRootStyleDark'
 import SelectRootStyleDark from '../../stylesDark/SelectRootStyleDark'
-import SelectMenuRootStyleDark from '../../stylesDark/SelectMenuRootStyleDark'
+//import SelectMenuRootStyleDark from '../../stylesDark/SelectMenuRootStyleDark'
 import SliderRootStyleDark from '../../stylesDark/SliderRootStyleDark'
 import SliderMarkActiveStyleDark from '../../stylesDark/SliderMarkActiveStyleDark'
 import SliderMarkStyleDark from '../../stylesDark/SliderMarkStyleDark'
@@ -56,9 +56,9 @@ import SliderTrackStyleDark from '../../stylesDark/SliderTrackStyleDark'
 import SliderValueLabelStyleDark from '../../stylesDark/SliderValueLabelStyleDark'
 import SpeedDialIconRootStyleDark from '../../stylesDark/SpeedDialIconRootStyleDark'
 import SpeedDialFabStyleDark from '../../stylesDark/SpeedDialFabStyleDark'
-import StepIconActiveStyleDark from '../../stylesDark/StepIconActiveStyleDark'
-import StepIconCompletedStyleDark from '../../stylesDark/StepIconCompletedStyleDark'
-import StepIconRootStyleDark from '../../stylesDark/StepIconRootStyleDark'
+//import StepIconActiveStyleDark from '../../stylesDark/StepIconActiveStyleDark'
+//import StepIconCompletedStyleDark from '../../stylesDark/StepIconCompletedStyleDark'
+//import StepIconRootStyleDark from '../../stylesDark/StepIconRootStyleDark'
 import SwitchRootStyleDark from '../../stylesDark/SwitchRootStyleDark'
 import TabLabelIconStyleDark from '../../stylesDark/TabLabelIconStyleDark'
 import TablePaginationItemRootStyleDark from '../../stylesDark/TablePaginationItemRootStyleDark'
@@ -72,7 +72,7 @@ import ToggleButtonGroupRootStyleDark from '../../stylesDark/ToggleButtonGroupRo
 import ToggleButtonRootStyleDark from '../../stylesDark/ToggleButtonRootStyleDark'
 import TouchRippleRootStyleDark from '../../stylesDark/TouchRippleRootStyleDark'
 
-const OrbThemeDark: Theme = createMuiTheme({
+const OrbThemeDark: Theme = createTheme({
   components: {
     MuiAccordion: {
       styleOverrides: {
@@ -294,14 +294,14 @@ const OrbThemeDark: Theme = createMuiTheme({
         fab: SpeedDialFabStyleDark
       }
     },
-    MuiStepIcon: {
+/*    MuiStepIcon: {
       styleOverrides: {
         root: StepIconRootStyleDark,
         active: StepIconActiveStyleDark,
         completed: StepIconCompletedStyleDark
       }
-    },
-    MuiSwitch: {
+   },
+*/    MuiSwitch: {
       styleOverrides: {
         root: SwitchRootStyleDark
       }

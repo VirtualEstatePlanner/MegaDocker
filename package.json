@@ -1,81 +1,7 @@
 {
-  "version": "0.4.8-beta",
-  "buildVersion": "0.4.8-beta",
-  "author": "George Georgulas IV <georgegeorgulas@gmail.com> (https://github.com/VirtualEstatePlanner)",
-  "copyright": "© 2019-2021 The MEGADocker Group",
-  "private": true,
-  "main": "electron.js",
-  "license": "Unlicense",
-  "homepage": ".",
   "name": "megadocker",
-  "productName": "MEGADocker",
-  "description": "A tool to easily create docker swarm stacks",
-  "scripts": {
-    "unbinaries": "rm -rf binaries && mkdir -p binaries/web binaries/mac/intel binaries/mac/arm binaries/win/intel binaries/win/arm binaries/linux/intel binaries/linux/arm",
-    "unbuild": "rm -rf build/*",
-    "undist": "rm -rf dist/*",
-    "unerror": "rm -rf yarn-error.log",
-    "uninstall": "rm -rf yarn.lock && rm -rf node_modules",
-    "clean": "run-p -l unbinaries uncache undist unerror",
-    "reinstall": "yarn clean && yarn uninstall && yarn",
-    "pretty": "node node_modules/.bin/prettier --write .",
-    "reindex": "cp src/scripts/tsnode/tsconfig.json . && npx ts-node src/scripts/utility/reindex.ts",
-    "new:ldif": "cp src/scripts/tsnode/tsconfig.json . && npx ts-node src/scripts/partmakers/newLdifMite.ts",
-    "new:manikin": "cp src/scripts/tsnode/tsconfig.json . && npx ts-node src/scripts/partmakers/newManikin.ts",
-    "new:memory": "cp src/scripts/tsnode/tsconfig.json . && npx ts-node src/scripts/partmakers/newMemory.ts",
-    "new:network": "cp src/scripts/tsnode/tsconfig.json . && npx ts-node src/scripts/partmakers/newNetworkMite.ts",
-    "new:service": "cp src/scripts/tsnode/tsconfig.json . && npx ts-node src/scripts/partmakers/newServiceMite.ts",
-    "new:custom": "cp src/scripts/tsnode/tsconfig.json . && npx ts-node src/scripts/partmakers/newCustomMite.ts",
-    "react-start": "react-scripts start",
-    "react-dev": "cross-env BROWSER=none yarn react-start",
-    "react-test": "react-scripts test --env=jsdom",
-    "react-test-coverage": "react-scripts test --coverage --env=jsdom",
-    "react-eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                                 react-scripts eject' && echo",
-    "test": "yarn test-coverage && yarn test-dev",
-    "test-dev": "jest --watch",
-    "test-coverage": "jest --coverage",
-    "warning:mac-only": "echo && echo 'CRATE warning: This script will only function on macOS' && echo",
-    "dist:web": "cp src/scripts/tsnode/tsconfig.json . && yarn undist && npx ts-node src/scripts/utility/webzip.ts"
-  },
-  "keywords": [
-    "authelia",
-    "docker",
-    "drupal",
-    "elasticsearch",
-    "filebrowser",
-    "ghost",
-    "grocy",
-    "heimdall",
-    "jackett",
-    "kanboard",
-    "kibana",
-    "lazylibrarian",
-    "ledger",
-    "lidarr",
-    "logstash",
-    "mariadb",
-    "mealie",
-    "mylar",
-    "mongodb",
-    "n8n",
-    "nextcloud",
-    "nginx",
-    "openldap",
-    "phpldapadmin",
-    "pihole",
-    "plex",
-    "portainer",
-    "postgresql",
-    "radarr",
-    "redis",
-    "rocketchat",
-    "sonarr",
-    "styleguidist",
-    "swarmpit",
-    "syncthing",
-    "traefik",
-    "wordpress"
-  ],
+  "version": "0.5.0",
+  "private": true,
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
@@ -83,64 +9,44 @@
     "@material-ui/core": "next",
     "@material-ui/icons": "next",
     "@material-ui/styles": "next",
-    "@tauri-apps/cli": "latest",
+    "@tauri-apps/api": "1.0.0-beta.8",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@testing-library/user-event": "latest",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
     "file-saver": "latest",
     "jszip": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "react-scripts": "latest"
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "latest",
-    "@testing-library/react": "latest",
-    "@types/electron-devtools-installer": "latest",
-    "@types/file-saver": "latest",
-    "@types/jest": "latest",
-    "@types/material-ui": "latest",
-    "@types/node": "latest",
-    "@types/prettier": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
-    "cross-env": "latest",
-    "npm-run-all": "latest",
-    "open": "latest",
-    "prettier": "latest",
-    "ts-jest": "latest",
-    "ts-node": "latest",
+    "react-scripts": "latest",
     "typescript": "latest",
-    "wait-on": "latest",
+    "web-vitals": "latest",
     "yaml-validator": "latest"
   },
-  "jest": {
-    "roots": [
-      "<rootDir>/src"
-    ],
-    "collectCoverage": true,
-    "coverageReporters": [
-      "lcov"
-    ],
-    "coverageDirectory": "coverage",
-    "coverageThreshold": {
-      "global": {
-        "branches": 0,
-        "functions": 0,
-        "lines": 0,
-        "statements": 0
-      }
-    },
-    "transform": {
-      "^.+\\.tsx?$": "ts-jest"
-    },
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-dom/extend-expect"
-    ],
-    "moduleNameMapper": {
-      "\\.(css)$": "<rootDir>/src/typings/css.d.ts",
-      "\\.(png)$": "<rootDir>/src/typings/png.d.ts"
-    }
+  "devDependencies": {
+    "@tauri-apps/cli": "1.0.0-beta.10",
+    "@types/file-saver": "latest",
+    "@types/material-ui": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "dev": "tauri dev",
+    "bundle": "tauri build"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [

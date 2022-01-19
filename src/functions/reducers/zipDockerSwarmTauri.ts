@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import JSZip from 'jszip'
-import fileSaver from 'file-saver'
+import { writeBinaryFile } from '@tauri-apps/api/fs'
 import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 import { IMite } from '../../interfaces/objectInterfaces/IMite'
@@ -28,9 +28,9 @@ import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobS
 import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
 
 /**
- * makes .zip file for docker-compose
+ * makes .zip file for docker-compose in Tauri desktop application
  */
-export const zipDockerSwarm = (zipCompose: IZipDockerCompose): JSZip => {
+export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): JSZip => {
   let zip: JSZip = JSZip()
 
   let zipManikins: IManikin[] = [...zipCompose.manikins]
@@ -225,7 +225,7 @@ if [ "\${ISJQINSTALLED}" = 'jq not found' ]; then
   echo;
   echo "Error: exiting with status 1 (Couldn't find jq binary).  You must install jq to use this script.";
   echo "Try 'sudo apt install jq' on Debian/Ubuntu/Mint.";
-  echo "Try 'sudo yum install jq' on CentOS/Fedore/RedHat";
+  echo "Try 'sudo yum install jq' on CentOS/Fedora/RedHat";
   echo "Try 'sudo apk install jq' on Alpine";
   echo "Try 'brew install jq' on macOS";
   echo;
@@ -320,9 +320,9 @@ fi;
       platform: `UNIX`,
       type: `blob`,
     })
-    .then(function (content) {
-      fileSaver.saveAs(content, `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip`)
+    .then(async function (content) {
+        const zipContents: ArrayBuffer = await content.arrayBuffer()
+        await writeBinaryFile({ contents: zipContents, path: `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip` }, { dir: 8 /* Downloads directory */ })
     })
-
   return zip
 }

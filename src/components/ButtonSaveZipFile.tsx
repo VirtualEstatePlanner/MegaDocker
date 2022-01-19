@@ -1,8 +1,8 @@
 /** @format */
 
-//  ButtonExportDockerSwarm.tsx
+//  SaveZipFile.tsx
 //  MEGADocker
-//  a React Button Component that downloads a Docker Swarm zip file
+//  a React Button Component that saves a Docker Swarm zip file
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
@@ -12,8 +12,9 @@ import { MegaContext } from './MegaContext'
 import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
 import { mobName } from '../mobparts/memories/mobName'
+import { runningInTauri } from '../functions/runningInTauri'
 
-export const ButtonExportDockerSwarm: React.FC = (): React.ReactElement => {
+export const ButtonSaveZipFile: React.FC = (): React.ReactElement => {
   const {
     state,
     dispatch,
@@ -25,7 +26,13 @@ export const ButtonExportDockerSwarm: React.FC = (): React.ReactElement => {
   const fullyValidated: boolean = state.memories.every((memory) => memory.isReady)
 
   const buttonClicked = (): void => {
-    dispatch({ type: `DOCKER_SWARM_OUTPUT` })
+    if (runningInTauri()) {
+      console.log(`exported docker swarm with tauri fs library`)
+      dispatch({ type: `DOCKER_SWARM_OUTPUT_TAURI` })
+    } else {
+      console.log(`exported docker swarm with filesaver npm library`)
+      dispatch({ type: `DOCKER_SWARM_OUTPUT_BROWSER` })
+    }
   }
 
   const mobnameIndex: number = state.memories.indexOf(mobName)
@@ -33,7 +40,7 @@ export const ButtonExportDockerSwarm: React.FC = (): React.ReactElement => {
 
   return (
     <Button disabled={fullyValidated ? false : true} variant='contained' onClick={buttonClicked}>
-      download {mobname}.zip
+      Save {mobname}.zip
     </Button>
   )
 }

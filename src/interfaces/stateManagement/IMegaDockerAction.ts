@@ -7,9 +7,10 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import { IApplicationStartAction } from '../actionInterfaces/IApplicationStartAction'
-import { IOutputDockerSwarmAction } from '../actionInterfaces/IOutputDockerSwarmAction'
+import { IOutputDockerSwarmBrowserAction } from '../actionInterfaces/IOutputDockerSwarmBrowserAction'
+import { IOutputDockerSwarmTauriAction } from '../actionInterfaces/IOutputDockerSwarmTauriAction'
 import { IToggleManikinAction } from '../actionInterfaces/IToggleManikinAction'
 import { IUpdateMemoryValueAction } from '../actionInterfaces/IUpdateMemoryValueAction'
 import { IToggleThemeAction } from '../actionInterfaces/IToggleThemeAction'
 
-export type IMegaDockerAction = IApplicationStartAction | IOutputDockerSwarmAction | IToggleManikinAction | IUpdateMemoryValueAction | IToggleThemeAction
+export type IMegaDockerAction = IApplicationStartAction | IOutputDockerSwarmBrowserAction | IOutputDockerSwarmTauriAction | IToggleManikinAction | IUpdateMemoryValueAction | IToggleThemeAction

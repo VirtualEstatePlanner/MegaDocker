@@ -1,23 +1,25 @@
+cargo-features = ["edition2021"]
+
 [package]
-name = "app"
-version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+name = "megadocker"
+version = "0.5.0"
+description = "Microservices builder"
+authors = ["George Georgulas IV"]
 license = ""
 repository = ""
-default-run = "app"
-edition = "2018"
+default-run = "megadocker"
 build = "src/build.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [build-dependencies]
+rustfmt = { version = "0.10.0" }
 tauri-build = { version = "1.0.0-beta.4" }
 
 [dependencies]
-serde_json = "1.0"
-serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.0.0-beta.8", features = ["api-all"] }
+serde_json = "1.0.75"
+serde = { version = "1.0.133", features = ["derive"] }
+tauri = { version = "1.0.0-beta.8", features = ["fs-write-binary-file", "fs-write-file", "updater"] }
 
 [features]
 default = [ "custom-protocol" ]
