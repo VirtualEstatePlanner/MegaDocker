@@ -22,7 +22,7 @@ jobs:
         with:
           toolchain: stable
       - name: apt install ubuntu-specific dependencies
-        if: matrix.platform == 'ubuntu-latest'
+        if: matrix.os == 'ubuntu-latest'
         run: sudo apt update -y && sudo apt install -y webkit2gtk-4.0
       - name: install npm dependencies
         run: yarn --network-timeout 600000
