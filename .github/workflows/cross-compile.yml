@@ -1,5 +1,7 @@
 name: "publish"
-on: [push]
+on:
+  push:
+    branches: [ tauri ]
 
 jobs:
   publish-tauri:
@@ -25,12 +27,12 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y webkit2gtk-4.0
       - name: install app dependencies and build it
-        run: yarn && yarn bundle
+        run: yarn && yarn bundle --verbose
       - uses: tauri-apps/tauri-action@v0.1.3
         env:
           GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
         with:
-          tagName: __VERSION__-beta-${{ platform }} # the action automatically replaces \_\_VERSION\_\_ with the app version
+          tagName: MEGADocker-__VERSION__-beta
           releaseName: "App v__VERSION__"
           body: "See the assets to download this version and install."
           draft: true
