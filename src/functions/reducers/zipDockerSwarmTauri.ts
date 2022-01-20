@@ -30,6 +30,7 @@ import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobS
 /**
  * makes .zip file for docker-compose in Tauri desktop application
  */
+
 export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): JSZip => {
   let zip: JSZip = JSZip()
 
