@@ -6,6 +6,7 @@
 //  Created by George Georgulas IV on 3/12/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
+import { OrbThemeDark } from '../../../components/OrbTheme/OrbThemeDark'
 import { OrbThemeLight } from '../../../components/OrbTheme/OrbThemeLight'
 import { getCustomMites } from '../../../functions/reducers/getCustomMites'
 import { getDNetworkMites } from '../../../functions/reducers/getDNetworkMites'
@@ -13,6 +14,7 @@ import { getDServiceMites } from '../../../functions/reducers/getDServiceMites'
 import { getManikins } from '../../../functions/reducers/getManikins'
 import { getMemories } from '../../../functions/reducers/getMemories'
 import { getMites } from '../../../functions/reducers/getMites'
+import { megaReducer } from '../../../functions/reducers/megaReducer'
 import { workingManikins } from '../../../globals/workingManikins'
 import { IMegaDockerState } from '../../../interfaces/stateManagement/IMegaDockerState'
 import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
@@ -55,4 +57,7 @@ const testingState: IMegaDockerState = {
 describe('tests the megaReducer function', () => {
   testMegaDockerAction()
   testMegaDockerState()
+  expect(megaReducer(testingState, { type: 'TOGGLE_THEME', payload: OrbThemeLight })).toEqual({ ...testingState, theme: OrbThemeDark })
 })
+
+export { }
