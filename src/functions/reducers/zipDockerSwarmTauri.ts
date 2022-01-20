@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import JSZip from 'jszip'
-//import { writeBinaryFile } from '@tauri-apps/api/fs'
+import { writeBinaryFile } from '@tauri-apps/api/fs'
 import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 import { IMite } from '../../interfaces/objectInterfaces/IMite'
@@ -323,7 +323,7 @@ fi;
     })
     .then(async function (content: Blob) {
       const zipContents: ArrayBuffer = await content.arrayBuffer()
-//      await writeBinaryFile({ contents: zipContents, path: `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip` }, { dir: 8 /* Downloads directory */ })
+      await writeBinaryFile({ contents: zipContents, path: `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip` }, { dir: 8 /* Downloads directory */ })
     })
   return zip
 }
