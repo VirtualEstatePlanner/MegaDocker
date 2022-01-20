@@ -17,3 +17,4 @@ yarn-error.log
 yarn.lock
 !public/preload.js
 src-tauri/Cargo.lock
+src-tauri/target
