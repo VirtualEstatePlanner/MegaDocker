@@ -13,7 +13,7 @@ import { IMite } from '../objectInterfaces/IMite'
 
 /**
  * the interface for the Application State
- * @manikinTableContents the menu on the left - {...allManikins}
+ * @manikinTableContents the menu on the left - {...workingManikins}
  * @selectedManikins the user's mob
  * @memoryTableContents the menu on the right - the memories for the mob
  * @allMobMites every mite in the mob (to Array.filter against)
