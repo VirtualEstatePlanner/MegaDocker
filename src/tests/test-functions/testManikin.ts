@@ -18,8 +18,8 @@ export const testManikin: Function = (manikinToTest: IManikin, memories?: IMemor
     expect(manikinToTest.manikinIcon).toBeDefined();
     expect(manikinToTest.description).toBeDefined();
     expect(manikinToTest.description.length).toBeGreaterThan(0);
-    expect(manikinToTest.isCore).toBeDefined;
-    expect(manikinToTest.isSelected).toBeDefined;
+    expect(manikinToTest.isCore).toBeDefined();
+    expect(manikinToTest.isSelected).toBeDefined();
     expect(manikinToTest.mites).toBeDefined();
     expect(manikinToTest.mites.length).toBeGreaterThan(0);
     expect(manikinToTest.ports.length).toBeGreaterThan(-1);
