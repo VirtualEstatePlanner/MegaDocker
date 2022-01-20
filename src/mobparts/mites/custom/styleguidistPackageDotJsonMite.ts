@@ -28,9 +28,9 @@ export const styleguidistPackageDotJsonMite: ICustomMite = {
       "author": "george@orb.run",
       "license": "MIT",
       "dependencies": {
-        "@material-ui/core": "latest",
-        "@material-ui/icons": "latest",
-        "@material-ui/styles": "latest",
+        "@mui/material": "latest",
+        "@mui/icons-material": "latest",
+        "@mui/styles": "latest",
         "@types/material-ui": "latest",
         "@types/react": "16.9.22",
         "@types/react-dom": "16.9.5",

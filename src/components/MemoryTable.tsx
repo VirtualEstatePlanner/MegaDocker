@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core'
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 import { MegaContext } from './MegaContext'
 import { MemoryRow } from './MemoryRow'
 import checkmarkIndicator from '../images/indicators/checkmarkIndicator.png'

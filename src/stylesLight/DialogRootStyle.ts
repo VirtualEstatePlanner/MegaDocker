@@ -1,4 +1,4 @@
-import { CSSProperties } from '@material-ui/styles'
+import { CSSProperties } from '@mui/styles'
 
 const DialogRootStyle: CSSProperties = {
   backdropFilter: `blur(3px)`

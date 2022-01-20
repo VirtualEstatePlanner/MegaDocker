@@ -1,5 +1,5 @@
-import { CSSProperties } from '@material-ui/styles'
-import { grey } from '@material-ui/core/colors'
+import { CSSProperties } from '@mui/styles'
+import { grey } from '@mui/material/colors'
 
 const SliderRailStyle: CSSProperties = {
   height: 2,

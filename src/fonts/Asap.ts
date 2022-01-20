@@ -1,6 +1,6 @@
 /** @format */
 
-import { BaseCSSProperties } from '@material-ui/styles'
+import { BaseCSSProperties } from '@mui/styles'
 import '@fontsource/asap'
 
 const AsapFont: BaseCSSProperties = {

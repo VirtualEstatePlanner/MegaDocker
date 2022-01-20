@@ -1,4 +1,4 @@
-import { CSSProperties } from '@material-ui/styles'
+import { CSSProperties } from '@mui/styles'
 
 const TablePaginationSelectRootStyle: CSSProperties = {
   backgroundColor: `#F0F0F3`,

@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { Button } from '@material-ui/core'
+import { Button } from '@mui/material'
 
 export const ButtonGetDocker: React.FC = (): React.ReactElement => (
   <Button variant='contained' href={`https://docs.docker.com/get-docker/`}>

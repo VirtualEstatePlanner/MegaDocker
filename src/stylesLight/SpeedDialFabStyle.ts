@@ -1,4 +1,4 @@
-import { CSSProperties } from '@material-ui/styles'
+import { CSSProperties } from '@mui/styles'
 
 const SpeedDialFabStyle: CSSProperties = {
   backgroundColor: `#E7E7E880`,

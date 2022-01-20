@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { Grid, Paper } from '@material-ui/core'
+import { Grid, Paper } from '@mui/material'
 import { ContainerManikinPane } from './ContainerManikinPane'
 import { ContainerMainArea } from './ContainerMainArea'
 import { MegaProvider } from './MegaContext'

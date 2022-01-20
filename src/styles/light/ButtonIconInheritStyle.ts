@@ -1,4 +1,4 @@
-import { CSSProperties } from '@material-ui/styles'
+import { CSSProperties } from '@mui/styles'
 
 const ButtonIconInheritStyle: CSSProperties = {
   boxShadow: `-.75px 4px 3px -3px #D8D8DB, 

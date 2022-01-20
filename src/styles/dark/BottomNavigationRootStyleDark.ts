@@ -1,4 +1,4 @@
-import { CSSProperties } from '@material-ui/styles'
+import { CSSProperties } from '@mui/styles'
 
 const BottomNavigationRootStyleDark: CSSProperties = {
   borderTopLeftRadius: `25px`,

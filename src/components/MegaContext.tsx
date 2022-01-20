@@ -8,7 +8,7 @@
 
 import * as React from 'react'
 import { megaReducer } from '../functions/reducers/megaReducer'
-import { ThemeProvider } from '@material-ui/core'
+import { ThemeProvider } from '@mui/material'
 import { initialMegaDockerState } from '../globals/initialMegaDockerState'
 
 export const MegaContext: React.Context<any> = React.createContext({

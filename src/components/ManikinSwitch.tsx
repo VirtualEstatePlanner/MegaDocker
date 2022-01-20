@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { Switch, TableCell } from '@material-ui/core'
+import { Switch, TableCell } from '@mui/material'
 import { MegaContext } from './MegaContext'
 import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'

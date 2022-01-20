@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { TableCell, TableRow, TextField, Tooltip } from '@material-ui/core'
+import { TableCell, TableRow, TextField, Tooltip } from '@mui/material'
 import { IMemory } from '../interfaces/objectInterfaces/IMemory'
 import { MemoryValidationIcon } from './MemoryValidationIcon'
 

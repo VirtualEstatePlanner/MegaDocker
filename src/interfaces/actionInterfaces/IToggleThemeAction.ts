@@ -1,6 +1,6 @@
 /** @format */
 
-import { Theme } from '@material-ui/core'
+import { Theme } from '@mui/material'
 
 export interface IToggleThemeAction {
   type: `TOGGLE_THEME`

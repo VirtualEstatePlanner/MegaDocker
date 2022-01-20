@@ -1,5 +1,5 @@
-import { CSSProperties } from '@material-ui/styles'
-import { lightBlue } from '@material-ui/core/colors'
+import { CSSProperties } from '@mui/styles'
+import { lightBlue } from '@mui/material/colors'
 
 const SliderRootStyle: CSSProperties = {
   color: lightBlue[300],

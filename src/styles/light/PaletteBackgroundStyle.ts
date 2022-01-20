@@ -1,4 +1,4 @@
-import { TypeBackground } from '@material-ui/core/styles/createPalette'
+import { TypeBackground } from '@mui/material/styles/createPalette'
 
 const PaletteBackgroundStyle: Partial<TypeBackground> = {
   default: `#F0F0F3`,
