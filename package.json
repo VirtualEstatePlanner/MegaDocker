@@ -43,8 +43,10 @@
   },
   "devDependencies": {
     "@babel/core": "latest",
-    "@babel/preset-typescript": "latest",
     "@babel/preset-env": "latest",
+    "@babel/plugin-transform-modules-commonjs": "latest",
+    "@babel/preset-react": "latest",
+    "@babel/preset-typescript": "latest",
     "@tauri-apps/cli": "1.0.0-beta.10",
     "@types/file-saver": "latest",
     "@types/jest": "latest",
@@ -60,12 +62,6 @@
     "typescript": "latest",
     "yarn": "latest"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -79,8 +75,19 @@
     ]
   },
   "babel": {
+    "env": {
+      "test": {
+        "plugins": ["@babel/plugin-transform-modules-commonjs"]
+      }
+    },
     "presets": [
-      "@babel/preset-typescript"
+      "@babel/preset-env", "@babel/preset-typescript", "@babel/preset-react"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
     ]
   },
   "jest": {
@@ -109,7 +116,7 @@
       "color": "blue"
     },
     "transform": {
-      "^.+\\.[jt]s?$": "babel-jest"
+      "^.+\\.[jt]sx?$": "babel-jest"
     }
   },
   "prettier": {
