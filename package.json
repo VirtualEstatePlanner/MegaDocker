@@ -13,10 +13,6 @@
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
-    "@types/jest": "latest",
-    "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
     "file-saver": "latest",
     "jszip": "latest",
     "react": "latest",
@@ -29,7 +25,9 @@
   "devDependencies": {
     "@tauri-apps/cli": "1.0.0-beta.10",
     "@types/file-saver": "latest",
+    "@types/jest": "latest",
     "@types/material-ui": "latest",
+    "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "typescript": "latest"
