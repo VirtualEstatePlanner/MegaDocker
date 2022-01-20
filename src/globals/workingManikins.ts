@@ -4,13 +4,11 @@ import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 // import manikins
 import { booksManikin } from '../mobparts/manikins/books'
 import { comicsManikin } from '../mobparts/manikins/comics'
-// import { duplicatiManikin } from '../mobparts/manikins/duplicati'
 import { drupalManikin } from '../mobparts/manikins/drupal'
 import { elkManikin } from '../mobparts/manikins/elk'
 import { emailManikin } from '../mobparts/manikins/email'
 import { filebrowserManikin } from '../mobparts/manikins/filebrowser'
 import { ghostManikin } from '../mobparts/manikins/ghost'
-// import { gitlabManikin } from '../mobparts/manikins/gitlab';
 import { grocyManikin } from '../mobparts/manikins/grocy'
 import { heimdallManikin } from '../mobparts/manikins/heimdall'
 import { kanboardManikin } from '../mobparts/manikins/kanboard'
@@ -21,7 +19,6 @@ import { n8nManikin } from '../mobparts/manikins/n8n'
 import { nextcloudManikin } from '../mobparts/manikins/nextcloud'
 import { nginxManikin } from '../mobparts/manikins/nginx'
 import { opensourceposManikin } from '../mobparts/manikins/opensourcepos'
-// import { owncloudManikin } from '../mobparts/manikins/owncloud';
 import { piholeManikin } from '../mobparts/manikins/pihole'
 import { portainerManikin } from '../mobparts/manikins/portainer'
 import { rocketchatManikin } from '../mobparts/manikins/rocketchat'
@@ -31,11 +28,15 @@ import { syncthingManikin } from '../mobparts/manikins/syncthing'
 import { traefikManikin } from '../mobparts/manikins/traefik'
 import { tvManikin } from '../mobparts/manikins/tv'
 import { visualizerManikin } from '../mobparts/manikins/visualizer'
-// import { vsCodeManikin } from '../mobparts/manikins/vscode';
-// import { webdavManikin } from '../mobparts/manikins/webdav';
 import { wordpressManikin } from '../mobparts/manikins/wordpress'
 import { moviesManikin } from '../mobparts/manikins/movies'
 import { musicManikin } from '../mobparts/manikins/music'
+
+//import broken manikins
+// import { gitlabManikin } from '../mobparts/manikins/gitlab';
+// import { owncloudManikin } from '../mobparts/manikins/owncloud';
+// import { vsCodeManikin } from '../mobparts/manikins/vscode';
+// import { webdavManikin } from '../mobparts/manikins/webdav';
 
 /**
  * an array containing all Manikins available in MEGADocker
@@ -43,13 +44,11 @@ import { musicManikin } from '../mobparts/manikins/music'
 export const workingManikins: IManikin[] = [
   booksManikin,
   comicsManikin,
-  // duplicatiManikin,
   drupalManikin,
   elkManikin,
   emailManikin,
   filebrowserManikin,
   ghostManikin,
-  // gitlabManikin,
   grocyManikin,
   heimdallManikin,
   kanboardManikin,
@@ -61,7 +60,6 @@ export const workingManikins: IManikin[] = [
   n8nManikin,
   nextcloudManikin,
   nginxManikin,
-  // owncloudManikin,
   opensourceposManikin,
   piholeManikin,
   portainerManikin,
@@ -72,7 +70,9 @@ export const workingManikins: IManikin[] = [
   traefikManikin,
   tvManikin,
   visualizerManikin,
+  wordpressManikin
+  // gitlabManikin,
+  // owncloudManikin,
   // vsCodeManikin,
   // webdavManikin,
-  wordpressManikin
 ]
