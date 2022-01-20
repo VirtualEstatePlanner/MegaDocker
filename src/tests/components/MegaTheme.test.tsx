@@ -9,7 +9,7 @@
 import OrbThemeDark from '../../components/OrbTheme/OrbThemeDark'
 import OrbThemeLight from '../../components/OrbTheme/OrbThemeLight'
 import { render } from '@testing-library/react'
-import { ThemeProvider } from '@material-ui/core'
+import { ThemeProvider } from '@mui/material'
 
 /*
  * mocks css for Asap font
@@ -21,7 +21,7 @@ jest.mock('@fontsource/asap', () => ({
 /*
  * mocks css for gray color
  */
-jest.mock('@material-ui/core/colors/grey', () => ({
+jest.mock('@mui/material/colors/grey', () => ({
   greyColor: '',
 }))
 

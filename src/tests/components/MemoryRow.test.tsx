@@ -8,7 +8,7 @@
 
 import { MemoryRow } from '../../components/MemoryRow'
 import { render } from '@testing-library/react'
-import { Table, TableBody } from '@material-ui/core'
+import { Table, TableBody } from '@mui/material'
 import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { MegaProvider } from '../../components/MegaContext'
 
@@ -22,7 +22,7 @@ jest.mock('@fontsource/asap', () => ({
 /*
  * mocks css for gray color
  */
-jest.mock('@material-ui/core/colors/grey', () => ({
+jest.mock('@mui/material/colors/grey', () => ({
   greyColor: '',
 }))
 

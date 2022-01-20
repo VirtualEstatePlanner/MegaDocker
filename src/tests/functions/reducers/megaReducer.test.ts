@@ -28,7 +28,7 @@ jest.mock('@fontsource/asap', () => ({
 /*
  * mocks css for gray color
  */
-jest.mock('@material-ui/core/colors/grey', () => ({
+jest.mock('@mui/material/colors/grey', () => ({
   greyColor: '',
 }))
 

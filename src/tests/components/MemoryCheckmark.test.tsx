@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/12/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { Table, TableBody, TableCell, TableRow } from '@material-ui/core'
+import { Table, TableBody, TableCell, TableRow } from '@mui/material'
 import { render } from '@testing-library/react'
 import { MegaProvider } from '../../components/MegaContext'
 import { MemoryValidationIcon } from '../../components/MemoryValidationIcon'
@@ -22,7 +22,7 @@ jest.mock('@fontsource/asap', () => ({
 /*
  * mocks css for gray color
  */
-jest.mock('@material-ui/core/colors/grey', () => ({
+jest.mock('@mui/material/colors/grey', () => ({
   greyColor: '',
 }))
 

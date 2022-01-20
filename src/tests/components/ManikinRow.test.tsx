@@ -9,7 +9,7 @@
 import { render } from '@testing-library/react'
 import { ManikinRow } from '../../components/ManikinRow'
 import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
-import { Table, TableBody } from '@material-ui/core'
+import { Table, TableBody } from '@mui/material'
 import { MegaProvider } from '../../components/MegaContext'
 
 /*
@@ -22,7 +22,7 @@ jest.mock('@fontsource/asap', () => ({
 /*
  * mocks css for gray color
  */
-jest.mock('@material-ui/core/colors/grey', () => ({
+jest.mock('@mui/material/colors/grey', () => ({
   greyColor: '',
 }))
 
