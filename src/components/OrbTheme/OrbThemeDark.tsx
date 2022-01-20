@@ -72,7 +72,7 @@ import ToggleButtonGroupRootStyleDark from '../../stylesDark/ToggleButtonGroupRo
 import ToggleButtonRootStyleDark from '../../stylesDark/ToggleButtonRootStyleDark'
 import TouchRippleRootStyleDark from '../../stylesDark/TouchRippleRootStyleDark'
 
-const OrbThemeDark: Theme = createTheme({
+export const OrbThemeDark: Theme = createTheme({
   components: {
     MuiAccordion: {
       styleOverrides: {
@@ -399,5 +399,3 @@ const OrbThemeDark: Theme = createTheme({
     }
   }
 })
-
-export default OrbThemeDark

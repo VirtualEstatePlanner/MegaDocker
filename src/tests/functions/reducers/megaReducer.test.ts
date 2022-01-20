@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/12/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { OrbThemeLight } from '../../../components/OrbThemeLight'
+import { OrbThemeLight } from '../../../components/OrbTheme/OrbThemeLight'
 import { getCustomMites } from '../../../functions/reducers/getCustomMites'
 import { getDNetworkMites } from '../../../functions/reducers/getDNetworkMites'
 import { getDServiceMites } from '../../../functions/reducers/getDServiceMites'
@@ -53,6 +53,6 @@ const testingState: IMegaDockerState = {
 }
 
 describe('tests the megaReducer function', () => {
-  testMegaDockerAction
-  testMegaDockerState
+  testMegaDockerAction()
+  testMegaDockerState()
 })

@@ -71,7 +71,7 @@ import ToggleButtonGroupRootStyle from '../../stylesLight/ToggleButtonGroupRootS
 import ToggleButtonRootStyle from '../../stylesLight/ToggleButtonRootStyle'
 import TextFieldRootStyle from '../../stylesLight/TextFieldRootStyle'
 
-const OrbThemeLight: Theme = createTheme({
+export const OrbThemeLight: Theme = createTheme({
   components: {
     MuiAccordion: {
       styleOverrides: {
@@ -394,5 +394,3 @@ const OrbThemeLight: Theme = createTheme({
     }
   }
 })
-
-export default OrbThemeLight
