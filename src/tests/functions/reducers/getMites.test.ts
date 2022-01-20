@@ -13,8 +13,8 @@ import { getMites } from '../../../functions/reducers/getMites'
 import { workingManikins } from '../../../globals/workingManikins'
 import { ICustomMite } from '../../../interfaces/miteTypeInterfaces/ICustomMite'
 import { IMite } from '../../../interfaces/objectInterfaces/IMite'
-import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
-import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
+// import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
+// import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
 
 const testingMites: IMite[] = getMites(workingManikins)
 const testingCustomMites: ICustomMite[][] = getCustomMites(testingMites) as ICustomMite[][]
@@ -44,34 +44,32 @@ const getTotalMiteCount = (): number => {
 }
 
 it('the correct number of mites are present', () => {
-  expect(getTotalMiteCount()).toStrictEqual(108)
+  expect(getCustomMiteCount()).toStrictEqual(16)
+  expect(getNetworkMiteCount()).toStrictEqual(52)
+  expect(getServiceMiteCount()).toStrictEqual(39)
+  expect(getTotalMiteCount()).toStrictEqual(107)
 })
 testingCustomMites.forEach((miteArray) => {
   miteArray.forEach((mite) => {
-    it('every mite string is at least 10 characters', () => {
-      expect(mite.miteFile.contents.length).toBeGreaterThanOrEqual(10)
-    })
-    it('every mite has an index in the appropriate range', () => {
       expect(mite.miteIndex).toBeGreaterThanOrEqual(10000)
       expect(mite.miteIndex).toBeLessThanOrEqual(69999)
     })
   })
   testingNetworkMites.forEach((mite) => {
-    it('every mite string is at least 10 characters', () => {
+    it('every network mite string is at least 10 characters', () => {
       expect(mite.miteString.length).toBeGreaterThanOrEqual(10)
     })
-    it('every mite has an index in the appropriate range', () => {
+    it('every network mite has an index in the appropriate range', () => {
       expect(mite.miteIndex).toBeGreaterThanOrEqual(10000)
       expect(mite.miteIndex).toBeLessThanOrEqual(69999)
     })
   })
   testingServiceMites.forEach((mite) => {
-    it('every mite string is at least 10 characters', () => {
+    it('every service mite string is at least 10 characters', () => {
       expect(mite.miteString.length).toBeGreaterThanOrEqual(10)
     })
-    it('every mite has an index in the appropriate range', () => {
+    it('every service mite has an index in the appropriate range', () => {
       expect(mite.miteIndex).toBeGreaterThanOrEqual(10000)
       expect(mite.miteIndex).toBeLessThanOrEqual(69999)
     })
   })
-})
