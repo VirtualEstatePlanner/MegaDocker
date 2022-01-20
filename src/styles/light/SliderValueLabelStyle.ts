@@ -1,4 +1,4 @@
-import { CSSProperties } from '@material-ui/styles'
+import { CSSProperties } from '@mui/styles'
 
 const SliderValueLabelStyle: CSSProperties = {
   left: 'calc(-50% + 12px)',

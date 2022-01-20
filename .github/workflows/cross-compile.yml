@@ -28,13 +28,15 @@ jobs:
           sudo apt-get install -y webkit2gtk-4.0
       - name: install npm dependencies
         run: yarn --network-timeout 600000
+#      - name: run unit tests with yarn
+#        run: yarn test
       - name: bundle binary and add to GitHub draft release
         uses: tauri-apps/tauri-action@v0.1.3
         env:
           GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
         with:
           tagName: MEGADocker-__VERSION__-${{ matrix.os }}-beta
-          releaseName: "MEGADocker v__VERSION__-${{ matrix.os }}-beta"
+          releaseName: "MEGADocker v__VERSION__-beta"
           releaseBody: "See the assets to download this version and install."
           releaseDraft: true
           prerelease: true

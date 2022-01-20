@@ -1,5 +1,5 @@
-import { CSSProperties } from '@material-ui/styles'
-import { blue } from '@material-ui/core/colors'
+import { CSSProperties } from '@mui/styles'
+import { blue } from '@mui/material/colors'
 
 const ButtonSecondaryStyleDark: CSSProperties = {
   backgroundColor: blue[500]

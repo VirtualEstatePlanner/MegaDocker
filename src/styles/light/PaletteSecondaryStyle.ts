@@ -1,5 +1,5 @@
-import { SimplePaletteColorOptions } from '@material-ui/core'
-import { grey, lightBlue } from '@material-ui/core/colors'
+import { SimplePaletteColorOptions } from '@mui/material'
+import { grey, lightBlue } from '@mui/material/colors'
 
 const PaletteSecondaryStyle: SimplePaletteColorOptions = {
   main: lightBlue[200],

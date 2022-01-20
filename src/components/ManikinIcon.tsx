@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { TableCell } from '@material-ui/core'
+import { TableCell } from '@mui/material'
 import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 
 export const ManikinIcon: React.FC<IManikin> = (manikin: IManikin): React.ReactElement => {

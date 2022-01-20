@@ -1,5 +1,5 @@
-import grey from '@material-ui/core/colors/grey'
-import { CSSProperties } from '@material-ui/styles'
+import grey from '@mui/material/colors/grey'
+import { CSSProperties } from '@mui/styles'
 
 const InputLabelRootStyleDark: CSSProperties = {
   color: grey[300],

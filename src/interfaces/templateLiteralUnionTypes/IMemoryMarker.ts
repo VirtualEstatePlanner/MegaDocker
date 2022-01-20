@@ -41,6 +41,8 @@ export type IMemoryMarker =
   | `[[LEDGERPOSTGRESPASSWORD]]`
   | `[[LEDGERPOSTGRESUSER]]`
   | `[[LETSENCRYPTEMAIL]]`
+  | `[[LUADNSAPITOKEN]]`
+  | `[[LUADNSEMAILADDRESS]]`
   | `[[MOBFOLDERPATH]]`
   | `[[MOBNAME]]`
   | `[[N8NUSERNAME]]`

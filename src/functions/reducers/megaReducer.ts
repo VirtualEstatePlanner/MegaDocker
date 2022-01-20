@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { Theme } from '@material-ui/core'
+import { Theme } from '@mui/material'
 import { getManikins } from './getManikins'
 import { getMemories } from './getMemories'
 import { getMites } from './getMites'

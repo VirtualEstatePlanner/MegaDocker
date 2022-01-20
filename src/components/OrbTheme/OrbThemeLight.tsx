@@ -1,4 +1,4 @@
-import { createTheme, Theme } from '@material-ui/core'
+import { createTheme, Theme } from '@mui/material'
 import AccordionExpandedStyle from '../../stylesLight/AccordionExpandedStyle'
 import AccordionRootStyle from '../../stylesLight/AccordionRootStyle'
 import AlertRootStyle from '../../stylesLight/AlertRootStyle'
@@ -46,7 +46,7 @@ import OutlinedInputMultilineStyle from '../../stylesLight/OutlinedInputMultilin
 import PaperRootStyle from '../../stylesLight/PaperRootStyle'
 import RadioRootStyle from '../../stylesLight/RadioRootStyle'
 //import SelectMenuRootStyle from '../../stylesLight/SelectMenuRootStyle'
-import SelectRootStyle from '../../stylesLight/SelectRootStyle'
+//import SelectRootStyle from '../../stylesLight/SelectRootStyle'
 import SliderMarkActiveStyle from '../../stylesLight/SliderMarkActiveStyle'
 import SliderMarkStyle from '../../stylesLight/SliderMarkStyle'
 import SliderRailStyle from '../../stylesLight/SliderRailStyle'
@@ -71,7 +71,7 @@ import ToggleButtonGroupRootStyle from '../../stylesLight/ToggleButtonGroupRootS
 import ToggleButtonRootStyle from '../../stylesLight/ToggleButtonRootStyle'
 import TextFieldRootStyle from '../../stylesLight/TextFieldRootStyle'
 
-const OrbThemeLight: Theme = createTheme({
+export const OrbThemeLight: Theme = createTheme({
   components: {
     MuiAccordion: {
       styleOverrides: {
@@ -272,7 +272,7 @@ const OrbThemeLight: Theme = createTheme({
     },
     MuiSelect: {
       styleOverrides: {
-        root: SelectRootStyle,
+//        root: SelectRootStyle,
 //        selectMenu: SelectMenuRootStyle
       }
     },
@@ -394,5 +394,3 @@ const OrbThemeLight: Theme = createTheme({
     }
   }
 })
-
-export default OrbThemeLight

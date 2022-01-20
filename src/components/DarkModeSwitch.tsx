@@ -7,11 +7,11 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { Switch, TableCell, Theme } from '@material-ui/core'
+import { Switch, TableCell, Theme } from '@mui/material'
 import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 import { MegaContext } from './MegaContext'
-import OrbThemeDark from './OrbTheme/OrbThemeDark'
+import { OrbThemeDark }  from './OrbTheme/OrbThemeDark'
 
 export const DarkModeSwitch: React.FC = (): React.ReactElement => {
   const {

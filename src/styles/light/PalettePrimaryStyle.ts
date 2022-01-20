@@ -1,5 +1,5 @@
-import { SimplePaletteColorOptions } from '@material-ui/core'
-import { grey } from '@material-ui/core/colors'
+import { SimplePaletteColorOptions } from '@mui/material'
+import { grey } from '@mui/material/colors'
 
 const PalettePrimaryStyle: SimplePaletteColorOptions = {
   main: `#F0F0F3`,

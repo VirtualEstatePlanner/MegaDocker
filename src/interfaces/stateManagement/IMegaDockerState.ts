@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 4/15/19.
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
-import { Theme } from '@material-ui/core'
+import { Theme } from '@mui/material'
 import { IManikin } from '../objectInterfaces/IManikin'
 import { IMemory } from '../objectInterfaces/IMemory'
 import { IMite } from '../objectInterfaces/IMite'

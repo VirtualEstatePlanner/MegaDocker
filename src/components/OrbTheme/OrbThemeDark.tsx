@@ -1,4 +1,4 @@
-import { createTheme, Theme } from '@material-ui/core'
+import { createTheme, Theme } from '@mui/material'
 import AccordionExpandedStyleDark from '../../stylesDark/AccordionExpandedStyleDark'
 import AccordionRootStyleDark from '../../stylesDark/AccordionRootStyleDark'
 import AlertRootStyleDark from '../../stylesDark/AlertRootStyleDark'
@@ -45,7 +45,7 @@ import NativeSelectRootStyleDark from '../../stylesDark/NativeSelectRootStyleDar
 import OutlinedInputMultilineStyleDark from '../../stylesDark/OutlinedInputMultilineStyleDark'
 import PaperRootStyleDark from '../../stylesDark/PaperRootStyleDark'
 import RadioRootStyleDark from '../../stylesDark/RadioRootStyleDark'
-import SelectRootStyleDark from '../../stylesDark/SelectRootStyleDark'
+//import SelectRootStyleDark from '../../stylesDark/SelectRootStyleDark'
 //import SelectMenuRootStyleDark from '../../stylesDark/SelectMenuRootStyleDark'
 import SliderRootStyleDark from '../../stylesDark/SliderRootStyleDark'
 import SliderMarkActiveStyleDark from '../../stylesDark/SliderMarkActiveStyleDark'
@@ -72,7 +72,7 @@ import ToggleButtonGroupRootStyleDark from '../../stylesDark/ToggleButtonGroupRo
 import ToggleButtonRootStyleDark from '../../stylesDark/ToggleButtonRootStyleDark'
 import TouchRippleRootStyleDark from '../../stylesDark/TouchRippleRootStyleDark'
 
-const OrbThemeDark: Theme = createTheme({
+export const OrbThemeDark: Theme = createTheme({
   components: {
     MuiAccordion: {
       styleOverrides: {
@@ -273,7 +273,7 @@ const OrbThemeDark: Theme = createTheme({
     },
     MuiSelect: {
       styleOverrides: {
-        root: SelectRootStyleDark,
+//        root: SelectRootStyleDark,
 //        selectMenu: SelectMenuRootStyleDark
       }
     },
@@ -399,5 +399,3 @@ const OrbThemeDark: Theme = createTheme({
     }
   }
 })
-
-export default OrbThemeDark

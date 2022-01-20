@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { TableCell, TableRow, Tooltip } from '@material-ui/core'
+import { TableCell, TableRow, Tooltip } from '@mui/material'
 import { ManikinIcon } from './ManikinIcon'
 import { ManikinSwitch } from './ManikinSwitch'
 import { IManikin } from '../interfaces/objectInterfaces/IManikin'

@@ -1,4 +1,4 @@
-import { SimplePaletteColorOptions } from '@material-ui/core'
+import { SimplePaletteColorOptions } from '@mui/material'
 
 const PaletteSelectedStyle: SimplePaletteColorOptions = {
   main: `#C0C0C2`,

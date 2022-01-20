@@ -7,7 +7,7 @@
 //  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { Button } from '@material-ui/core'
+import { Button } from '@mui/material'
 import { MegaContext } from './MegaContext'
 import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
