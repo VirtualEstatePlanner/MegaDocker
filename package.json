@@ -2,12 +2,34 @@
   "name": "megadocker",
   "version": "0.5.0",
   "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                                 react-scripts eject' && echo",
+    "clean": "rm -rf node_modules/ build/ src-tauri/target/ package-lock.json yarn.lock",
+    "build": "react-scripts build",
+    "test": "yarn test-coverage && yarn test-dev",
+    "test-dev": "jest --watch",
+    "test-coverage": "jest --coverage",
+    "pretty": "node node_modules/.bin/prettier --write .",
+    "prep-tsnode-script": "cp ./src/scripts/tsnode/scripts.tsconfig.json ./tsconfig.json",
+    "cleanup-tsnode-script": "cp ./src/scripts/tsnode/regular.tsconfig.json ./tsconfig.json",
+    "reindex": "yarn prep-tsnode-script && yarn ts-node src/scripts/utility/reindex.ts && yarn cleanup-tsnode-script",
+    "new:manikin": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newManikin.ts && yarn cleanup-tsnode-script",
+    "new:memory": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newMemory.ts && yarn cleanup-tsnode-script",
+    "new:miteC": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newCustomMite.ts && yarn cleanup-tsnode-script",
+    "new:miteL": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newLdifMite.ts && yarn cleanup-tsnode-script",
+    "new:miteN": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newNetworkMite.ts && yarn cleanup-tsnode-script",
+    "new:miteS": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newServiceMite.ts && yarn cleanup-tsnode-script",
+    "dev": "tauri dev",
+    "bundle": "tauri build"
+  },
+
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
     "@fontsource/asap": "latest",
-    "@mui/material": "latest",
     "@mui/icons-material": "latest",
+    "@mui/material": "latest",
     "@mui/styles": "latest",
     "@tauri-apps/api": "1.0.0-beta.8",
     "@testing-library/jest-dom": "latest",
@@ -22,23 +44,22 @@
     "yaml-validator": "latest"
   },
   "devDependencies": {
+    "@babel/core": "latest",
+    "@babel/preset-env": "latest",
     "@tauri-apps/cli": "1.0.0-beta.10",
     "@types/file-saver": "latest",
     "@types/jest": "latest",
     "@types/node": "latest",
+    "@types/prettier": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "jest": "latest",
+    "prettier": "latest",
     "react-scripts": "latest",
-    "typescript": "latest"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "clean": "rm -rf node_modules/ build/ src-tauri/target/ package-lock.json yarn.lock",
-    "dev": "tauri dev",
-    "bundle": "tauri build"
+    "ts-jest": "latest",
+    "ts-node": "latest",
+    "typescript": "latest",
+    "yarn": "latest"
   },
   "eslintConfig": {
     "extends": [
@@ -57,5 +78,35 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "babel": {
+    "presets": ["@babel/preset-env", { "targets": "defaults" }]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/build/",
+      "/dist/",
+      "/public/",
+      "/node_modules/",
+      "/src-tauri/",
+      "/static/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "displayName": {
+      "name": "megadocker",
+      "color": "blue"
+    }
   }
 }
