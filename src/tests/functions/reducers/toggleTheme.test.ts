@@ -25,9 +25,11 @@ jest.mock('@mui/material/colors/grey', () => ({
 }))
 
 describe('tests the themeToggle function', () => {
+  it('toggles Theme successfully', () => {
     expect(toggleTheme(OrbThemeLight)).toEqual(OrbThemeDark)
     expect(toggleTheme(OrbThemeDark)).toEqual(OrbThemeLight)
     expect(() => {
         toggleTheme(createTheme({}))
     }).toThrowError(`toggleTheme error: passed non-standard theme to theme switch`)
+  })
 })

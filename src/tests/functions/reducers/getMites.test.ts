@@ -13,8 +13,6 @@ import { getMites } from '../../../functions/reducers/getMites'
 import { workingManikins } from '../../../globals/workingManikins'
 import { ICustomMite } from '../../../interfaces/miteTypeInterfaces/ICustomMite'
 import { IMite } from '../../../interfaces/objectInterfaces/IMite'
-// import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
-// import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
 
 const testingMites: IMite[] = getMites(workingManikins)
 const testingCustomMites: ICustomMite[][] = getCustomMites(testingMites) as ICustomMite[][]

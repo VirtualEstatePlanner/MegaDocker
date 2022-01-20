@@ -17,8 +17,6 @@ import { getMites } from '../../../functions/reducers/getMites'
 import { megaReducer } from '../../../functions/reducers/megaReducer'
 import { workingManikins } from '../../../globals/workingManikins'
 import { IMegaDockerState } from '../../../interfaces/stateManagement/IMegaDockerState'
-import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
-import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
 
 /*
  * mocks css for Asap font
@@ -56,8 +54,6 @@ const testingState: IMegaDockerState = {
 
 describe('tests the megaReducer function', () => {
   it('returns the initial state', () => {
-    testMegaDockerAction()
-    testMegaDockerState()
     expect(megaReducer(testingState, { type: 'TOGGLE_THEME', payload: OrbThemeLight })).toEqual({ ...testingState, theme: OrbThemeDark })
   })
 })

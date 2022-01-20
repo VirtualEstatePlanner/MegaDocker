@@ -1,7 +1,7 @@
 /** @format */
 
 import { BaseCSSProperties } from '@mui/styles'
-import '@fontsource/asap'
+import '@fontsource/asap/index.css'
 
 const AsapFont: BaseCSSProperties = {
   fontFamily: 'Asap',

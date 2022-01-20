@@ -137,7 +137,7 @@
     ],
     "moduleNameMapper": {
       "\\.(png)$": "<rootDir>/src/typings/png.d.ts",
-      "\\*.(css)$": "<rootDir>/src/typings/css.d.ts"
+      "\\.(css)$": "<rootDir>/src/typings/css.d.ts"
     },
     "transform": {
       "^.+\\.[jt]sx?$": "babel-jest"
