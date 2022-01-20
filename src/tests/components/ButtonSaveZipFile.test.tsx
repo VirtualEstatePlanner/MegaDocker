@@ -1,12 +1,12 @@
 /** @format */
 
-//  ButtonExportDockerSwarm.test.tsx
+//  ButtonSaveZipFile.test.tsx
 //  MEGADocker
 //  an automated test
 //  Created by George Georgulas IV on 3/12/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { ButtonExportDockerSwarm } from '../../components/ButtonExportDockerSwarm'
+import { ButtonSaveZipFile } from '../../components/ButtonSaveZipFile'
 import { render } from '@testing-library/react'
 
 /*
@@ -26,7 +26,7 @@ jest.mock('@material-ui/core/colors/grey', () => ({
 it('renders the ButtonExportDockerSwarm component', () => {
   render(
     <div>
-      <ButtonExportDockerSwarm />
+      <ButtonSaveZipFile />
     </div>
   )
 })
