@@ -13,8 +13,7 @@
 .VSCodeCounter/
 electron.ts
 yarn-debug.log*
-yarn-error.log
-yarn.lock
-!public/preload.js
+yarn-error.log*
+yarn.lock*
 src-tauri/Cargo.lock
 src-tauri/target
