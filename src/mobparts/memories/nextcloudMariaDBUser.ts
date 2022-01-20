@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'
 
 export const nextcloudMariaDBUser: IMemory = {
-  memoryIndex: 20033,
+  memoryIndex: 20035,
   memoryMarker: `[[NEXTCLOUDMARIADBUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,

@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'
 
 export const opensourcePOSMariaDBUser: IMemory = {
-  memoryIndex: 20038,
+  memoryIndex: 20040,
   memoryMarker: `[[OPENSOURCEPOSMARIADBUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,

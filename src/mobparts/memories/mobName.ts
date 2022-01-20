@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { mobnameValidator } from '../../functions/validators/mobnameValidator'
 
 export const mobName: IMemory = {
-  memoryIndex: 20028,
+  memoryIndex: 20030,
   memoryMarker: `[[MOBNAME]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,

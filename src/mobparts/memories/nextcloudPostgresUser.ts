@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'
 
 export const nextcloudPostgresUser: IMemory = {
-  memoryIndex: 20035,
+  memoryIndex: 20037,
   memoryMarker: `[[NEXTCLOUDPOSTGRESUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,

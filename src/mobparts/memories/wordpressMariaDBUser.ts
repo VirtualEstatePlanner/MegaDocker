@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'
 
 export const wordpressMariaDBUser: IMemory = {
-  memoryIndex: 20049,
+  memoryIndex: 20051,
   memoryMarker: `[[WORDPRESSMARIADBUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,

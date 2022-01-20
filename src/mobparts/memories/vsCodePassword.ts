@@ -10,7 +10,7 @@ import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'
 
 export const vsCodePassword: IMemory = {
-  memoryIndex: 20044,
+  memoryIndex: 20046,
   memoryMarker: `[[VSCODEPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
