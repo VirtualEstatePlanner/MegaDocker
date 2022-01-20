@@ -36,7 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
         with:
           tagName: MEGADocker-__VERSION__-${{ matrix.os }}-beta
-          releaseName: "MEGADocker v__VERSION__-beta"
+          releaseName: "MEGADocker-v__VERSION__-beta"
           releaseBody: "See the assets to download this version and install."
           releaseDraft: true
           prerelease: true
