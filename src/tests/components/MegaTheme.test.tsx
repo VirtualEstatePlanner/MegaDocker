@@ -1,4 +1,6 @@
-/** @format */
+/** @format
+ * @jest-environment jsdom
+ */
 
 //  MegaTheme.test.tsx
 //  MEGADocker
@@ -8,6 +10,7 @@
 
 import { OrbThemeDark } from '../../components/OrbTheme/OrbThemeDark'
 import { OrbThemeLight } from '../../components/OrbTheme/OrbThemeLight'
+import * as React from 'react'
 import { render } from '@testing-library/react'
 import { ThemeProvider } from '@mui/material'
 

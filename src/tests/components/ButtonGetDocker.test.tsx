@@ -1,4 +1,6 @@
-/** @format */
+/** @format
+ * @jest-environment jsdom
+ */
 
 //  ButtonGetDocker.test.tsx
 //  MEGADocker
@@ -7,6 +9,7 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { ButtonGetDocker } from '../../components/ButtonGetDocker'
+import * as React from 'react'
 import { render } from '@testing-library/react'
 
 /*

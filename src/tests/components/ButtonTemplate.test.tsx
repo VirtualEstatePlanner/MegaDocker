@@ -1,4 +1,6 @@
-/** @format */
+/** @format
+ * @jest-environment jsdom
+ */
 
 //  ButtonTemplate.test.tsx
 //  MEGADocker
@@ -7,6 +9,7 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 import { ButtonTemplate } from '../../components/ButtonTemplate'
+import * as React from 'react'
 import { render } from '@testing-library/react'
 
 /*
