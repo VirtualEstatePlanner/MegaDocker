@@ -3,6 +3,7 @@
 ## a list of changes per version number
 
 - `v0.5.0-beta` : **replaced Electron with Tauri, lowering application size by 80-ish%**
+- `v0.4.9-beta` : migrated Material-UI to @mui/material v5.0.0
 - `v0.4.8-beta` : removed Duplicati as it wasn't stable enough for use on ARM
 - `v0.4.7-beta` : Let's say this one was move typescript to 4.3.2, but I really don't remember what the change was
 - `v0.4.6-beta` : sorted interfaces, better LDIF bootstrapping, authelia works
