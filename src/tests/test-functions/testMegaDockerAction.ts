@@ -16,6 +16,8 @@ import { IToggleManikinAction } from '../../interfaces/actionInterfaces/IToggleM
 import { IUpdateMemoryValueAction } from '../../interfaces/actionInterfaces/IUpdateMemoryValueAction'
 
 export const testMegaDockerAction = () => describe('tests each possible MegaDockerAction', () => {
-    expect(MegaContext.Consumer).toBeDefined()
-    expect(MegaContext.Provider).toBeDefined()
+    it(`has a Consumer and a Provider`, () => {
+        expect(MegaContext.Consumer).toBeDefined()
+        expect(MegaContext.Provider).toBeDefined()
+    })
 })

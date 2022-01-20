@@ -16,6 +16,9 @@ import { traefikNetworkMite } from '../mites/network/traefikNetworkMite'
 import traefikIcon from '../../images/manikin-icons/traefikIcon.png'
 import { mobName } from '../memories/mobName'
 import { traefikLdifMite } from '../mites/ldif/traefikLdifMite'
+import { luaDNSAPIToken } from '../memories/luaDNSAPIToken'
+import { luaDNSEmailAddress } from '../memories/luaDNSEmailAddress'
+import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 
 /**
  * traefik Manikin
@@ -34,3 +37,7 @@ export const traefikManikin: IManikin = {
   ports: [],
   subfolders: [`ssl`]
 }
+
+const memoriesToBeAdded: Array<IMemory> = [luaDNSAPIToken, luaDNSEmailAddress]
+
+console.log(memoriesToBeAdded)

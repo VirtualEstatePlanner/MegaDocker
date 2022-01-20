@@ -55,9 +55,9 @@ const testingState: IMegaDockerState = {
 }
 
 describe('tests the megaReducer function', () => {
-  testMegaDockerAction()
-  testMegaDockerState()
-  expect(megaReducer(testingState, { type: 'TOGGLE_THEME', payload: OrbThemeLight })).toEqual({ ...testingState, theme: OrbThemeDark })
+  it('returns the initial state', () => {
+    testMegaDockerAction()
+    testMegaDockerState()
+    expect(megaReducer(testingState, { type: 'TOGGLE_THEME', payload: OrbThemeLight })).toEqual({ ...testingState, theme: OrbThemeDark })
+  })
 })
-
-export {}
