@@ -14,7 +14,7 @@ export const wordpressMariaDBPassword: IMemory = {
   memoryMarker: `[[WORDPRESSMARIADBPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `WP MariaDB Password`,
+  name: `WordPress MariaDB Password`,
   tooltip: `The WordPress MariaDB user's password`,
   value: ``,
   valueType: `password`,

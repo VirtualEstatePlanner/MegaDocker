@@ -1,0 +1,40 @@
+name: "publish"
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  publish-tauri:
+    strategy:
+      fail-fast: true
+      matrix:
+        os: [ macos-latest, ubuntu-latest, windows-latest ]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: git checkout repository
+        uses: actions/checkout@v2.4.0
+      - name: Install and configure nodeJS 16
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: 16
+      - name: install and configure stable Rust toolchain
+        uses: actions-rs/toolchain@v1.0.6
+        with:
+          toolchain: stable
+      - name: apt install ubuntu-specific dependencies
+        if: matrix.os == 'ubuntu-latest'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y webkit2gtk-4.0
+      - name: install npm dependencies
+        run: yarn --network-timeout 600000
+      - name: bundle binary and add to GitHub draft release
+        uses: tauri-apps/tauri-action@v0.1.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_API_TOKEN }}
+        with:
+          tagName: MEGADocker-__VERSION__-${{ matrix.os }}-beta
+          releaseName: "MEGADocker v__VERSION__-${{ matrix.os }}-beta"
+          releaseBody: "See the assets to download this version and install."
+          releaseDraft: true
+          prerelease: true

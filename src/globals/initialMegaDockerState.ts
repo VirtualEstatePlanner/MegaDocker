@@ -1,6 +1,6 @@
 /** @format */
 
-//  initialMegaDockerState.tsx
+//  initialMegaDockerState.ts
 //  MEGADocker
 //  the application's beginning state
 //  Created by George Georgulas IV on 3/17/19.
@@ -26,5 +26,5 @@ export const initialMegaDockerState: IMegaDockerState = {
   mobDServiceMites: initialMobMites.filter((eachMite) => eachMite.type === `DockerSwarmService`),
   mobDNetworkMites: initialMobMites.filter((eachMite) => eachMite.type === `DockerSwarmNetwork`),
   mobCustomMites: [initialMobMites.filter((eachMite) => eachMite.type === `Custom`)],
-  ymlOutput: ``,
+  ymlOutput: ``
 }

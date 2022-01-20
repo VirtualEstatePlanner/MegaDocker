@@ -15,7 +15,8 @@ import { getDServiceMites } from './getDServiceMites'
 import { getDNetworkMites } from './getDNetworkMites'
 import { getCustomMites } from './getCustomMites'
 import { toggleTheme } from './toggleTheme'
-import { zipDockerSwarm } from './zipDockerSwarm'
+import { zipDockerSwarmBrowser } from './zipDockerSwarmBrowser'
+import { zipDockerSwarmTauri } from './zipDockerSwarmTauri'
 import { initialMegaDockerState } from '../../globals/initialMegaDockerState'
 import { IMegaDockerAction } from '../../interfaces/stateManagement/IMegaDockerAction'
 import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerState'
@@ -25,7 +26,7 @@ import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerSt
  */
 export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (state: IMegaDockerState, action: IMegaDockerAction): IMegaDockerState => {
   /**
-   * a mutable copy of the state to make changes to
+   * creates a mutable copy of the state to make changes to
    */
   let newState: IMegaDockerState = { ...state }
 
@@ -33,9 +34,9 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     action.type // check which modification to make to state
   ) {
     case `APPLICATION_START`: // to start the program with only core manikins selected
-      return initialMegaDockerState
+     return initialMegaDockerState
 
-    case `TOGGLE_THEME`:
+    case `TOGGLE_THEME`: // toggles light and dark mode
       const newTheme: Theme = toggleTheme(newState.theme) as Theme
       newState.theme = newTheme
       return newState
@@ -47,7 +48,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.allMobMites = getMites(newState.selectedManikins) // rebuilds Mites array
       newState.mobDServiceMites = getDServiceMites(newState.allMobMites) // rebuilds Docker Swarm network Mites array
       newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites) // rebuilds Docker Swarm service Mites array
-      newState.mobCustomMites = getCustomMites(newState.allMobMites) // custom mite file-based Mite[]
+      newState.mobCustomMites = getCustomMites(newState.allMobMites) // rebuilds custom mite file-based Mites array
       return newState
 
     case `UPDATE_MEMORY_VALUE`: // to handle changing data in a memory's value
@@ -56,8 +57,15 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       newState.memories[memoryIndex].isReady = newState.memories[memoryIndex].validator(newState.memories[memoryIndex].value)
       return newState
 
-    case `DOCKER_SWARM_OUTPUT`: // handles creation and download of Docker Swarm zip file
-      zipDockerSwarm({
+    case `DOCKER_SWARM_OUTPUT_BROWSER`: // handles creation and download of Docker Swarm zip file in browser
+      zipDockerSwarmBrowser({
+        manikins: state.selectedManikins,
+        memories: state.memories,
+      })
+      return state
+
+    case `DOCKER_SWARM_OUTPUT_TAURI`: // handles creation and download of Docker Swarm zip file in tauri desktop application
+      zipDockerSwarmTauri({
         manikins: state.selectedManikins,
         memories: state.memories,
       })
