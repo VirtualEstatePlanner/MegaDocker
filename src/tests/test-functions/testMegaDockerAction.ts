@@ -6,7 +6,6 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import * as React from 'react'
 import { MegaContext } from '../../components/MegaContext'
 import { IApplicationStartAction } from '../../interfaces/actionInterfaces/IApplicationStartAction'
 import { IOutputDockerSwarmBrowserAction } from '../../interfaces/actionInterfaces/IOutputDockerSwarmBrowserAction'
@@ -16,4 +15,7 @@ import { IOpenMobAction } from '../../interfaces/actionInterfaces/IOpenMobAction
 import { IToggleManikinAction } from '../../interfaces/actionInterfaces/IToggleManikinAction'
 import { IUpdateMemoryValueAction } from '../../interfaces/actionInterfaces/IUpdateMemoryValueAction'
 
-export const testMegaDockerAction = () => describe('tests each possible MegaDockerAction', () => {})
+export const testMegaDockerAction = () => describe('tests each possible MegaDockerAction', () => {
+    expect(MegaContext.Consumer).toBeDefined()
+    expect(MegaContext.Provider).toBeDefined()
+})

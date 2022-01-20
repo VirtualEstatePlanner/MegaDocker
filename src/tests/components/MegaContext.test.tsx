@@ -1,4 +1,6 @@
-/** @format */
+/** @format
+ * @jest-environment jsdom
+ */
 
 //  MegaContext.test.tsx
 //  MEGADocker
@@ -6,6 +8,8 @@
 //  Created by George Georgulas IV on 3/12/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import React, { Component } from "react"
 import { MegaProvider } from '../../components/MegaContext'
 import { render } from '@testing-library/react'
 

@@ -5,7 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                                 react-scripts eject' && echo",
-    "clean": "rm -rf node_modules/ build/ src-tauri/target/ package-lock.json yarn.lock",
+    "clean": "rm -rf node_modules/ src-tauri/target/ package-lock.json yarn.lock yarn-error-log",
     "build": "react-scripts build",
     "test": "jest --watch",
     "cover": "jest --coverage",
@@ -37,16 +37,15 @@
     "jszip": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "source-map-support": "latest",
     "typescript": "latest",
     "web-vitals": "latest",
     "yaml-validator": "latest"
   },
   "devDependencies": {
     "@babel/core": "latest",
-    "@babel/preset-env": "latest",
     "@babel/plugin-transform-modules-commonjs": "latest",
     "@babel/preset-react": "latest",
-    "@babel/preset-typescript": "latest",
     "@tauri-apps/cli": "1.0.0-beta.10",
     "@types/file-saver": "latest",
     "@types/jest": "latest",
@@ -57,7 +56,6 @@
     "jest": "latest",
     "prettier": "latest",
     "react-scripts": "latest",
-    "ts-jest": "latest",
     "ts-node": "latest",
     "typescript": "latest",
     "yarn": "latest"
@@ -116,8 +114,8 @@
       "color": "blue"
     },
     "moduleDirectories": [
-      "./node_modules/",
-      "./src/"
+      "node_modules",
+      "src"
     ],
     "moduleFileExtensions": [
       "ts",
@@ -128,7 +126,8 @@
       "png"
     ],
     "moduleNameMapper": {
-      "\\.(png)$": "<rootDir>/src/typings/png.d.ts"
+      "\\.(png)$": "<rootDir>/src/typings/png.d.ts",
+      "\\.(css)$": "<rootDir>/src/typings/css.d.ts"
     },
     "transform": {
       "^.+\\.[jt]sx?$": "babel-jest"
