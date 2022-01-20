@@ -71,5 +71,5 @@ export const opensourcePOSServiceMite: ITraefikedServiceMite = {
 
 # End opensourcePOS Service Section
 
-`,
+`
 }

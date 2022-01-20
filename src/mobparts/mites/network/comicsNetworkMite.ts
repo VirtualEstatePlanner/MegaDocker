@@ -20,5 +20,5 @@ export const comicsNetworkMite: IMite = {
 
 # End Comics Network Section
 
-`,
+`
 }

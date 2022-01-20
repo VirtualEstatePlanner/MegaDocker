@@ -79,6 +79,6 @@ redis:
  tls:
   server_name: myredis.example.com
   skip_verify: false
-`,
-  },
+`
+  }
 }

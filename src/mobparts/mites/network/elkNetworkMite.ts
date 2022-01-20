@@ -20,5 +20,5 @@ export const elkNetworkMite: IMite = {
 
 # End ELK Network Section
 
-`,
+`
 }

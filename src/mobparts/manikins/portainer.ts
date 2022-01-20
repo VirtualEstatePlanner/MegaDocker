@@ -28,5 +28,5 @@ export const portainerManikin: IManikin = {
   mites: [portainerLdifMite, portainerServiceMite, portainerNetworkMite],
   name: `Portainer`,
   ports: [],
-  subfolders: [],
+  subfolders: []
 }

@@ -50,5 +50,5 @@ export const duplicatiServiceMite: ITraefikedServiceMite = {
 
 # End Backup Service Section
 
-`,
+`
 }

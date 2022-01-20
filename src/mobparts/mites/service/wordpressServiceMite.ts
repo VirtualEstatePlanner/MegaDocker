@@ -67,5 +67,5 @@ export const wordpressServiceMite: ITraefikedServiceMite = {
 
 # End WordPress Service Section
 
-`,
+`
 }

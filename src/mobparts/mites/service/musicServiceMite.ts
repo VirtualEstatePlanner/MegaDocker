@@ -49,5 +49,5 @@ export const musicServiceMite: ITraefikedServiceMite = {
 
 # End Music Service Section
 
-`,
+`
 }

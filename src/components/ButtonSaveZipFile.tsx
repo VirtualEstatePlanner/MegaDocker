@@ -17,7 +17,7 @@ import { runningInTauri } from '../functions/runningInTauri'
 export const ButtonSaveZipFile: React.FC = (): React.ReactElement => {
   const {
     state,
-    dispatch,
+    dispatch
   }: {
     state: IMegaDockerState
     dispatch: React.Dispatch<IMegaDockerAction>

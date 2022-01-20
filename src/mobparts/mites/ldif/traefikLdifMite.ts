@@ -53,5 +53,5 @@ cn: SuperModerators
 aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
 
 # End Traefik LDIF Section
-`,
+`
 }

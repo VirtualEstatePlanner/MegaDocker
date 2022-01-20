@@ -103,5 +103,5 @@ export const traefikServiceMite: ITraefikedServiceMite = {
  
 # End Traefik Service Section
 
-`,
+`
 }

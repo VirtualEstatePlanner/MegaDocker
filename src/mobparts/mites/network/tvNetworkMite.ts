@@ -20,5 +20,5 @@ export const tvNetworkMite: IMite = {
 
 # End TV Network Section
 
-`,
+`
 }

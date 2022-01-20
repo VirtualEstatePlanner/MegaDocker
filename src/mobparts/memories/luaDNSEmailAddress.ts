@@ -19,5 +19,5 @@ export const luaDNSEmailAddress: IMemory = {
   value: ``,
   valueType: `text`,
   isReady: false,
-  validator: emailValidator,
+  validator: emailValidator
 }

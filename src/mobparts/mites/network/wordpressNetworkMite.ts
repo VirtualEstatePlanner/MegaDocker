@@ -20,5 +20,5 @@ export const wordpressNetworkMite: IMite = {
 
 # End WordPress Network Section
 
-`,
+`
 }

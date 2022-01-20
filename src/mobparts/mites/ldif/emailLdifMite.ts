@@ -56,5 +56,5 @@ aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
 
 # End Email Section
 
-`,
+`
 }

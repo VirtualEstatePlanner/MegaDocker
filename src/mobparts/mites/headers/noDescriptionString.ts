@@ -7,5 +7,5 @@ export const noDescriptionString: IHeaderMite = {
   miteIndex: 99999,
   miteString: `
 Empty Manikin Synopsis
-`,
+`
 }

@@ -20,5 +20,5 @@ export const ghostNetworkMite: IMite = {
 
 # End Ghost Network Section
 
-`,
+`
 }

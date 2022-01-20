@@ -31,5 +31,5 @@ export const opensourceposManikin: IManikin = {
   mites: [opensourceposLdifMite, opensourcePOSServiceMite, opensourcePOSNetworkMite],
   name: `osPOS`,
   ports: [],
-  subfolders: [`mariadb`, `opensourcepos`],
+  subfolders: [`mariadb`, `opensourcepos`]
 }

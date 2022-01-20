@@ -31,5 +31,5 @@ export const kanboardManikin: IManikin = {
   mites: [kanboardLdifMite, kanboardServiceMite, kanboardNetworkMite],
   name: `Kanboard`,
   ports: [],
-  subfolders: [`kanboard-data`, `kanboard-plugins`, `mariadb`],
+  subfolders: [`kanboard-data`, `kanboard-plugins`, `mariadb`]
 }

@@ -64,5 +64,5 @@ export const ghostServiceMite: ITraefikedServiceMite = {
 
 # End Ghost Service Section
 
-`,
+`
 }

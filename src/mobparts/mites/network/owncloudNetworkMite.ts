@@ -20,5 +20,5 @@ export const owncloudNetworkMite: IMite = {
 
 # End Owncloud Network Section
 
-`,
+`
 }

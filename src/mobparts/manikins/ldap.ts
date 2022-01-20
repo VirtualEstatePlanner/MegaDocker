@@ -46,7 +46,7 @@ export const ldapManikin: IManikin = {
     ldapAdminUsername,
     ldapAdminPassword,
     ldapConfigurationPassword,
-    ldapOrganisation,
+    ldapOrganisation
   ],
   mites: [ldapLdifMite, autheliaDotConfMite, autheliaRedisDotConfMite, autheliaRedisDotConfMite, autheliaRedisUsersDotAclMite, ldapServiceMite, ldapNetworkMite, ldapBootstrapMegaDockerDotLdifMite],
   name: `LDAP`,
@@ -61,6 +61,6 @@ export const ldapManikin: IManikin = {
     `authelia-redis-users`,
     `openldap-lib`,
     `openldap-ldif-files`,
-    `openldap-slapd.d`,
-  ],
+    `openldap-slapd.d`
+  ]
 }

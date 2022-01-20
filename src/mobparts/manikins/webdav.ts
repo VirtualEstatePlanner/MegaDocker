@@ -30,5 +30,5 @@ export const webdavManikin: IManikin = {
   mites: [webdavLdifMite, webdavServiceMite, webdavNetworkMite],
   name: `WebDAV`,
   ports: [],
-  subfolders: [`data`],
+  subfolders: [`data`]
 }

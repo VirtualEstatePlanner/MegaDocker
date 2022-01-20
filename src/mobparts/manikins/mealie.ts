@@ -27,5 +27,5 @@ export const mealieManikin: IManikin = {
   mites: [mealieLdifMite, mealieServiceMite],
   name: `Mealie`,
   ports: [],
-  subfolders: [],
+  subfolders: []
 }

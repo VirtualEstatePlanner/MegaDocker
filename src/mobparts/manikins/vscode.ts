@@ -30,5 +30,5 @@ export const vsCodeManikin: IManikin = {
   mites: [vscodeLdifMite, vsCodeServiceMite, vsCodeNetworkMite, vsCodeIndexDotHtmlMite],
   name: `VS Code`,
   ports: [],
-  subfolders: [`project`, `pages`],
+  subfolders: [`project`, `pages`]
 }

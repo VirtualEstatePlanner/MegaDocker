@@ -49,5 +49,5 @@ export const tvServiceMite: ITraefikedServiceMite = {
 
 # End TV Service Section
 
-`,
+`
 }

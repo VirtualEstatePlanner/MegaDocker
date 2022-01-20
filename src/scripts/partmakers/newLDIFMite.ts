@@ -9,12 +9,12 @@ interface ILDIFMiteInput {
 }
 
 let runtimeLdifMiteAnswers: ILDIFMiteInput = {
-  serviceName: ``,
+  serviceName: ``
 }
 
 const getLdifMiteData = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
+  output: process.stdout
 })
 
 const makeLdifMiteFileString: Function = (input: ILDIFMiteInput): string => {

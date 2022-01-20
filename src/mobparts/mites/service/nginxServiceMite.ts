@@ -49,5 +49,5 @@ export const nginxServiceMite: ITraefikedServiceMite = {
 
 # End Nginx Service Section
 
-`,
+`
 }

@@ -19,5 +19,5 @@ export const cloudflareEmail: IMemory = {
   value: ``,
   valueType: `email`,
   isReady: false,
-  validator: emailValidator,
+  validator: emailValidator
 }

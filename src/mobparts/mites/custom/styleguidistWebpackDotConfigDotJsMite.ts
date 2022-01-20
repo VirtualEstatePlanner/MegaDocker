@@ -39,6 +39,6 @@ export const styleguidistWebpackDotConfigDotJsMite: ICustomMite = {
           { test: /\.css$/, use: ["style-loader", "css-loader"] }
         ]
       }
-    };`,
-  },
+    };`
+  }
 }

@@ -20,5 +20,5 @@ export const n8nNetworkMite: IMite = {
 
 # End n8n Network Section
 
-`,
+`
 }

@@ -77,5 +77,5 @@ export const drupalServiceMite: ITraefikedServiceMite = {
 
 # End Drupal Service Section
 
-`,
+`
 }

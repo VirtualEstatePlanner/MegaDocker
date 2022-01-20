@@ -14,5 +14,5 @@ export const styleguidistNetworkMite: IMite = {
 
 # End Styleguidist Network Section
 
-`,
+`
 }

@@ -9,5 +9,5 @@ export const mobNetworkFooterSectionString: IHeaderMite = {
 
 # End Networks Section
 
-`,
+`
 }

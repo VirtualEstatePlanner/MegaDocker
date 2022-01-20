@@ -20,5 +20,5 @@ export const vsCodeNetworkMite: IMite = {
 
 # End VSCode Network Section
 
-  `,
+  `
 }

@@ -44,9 +44,9 @@ export const elkManikin: IManikin = {
     elasticsearchDotYmlMite,
     elasticsearchJvmDotOptionsMite,
     elasticsearchLog4j2DotPropertiesMite,
-    filebeatDotYmlMite,
+    filebeatDotYmlMite
   ],
   name: `ELK`,
   ports: [],
-  subfolders: [`elasticsearch-config`, `elasticsearch-data`, `filebeat-config`, `filebeat-modules`, `kibana-config`, `logfiles`],
+  subfolders: [`elasticsearch-config`, `elasticsearch-data`, `filebeat-config`, `filebeat-modules`, `kibana-config`, `logfiles`]
 }

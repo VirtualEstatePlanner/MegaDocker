@@ -34,12 +34,12 @@ let runtimeMemoryAnswers: IMemoryInput = {
   name: `inputName`,
   memoryType: `SecretMemory`,
   type: `text`,
-  validator: `no`,
+  validator: `no`
 }
 
 const getMemoryData = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
+  output: process.stdout
 })
 
 getMemoryData.question(`What kind of memory is this? (Secret or Normal): `, function (memoryType: string) {
@@ -135,7 +135,7 @@ const makeOptions: Function = (input: IMemoryInput): IMemoryTemplateOptions => {
     memoryType: input.memoryType,
     tooltip: input.description,
     validator: input.validator,
-    valueType: input.type,
+    valueType: input.type
   }
   return inputOptions
 }

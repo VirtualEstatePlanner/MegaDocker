@@ -16,14 +16,14 @@ import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
  * mocks css for Asap font
  */
 jest.mock('@fontsource/asap', () => ({
-  fontsourceAsap: '',
+  fontsourceAsap: ''
 }))
 
 /*
  * mocks css for gray color
  */
 jest.mock('@mui/material/colors/grey', () => ({
-  greyColor: '',
+  greyColor: ''
 }))
 
 it('renders the MemoryValidationIcon component', () => {

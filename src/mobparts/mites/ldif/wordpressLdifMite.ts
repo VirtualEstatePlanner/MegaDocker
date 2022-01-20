@@ -57,5 +57,5 @@ aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
 
 # End WordPress Section
 
-`,
+`
 }

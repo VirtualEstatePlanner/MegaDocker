@@ -21,5 +21,5 @@ export const ldapOrganisation: IMemory = {
   valueType: `text`,
   isReady: false,
   // TODO: create a validator that allows whitespace
-  validator: noValidator,
+  validator: noValidator
 }

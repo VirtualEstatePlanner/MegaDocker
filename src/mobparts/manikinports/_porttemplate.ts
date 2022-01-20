@@ -11,5 +11,5 @@ import { IManikinPort } from '../../interfaces/objectInterfaces/IManikinPort'
 export const $SOMEPROTOCOLPort: IManikinPort = {
   externalPort: 0,
   internalPort: 0,
-  isUDP: false,
+  isUDP: false
 }

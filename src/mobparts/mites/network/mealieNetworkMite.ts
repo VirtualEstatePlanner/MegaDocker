@@ -20,5 +20,5 @@ export const mealieNetworkMite: IMite = {
 
 # End Mealie Network Section
 
-`,
+`
 }

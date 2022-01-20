@@ -309,6 +309,6 @@ export const vsCodeIndexDotHtmlMite: ICustomMite = {
         <source src="app/sounds/bell.mp3" type="audio/mpeg">
     </audio>
   </body>
-</html>`,
-  },
+</html>`
+  }
 }

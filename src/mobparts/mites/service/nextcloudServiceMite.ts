@@ -74,5 +74,5 @@ export const nextcloudServiceMite: ITraefikedServiceMite = {
 
 # End NextCloud Service Section
 
-`,
+`
 }

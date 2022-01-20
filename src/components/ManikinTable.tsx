@@ -19,7 +19,7 @@ export const ManikinTable: React.FC = (): React.ReactElement => {
   const {
     state,
     // eslint-disable-next-line
-    dispatch,
+    dispatch
   }: {
     state: IMegaDockerState
     dispatch: React.Dispatch<IMegaDockerAction>

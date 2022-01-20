@@ -13,7 +13,7 @@ interface IManikinInput {
 let runtimeManikinAnswers: IManikinInput = {
   description: ``,
   fileName: ``,
-  uiName: ``,
+  uiName: ``
 }
 
 interface IManikinTemplateOptions {
@@ -30,14 +30,14 @@ const makeOptions: Function = (input: IManikinInput): IManikinTemplateOptions =>
     date: now,
     description: input.description,
     fileName: input.fileName,
-    uiName: input.uiName,
+    uiName: input.uiName
   }
   return inputOptions
 }
 
 const getManikinData = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
+  output: process.stdout
 })
 
 getManikinData.question(`What is the full name of this service: `, function (manikinUIName: string) {

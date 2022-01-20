@@ -58,5 +58,5 @@ export const piholeServiceMite: ITraefikedServiceMite = {
 
 # End pihole service section
 
-`,
+`
 }

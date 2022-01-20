@@ -28,5 +28,5 @@ export const grocyManikin: IManikin = {
   mites: [grocyLdifMite, grocyServiceMite, grocyNetworkMite],
   name: `Grocy`,
   ports: [],
-  subfolders: [`app`, `barcodebuddy`],
+  subfolders: [`app`, `barcodebuddy`]
 }

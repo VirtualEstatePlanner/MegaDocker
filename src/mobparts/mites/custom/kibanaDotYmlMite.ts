@@ -28,6 +28,6 @@ elasticsearch.logQueries: true
 logging.dest: stdout
 logging.json: true
 i18n.locale: "en"
-`,
-  },
+`
+  }
 }

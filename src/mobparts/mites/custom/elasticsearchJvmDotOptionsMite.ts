@@ -25,6 +25,6 @@ export const elasticsearchJvmDotOptionsMite: ICustomMite = {
 
 
 
-`,
-  },
+`
+  }
 }

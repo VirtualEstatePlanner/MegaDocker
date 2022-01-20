@@ -20,5 +20,5 @@ export const emailNetworkMite: IMite = {
 
 # End email Network Section
 
-`,
+`
 }

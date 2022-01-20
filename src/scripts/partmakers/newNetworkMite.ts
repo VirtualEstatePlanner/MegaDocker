@@ -13,12 +13,12 @@ interface INetworkMiteInput {
 let runtimeNetworkMiteAnswers: INetworkMiteInput = {
   description: ``,
   fileName: ``,
-  displayName: ``,
+  displayName: ``
 }
 
 const getNetworkMiteData = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
+  output: process.stdout
 })
 
 const makeNetworkMiteFileString: Function = (options: INetworkMiteInput): string => {

@@ -19,5 +19,5 @@ export const ghostMariaDBRootPassword: IMemory = {
   value: ``,
   valueType: `password`,
   isReady: false,
-  validator: passwordValidator,
+  validator: passwordValidator
 }

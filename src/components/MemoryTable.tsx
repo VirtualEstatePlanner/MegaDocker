@@ -34,14 +34,14 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
       type: `UPDATE_MEMORY_VALUE`,
       payload: {
         memory: memoryToUpdate,
-        value: newValue,
-      },
+        value: newValue
+      }
     }
   }
   const {
     state,
     // eslint-disable-next-line
-    dispatch,
+    dispatch
   }: {
     state: IMegaDockerState
     dispatch: React.Dispatch<IMegaDockerAction>
@@ -68,8 +68,9 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
         <TableBody
           className='MemoryTableBody'
           style={{
-            width: '100%',
-          }}>
+            width: '100%'
+          }}
+        >
           {sortedMemories.map((thisMemory: IMemory) => MemoryRow(thisMemory, (changeEvent: { target: { value: any } }) => dispatch(createMemoryValueAction(thisMemory, changeEvent.target.value))))}
         </TableBody>
       </Table>

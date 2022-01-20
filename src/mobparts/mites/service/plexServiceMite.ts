@@ -59,5 +59,5 @@ export const plexServiceMite: ITraefikedServiceMite = {
 
 # End Plex Service Section
 
-`,
+`
 }

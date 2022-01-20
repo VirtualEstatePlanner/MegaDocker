@@ -11,5 +11,5 @@ export const mobNetworkHeaderSectionString: IHeaderMite = {
 
 networks:
 
-`,
+`
 }

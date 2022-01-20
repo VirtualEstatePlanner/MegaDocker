@@ -21,5 +21,5 @@ export const luaDNSAPIToken: IMemory = {
   valueType: `password`,
   isReady: false,
   // validator: luaDNSAPITokenValidator,
-  validator: noValidator,
+  validator: noValidator
 }

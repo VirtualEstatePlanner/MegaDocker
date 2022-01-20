@@ -20,6 +20,6 @@ export const autheliaRedisUsersDotAclMite: ICustomMite = {
     contents: `
 # authelia backend user
 authelia [[LDAPADMINUSERNAME]] on +@all ~* >[[LDAPADMINPASSWORD]]
-`,
-  },
+`
+  }
 }

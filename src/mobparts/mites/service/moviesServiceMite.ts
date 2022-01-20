@@ -49,5 +49,5 @@ export const moviesServiceMite: ITraefikedServiceMite = {
 
 # End Movies Service Section
 
-`,
+`
 }

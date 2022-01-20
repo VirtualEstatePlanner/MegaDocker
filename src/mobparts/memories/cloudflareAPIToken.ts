@@ -19,5 +19,5 @@ export const cloudflareAPIToken: IMemory = {
   value: ``,
   valueType: `password`,
   isReady: false,
-  validator: cloudflareApiTokenValidator,
+  validator: cloudflareApiTokenValidator
 }

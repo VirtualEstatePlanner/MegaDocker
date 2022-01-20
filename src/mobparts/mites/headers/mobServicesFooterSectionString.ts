@@ -9,5 +9,5 @@ export const mobServicesFooterSectionString: IHeaderMite = {
 
 # End Services Section
 
-`,
+`
 }

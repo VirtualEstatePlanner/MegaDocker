@@ -121,5 +121,5 @@ export const swarmpitServiceMite: ITraefikedServiceMite = {
 
 # End Swarmpit Service Section
 
-`,
+`
 }

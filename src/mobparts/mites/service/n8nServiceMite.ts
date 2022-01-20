@@ -65,5 +65,5 @@ export const n8nServiceMite: ITraefikedServiceMite = {
 
 # End n8n Service Section 
 
-`,
+`
 }

@@ -28,5 +28,5 @@ export const filebrowserManikin: IManikin = {
   mites: [filebrowserLdifMite, filebrowserServiceMite, filebrowserDatabaseDotDbMite],
   name: `FileBrowser`,
   ports: [],
-  subfolders: [`data`],
+  subfolders: [`data`]
 }

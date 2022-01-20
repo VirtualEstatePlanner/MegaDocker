@@ -30,5 +30,5 @@ export const ledgerManikin: IManikin = {
   mites: [ledgerLdifMite, ledgerServiceMite, ledgerNetworkMite],
   name: `Ledger`,
   ports: [],
-  subfolders: [`pgdata`],
+  subfolders: [`pgdata`]
 }

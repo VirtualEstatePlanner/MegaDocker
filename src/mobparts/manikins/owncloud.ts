@@ -28,5 +28,5 @@ export const owncloudManikin: IManikin = {
   mites: [owncloudLdifMite, owncloudServiceMite, owncloudNetworkMite],
   name: `Owncloud`,
   ports: [],
-  subfolders: [`apps`, `config`, `data`, `postgres`, `redis`, `mariadb`],
+  subfolders: [`apps`, `config`, `data`, `postgres`, `redis`, `mariadb`]
 }

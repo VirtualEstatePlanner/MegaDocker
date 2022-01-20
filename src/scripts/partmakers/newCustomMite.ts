@@ -17,12 +17,12 @@ let runtimeCustomMiteAnswers: ICustomMiteInput = {
   fileName: ``,
   fileDescription: ``,
   fileExtension: ``,
-  filePermissions: 0,
+  filePermissions: 0
 }
 
 const getManikinData = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
+  output: process.stdout
 })
 
 getManikinData.question(`What is the path to this file's location?: `, function (filePath: string) {

@@ -92,5 +92,5 @@ export const rocketchatServiceMite: ITraefikedServiceMite = {
 
 # End Rocketchat Service Section
 
-`,
+`
 }

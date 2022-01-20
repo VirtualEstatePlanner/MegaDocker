@@ -88,5 +88,5 @@ export const emailServiceMite: ITraefikedServiceMite = {
 
 # End Mailserver Service Section
 
-`,
+`
 }

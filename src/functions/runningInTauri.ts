@@ -18,5 +18,9 @@ declare global {
 }
 
 export const runningInTauri = (): boolean => {
-  if (window.__TAURI__) { return true } else { return false }
+  if (window.__TAURI__) {
+    return true
+  } else {
+    return false
+  }
 }

@@ -36,8 +36,8 @@ export const styleguidistManikin: IManikin = {
     styleguidistPackageDotJsonMite,
     styleguidistStyleguideDotConfigDotJsMite,
     styleguidistTsconfigDotJsonMite,
-    styleguidistWebpackDotConfigDotJsMite,
+    styleguidistWebpackDotConfigDotJsMite
   ],
   ports: [],
-  subfolders: [`assets`, `components`, `configs`, `docs`, `interfaces`, `objects`, `typings`],
+  subfolders: [`assets`, `components`, `configs`, `docs`, `interfaces`, `objects`, `typings`]
 }

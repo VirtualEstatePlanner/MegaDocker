@@ -57,6 +57,6 @@ export const styleguidistPackageDotJsonMite: ICustomMite = {
         "webpack-dev-server": "3.10.1"
       }
     }
-    `,
-  },
+    `
+  }
 }

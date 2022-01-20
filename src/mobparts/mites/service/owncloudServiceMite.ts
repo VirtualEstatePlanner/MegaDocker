@@ -92,5 +92,5 @@ owncloud-redis:
 
 # End Owncloud Service Section
 
-`,
+`
 }

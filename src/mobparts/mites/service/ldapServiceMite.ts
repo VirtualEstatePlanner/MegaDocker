@@ -157,5 +157,5 @@ export const ldapServiceMite: ITraefikedServiceMite = {
 
 # End LDAP Service Section
 
-`,
+`
 }

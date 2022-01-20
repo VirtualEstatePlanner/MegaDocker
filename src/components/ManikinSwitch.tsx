@@ -16,7 +16,7 @@ import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState
 export const ManikinSwitch: React.FC<IManikin> = (manikin: IManikin): React.ReactElement => {
   const {
     state,
-    dispatch,
+    dispatch
   }: {
     state: IMegaDockerState
     dispatch: React.Dispatch<IMegaDockerAction>
@@ -32,7 +32,7 @@ export const ManikinSwitch: React.FC<IManikin> = (manikin: IManikin): React.Reac
           onClick={() =>
             dispatch({
               type: `TOGGLE_MANIKIN`,
-              payload: state.manikinTable.indexOf(manikin),
+              payload: state.manikinTable.indexOf(manikin)
             })
           }
         />

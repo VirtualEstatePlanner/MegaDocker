@@ -31,5 +31,5 @@ export const nextcloudManikin: IManikin = {
   mites: [nextcloudLdifMite, nextcloudServiceMite, nextcloudNetworkMite],
   name: `Nextcloud`,
   ports: [],
-  subfolders: [`application`, `mariadb`],
+  subfolders: [`application`, `mariadb`]
 }

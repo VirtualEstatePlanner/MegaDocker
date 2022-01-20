@@ -49,5 +49,5 @@ export const comicsServiceMite: ITraefikedServiceMite = {
 
 # End Comics Service Section
 
-`,
+`
 }

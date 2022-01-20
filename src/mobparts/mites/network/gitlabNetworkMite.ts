@@ -20,5 +20,5 @@ export const gitlabNetworkMite: IMite = {
 
 # End GitLab Network Section
 
-`,
+`
 }

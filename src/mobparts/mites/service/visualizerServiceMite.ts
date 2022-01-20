@@ -48,5 +48,5 @@ export const visualizerServiceMite: ITraefikedServiceMite = {
 
 # End Visualizer Service Section
 
-`,
+`
 }

@@ -33,5 +33,5 @@ export const rocketchatManikin: IManikin = {
   mites: [rocketchatLdifMite, rocketchatServiceMite, rocketchatNetworkMite],
   name: `RocketChat`,
   ports: [],
-  subfolders: [`database`, `dump`, `hubot-scripts`, `uploads`],
+  subfolders: [`database`, `dump`, `hubot-scripts`, `uploads`]
 }

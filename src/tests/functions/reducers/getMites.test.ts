@@ -51,25 +51,25 @@ it('the correct number of mites are present', () => {
 })
 testingCustomMites.forEach((miteArray) => {
   miteArray.forEach((mite) => {
-      expect(mite.miteIndex).toBeGreaterThanOrEqual(10000)
-      expect(mite.miteIndex).toBeLessThanOrEqual(69999)
-    })
+    expect(mite.miteIndex).toBeGreaterThanOrEqual(10000)
+    expect(mite.miteIndex).toBeLessThanOrEqual(69999)
   })
-  testingNetworkMites.forEach((mite) => {
-    it('every network mite string is at least 10 characters', () => {
-      expect(mite.miteString.length).toBeGreaterThanOrEqual(10)
-    })
-    it('every network mite has an index in the appropriate range', () => {
-      expect(mite.miteIndex).toBeGreaterThanOrEqual(10000)
-      expect(mite.miteIndex).toBeLessThanOrEqual(69999)
-    })
+})
+testingNetworkMites.forEach((mite) => {
+  it('every network mite string is at least 10 characters', () => {
+    expect(mite.miteString.length).toBeGreaterThanOrEqual(10)
   })
-  testingServiceMites.forEach((mite) => {
-    it('every service mite string is at least 10 characters', () => {
-      expect(mite.miteString.length).toBeGreaterThanOrEqual(10)
-    })
-    it('every service mite has an index in the appropriate range', () => {
-      expect(mite.miteIndex).toBeGreaterThanOrEqual(10000)
-      expect(mite.miteIndex).toBeLessThanOrEqual(69999)
-    })
+  it('every network mite has an index in the appropriate range', () => {
+    expect(mite.miteIndex).toBeGreaterThanOrEqual(10000)
+    expect(mite.miteIndex).toBeLessThanOrEqual(69999)
   })
+})
+testingServiceMites.forEach((mite) => {
+  it('every service mite string is at least 10 characters', () => {
+    expect(mite.miteString.length).toBeGreaterThanOrEqual(10)
+  })
+  it('every service mite has an index in the appropriate range', () => {
+    expect(mite.miteIndex).toBeGreaterThanOrEqual(10000)
+    expect(mite.miteIndex).toBeLessThanOrEqual(69999)
+  })
+})

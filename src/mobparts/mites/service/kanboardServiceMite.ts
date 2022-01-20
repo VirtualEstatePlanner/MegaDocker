@@ -62,5 +62,5 @@ export const kanboardServiceMite: ITraefikedServiceMite = {
   
 # End Kanboard Service Section
   
-  `,
+  `
 }

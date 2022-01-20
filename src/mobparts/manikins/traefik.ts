@@ -32,5 +32,5 @@ export const traefikManikin: IManikin = {
   name: `Traefik`,
   mites: [traefikLdifMite, traefikServiceMite, traefikNetworkMite],
   ports: [],
-  subfolders: [`ssl`],
+  subfolders: [`ssl`]
 }

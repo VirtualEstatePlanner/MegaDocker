@@ -29,6 +29,6 @@ export const styleguidistTsconfigDotJsonMite: ICustomMite = {
         "./src/**/*"
       ]
     }
-    `,
-  },
+    `
+  }
 }

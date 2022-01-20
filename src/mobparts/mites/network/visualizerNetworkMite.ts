@@ -14,5 +14,5 @@ export const visualizerNetworkMite: IMite = {
 
 # End Visualizer Network Section
 
-`,
+`
 }

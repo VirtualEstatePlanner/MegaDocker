@@ -19,5 +19,5 @@ export const n8nPassword: IMemory = {
   value: ``,
   valueType: `password`,
   isReady: false,
-  validator: passwordValidator,
+  validator: passwordValidator
 }

@@ -14,5 +14,5 @@ export const plexNetworkMite: IMite = {
 
 # End Plex Network Section
 
-`,
+`
 }

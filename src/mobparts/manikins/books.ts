@@ -46,9 +46,9 @@ export const booksManikin: IManikin = {
     moviesNetworkMite,
     musicNetworkMite,
     tvNetworkMite,
-    plexNetworkMite,
+    plexNetworkMite
   ],
   name: `Books`,
   ports: [],
-  subfolders: [`books-config`, `content`, `newsgroups-config`, `newsgroup-indexer-config`, `plex-config`, `requests-config`, `torrent-config`, `torrent-indexer-config`],
+  subfolders: [`books-config`, `content`, `newsgroups-config`, `newsgroup-indexer-config`, `plex-config`, `requests-config`, `torrent-config`, `torrent-indexer-config`]
 }

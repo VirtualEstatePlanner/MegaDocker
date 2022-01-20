@@ -12,7 +12,7 @@ import { ThemeProvider } from '@mui/material'
 import { initialMegaDockerState } from '../globals/initialMegaDockerState'
 
 export const MegaContext: React.Context<any> = React.createContext({
-  state: initialMegaDockerState,
+  state: initialMegaDockerState
 })
 
 export const MegaProvider: React.FC = (props: any): React.ReactElement => {

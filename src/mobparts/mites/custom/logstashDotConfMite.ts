@@ -33,6 +33,6 @@ output {
   index => "%{[@metadata][beat]}-%{[@metadata][version]}"
  }    
 }
-`,
-  },
+`
+  }
 }

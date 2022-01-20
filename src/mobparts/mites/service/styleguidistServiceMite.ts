@@ -54,5 +54,5 @@ export const styleguidistServiceMite: ITraefikedServiceMite = {
 
 # End Styleguidist Service Section
 
-`,
+`
 }

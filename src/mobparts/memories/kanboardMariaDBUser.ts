@@ -19,5 +19,5 @@ export const kanboardMariaDBUser: IMemory = {
   value: ``,
   valueType: `text`,
   isReady: false,
-  validator: noWhitespaceOrSymbolsValidator,
+  validator: noWhitespaceOrSymbolsValidator
 }

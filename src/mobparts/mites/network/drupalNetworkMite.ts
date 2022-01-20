@@ -20,5 +20,5 @@ export const drupalNetworkMite: IMite = {
 
 # End Drupal Network Section
 
-  `,
+  `
 }

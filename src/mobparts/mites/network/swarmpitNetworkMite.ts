@@ -14,5 +14,5 @@ export const swarmpitNetworkMite: IMite = {
 
 # End Swarmpit Network Section
 
-`,
+`
 }

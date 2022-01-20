@@ -9,5 +9,5 @@ export const mobSecretsFooterSectionString: IHeaderMite = {
 
 # End Secrets Section
 
-`,
+`
 }

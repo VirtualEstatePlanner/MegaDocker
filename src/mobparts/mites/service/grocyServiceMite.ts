@@ -70,5 +70,5 @@ export const grocyServiceMite: ITraefikedServiceMite = {
 
 # End Grocy Service Section
 
-`,
+`
 }

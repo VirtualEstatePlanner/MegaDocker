@@ -54,5 +54,5 @@ export const heimdallServiceMite: ITraefikedServiceMite = {
   
 # End Heimdall Service Section
   
-`,
+`
 }

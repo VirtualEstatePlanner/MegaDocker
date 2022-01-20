@@ -29,5 +29,5 @@ export const n8nManikin: IManikin = {
   mites: [n8nLdifMite, n8nServiceMite, n8nNetworkMite],
   name: `n8n`,
   ports: [],
-  subfolders: [`data`, `settings`],
+  subfolders: [`data`, `settings`]
 }

@@ -14,5 +14,5 @@ export const piholeNetworkMite: IMite = {
 
 # End pihole Network Section
 
-`,
+`
 }

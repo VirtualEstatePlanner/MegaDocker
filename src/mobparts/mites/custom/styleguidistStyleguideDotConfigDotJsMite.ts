@@ -42,6 +42,6 @@ export const styleguidistStyleguideDotConfigDotJsMite: ICustomMite = {
       },
       styleguideDir: "docs",
     };
-    `,
-  },
+    `
+  }
 }

@@ -27,5 +27,5 @@ export const wordpressManikin: IManikin = {
   mites: [wordpressLdifMite, wordpressServiceMite, wordpressNetworkMite],
   name: `WordPress`,
   ports: [],
-  subfolders: [`mariadb`, `php`],
+  subfolders: [`mariadb`, `php`]
 }

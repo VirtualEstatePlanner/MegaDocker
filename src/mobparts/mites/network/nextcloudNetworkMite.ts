@@ -20,5 +20,5 @@ export const nextcloudNetworkMite: IMite = {
 
 # End Nextcloud Network Section
 
-`,
+`
 }

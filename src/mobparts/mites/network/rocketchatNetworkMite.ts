@@ -20,5 +20,5 @@ export const rocketchatNetworkMite: IMite = {
 
 # End RocketChat Network Section
 
-`,
+`
 }

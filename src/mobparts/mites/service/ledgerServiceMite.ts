@@ -57,5 +57,5 @@ export const ledgerServiceMite: ITraefikedServiceMite = {
 
 # End Ledger Section
 
-`,
+`
 }

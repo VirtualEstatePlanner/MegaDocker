@@ -86,5 +86,5 @@ export const elkServiceMite: ITraefikedServiceMite = {
 
 # End ELK Service Section
 
-`,
+`
 }

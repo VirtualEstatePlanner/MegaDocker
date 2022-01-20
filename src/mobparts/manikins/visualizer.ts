@@ -28,5 +28,5 @@ export const visualizerManikin: IManikin = {
   mites: [visualizerLdifMite, visualizerServiceMite, visualizerNetworkMite],
   name: `Visualizer`,
   ports: [],
-  subfolders: [],
+  subfolders: []
 }

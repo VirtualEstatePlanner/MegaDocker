@@ -20,5 +20,5 @@ export const grocyNetworkMite: IMite = {
 
 # End Grocy Network Section
 
-`,
+`
 }

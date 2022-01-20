@@ -47,5 +47,5 @@ export const syncthingServiceMite: ITraefikedServiceMite = {
 
 # End Syncthing Service Section
 
-`,
+`
 }

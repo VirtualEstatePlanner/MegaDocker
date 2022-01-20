@@ -51,5 +51,5 @@ export const vsCodeServiceMite: ITraefikedServiceMite = {
 
 # End VS Code Service Section
 
-`,
+`
 }

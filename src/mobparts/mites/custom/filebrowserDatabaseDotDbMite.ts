@@ -11,6 +11,6 @@ export const filebrowserDatabaseDotDbMite: ICustomMite = {
     name: `database`,
     extension: `db`,
     permissions: `644`,
-    contents: ``,
-  },
+    contents: ``
+  }
 }

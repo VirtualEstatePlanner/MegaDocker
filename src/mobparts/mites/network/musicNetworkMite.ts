@@ -20,5 +20,5 @@ export const musicNetworkMite: IMite = {
 
 # End Music Network Section
 
-`,
+`
 }

@@ -20,5 +20,5 @@ export const ldapNetworkMite: IMite = {
 
 # End LDAP Network Section
 
-`,
+`
 }

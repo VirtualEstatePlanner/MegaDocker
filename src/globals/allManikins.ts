@@ -72,5 +72,5 @@ export const allManikins: IManikin[] = [
   visualizerManikin,
   vsCodeManikin,
   webdavManikin,
-  wordpressManikin,
+  wordpressManikin
 ]

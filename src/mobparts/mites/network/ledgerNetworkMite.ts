@@ -20,5 +20,5 @@ export const ledgerNetworkMite: IMite = {
 
 # End Ledger Network Section
 
-`,
+`
 }

@@ -32,8 +32,8 @@ setup.kibana.protocol: "http"
 
 logging.json: true
 logging.metrics.enabled: false
-`,
-  },
+`
+  }
 }
 
 // TODO: add modules to config

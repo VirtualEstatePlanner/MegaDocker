@@ -19,5 +19,5 @@ export const opensourcePOSMariaDBUser: IMemory = {
   value: ``,
   valueType: `text`,
   isReady: false,
-  validator: noWhitespaceOrSymbolsValidator,
+  validator: noWhitespaceOrSymbolsValidator
 }

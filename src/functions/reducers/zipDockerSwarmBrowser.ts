@@ -102,7 +102,7 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): JSZip => {
     return workingLdif
   }
   customMites[ldifIndex].miteFile.contents = populateLdifDCs()
-  
+
   /**
    * updates yml with variables from memories
    * @param ymlInput the initial string to change
@@ -136,7 +136,7 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): JSZip => {
     ...networkMites,
     mobNetworkFooterSectionString.miteString,
     mobSecretsHeaderSectionString.miteString,
-    mobSecretsFooterSectionString.miteString,
+    mobSecretsFooterSectionString.miteString
   ]
 
   let ymlString: string = ymlOutputArray.join(``)
@@ -156,7 +156,7 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): JSZip => {
           )
         })
         const output = await zip.generateAsync({
-          type: `binarystring`,
+          type: `binarystring`
         })
 
         return output
@@ -318,10 +318,10 @@ fi;
       compression: `DEFLATE`,
       compressionOptions: { level: 9 },
       platform: `UNIX`,
-      type: `blob`,
+      type: `blob`
     })
     .then(function (content) {
-        fileSaver.saveAs(content, `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip`)
+      fileSaver.saveAs(content, `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip`)
     })
 
   return zip

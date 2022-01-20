@@ -49,5 +49,5 @@ export const webdavServiceMite: ITraefikedServiceMite = {
 
 # End WebDAV Service Section
 
-`,
+`
 }

@@ -20,5 +20,5 @@ export const kanboardNetworkMite: IMite = {
 
 # End Kanboard Network Section
 
-`,
+`
 }

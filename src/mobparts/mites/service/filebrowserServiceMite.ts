@@ -49,5 +49,5 @@ export const filebrowserServiceMite: ITraefikedServiceMite = {
 
 # End filebrowser Service Section
 
-`,
+`
 }

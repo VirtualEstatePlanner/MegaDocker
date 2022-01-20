@@ -24,14 +24,14 @@ import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
  * mocks css for Asap font
  */
 jest.mock('@fontsource/asap', () => ({
-  fontsourceAsap: '',
+  fontsourceAsap: ''
 }))
 
 /*
  * mocks css for gray color
  */
 jest.mock('@mui/material/colors/grey', () => ({
-  greyColor: '',
+  greyColor: ''
 }))
 
 const selectedManikins = getManikins(workingManikins)
@@ -51,7 +51,7 @@ const testingState: IMegaDockerState = {
   mobDServiceMites: mobDServiceMites,
   mobDNetworkMites: mobDNetworkMites,
   mobCustomMites: mobCustomMites,
-  ymlOutput: ymlOutput,
+  ymlOutput: ymlOutput
 }
 
 describe('tests the megaReducer function', () => {
@@ -60,4 +60,4 @@ describe('tests the megaReducer function', () => {
   expect(megaReducer(testingState, { type: 'TOGGLE_THEME', payload: OrbThemeLight })).toEqual({ ...testingState, theme: OrbThemeDark })
 })
 
-export { }
+export {}

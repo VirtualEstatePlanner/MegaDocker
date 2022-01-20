@@ -20,5 +20,5 @@ export const moviesNetworkMite: IMite = {
 
 # End Movies Network Section
 
-`,
+`
 }

@@ -20,5 +20,5 @@ export const opensourcePOSNetworkMite: IMite = {
 
 # End opensourcePOS Network Section
 
-`,
+`
 }

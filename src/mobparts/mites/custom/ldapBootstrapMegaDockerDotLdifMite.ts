@@ -370,6 +370,6 @@ objectclass: organizationalUnit
 # End Vendors Section
 
 
-`,
-  },
+`
+  }
 }

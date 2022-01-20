@@ -11,12 +11,12 @@ import { Switch, TableCell, Theme } from '@mui/material'
 import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
 import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 import { MegaContext } from './MegaContext'
-import { OrbThemeDark }  from './OrbTheme/OrbThemeDark'
+import { OrbThemeDark } from './OrbTheme/OrbThemeDark'
 
 export const DarkModeSwitch: React.FC = (): React.ReactElement => {
   const {
     state,
-    dispatch,
+    dispatch
   }: {
     state: IMegaDockerState
     dispatch: React.Dispatch<IMegaDockerAction>
@@ -30,7 +30,7 @@ export const DarkModeSwitch: React.FC = (): React.ReactElement => {
         onClick={() => {
           dispatch({
             type: `TOGGLE_THEME`,
-            payload: state.theme as Theme,
+            payload: state.theme as Theme
           })
         }}
       />

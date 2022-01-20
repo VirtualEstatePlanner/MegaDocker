@@ -14,13 +14,7 @@
       "active": true,
       "targets": ["deb", "msi", "dmg"],
       "identifier": "com.megadocker.app",
-      "icon": [
-        "icons/32x32.png",
-        "icons/128x128.png",
-        "icons/128x128@2x.png",
-        "icons/icon.icns",
-        "icons/icon.ico"
-      ],
+      "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"],
       "resources": [],
       "externalBin": [],
       "copyright": "©2018-2022 The MEGADocker Group.  All rights and most lefts reserved.",

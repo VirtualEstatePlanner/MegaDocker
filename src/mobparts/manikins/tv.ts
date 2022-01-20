@@ -35,5 +35,5 @@ export const tvManikin: IManikin = {
   mites: [tvLdifMite, tvServiceMite, mediaRequestsServiceMite, plexServiceMite, booksNetworkMite, comicsNetworkMite, moviesNetworkMite, musicNetworkMite, tvNetworkMite, plexNetworkMite],
   name: `TV`,
   ports: [],
-  subfolders: [`content`, `newsgroups-config`, `newsgroup-indexer-config`, `plex-config`, `requests-config`, `torrent-config`, `torrent-indexer-config`, `tv-config`],
+  subfolders: [`content`, `newsgroups-config`, `newsgroup-indexer-config`, `plex-config`, `requests-config`, `torrent-config`, `torrent-indexer-config`, `tv-config`]
 }

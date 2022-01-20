@@ -20,5 +20,5 @@ export const heimdallNetworkMite: IMite = {
 
 # End Heimdall Network Section
 
-`,
+`
 }

@@ -36,6 +36,6 @@ export const nginxDefaultIndexHtmlMite: ICustomMite = {
     </div>
   </body>
 </html>
-    `,
-  },
+    `
+  }
 }

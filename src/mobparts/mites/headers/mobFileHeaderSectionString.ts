@@ -15,5 +15,5 @@ version: '3.9'
 # Begin Services Section
 
 services:
-`,
+`
 }

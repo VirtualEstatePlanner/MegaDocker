@@ -20,5 +20,5 @@ export const booksNetworkMite: IMite = {
 
 # End Books Network Section
 
-`,
+`
 }

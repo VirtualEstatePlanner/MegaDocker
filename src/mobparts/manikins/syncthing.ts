@@ -27,5 +27,5 @@ export const syncthingManikin: IManikin = {
   name: `Syncthing`,
   mites: [syncthingLdifMite, syncthingServiceMite],
   ports: [],
-  subfolders: [`data`],
+  subfolders: [`data`]
 }

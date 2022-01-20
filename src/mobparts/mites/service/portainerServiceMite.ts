@@ -50,5 +50,5 @@ export const portainerServiceMite: ITraefikedServiceMite = {
 
 # End Portainer Service Section
 
-`,
+`
 }

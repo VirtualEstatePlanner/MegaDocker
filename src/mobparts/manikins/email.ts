@@ -28,5 +28,5 @@ export const emailManikin: IManikin = {
   mites: [emailLdifMite, emailServiceMite, emailNetworkMite],
   name: `E-mail`,
   ports: [],
-  subfolders: [`config`, `maildata`, `mailstate`, `rainloop`],
+  subfolders: [`config`, `maildata`, `mailstate`, `rainloop`]
 }

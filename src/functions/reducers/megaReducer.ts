@@ -34,7 +34,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     action.type // check which modification to make to state
   ) {
     case `APPLICATION_START`: // to start the program with only core manikins selected
-     return initialMegaDockerState
+      return initialMegaDockerState
 
     case `TOGGLE_THEME`: // toggles light and dark mode
       const newTheme: Theme = toggleTheme(newState.theme) as Theme
@@ -60,14 +60,14 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     case `DOCKER_SWARM_OUTPUT_BROWSER`: // handles creation and download of Docker Swarm zip file in browser
       zipDockerSwarmBrowser({
         manikins: state.selectedManikins,
-        memories: state.memories,
+        memories: state.memories
       })
       return state
 
     case `DOCKER_SWARM_OUTPUT_TAURI`: // handles creation and download of Docker Swarm zip file in tauri desktop application
       zipDockerSwarmTauri({
         manikins: state.selectedManikins,
-        memories: state.memories,
+        memories: state.memories
       })
       return state
 

@@ -20,5 +20,5 @@ export const portainerNetworkMite: IMite = {
 
 # End Portainer Network Section
 
-`,
+`
 }

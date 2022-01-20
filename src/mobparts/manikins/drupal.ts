@@ -31,5 +31,5 @@ export const drupalManikin: IManikin = {
   mites: [drupalLdifMite, drupalServiceMite, drupalNetworkMite, ldapNetworkMite],
   name: `Drupal`,
   ports: [],
-  subfolders: [`modules`, `profiles`, `themes`, `sites`, `database`],
+  subfolders: [`modules`, `profiles`, `themes`, `sites`, `database`]
 }

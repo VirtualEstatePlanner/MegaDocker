@@ -20,5 +20,5 @@ export const nginxNetworkMite: IMite = {
 
 # End Nginx Network Section
 
-`,
+`
 }

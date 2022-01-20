@@ -46,5 +46,5 @@ export const mealieServiceMite: ITraefikedServiceMite = {
 
 # End Mealie Service Section
 
-`,
+`
 }

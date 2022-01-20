@@ -111,5 +111,5 @@ export const gitlabServiceMite: ITraefikedServiceMite = {
 
 # End GitLab Service Section
 
-`,
+`
 }

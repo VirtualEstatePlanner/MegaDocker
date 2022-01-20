@@ -54,5 +54,5 @@ aliasedObjectName: cn=SuperModerators,ou=Groups,[[LDAPDOMAINASDCS]]
 
 # End Grocy Section
 
-`,
+`
 }

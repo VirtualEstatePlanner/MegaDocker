@@ -11,5 +11,5 @@ import { IManikinPort } from '../../interfaces/objectInterfaces/IManikinPort'
 export const plexListenerPortUDP: IManikinPort = {
   externalPort: 32400,
   internalPort: 32400,
-  isUDP: true,
+  isUDP: true
 }

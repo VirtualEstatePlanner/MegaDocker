@@ -137,7 +137,7 @@ export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): JSZip => {
     ...networkMites,
     mobNetworkFooterSectionString.miteString,
     mobSecretsHeaderSectionString.miteString,
-    mobSecretsFooterSectionString.miteString,
+    mobSecretsFooterSectionString.miteString
   ]
 
   let ymlString: string = ymlOutputArray.join(``)
@@ -157,7 +157,7 @@ export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): JSZip => {
           )
         })
         const output = await zip.generateAsync({
-          type: `binarystring`,
+          type: `binarystring`
         })
 
         return output
@@ -319,11 +319,11 @@ fi;
       compression: `DEFLATE`,
       compressionOptions: { level: 9 },
       platform: `UNIX`,
-      type: `blob`,
+      type: `blob`
     })
     .then(async function (content) {
-        const zipContents: ArrayBuffer = await content.arrayBuffer()
-        await writeBinaryFile({ contents: zipContents, path: `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip` }, { dir: 8 /* Downloads directory */ })
+      const zipContents: ArrayBuffer = await content.arrayBuffer()
+      await writeBinaryFile({ contents: zipContents, path: `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip` }, { dir: 8 /* Downloads directory */ })
     })
   return zip
 }

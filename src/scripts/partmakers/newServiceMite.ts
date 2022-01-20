@@ -19,12 +19,12 @@ let input: IServiceMiteInput = {
   displayName: ``,
   hostName: ``,
   description: ``,
-  dockerImageWithTag: ``,
+  dockerImageWithTag: ``
 }
 
 const getServiceMiteData = readline.createInterface({
   input: process.stdin,
-  output: process.stdout,
+  output: process.stdout
 })
 
 getServiceMiteData.question(`What is the file name for this mite file? (camelCase):`, function (fileName: string) {

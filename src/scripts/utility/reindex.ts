@@ -22,42 +22,42 @@ const manikinOptions: IindexerOptions = {
   start: 10000,
   directory: `manikins`,
   regex: manikinIndexRegExp,
-  replace: manikinIndex,
+  replace: manikinIndex
 }
 
 const memoryOptions: IindexerOptions = {
   start: 20000,
   directory: `memories`,
   regex: memoryIndexRegExp,
-  replace: memoryIndex,
+  replace: memoryIndex
 }
 
 const serviceMiteOptions: IindexerOptions = {
   start: 30000,
   directory: `mites/service`,
   regex: miteIndexRegExp,
-  replace: miteIndex,
+  replace: miteIndex
 }
 
 const networkMiteOptions: IindexerOptions = {
   start: 40000,
   directory: `mites/network`,
   regex: miteIndexRegExp,
-  replace: miteIndex,
+  replace: miteIndex
 }
 
 const ldifMiteOptions: IindexerOptions = {
   start: 50000,
   directory: `mites/ldif`,
   regex: miteIndexRegExp,
-  replace: miteIndex,
+  replace: miteIndex
 }
 
 const customMiteOptions: IindexerOptions = {
   start: 60000,
   directory: `mites/custom`,
   regex: miteIndexRegExp,
-  replace: miteIndex,
+  replace: miteIndex
 }
 
 const reindexFiles: Function = (options: IindexerOptions): void => {

@@ -14,5 +14,5 @@ export const webdavNetworkMite: IMite = {
 
 # End WebDAV Network Section
 
-`,
+`
 }

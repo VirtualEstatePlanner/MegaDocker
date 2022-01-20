@@ -182,5 +182,5 @@ export const mediaRequestsServiceMite: ITraefikedServiceMite = {
 
 # End Media Requests Service Section
 
-`,
+`
 }

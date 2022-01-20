@@ -20,5 +20,5 @@ export const traefikNetworkMite: IMite = {
 
 # End Traefik Network Section
 
-`,
+`
 }

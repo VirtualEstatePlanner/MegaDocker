@@ -134,6 +134,6 @@ types {
   video/x-ms-asf                        asx asf;
   video/x-mng                           mng;
 }
-`,
-  },
+`
+  }
 }

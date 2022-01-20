@@ -22,6 +22,6 @@ export const elasticsearchLog4j2DotPropertiesMite: ICustomMite = {
 
 
 
-`,
-  },
+`
+  }
 }
