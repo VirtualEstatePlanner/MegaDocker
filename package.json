@@ -7,9 +7,8 @@
     "eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                                 react-scripts eject' && echo",
     "clean": "rm -rf node_modules/ build/ src-tauri/target/ package-lock.json yarn.lock",
     "build": "react-scripts build",
-    "test": "yarn test-coverage && yarn test-dev",
-    "test-dev": "jest --watch",
-    "test-coverage": "jest --coverage",
+    "test": "jest --watch",
+    "cover": "jest --coverage",
     "pretty": "node node_modules/.bin/prettier --write .",
     "prep-tsnode-script": "cp ./src/scripts/tsnode/scripts.tsconfig.json ./tsconfig.json",
     "cleanup-tsnode-script": "cp ./src/scripts/tsnode/regular.tsconfig.json ./tsconfig.json",
@@ -23,7 +22,6 @@
     "dev": "tauri dev",
     "bundle": "tauri build"
   },
-
   "dependencies": {
     "@emotion/react": "latest",
     "@emotion/styled": "latest",
@@ -45,6 +43,7 @@
   },
   "devDependencies": {
     "@babel/core": "latest",
+    "@babel/preset-typescript": "latest",
     "@babel/preset-env": "latest",
     "@tauri-apps/cli": "1.0.0-beta.10",
     "@types/file-saver": "latest",
@@ -80,13 +79,14 @@
     ]
   },
   "babel": {
-    "presets": ["@babel/preset-env", { "targets": "defaults" }]
+    "presets": [
+      "@babel/preset-typescript"
+    ]
   },
   "jest": {
     "collectCoverageFrom": [
-      "**/*.{js,jsx}",
-      "!**/node_modules/**",
-      "!**/vendor/**"
+      "**/*.{ts,tsx}",
+      "!**/node_modules/**"
     ],
     "coveragePathIgnorePatterns": [
       "/build/",
@@ -107,6 +107,20 @@
     "displayName": {
       "name": "megadocker",
       "color": "blue"
+    },
+    "transform": {
+      "^.+\\.[jt]s?$": "babel-jest"
     }
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "jsxBracketSameLine": true,
+    "jsxSingleQuote": true,
+    "requirePragma": true,
+    "printWidth": 200,
+    "quoteProps": "consistent",
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
   }
 }
