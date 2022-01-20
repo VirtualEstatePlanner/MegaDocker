@@ -115,6 +115,21 @@
       "name": "megadocker",
       "color": "blue"
     },
+    "moduleDirectories": [
+      "./node_modules/",
+      "./src/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "png"
+    ],
+    "moduleNameMapper": {
+      "\\.(png)$": "<rootDir>/src/typings/png.d.ts"
+    },
     "transform": {
       "^.+\\.[jt]sx?$": "babel-jest"
     }
