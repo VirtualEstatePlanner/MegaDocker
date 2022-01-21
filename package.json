@@ -19,8 +19,9 @@
     "new:miteL": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newLdifMite.ts && yarn cleanup-tsnode-script",
     "new:miteN": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newNetworkMite.ts && yarn cleanup-tsnode-script",
     "new:miteS": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newServiceMite.ts && yarn cleanup-tsnode-script",
-    "dev": "tauri dev",
-    "bundle": "tauri build"
+    "oldbundle": "tauri build",
+    "bundle": "yarn prep-tsnode-script && yarn ts-node src/scripts/utility/moveBundle.ts && yarn cleanup-tsnode-script",
+    "zip": "yarn build && yarn prep-tsnode-script && yarn ts-node src/scripts/utility/webzip.ts && yarn cleanup-tsnode-script"
   },
   "dependencies": {
     "@emotion/react": "latest",
