@@ -27,10 +27,8 @@ export const ButtonSaveZipFile: React.FC = (): React.ReactElement => {
 
   const buttonClicked = (): void => {
     if (runningInTauri()) {
-      console.log(`exported docker swarm with tauri fs library`)
       dispatch({ type: `DOCKER_SWARM_OUTPUT_TAURI` })
     } else {
-      console.log(`exported docker swarm with filesaver npm library`)
       dispatch({ type: `DOCKER_SWARM_OUTPUT_BROWSER` })
     }
   }

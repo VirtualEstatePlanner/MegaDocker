@@ -38,6 +38,5 @@ export const traefikManikin: IManikin = {
   subfolders: [`ssl`]
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const memoriesToBeAdded: Array<IMemory> = [luaDNSAPIToken, luaDNSEmailAddress]
-
-console.log(memoriesToBeAdded)
