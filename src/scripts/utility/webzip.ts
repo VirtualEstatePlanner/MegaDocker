@@ -1,3 +1,11 @@
+/** @format */
+
+//  webzip.ts
+//  MEGADocker
+//  A ts-node script to build the program and output a zipped web folder to deploy on a http server
+//  Created by George Georgulas IV on 11/3/2020.
+//  Copyright © 2020 The MegaDocker Group. All rights reserved.
+
 import fs from 'fs'
 import JSZip from 'jszip';
 import path from 'path';
@@ -54,4 +62,3 @@ const getFilePathsRecursively = (directoryPath: string): string[] => {
   };
 
   getZipOfFolder(`build`)
-//fs.writeFileSync(`./binaries/web/web.zip`, getZipOfFolder('./build'))

@@ -3,7 +3,7 @@
 //  n8n.ts
 //  MEGADocker
 //  A Manikin to create the n8n middleware
-//  Created by George Georgulas IV on 11/3/2020.
+//  Created by George Georgulas IV on 11/3/20.
 //  Copyright © 2020 The MegaDocker Group. All rights reserved.
 
 import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
