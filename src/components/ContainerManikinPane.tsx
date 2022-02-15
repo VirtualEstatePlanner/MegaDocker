@@ -4,7 +4,7 @@
 //  MEGADocker
 //  a React Component that renders a div that holds the Manikin table
 //  Created by George Georgulas IV on 3/17/19.
-//  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
+//  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
 import { ManikinTable } from './ManikinTable'

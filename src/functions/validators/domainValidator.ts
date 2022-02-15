@@ -4,7 +4,7 @@
 //  MEGADocker
 //  a validator function for domain names
 //  Created by George Georgulas IV on 1/26/19.
-//  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
+//  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
 export const domainValidator: Function = (stringToValidate: string): boolean => {
   if (!stringToValidate || stringToValidate.length === 0) {

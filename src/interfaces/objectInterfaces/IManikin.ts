@@ -4,7 +4,7 @@
 //  MEGADocker
 //  an interface that represents a Manikin - a collection of microservices that define a complete web application
 //  Created by George Georgulas IV on 1/26/19.
-//  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
+//  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
 import { IMite } from './IMite'
 import { IMemory } from './IMemory'

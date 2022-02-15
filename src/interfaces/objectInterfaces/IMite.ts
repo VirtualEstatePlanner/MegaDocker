@@ -6,7 +6,7 @@ import { IMiteType } from '../templateLiteralUnionTypes/IMiteType'
 //  MEGADocker
 //  an interface that represents a Mite - a building block generic
 //  Created by George Georgulas IV on 1/26/19.
-//  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
+//  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
 /**
  * interface for IMite

@@ -4,7 +4,7 @@
 //  MEGADocker
 //  The variable for authelia's Redis user's password
 //  Created by George Georgulas IV on 3/29/21.
-//  Copyright © 2021 The MegaDocker Group. All rights reserved.
+//  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { passwordValidator } from '../../functions/validators/passwordValidator'

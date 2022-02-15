@@ -4,7 +4,7 @@
 //  MEGADocker
 //  A Manikin to generate a MinPOS point of sale service
 //  Created by George Georgulas IV on 3/04/21.
-//  Copyright © 2021 The MegaDocker Group. All rights reserved.
+//  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
 import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 

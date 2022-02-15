@@ -4,7 +4,7 @@
 //  MEGADocker
 //  The variable for the authelia MariaDB username
 //  Created by George Georgulas IV on 1/26/19.
-//  Copyright © 2019-2021 The MegaDocker Group. All rights reserved.
+//  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
 import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { noWhitespaceOrSymbolsValidator } from '../../functions/validators/noWhitespaceOrSymbolsValidator'

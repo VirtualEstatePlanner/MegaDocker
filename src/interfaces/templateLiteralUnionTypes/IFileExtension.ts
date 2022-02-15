@@ -4,7 +4,7 @@
 //  MEGADocker
 //  a union type of string literals that represents a potential file extension for an ICustomMite
 //  Created by George Georgulas IV on 3/11/21.
-//  Copyright © 2021 The MegaDocker Group. All rights reserved.
+//  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
 export type IFileExtension =
   | `acl`

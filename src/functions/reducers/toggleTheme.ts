@@ -8,7 +8,7 @@ import { OrbThemeLight } from '../../components/OrbTheme/OrbThemeLight'
 //  MEGADocker
 //  a function that switches between light mode and dark mode
 //  Created by George Georgulas IV on 3/23/21.
-//  Copyright © 2021 The MegaDocker Group. All rights reserved.
+//  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
 /**
  * toggles the UI Theme, defaulting to light if theme is neither light nor dark

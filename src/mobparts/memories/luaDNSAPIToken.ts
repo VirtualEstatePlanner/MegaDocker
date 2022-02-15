@@ -4,7 +4,7 @@
 //  MEGADocker
 //  The variable for the user's CloudFlare Email address
 //  Created by George Georgulas IV on 10/20/21.
-//  Copyright © 2021 The MegaDocker Group. All rights reserved.
+//  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
 import { noValidator } from '../../functions/validators/noValidator'
 import { IMemory } from '../../interfaces/objectInterfaces/IMemory'

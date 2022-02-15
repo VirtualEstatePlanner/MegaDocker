@@ -4,7 +4,7 @@
 //  MEGADocker
 //  an interface that represents a LDIF Mite
 //  Created by George Georgulas IV on 3/26/21.
-//  Copyright © 2021 The MegaDocker Group. All rights reserved.
+//  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
 import { IMite } from '../objectInterfaces/IMite'
 
