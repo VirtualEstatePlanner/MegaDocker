@@ -17,3 +17,4 @@ yarn-error.log*
 yarn.lock*
 src-tauri/Cargo.lock
 src-tauri/target
+**/*.env
