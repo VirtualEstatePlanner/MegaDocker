@@ -2,10 +2,7 @@
 /** @format */
 
 // import Node libraries
-// import * as fs from 'fs'
 import { arch, platform } from 'os'
-
-// const tauriBundleDirectory: string = process.cwd() + `/src-tauri/target/release/bundle/`
 
 // determine operating system
 const getOperatingSystem: Function = (): string => {
