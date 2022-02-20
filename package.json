@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
-    "eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                                 react-scripts eject' && echo",
+    "eject": "echo 'WARNING: THIS PROCESS CANNOT BE REVERSED - GIT COMMIT FIRST SO YOU CAN ROLL BACK' && echo && echo 'if you really hate create-react-app this much, manually run:' && echo && echo '                                                            yarn react-scripts eject' && echo",
     "clean": "rm -rf node_modules/ src-tauri/target/ package-lock.json yarn.lock yarn-error-log",
-    "build": "react-scripts build",
+    "sign": "tauri signer generate",
+    "build": "tauri build",
     "test": "jest --watch",
     "cover": "jest --coverage",
     "pretty": "node node_modules/.bin/prettier --write .",
@@ -19,7 +20,7 @@
     "new:miteL": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newLdifMite.ts && yarn cleanup-tsnode-script",
     "new:miteN": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newNetworkMite.ts && yarn cleanup-tsnode-script",
     "new:miteS": "yarn prep-tsnode-script && yarn ts-node src/scripts/partmakers/newServiceMite.ts && yarn cleanup-tsnode-script",
-    "oldbundle": "tauri build",
+    "update": "rm -rf yarn.lock node_modules/ src-tauri/Cargo.lock && yarn && cd src-tauri && cargo update && cd ..",
     "bundle": "yarn prep-tsnode-script && yarn ts-node src/scripts/utility/moveBundle.ts && yarn cleanup-tsnode-script",
     "zip": "yarn build && yarn prep-tsnode-script && yarn ts-node src/scripts/utility/webzip.ts && yarn cleanup-tsnode-script"
   },
@@ -30,7 +31,7 @@
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "@mui/styles": "latest",
-    "@tauri-apps/api": "1.0.0-beta.8",
+    "@tauri-apps/api": "1.0.0-rc.1",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@testing-library/user-event": "latest",
@@ -47,13 +48,14 @@
     "@babel/core": "latest",
     "@babel/plugin-transform-modules-commonjs": "latest",
     "@babel/preset-react": "latest",
-    "@tauri-apps/cli": "1.0.0-beta.10",
+    "@tauri-apps/cli": "1.0.0-rc.5",
     "@types/file-saver": "latest",
     "@types/jest": "latest",
     "@types/node": "latest",
     "@types/prettier": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "async": "latest",
     "jest": "latest",
     "prettier": "latest",
     "react-scripts": "latest",
@@ -76,11 +78,15 @@
   "babel": {
     "env": {
       "test": {
-        "plugins": ["@babel/plugin-transform-modules-commonjs"]
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
       }
     },
     "presets": [
-      "@babel/preset-env", "@babel/preset-typescript", "@babel/preset-react"
+      "@babel/preset-env",
+      "@babel/preset-typescript",
+      "@babel/preset-react"
     ]
   },
   "eslintConfig": {
@@ -138,7 +144,8 @@
     ],
     "moduleNameMapper": {
       "\\.(png)$": "<rootDir>/src/typings/png.d.ts",
-      "\\.(css)$": "<rootDir>/src/typings/css.d.ts"
+      "\\.(css)$": "<rootDir>/src/typings/css.d.ts",
+      "\\.(svg)$": "<rootDir>/src/typings/svg.d.ts"
     },
     "transform": {
       "^.+\\.[jt]sx?$": "babel-jest"
