@@ -7,7 +7,7 @@
     "distDir": "../build",
     "devPath": "http://localhost:3000",
     "beforeDevCommand": "yarn start && sleep 10",
-    "beforeBuildCommand": "yarn build"
+    "beforeBuildCommand": "yarn build && sleep 5"
   },
   "tauri": {
     "bundle": {
@@ -45,7 +45,7 @@
     "allowlist": {
       "all": false,
       "fs": {
-        "writeBinaryFile": true
+        "writeFile": true
       }
     },
     "windows": [
