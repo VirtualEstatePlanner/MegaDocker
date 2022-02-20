@@ -323,7 +323,8 @@ fi;
     })
     .then(async function (content: Blob) {
       const zipContents: ArrayBuffer = await content.arrayBuffer()
-      await writeBinaryFile({ contents: zipContents, path: `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip` }, { dir: 8 /* Downloads directory */ })
+      const zipArray: Uint8Array = new Uint8Array(zipContents)
+      await writeBinaryFile({ contents: zipArray, path: `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip` }, { dir: 8 /* Downloads directory */ })
     })
   return zip
 }
