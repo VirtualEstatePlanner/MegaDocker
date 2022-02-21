@@ -6,7 +6,7 @@
   "build": {
     "distDir": "../build",
     "devPath": "http://localhost:3000",
-    "beforeDevCommand": "yarn start && sleep 10",
+    "beforeDevCommand": "react-scripts start",
     "beforeBuildCommand": "react-scripts build && echo '> React application built successfully' && cd src-tauri && cargo update && cd .. && echo '> updated Cargo crates successfully'"
   },
   "tauri": {
@@ -17,7 +17,7 @@
       "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"],
       "resources": [],
       "externalBin": [],
-      "copyright": "©2018-2022 The MEGADocker Group.  All rights and most lefts reserved.",
+      "copyright": "©2018-2022 The MEGADocker Group.  All rights reserved.  Most lefts also reserved.",
       "category": "DeveloperTool",
       "shortDescription": "Easily build Docker Swarm stacks",
       "longDescription": "Use a simple GUI to create complex stacks of pre-configured services to run over a distributed swarm of docker hosts.",
@@ -44,8 +44,9 @@
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQ1QUIxNEE3RjhCQzgzOEMKUldTTWc3ejRweFNyUlFwcFRJM3V6NHl0bCtpT29odmNzVjE5R3Bmc0hyb1RXbWw2Nk5mNDYwcFkK"
     },
     "allowlist": {
-      "all": false,
       "fs": {
+        "all": false,
+        "scope": [ "$DOWNLOAD/*" ],
         "writeFile": true
       }
     },
