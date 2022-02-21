@@ -6,13 +6,10 @@
 /dist
 /node_modules
 .DS_Store
+**/*/.DS_Store
 .eslintcache
 .VSCodeCounter/
-**/*/.DS_Store
-**/*/.env
-**/*/*.js
+.env
 yarn*
-**/*.env
-**/*.lock
 /src-tauri/target
 /**/*/Cargo.lock
