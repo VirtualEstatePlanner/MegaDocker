@@ -30,7 +30,7 @@ import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobS
 /**
  * makes .zip file for docker-compose in web browser
  */
-export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): JSZip => {
+export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): void => {
   let zip: JSZip = JSZip()
 
   let zipManikins: IManikin[] = [...zipCompose.manikins]
@@ -323,6 +323,4 @@ fi;
     .then(function (content) {
       fileSaver.saveAs(content, `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip`)
     })
-
-  return zip
 }

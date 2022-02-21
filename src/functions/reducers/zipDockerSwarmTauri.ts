@@ -31,7 +31,7 @@ import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobS
  * makes .zip file for docker-compose in Tauri desktop application
  */
 
-export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): JSZip => {
+export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): void => {
   let zip: JSZip = JSZip()
 
   let zipManikins: IManikin[] = [...zipCompose.manikins]
@@ -322,9 +322,9 @@ fi;
       type: `blob`
     })
     .then(async function (content: Blob) {
-      const zipContents: ArrayBuffer = await content.arrayBuffer()
-      const zipArray: Uint8Array = new Uint8Array(zipContents)
-      await writeBinaryFile({ contents: zipArray, path: `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip` }, { dir: 8 /* Downloads directory */ })
+      const zipContents: Uint8Array = new Uint8Array(await content.arrayBuffer())
+      await writeBinaryFile(
+        { contents: zipContents, path: `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip` },
+        { dir: 8 /* Downloads directory */ })
     })
-  return zip
 }
