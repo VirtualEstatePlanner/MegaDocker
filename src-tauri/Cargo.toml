@@ -1,6 +1,6 @@
 [package]
 name = "megadocker"
-version = "0.5.0"
+version = "0.5.1"
 description = "Microservices builder"
 authors = ["George Georgulas IV"]
 license = ""

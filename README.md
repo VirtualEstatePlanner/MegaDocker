@@ -4,7 +4,7 @@
 [//]: # 'Created by George Georgulas IV on 1/26/19.'
 [//]: # 'Copyright © 2019-2022 The MegaDocker Group. All rights reserved.'
 
-# MEGADocker v0.5.0-beta
+# MEGADocker v0.5.1-beta
 
 [Modular Enterprise-Grade Automated Docker](https://virtualestateplanner.github.io/MegaDocker/)
 
@@ -12,6 +12,7 @@
 
 Most recent changes:
 
+- updates to use [Tauri](https://github.com/tauri-apps/tauri) rc.1
 - replaced [Electron](https://github.com/electron/electron) with [Tauri](https://github.com/tauri-apps/tauri)
 - see more in [CHANGELOG](./CHANGELOG.md)
 
