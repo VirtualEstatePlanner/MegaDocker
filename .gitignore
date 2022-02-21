@@ -15,4 +15,4 @@ yarn*
 **/*.env
 **/*.lock
 /src-tauri/target
-/src-tauri/Cargo.lock
+/**/*/Cargo.lock
