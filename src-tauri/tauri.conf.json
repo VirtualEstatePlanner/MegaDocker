@@ -47,7 +47,7 @@
       "fs": {
         "all": false,
         "readFile": true,
-        "scope": [ "$DESKTOP/*", "$DOCUMENTS/*", "$DOWNLOAD/*" ],
+        "scope": ["$DESKTOP/*", "$DOCUMENTS/*", "$DOWNLOAD/*"],
         "writeFile": true
       },
       "shell": {

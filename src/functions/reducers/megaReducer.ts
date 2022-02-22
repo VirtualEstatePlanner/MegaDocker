@@ -20,8 +20,8 @@ import { zipDockerSwarmTauri } from './zipDockerSwarmTauri'
 import { initialMegaDockerState } from '../../globals/initialMegaDockerState'
 import { IMegaDockerAction } from '../../interfaces/stateManagement/IMegaDockerAction'
 import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerState'
-import { saveMobBrowser } from './saveMobBrowser'
-import { saveMobTauri } from './saveMobTauri'
+import { saveMobBrowser } from '../utility/saveMobBrowser'
+import { saveMobTauri } from '../utility/saveMobTauri'
 import { loadMobBrowser } from './loadMobBrowser'
 import { loadMobTauri } from './loadMobTauri'
 
@@ -59,22 +59,22 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     case `LOAD_MOB_FILE_BROWSER`:
       loadMobBrowser(state)
       return state
-    
+
     // saves a mob file in Tauri
     case `LOAD_MOB_FILE_TAURI`:
       loadMobTauri(state)
       return state
-    
+
     // saves a mob file in the browser
     case `SAVE_MOB_FILE_BROWSER`:
       saveMobBrowser(state)
       return state
-    
+
     // saves a mob file in Tauri
     case `SAVE_MOB_FILE_TAURI`:
       saveMobTauri(state)
       return state
-    
+
     // selects or deselects a manikin
     case `TOGGLE_MANIKIN`:
       newState.manikinTable[action.payload].isSelected = !state.manikinTable[action.payload].isSelected // reverses the selected boolean in the manikin passed to it
