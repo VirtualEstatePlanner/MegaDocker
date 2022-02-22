@@ -33,12 +33,11 @@ export const ButtonExportZipFile: React.FC = (): React.ReactElement => {
     }
   }
 
-  const mobnameIndex: number = state.memories.indexOf(mobName)
-  const mobname: string = state.memories[mobnameIndex].value
+  const mobNameValue: string = state.memories[state.memories.indexOf(mobName)].value
 
   return (
     <Button disabled={fullyValidated ? false : true} variant='contained' onClick={exportButtonClicked}>
-      Export {mobname}.zip
+      Export {mobNameValue}.zip
     </Button>
   )
 }
