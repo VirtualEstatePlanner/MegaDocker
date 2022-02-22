@@ -8,5 +8,4 @@
 
 export interface ILoadMobActionBrowser {
   type: `LOAD_MOB_FILE_BROWSER`
-  payload: {}
 }

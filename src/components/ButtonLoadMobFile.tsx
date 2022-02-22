@@ -25,9 +25,9 @@ export const ButtonLoadMobFile: React.FC = (): React.ReactElement => {
 
   const loadButtonClicked = (): void => {
     if (runningInTauri()) {
-      dispatch({ type: `DOCKER_SWARM_OUTPUT_TAURI` })
+      dispatch({ type: `LOAD_MOB_FILE_TAURI` })
     } else {
-      dispatch({ type: `DOCKER_SWARM_OUTPUT_BROWSER` })
+      dispatch({ type: `LOAD_MOB_FILE_BROWSER` })
     }
   }
 

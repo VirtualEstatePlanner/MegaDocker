@@ -7,6 +7,5 @@
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
 export interface ILoadMobActionTauri {
-  type: `LOAD_MOB_FILE_Tauri`
-  payload: {}
+  type: `LOAD_MOB_FILE_TAURI`
 }
