@@ -13,13 +13,12 @@ import { IMite } from '../objectInterfaces/IMite'
 
 /**
  * the interface for the Application State
- * @manikinTableContents the menu on the left - {...workingManikins}
- * @selectedManikins the user's mob
- * @memoryTableContents the menu on the right - the memories for the mob
+ * @manikinTable the menu on the left - {...workingManikins}
+ * @selectedManikins the manikins selected in the user's mob
+ * @memories the menu on the right - the memories for the mob
  * @allMobMites every mite in the mob (to Array.filter against)
- * @dockerComposeMites every docker compose mite
- * @mobDServiceMites docker-compose service yml mites
- * @mobDNetworkMites docker-compose network yml mites
+ * @mobDServiceMites docker swarm service yml mites
+ * @mobDNetworkMites docker swarm network yml mites
  * @mobCustomMites an array of arrays of non-yml mites
  */
 export interface IMegaDockerState {

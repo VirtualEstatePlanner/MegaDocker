@@ -6,11 +6,16 @@
 //  Created by George Georgulas IV on 2/22/22.
 //  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
-import { IMite } from '../../interfaces/objectInterfaces/IMite'
+import { convertMDStateToJson } from '../utility/convertMDStateToJson'
 import fileSaver from 'file-saver'
+import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerState'
+import { mobName } from '../../mobparts/memories/mobName'
 
 /**
- * updates allMobMites array based on application state
+ * saves a .mob file in the browser
  */
-export const saveMobBrowser = (manikinsToGetMitesFrom: IManikin[]): IMite[] => manikinsToGetMitesFrom.flatMap((eachManikin) => eachManikin.mites.flatMap((eachMite) => eachMite))
+export const saveMobBrowser: Function = (state: IMegaDockerState) => {
+  const blob: Blob = new Blob(convertMDStateToJson(state), { type: `application/json` })
+  const mobNameValue: string = state.memories[state.memories.indexOf(mobName)].value
+  fileSaver.saveAs(blob, `${mobNameValue}.mob`)
+}

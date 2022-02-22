@@ -20,14 +20,14 @@ import { zipDockerSwarmTauri } from './zipDockerSwarmTauri'
 import { initialMegaDockerState } from '../../globals/initialMegaDockerState'
 import { IMegaDockerAction } from '../../interfaces/stateManagement/IMegaDockerAction'
 import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerState'
+import { saveMobBrowser } from './saveMobBrowser'
+import { saveMobTauri } from './saveMobTauri'
 
 /**
  * Updates application state
  */
 export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (state: IMegaDockerState, action: IMegaDockerAction): IMegaDockerState => {
-  /**
-   * creates a mutable copy of the state to make changes to
-   */
+  // creates a mutable copy of the state to make changes to
   let newState: IMegaDockerState = { ...state }
 
   switch (
@@ -36,30 +36,6 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     // starts the program with only core manikins selected
     case `APPLICATION_START`:
       return initialMegaDockerState
-
-    // toggles light and dark mode
-    case `TOGGLE_THEME`:
-      const newTheme: Theme = toggleTheme(newState.theme) as Theme
-      newState.theme = newTheme
-      return newState
-
-    // selects or deselects a manikin
-    case `TOGGLE_MANIKIN`:
-      newState.manikinTable[action.payload].isSelected = !state.manikinTable[action.payload].isSelected // reverses the selected boolean in the manikin passed to it
-      newState.selectedManikins = getManikins(newState.manikinTable) // rebuilds selected Manikins array
-      newState.memories = getMemories(newState.selectedManikins) // rebuilds Memories array
-      newState.allMobMites = getMites(newState.selectedManikins) // rebuilds Mites array
-      newState.mobDServiceMites = getDServiceMites(newState.allMobMites) // rebuilds Docker Swarm network Mites array
-      newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites) // rebuilds Docker Swarm service Mites array
-      newState.mobCustomMites = getCustomMites(newState.allMobMites) // rebuilds custom mite file-based Mites array
-      return newState
-
-    // changes a memory's value
-    case `UPDATE_MEMORY_VALUE`:
-      const memoryIndex = newState.memories.indexOf(action.payload.memory)
-      newState.memories[memoryIndex].value = action.payload.value
-      newState.memories[memoryIndex].isReady = newState.memories[memoryIndex].validator(newState.memories[memoryIndex].value)
-      return newState
 
     // creates and saves Docker Swarm zip file in browser
     case `DOCKER_SWARM_OUTPUT_BROWSER`:
@@ -76,6 +52,40 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
         memories: state.memories
       })
       return state
+
+    // saves a mob file in the browser
+    case `SAVE_MOB_FILE_BROWSER`:
+      saveMobBrowser(state)
+      return state
+    
+    // saves a mob file in Tauri
+    case `SAVE_MOB_FILE_TAURI`:
+      saveMobTauri(state)
+      return state
+    
+    // selects or deselects a manikin
+    case `TOGGLE_MANIKIN`:
+      newState.manikinTable[action.payload].isSelected = !state.manikinTable[action.payload].isSelected // reverses the selected boolean in the manikin passed to it
+      newState.selectedManikins = getManikins(newState.manikinTable) // rebuilds selected Manikins array
+      newState.memories = getMemories(newState.selectedManikins) // rebuilds Memories array
+      newState.allMobMites = getMites(newState.selectedManikins) // rebuilds Mites array
+      newState.mobDServiceMites = getDServiceMites(newState.allMobMites) // rebuilds Docker Swarm network Mites array
+      newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites) // rebuilds Docker Swarm service Mites array
+      newState.mobCustomMites = getCustomMites(newState.allMobMites) // rebuilds custom mite file-based Mites array
+      return newState
+
+    // toggles light and dark mode
+    case `TOGGLE_THEME`:
+      const newTheme: Theme = toggleTheme(newState.theme) as Theme
+      newState.theme = newTheme
+      return newState
+
+    // changes a memory's value
+    case `UPDATE_MEMORY_VALUE`:
+      const memoryIndex = newState.memories.indexOf(action.payload.memory)
+      newState.memories[memoryIndex].value = action.payload.value
+      newState.memories[memoryIndex].isReady = newState.memories[memoryIndex].validator(newState.memories[memoryIndex].value)
+      return newState
 
     // prevents non-standard actions being passed to the reducer
     default:

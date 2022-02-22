@@ -46,7 +46,8 @@
     "allowlist": {
       "fs": {
         "all": false,
-        "scope": ["$DOWNLOAD/*"],
+        "readFile": true,
+        "scope": [ "$DESKTOP/*", "$DOCUMENTS/*", "$DOWNLOAD/*" ],
         "writeFile": true
       },
       "shell": {
