@@ -1,8 +1,8 @@
 /** @format */
 
-//  SaveZipFile.tsx
+//  ButtonExportZipFile.tsx
 //  MEGADocker
-//  a React Button Component that saves a Docker Swarm zip file
+//  a React Button Component that exports a Docker Swarm zip file
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
