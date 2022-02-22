@@ -48,6 +48,10 @@
         "all": false,
         "scope": ["$DOWNLOAD/*"],
         "writeFile": true
+      },
+      "shell": {
+        "all": false,
+        "open": true
       }
     },
     "windows": [
