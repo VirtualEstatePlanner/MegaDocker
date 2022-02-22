@@ -29,7 +29,7 @@ describe('tests the themeToggle function', () => {
     expect(toggleTheme(OrbThemeLight)).toEqual(OrbThemeDark)
     expect(toggleTheme(OrbThemeDark)).toEqual(OrbThemeLight)
     expect(() => {
-        toggleTheme(createTheme({}))
+      toggleTheme(createTheme({}))
     }).toThrowError(`toggleTheme error: passed non-standard theme to theme switch`)
   })
 })

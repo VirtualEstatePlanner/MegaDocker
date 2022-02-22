@@ -8,9 +8,10 @@
 
 import { MegaContext } from '../../components/MegaContext'
 
-export const testMegaDockerAction = () => describe('tests each possible MegaDockerAction', () => {
+export const testMegaDockerAction = () =>
+  describe('tests each possible MegaDockerAction', () => {
     it(`MegaContext has a Consumer and a Provider`, () => {
-        expect(MegaContext.Consumer).toBeDefined()
-        expect(MegaContext.Provider).toBeDefined()
+      expect(MegaContext.Consumer).toBeDefined()
+      expect(MegaContext.Provider).toBeDefined()
     })
-})
+  })

@@ -1,6 +1,6 @@
 /** @format */
 
-import { IDockerSecret } from "./IDockerSecret";
+import { IDockerSecret } from './IDockerSecret'
 
 //  IN8NWorkflow.ts
 //  MEGADocker

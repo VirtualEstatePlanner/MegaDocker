@@ -18,7 +18,7 @@ const getOperatingSystem: Function = (): string => {
       throw new Error(`Unsupported platform: ${thisPlatform}`)
   }
 }
-  
+
 const getProcessorArchitecture: Function = (): string => {
   const thisArchitecture: string = arch()
   switch (thisArchitecture) {

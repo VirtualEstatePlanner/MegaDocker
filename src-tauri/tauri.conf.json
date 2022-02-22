@@ -46,7 +46,7 @@
     "allowlist": {
       "fs": {
         "all": false,
-        "scope": [ "$DOWNLOAD/*" ],
+        "scope": ["$DOWNLOAD/*"],
         "writeFile": true
       }
     },

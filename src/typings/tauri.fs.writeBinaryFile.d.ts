@@ -9,4 +9,4 @@ declare module '@tauri-apps/api/fs.cjs'
  * @param options Configuration object.
  * @returns A promise indicating the success or failure of the operation.
  */
- declare function writeBinaryFile(file: FsBinaryFileOption, options?: FsOptions): Promise<void>;
+declare function writeBinaryFile(file: FsBinaryFileOption, options?: FsOptions): Promise<void>

@@ -9,7 +9,7 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import React, { Component } from "react"
+import React, { Component } from 'react'
 import { ManikinTable } from '../../components/ManikinTable'
 import { render } from '@testing-library/react'
 import { MegaProvider } from '../../components/MegaContext'

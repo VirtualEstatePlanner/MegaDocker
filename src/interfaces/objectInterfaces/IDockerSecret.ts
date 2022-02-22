@@ -10,8 +10,7 @@
  * @workflowJson - the meat and bones of the wokflow from n8n.io
  * @workflowIndex -
  */
- export interface IDockerSecret {
-    secretName: string
-    secretValue: string
-  }
-  
+export interface IDockerSecret {
+  secretName: string
+  secretValue: string
+}

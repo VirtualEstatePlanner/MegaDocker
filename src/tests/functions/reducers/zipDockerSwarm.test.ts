@@ -9,7 +9,7 @@
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { initialMegaDockerState } from "../../../globals/initialMegaDockerState"
+import { initialMegaDockerState } from '../../../globals/initialMegaDockerState'
 import { testMegaDockerAction } from '../../test-functions/testMegaDockerAction'
 import { testMegaDockerState } from '../../test-functions/testMegaDockerState'
 

@@ -33,7 +33,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
   switch (
     action.type // check which modification to make to state
   ) {
-     // starts the program with only core manikins selected
+    // starts the program with only core manikins selected
     case `APPLICATION_START`:
       return initialMegaDockerState
 
