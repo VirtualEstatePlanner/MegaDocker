@@ -1,10 +1,10 @@
 /** @format */
 
-//  zipDockerSwarm.ts
+//  zipDockerSwarmTauri.ts
 //  MEGADocker
-//  a function that creates and downloads a zip file containing the user's Docker Swarm
-//  Created by George Georgulas IV on 1/26/19.
-//  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
+//  a function that creates and downloads a zip file containing the user's Docker Swarm in Tauri
+//  Created by George Georgulas IV on 2/04/22.
+//  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
 import JSZip from 'jszip'
 import { writeBinaryFile } from '@tauri-apps/api/fs'
