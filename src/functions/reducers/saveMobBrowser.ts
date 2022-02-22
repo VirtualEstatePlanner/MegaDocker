@@ -24,10 +24,10 @@ export const saveMobBrowser: Function = (state: IMegaDockerState) => {
   const mobNameValue: string = state.memories[state.memories.indexOf(mobName)].value
   // check for existence of mobNameValue
   if (mobNameValue) {
-    // save the blob
+    // save the blob with the chosen name
     fileSaver.saveAs(blob, `${mobNameValue}.mob`)
   } else {
-    // save the blob
-    fileSaver.saveAs(blob, `untitled.mob`)
+    // save the blob with an untitled name
+    fileSaver.saveAs(blob, `Untitled.mob`)
   }
 }
