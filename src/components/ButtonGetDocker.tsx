@@ -8,9 +8,16 @@
 
 import * as React from 'react'
 import { Button } from '@mui/material'
+import { openURL } from '../functions/utility/openURL'
+
+const dockerURL: URL = new URL(`https://docs.docker.com/get-docker/`)
+
+const handleClick = (): void => {
+  openURL(dockerURL)
+}
 
 export const ButtonGetDocker: React.FC = (): React.ReactElement => (
-  <Button variant='contained' href={`https://docs.docker.com/get-docker/`}>
+  <Button variant='contained' onClick={handleClick}>
     Get Docker
   </Button>
 )
