@@ -6,8 +6,7 @@
 //  Created by George Georgulas IV on 2/04/22.
 //  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
-import JSZip from 'jszip'
-import { writeBinaryFile } from '@tauri-apps/api/fs'
+import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
 import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 import { IMite } from '../../interfaces/objectInterfaces/IMite'
@@ -15,17 +14,18 @@ import { ILDIFMite } from '../../interfaces/miteTypeInterfaces/ILDIFMite'
 import { ICustomMite } from '../../interfaces/miteTypeInterfaces/ICustomMite'
 import { ITraefikedServiceMite } from '../../interfaces/miteTypeInterfaces/ITraefikedServiceMite'
 import { IZipDockerCompose } from '../../interfaces/stateManagement/IZipDockerCompose'
-import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
-import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
-import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobNetworkHeaderSectionString'
-import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString'
-import { traefikManikin } from '../../mobparts/manikins/traefik'
-import { mobName } from '../../mobparts/memories/mobName'
+import JSZip from 'jszip'
 import { ldapBootstrapMegaDockerDotLdifMite } from '../../mobparts/mites/custom/ldapBootstrapMegaDockerDotLdifMite'
 import { primaryDomain } from '../../mobparts/memories/primaryDomain'
-import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
+import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
+import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
+import { mobName } from '../../mobparts/memories/mobName'
+import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobNetworkHeaderSectionString'
+import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString'
 import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobSecretsHeaderSectionString'
 import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
+import { traefikManikin } from '../../mobparts/manikins/traefik'
+import { writeBinaryFile } from '@tauri-apps/api/fs'
 
 /**
  * makes .zip file for docker-compose in Tauri desktop application
