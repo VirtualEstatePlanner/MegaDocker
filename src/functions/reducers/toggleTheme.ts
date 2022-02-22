@@ -20,6 +20,7 @@ export const toggleTheme: Function = (theme: Theme): Theme => {
     case OrbThemeLight:
       return OrbThemeDark
     default:
-      throw new Error(`toggleTheme error: passed non-standard theme to theme switch`)
+      console.log(`toggleTheme error: passed non-standard theme to theme switch, setting theme to light mode`)
+      return OrbThemeLight
   }
 }
