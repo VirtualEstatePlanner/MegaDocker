@@ -7,10 +7,14 @@
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
 import { IApplicationStartAction } from '../actionInterfaces/IApplicationStartAction'
+import { ILoadMobActionBrowser } from '../actionInterfaces/ILoadMobActionBrowser'
+import { ILoadMobActionTauri } from '../actionInterfaces/ILoadMobActionTauri'
 import { IOutputDockerSwarmBrowserAction } from '../actionInterfaces/IOutputDockerSwarmBrowserAction'
 import { IOutputDockerSwarmTauriAction } from '../actionInterfaces/IOutputDockerSwarmTauriAction'
+import { ISaveMobActionBrowser } from '../actionInterfaces/ISaveMobActionBrowser'
+import { ISaveMobActionTauri } from '../actionInterfaces/ISaveMobActionTauri'
 import { IToggleManikinAction } from '../actionInterfaces/IToggleManikinAction'
-import { IUpdateMemoryValueAction } from '../actionInterfaces/IUpdateMemoryValueAction'
 import { IToggleThemeAction } from '../actionInterfaces/IToggleThemeAction'
+import { IUpdateMemoryValueAction } from '../actionInterfaces/IUpdateMemoryValueAction'
 
-export type IMegaDockerAction = IApplicationStartAction | IOutputDockerSwarmBrowserAction | IOutputDockerSwarmTauriAction | IToggleManikinAction | IUpdateMemoryValueAction | IToggleThemeAction
+export type IMegaDockerAction = IApplicationStartAction | ILoadMobActionBrowser | ILoadMobActionTauri | IOutputDockerSwarmBrowserAction | IOutputDockerSwarmTauriAction | ISaveMobActionBrowser | ISaveMobActionTauri |IToggleManikinAction | IUpdateMemoryValueAction | IToggleThemeAction
