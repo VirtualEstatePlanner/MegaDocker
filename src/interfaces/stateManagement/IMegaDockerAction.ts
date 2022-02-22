@@ -17,4 +17,14 @@ import { IToggleManikinAction } from '../actionInterfaces/IToggleManikinAction'
 import { IToggleThemeAction } from '../actionInterfaces/IToggleThemeAction'
 import { IUpdateMemoryValueAction } from '../actionInterfaces/IUpdateMemoryValueAction'
 
-export type IMegaDockerAction = IApplicationStartAction | ILoadMobActionBrowser | ILoadMobActionTauri | IOutputDockerSwarmBrowserAction | IOutputDockerSwarmTauriAction | ISaveMobActionBrowser | ISaveMobActionTauri |IToggleManikinAction | IUpdateMemoryValueAction | IToggleThemeAction
+export type IMegaDockerAction =
+  | IApplicationStartAction
+  | ILoadMobActionBrowser
+  | ILoadMobActionTauri
+  | IOutputDockerSwarmBrowserAction
+  | IOutputDockerSwarmTauriAction
+  | ISaveMobActionBrowser
+  | ISaveMobActionTauri
+  | IToggleManikinAction
+  | IUpdateMemoryValueAction
+  | IToggleThemeAction
