@@ -12,9 +12,9 @@ import { MegaContext } from './MegaContext'
 import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
 import { mobName } from '../mobparts/memories/mobName'
-import { runningInTauri } from '../functions/runningInTauri'
+import { runningInTauri } from '../functions/utility/runningInTauri'
 
-export const ButtonSaveZipFile: React.FC = (): React.ReactElement => {
+export const ButtonExportZipFile: React.FC = (): React.ReactElement => {
   const {
     state,
     dispatch
@@ -38,7 +38,7 @@ export const ButtonSaveZipFile: React.FC = (): React.ReactElement => {
 
   return (
     <Button disabled={fullyValidated ? false : true} variant='contained' onClick={buttonClicked}>
-      Save {mobname}.zip
+      Export {mobname}.zip
     </Button>
   )
 }
