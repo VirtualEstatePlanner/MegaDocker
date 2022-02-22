@@ -7,10 +7,16 @@
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
 import * as React from 'react'
-import { ButtonSaveZipFile } from './ButtonSaveZipFile'
+import { ButtonGetDocker } from './ButtonGetDocker'
+import { ButtonLoadMobFile } from './ButtonLoadMobFile'
+import { ButtonSaveMobFile } from './ButtonSaveMobFile'
+import { ButtonExportZipFile } from './ButtonExportZipFile'
 
 export const ContainerButtonPane: React.FC = (): React.ReactElement => (
   <div className='ButtonPane'>
-    <ButtonSaveZipFile />
+    <ButtonGetDocker />
+    <ButtonLoadMobFile />
+    <ButtonSaveMobFile />
+    <ButtonExportZipFile />
   </div>
 )
