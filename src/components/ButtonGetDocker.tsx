@@ -12,12 +12,12 @@ import { openURL } from '../functions/utility/openURL'
 
 const dockerURL: URL = new URL(`https://docs.docker.com/get-docker/`)
 
-const handleClick = (): void => {
+const getDockerButtonClicked = (): void => {
   openURL(dockerURL)
 }
 
 export const ButtonGetDocker: React.FC = (): React.ReactElement => (
-  <Button variant='contained' onClick={handleClick}>
+  <Button variant='contained' onClick={getDockerButtonClicked}>
     Get Docker
   </Button>
 )

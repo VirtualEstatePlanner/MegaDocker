@@ -22,9 +22,7 @@ export const ButtonSaveMobFile: React.FC = (): React.ReactElement => {
     dispatch: React.Dispatch<IMegaDockerAction>
   } = React.useContext(MegaContext)
 
-  const fullyValidated: boolean = state.memories.every((memory) => memory.isReady)
-
-  const buttonClicked = (): void => {
+  const saveButtonClicked = (): void => {
     if (runningInTauri()) {
       dispatch({ type: `SAVE_MOB_FILE_TAURI`, payload: state })
     } else {
@@ -33,7 +31,7 @@ export const ButtonSaveMobFile: React.FC = (): React.ReactElement => {
   }
 
   return (
-    <Button disabled={fullyValidated ? false : true} variant='contained' onClick={buttonClicked}>
+    <Button variant='contained' onClick={saveButtonClicked}>
       Save .mob file
     </Button>
   )

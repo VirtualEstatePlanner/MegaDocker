@@ -25,7 +25,7 @@ export const ButtonExportZipFile: React.FC = (): React.ReactElement => {
 
   const fullyValidated: boolean = state.memories.every((memory) => memory.isReady)
 
-  const buttonClicked = (): void => {
+  const exportButtonClicked = (): void => {
     if (runningInTauri()) {
       dispatch({ type: `DOCKER_SWARM_OUTPUT_TAURI` })
     } else {
@@ -37,7 +37,7 @@ export const ButtonExportZipFile: React.FC = (): React.ReactElement => {
   const mobname: string = state.memories[mobnameIndex].value
 
   return (
-    <Button disabled={fullyValidated ? false : true} variant='contained' onClick={buttonClicked}>
+    <Button disabled={fullyValidated ? false : true} variant='contained' onClick={exportButtonClicked}>
       Export {mobname}.zip
     </Button>
   )

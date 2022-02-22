@@ -15,6 +15,7 @@ import { runningInTauri } from '../functions/utility/runningInTauri'
 
 export const ButtonLoadMobFile: React.FC = (): React.ReactElement => {
   const {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     state,
     dispatch
   }: {
@@ -22,9 +23,7 @@ export const ButtonLoadMobFile: React.FC = (): React.ReactElement => {
     dispatch: React.Dispatch<IMegaDockerAction>
   } = React.useContext(MegaContext)
 
-  const fullyValidated: boolean = state.memories.every((memory) => memory.isReady)
-
-  const buttonClicked = (): void => {
+  const loadButtonClicked = (): void => {
     if (runningInTauri()) {
       dispatch({ type: `DOCKER_SWARM_OUTPUT_TAURI` })
     } else {
@@ -33,7 +32,7 @@ export const ButtonLoadMobFile: React.FC = (): React.ReactElement => {
   }
 
   return (
-    <Button disabled={fullyValidated ? false : true} variant='contained' onClick={buttonClicked}>
+    <Button variant='contained' onClick={loadButtonClicked}>
       Load .mob file
     </Button>
   )
