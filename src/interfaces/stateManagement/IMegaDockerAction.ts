@@ -7,8 +7,8 @@
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
 import { IApplicationStartAction } from '../actionInterfaces/IApplicationStartAction'
-import { ILoadMobActionBrowser } from '../actionInterfaces/ILoadMobActionBrowser'
-import { ILoadMobActionTauri } from '../actionInterfaces/ILoadMobActionTauri'
+import { IUploadMobActionBrowser } from '../actionInterfaces/IUploadMobActionBrowser'
+import { IUploadMobActionTauri } from '../actionInterfaces/IUploadMobActionTauri'
 import { IOutputDockerSwarmBrowserAction } from '../actionInterfaces/IOutputDockerSwarmBrowserAction'
 import { IOutputDockerSwarmTauriAction } from '../actionInterfaces/IOutputDockerSwarmTauriAction'
 import { ISaveMobActionBrowser } from '../actionInterfaces/ISaveMobActionBrowser'
@@ -19,8 +19,8 @@ import { IUpdateMemoryValueAction } from '../actionInterfaces/IUpdateMemoryValue
 
 export type IMegaDockerAction =
   | IApplicationStartAction
-  | ILoadMobActionBrowser
-  | ILoadMobActionTauri
+  | IUploadMobActionBrowser
+  | IUploadMobActionTauri
   | IOutputDockerSwarmBrowserAction
   | IOutputDockerSwarmTauriAction
   | ISaveMobActionBrowser

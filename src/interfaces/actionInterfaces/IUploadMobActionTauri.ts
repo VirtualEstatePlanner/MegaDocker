@@ -6,6 +6,9 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
-export interface ILoadMobActionTauri {
+import { IMegaDockerState } from "../stateManagement/IMegaDockerState";
+
+export interface IUploadMobActionTauri {
   type: `UPLOAD_MOB_FILE_TAURI`
+  payload: IMegaDockerState
 }
