@@ -21,4 +21,3 @@ export const saveMobTauri: Function = async (state: IMegaDockerState): Promise<v
   const mobContents: Uint8Array = new Uint8Array(await blob.arrayBuffer())
   await writeBinaryFile({ contents: mobContents, path: `${mobNameValue}.mob` }, { dir: 8 /* Downloads directory */ })
 }
-  
