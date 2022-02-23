@@ -7,5 +7,5 @@
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
 export interface ILoadMobActionBrowser {
-  type: `LOAD_MOB_FILE_BROWSER`
+  type: `UPLOAD_MOB_FILE_BROWSER`
 }

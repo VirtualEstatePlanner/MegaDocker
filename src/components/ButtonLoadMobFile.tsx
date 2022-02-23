@@ -23,16 +23,16 @@ export const ButtonLoadMobFile: React.FC = (): React.ReactElement => {
     dispatch: React.Dispatch<IMegaDockerAction>
   } = React.useContext(MegaContext)
 
-  const loadButtonClicked = (): void => {
+  const uploadButtonClicked = (): void => {
     if (runningInTauri()) {
-      dispatch({ type: `LOAD_MOB_FILE_TAURI` })
+      dispatch({ type: `UPLOAD_MOB_FILE_TAURI` })
     } else {
-      dispatch({ type: `LOAD_MOB_FILE_BROWSER` })
+      dispatch({ type: `UPLOAD_MOB_FILE_BROWSER` })
     }
   }
 
   return (
-    <Button variant='contained' onClick={loadButtonClicked}>
+    <Button variant='contained' onClick={uploadButtonClicked}>
       Load .mob file
     </Button>
   )

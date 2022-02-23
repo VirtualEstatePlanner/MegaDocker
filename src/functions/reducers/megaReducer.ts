@@ -56,12 +56,12 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       return state
 
     // saves a mob file in the browser
-    case `LOAD_MOB_FILE_BROWSER`:
+    case `UPLOAD_MOB_FILE_BROWSER`:
       uploadFileBrowser(state)
       return state
 
     // saves a mob file in Tauri
-    case `LOAD_MOB_FILE_TAURI`:
+    case `UPLOAD_MOB_FILE_TAURI`:
       uploadFileTauri(state)
       return state
 
