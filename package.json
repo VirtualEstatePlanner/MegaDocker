@@ -41,7 +41,6 @@
     "react-dom": "latest",
     "source-map-support": "latest",
     "typescript": "latest",
-    "web-vitals": "latest",
     "yaml-validator": "latest"
   },
   "devDependencies": {
