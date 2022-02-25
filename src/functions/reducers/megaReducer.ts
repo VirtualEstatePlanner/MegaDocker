@@ -20,10 +20,10 @@ import { zipDockerSwarmTauri } from './zipDockerSwarmTauri'
 import { initialMegaDockerState } from '../../globals/initialMegaDockerState'
 import { IMegaDockerAction } from '../../interfaces/stateManagement/IMegaDockerAction'
 import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerState'
-import { saveMobBrowser } from '../utility/saveMobBrowser'
-import { saveMobTauri } from '../utility/saveMobTauri'
-import { uploadFileBrowser } from '../utility/uploadFileBrowser'
-import { uploadFileTauri } from '../utility/uploadFileTauri'
+import { saveMobFileBrowser } from '../utility/saveMobFileBrowser'
+import { saveMobFileTauri } from '../utility/saveMobFileTauri'
+import { uploadMobFileBrowser } from '../utility/uploadMobFileBrowser'
+import { uploadMobFileTauri } from '../utility/uploadMobFileTauri'
 
 /**
  * Updates application state
@@ -57,22 +57,22 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
 
     // saves a mob file in the browser
     case `UPLOAD_MOB_FILE_BROWSER`:
-      uploadFileBrowser(state)
+      uploadMobFileBrowser(state)
       return state
 
     // saves a mob file in Tauri
     case `UPLOAD_MOB_FILE_TAURI`:
-      uploadFileTauri(state)
+      uploadMobFileTauri(state)
       return state
 
     // saves a mob file in the browser
     case `SAVE_MOB_FILE_BROWSER`:
-      saveMobBrowser(state)
+      saveMobFileBrowser(state)
       return state
 
     // saves a mob file in Tauri
     case `SAVE_MOB_FILE_TAURI`:
-      saveMobTauri(state)
+      saveMobFileTauri(state)
       return state
 
     // selects or deselects a manikin

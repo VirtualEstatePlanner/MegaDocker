@@ -1,8 +1,8 @@
 /** @format */
 
-//  saveMobBrowser.ts
+//  saveMobFileBrowser.ts
 //  MEGADocker
-//  a function that saves a mob file in progress in the browser
+//  a function that saves a mob file in progress using the filesaver.js library
 //  Created by George Georgulas IV on 2/22/22.
 //  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
@@ -14,7 +14,7 @@ import { mobName } from '../../mobparts/memories/mobName'
 /**
  * saves a .mob file in the browser
  */
-export const saveMobBrowser: Function = (state: IMegaDockerState): void => {
+export const saveMobFileBrowser: Function = (state: IMegaDockerState): void => {
   // convert state to json
   const JSONState: JSON = convertMDStateToJson(state)
   // convert json to a string
