@@ -2,7 +2,7 @@
 
 //  megaReducer.ts
 //  MEGADocker
-//  a function that handles React Context state changes for {IMegaDockerAction, IMegaDockerState} React Hooks
+//  a reducer function that processes React Context state changes for {IMegaDockerAction, IMegaDockerState} React Hooks
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
