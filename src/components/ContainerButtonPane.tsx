@@ -8,7 +8,7 @@
 
 import * as React from 'react'
 import { ButtonGetDocker } from './ButtonGetDocker'
-//import { ButtonLoadMobFile } from './ButtonLoadMobFile'
+//import { ButtonUploadMobFile } from './ButtonUploadMobFile'
 import { ButtonSaveMobFile } from './ButtonSaveMobFile'
 import { ButtonExportZipFile } from './ButtonExportZipFile'
 
@@ -20,4 +20,4 @@ export const ContainerButtonPane: React.FC = (): React.ReactElement => (
   </div>
 )
 //Todo: Make Load Button work
-//<ButtonLoadMobFile />
+//<ButtonUploadMobFile />

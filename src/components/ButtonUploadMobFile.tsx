@@ -1,6 +1,6 @@
 /** @format */
 
-//  ButtonLoadMobFile.tsx
+//  ButtonUploadMobFile.tsx
 //  MEGADocker
 //  a React Button Component that loads a mob file in progress
 //  Created by George Georgulas IV on 2/22/22.
@@ -13,7 +13,7 @@ import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState
 import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
 import { runningInTauri } from '../functions/utility/runningInTauri'
 
-export const ButtonLoadMobFile: React.FC = (): React.ReactElement => {
+export const ButtonUploadMobFile: React.FC = (): React.ReactElement => {
   const {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     state,
