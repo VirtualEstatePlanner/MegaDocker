@@ -47,7 +47,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       })
       return state
 
-    // creates and saves Docker Swarm zip file in tauri desktop application
+    // creates and saves Docker Swarm zip file in Tauri desktop application
     case `DOCKER_SWARM_OUTPUT_TAURI`:
       zipDockerSwarmTauri({
         manikins: state.selectedManikins,
@@ -60,7 +60,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       uploadMobFileBrowser(state)
       return state
 
-    // saves a mob file in Tauri
+    // saves a mob file in Tauri desktop application
     case `UPLOAD_MOB_FILE_TAURI`:
       uploadMobFileTauri(state)
       return state
@@ -70,7 +70,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       saveMobFileBrowser(state)
       return state
 
-    // saves a mob file in Tauri
+    // saves a mob file in Tauri desktop application
     case `SAVE_MOB_FILE_TAURI`:
       saveMobFileTauri(state)
       return state
