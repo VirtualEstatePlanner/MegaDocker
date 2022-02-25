@@ -19,5 +19,5 @@ export const ContainerButtonPane: React.FC = (): React.ReactElement => (
     <ButtonExportZipFile />
   </div>
 )
-//Todo: Make Load Button work
+//TODO: Make Upload Button work
 //<ButtonUploadMobFile />
