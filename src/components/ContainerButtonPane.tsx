@@ -8,16 +8,17 @@
 
 import * as React from 'react'
 import { ButtonGetDocker } from './ButtonGetDocker'
-//import { ButtonUploadMobFile } from './ButtonUploadMobFile'
+import { ButtonUploadMobFile } from './ButtonUploadMobFile'
 import { ButtonSaveMobFile } from './ButtonSaveMobFile'
 import { ButtonExportZipFile } from './ButtonExportZipFile'
 
 export const ContainerButtonPane: React.FC = (): React.ReactElement => (
   <div className='ButtonPane'>
     <ButtonGetDocker />
+    <ButtonUploadMobFile />
     <ButtonSaveMobFile />
     <ButtonExportZipFile />
   </div>
 )
 //TODO: Make Upload Button work
-//<ButtonUploadMobFile />
+//
