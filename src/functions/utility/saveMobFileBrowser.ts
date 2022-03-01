@@ -6,28 +6,25 @@
 //  Created by George Georgulas IV on 2/22/22.
 //  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
-import { convertMDStateToJson } from './convertMDStateToJson'
+import { makeDotMobFile } from './makeDotMobFile'
 import fileSaver from 'file-saver'
 import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerState'
 import { mobName } from '../../mobparts/memories/mobName'
+import { IMob } from '../../interfaces/objectInterfaces/IMob'
 
 /**
  * saves a .mob file in the browser
+ * @state the current application state
  */
 export const saveMobFileBrowser: Function = (state: IMegaDockerState): void => {
-  // convert state to json
-  const JSONState: JSON = convertMDStateToJson(state)
-  // convert json to a string
-  const JSONString: string = JSON.stringify(JSONState)
-  // convert json to blob
-  const blob: Blob = new Blob([JSONString], { type: `application/json` })
   const mobNameValue: string = state.memories[state.memories.indexOf(mobName)].value
-  // check for existence of mobNameValue
+  const JSONState: IMob = makeDotMobFile(state)
+  const blob: Blob = new Blob([JSON.stringify(JSONState)], { type: `application/json` })
   if (mobNameValue) {
     // save the blob with the chosen name
     fileSaver.saveAs(blob, `${mobNameValue}.mob`)
   } else {
-    // save the blob with an untitled name
+    // save the blob as an untitled .mob
     fileSaver.saveAs(blob, `Untitled.mob`)
   }
 }

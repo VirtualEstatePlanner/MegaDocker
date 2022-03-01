@@ -2,15 +2,14 @@
 
 //  IMob.ts
 //  MEGADocker
-//  an interface that represents a MEGADocker Mob
+//  an interface that represents a MEGADocker .mob file
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
-import { IManikin } from './IManikin'
-import { IMemory } from './IMemory'
+import { IMiniManikin } from './IMiniManikin'
 
 export interface IMob {
-  mobManikins: IManikin[]
-  mobMemories: IMemory[]
+  mobManikins: IMiniManikin[]
   mobName: string
+  mobVersion: string
 }
