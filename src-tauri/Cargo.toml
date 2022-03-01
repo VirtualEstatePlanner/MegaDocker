@@ -4,7 +4,7 @@ version = "0.5.1"
 description = "Microservices builder"
 authors = ["George Georgulas IV"]
 license = ""
-repository = ""
+repository = "https://github.com/VirtualEstatePlanner/MegaDocker"
 default-run = "megadocker"
 build = "src/build.rs"
 
