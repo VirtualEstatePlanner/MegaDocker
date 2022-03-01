@@ -14,7 +14,7 @@ export const mobFolderPath: IMemory = {
   memoryMarker: `[[MOBFOLDERPATH]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,
-  name: `Mob Folder Location`,
+  memoryName: `Mob Folder Location`,
   tooltip: `The file path to your Mob's folder.`,
   value: ``,
   valueType: `text`,

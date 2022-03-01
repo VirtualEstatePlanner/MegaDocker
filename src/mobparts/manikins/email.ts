@@ -26,7 +26,7 @@ export const emailManikin: IManikin = {
   manikinIndex: 10005,
   memories: [],
   mites: [emailLdifMite, emailServiceMite, emailNetworkMite],
-  name: `E-mail`,
+  manikinName: `E-mail`,
   ports: [],
   subfolders: [`config`, `maildata`, `mailstate`, `rainloop`]
 }

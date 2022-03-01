@@ -14,7 +14,7 @@ export const kibanaUser: IMemory = {
   memoryMarker: `[[KIBANAUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,
-  name: `Kibana User`,
+  memoryName: `Kibana User`,
   tooltip: `The Kibana user`,
   value: ``,
   valueType: `text`,

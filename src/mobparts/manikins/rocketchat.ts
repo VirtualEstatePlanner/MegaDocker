@@ -31,7 +31,7 @@ export const rocketchatManikin: IManikin = {
   manikinIndex: 10024,
   memories: [rocketchatBotPassword, rocketchatBotUsername],
   mites: [rocketchatLdifMite, rocketchatServiceMite, rocketchatNetworkMite],
-  name: `RocketChat`,
+  manikinName: `RocketChat`,
   ports: [],
   subfolders: [`database`, `dump`, `hubot-scripts`, `uploads`]
 }

@@ -25,7 +25,7 @@ export const wordpressManikin: IManikin = {
   manikinIndex: 10033,
   memories: [wordpressMariaDBRootPassword, wordpressMariaDBUser, wordpressMariaDBPassword],
   mites: [wordpressLdifMite, wordpressServiceMite, wordpressNetworkMite],
-  name: `WordPress`,
+  manikinName: `WordPress`,
   ports: [],
   subfolders: [`mariadb`, `php`]
 }

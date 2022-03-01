@@ -14,7 +14,7 @@ export const kibanaPassword: IMemory = {
   memoryMarker: `[[KIBANAPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `Kibana Password`,
+  memoryName: `Kibana Password`,
   tooltip: `The Kibana user's password`,
   value: ``,
   valueType: `password`,

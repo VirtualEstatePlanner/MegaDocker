@@ -29,7 +29,7 @@ export const kanboardManikin: IManikin = {
   manikinIndex: 10011,
   memories: [kanboardMariaDBPassword, kanboardMariaDBRootPassword, kanboardMariaDBUser],
   mites: [kanboardLdifMite, kanboardServiceMite, kanboardNetworkMite],
-  name: `Kanboard`,
+  manikinName: `Kanboard`,
   ports: [],
   subfolders: [`kanboard-data`, `kanboard-plugins`, `mariadb`]
 }

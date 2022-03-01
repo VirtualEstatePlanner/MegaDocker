@@ -14,7 +14,7 @@ export const drupalPostgresPassword: IMemory = {
   memoryMarker: `[[DRUPALPOSTGRESPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `Drupal Postgres Password`,
+  memoryName: `Drupal Postgres Password`,
   tooltip: `The password for Drupal to connect to it's PostgreSQL database.`,
   value: ``,
   valueType: `password`,

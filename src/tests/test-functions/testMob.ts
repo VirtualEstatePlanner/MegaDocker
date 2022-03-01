@@ -15,7 +15,6 @@ export const testMob: Function = (mobToTest: IMob) => {
       expect(mobToTest.mobName).toStrictEqual(`someMobName`)
       expect(mobToTest.mobManikins.length).toBeGreaterThanOrEqual(5)
       expect(mobToTest.mobManikins.length).toBeLessThanOrEqual(workingManikins.length)
-      expect(mobToTest.mobMemories.length).toBeGreaterThan(0)
     })
   })
 }

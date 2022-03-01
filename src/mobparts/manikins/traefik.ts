@@ -32,7 +32,7 @@ export const traefikManikin: IManikin = {
   manikinIcon: traefikIcon,
   manikinIndex: 10028,
   memories: [mobName, letsEncryptEmail, cloudflareAPIToken, primaryDomain],
-  name: `Traefik`,
+  manikinName: `Traefik`,
   mites: [traefikLdifMite, traefikServiceMite, traefikNetworkMite],
   ports: [],
   subfolders: [`ssl`]

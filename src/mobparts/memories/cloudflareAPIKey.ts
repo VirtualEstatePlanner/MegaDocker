@@ -14,7 +14,7 @@ export const cloudflareAPIKey: IMemory = {
   memoryMarker: `[[CLOUDFLAREAPIKEY]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `CloudFlare API Key`,
+  memoryName: `CloudFlare API Key`,
   tooltip: `A CloudFlare API Key from your account that has full 'domain' privileges.`,
   value: ``,
   valueType: `password`,

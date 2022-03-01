@@ -14,7 +14,7 @@ export const primaryDomain: IMemory = {
   memoryMarker: `[[PRIMARYDOMAIN]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,
-  name: `Web Domain`,
+  memoryName: `Web Domain`,
   tooltip: `The domain name for your MEGADOCKER Mob (such as 'example.com' or 'myawesomemob.org')`,
   value: ``,
   valueType: `text`,

@@ -28,7 +28,7 @@ export const ghostManikin: IManikin = {
   manikinIndex: 10007,
   memories: [ghostMariaDBRootPassword],
   mites: [ghostLdifMite, ghostServiceMite, ghostNetworkMite],
-  name: `Ghost`,
+  manikinName: `Ghost`,
   ports: [],
   subfolders: [`mariadb`]
 }

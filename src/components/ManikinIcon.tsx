@@ -13,7 +13,7 @@ import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 export const ManikinIcon: React.FC<IManikin> = (manikin: IManikin): React.ReactElement => {
   return (
     <TableCell className='ManikinIcon'>
-      <img src={manikin.manikinIcon} alt={`${manikin.name} Icon`} height='15' width='15' />
+      <img src={manikin.manikinIcon} alt={`${manikin.manikinName} Icon`} height='15' width='15' />
     </TableCell>
   )
 }

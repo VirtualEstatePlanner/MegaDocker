@@ -26,7 +26,7 @@ export const heimdallManikin: IManikin = {
   manikinIndex: 10010,
   memories: [],
   mites: [heimdallLdifMite, heimdallServiceMite, heimdallNetworkMite],
-  name: `Heimdall`,
+  manikinName: `Heimdall`,
   ports: [],
   subfolders: [`log`, `nginx`, `php`, `www`]
 }

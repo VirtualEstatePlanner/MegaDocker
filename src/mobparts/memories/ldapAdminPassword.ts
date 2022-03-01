@@ -14,7 +14,7 @@ export const ldapAdminPassword: IMemory = {
   memoryMarker: `[[LDAPADMINPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `LDAP Admin Password`,
+  memoryName: `LDAP Admin Password`,
   tooltip: `The LDAP admin user's password`,
   value: ``,
   valueType: `password`,

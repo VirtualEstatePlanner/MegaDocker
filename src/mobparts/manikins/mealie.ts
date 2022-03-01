@@ -25,7 +25,7 @@ export const mealieManikin: IManikin = {
   manikinIndex: 10014,
   memories: [],
   mites: [mealieLdifMite, mealieServiceMite],
-  name: `Mealie`,
+  manikinName: `Mealie`,
   ports: [],
   subfolders: []
 }

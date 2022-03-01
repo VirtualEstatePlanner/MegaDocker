@@ -14,7 +14,7 @@ export const kanboardMariaDBUser: IMemory = {
   memoryMarker: `[[KANBOARDMARIADBUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,
-  name: `Kanboard MariaDB User`,
+  memoryName: `Kanboard MariaDB User`,
   tooltip: `The Kanboard MariaDB user`,
   value: ``,
   valueType: `text`,

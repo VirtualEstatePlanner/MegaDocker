@@ -32,7 +32,7 @@ export const gitlabManikin: IManikin = {
   manikinIndex: 10008,
   memories: [gitlabPostgresPassword, gitlabPostgresUser, gitlabRootEmail, gitlabRootPassword],
   mites: [gitlabLdifMite, gitlabServiceMite, gitlabNetworkMite],
-  name: `GitLab`,
+  manikinName: `GitLab`,
   ports: [],
   subfolders: [`config`, `data`, `logs`, `postgresql`, `redis`]
 }

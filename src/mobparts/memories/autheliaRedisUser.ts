@@ -14,7 +14,7 @@ export const autheliaRedisUser: IMemory = {
   memoryMarker: `[[AUTHELIAREDISUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,
-  name: `Authelia Redis User`,
+  memoryName: `Authelia Redis User`,
   tooltip: `The Authelia Redis user`,
   value: ``,
   valueType: `text`,

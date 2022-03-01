@@ -14,7 +14,7 @@ export const n8nPassword: IMemory = {
   memoryMarker: `[[N8NPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `n8n Password`,
+  memoryName: `n8n Password`,
   tooltip: `The password for the n8n admin user`,
   value: ``,
   valueType: `password`,

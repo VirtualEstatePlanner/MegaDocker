@@ -28,7 +28,7 @@ export const ledgerManikin: IManikin = {
   manikinIndex: 10013,
   memories: [ledgerPostgresPassword, ledgerPostgresUser],
   mites: [ledgerLdifMite, ledgerServiceMite, ledgerNetworkMite],
-  name: `Ledger`,
+  manikinName: `Ledger`,
   ports: [],
   subfolders: [`pgdata`]
 }

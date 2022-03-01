@@ -14,7 +14,7 @@ import { IMemory } from '../../interfaces/objectInterfaces/IMemory';
 export const testManikin: Function = (manikinToTest: IManikin, memories?: IMemory[]) => {
   describe('tests a manikin for validity', () => {
     it(`has all properties defined`, () => {
-    expect(manikinToTest.name).toBeDefined();
+    expect(manikinToTest.manikinName).toBeDefined();
     expect(manikinToTest.manikinIcon).toBeDefined();
     expect(manikinToTest.description).toBeDefined();
     expect(manikinToTest.description.length).toBeGreaterThan(0);

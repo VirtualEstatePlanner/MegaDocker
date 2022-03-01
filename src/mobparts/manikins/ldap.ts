@@ -49,7 +49,7 @@ export const ldapManikin: IManikin = {
     ldapOrganisation
   ],
   mites: [ldapLdifMite, autheliaDotConfMite, autheliaRedisDotConfMite, autheliaRedisDotConfMite, autheliaRedisUsersDotAclMite, ldapServiceMite, ldapNetworkMite, ldapBootstrapMegaDockerDotLdifMite],
-  name: `LDAP`,
+  manikinName: `LDAP`,
   ports: [],
   subfolders: [
     `authelia-conf`,

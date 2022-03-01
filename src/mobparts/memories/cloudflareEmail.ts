@@ -14,7 +14,7 @@ export const cloudflareEmail: IMemory = {
   memoryMarker: `[[CLOUDFLAREEMAIL]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,
-  name: `CloudFlare Email Address`,
+  memoryName: `CloudFlare Email Address`,
   tooltip: `The email address of your CloudFlare account`,
   value: ``,
   valueType: `email`,

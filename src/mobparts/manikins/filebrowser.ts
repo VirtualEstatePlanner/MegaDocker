@@ -26,7 +26,7 @@ export const filebrowserManikin: IManikin = {
   manikinIndex: 10006,
   memories: [],
   mites: [filebrowserLdifMite, filebrowserServiceMite, filebrowserDatabaseDotDbMite],
-  name: `FileBrowser`,
+  manikinName: `FileBrowser`,
   ports: [],
   subfolders: [`data`]
 }

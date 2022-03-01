@@ -29,7 +29,7 @@ export const nextcloudManikin: IManikin = {
   manikinIndex: 10018,
   memories: [nextcloudMariaDBPassword, nextcloudMariaDBRootPassword, nextcloudMariaDBUser],
   mites: [nextcloudLdifMite, nextcloudServiceMite, nextcloudNetworkMite],
-  name: `Nextcloud`,
+  manikinName: `Nextcloud`,
   ports: [],
   subfolders: [`application`, `mariadb`]
 }

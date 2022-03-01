@@ -28,7 +28,7 @@ export const vsCodeManikin: IManikin = {
   manikinIndex: 10031,
   memories: [vsCodePassword],
   mites: [vscodeLdifMite, vsCodeServiceMite, vsCodeNetworkMite, vsCodeIndexDotHtmlMite],
-  name: `VS Code`,
+  manikinName: `VS Code`,
   ports: [],
   subfolders: [`project`, `pages`]
 }

@@ -26,7 +26,7 @@ export const grocyManikin: IManikin = {
   manikinIndex: 10009,
   memories: [],
   mites: [grocyLdifMite, grocyServiceMite, grocyNetworkMite],
-  name: `Grocy`,
+  manikinName: `Grocy`,
   ports: [],
   subfolders: [`app`, `barcodebuddy`]
 }

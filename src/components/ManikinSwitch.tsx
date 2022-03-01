@@ -24,9 +24,9 @@ export const ManikinSwitch: React.FC<IManikin> = (manikin: IManikin): React.Reac
 
   return (
     <>
-      <TableCell key={`${manikin.name}ToggleCell`}>
+      <TableCell key={`${manikin.manikinName}ToggleCell`}>
         <Switch
-          key={`${manikin.name}Toggle`}
+          key={`${manikin.manikinName}Toggle`}
           checked={manikin.isSelected}
           disabled={manikin.isCore ? true : false}
           onClick={() =>

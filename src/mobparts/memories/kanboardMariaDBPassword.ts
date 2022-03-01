@@ -14,7 +14,7 @@ export const kanboardMariaDBPassword: IMemory = {
   memoryMarker: `[[KANBOARDMARIADBPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `Kanboard MariaDB Password`,
+  memoryName: `Kanboard MariaDB Password`,
   tooltip: `The Kanboard MariaDB user's password`,
   value: ``,
   valueType: `password`,

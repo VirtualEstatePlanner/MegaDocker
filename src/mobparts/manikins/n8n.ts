@@ -27,7 +27,7 @@ export const n8nManikin: IManikin = {
   manikinIndex: 10017,
   memories: [n8nUser, n8nPassword],
   mites: [n8nLdifMite, n8nServiceMite, n8nNetworkMite],
-  name: `n8n`,
+  manikinName: `n8n`,
   ports: [],
   subfolders: [`data`, `settings`]
 }

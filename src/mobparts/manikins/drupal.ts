@@ -29,7 +29,7 @@ export const drupalManikin: IManikin = {
   manikinIndex: 10002,
   memories: [drupalPostgresUser, drupalPostgresPassword],
   mites: [drupalLdifMite, drupalServiceMite, drupalNetworkMite, ldapNetworkMite],
-  name: `Drupal`,
+  manikinName: `Drupal`,
   ports: [],
   subfolders: [`modules`, `profiles`, `themes`, `sites`, `database`]
 }

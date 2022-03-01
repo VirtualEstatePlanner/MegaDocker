@@ -14,10 +14,10 @@ import { IManikin } from '../interfaces/objectInterfaces/IManikin'
 
 export const ManikinRow: React.FC<IManikin> = (manikin: IManikin): React.ReactElement => {
   return (
-    <Tooltip key={`${manikin.name}Row`} title={manikin.description}>
+    <Tooltip key={`${manikin.manikinName}Row`} title={manikin.description}>
       <TableRow className={manikin.isCore ? 'CoreManikinRow' : 'ManikinRow'} hover={manikin.isCore ? false : true}>
-        <TableCell size='small' key={`${manikin.name}NameCell`}>
-          {manikin.name}
+        <TableCell size='small' key={`${manikin.manikinName}NameCell`}>
+          {manikin.manikinName}
         </TableCell>
         {ManikinIcon(manikin)}
         {ManikinSwitch(manikin)}

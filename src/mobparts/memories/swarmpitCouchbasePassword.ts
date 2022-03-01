@@ -14,7 +14,7 @@ export const swarmpitCouchbasePassword: IMemory = {
   memoryMarker: `[[SWARMPITCOUCHBASEPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `Swarmpit Couchbase Password`,
+  memoryName: `Swarmpit Couchbase Password`,
   tooltip: `The Swarmpit Couchbase user's password`,
   value: ``,
   valueType: `password`,

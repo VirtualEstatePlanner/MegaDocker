@@ -18,7 +18,7 @@ export const testMemory: Function = (memoryToTest: IMemory) => {
       expect(memoryToTest.memoryIndex).toBeLessThanOrEqual(29999)
     })
     it('has a name', () => {
-      expect(memoryToTest.name).toBeDefined()
+      expect(memoryToTest.memoryName).toBeDefined()
     })
     it('has a valid IMemoryType', () => {
       expect(memoryToTest.memoryType).toBeDefined()

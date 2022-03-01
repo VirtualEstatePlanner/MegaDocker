@@ -14,7 +14,7 @@ export const nextcloudMariaDBUser: IMemory = {
   memoryMarker: `[[NEXTCLOUDMARIADBUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,
-  name: `Nextcloud MariaDB User`,
+  memoryName: `Nextcloud MariaDB User`,
   tooltip: `The Nextcloud MariDB user.`,
   value: ``,
   valueType: `text`,

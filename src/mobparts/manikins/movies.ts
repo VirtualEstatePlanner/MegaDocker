@@ -48,7 +48,7 @@ export const moviesManikin: IManikin = {
     tvNetworkMite,
     plexNetworkMite
   ],
-  name: `Movies`,
+  manikinName: `Movies`,
   ports: [],
   subfolders: [`content`, `movies-config`, `newsgroups-config`, `newsgroup-indexer-config`, `plex-config`, `requests-config`, `torrent-config`, `torrent-indexer-config`]
 }

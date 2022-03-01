@@ -27,7 +27,7 @@ export const nginxManikin: IManikin = {
   manikinIndex: 10019,
   memories: [],
   mites: [nginxLdifMite, nginxServiceMite, nginxNetworkMite, nginxDefaultIndexHtmlMite],
-  name: `Nginx`,
+  manikinName: `Nginx`,
   ports: [],
   subfolders: [`pages`, `log`]
 }

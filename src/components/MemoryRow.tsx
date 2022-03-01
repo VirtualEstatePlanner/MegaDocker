@@ -23,7 +23,7 @@ export const MemoryRow: React.FC<IMemory> = (
     <Tooltip title={memory.tooltip} key={memory.memoryIndex}>
       <TableRow hover>
         <TableCell padding='checkbox' variant='body' size='small'>
-          {memory.name}
+          {memory.memoryName}
         </TableCell>
         <TableCell variant='body' size='small'>
           <TextField
@@ -32,7 +32,7 @@ export const MemoryRow: React.FC<IMemory> = (
             required={true}
             value={memory.value}
             type={memory.valueType}
-            placeholder={`Please enter your ${memory.name} here`}
+            placeholder={`Please enter your ${memory.memoryName} here`}
             autoComplete={memory.shouldAutocomplete.toString()}
             onChange={handleChangeFunction}
           />

@@ -20,6 +20,6 @@ export const minimizeManikin: Function = (manikin: IManikin): IMiniManikin => {
     isSelected: manikin.isSelected,
     manikinIndex: manikin.manikinIndex,
     miniMemories: manikin.memories.map((memory: IMemory): IMiniMemory => minimizeMemory(memory)),
-    name: manikin.name
+    manikinName: manikin.manikinName
   }
 }

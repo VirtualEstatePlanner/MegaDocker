@@ -15,7 +15,7 @@ export const luaDNSAPIToken: IMemory = {
   memoryMarker: `[[LUADNSAPITOKEN]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `LuaDNS API Token`,
+  memoryName: `LuaDNS API Token`,
   tooltip: `A LuaDNS API token with whatever the appropriate privileges are for LuaDNS (this field temporarily auto-validates as true with at least one character)`,
   value: ``,
   valueType: `password`,

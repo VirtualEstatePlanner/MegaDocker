@@ -50,7 +50,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
 
   const fullyValidated: boolean = state.memories.every((memory) => memory.isReady)
 
-  const sortedMemories: IMemory[] = getMemories(workingManikins).sort((a: IMemory, b: IMemory) => a.name.localeCompare(b.name))
+  const sortedMemories: IMemory[] = getMemories(workingManikins).sort((a: IMemory, b: IMemory) => a.memoryName.localeCompare(b.memoryName))
 
   return (
     <div style={{ width: '100%' }}>

@@ -27,7 +27,7 @@ export const piholeManikin: IManikin = {
   manikinIndex: 10022,
   memories: [piholePassword],
   mites: [piholeLdifMite, piholeServiceMite, piholeNetworkMite],
-  name: `Pihole`,
+  manikinName: `Pihole`,
   ports: [],
   subfolders: [`etc-pihole`, `etc-dnsmasq`]
 }

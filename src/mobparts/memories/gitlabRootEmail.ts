@@ -14,7 +14,7 @@ export const gitlabRootEmail: IMemory = {
   memoryMarker: `[[GITLABROOTEMAIL]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,
-  name: `GitLab Root Email Address`,
+  memoryName: `GitLab Root Email Address`,
   tooltip: `The GitLab root user's email address`,
   value: ``,
   valueType: `email`,

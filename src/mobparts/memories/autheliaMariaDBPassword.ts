@@ -14,7 +14,7 @@ export const autheliaMariaDBPassword: IMemory = {
   memoryMarker: `[[AUTHELIAMARIADBPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `Authelia MariaDB Password`,
+  memoryName: `Authelia MariaDB Password`,
   tooltip: `The password for the Authelia MariaDB user`,
   value: ``,
   valueType: `password`,

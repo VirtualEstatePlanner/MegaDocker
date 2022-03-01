@@ -26,7 +26,7 @@ export const visualizerManikin: IManikin = {
   manikinIndex: 10030,
   memories: [],
   mites: [visualizerLdifMite, visualizerServiceMite, visualizerNetworkMite],
-  name: `Visualizer`,
+  manikinName: `Visualizer`,
   ports: [],
   subfolders: []
 }

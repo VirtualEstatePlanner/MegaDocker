@@ -14,7 +14,7 @@ export const opensourcePOSMariaDBPassword: IMemory = {
   memoryMarker: `[[OPENSOURCEPOSMARIADBPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `osPOS MariaDB Password`,
+  memoryName: `osPOS MariaDB Password`,
   tooltip: `The osPOS MariaDB user's password`,
   value: ``,
   valueType: `password`,

@@ -25,7 +25,7 @@ export const duplicatiManikin: IManikin = {
   manikinIndex: 10003,
   memories: [],
   mites: [duplicatiLdifMite, duplicatiServiceMite],
-  name: `Duplicati`,
+  manikinName: `Duplicati`,
   ports: [],
   subfolders: [`data`, `Duplicati`]
 }

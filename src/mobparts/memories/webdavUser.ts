@@ -14,7 +14,7 @@ export const webdavUser: IMemory = {
   memoryMarker: `[[WEBDAVUSER]]`,
   memoryType: `NormalMemory`,
   shouldAutocomplete: true,
-  name: `WebDAV User`,
+  memoryName: `WebDAV User`,
   tooltip: `The WebDAV user`,
   value: ``,
   valueType: `text`,

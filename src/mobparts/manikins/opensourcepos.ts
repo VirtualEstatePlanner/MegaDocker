@@ -29,7 +29,7 @@ export const opensourceposManikin: IManikin = {
   manikinIndex: 10020,
   memories: [opensourcePOSMariaDBPassword, opensourcePOSMariaDBUser, opensourcePOSMariaDBRootPassword],
   mites: [opensourceposLdifMite, opensourcePOSServiceMite, opensourcePOSNetworkMite],
-  name: `osPOS`,
+  manikinName: `osPOS`,
   ports: [],
   subfolders: [`mariadb`, `opensourcepos`]
 }

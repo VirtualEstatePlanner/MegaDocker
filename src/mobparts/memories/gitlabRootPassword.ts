@@ -14,7 +14,7 @@ export const gitlabRootPassword: IMemory = {
   memoryMarker: `[[GITLABROOTPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `Gitlab Root Password`,
+  memoryName: `Gitlab Root Password`,
   tooltip: `The GitLab root user's password`,
   value: ``,
   valueType: `password`,

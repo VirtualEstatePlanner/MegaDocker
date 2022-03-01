@@ -28,7 +28,7 @@ export const styleguidistManikin: IManikin = {
   manikinIcon: styleguidistIcon,
   manikinIndex: 10025,
   memories: [],
-  name: `Styleguidist`,
+  manikinName: `Styleguidist`,
   mites: [
     styleguidistLdifMite,
     styleguidistServiceMite,

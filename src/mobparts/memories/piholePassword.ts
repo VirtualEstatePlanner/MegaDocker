@@ -14,7 +14,7 @@ export const piholePassword: IMemory = {
   memoryMarker: `[[PIHOLEPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `Pihole Password`,
+  memoryName: `Pihole Password`,
   tooltip: `The Pihole admin user's password`,
   value: ``,
   valueType: `password`,

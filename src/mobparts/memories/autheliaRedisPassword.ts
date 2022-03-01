@@ -14,7 +14,7 @@ export const autheliaRedisPassword: IMemory = {
   memoryMarker: `[[AUTHELIAREDISPASSWORD]]`,
   memoryType: `SecretMemory`,
   shouldAutocomplete: false,
-  name: `Authelia Redis Password`,
+  memoryName: `Authelia Redis Password`,
   tooltip: `The password for the Authelia Redis user`,
   value: ``,
   valueType: `password`,
