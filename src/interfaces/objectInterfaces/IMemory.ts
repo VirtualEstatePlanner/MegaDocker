@@ -27,8 +27,8 @@ export interface IMemory {
   isReady: boolean
   memoryIndex: number
   memoryMarker: IMemoryMarker
+  memoryName: string
   memoryType: IMemoryType
-  name: string
   shouldAutocomplete: boolean
   tooltip: string
   validator: Function
