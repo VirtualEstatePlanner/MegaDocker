@@ -11,12 +11,14 @@ import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState
 import { IMite } from '../interfaces/objectInterfaces/IMite'
 import { workingManikins } from './workingManikins'
 import { IManikin } from '../interfaces/objectInterfaces/IManikin'
+import { currentMegaDockerVersion } from './currentMegaDockerVersion'
 
 const coreManikins: IManikin[] = workingManikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? true : false))
 const otherManikins: IManikin[] = workingManikins.filter((eachManikin: IManikin) => (eachManikin.isCore ? false : true))
 const initialMobMites: IMite[] = coreManikins.flatMap((eachManikin) => eachManikin.mites.flatMap((eachMite) => eachMite))
 
 export const initialMegaDockerState: IMegaDockerState = {
+  MEGADockerVersion: currentMegaDockerVersion,
   theme: OrbThemeLight,
   manikinTable: [...coreManikins, ...otherManikins],
   selectedManikins: coreManikins,
@@ -25,5 +27,6 @@ export const initialMegaDockerState: IMegaDockerState = {
   mobDServiceMites: initialMobMites.filter((eachMite) => eachMite.type === `DockerSwarmService`),
   mobDNetworkMites: initialMobMites.filter((eachMite) => eachMite.type === `DockerSwarmNetwork`),
   mobCustomMites: [initialMobMites.filter((eachMite) => eachMite.type === `Custom`)],
-  ymlOutput: ``
+  ymlOutput: ``,
+  loadedFile: null
 }

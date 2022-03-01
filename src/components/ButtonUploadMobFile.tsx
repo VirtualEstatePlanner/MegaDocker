@@ -12,8 +12,11 @@ import { MegaContext } from './MegaContext'
 import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
 import { runningInTauri } from '../functions/utility/runningInTauri'
+import { loadDotMobFile } from '../functions/utility/loadDotMobFile'
+import { IMob } from '../interfaces/objectInterfaces/IMob'
 
 export const ButtonUploadMobFile: React.FC = (): React.ReactElement => {
+  const inputFileRef = React.useRef<HTMLInputElement>(null)
   const {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     state,
@@ -23,17 +26,39 @@ export const ButtonUploadMobFile: React.FC = (): React.ReactElement => {
     dispatch: React.Dispatch<IMegaDockerAction>
   } = React.useContext(MegaContext)
 
-  const uploadButtonClicked = (): void => {
-    if (runningInTauri()) {
-      dispatch({ type: `UPLOAD_MOB_FILE_TAURI` })
-    } else {
-      dispatch({ type: `UPLOAD_MOB_FILE_BROWSER` })
+  const uploadButtonClicked = () => {
+    if (inputFileRef.current === null) return
+    inputFileRef.current.click()
+  }
+
+  const handleChangeFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (inputFileRef.current === null) return
+    if (inputFileRef.current.files === null) return
+    const fileReader = new FileReader()
+    fileReader.readAsText(inputFileRef.current.files[0])
+    fileReader.onload = handleLoadFile.bind(null, fileReader)
+  }
+
+  const handleLoadFile = (fileReader: FileReader) => {
+    if (fileReader.result) {
+      if (typeof fileReader.result == `string`) {
+        const mobJSON: IMob = JSON.parse(fileReader.result) as IMob
+        if (runningInTauri()) {
+          dispatch({ type: `UPLOAD_MOB_FILE_TAURI`, payload: loadDotMobFile(mobJSON) })
+        } else {
+          dispatch({ type: `UPLOAD_MOB_FILE_BROWSER`, payload: loadDotMobFile(mobJSON) })
+        }
+      }
     }
+    return fileReader.result
   }
 
   return (
-    <Button variant='contained' onClick={uploadButtonClicked}>
-      Load .mob file
-    </Button>
+    <>
+      <Button variant='contained' onClick={uploadButtonClicked}>
+        Load .mob file
+      </Button>
+      <input type='file' accept='.mob' hidden={true} ref={inputFileRef} onChange={handleChangeFile} />
+    </>
   )
 }

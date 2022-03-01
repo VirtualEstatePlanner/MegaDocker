@@ -15,6 +15,7 @@ import { getManikins } from '../../../functions/reducers/getManikins'
 import { getMemories } from '../../../functions/reducers/getMemories'
 import { getMites } from '../../../functions/reducers/getMites'
 import { megaReducer } from '../../../functions/reducers/megaReducer'
+import { currentMegaDockerVersion } from '../../../globals/currentMegaDockerVersion'
 import { workingManikins } from '../../../globals/workingManikins'
 import { IMegaDockerState } from '../../../interfaces/stateManagement/IMegaDockerState'
 
@@ -41,6 +42,7 @@ const mobCustomMites = getCustomMites(allMobMites)
 const ymlOutput = `testingState`
 
 const testingState: IMegaDockerState = {
+  MEGADockerVersion: currentMegaDockerVersion,
   theme: OrbThemeLight,
   manikinTable: workingManikins,
   selectedManikins: selectedManikins,
@@ -49,7 +51,8 @@ const testingState: IMegaDockerState = {
   mobDServiceMites: mobDServiceMites,
   mobDNetworkMites: mobDNetworkMites,
   mobCustomMites: mobCustomMites,
-  ymlOutput: ymlOutput
+  ymlOutput: ymlOutput,
+  loadedFile: null
 }
 
 describe('tests the megaReducer function', () => {
