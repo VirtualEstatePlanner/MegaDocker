@@ -9,19 +9,31 @@
 import { IMiniManikin } from '../../interfaces/objectInterfaces/IMiniManikin'
 import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 import { workingManikins } from '../../globals/workingManikins'
+import { currentMegaDockerVersion } from '../../globals/currentMegaDockerVersion'
+import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
+import { IMiniMemory } from '../../interfaces/objectInterfaces/IMiniMemory'
+import { maximizeMemory } from './maximizeMemory'
 
 /**
  * creates an IManikin from an IMiniManikin
  */
-export const maximizeManikin: Function = (manikin: IMiniManikin): IManikin | void => {
+export const maximizeManikin: Function = (miniManikin: IMiniManikin): IManikin => {
   // search workingManikins for a manikin with a matching manikin.name
   const foundManikin: IManikin | undefined = workingManikins.find((workingManikin: IManikin): boolean => {
-    return workingManikin.name === manikin.name
+    return workingManikin.manikinName === miniManikin.manikinName
   })
-  // compare foundManikin.manikinIndex and manikin.manikinIndex
-  if (foundManikin && foundManikin.manikinIndex === manikin.manikinIndex) {
-    return foundManikin
+  // if foundManikin is undefined throw an error
+  if (foundManikin === undefined) {
+    throw new Error(`${miniManikin.manikinName} does not exist in current version ${currentMegaDockerVersion} of MEGADocker`)
   } else {
-    console.log(`Error: manikin ${manikin.name} is from an older version of MEGADOCKER`)
+    const maximizedManikin: IManikin = {
+      ...foundManikin,
+      manikinName: miniManikin.manikinName,
+      isSelected: miniManikin.isSelected,
+      memories: miniManikin.miniMemories.map((miniMemory: IMiniMemory): IMemory => {
+        return maximizeMemory(miniMemory)
+      })
+    }
+    return maximizedManikin
   }
 }

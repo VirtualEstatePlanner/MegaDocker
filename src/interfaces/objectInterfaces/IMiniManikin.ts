@@ -9,16 +9,15 @@ import { IMiniMemory } from './IMiniMemory'
 //  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
 /**
- * interface for IMiniManikin
- * @isSelected boolean - if true, this IManikin is in the Mob
- * @manikinIndex unique identifier of this IManikin
- * @memories array of IMemories this IManikin needs
- * @name the human-readable name of this manikin
+ * interface for a minimized IManikin to be saved to disk
+ * @isSelected boolean - if true, this IMiniManikin is in the Mob
+ * @manikinIndex unique identifier of this IMiniManikin
+ * @miniMemories IMiniMemory[] this IMiniManikin needs
+ * @name string human-readable name of this IMiniManikin
  */
-
 export interface IMiniManikin {
   isSelected: boolean
   manikinIndex: number
   miniMemories: IMiniMemory[]
-  name: string
+  manikinName: string
 }

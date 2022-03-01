@@ -37,7 +37,7 @@ export interface IManikin {
   manikinIndex: number
   memories: IMemory[]
   mites: IMite[]
-  name: string
+  manikinName: string
   ports: IManikinPort[]
   subfolders: string[]
 }
