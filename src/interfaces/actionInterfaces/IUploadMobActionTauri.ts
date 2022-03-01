@@ -1,5 +1,7 @@
 /** @format */
 
+import { IMob } from '../objectInterfaces/IMob'
+
 //  ILoadMobActionTauri.ts
 //  MEGADocker
 //  interface for a React Context dispatch to load a mob file in Tauri
@@ -8,4 +10,5 @@
 
 export interface IUploadMobActionTauri {
   type: `UPLOAD_MOB_FILE_TAURI`
+  payload: IMob
 }

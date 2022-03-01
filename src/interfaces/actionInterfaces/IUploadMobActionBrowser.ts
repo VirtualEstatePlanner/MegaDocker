@@ -1,5 +1,7 @@
 /** @format */
 
+import { IMob } from '../objectInterfaces/IMob'
+
 //  ILoadMobActionBrowser.ts
 //  MEGADocker
 //  interface for a React Context dispatch to load a mob file in the browser
@@ -8,4 +10,5 @@
 
 export interface IUploadMobActionBrowser {
   type: `UPLOAD_MOB_FILE_BROWSER`
+  payload: IMob
 }
