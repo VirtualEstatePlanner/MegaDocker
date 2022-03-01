@@ -12,7 +12,7 @@ import { MegaContext } from './MegaContext'
 import { IMegaDockerState } from '../interfaces/stateManagement/IMegaDockerState'
 import { IMegaDockerAction } from '../interfaces/stateManagement/IMegaDockerAction'
 import { runningInTauri } from '../functions/utility/runningInTauri'
-import { loadDotMobFile } from '../functions/utility/loadDotMobFile'
+import { uploadDotMobFile } from '../functions/utility/uploadDotMobFile'
 import { IMob } from '../interfaces/objectInterfaces/IMob'
 
 export const ButtonUploadMobFile: React.FC = (): React.ReactElement => {
@@ -44,9 +44,9 @@ export const ButtonUploadMobFile: React.FC = (): React.ReactElement => {
       if (typeof fileReader.result == `string`) {
         const mobJSON: IMob = JSON.parse(fileReader.result) as IMob
         if (runningInTauri()) {
-          dispatch({ type: `UPLOAD_MOB_FILE_TAURI`, payload: loadDotMobFile(mobJSON) })
+          dispatch({ type: `UPLOAD_MOB_FILE_TAURI`, payload: uploadDotMobFile(mobJSON) })
         } else {
-          dispatch({ type: `UPLOAD_MOB_FILE_BROWSER`, payload: loadDotMobFile(mobJSON) })
+          dispatch({ type: `UPLOAD_MOB_FILE_BROWSER`, payload: uploadDotMobFile(mobJSON) })
         }
       }
     }

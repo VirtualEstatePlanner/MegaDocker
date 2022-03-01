@@ -23,7 +23,7 @@ import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerSt
 import { saveMobFileBrowser } from '../utility/saveMobFileBrowser'
 import { saveMobFileTauri } from '../utility/saveMobFileTauri'
 import { currentMegaDockerVersion } from '../../globals/currentMegaDockerVersion'
-import { loadDotMobFile } from '../utility/loadDotMobFile'
+import { uploadDotMobFile } from '../utility/uploadDotMobFile'
 
 /**
  * Updates application state
@@ -57,14 +57,14 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
 
     // saves a mob file in the browser
     case `UPLOAD_MOB_FILE_BROWSER`:
-      newState = loadDotMobFile(action.payload)
+      newState = uploadDotMobFile(action.payload)
       newState.MEGADockerVersion = currentMegaDockerVersion
       newState.loadedFile = action.payload
       return newState
 
     // saves a mob file in Tauri desktop application
     case `UPLOAD_MOB_FILE_TAURI`:
-      newState = loadDotMobFile(action.payload)
+      newState = uploadDotMobFile(action.payload)
       newState.MEGADockerVersion = currentMegaDockerVersion
       newState.loadedFile = null
       // TODO: Implement
