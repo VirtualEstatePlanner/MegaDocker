@@ -12,7 +12,7 @@
 
 Most recent changes:
 
-- updates to use [Tauri](https://github.com/tauri-apps/tauri) rc.1
+- updated to use [Tauri](https://github.com/tauri-apps/tauri) rc.1
 - replaced [Electron](https://github.com/electron/electron) with [Tauri](https://github.com/tauri-apps/tauri)
 - see more in [CHANGELOG](./CHANGELOG.md)
 
