@@ -147,7 +147,9 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): void => {
   const createZipContents = async (): Promise<string> => {
     const makeZip = async (): Promise<string> => {
       try {
-        zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.file(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}.yml`, `${insertMemoryValues(ymlString, zipMemories)}`)
+        zip
+          .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!
+          .file(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}.yml`, `${insertMemoryValues(ymlString, zipMemories)}`)
         customMites.forEach((eachCustomMite) => {
           zip.file(
             `${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}/${eachCustomMite.miteFile.path}/${eachCustomMite.miteFile.name}.${eachCustomMite.miteFile.extension}`,
