@@ -16,7 +16,7 @@ export const vsCodePassword: IMemory = {
   shouldAutocomplete: false,
   memoryName: `VS Code Password`,
   tooltip: `The VS Code user's password`,
-  value: ``,
+  memoryValue: ``,
   valueType: `password`,
   isReady: false,
   validator: passwordValidator

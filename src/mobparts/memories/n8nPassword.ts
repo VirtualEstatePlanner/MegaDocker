@@ -16,7 +16,7 @@ export const n8nPassword: IMemory = {
   shouldAutocomplete: false,
   memoryName: `n8n Password`,
   tooltip: `The password for the n8n admin user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `password`,
   isReady: false,
   validator: passwordValidator

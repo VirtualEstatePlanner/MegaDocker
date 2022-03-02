@@ -15,5 +15,5 @@
 export interface IMiniMemory {
   memoryIndex: number
   memoryName: string
-  value: string
+  memoryValue: string
 }

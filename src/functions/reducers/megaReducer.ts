@@ -20,10 +20,9 @@ import { zipDockerSwarmTauri } from './zipDockerSwarmTauri'
 import { initialMegaDockerState } from '../../globals/initialMegaDockerState'
 import { IMegaDockerAction } from '../../interfaces/stateManagement/IMegaDockerAction'
 import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerState'
-import { saveMobFileBrowser } from '../utility/saveMobFileBrowser'
-import { saveMobFileTauri } from '../utility/saveMobFileTauri'
+import { saveMobFileBrowser } from '../data/saveMobFileBrowser'
+import { saveMobFileTauri } from '../data/saveMobFileTauri'
 import { currentMegaDockerVersion } from '../../globals/currentMegaDockerVersion'
-import { uploadDotMobFile } from '../utility/uploadDotMobFile'
 
 /**
  * Updates application state
@@ -57,14 +56,14 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
 
     // saves a mob file in the browser
     case `UPLOAD_MOB_FILE_BROWSER`:
-      newState = uploadDotMobFile(action.payload)
+      newState = action.payload
       newState.MEGADockerVersion = currentMegaDockerVersion
-      newState.loadedFile = action.payload
+      newState.loadedFile = null
       return newState
 
     // saves a mob file in Tauri desktop application
     case `UPLOAD_MOB_FILE_TAURI`:
-      newState = uploadDotMobFile(action.payload)
+      newState = action.payload
       newState.MEGADockerVersion = currentMegaDockerVersion
       newState.loadedFile = null
       // TODO: Implement
@@ -100,8 +99,8 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
     // changes a memory's value
     case `UPDATE_MEMORY_VALUE`:
       const memoryIndex = newState.memories.indexOf(action.payload.memory)
-      newState.memories[memoryIndex].value = action.payload.value
-      newState.memories[memoryIndex].isReady = newState.memories[memoryIndex].validator(newState.memories[memoryIndex].value)
+      newState.memories[memoryIndex].memoryValue = action.payload.value
+      newState.memories[memoryIndex].isReady = newState.memories[memoryIndex].validator(newState.memories[memoryIndex].memoryValue)
       return newState
 
     // prevents non-standard actions being passed to the reducer

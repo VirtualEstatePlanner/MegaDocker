@@ -16,7 +16,7 @@ export const kibanaUser: IMemory = {
   shouldAutocomplete: true,
   memoryName: `Kibana User`,
   tooltip: `The Kibana user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator

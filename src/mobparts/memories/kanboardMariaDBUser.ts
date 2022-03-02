@@ -16,7 +16,7 @@ export const kanboardMariaDBUser: IMemory = {
   shouldAutocomplete: true,
   memoryName: `Kanboard MariaDB User`,
   tooltip: `The Kanboard MariaDB user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator

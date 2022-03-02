@@ -16,7 +16,7 @@ export const wordpressMariaDBUser: IMemory = {
   shouldAutocomplete: true,
   memoryName: `WordPress MariaDB User`,
   tooltip: `The WordPress MariaDB user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator

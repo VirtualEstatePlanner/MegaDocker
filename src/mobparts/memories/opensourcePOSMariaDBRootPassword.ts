@@ -16,7 +16,7 @@ export const opensourcePOSMariaDBRootPassword: IMemory = {
   shouldAutocomplete: false,
   memoryName: `osPOS MariaDB Root Password`,
   tooltip: `The root password for osPOS's MariaDB instance`,
-  value: ``,
+  memoryValue: ``,
   valueType: `password`,
   isReady: false,
   validator: passwordValidator

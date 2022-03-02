@@ -29,9 +29,9 @@ export interface IMemory {
   memoryMarker: IMemoryMarker
   memoryName: string
   memoryType: IMemoryType
+  memoryValue: string
   shouldAutocomplete: boolean
   tooltip: string
   validator: Function
-  value: string
   valueType: IMemoryValueType
 }

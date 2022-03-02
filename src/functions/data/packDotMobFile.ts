@@ -1,6 +1,6 @@
 /** @format */
 
-//  makeDotMobFile.ts
+//  packDotMobFile.ts
 //  MEGADocker
 //  a function that converts an IMegaDockerState to an IMob
 //  Created by George Georgulas IV on 2/22/22.
@@ -16,7 +16,7 @@ import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 /**
  * creates an IMob of the current IMegaDockerState
  */
-export const makeDotMobFile: Function = (state: IMegaDockerState): IMob => {
+export const packDotMobFile: Function = (state: IMegaDockerState): IMob => {
   const minimizedManikins: IMiniManikin[] = []
 
   state.selectedManikins.forEach((manikin: IManikin): void => {
@@ -25,7 +25,7 @@ export const makeDotMobFile: Function = (state: IMegaDockerState): IMob => {
 
   return {
     mobManikins: minimizedManikins,
-    mobName: `${state.memories[state.memories.indexOf(mobName)].value}`,
+    mobName: `${state.memories[state.memories.indexOf(mobName)].memoryValue}`,
     mobVersion: state.MEGADockerVersion
   }
 }

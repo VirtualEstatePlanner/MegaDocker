@@ -16,7 +16,7 @@ export const luaDNSEmailAddress: IMemory = {
   shouldAutocomplete: false,
   memoryName: `LuaDNS Email Address`,
   tooltip: `Your LuaDNS Email address`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: emailValidator

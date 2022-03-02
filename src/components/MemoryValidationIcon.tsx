@@ -14,6 +14,6 @@ import circleIndicator from '../images/indicators/circleIndicator.png'
 
 export const MemoryValidationIcon: React.FC<IMemory> = (memory: IMemory): React.ReactElement => (
   <TableCell className='MemoryReadyIcon' variant='body' size='small'>
-    <img alt='ready indicator' height='25vh' src={memory.value === `` ? circleIndicator : memory.isReady ? checkmarkIndicator : circleIndicator} />
+    <img alt='ready indicator' height='25vh' src={memory.memoryValue === `` ? circleIndicator : memory.isReady ? checkmarkIndicator : circleIndicator} />
   </TableCell>
 )

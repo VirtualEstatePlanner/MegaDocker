@@ -16,7 +16,7 @@ export const autheliaMariaDBUser: IMemory = {
   shouldAutocomplete: true,
   memoryName: `Authelia MariaDB User`,
   tooltip: `The Authelia MariaDB user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator

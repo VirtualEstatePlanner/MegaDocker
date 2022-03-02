@@ -31,8 +31,8 @@ export const testMemory: Function = (memoryToTest: IMemory) => {
       expect(memoryToTest.tooltip).toBeDefined()
     })
     it('has an empty value', () => {
-      expect(memoryToTest.value).toBeDefined()
-      expect(memoryToTest.value).toHaveLength(0)
+      expect(memoryToTest.memoryValue).toBeDefined()
+      expect(memoryToTest.memoryValue).toHaveLength(0)
     })
   })
 }

@@ -16,7 +16,7 @@ export const n8nUser: IMemory = {
   shouldAutocomplete: true,
   memoryName: `n8n User`,
   tooltip: `The n8n admin user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator

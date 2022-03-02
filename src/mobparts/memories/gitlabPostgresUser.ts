@@ -16,7 +16,7 @@ export const gitlabPostgresUser: IMemory = {
   shouldAutocomplete: true,
   memoryName: `GitLab Postgres User`,
   tooltip: `The GitLab Postgres user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator

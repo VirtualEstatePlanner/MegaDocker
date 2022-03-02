@@ -16,7 +16,7 @@ export const opensourcePOSMariaDBUser: IMemory = {
   shouldAutocomplete: true,
   memoryName: `osPOS MariaDB User`,
   tooltip: `The osPOS MariaDB user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator

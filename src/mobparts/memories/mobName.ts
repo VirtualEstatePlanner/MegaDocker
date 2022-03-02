@@ -16,7 +16,7 @@ export const mobName: IMemory = {
   shouldAutocomplete: true,
   memoryName: `Mob Name`,
   tooltip: `The name of your MEGADocker Mob (only using lowercase letters or numbers)`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: mobnameValidator

@@ -16,6 +16,6 @@ export const minimizeMemory: Function = (memory: IMemory): IMiniMemory => {
   return {
     memoryIndex: memory.memoryIndex,
     memoryName: memory.memoryName,
-    value: memory.value
+    memoryValue: memory.memoryValue
   }
 }

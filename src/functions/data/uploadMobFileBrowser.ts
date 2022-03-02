@@ -6,10 +6,10 @@
 //  Created by George Georgulas IV on 2/22/22.
 //  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
-import { uploadDotMobFile } from './uploadDotMobFile'
+import { unpackDotMobFile } from './unpackDotMobFile'
 import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerState'
 
 /**
  * uploads a JSON file containing a IMegaDockerState to the React application in the browser or in Tauri
  */
-export const uploadMobFileBrowser: Function = (savedFile: string): IMegaDockerState => uploadDotMobFile(savedFile)
+export const uploadMobFileBrowser: Function = (savedFile: string): IMegaDockerState => unpackDotMobFile(savedFile)

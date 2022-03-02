@@ -16,7 +16,7 @@ export const swarmpitCouchbasePassword: IMemory = {
   shouldAutocomplete: false,
   memoryName: `Swarmpit Couchbase Password`,
   tooltip: `The Swarmpit Couchbase user's password`,
-  value: ``,
+  memoryValue: ``,
   valueType: `password`,
   isReady: false,
   validator: passwordValidator

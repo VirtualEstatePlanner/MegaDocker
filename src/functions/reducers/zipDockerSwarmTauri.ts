@@ -41,7 +41,7 @@ export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): void => {
   const mobNameIndex: number = zipManikins[traefikIndex].memories.indexOf(mobName)
   const domainIndex: number = zipManikins[traefikIndex].memories.indexOf(primaryDomain)
   const cloudflareAPITokenIndex: number = zipManikins[traefikIndex].memories.indexOf(cloudflareAPIToken)
-  const cloudflareAPITokenValue: string = zipManikins[traefikIndex].memories[cloudflareAPITokenIndex].value.toString().split(',').join('" "')
+  const cloudflareAPITokenValue: string = zipManikins[traefikIndex].memories[cloudflareAPITokenIndex].memoryValue.toString().split(',').join('" "')
 
   const mites: IMite[] = Array.from(new Set(zipManikins.flatMap((eachManikin: IManikin) => eachManikin.mites.map((eachMite: IMite) => eachMite))))
 
@@ -94,7 +94,7 @@ export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): void => {
    * adds dc values to bootstrap ldif
    */
   const populateLdifDCs: Function = (): string => {
-    const fullDomain: string = zipCompose.manikins[traefikIndex].memories[domainIndex].value
+    const fullDomain: string = zipCompose.manikins[traefikIndex].memories[domainIndex].memoryValue
     const tld: string = fullDomain.split(`.`)[1]
     const domain: string = fullDomain.split(`.`)[0]
     const ldifContents: string = ldapBootstrapMegaDockerDotLdifMite.miteFile.contents + ldifAdditions
@@ -113,7 +113,7 @@ export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): void => {
     let workingYml: string = ymlInput
 
     memories.forEach((eachMemory: IMemory) => {
-      let tempYml = workingYml.split(eachMemory.memoryMarker).join(eachMemory.value)
+      let tempYml = workingYml.split(eachMemory.memoryMarker).join(eachMemory.memoryValue)
       workingYml = tempYml
     })
 
@@ -123,7 +123,7 @@ export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): void => {
 
   customMites.map((eachCustomMite: ICustomMite) => {
     const newFileContents = zipMemories.forEach((eachMemory: IMemory) => {
-      const workingFileContents = eachCustomMite.miteFile.contents.split(eachMemory.memoryMarker).join(eachMemory.value)
+      const workingFileContents = eachCustomMite.miteFile.contents.split(eachMemory.memoryMarker).join(eachMemory.memoryValue)
       eachCustomMite.miteFile.contents = workingFileContents
     })
     return newFileContents
@@ -148,10 +148,10 @@ export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): void => {
   const createZipContents = async (): Promise<string> => {
     const makeZip = async (): Promise<string> => {
       try {
-        zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!.file(`${zipManikins[traefikIndex].memories[mobNameIndex].value}.yml`, `${insertMemoryValues(ymlString, zipMemories)}`)
+        zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.file(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}.yml`, `${insertMemoryValues(ymlString, zipMemories)}`)
         customMites.forEach((eachCustomMite) => {
           zip.file(
-            `${zipManikins[traefikIndex].memories[mobNameIndex].value}/${eachCustomMite.miteFile.path}/${eachCustomMite.miteFile.name}.${eachCustomMite.miteFile.extension}`,
+            `${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}/${eachCustomMite.miteFile.path}/${eachCustomMite.miteFile.name}.${eachCustomMite.miteFile.extension}`,
             `${eachCustomMite.miteFile.contents}`,
             { unixPermissions: `${eachCustomMite.miteFile.permissions}` }
           )
@@ -176,12 +176,12 @@ export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): void => {
     // eslint-disable-next-line array-callback-return
     zipManikins.map((eachManikin: IManikin) => {
       const subs = eachManikin.subfolders
-      zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!.folder(`logs`)!.folder(eachManikin.folder)
+      zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.folder(`logs`)!.folder(eachManikin.folder)
       for (let eachSubfolder in subs) {
-        zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!.folder(eachManikin.folder)!.folder(subs[eachSubfolder])
+        zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.folder(eachManikin.folder)!.folder(subs[eachSubfolder])
       }
 
-      zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!.file(
+      zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.file(
         `launchstack.sh`,
         `#!/bin/sh
 export HOSTUSERID=$(id -u)
@@ -203,22 +203,22 @@ echo "         with user id of $HOSTUSERID"
 echo "    and user group id of $HOSTUSERGID"
 echo "         in the timezone $HOSTTIMEZONE."
 echo
-docker stack deploy -c ${zipManikins[traefikIndex].memories[mobNameIndex].value}.yml ${zipManikins[traefikIndex].memories[mobNameIndex].value}
+docker stack deploy -c ${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}.yml ${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}
 `,
         { unixPermissions: `755` }
       )
 
       // makes stopstack.sh script
-      zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!.file(
+      zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.file(
         `stopstack.sh`,
         `#!/bin/sh
-docker stack rm ${zipManikins[traefikIndex].memories[mobNameIndex].value}
+docker stack rm ${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}
 `,
         { unixPermissions: `755` }
       )
 
       // makes setupdns.sh script
-      zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!.file(
+      zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.file(
         `setupdns.sh`,
         `#!/bin/sh
 ISJQINSTALLED=$(which jq)
@@ -236,32 +236,32 @@ if [ "\${ISJQINSTALLED}" = 'jq not found' ]; then
 fi;
   echo "Setting script variables...";
   echo "Setting domain name...";
-  DOMAIN="${zipManikins[traefikIndex].memories[domainIndex].value}";
+  DOMAIN="${zipManikins[traefikIndex].memories[domainIndex].memoryValue}";
   echo "Setting CNAME target...";
-  CNAMETARGET="megadockerswarm.${zipManikins[traefikIndex].memories[domainIndex].value}";
+  CNAMETARGET="megadockerswarm.${zipManikins[traefikIndex].memories[domainIndex].memoryValue}";
   echo "Setting hostnames...";
   HOSTS=("${cloudflareHosts}")
   echo "Setting Cloudflare API Token...";
   CLOUDFLAREAPITOKEN="${cloudflareAPITokenValue}";
   echo "Getting our external IP address...";
   EXTERNALIPADDRESS=$(curl -s https://api.ipify.org);
-  echo "Setting Zone ID for domain ${zipManikins[traefikIndex].memories[domainIndex].value}...";
-  ZONEIDRESULT=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=${zipManikins[traefikIndex].memories[domainIndex].value}" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type: application/json");
+  echo "Setting Zone ID for domain ${zipManikins[traefikIndex].memories[domainIndex].memoryValue}...";
+  ZONEIDRESULT=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=${zipManikins[traefikIndex].memories[domainIndex].memoryValue}" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type: application/json");
   ZONEIDSUCCEEDED=$(echo "\${ZONEIDRESULT}" | jq | grep "success");
   if [ "\${ZONEIDSUCCEEDED}" = '  "success": true,' ]; then
     ZONEID=$(echo "\${ZONEIDRESULT}" | jq -r | grep "id" | sed 1q | sed 's/^.............//' | sed 's/..$//');
   else
     echo;
-    echo "Error: exiting with status 2 (Couldn't determine Cloudflare Zone for ${zipManikins[traefikIndex].memories[domainIndex].value})";
+    echo "Error: exiting with status 2 (Couldn't determine Cloudflare Zone for ${zipManikins[traefikIndex].memories[domainIndex].memoryValue})";
     echo "Please confirm that this domain is managed by your Cloudflare account.";
-    echo "Please confirm that your Cloudflare API Token has 'Zone: Read' and 'DNS: Edit' privileges for ${zipManikins[traefikIndex].memories[domainIndex].value}.";
+    echo "Please confirm that your Cloudflare API Token has 'Zone: Read' and 'DNS: Edit' privileges for ${zipManikins[traefikIndex].memories[domainIndex].memoryValue}.";
     echo;
     echo "https://dash.cloudflare.com";
     echo;
     exit 2;
   fi;
   echo "Getting Host ID for \${CNAMETARGET} A record...";
-  DOMAINHOSTSRESULT=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records?type=A&name=megadockerswarm.${zipManikins[traefikIndex].memories[domainIndex].value}" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type: application/json");
+  DOMAINHOSTSRESULT=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records?type=A&name=megadockerswarm.${zipManikins[traefikIndex].memories[domainIndex].memoryValue}" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type: application/json");
   DOMAINHOSTSUCCEEDED=$(echo "\${DOMAINHOSTSRESULT}" | jq | grep success);
   if [ "\${DOMAINHOSTSUCCEEDED}" = '  "success": true,' ]; then
     DOMAINHOSTID=$(echo "\${DOMAINHOSTSRESULT}" | jq -r | grep id | sed 1q | sed 's/^.............//' | sed 's/..$//');
@@ -276,21 +276,21 @@ fi;
       fi;
     fi;
     if [ "\${DOMAINHOSTID}" == "" ]; then
-      echo "Creating an A record for megadockerswarm.${zipManikins[traefikIndex].memories[domainIndex].value}";
+      echo "Creating an A record for megadockerswarm.${zipManikins[traefikIndex].memories[domainIndex].memoryValue}";
       CREATEMEGADOCKERSWARMRECORDRESULT=$(curl -s -X POST "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records" -H "Content-Type:application/json" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" --data '{"type":"A","name":"megadockerswarm","content":"'"\${EXTERNALIPADDRESS}"'","ttl":1,"proxied":false}');
       MEGADOCKERSWARMHOSTID=$(echo "\${CREATEMEGADOCKERSWARMRECORDRESULT}" | jq | grep id | sed 1q | sed 's/^..//' | sed 's/..$//');
     fi;
   fi;
   for EACHHOST in \${HOSTS[@]}; do
     DATAFLAG="{\\"type\\":\\"CNAME\\",\\"name\\":\\"\${EACHHOST}\\",\\"content\\":\\"\${CNAMETARGET}\\",\\"ttl\\":1,\\"priority\\":10,\\"proxied\\":false}"
-    HOSTCNAMEEXISTSRESULTS=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records?type=CNAME&name=\${EACHHOST}.${zipManikins[traefikIndex].memories[domainIndex].value}&match=all" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type:application/json");
+    HOSTCNAMEEXISTSRESULTS=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records?type=CNAME&name=\${EACHHOST}.${zipManikins[traefikIndex].memories[domainIndex].memoryValue}&match=all" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type:application/json");
     HOSTCNAMEID=$(echo \${HOSTCNAMEEXISTSRESULTS} | jq | grep id | sed 1q | sed 's/^.............//' | sed 's/..$//');
     if [ "\${HOSTCNAMEID}" != "" ]; then
       HOSTCONTENTRESULTS=$(echo \${HOSTCNAMEEXISTSRESULTS} | jq | grep content | sed 's/^..................//' | sed 's/..$//');
       if [ "\${HOSTCONTENTRESULTS}" = "\${CNAMETARGET}" ]; then
         echo "\${EACHHOST} appears to be configured already.";
       elif [ "\${HOSTCONTENTRESULTS}" != "\${CNAMETARGET}" ]; then
-        echo "Updating \${EACHHOST}.${zipManikins[traefikIndex].memories[domainIndex].value} to point to \${CNAMETARGET}..."
+        echo "Updating \${EACHHOST}.${zipManikins[traefikIndex].memories[domainIndex].memoryValue} to point to \${CNAMETARGET}..."
         UPDATEHOSTRESULT=$(curl -s -X PUT "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records/\${HOSTCNAMEID}" -H "Content-Type:application/json" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" --data \${DATAFLAG});
       fi;
     fi;
@@ -302,7 +302,7 @@ fi;
   echo "Your MEGADocker mob's DNS is probably configured correctly.";
   echo "Run './launchstack.sh' and then visit any of the following addresses:";
   for EACHHOST in \${HOSTS[@]}; do
-    echo "https://$EACHHOST.${zipManikins[traefikIndex].memories[domainIndex].value}";
+    echo "https://$EACHHOST.${zipManikins[traefikIndex].memories[domainIndex].memoryValue}";
   done;
 `,
         { unixPermissions: `755` }
@@ -313,7 +313,7 @@ fi;
   createZipContents()
   makeFoldersAndConvenienceScripts()
 
-  zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].value}`)!.file(`traefik/acme.json`, ``, { unixPermissions: `600` })
+  zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.file(`traefik/acme.json`, ``, { unixPermissions: `600` })
   zip
     .generateAsync({
       compression: `DEFLATE`,
@@ -323,6 +323,6 @@ fi;
     })
     .then(async function (content: Blob) {
       const zipContents: Uint8Array = new Uint8Array(await content.arrayBuffer())
-      await writeBinaryFile({ contents: zipContents, path: `${zipManikins[traefikIndex].memories[mobNameIndex].value}.zip` }, { dir: 8 /* Downloads directory */ })
+      await writeBinaryFile({ contents: zipContents, path: `${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}.zip` }, { dir: 8 /* Downloads directory */ })
     })
 }

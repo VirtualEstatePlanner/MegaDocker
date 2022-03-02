@@ -16,7 +16,7 @@ export const piholePassword: IMemory = {
   shouldAutocomplete: false,
   memoryName: `Pihole Password`,
   tooltip: `The Pihole admin user's password`,
-  value: ``,
+  memoryValue: ``,
   valueType: `password`,
   isReady: false,
   validator: passwordValidator

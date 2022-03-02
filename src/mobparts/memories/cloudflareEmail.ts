@@ -16,7 +16,7 @@ export const cloudflareEmail: IMemory = {
   shouldAutocomplete: true,
   memoryName: `CloudFlare Email Address`,
   tooltip: `The email address of your CloudFlare account`,
-  value: ``,
+  memoryValue: ``,
   valueType: `email`,
   isReady: false,
   validator: emailValidator

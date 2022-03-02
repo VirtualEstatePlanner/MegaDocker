@@ -16,7 +16,7 @@ export const autheliaRedisUser: IMemory = {
   shouldAutocomplete: true,
   memoryName: `Authelia Redis User`,
   tooltip: `The Authelia Redis user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator

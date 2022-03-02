@@ -16,7 +16,7 @@ export const wordpressMariaDBRootPassword: IMemory = {
   shouldAutocomplete: false,
   memoryName: `WordPress MariaDB Root Password`,
   tooltip: `The WordPress root user's password`,
-  value: ``,
+  memoryValue: ``,
   valueType: `password`,
   isReady: false,
   validator: passwordValidator

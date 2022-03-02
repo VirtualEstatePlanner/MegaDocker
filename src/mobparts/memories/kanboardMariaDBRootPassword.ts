@@ -16,7 +16,7 @@ export const kanboardMariaDBRootPassword: IMemory = {
   shouldAutocomplete: false,
   memoryName: `Kanboard MariaDB Root Password`,
   tooltip: `The Kanboard MariaDB root user's password`,
-  value: ``,
+  memoryValue: ``,
   valueType: `password`,
   isReady: false,
   validator: passwordValidator

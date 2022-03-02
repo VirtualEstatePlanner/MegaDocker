@@ -30,7 +30,7 @@ export const MemoryRow: React.FC<IMemory> = (
             fullWidth
             size='small'
             required={true}
-            value={memory.value}
+            value={memory.memoryValue}
             type={memory.valueType}
             placeholder={`Please enter your ${memory.memoryName} here`}
             autoComplete={memory.shouldAutocomplete.toString()}

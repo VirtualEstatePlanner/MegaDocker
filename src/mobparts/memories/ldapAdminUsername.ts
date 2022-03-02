@@ -16,7 +16,7 @@ export const ldapAdminUsername: IMemory = {
   shouldAutocomplete: true,
   memoryName: `LDAP Admin User`,
   tooltip: `The LDAP admin user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator

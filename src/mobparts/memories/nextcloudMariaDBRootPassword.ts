@@ -16,7 +16,7 @@ export const nextcloudMariaDBRootPassword: IMemory = {
   shouldAutocomplete: false,
   memoryName: `Nextcloud MariaDB Root Password`,
   tooltip: `The Nextcloud MariaDB root user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `password`,
   isReady: false,
   validator: passwordValidator

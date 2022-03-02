@@ -16,7 +16,7 @@ export const ledgerPostgresUser: IMemory = {
   shouldAutocomplete: true,
   memoryName: `Ledger Postgres User`,
   tooltip: `The LedgerSMB Postgres user`,
-  value: ``,
+  memoryValue: ``,
   valueType: `text`,
   isReady: false,
   validator: noWhitespaceOrSymbolsValidator

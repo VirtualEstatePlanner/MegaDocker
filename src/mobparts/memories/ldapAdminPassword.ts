@@ -16,7 +16,7 @@ export const ldapAdminPassword: IMemory = {
   shouldAutocomplete: false,
   memoryName: `LDAP Admin Password`,
   tooltip: `The LDAP admin user's password`,
-  value: ``,
+  memoryValue: ``,
   valueType: `password`,
   isReady: false,
   validator: passwordValidator
