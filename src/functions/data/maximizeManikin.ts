@@ -26,13 +26,12 @@ export const maximizeManikin: Function = (miniManikin: IMiniManikin): IManikin =
   if (foundManikin === undefined) {
     throw new Error(`${miniManikin.manikinName} does not exist in current version ${currentMegaDockerVersion} of MEGADocker`)
   } else {
+    const maximizedMemories: IMemory[] = miniManikin.miniMemories.map((miniMemory: IMiniMemory): IMemory => maximizeMemory(miniMemory))
     const maximizedManikin: IManikin = {
       ...foundManikin,
+      isSelected: true,
       manikinName: miniManikin.manikinName,
-      isSelected: miniManikin.isSelected,
-      memories: miniManikin.miniMemories.map((miniMemory: IMiniMemory): IMemory => {
-        return maximizeMemory(miniMemory)
-      })
+      memories: maximizedMemories
     }
     return maximizedManikin
   }

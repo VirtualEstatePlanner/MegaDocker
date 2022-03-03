@@ -1,6 +1,6 @@
 /** @format */
 
-import { IMegaDockerState } from '../stateManagement/IMegaDockerState'
+import { IMob } from '../objectInterfaces/IMob';
 
 //  ILoadMobActionBrowser.ts
 //  MEGADocker
@@ -10,5 +10,5 @@ import { IMegaDockerState } from '../stateManagement/IMegaDockerState'
 
 export interface IUploadMobActionBrowser {
   type: `UPLOAD_MOB_FILE_BROWSER`
-  payload: IMegaDockerState
+  payload: IMob
 }

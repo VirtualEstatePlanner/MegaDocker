@@ -17,7 +17,6 @@ import { minimizeMemory } from './minimizeMemory'
  */
 export const minimizeManikin: Function = (manikin: IManikin): IMiniManikin => {
   return {
-    isSelected: manikin.isSelected,
     manikinIndex: manikin.manikinIndex,
     miniMemories: manikin.memories.map((memory: IMemory): IMiniMemory => minimizeMemory(memory)),
     manikinName: manikin.manikinName

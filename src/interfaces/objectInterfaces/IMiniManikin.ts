@@ -16,7 +16,6 @@ import { IMiniMemory } from './IMiniMemory'
  * @name string human-readable name of this IMiniManikin
  */
 export interface IMiniManikin {
-  isSelected: boolean
   manikinIndex: number
   miniMemories: IMiniMemory[]
   manikinName: string

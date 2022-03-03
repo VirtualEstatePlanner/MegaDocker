@@ -1,6 +1,6 @@
 /** @format */
 
-import { IMegaDockerState } from '../stateManagement/IMegaDockerState'
+import { IMob } from '../objectInterfaces/IMob';
 
 //  ILoadMobActionTauri.ts
 //  MEGADocker
@@ -10,5 +10,5 @@ import { IMegaDockerState } from '../stateManagement/IMegaDockerState'
 
 export interface IUploadMobActionTauri {
   type: `UPLOAD_MOB_FILE_TAURI`
-  payload: IMegaDockerState
+  payload: IMob
 }
