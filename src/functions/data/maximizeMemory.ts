@@ -10,6 +10,7 @@ import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { IMiniMemory } from '../../interfaces/objectInterfaces/IMiniMemory'
 import { workingManikins } from '../../globals/workingManikins'
+//import { currentMegaDockerVersion } from '../../globals/currentMegaDockerVersion'
 
 /**
  * creates an IMemory from an IMiniMemory
@@ -31,22 +32,36 @@ export const maximizeMemory: Function = (miniMemory: IMiniMemory): IMemory => {
     valueType: `text`,
     memoryIndex: 99999
   }
-  // find the manikin that this memory belongs to
-  const manikin: IManikin | undefined = workingManikins.find((workingManikin: IManikin): boolean => workingManikin.manikinIndex === miniMemory.memoryIndex)
-  // if the manikin was found
-  if (manikin) {
-    // find the memory with a memoryName that matches the miniMemory.memoryName
-    const memory: IMemory | undefined = manikin.memories.find((memory: IMemory): boolean => memory.memoryName === miniMemory.memoryName)
-    // if the memory was found
-    if (memory) {
-      // create a new memory with the same memoryName and memoryValue as the miniMemory
-      newMemory = {
-        ...memory,
-        memoryValue: miniMemory.memoryValue,
-        isReady: memory.validator(miniMemory.memoryValue)
-      }
+  let foundMemory: IMemory | undefined = newMemory
+  // find the manikin in workingManikins that has a memory with a matching miniMemory.memoryName
+  const foundManikin: IManikin | undefined = workingManikins.find((workingManikin: IManikin): boolean => {
+    // find the memory from that manikin that has a matching memoryName
+    foundMemory = workingManikin.memories.find((memory: IMemory): boolean => {
+      return memory.memoryName === miniMemory.memoryName
+    })
+    return foundMemory !== undefined
+  })
+  // if foundManikin is undefined throw an error
+  if (foundManikin === undefined) {
+    throw new Error(`Could not find a Manikin with a matching memoryName: ${miniMemory.memoryName}`)
+  } else {
+    // if foundMemory is undefined throw an error
+    if (foundManikin.memories === undefined) {
+      throw new Error(`Could not find a Memory with a matching memoryName: ${miniMemory.memoryName}`)
     } else {
-      throw new Error(`Error: Could not restore memory.  Memory with memoryName ${miniMemory.memoryName} not found`)
+      // populate the memoryValue of newMemory with the miniMemory.memoryValue
+      newMemory = {
+        memoryName: foundMemory.memoryName,
+        memoryType: foundMemory.memoryType,
+        memoryValue: miniMemory.memoryValue,
+        memoryMarker: foundMemory.memoryMarker,
+        isReady: foundMemory.validator(miniMemory.memoryValue),
+        shouldAutocomplete: foundMemory.shouldAutocomplete,
+        tooltip: foundMemory.tooltip,
+        validator: foundMemory.validator,
+        valueType: foundMemory.valueType,
+        memoryIndex: foundMemory.memoryIndex
+      }
     }
   }
   return newMemory

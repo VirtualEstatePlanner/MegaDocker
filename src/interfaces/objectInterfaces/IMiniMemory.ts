@@ -13,7 +13,6 @@
  * @value the variable stored in this IMemory
  */
 export interface IMiniMemory {
-  memoryIndex: number
   memoryName: string
   memoryValue: string
 }

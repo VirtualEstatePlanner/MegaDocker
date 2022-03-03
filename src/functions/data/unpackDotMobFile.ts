@@ -27,13 +27,27 @@ import { maximizeManikin } from './maximizeManikin'
 export const unpackDotMobFile: Function = (savedMob: IMob): IMegaDockerState => {
   const manikinsToUnpack: IManikin[] = savedMob.mobManikins.map((manikin: IMiniManikin) => maximizeManikin(manikin))
   const memoriesToUnpack: IMemory[] = manikinsToUnpack.flatMap((manikin: IManikin) => manikin.memories)
+  const memoriesToPopulate: IMemory[] = initialMegaDockerState.memories
+  const populatedMemories: IMemory[] = memoriesToPopulate.map((memory: IMemory) => {
+    // forEach loop that adds all values from memoriesToUnpack to memoriesToPopulate
+    memoriesToPopulate.forEach((memoryToPopulate: IMemory) => {
+      // find the corresponding memoryName in memoriesToUnpack
+      const memoryToUnpack: IMemory | undefined = memoriesToUnpack.find((memoryToUnpack: IMemory) => memoryToUnpack.memoryName === memory.memoryName)
+      // if the memoryToUnpack exists, populate the memoryToPopulate.memoryValue with the memoryToUnpack.memoryValue
+      if (memoryToUnpack !== undefined) {
+        memoryToPopulate.memoryValue = memoryToUnpack.memoryValue
+      }
+    })
+    return memory
+  })
+
   console.log(memoriesToUnpack)
 
   let newState: IMegaDockerState = { ...initialMegaDockerState }
   // maximize manikins from savedState.selectedManikins
   newState.selectedManikins = manikinsToUnpack
   newState.allMobMites = getMites(manikinsToUnpack)
-  newState.memories = memoriesToUnpack
+  newState.memories = populatedMemories
   newState.memories[newState.memories.indexOf(mobName)].memoryValue = savedMob.mobName
   newState.mobDServiceMites = getDServiceMites(newState.allMobMites)
   newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites)

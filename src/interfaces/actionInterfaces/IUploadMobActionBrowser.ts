@@ -1,6 +1,6 @@
 /** @format */
 
-import { IMob } from '../objectInterfaces/IMob';
+import { IMob } from '../objectInterfaces/IMob'
 
 //  ILoadMobActionBrowser.ts
 //  MEGADocker

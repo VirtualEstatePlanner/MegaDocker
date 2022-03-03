@@ -14,7 +14,6 @@ import { IMiniMemory } from '../../interfaces/objectInterfaces/IMiniMemory'
  */
 export const minimizeMemory: Function = (memory: IMemory): IMiniMemory => {
   return {
-    memoryIndex: memory.memoryIndex,
     memoryName: memory.memoryName,
     memoryValue: memory.memoryValue
   }
