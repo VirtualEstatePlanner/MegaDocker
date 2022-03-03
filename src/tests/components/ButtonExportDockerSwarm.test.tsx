@@ -10,7 +10,7 @@
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React, { Component } from 'react'
-import { ButtonExportZipFile } from '../../components/ButtonExportZipFile'
+import { ButtonExportDockerSwarm } from '../../components/ButtonExportDockerSwarm'
 import { render } from '@testing-library/react'
 
 /*
@@ -30,7 +30,7 @@ jest.mock('@mui/material/colors/grey', () => ({
 it('renders the ButtonExportDockerSwarm component', () => {
   render(
     <div>
-      <ButtonExportZipFile />
+      <ButtonExportDockerSwarm />
     </div>
   )
 })

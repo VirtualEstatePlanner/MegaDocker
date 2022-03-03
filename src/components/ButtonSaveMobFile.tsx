@@ -32,7 +32,7 @@ export const ButtonSaveMobFile: React.FC = (): React.ReactElement => {
 
   return (
     <Button variant='contained' onClick={saveButtonClicked}>
-      Save .mob file
+      Save Mob
     </Button>
   )
 }

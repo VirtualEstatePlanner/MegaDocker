@@ -55,7 +55,7 @@ export const ButtonUploadMobFile: React.FC = (): React.ReactElement => {
   return (
     <>
       <Button variant='contained' onClick={uploadButtonClicked}>
-        Load .mob file
+        Load Mob
       </Button>
       <input type='file' accept='.mob' hidden={true} ref={inputFileRef} onChange={handleChangeFile} />
     </>

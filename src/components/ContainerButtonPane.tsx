@@ -8,15 +8,17 @@
 
 import * as React from 'react'
 import { ButtonGetDocker } from './ButtonGetDocker'
-import { ButtonSaveMobFile } from './ButtonSaveMobFile'
-import { ButtonExportZipFile } from './ButtonExportZipFile'
-import { ButtonUploadMobFile } from './ButtonUploadMobFile'
+import { DataButtons } from './DataButtons'
+//TODO: once Kubernetes export is working, replace with ExportButtons component
+import { ButtonExportDockerSwarm } from './ButtonExportDockerSwarm'
+//import { ExportButtons } from './ExportButtons'
+//<ExportButtons />
 
 export const ContainerButtonPane: React.FC = (): React.ReactElement => (
   <div className='ButtonPane'>
     <ButtonGetDocker />
-    <ButtonUploadMobFile />
-    <ButtonSaveMobFile />
-    <ButtonExportZipFile />
+    <DataButtons />
+    <ButtonExportDockerSwarm />
+
   </div>
 )
