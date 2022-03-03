@@ -19,6 +19,5 @@ export const ContainerButtonPane: React.FC = (): React.ReactElement => (
     <ButtonGetDocker />
     <DataButtons />
     <ButtonExportDockerSwarm />
-
   </div>
 )
