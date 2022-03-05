@@ -41,6 +41,7 @@ import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobN
 import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobSecretsHeaderSectionString'
 import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
 import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
+import { populateLdifDCs } from './populateLdifDCs'
 
 /**
  * makes .zip file for docker-compose in web browser
@@ -70,17 +71,7 @@ export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void =>
 
   const ldifIndex: number = customMites.indexOf(ldapBootstrapMegaDockerDotLdifMite)
 
-  /**
-   * adds dc values to bootstrap ldif
-   */
-  const populateLdifDCs: Function = (zipManikins: IManikin[]): string => {
-    const fullDomain: string = zipManikins[traefikIndex].memories[domainIndex].memoryValue
-    const tld: string = fullDomain.split(`.`)[1]
-    const domain: string = fullDomain.split(`.`)[0]
-    const ldifContents: string = ldapBootstrapMegaDockerDotLdifMite.miteFile.contents + ldifAdditions
-    return ldifContents.split(`[[LDAPDOMAINASDCS]]`).join(`dc=${domain},dc=${tld}`)
-  }
-  customMites[ldifIndex].miteFile.contents = populateLdifDCs()
+  customMites[ldifIndex].miteFile.contents = populateLdifDCs(zipManikins, ldifAdditions)
 
   customMites.map((eachCustomMite: ICustomMite) => {
     const newFileContents = zipMemories.forEach((eachMemory: IMemory) => {
