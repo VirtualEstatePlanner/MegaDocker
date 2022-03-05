@@ -18,13 +18,17 @@ import { IToggleThemeAction } from '../actionInterfaces/IToggleThemeAction'
 import { IUpdateMemoryValueAction } from '../actionInterfaces/IUpdateMemoryValueAction'
 
 export type IMegaDockerAction =
+  // appearance actions
+  | IToggleThemeAction
+  // core actions
   | IApplicationStartAction
-  | IUploadMobActionBrowser
-  | IUploadMobActionTauri
-  | IOutputDockerSwarmBrowser
-  | IOutputDockerSwarmTauri
-  | ISaveMobActionBrowser
-  | ISaveMobActionTauri
   | IToggleManikinAction
   | IUpdateMemoryValueAction
-  | IToggleThemeAction
+  // browser actions
+  | IUploadMobActionBrowser
+  | IOutputDockerSwarmBrowser
+  | ISaveMobActionBrowser
+  // tauri actions
+  | IUploadMobActionTauri
+  | IOutputDockerSwarmTauri
+  | ISaveMobActionTauri
