@@ -8,12 +8,6 @@
 
 import * as React from 'react'
 import { Theme } from '@mui/material'
-import { getManikins } from './getManikins'
-import { getMemories } from './getMemories'
-import { getMites } from './getMites'
-import { getDServiceMites } from './getDServiceMites'
-import { getDNetworkMites } from './getDNetworkMites'
-import { getCustomMites } from './getCustomMites'
 import { toggleTheme } from './toggleTheme'
 import { zipDockerSwarmBrowser } from './zipDockerSwarmBrowser'
 import { zipDockerSwarmTauri } from './zipDockerSwarmTauri'
@@ -23,6 +17,7 @@ import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerSt
 import { saveMobFileBrowser } from '../data/saveMobFileBrowser'
 import { saveMobFileTauri } from '../data/saveMobFileTauri'
 import { unpackDotMobFile } from '../data/unpackDotMobFile'
+import { buildApplicationState } from './buildApplicationState'
 
 /**
  * Updates application state
@@ -56,11 +51,13 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
 
     // saves a mob file in the browser
     case `UPLOAD_MOB_FILE_BROWSER`:
-      return unpackDotMobFile(action.payload)
+      newState = unpackDotMobFile(action.payload)
+      return newState
 
     // saves a mob file in Tauri desktop application
     case `UPLOAD_MOB_FILE_TAURI`:
-      return unpackDotMobFile(action.payload)
+      newState = unpackDotMobFile(action.payload)
+      return newState
 
     // saves a mob file in the browser
     case `SAVE_MOB_FILE_BROWSER`:
@@ -74,18 +71,15 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
 
     // selects or deselects a manikin
     case `TOGGLE_MANIKIN`:
-      newState.manikinTable[action.payload].isSelected = !state.manikinTable[action.payload].isSelected // reverses the selected boolean in the manikin passed to it
-      newState.selectedManikins = getManikins(newState.manikinTable) // rebuilds selected Manikins array
-      newState.memories = getMemories(newState.selectedManikins) // rebuilds Memories array
-      newState.allMobMites = getMites(newState.selectedManikins) // rebuilds Mites array
-      newState.mobDServiceMites = getDServiceMites(newState.allMobMites) // rebuilds Docker Swarm network Mites array
-      newState.mobDNetworkMites = getDNetworkMites(newState.allMobMites) // rebuilds Docker Swarm service Mites array
-      newState.mobCustomMites = getCustomMites(newState.allMobMites) // rebuilds custom mite file-based Mites array
+      // reverses the selected boolean in the manikin passed to it
+      newState.manikinTable[action.payload].isSelected = !state.manikinTable[action.payload].isSelected
+      // build new application state
+      newState = buildApplicationState(newState.manikinTable, state.theme)
       return newState
 
     // toggles light and dark mode
     case `TOGGLE_THEME`:
-      const newTheme: Theme = toggleTheme(newState.theme) as Theme
+      const newTheme: Theme = toggleTheme(newState.theme)
       newState.theme = newTheme
       return newState
 
