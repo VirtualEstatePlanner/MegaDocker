@@ -25,7 +25,7 @@ export const ButtonExportKubernetesPod: React.FC = (): React.ReactElement => {
 
   // const fullyValidated: boolean = state.memories.every((memory) => memory.isReady)
 
-  const exportButtonClicked = (): void => {
+  const exportButtonClicked: VoidFunction = (): void => {
     if (runningInTauri()) {
       dispatch({ type: `DOCKER_SWARM_OUTPUT_TAURI` })
     } else {

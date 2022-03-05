@@ -12,7 +12,7 @@ import { openURL } from '../functions/utility/openURL'
 
 const dockerURL: URL = new URL(`https://docs.docker.com/get-docker/`)
 
-const getDockerButtonClicked = (): void => {
+const getDockerButtonClicked: VoidFunction = (): void => {
   openURL(dockerURL)
 }
 

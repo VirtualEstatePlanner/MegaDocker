@@ -22,7 +22,7 @@ export const ButtonSaveMobFile: React.FC = (): React.ReactElement => {
     dispatch: React.Dispatch<IMegaDockerAction>
   } = React.useContext(MegaContext)
 
-  const saveButtonClicked = (): void => {
+  const saveButtonClicked: VoidFunction = (): void => {
     if (runningInTauri()) {
       dispatch({ type: `SAVE_MOB_FILE_TAURI`, payload: state })
     } else {
