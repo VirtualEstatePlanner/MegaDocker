@@ -40,6 +40,7 @@ import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobN
 import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobSecretsHeaderSectionString'
 import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
 import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
+import { getCloudflareHosts } from '../utility/getCloudflareHosts'
 
 /**
  * makes .zip file for docker-compose in Tauri desktop application
@@ -62,13 +63,6 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
 
   const traefikMites: ITraefikedServiceMite[] = mites.filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`) as ITraefikedServiceMite[]
 
-  const cloudflareHosts: string = traefikMites
-    .map((eachTraefikedMite: ITraefikedServiceMite) => eachTraefikedMite.webInterfaceHostnames)
-    .flat()
-    .join()
-    .split(',')
-    .join('" "')
-
   const customs: IMite[] = mites.filter((eachMite: IMite) => eachMite.type === `Custom`)
 
   const customMites: ICustomMite[] = customs.map((mite: IMite) => mite as ICustomMite)
@@ -82,8 +76,8 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
   /**
    * adds dc values to bootstrap ldif
    */
-  const populateLdifDCs: Function = (): string => {
-    const fullDomain: string = zipCompose.manikins[traefikIndex].memories[domainIndex].memoryValue
+  const populateLdifDCs: Function = (zipManikins: IManikin[]): string => {
+    const fullDomain: string = zipManikins[traefikIndex].memories[domainIndex].memoryValue
     const tld: string = fullDomain.split(`.`)[1]
     const domain: string = fullDomain.split(`.`)[0]
     const ldifContents: string = ldapBootstrapMegaDockerDotLdifMite.miteFile.contents + ldifAdditions
@@ -99,7 +93,7 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
     return newFileContents
   })
 
-  const ymlString: string = [
+  const ymlFileContents: string = [
     mobFileHeaderSectionString.miteString,
     sortServiceMiteStrings(mites),
     mobServicesFooterSectionString.miteString,
@@ -109,7 +103,6 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
     mobSecretsHeaderSectionString.miteString,
     mobSecretsFooterSectionString.miteString
   ].join(``)
-
 
   /**
    * generates manikin folders and subfolders
@@ -182,13 +175,15 @@ fi;
   echo "Setting CNAME target...";
   CNAMETARGET="megadockerswarm.${zipManikins[traefikIndex].memories[domainIndex].memoryValue}";
   echo "Setting hostnames...";
-  HOSTS=("${cloudflareHosts}")
+  HOSTS=("${getCloudflareHosts(traefikMites)}")
   echo "Setting Cloudflare API Token...";
   CLOUDFLAREAPITOKEN="${cloudflareAPITokenValue}";
   echo "Getting our external IP address...";
   EXTERNALIPADDRESS=$(curl -s https://api.ipify.org);
   echo "Setting Zone ID for domain ${zipManikins[traefikIndex].memories[domainIndex].memoryValue}...";
-  ZONEIDRESULT=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=${zipManikins[traefikIndex].memories[domainIndex].memoryValue}" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type: application/json");
+  ZONEIDRESULT=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones?name=${
+    zipManikins[traefikIndex].memories[domainIndex].memoryValue
+  }" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type: application/json");
   ZONEIDSUCCEEDED=$(echo "\${ZONEIDRESULT}" | jq | grep "success");
   if [ "\${ZONEIDSUCCEEDED}" = '  "success": true,' ]; then
     ZONEID=$(echo "\${ZONEIDRESULT}" | jq -r | grep "id" | sed 1q | sed 's/^.............//' | sed 's/..$//');
@@ -203,7 +198,9 @@ fi;
     exit 2;
   fi;
   echo "Getting Host ID for \${CNAMETARGET} A record...";
-  DOMAINHOSTSRESULT=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records?type=A&name=megadockerswarm.${zipManikins[traefikIndex].memories[domainIndex].memoryValue}" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type: application/json");
+  DOMAINHOSTSRESULT=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records?type=A&name=megadockerswarm.${
+    zipManikins[traefikIndex].memories[domainIndex].memoryValue
+  }" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type: application/json");
   DOMAINHOSTSUCCEEDED=$(echo "\${DOMAINHOSTSRESULT}" | jq | grep success);
   if [ "\${DOMAINHOSTSUCCEEDED}" = '  "success": true,' ]; then
     DOMAINHOSTID=$(echo "\${DOMAINHOSTSRESULT}" | jq -r | grep id | sed 1q | sed 's/^.............//' | sed 's/..$//');
@@ -225,7 +222,9 @@ fi;
   fi;
   for EACHHOST in \${HOSTS[@]}; do
     DATAFLAG="{\\"type\\":\\"CNAME\\",\\"name\\":\\"\${EACHHOST}\\",\\"content\\":\\"\${CNAMETARGET}\\",\\"ttl\\":1,\\"priority\\":10,\\"proxied\\":false}"
-    HOSTCNAMEEXISTSRESULTS=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records?type=CNAME&name=\${EACHHOST}.${zipManikins[traefikIndex].memories[domainIndex].memoryValue}&match=all" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type:application/json");
+    HOSTCNAMEEXISTSRESULTS=$(curl -s -X GET "https://api.cloudflare.com/client/v4/zones/\${ZONEID}/dns_records?type=CNAME&name=\${EACHHOST}.${
+      zipManikins[traefikIndex].memories[domainIndex].memoryValue
+    }&match=all" -H "Authorization: Bearer \${CLOUDFLAREAPITOKEN}" -H "Content-Type:application/json");
     HOSTCNAMEID=$(echo \${HOSTCNAMEEXISTSRESULTS} | jq | grep id | sed 1q | sed 's/^.............//' | sed 's/..$//');
     if [ "\${HOSTCNAMEID}" != "" ]; then
       HOSTCONTENTRESULTS=$(echo \${HOSTCNAMEEXISTSRESULTS} | jq | grep content | sed 's/^..................//' | sed 's/..$//');
@@ -252,7 +251,7 @@ fi;
     })
   }
 
-  createZipContents(zip, zipManikins, zipMemories, customMites, ymlString)
+  createZipContents(zip, zipManikins, zipMemories, customMites, ymlFileContents)
   makeFoldersAndConvenienceScripts()
 
   zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.file(`traefik/acme.json`, ``, { unixPermissions: `600` })
