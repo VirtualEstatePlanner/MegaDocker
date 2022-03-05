@@ -32,7 +32,7 @@ import { writeBinaryFile } from '@tauri-apps/api/fs'
  * @param zipCompose the IZipDockerCompose object
  */
 
-export const zipDockerSwarmTauri = (zipCompose: IZipValues): void => {
+export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
   let zip: JSZip = JSZip()
 
   let zipManikins: IManikin[] = [...zipCompose.manikins]

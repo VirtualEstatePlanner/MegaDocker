@@ -33,7 +33,7 @@ import { getDNetworkMites } from './getDNetworkMites'
  * makes .zip file for docker-compose in web browser
  * @param zipCompose the IZipDockerCompose object
  */
-export const zipDockerSwarmBrowser = (zipCompose: IZipValues): void => {
+export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void => {
   let zip: JSZip = JSZip()
 
   let zipManikins: IManikin[] = [...zipCompose.manikins]
@@ -47,9 +47,8 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipValues): void => {
 
   const mites: IMite[] = Array.from(new Set(zipManikins.flatMap((eachManikin: IManikin) => eachManikin.mites.map((eachMite: IMite) => eachMite))))
 
-  const orderServiceMites: Function = (mites: IMite[]): string[] => {
+  const orderServiceMiteStrings: Function = (mites: IMite[]): string[] => {
     const sortedMites: string[] = getDServiceMites(mites)
-    .filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`)
     .sort((mite1, mite2): number => {
       if (mite1.miteIndex > mite2.miteIndex) {
         return 1
@@ -71,9 +70,8 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipValues): void => {
     .split(',')
     .join('" "')
 
-  const orderNetworkMites: Function = (mites: IMite[]): string[] => {
+  const orderNetworkMiteStrings: Function = (mites: IMite[]): string[] => {
     const sortedNetworkMites: string[] = getDNetworkMites(mites)
-    .filter((eachMite: IMite) => eachMite.type === `DockerSwarmNetwork`)
     .sort((mite1, mite2): number => {
       if (mite1.miteIndex > mite2.miteIndex) {
         return 1
@@ -87,9 +85,7 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipValues): void => {
     return sortedNetworkMites
   }
 
-  const customs: IMite[] = mites.filter((eachMite: IMite) => eachMite.type === `Custom`)
-
-  const customMites: ICustomMite[] = customs.map((mite: IMite) => mite as ICustomMite)
+  const customMites: ICustomMite[] = mites.filter((eachMite: IMite) => eachMite.type === `Custom`).map((mite: IMite) => mite as ICustomMite)
 
   const ldifs: ILDIFMite[] = mites.filter((eachMite: IMite) => eachMite.type === `LDIF`) as ILDIFMite[]
 
@@ -105,9 +101,7 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipValues): void => {
     const tld: string = fullDomain.split(`.`)[1]
     const domain: string = fullDomain.split(`.`)[0]
     const ldifContents: string = ldapBootstrapMegaDockerDotLdifMite.miteFile.contents + ldifAdditions
-    const workingLdif = ldifContents.split(`[[LDAPDOMAINASDCS]]`).join(`dc=${domain},dc=${tld}`)
-
-    return workingLdif
+    return ldifContents.split(`[[LDAPDOMAINASDCS]]`).join(`dc=${domain},dc=${tld}`)
   }
   customMites[ldifIndex].miteFile.contents = populateLdifDCs()
 
@@ -138,10 +132,10 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipValues): void => {
 
   const ymlOutputArray: string[] = [
     mobFileHeaderSectionString.miteString,
-    orderServiceMites(mites),
+    orderServiceMiteStrings(mites),
     mobServicesFooterSectionString.miteString,
     mobNetworkHeaderSectionString.miteString,
-    orderNetworkMites(mites),
+    orderNetworkMiteStrings(mites),
     mobNetworkFooterSectionString.miteString,
     mobSecretsHeaderSectionString.miteString,
     mobSecretsFooterSectionString.miteString

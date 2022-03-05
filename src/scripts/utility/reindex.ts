@@ -76,7 +76,7 @@ const reindexFiles: Function = (options: IindexerOptions): void => {
   indexCount--
 }
 
-const reindexProject: Function = (): void => {
+const reindexProject: VoidFunction = (): void => {
   reindexFiles(manikinOptions)
   reindexFiles(memoryOptions)
   reindexFiles(serviceMiteOptions)
