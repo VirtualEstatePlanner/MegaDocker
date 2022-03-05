@@ -13,7 +13,7 @@ import { IMite } from '../../interfaces/objectInterfaces/IMite'
 import { ILDIFMite } from '../../interfaces/miteTypeInterfaces/ILDIFMite'
 import { ICustomMite } from '../../interfaces/miteTypeInterfaces/ICustomMite'
 import { ITraefikedServiceMite } from '../../interfaces/miteTypeInterfaces/ITraefikedServiceMite'
-import { IZipDockerCompose } from '../../interfaces/stateManagement/IZipDockerCompose'
+import { IZipValues } from '../../interfaces/stateManagement/IZipValues'
 import JSZip from 'jszip'
 import { ldapBootstrapMegaDockerDotLdifMite } from '../../mobparts/mites/custom/ldapBootstrapMegaDockerDotLdifMite'
 import { primaryDomain } from '../../mobparts/memories/primaryDomain'
@@ -32,7 +32,7 @@ import { writeBinaryFile } from '@tauri-apps/api/fs'
  * @param zipCompose the IZipDockerCompose object
  */
 
-export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): void => {
+export const zipDockerSwarmTauri = (zipCompose: IZipValues): void => {
   let zip: JSZip = JSZip()
 
   let zipManikins: IManikin[] = [...zipCompose.manikins]

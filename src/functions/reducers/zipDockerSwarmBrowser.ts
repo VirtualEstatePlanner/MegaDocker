@@ -14,7 +14,7 @@ import { IMite } from '../../interfaces/objectInterfaces/IMite'
 import { ILDIFMite } from '../../interfaces/miteTypeInterfaces/ILDIFMite'
 import { ICustomMite } from '../../interfaces/miteTypeInterfaces/ICustomMite'
 import { ITraefikedServiceMite } from '../../interfaces/miteTypeInterfaces/ITraefikedServiceMite'
-import { IZipDockerCompose } from '../../interfaces/stateManagement/IZipDockerCompose'
+import { IZipValues } from '../../interfaces/stateManagement/IZipValues'
 import JSZip from 'jszip'
 import { ldapBootstrapMegaDockerDotLdifMite } from '../../mobparts/mites/custom/ldapBootstrapMegaDockerDotLdifMite'
 import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
@@ -26,12 +26,14 @@ import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobS
 import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
 import { primaryDomain } from '../../mobparts/memories/primaryDomain'
 import { traefikManikin } from '../../mobparts/manikins/traefik'
+import { getDServiceMites } from './getDServiceMites'
+import { getDNetworkMites } from './getDNetworkMites'
 
 /**
  * makes .zip file for docker-compose in web browser
  * @param zipCompose the IZipDockerCompose object
  */
-export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): void => {
+export const zipDockerSwarmBrowser = (zipCompose: IZipValues): void => {
   let zip: JSZip = JSZip()
 
   let zipManikins: IManikin[] = [...zipCompose.manikins]
@@ -45,7 +47,8 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): void => {
 
   const mites: IMite[] = Array.from(new Set(zipManikins.flatMap((eachManikin: IManikin) => eachManikin.mites.map((eachMite: IMite) => eachMite))))
 
-  const serviceMites: string[] = mites
+  const orderServiceMites: Function = (mites: IMite[]): string[] => {
+    const sortedMites: string[] = getDServiceMites(mites)
     .filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`)
     .sort((mite1, mite2): number => {
       if (mite1.miteIndex > mite2.miteIndex) {
@@ -56,8 +59,9 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): void => {
       }
       return 0
     })
-    .map((eachMite: IMite) => eachMite.miteString)
-
+      .map((eachMite: IMite) => eachMite.miteString)
+    return sortedMites
+  }
   const traefikMites: ITraefikedServiceMite[] = mites.filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`) as ITraefikedServiceMite[]
 
   const cloudflareHosts: string = traefikMites
@@ -67,7 +71,8 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): void => {
     .split(',')
     .join('" "')
 
-  const networkMites: string[] = mites
+  const orderNetworkMites: Function = (mites: IMite[]): string[] => {
+    const sortedNetworkMites: string[] = getDNetworkMites(mites)
     .filter((eachMite: IMite) => eachMite.type === `DockerSwarmNetwork`)
     .sort((mite1, mite2): number => {
       if (mite1.miteIndex > mite2.miteIndex) {
@@ -78,7 +83,9 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): void => {
       }
       return 0
     })
-    .map((eachMite: IMite) => eachMite.miteString)
+      .map((eachMite: IMite) => eachMite.miteString)
+    return sortedNetworkMites
+  }
 
   const customs: IMite[] = mites.filter((eachMite: IMite) => eachMite.type === `Custom`)
 
@@ -131,10 +138,10 @@ export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): void => {
 
   const ymlOutputArray: string[] = [
     mobFileHeaderSectionString.miteString,
-    ...serviceMites,
+    orderServiceMites(mites),
     mobServicesFooterSectionString.miteString,
     mobNetworkHeaderSectionString.miteString,
-    ...networkMites,
+    orderNetworkMites(mites),
     mobNetworkFooterSectionString.miteString,
     mobSecretsHeaderSectionString.miteString,
     mobSecretsFooterSectionString.miteString
