@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 3/11/21.
 //  Copyright © 2021 The MegaDocker Group. All rights reserved.
 
-import { IZipValues } from '../../interfaces/stateManagement/IZipValues'
+import { IZipValues } from '../../interfaces/objectInterfaces/IZipValues'
 import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
 
 export const testIZipValues: Function = (zipToTest: IZipValues) => {

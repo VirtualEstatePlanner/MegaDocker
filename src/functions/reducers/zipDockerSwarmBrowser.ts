@@ -15,7 +15,7 @@ import { IMite } from '../../interfaces/objectInterfaces/IMite'
 import { ILDIFMite } from '../../interfaces/miteTypeInterfaces/ILDIFMite'
 import { ICustomMite } from '../../interfaces/miteTypeInterfaces/ICustomMite'
 import { ITraefikedServiceMite } from '../../interfaces/miteTypeInterfaces/ITraefikedServiceMite'
-import { IZipValues } from '../../interfaces/stateManagement/IZipValues'
+import { IZipValues } from '../../interfaces/objectInterfaces/IZipValues'
 
 import { sortNetworkMiteStrings } from '../utility/sortNetworkMiteStrings'
 import { sortServiceMiteStrings } from '../utility/sortServiceMiteStrings'

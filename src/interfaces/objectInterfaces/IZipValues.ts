@@ -6,8 +6,8 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
-import { IMemory } from '../objectInterfaces/IMemory'
-import { IManikin } from '../objectInterfaces/IManikin'
+import { IMemory } from './IMemory'
+import { IManikin } from './IManikin'
 /**
  * interface for values to build an exported zip file
  * @param manikins an array of IManikins
