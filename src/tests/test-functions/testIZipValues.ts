@@ -1,6 +1,6 @@
 /** @format */
 
-//  IZipDockerCompose.test.ts
+//  testIZipValues.test.ts
 //  MEGADocker
 //  an automated test
 //  Created by George Georgulas IV on 3/11/21.
@@ -9,7 +9,7 @@
 import { IZipValues } from '../../interfaces/stateManagement/IZipValues'
 import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
 
-export const testDockerComposeZip: Function = (zipToTest: IZipValues) => {
+export const testIZipValues: Function = (zipToTest: IZipValues) => {
   describe('tests the docker-compose download button', () => {
     it('should have both values', () => {
       expect(zipToTest.memories).toContain(cloudflareAPIToken)
