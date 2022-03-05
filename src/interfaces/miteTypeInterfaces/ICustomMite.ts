@@ -11,11 +11,11 @@ import { IMite } from '../objectInterfaces/IMite'
 
 /**
  * interface for a mite that represents a custom file
- * @path the path to the file in the zip folder
- * @name the name of the file
- * @extension the extension of the file
- * @contents the data inside the file
- * @permissions the unix permissions of the file as a 3-digit string
+ * @param path the path to the file in the zip folder
+ * @param name the name of the file
+ * @param extension the extension of the file
+ * @param contents the data inside the file
+ * @param permissions the unix permissions of the file as a 3-digit string
  */
 
 export interface ICustomMite extends IMite {

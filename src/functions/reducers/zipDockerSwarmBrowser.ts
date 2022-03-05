@@ -34,7 +34,7 @@ import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobN
 import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString'
 import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobSecretsHeaderSectionString'
 import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
-import { insertMemoryValues } from '../utility/insertMemoryValues'
+import { createZipContents } from '../utility/createZipContents'
 
 /**
  * makes .zip file for docker-compose in web browser
@@ -75,7 +75,7 @@ export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void =>
    * adds dc values to bootstrap ldif
    */
   const populateLdifDCs: Function = (): string => {
-    const fullDomain: string = zipCompose.manikins[traefikIndex].memories[domainIndex].memoryValue
+    const fullDomain: string = zipManikins[traefikIndex].memories[domainIndex].memoryValue
     const tld: string = fullDomain.split(`.`)[1]
     const domain: string = fullDomain.split(`.`)[0]
     const ldifContents: string = ldapBootstrapMegaDockerDotLdifMite.miteFile.contents + ldifAdditions
@@ -102,34 +102,7 @@ export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void =>
     mobSecretsFooterSectionString.miteString
   ].join(``)
 
-  /**
-   * makes docker-compose.yml file
-   */
-  const createZipContents = async (): Promise<string> => {
-    const makeZip = async (): Promise<string> => {
-      try {
-        zip
-          .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!
-          .file(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}.yml`, `${insertMemoryValues(ymlString, zipMemories)}`)
-        customMites.forEach((eachCustomMite) => {
-          zip.file(
-            `${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}/${eachCustomMite.miteFile.path}/${eachCustomMite.miteFile.name}.${eachCustomMite.miteFile.extension}`,
-            `${eachCustomMite.miteFile.contents}`,
-            { unixPermissions: `${eachCustomMite.miteFile.permissions}` }
-          )
-        })
-        const output = await zip.generateAsync({
-          type: `binarystring`
-        })
 
-        return output
-      } catch {
-        return `zip failed`
-      }
-    }
-
-    return makeZip()
-  }
 
   /**
    * generates manikin folders and subfolders
@@ -272,7 +245,7 @@ fi;
     })
   }
 
-  createZipContents()
+  createZipContents(zip, zipManikins, zipMemories, customMites, ymlString)
   makeFoldersAndConvenienceScripts()
 
   zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.file(`traefik/acme.json`, ``, { unixPermissions: `600` })

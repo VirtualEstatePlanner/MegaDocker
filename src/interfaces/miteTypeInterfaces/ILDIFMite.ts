@@ -9,12 +9,7 @@
 import { IMite } from '../objectInterfaces/IMite'
 
 /**
- * interface for a mite that represents a custom file
- * @path the path to the file in the zip folder
- * @name the name of the file
- * @extension the extension of the file
- * @contents the data inside the file
- * @permissions the unix permissions of the file as a 3-digit string
+ * interface for a mite that represents a .ldif file
  */
 
 export interface ILDIFMite extends IMite {

@@ -1,6 +1,6 @@
 /** @format */
 
-//  IMissionMite.ts
+//  IN8NMite.ts
 //  MEGADocker
 //  an interface that represents a complex N8N action composed of multiple workflows
 //  Created by George Georgulas IV on 1/26/19.
@@ -13,7 +13,7 @@ import { IN8NWorkflow } from '../objectInterfaces/IN8NWorkflow'
  * interface for a mite that represents a complex N8N action composed of multiple workflows
  */
 
-export interface IMissionMite extends IMite {
+export interface IN8NMite extends IMite {
   type: `N8N`
   workflow: IN8NWorkflow[]
 }

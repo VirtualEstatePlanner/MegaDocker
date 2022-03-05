@@ -9,8 +9,8 @@
 import { IApplicationStartAction } from '../actionInterfaces/IApplicationStartAction'
 import { IUploadMobActionBrowser } from '../actionInterfaces/IUploadMobActionBrowser'
 import { IUploadMobActionTauri } from '../actionInterfaces/IUploadMobActionTauri'
-import { IOutputDockerSwarmBrowserAction } from '../actionInterfaces/IOutputDockerSwarmBrowserAction'
-import { IOutputDockerSwarmTauriAction } from '../actionInterfaces/IOutputDockerSwarmTauriAction'
+import { IOutputDockerSwarmBrowser } from '../actionInterfaces/IOutputDockerSwarmBrowser'
+import { IOutputDockerSwarmTauri } from '../actionInterfaces/IOutputDockerSwarmTauri'
 import { ISaveMobActionBrowser } from '../actionInterfaces/ISaveMobActionBrowser'
 import { ISaveMobActionTauri } from '../actionInterfaces/ISaveMobActionTauri'
 import { IToggleManikinAction } from '../actionInterfaces/IToggleManikinAction'
@@ -21,8 +21,8 @@ export type IMegaDockerAction =
   | IApplicationStartAction
   | IUploadMobActionBrowser
   | IUploadMobActionTauri
-  | IOutputDockerSwarmBrowserAction
-  | IOutputDockerSwarmTauriAction
+  | IOutputDockerSwarmBrowser
+  | IOutputDockerSwarmTauri
   | ISaveMobActionBrowser
   | ISaveMobActionTauri
   | IToggleManikinAction

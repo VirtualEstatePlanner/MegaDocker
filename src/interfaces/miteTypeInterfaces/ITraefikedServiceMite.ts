@@ -10,7 +10,7 @@ import { IMite } from '../objectInterfaces/IMite'
 
 /**
  * interface for ITraefikedServiceMite
- * @webInterfaceHostnames an array of strings representing URL hostnames
+ * @param webInterfaceHostnames an array of strings representing URL hostnames
  */
 export interface ITraefikedServiceMite extends IMite {
   type: `DockerSwarmService`
