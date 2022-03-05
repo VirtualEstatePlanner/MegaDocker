@@ -6,26 +6,40 @@
 //  Created by George Georgulas IV on 2/04/22.
 //  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
-import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
-import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
-import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
-import { IMite } from '../../interfaces/objectInterfaces/IMite'
-import { ILDIFMite } from '../../interfaces/miteTypeInterfaces/ILDIFMite'
+// external libraries
+import JSZip from 'jszip'
+import { writeBinaryFile } from '@tauri-apps/api/fs'
+
+// interfaces
 import { ICustomMite } from '../../interfaces/miteTypeInterfaces/ICustomMite'
+import { ILDIFMite } from '../../interfaces/miteTypeInterfaces/ILDIFMite'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
+import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
+import { IMite } from '../../interfaces/objectInterfaces/IMite'
 import { ITraefikedServiceMite } from '../../interfaces/miteTypeInterfaces/ITraefikedServiceMite'
 import { IZipValues } from '../../interfaces/objectInterfaces/IZipValues'
-import JSZip from 'jszip'
-import { ldapBootstrapMegaDockerDotLdifMite } from '../../mobparts/mites/custom/ldapBootstrapMegaDockerDotLdifMite'
-import { primaryDomain } from '../../mobparts/memories/primaryDomain'
-import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
-import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
+
+// functions
+import { createZipContents } from '../utility/createZipContents'
+import { sortNetworkMiteStrings } from '../utility/sortNetworkMiteStrings'
+import { sortServiceMiteStrings } from '../utility/sortServiceMiteStrings'
+
+// manikins
+import { traefikManikin } from '../../mobparts/manikins/traefik'
+
+// memories
+import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
 import { mobName } from '../../mobparts/memories/mobName'
-import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobNetworkHeaderSectionString'
+import { primaryDomain } from '../../mobparts/memories/primaryDomain'
+
+// mites
+import { ldapBootstrapMegaDockerDotLdifMite } from '../../mobparts/mites/custom/ldapBootstrapMegaDockerDotLdifMite'
+import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
 import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString'
+import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobNetworkHeaderSectionString'
 import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobSecretsHeaderSectionString'
 import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
-import { traefikManikin } from '../../mobparts/manikins/traefik'
-import { writeBinaryFile } from '@tauri-apps/api/fs'
+import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
 
 /**
  * makes .zip file for docker-compose in Tauri desktop application
@@ -46,19 +60,6 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
 
   const mites: IMite[] = Array.from(new Set(zipManikins.flatMap((eachManikin: IManikin) => eachManikin.mites.map((eachMite: IMite) => eachMite))))
 
-  const serviceMites: string[] = mites
-    .filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`)
-    .sort((mite1, mite2): number => {
-      if (mite1.miteIndex > mite2.miteIndex) {
-        return 1
-      }
-      if (mite1.miteIndex < mite2.miteIndex) {
-        return -1
-      }
-      return 0
-    })
-    .map((eachMite: IMite) => eachMite.miteString)
-
   const traefikMites: ITraefikedServiceMite[] = mites.filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`) as ITraefikedServiceMite[]
 
   const cloudflareHosts: string = traefikMites
@@ -67,19 +68,6 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
     .join()
     .split(',')
     .join('" "')
-
-  const networkMites: string[] = mites
-    .filter((eachMite: IMite) => eachMite.type === `DockerSwarmNetwork`)
-    .sort((mite1, mite2): number => {
-      if (mite1.miteIndex > mite2.miteIndex) {
-        return 1
-      }
-      if (mite1.miteIndex < mite2.miteIndex) {
-        return -1
-      }
-      return 0
-    })
-    .map((eachMite: IMite) => eachMite.miteString)
 
   const customs: IMite[] = mites.filter((eachMite: IMite) => eachMite.type === `Custom`)
 
@@ -103,22 +91,6 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
   }
   customMites[ldifIndex].miteFile.contents = populateLdifDCs()
 
-  /**
-   * updates yml with variables from memories
-   * @param ymlInput the initial string to change
-   * @param memories the memories to apply
-   */
-  const insertMemoryValues: Function = (ymlInput: string, memories: IMemory[]): string => {
-    let workingYml: string = ymlInput
-
-    memories.forEach((eachMemory: IMemory) => {
-      let tempYml = workingYml.split(eachMemory.memoryMarker).join(eachMemory.memoryValue)
-      workingYml = tempYml
-    })
-
-    return workingYml
-  }
-
   customMites.map((eachCustomMite: ICustomMite) => {
     const newFileContents = zipMemories.forEach((eachMemory: IMemory) => {
       const workingFileContents = eachCustomMite.miteFile.contents.split(eachMemory.memoryMarker).join(eachMemory.memoryValue)
@@ -129,43 +101,15 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
 
   const ymlString: string = [
     mobFileHeaderSectionString.miteString,
-    ...serviceMites,
+    sortServiceMiteStrings(mites),
     mobServicesFooterSectionString.miteString,
     mobNetworkHeaderSectionString.miteString,
-    ...networkMites,
+    sortNetworkMiteStrings(mites),
     mobNetworkFooterSectionString.miteString,
     mobSecretsHeaderSectionString.miteString,
     mobSecretsFooterSectionString.miteString
   ].join(``)
 
-  /**
-   * makes docker-compose.yml file
-   */
-  const createZipContents = async (): Promise<string> => {
-    const makeZip = async (): Promise<string> => {
-      try {
-        zip
-          .folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!
-          .file(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}.yml`, `${insertMemoryValues(ymlString, zipMemories)}`)
-        customMites.forEach((eachCustomMite) => {
-          zip.file(
-            `${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}/${eachCustomMite.miteFile.path}/${eachCustomMite.miteFile.name}.${eachCustomMite.miteFile.extension}`,
-            `${eachCustomMite.miteFile.contents}`,
-            { unixPermissions: `${eachCustomMite.miteFile.permissions}` }
-          )
-        })
-        const output = await zip.generateAsync({
-          type: `binarystring`
-        })
-
-        return output
-      } catch {
-        return `zip failed`
-      }
-    }
-
-    return makeZip()
-  }
 
   /**
    * generates manikin folders and subfolders
@@ -308,7 +252,7 @@ fi;
     })
   }
 
-  createZipContents()
+  createZipContents(zip, zipManikins, zipMemories, customMites, ymlString)
   makeFoldersAndConvenienceScripts()
 
   zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.file(`traefik/acme.json`, ``, { unixPermissions: `600` })
