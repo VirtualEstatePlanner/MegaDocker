@@ -19,14 +19,15 @@ import { workingManikins } from '../../globals/workingManikins'
 import { Theme } from '@mui/material'
 import { OrbThemeLight } from '../../components/OrbTheme/OrbThemeLight'
 import { OrbThemeDark } from '../../components/OrbTheme/OrbThemeDark'
+import { IThemeString } from '../../interfaces/templateLiteralUnionTypes/IThemeString'
 
 /**
  * builds a new application state
  * @param savedManikins an array of IManikins that shows the surrent state of the manikinTable
- * @param theme a string either `light` or `dark`
+ * @param theme a IThemeString that represents the current theme
  * @returns an IMegaDockerState
  */
-export const buildApplicationState = (savedManikins: IManikin[], theme: `light` | `dark`): IMegaDockerState => {
+export const buildApplicationState = (savedManikins: IManikin[], theme: IThemeString): IMegaDockerState => {
   // find each manikin in the workingManikins array that matches a manikin in savedManikins and replace it
   const populateManikins: Function = (): IManikin[] => {
     let populatedManikins: IManikin[] = [...workingManikins]

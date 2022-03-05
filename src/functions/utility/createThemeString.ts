@@ -2,18 +2,19 @@
 
 //  createThemeString.ts
 //  MEGADocker
-//  converts a Material UI theme to either `light` or `dark`
+//  converts a Material UI theme to an IThemeString
 //  Created by George Georgulas IV on 3/5/22.
 //  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
 import { Theme } from '@mui/material'
 import { OrbThemeDark } from '../../components/OrbTheme/OrbThemeDark'
+import { IThemeString } from '../../interfaces/templateLiteralUnionTypes/IThemeString'
 
 /**
  * @param theme a Material UI Theme
- * @returns `light` or `dark`
+ * @returns an IThemeString
  */
-export const createThemeString: Function = (theme: Theme): `light` | `dark` => {
+export const createThemeString: Function = (theme: Theme): IThemeString => {
   if (theme === OrbThemeDark) {
     return `dark`
   } else {
