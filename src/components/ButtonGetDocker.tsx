@@ -10,10 +10,10 @@ import * as React from 'react'
 import { Button } from '@mui/material'
 import { openURL } from '../functions/utility/openURL'
 
-const dockerURL: URL = new URL(`https://docs.docker.com/get-docker/`)
+const getDockerURL: URL = new URL(`https://docs.docker.com/get-docker/`)
 
 const getDockerButtonClicked: VoidFunction = (): void => {
-  openURL(dockerURL)
+  openURL(getDockerURL)
 }
 
 export const ButtonGetDocker: React.FC = (): React.ReactElement => (
