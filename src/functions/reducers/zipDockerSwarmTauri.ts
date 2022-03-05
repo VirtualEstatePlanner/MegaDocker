@@ -2,7 +2,7 @@
 
 //  zipDockerSwarmTauri.ts
 //  MEGADocker
-//  a function that creates and downloads a zip file containing the user's Docker Swarm in Tauri
+//  a function that saves a zip file containing the user's Docker Swarm in Tauri
 //  Created by George Georgulas IV on 2/04/22.
 //  Copyright © 2022 The MegaDocker Group. All rights reserved.
 

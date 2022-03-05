@@ -2,7 +2,7 @@
 
 //  zipDockerSwarmBrowser.ts
 //  MEGADocker
-//  a function that creates and downloads a zip file containing the user's Docker Swarm in the browser
+//  a function that saves a zip file containing the user's Docker Swarm in the browser
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
