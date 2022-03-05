@@ -6,35 +6,40 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
-import JSZip from 'jszip'
+// external libraries
 import fileSaver from 'file-saver'
+import JSZip from 'jszip'
 
-import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
-import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
-import { IMite } from '../../interfaces/objectInterfaces/IMite'
-import { ILDIFMite } from '../../interfaces/miteTypeInterfaces/ILDIFMite'
+// interfaces
 import { ICustomMite } from '../../interfaces/miteTypeInterfaces/ICustomMite'
+import { ILDIFMite } from '../../interfaces/miteTypeInterfaces/ILDIFMite'
+import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
+import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
+import { IMite } from '../../interfaces/objectInterfaces/IMite'
 import { ITraefikedServiceMite } from '../../interfaces/miteTypeInterfaces/ITraefikedServiceMite'
 import { IZipValues } from '../../interfaces/objectInterfaces/IZipValues'
 
+// functions
+import { createZipContents } from '../utility/createZipContents'
 import { sortNetworkMiteStrings } from '../utility/sortNetworkMiteStrings'
 import { sortServiceMiteStrings } from '../utility/sortServiceMiteStrings'
 
+// manikins
 import { traefikManikin } from '../../mobparts/manikins/traefik'
 
+// memories
 import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
 import { mobName } from '../../mobparts/memories/mobName'
 import { primaryDomain } from '../../mobparts/memories/primaryDomain'
 
+// mites
 import { ldapBootstrapMegaDockerDotLdifMite } from '../../mobparts/mites/custom/ldapBootstrapMegaDockerDotLdifMite'
-
 import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
-import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
-import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobNetworkHeaderSectionString'
 import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString'
+import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobNetworkHeaderSectionString'
 import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobSecretsHeaderSectionString'
 import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
-import { createZipContents } from '../utility/createZipContents'
+import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
 
 /**
  * makes .zip file for docker-compose in web browser
