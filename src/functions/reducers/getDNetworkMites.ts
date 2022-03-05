@@ -11,5 +11,7 @@ import { INetworkMite } from '../../interfaces/miteTypeInterfaces/INetworkMite'
 
 /**
  * updates networkMites array based on application state
+ * @param miteArray an array of mites that should contain some Docker Swarm network mites
+ * @returns an array of Docker Swarm network mites
  */
 export const getDNetworkMites = (miteArray: IMite[]): INetworkMite[] => miteArray.filter((eachMite) => eachMite.type === `DockerSwarmNetwork`) as INetworkMite[]

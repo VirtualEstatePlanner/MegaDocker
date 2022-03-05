@@ -12,9 +12,12 @@ import { mobName } from '../../mobparts/memories/mobName'
 import { minimizeManikin } from './minimizeManikin'
 import { IMiniManikin } from '../../interfaces/objectInterfaces/IMiniManikin'
 import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
+import { createThemeString } from '../utility/createThemeString'
 
 /**
  * creates an IMob of the current IMegaDockerState
+ * @param state an IMegaDockerState
+ * @returns an IMob
  */
 export const packDotMobFile: Function = (state: IMegaDockerState): IMob => {
   const minimizedManikins: IMiniManikin[] = []
@@ -26,6 +29,7 @@ export const packDotMobFile: Function = (state: IMegaDockerState): IMob => {
   return {
     mobManikins: minimizedManikins,
     mobName: `${state.memories[state.memories.indexOf(mobName)].memoryValue}`,
-    mobVersion: state.MEGADockerVersion
+    mobVersion: state.MEGADockerVersion,
+    theme: createThemeString(state.theme)
   }
 }

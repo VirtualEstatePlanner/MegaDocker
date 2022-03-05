@@ -11,6 +11,7 @@ import { open } from '@tauri-apps/api/shell'
 
 /**
  * opens a URL in a new tab from the current browser or in the default browser from Tauri
+ * @param url the URL to open
  */
 export const openURL: Function = (url: URL): void => {
   if (runningInTauri()) {

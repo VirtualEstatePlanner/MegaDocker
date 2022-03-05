@@ -12,4 +12,5 @@ export interface IMob {
   mobManikins: IMiniManikin[]
   mobName: string
   mobVersion: string
+  theme: `light` | `dark`
 }

@@ -10,5 +10,7 @@ import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 
 /**
  * updates selectedManikins array based on application state
+ * @param manikinsToSelectFrom the contents of the manikinTable
+ * @returns an array of selected Manikins
  */
 export const getManikins = (manikinsToSelectFrom: IManikin[]): IManikin[] => manikinsToSelectFrom.filter((eachManikin) => eachManikin.isSelected === true)

@@ -11,5 +11,7 @@ import { IMegaDockerState } from '../../interfaces/stateManagement/IMegaDockerSt
 
 /**
  * uploads a JSON file containing a IMegaDockerState to the React application in the browser or in Tauri
+ * @param savedFile the file to upload
+ * @returns an IMegaDockerState
  */
 export const uploadMobFileBrowser: Function = (savedFile: string): IMegaDockerState => unpackDotMobFile(savedFile)

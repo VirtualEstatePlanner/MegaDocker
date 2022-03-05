@@ -43,6 +43,7 @@ export type IMemoryMarker =
   | `[[LETSENCRYPTEMAIL]]`
   | `[[LUADNSAPITOKEN]]`
   | `[[LUADNSEMAILADDRESS]]`
+  | `[[MEMORYPLACEHOLDER]]`
   | `[[MOBFOLDERPATH]]`
   | `[[MOBNAME]]`
   | `[[N8NUSERNAME]]`

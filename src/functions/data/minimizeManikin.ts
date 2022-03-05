@@ -14,6 +14,8 @@ import { minimizeMemory } from './minimizeMemory'
 
 /**
  * creates an IMiniManikin from an IManikin
+ * @param manikin an IManikin
+ * @returns an IMiniManikin
  */
 export const minimizeManikin: Function = (manikin: IManikin): IMiniManikin => {
   return {

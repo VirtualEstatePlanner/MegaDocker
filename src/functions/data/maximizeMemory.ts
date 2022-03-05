@@ -22,7 +22,7 @@ export const maximizeMemory: Function = (miniMemory: IMiniMemory): IMemory => {
     memoryName: `Name Placeholder`,
     memoryType: `NormalMemory`,
     memoryValue: `Value Placeholder`,
-    memoryMarker: `[[AUTHELIAMARIADBPASSWORD]]`,
+    memoryMarker: `[[MEMORYPLACEHOLDER]]`,
     isReady: false,
     shouldAutocomplete: false,
     tooltip: `This is a stub memory.`,

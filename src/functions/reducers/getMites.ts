@@ -11,5 +11,7 @@ import { IMite } from '../../interfaces/objectInterfaces/IMite'
 
 /**
  * updates allMobMites array based on application state
+ * @param manikinsToGetMitesFrom the manikins that have been selected
+ * @returns an array of all Mites in the Mob
  */
 export const getMites = (manikinsToGetMitesFrom: IManikin[]): IMite[] => manikinsToGetMitesFrom.flatMap((eachManikin) => eachManikin.mites.flatMap((eachMite) => eachMite))

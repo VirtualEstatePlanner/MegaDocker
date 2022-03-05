@@ -29,6 +29,7 @@ import { traefikManikin } from '../../mobparts/manikins/traefik'
 
 /**
  * makes .zip file for docker-compose in web browser
+ * @param zipCompose the IZipDockerCompose object
  */
 export const zipDockerSwarmBrowser = (zipCompose: IZipDockerCompose): void => {
   let zip: JSZip = JSZip()

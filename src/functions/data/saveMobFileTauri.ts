@@ -13,6 +13,8 @@ import { writeBinaryFile } from '@tauri-apps/api/fs'
 
 /**
  * saves a .mob file in Tauri
+ * @param state the current application state
+ * @returns a Promise that resolves when the file is saved
  */
 export const saveMobFileTauri: Function = async (state: IMegaDockerState): Promise<void> => {
   const mobNameValue: string = state.memories[state.memories.indexOf(mobName)].memoryValue

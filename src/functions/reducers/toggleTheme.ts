@@ -12,6 +12,8 @@ import { OrbThemeLight } from '../../components/OrbTheme/OrbThemeLight'
 
 /**
  * toggles the UI Theme, defaulting to light if theme is neither light nor dark
+ * @param theme a Material UI Theme
+ * @returns OrbThemeLight or OrbThemeDark Material UI Theme Objects
  */
 export const toggleTheme: Function = (theme: Theme): Theme => {
   switch (theme) {

@@ -29,6 +29,7 @@ import { writeBinaryFile } from '@tauri-apps/api/fs'
 
 /**
  * makes .zip file for docker-compose in Tauri desktop application
+ * @param zipCompose the IZipDockerCompose object
  */
 
 export const zipDockerSwarmTauri = (zipCompose: IZipDockerCompose): void => {

@@ -10,6 +10,8 @@ import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 
 /**
  * updates memories array based on application state
+ * @param manikinsToGetMemoriesFrom the manikins that have been selected
+ * @returns an array of memories to build the memoryTable
  */
 export const getMemories = (manikinsToGetMemoriesFrom: IManikin[]): IMemory[] =>
   manikinsToGetMemoriesFrom.filter((eachManikin: IManikin) => eachManikin.isSelected).flatMap((eachManikin) => eachManikin.memories)

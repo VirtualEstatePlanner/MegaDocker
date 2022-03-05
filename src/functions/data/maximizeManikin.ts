@@ -16,6 +16,8 @@ import { maximizeMemory } from './maximizeMemory'
 
 /**
  * creates an IManikin from an IMiniManikin
+ * @param miniManikin an IMiniManikin
+ * @returns an IManikin
  */
 export const maximizeManikin: Function = (miniManikin: IMiniManikin): IManikin => {
   // search workingManikins for a manikin with a matching manikin.name

@@ -18,7 +18,11 @@ declare global {
   }
 }
 
-export const runningInTauri = (): boolean => {
+/**
+ * determines whether the application is running in browser or in the tauri desktop application
+ * @returns true if running in Tauri, false if running in browser
+ */
+export const runningInTauri: Function = (): boolean => {
   if (window.__TAURI__) {
     return true
   } else {

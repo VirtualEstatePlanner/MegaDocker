@@ -18,9 +18,13 @@ import { saveMobFileBrowser } from '../data/saveMobFileBrowser'
 import { saveMobFileTauri } from '../data/saveMobFileTauri'
 import { unpackDotMobFile } from '../data/unpackDotMobFile'
 import { buildApplicationState } from './buildApplicationState'
+import { createThemeString } from '../utility/createThemeString'
 
 /**
  * Updates application state
+ * @param state the current application state
+ * @param action the action to process
+ * @returns the new application state
  */
 export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (state: IMegaDockerState, action: IMegaDockerAction): IMegaDockerState => {
   // creates a mutable copy of the state to make changes to
@@ -74,7 +78,7 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
       // reverses the selected boolean in the manikin passed to it
       newState.manikinTable[action.payload].isSelected = !state.manikinTable[action.payload].isSelected
       // build new application state
-      newState = buildApplicationState(newState.manikinTable, state.theme)
+      newState = buildApplicationState(newState.manikinTable, createThemeString(state.theme))
       return newState
 
     // toggles light and dark mode
