@@ -40,7 +40,16 @@ export const buildApplicationState = (savedManikins: IManikin[], theme: IThemeSt
         }
       })
     })
-    return populatedManikins
+    // filter core manikins from the populatedManikins array into another array
+    const coreManikins: IManikin[] = populatedManikins.filter((manikin: IManikin): boolean => manikin.isCore)
+    // sort coreManikins by manikinIndex
+    coreManikins.sort((a: IManikin, b: IManikin): number => a.manikinIndex - b.manikinIndex)
+    // filter non-core manikins from the populatedManikins array into another array
+    const nonCoreManikins: IManikin[] = populatedManikins.filter((manikin: IManikin): boolean => !manikin.isCore)
+    // sort nonCoreManikins by manikinIndex
+    nonCoreManikins.sort((a: IManikin, b: IManikin): number => a.manikinIndex - b.manikinIndex)
+    // return the populatedManikins array with the coreManikins array at the beginning and the nonCoreManikins array at the end
+    return [...coreManikins, ...nonCoreManikins]
   }
 
   const unpackTheme: Function = (): Theme => {
@@ -57,8 +66,8 @@ export const buildApplicationState = (savedManikins: IManikin[], theme: IThemeSt
   const newDServiceMites = getDServiceMites(newMites)
   const newDNetworkMites = getDNetworkMites(newMites)
   const newCustomMites = getCustomMites(newMites)
-  const newState: IMegaDockerState = {
-    manikinTable: newManikinTable,
+  return {
+    manikinTable: populateManikins(),
     memories: newMemories,
     allMobMites: newMites,
     MEGADockerVersion: currentMegaDockerVersion,
@@ -70,5 +79,4 @@ export const buildApplicationState = (savedManikins: IManikin[], theme: IThemeSt
     theme: unpackTheme(),
     ymlOutput: ``
   }
-  return newState
 }
