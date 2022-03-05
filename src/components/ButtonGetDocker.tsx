@@ -2,7 +2,7 @@
 
 //  ButtonGetDocker.tsx
 //  MEGADocker
-//  a React Button Component that downloads the Docker installer for the host OS
+//  a React Button Component that opens the page to download the Docker installer
 //  Created by George Georgulas IV on 3/17/19.
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
