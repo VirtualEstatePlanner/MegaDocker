@@ -6,6 +6,4 @@
 //  Created by George Georgulas IV on 3/5/22.
 //  Copyright © 2022 The MegaDocker Group. All rights reserved.
 
-export type IThemeString =
-  | `dark`
-  | `light`
+export type IThemeString = `dark` | `light`
