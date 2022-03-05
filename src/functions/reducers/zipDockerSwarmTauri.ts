@@ -99,9 +99,7 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
     const tld: string = fullDomain.split(`.`)[1]
     const domain: string = fullDomain.split(`.`)[0]
     const ldifContents: string = ldapBootstrapMegaDockerDotLdifMite.miteFile.contents + ldifAdditions
-    const workingLdif = ldifContents.split(`[[LDAPDOMAINASDCS]]`).join(`dc=${domain},dc=${tld}`)
-
-    return workingLdif
+    return ldifContents.split(`[[LDAPDOMAINASDCS]]`).join(`dc=${domain},dc=${tld}`)
   }
   customMites[ldifIndex].miteFile.contents = populateLdifDCs()
 
@@ -118,8 +116,7 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
       workingYml = tempYml
     })
 
-    const finalYml = workingYml
-    return finalYml
+    return workingYml
   }
 
   customMites.map((eachCustomMite: ICustomMite) => {
@@ -130,7 +127,7 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
     return newFileContents
   })
 
-  const ymlOutputArray: string[] = [
+  const ymlString: string = [
     mobFileHeaderSectionString.miteString,
     ...serviceMites,
     mobServicesFooterSectionString.miteString,
@@ -139,9 +136,7 @@ export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
     mobNetworkFooterSectionString.miteString,
     mobSecretsHeaderSectionString.miteString,
     mobSecretsFooterSectionString.miteString
-  ]
-
-  let ymlString: string = ymlOutputArray.join(``)
+  ].join(``)
 
   /**
    * makes docker-compose.yml file

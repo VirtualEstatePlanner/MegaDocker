@@ -6,8 +6,9 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
-import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
+import JSZip from 'jszip'
 import fileSaver from 'file-saver'
+
 import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
 import { IManikin } from '../../interfaces/objectInterfaces/IManikin'
 import { IMite } from '../../interfaces/objectInterfaces/IMite'
@@ -15,19 +16,25 @@ import { ILDIFMite } from '../../interfaces/miteTypeInterfaces/ILDIFMite'
 import { ICustomMite } from '../../interfaces/miteTypeInterfaces/ICustomMite'
 import { ITraefikedServiceMite } from '../../interfaces/miteTypeInterfaces/ITraefikedServiceMite'
 import { IZipValues } from '../../interfaces/stateManagement/IZipValues'
-import JSZip from 'jszip'
+
+import { sortNetworkMiteStrings } from '../utility/sortNetworkMiteStrings'
+import { sortServiceMiteStrings } from '../utility/sortServiceMiteStrings'
+
+import { traefikManikin } from '../../mobparts/manikins/traefik'
+
+import { cloudflareAPIToken } from '../../mobparts/memories/cloudflareAPIToken'
+import { mobName } from '../../mobparts/memories/mobName'
+import { primaryDomain } from '../../mobparts/memories/primaryDomain'
+
 import { ldapBootstrapMegaDockerDotLdifMite } from '../../mobparts/mites/custom/ldapBootstrapMegaDockerDotLdifMite'
+
 import { mobFileHeaderSectionString } from '../../mobparts/mites/headers/mobFileHeaderSectionString'
 import { mobServicesFooterSectionString } from '../../mobparts/mites/headers/mobServicesFooterSectionString'
-import { mobName } from '../../mobparts/memories/mobName'
 import { mobNetworkHeaderSectionString } from '../../mobparts/mites/headers/mobNetworkHeaderSectionString'
 import { mobNetworkFooterSectionString } from '../../mobparts/mites/headers/mobNetworkFooterSectionString'
 import { mobSecretsHeaderSectionString } from '../../mobparts/mites/headers/mobSecretsHeaderSectionString'
 import { mobSecretsFooterSectionString } from '../../mobparts/mites/headers/mobSecretsFooterSectionString'
-import { primaryDomain } from '../../mobparts/memories/primaryDomain'
-import { traefikManikin } from '../../mobparts/manikins/traefik'
-import { getDServiceMites } from './getDServiceMites'
-import { getDNetworkMites } from './getDNetworkMites'
+import { insertMemoryValues } from '../utility/insertMemoryValues'
 
 /**
  * makes .zip file for docker-compose in web browser
@@ -36,8 +43,8 @@ import { getDNetworkMites } from './getDNetworkMites'
 export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void => {
   let zip: JSZip = JSZip()
 
-  let zipManikins: IManikin[] = [...zipCompose.manikins]
-  let zipMemories: IMemory[] = [...zipCompose.memories]
+  let zipManikins: IManikin[] = zipCompose.manikins
+  let zipMemories: IMemory[] = zipCompose.memories
 
   const traefikIndex: number = zipManikins.indexOf(traefikManikin)
   const mobNameIndex: number = zipManikins[traefikIndex].memories.indexOf(mobName)
@@ -47,20 +54,6 @@ export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void =>
 
   const mites: IMite[] = Array.from(new Set(zipManikins.flatMap((eachManikin: IManikin) => eachManikin.mites.map((eachMite: IMite) => eachMite))))
 
-  const orderServiceMiteStrings: Function = (mites: IMite[]): string[] => {
-    const sortedMites: string[] = getDServiceMites(mites)
-    .sort((mite1, mite2): number => {
-      if (mite1.miteIndex > mite2.miteIndex) {
-        return 1
-      }
-      if (mite1.miteIndex < mite2.miteIndex) {
-        return -1
-      }
-      return 0
-    })
-      .map((eachMite: IMite) => eachMite.miteString)
-    return sortedMites
-  }
   const traefikMites: ITraefikedServiceMite[] = mites.filter((eachMite: IMite) => eachMite.type === `DockerSwarmService`) as ITraefikedServiceMite[]
 
   const cloudflareHosts: string = traefikMites
@@ -70,26 +63,11 @@ export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void =>
     .split(',')
     .join('" "')
 
-  const orderNetworkMiteStrings: Function = (mites: IMite[]): string[] => {
-    const sortedNetworkMites: string[] = getDNetworkMites(mites)
-    .sort((mite1, mite2): number => {
-      if (mite1.miteIndex > mite2.miteIndex) {
-        return 1
-      }
-      if (mite1.miteIndex < mite2.miteIndex) {
-        return -1
-      }
-      return 0
-    })
-      .map((eachMite: IMite) => eachMite.miteString)
-    return sortedNetworkMites
-  }
-
   const customMites: ICustomMite[] = mites.filter((eachMite: IMite) => eachMite.type === `Custom`).map((mite: IMite) => mite as ICustomMite)
 
-  const ldifs: ILDIFMite[] = mites.filter((eachMite: IMite) => eachMite.type === `LDIF`) as ILDIFMite[]
+  const ldifMites: ILDIFMite[] = mites.filter((eachMite: IMite) => eachMite.type === `LDIF`) as ILDIFMite[]
 
-  const ldifAdditions: string = ldifs.map((mite: IMite) => mite.miteString).join(``)
+  const ldifAdditions: string = ldifMites.map((mite: IMite) => mite.miteString).join(``)
 
   const ldifIndex: number = customMites.indexOf(ldapBootstrapMegaDockerDotLdifMite)
 
@@ -105,23 +83,6 @@ export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void =>
   }
   customMites[ldifIndex].miteFile.contents = populateLdifDCs()
 
-  /**
-   * updates yml with variables from memories
-   * @param ymlInput the initial string to change
-   * @param memories the memories to apply
-   */
-  const insertMemoryValues: Function = (ymlInput: string, memories: IMemory[]): string => {
-    let workingYml: string = ymlInput
-
-    memories.forEach((eachMemory: IMemory) => {
-      let tempYml = workingYml.split(eachMemory.memoryMarker).join(eachMemory.memoryValue)
-      workingYml = tempYml
-    })
-
-    const finalYml = workingYml
-    return finalYml
-  }
-
   customMites.map((eachCustomMite: ICustomMite) => {
     const newFileContents = zipMemories.forEach((eachMemory: IMemory) => {
       const workingFileContents = eachCustomMite.miteFile.contents.split(eachMemory.memoryMarker).join(eachMemory.memoryValue)
@@ -130,18 +91,16 @@ export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void =>
     return newFileContents
   })
 
-  const ymlOutputArray: string[] = [
+  const ymlString: string = [
     mobFileHeaderSectionString.miteString,
-    orderServiceMiteStrings(mites),
+    sortServiceMiteStrings(mites),
     mobServicesFooterSectionString.miteString,
     mobNetworkHeaderSectionString.miteString,
-    orderNetworkMiteStrings(mites),
+    sortNetworkMiteStrings(mites),
     mobNetworkFooterSectionString.miteString,
     mobSecretsHeaderSectionString.miteString,
     mobSecretsFooterSectionString.miteString
-  ]
-
-  let ymlString: string = ymlOutputArray.join(``)
+  ].join(``)
 
   /**
    * makes docker-compose.yml file
