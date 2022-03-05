@@ -55,13 +55,11 @@ export const megaReducer: React.Reducer<IMegaDockerState, IMegaDockerAction> = (
 
     // saves a mob file in the browser
     case `UPLOAD_MOB_FILE_BROWSER`:
-      newState = unpackDotMobFile(action.payload)
-      return newState
+      return unpackDotMobFile(action.payload)
 
     // saves a mob file in Tauri desktop application
     case `UPLOAD_MOB_FILE_TAURI`:
-      newState = unpackDotMobFile(action.payload)
-      return newState
+      return unpackDotMobFile(action.payload)
 
     // saves a mob file in the browser
     case `SAVE_MOB_FILE_BROWSER`:
