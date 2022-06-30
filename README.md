@@ -112,6 +112,6 @@ While MEGADocker includes many **Manikins**, we can't do everything… yet. If y
 
 ### Mobs
 
-**Mobs** represent a full stack of microservices (**Manikins**) deployed across a cluster or swarm of hosts. **Mobs** are saved as a `.zip` filecontaining an entire directory meant to be used in Docker swarm mode.
+**Mobs** represent a full stack of microservices (**Manikins**) deployed across a cluster or swarm of hosts. **Mobs** are saved as a `.zip` file containing an entire directory meant to be used in Docker swarm mode.
 
 [TOC](#table-of-contents 'Jump back to the Table of Contents')
