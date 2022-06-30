@@ -15,7 +15,7 @@ export const MegaContext: React.Context<any> = React.createContext({
   state: initialMegaDockerState
 })
 
-export const MegaProvider: React.FC = (props: any): React.ReactElement => {
+export const MegaProvider: React.FC<any> = (props: any): React.ReactElement => {
   const [state, dispatch] = React.useReducer(megaReducer, initialMegaDockerState)
 
   return (
