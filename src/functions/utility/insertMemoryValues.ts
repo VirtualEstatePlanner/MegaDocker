@@ -17,7 +17,7 @@ export const insertMemoryValues: Function = (ymlInput: string, memories: IMemory
   let workingYml: string = ymlInput
 
   memories.forEach((eachMemory: IMemory) => {
-    let tempYml = workingYml.split(eachMemory.memoryMarker).join(eachMemory.memoryValue)
+    const tempYml = workingYml.split(eachMemory.memoryMarker).join(eachMemory.memoryValue)
     workingYml = tempYml
   })
   return workingYml

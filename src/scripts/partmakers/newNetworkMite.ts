@@ -10,7 +10,7 @@ interface INetworkMiteInput {
   description: string
 }
 
-let runtimeNetworkMiteAnswers: INetworkMiteInput = {
+const runtimeNetworkMiteAnswers: INetworkMiteInput = {
   description: ``,
   fileName: ``,
   displayName: ``

@@ -62,12 +62,12 @@ const customMiteOptions: IindexerOptions = {
 
 const reindexFiles: Function = (options: IindexerOptions): void => {
   let indexCount: number = options.start
-  let directory = fs.readdirSync(`${sourcePath}/${options.directory}`)
+  const directory = fs.readdirSync(`${sourcePath}/${options.directory}`)
   directory.forEach((file: string) => {
     if (!file.includes(`.test.`)) {
-      let indexString: string = indexCount.toString()
-      let fileContents: string = fs.readFileSync(`${sourcePath}/${options.directory}/${file}`).toString()
-      let fullReplacement: string = `${options.replace}${indexString},`
+      const indexString: string = indexCount.toString()
+      const fileContents: string = fs.readFileSync(`${sourcePath}/${options.directory}/${file}`).toString()
+      const fullReplacement: string = `${options.replace}${indexString},`
       const newFileContents: string = fileContents.replace(options.regex, fullReplacement)
       indexCount++
       fs.writeFileSync(`${sourcePath}/${options.directory}/${file}`, newFileContents)

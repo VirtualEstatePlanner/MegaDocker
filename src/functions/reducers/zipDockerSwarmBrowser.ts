@@ -48,10 +48,10 @@ import { populateLdifDCs } from './populateLdifDCs'
  * @param zipCompose the IZipDockerCompose object
  */
 export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void => {
-  let zip: JSZip = JSZip()
+  const zip: JSZip = JSZip()
 
-  let zipManikins: IManikin[] = zipCompose.manikins
-  let zipMemories: IMemory[] = zipCompose.memories
+  const zipManikins: IManikin[] = zipCompose.manikins
+  const zipMemories: IMemory[] = zipCompose.memories
 
   const traefikIndex: number = zipManikins.indexOf(traefikManikin)
   const mobNameIndex: number = zipManikins[traefikIndex].memories.indexOf(mobName)
@@ -100,7 +100,7 @@ export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void =>
     zipManikins.map((eachManikin: IManikin) => {
       const subs = eachManikin.subfolders
       zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.folder(`logs`)!.folder(eachManikin.folder)
-      for (let eachSubfolder in subs) {
+      for (const eachSubfolder in subs) {
         zip.folder(`${zipManikins[traefikIndex].memories[mobNameIndex].memoryValue}`)!.folder(eachManikin.folder)!.folder(subs[eachSubfolder])
       }
 

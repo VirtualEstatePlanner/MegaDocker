@@ -13,7 +13,7 @@ interface IServiceMiteInput {
   dockerImageWithTag: string
 }
 
-let input: IServiceMiteInput = {
+const input: IServiceMiteInput = {
   fileName: ``,
   serviceName: ``,
   displayName: ``,
