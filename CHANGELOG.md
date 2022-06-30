@@ -2,6 +2,7 @@
 
 ## a list of changes per version number
 
+- `v0.5.2-beta` : **updated Tauri to 1.0.1, bumped other dependencies, typed some stuff, deno linting, etc.**
 - `v0.5.1-beta` : **updated to use Tauri rc.1**
 - `v0.5.0-beta` : replaced Electron with Tauri, lowering application size by 80-ish MB
 - `v0.4.9-beta` : migrated Material-UI to @mui/material v5.0.0
