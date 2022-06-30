@@ -12,8 +12,8 @@
 
 Most recent changes:
 
-- updated to use [Tauri](https://github.com/tauri-apps/tauri) rc.1
-- replaced [Electron](https://github.com/electron/electron) with [Tauri](https://github.com/tauri-apps/tauri)
+- updated to use [Tauri](https://github.com/tauri-apps/tauri) 1.0.1
+- linted some code for deno-lint
 - see more in [CHANGELOG](./CHANGELOG.md)
 
 ![alt text](./src/images/icons/icon.png 'MegaDockerLogo')
