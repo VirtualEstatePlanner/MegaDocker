@@ -8,12 +8,12 @@
 
 import { noWhitespaceValidator } from './noWhitespaceValidator'
 
-export const noWhitespaceOrSymbolsValidator: Function = (stringToValidate: string): boolean => {
+export const noWhitespaceOrSymbolsValidator: (stringToValidate: string) => boolean = (stringToValidate: string): boolean => {
   if (!stringToValidate) {
     return false
   }
   const hasNoWhitespace: boolean = noWhitespaceValidator(stringToValidate)
-  const noWhiteSpaceOrSymbolsRegex: RegExp = new RegExp(`^[sa-zA-Z0-9]*$`)
+  const noWhiteSpaceOrSymbolsRegex = new RegExp(`^[sa-zA-Z0-9]*$`)
   const hasNoWhiteSpaceOrSymbols: boolean = noWhiteSpaceOrSymbolsRegex.test(stringToValidate) ? true : false
   const nameLengthRequirements: boolean = stringToValidate.length < 21 && stringToValidate.length > 4
   const isValidated: boolean = hasNoWhiteSpaceOrSymbols && nameLengthRequirements && hasNoWhitespace

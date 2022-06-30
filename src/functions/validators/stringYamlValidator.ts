@@ -8,14 +8,14 @@
 
 import YamlValidator from 'yaml-validator'
 
-export const stringYamlValidator: Function = (stringToValidate: string): boolean => {
+export const stringYamlValidator: (stringToValidate: string) => boolean = (stringToValidate: string): boolean => {
   class YamlValidatorForTesting extends YamlValidator {
-    testValidation: Function = (yamlStrings: string[]): boolean => {
-      let validatePassed: boolean = false
+    testValidation: (yamlStrings: string[]) => boolean = (yamlStrings: string[]): boolean => {
+      let validatePassed = false
       try {
         super.validate(yamlStrings)
         validatePassed = true
-      } catch (error) {
+      } catch (_error) {
         validatePassed = false
       }
       return validatePassed

@@ -29,7 +29,7 @@ import { IThemeString } from '../../interfaces/templateLiteralUnionTypes/IThemeS
  */
 export const buildApplicationState = (savedManikins: IManikin[], theme: IThemeString): IMegaDockerState => {
   // find each manikin in the workingManikins array that matches a manikin in savedManikins and replace it
-  const populateManikins: Function = (): IManikin[] => {
+  const populateManikins: () => IManikin[] = (): IManikin[] => {
     const populatedManikins: IManikin[] = [...workingManikins]
     // if the manikinName traits match, add the savedManikin to the populatedManikins array and remove the manikin it matched
     populatedManikins.forEach((stockManikin: IManikin): void => {
@@ -52,7 +52,7 @@ export const buildApplicationState = (savedManikins: IManikin[], theme: IThemeSt
     return [...coreManikins, ...nonCoreManikins]
   }
 
-  const unpackTheme: Function = (): Theme => {
+  const unpackTheme: () => Theme = (): Theme => {
     if (theme === `dark`) {
       return OrbThemeDark
     } else {

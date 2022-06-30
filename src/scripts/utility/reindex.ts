@@ -11,12 +11,12 @@ interface IindexerOptions {
 }
 
 const sourcePath: string = process.cwd() + `/src/mobparts/`
-const manikinIndexRegExp: RegExp = / {2}manikinIndex: [0-9]{5},/
-const miteIndexRegExp: RegExp = / {2}miteIndex: [0-9]{5},/
-const memoryIndexRegExp: RegExp = / {2}memoryIndex: [0-9]{5},/
-const manikinIndex: string = `  manikinIndex: `
-const memoryIndex: string = `  memoryIndex: `
-const miteIndex: string = `  miteIndex: `
+const manikinIndexRegExp = / {2}manikinIndex: [0-9]{5},/
+const miteIndexRegExp = / {2}miteIndex: [0-9]{5},/
+const memoryIndexRegExp = / {2}memoryIndex: [0-9]{5},/
+const manikinIndex = `  manikinIndex: `
+const memoryIndex = `  memoryIndex: `
+const miteIndex = `  miteIndex: `
 
 const manikinOptions: IindexerOptions = {
   start: 10000,
@@ -60,14 +60,14 @@ const customMiteOptions: IindexerOptions = {
   replace: miteIndex
 }
 
-const reindexFiles: Function = (options: IindexerOptions): void => {
+const reindexFiles: (options: IindexerOptions) => void = (options: IindexerOptions): void => {
   let indexCount: number = options.start
   const directory = fs.readdirSync(`${sourcePath}/${options.directory}`)
   directory.forEach((file: string) => {
     if (!file.includes(`.test.`)) {
       const indexString: string = indexCount.toString()
       const fileContents: string = fs.readFileSync(`${sourcePath}/${options.directory}/${file}`).toString()
-      const fullReplacement: string = `${options.replace}${indexString},`
+      const fullReplacement = `${options.replace}${indexString},`
       const newFileContents: string = fileContents.replace(options.regex, fullReplacement)
       indexCount++
       fs.writeFileSync(`${sourcePath}/${options.directory}/${file}`, newFileContents)

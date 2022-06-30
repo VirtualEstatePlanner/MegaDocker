@@ -10,7 +10,7 @@ interface IManikinInput {
   uiName: string
 }
 
-let runtimeManikinAnswers: IManikinInput = {
+const runtimeManikinAnswers: IManikinInput = {
   description: ``,
   fileName: ``,
   uiName: ``
@@ -23,7 +23,7 @@ interface IManikinTemplateOptions {
   uiName: string
 }
 
-const makeOptions: Function = (input: IManikinInput): IManikinTemplateOptions => {
+const makeOptions: (input: IManikinInput) => IManikinTemplateOptions = (input: IManikinInput): IManikinTemplateOptions => {
   const now: Date = new Date()
 
   const inputOptions: IManikinTemplateOptions = {
@@ -49,7 +49,7 @@ getManikinData.question(`What is the full name of this service: `, function (man
       getManikinData.question(`Enter a short description for it (one line of text or less): `, function (desc: string) {
         runtimeManikinAnswers.description = desc
         getManikinData.close()
-        let manikinRuntimeOptions = makeOptions(runtimeManikinAnswers)
+        const manikinRuntimeOptions = makeOptions(runtimeManikinAnswers)
 
         const outputNewManikinString: string = makeFileString(manikinRuntimeOptions)
 
@@ -59,11 +59,11 @@ getManikinData.question(`What is the full name of this service: `, function (man
   })
 })
 
-const makeFileString: Function = (options: IManikinTemplateOptions): string => {
+const makeFileString: (options: IManikinTemplateOptions) => string = (options: IManikinTemplateOptions): string => {
   const date: Date = new Date()
   const shortDate = date.toLocaleString().split(',')[0]
   const year: number = date.getFullYear()
-  const template: string = `/** @format */
+  const template = `/** @format */
 
   //  ${options.fileName}.ts
   //  MEGADocker

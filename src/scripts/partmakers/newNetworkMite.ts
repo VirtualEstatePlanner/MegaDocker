@@ -21,11 +21,11 @@ const getNetworkMiteData = readline.createInterface({
   output: process.stdout
 })
 
-const makeNetworkMiteFileString: Function = (options: INetworkMiteInput): string => {
+const makeNetworkMiteFileString: (options: INetworkMiteInput) => string = (options: INetworkMiteInput): string => {
   const date: Date = new Date()
   const shortDate = date.toLocaleString().split(',')[0]
   const year: number = date.getFullYear()
-  const template: string = `/** @format */
+  const template = `/** @format */
 
 //  ${options.fileName}.ts
 //  MEGADocker

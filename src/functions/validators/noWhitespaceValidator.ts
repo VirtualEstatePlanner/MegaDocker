@@ -6,7 +6,7 @@
 //  Created by George Georgulas IV on 1/26/19.
 //  Copyright © 2019-2022 The MegaDocker Group. All rights reserved.
 
-export const noWhitespaceValidator: Function = (stringToValidate: string): boolean => {
+export const noWhitespaceValidator: (stringToValidate: string) => boolean = (stringToValidate: string): boolean => {
   if (!stringToValidate) {
     return false
   }
@@ -27,6 +27,6 @@ export const noWhitespaceValidator: Function = (stringToValidate: string): boole
     return false
   }
   const whiteSpaceDetected: boolean = spacesDetected || tabsDetected || lineFeedsDetected || formFeedsDetected
-  const isValidated: boolean = !whiteSpaceDetected
+  const isValidated = !whiteSpaceDetected
   return isValidated
 }

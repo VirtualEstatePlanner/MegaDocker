@@ -8,7 +8,7 @@ interface ILDIFMiteInput {
   serviceName: string
 }
 
-let runtimeLdifMiteAnswers: ILDIFMiteInput = {
+const runtimeLdifMiteAnswers: ILDIFMiteInput = {
   serviceName: ``
 }
 
@@ -17,11 +17,11 @@ const getLdifMiteData = readline.createInterface({
   output: process.stdout
 })
 
-const makeLdifMiteFileString: Function = (input: ILDIFMiteInput): string => {
+const makeLdifMiteFileString = (input: ILDIFMiteInput): string => {
   const date: Date = new Date()
   const shortDate = date.toLocaleString().split(',')[0]
   const year: number = date.getFullYear()
-  const template: string = `/** @format */
+  const template = `/** @format */
 
 //  ${input.serviceName}LdifMite.ts
 //  MEGADocker

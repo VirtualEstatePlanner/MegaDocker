@@ -17,7 +17,7 @@ import { workingManikins } from '../../globals/workingManikins'
  * @param miniMemory the IMiniMemory that was saved
  * @return IMemory
  */
-export const maximizeMemory: Function = (miniMemory: IMiniMemory): IMemory => {
+export const maximizeMemory: (miniMemory: IMiniMemory) => IMemory = (miniMemory: IMiniMemory): IMemory => {
   let newMemory: IMemory = {
     memoryName: `Name Placeholder`,
     memoryType: `NormalMemory`,

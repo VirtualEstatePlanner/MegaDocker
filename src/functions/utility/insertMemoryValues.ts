@@ -13,7 +13,7 @@ import { IMemory } from '../../interfaces/objectInterfaces/IMemory'
  * @param ymlInput the initial string to change
  * @param memories the memories to apply
  */
-export const insertMemoryValues: Function = (ymlInput: string, memories: IMemory[]): string => {
+export const insertMemoryValues: (ymlInput: string, memories: IMemory[]) => string = (ymlInput: string, memories: IMemory[]): string => {
   let workingYml: string = ymlInput
 
   memories.forEach((eachMemory: IMemory) => {

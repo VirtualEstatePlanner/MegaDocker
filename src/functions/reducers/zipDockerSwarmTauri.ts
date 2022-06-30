@@ -48,7 +48,7 @@ import { populateLdifDCs } from './populateLdifDCs'
  * @param zipCompose the IZipDockerCompose object
  */
 
-export const zipDockerSwarmTauri: Function = (zipCompose: IZipValues): void => {
+export const zipDockerSwarmTauri: (zipCompose: IZipValues) => void = (zipCompose: IZipValues): void => {
   const zip: JSZip = JSZip()
 
   const zipManikins: IManikin[] = [...zipCompose.manikins]

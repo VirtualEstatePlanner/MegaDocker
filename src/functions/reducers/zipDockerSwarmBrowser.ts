@@ -47,7 +47,7 @@ import { populateLdifDCs } from './populateLdifDCs'
  * makes .zip file for docker-compose in web browser
  * @param zipCompose the IZipDockerCompose object
  */
-export const zipDockerSwarmBrowser: Function = (zipCompose: IZipValues): void => {
+export const zipDockerSwarmBrowser: (zipCompose: IZipValues) => void = (zipCompose: IZipValues): void => {
   const zip: JSZip = JSZip()
 
   const zipManikins: IManikin[] = zipCompose.manikins

@@ -12,7 +12,7 @@ interface ICustomMiteInput {
   filePermissions: number
 }
 
-let runtimeCustomMiteAnswers: ICustomMiteInput = {
+const runtimeCustomMiteAnswers: ICustomMiteInput = {
   filePath: ``,
   fileName: ``,
   fileDescription: ``,
@@ -46,11 +46,11 @@ getManikinData.question(`What is the path to this file's location?: `, function 
   })
 })
 
-const makeFileString: Function = (options: ICustomMiteInput): string => {
+const makeFileString: (options: ICustomMiteInput) => string = (options: ICustomMiteInput): string => {
   const date: Date = new Date()
   const shortDate = date.toLocaleString().split(',')[0]
   const year: number = date.getFullYear()
-  const template: string = `/** @format */
+  const template = `/** @format */
 
 //  ${options.fileName}Mite.ts
 //  MEGADocker

@@ -51,12 +51,12 @@ getServiceMiteData.question(`What is the file name for this mite file? (camelCas
   })
 })
 
-const makeServiceMiteFileString: Function = (input: IServiceMiteInput): string => {
+const makeServiceMiteFileString: (input: IServiceMiteInput) => string = (input: IServiceMiteInput): string => {
   const date: Date = new Date()
   const shortDate = date.toLocaleString().split(',')[0]
   const year: number = date.getFullYear()
   const lowercaseName = input.serviceName.toLowerCase()
-  const template: string = `/** @format */
+  const template = `/** @format */
 
 //  ${input.fileName}.ts
 //  MEGADocker

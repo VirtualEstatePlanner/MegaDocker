@@ -28,7 +28,7 @@ interface IMemoryTemplateOptions {
   validator: IValidatorString
   valueType: IMemoryValueType
 }
-let runtimeMemoryAnswers: IMemoryInput = {
+const runtimeMemoryAnswers: IMemoryInput = {
   autocomplete: false,
   description: `inputDesc`,
   name: `inputName`,
@@ -109,7 +109,7 @@ getMemoryData.question(`What kind of memory is this? (Secret or Normal): `, func
               }
             }
             getMemoryData.close()
-            let runtimeOptions = makeOptions(runtimeMemoryAnswers)
+            const runtimeOptions = makeOptions(runtimeMemoryAnswers)
 
             const outputNewMemoryString: string = makeFileString(runtimeOptions)
 
@@ -121,7 +121,7 @@ getMemoryData.question(`What kind of memory is this? (Secret or Normal): `, func
   })
 })
 
-const makeOptions: Function = (input: IMemoryInput): IMemoryTemplateOptions => {
+const makeOptions: (input: IMemoryInput) => IMemoryTemplateOptions = (input: IMemoryInput): IMemoryTemplateOptions => {
   const now: Date = new Date()
   const marker: string = input.name.toUpperCase()
 
@@ -140,11 +140,11 @@ const makeOptions: Function = (input: IMemoryInput): IMemoryTemplateOptions => {
   return inputOptions
 }
 
-const makeFileString: Function = (options: IMemoryTemplateOptions): string => {
+const makeFileString: (options: IMemoryTemplateOptions) => string = (options: IMemoryTemplateOptions): string => {
   const date: Date = new Date()
   const shortDate = date.toLocaleString().split(',')[0]
   const year: number = date.getFullYear()
-  const template: string = `/** @format */
+  const template = `/** @format */
 
 //  ${options.fileName}.ts
 //  MEGADocker
