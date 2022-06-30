@@ -29,7 +29,7 @@ export const MemoryTable: React.FC<any> = (props: any): React.ReactElement => {
    * @param memoryToUpdate the IMemory that will be reduced against the state
    * @param newValue the IMemory.value to reduce against
    */
-  const createMemoryValueAction: Function = (memoryToUpdate: IMemory, newValue: string): IUpdateMemoryValueAction => {
+  const createMemoryValueAction: (memoryToUpdate: IMemory, newValue: string) => IUpdateMemoryValueAction = (memoryToUpdate: IMemory, newValue: string): IUpdateMemoryValueAction => {
     return {
       type: `UPDATE_MEMORY_VALUE`,
       payload: {
