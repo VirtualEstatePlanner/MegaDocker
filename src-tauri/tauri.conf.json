@@ -37,10 +37,6 @@
         "timestampUrl": ""
       }
     },
-    "updater": {
-      "active": true,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDQ1QUIxNEE3RjhCQzgzOEMKUldTTWc3ejRweFNyUlFwcFRJM3V6NHl0bCtpT29odmNzVjE5R3Bmc0hyb1RXbWw2Nk5mNDYwcFkK"
-    },
     "allowlist": {
       "fs": {
         "all": false,
