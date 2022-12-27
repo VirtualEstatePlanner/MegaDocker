@@ -56,10 +56,10 @@
     "windows": [
       {
         "title": "MEGADocker",
-        "height": 1200,
-        "minHeight": 768,
-        "width": 1600,
-        "minWidth": 1024,
+        "height": 2100,
+        "minHeight": 1050,
+        "width": 3800,
+        "minWidth": 1900,
         "resizable": true,
         "fullscreen": false
       }
