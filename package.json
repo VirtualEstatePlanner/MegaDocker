@@ -105,7 +105,7 @@
       "/public/",
       "/node_modules/",
       "/src-tauri/",
-      "/src/functions.runningInTauri.ts",
+      "/src/functions/utility/runningInTauri.ts",
       "/src/index.tsx",
       "/src/interfaces/",
       "/src/react-app-env.d.ts",
@@ -119,10 +119,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 72,
-        "functions": 48,
-        "lines": 69,
-        "statements": 65
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
       }
     },
     "displayName": {
@@ -139,7 +139,9 @@
       "js",
       "jsx",
       "json",
-      "png"
+      "css",
+      "png",
+      "svg"
     ],
     "moduleNameMapper": {
       "\\.(png)$": "<rootDir>/src/typings/png.d.ts",
