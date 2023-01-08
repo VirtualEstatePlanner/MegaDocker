@@ -1,8 +1,7 @@
 //  src/structs/string_literal_unions/mod.rs
 //  MEGADocker
-//  a convenience global string constant with the current version of MEGADocker
-//  Created by George Georgulas IV on 3/17/19.
-//  Automatically ported to Rust by chatGPT on 1/8/23.
+//  a convenience module to import string literal union types
+//  Automatically created by chatGPT on 1/8/23.
 //  Copyright © 2019-2023 The MegaDocker Group. All rights reserved.
 
 pub mod file_extension_union;

@@ -5,7 +5,7 @@
 //  Automatically ported to Rust by chatGPT on 1/8/23.
 //  Copyright © 2019-2023 The MegaDocker Group. All rights reserved.
 
-pub type theme_string_type_union = &'static str;
+pub type theme_string_union = &'static str;
 
 pub const DARK: IThemeString = "dark";
 pub const LIGHT: IThemeString = "light";
