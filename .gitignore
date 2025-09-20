@@ -13,3 +13,20 @@
 yarn*
 /src-tauri/target
 /**/*/Cargo.lock
+
+# Rust artifacts
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# IDE files
+*.swp
+*.swo
+*~
+
+# OS files
+Thumbs.db
+
+# Test artifacts
+*.prof
+*.test

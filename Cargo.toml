@@ -1,0 +1,69 @@
+[package]
+name = "megadocker"
+version = "0.5.2"
+edition = "2021"
+description = "Modular Enterprise-Grade Automated Docker - A tool for creating Docker Swarm configurations"
+authors = ["George Georgulas IV"]
+license = "MIT"
+repository = "https://github.com/VirtualEstatePlanner/MegaDocker"
+keywords = ["docker", "swarm", "microservices", "containers", "orchestration"]
+categories = ["command-line-utilities", "development-tools"]
+readme = "README.md"
+
+[dependencies]
+# Async runtime
+tokio = { version = "1.35", features = ["full"] }
+
+# Command line interface
+clap = { version = "4.4", features = ["derive", "env", "color"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+serde_yaml = "0.9"
+toml = "0.8"
+
+# File handling and zip  
+zip = "2.1"
+tempfile = "3.8"
+
+# HTTP client for Docker API and external services
+reqwest = { version = "0.11", features = ["json", "stream"] }
+
+# Docker integration
+bollard = "0.19"
+
+# Error handling
+anyhow = "1.0"
+thiserror = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# File system utilities
+fs_extra = "1.3"
+walkdir = "2.4"
+
+# String processing
+regex = "1.10"
+uuid = { version = "1.6", features = ["v4", "serde"] }
+
+# Configuration
+config = "0.13"
+
+# Shell execution
+shell-words = "1.1"
+
+[dev-dependencies]
+tempfile = "3.8"
+assert_cmd = "2.0"
+predicates = "3.0"
+
+[[bin]]
+name = "megadocker"
+path = "src/main.rs"
+
+[lib]
+name = "megadocker"
+path = "src/lib.rs"
