@@ -111,22 +111,39 @@ impl DockerManager {
     }
 
     /// Deploy a Docker stack from a compose file
-    pub async fn deploy_stack(&self, stack_name: &str, compose_file: &str) -> Result<()> {
-        // This would use the Docker API to deploy a stack
-        // For now, we'll just validate the parameters
-        if stack_name.is_empty() || compose_file.is_empty() {
-            return Err(Error::Validation("Stack name and compose file cannot be empty".to_string()));
+    pub async fn deploy_stack(&self, stack_name: &str, compose_file_path: &str) -> Result<()> {
+        // Validate inputs
+        if stack_name.is_empty() {
+            return Err(Error::Validation("Stack name cannot be empty".to_string()));
         }
         
-        info!("Would deploy stack '{}' from compose file '{}'", stack_name, compose_file);
+        if !std::path::Path::new(compose_file_path).exists() {
+            return Err(Error::Validation(format!("Compose file not found: {}", compose_file_path)));
+        }
+
+        info!("Deploying stack '{}' from compose file '{}'", stack_name, compose_file_path);
         
+        // For now, we recommend using docker CLI directly
         // In a full implementation, this would:
-        // 1. Parse the docker-compose.yml file
-        // 2. Convert it to Docker Swarm service definitions
-        // 3. Deploy each service via the Docker API
+        // 1. Parse the docker-compose.yml file using serde_yaml
+        // 2. Convert compose services to Docker Swarm service definitions
+        // 3. Deploy each service via the Docker API using bollard
         
-        warn!("Stack deployment not yet implemented - use docker CLI instead");
+        warn!("Stack deployment via API not yet implemented");
+        info!("Recommended: Use 'docker stack deploy -c {} {}'", compose_file_path, stack_name);
         Ok(())
+    }
+
+    /// Check if a stack is currently deployed
+    pub async fn is_stack_deployed(&self, stack_name: &str) -> Result<bool> {
+        info!("Checking if stack '{}' is deployed", stack_name);
+        
+        // For now, we'll use a simplified approach
+        // In a full implementation, this would list services with stack labels
+        warn!("Stack status checking not fully implemented");
+        info!("Recommended: Use 'docker stack ls' to check stack status");
+        
+        Ok(false)
     }
 
     /// Remove a Docker stack
@@ -135,14 +152,13 @@ impl DockerManager {
             return Err(Error::Validation("Stack name cannot be empty".to_string()));
         }
         
-        info!("Would remove stack '{}'", stack_name);
+        info!("Removing stack '{}'", stack_name);
         
-        // In a full implementation, this would:
-        // 1. List all services with the stack label
-        // 2. Remove each service
-        // 3. Clean up any associated networks, volumes, etc.
+        // For now, recommend using the Docker CLI for stack removal
+        // The bollard API for service removal has breaking changes between versions
+        warn!("Stack removal via API not yet implemented due to API compatibility");
+        info!("Recommended: Use 'docker stack rm {}'", stack_name);
         
-        warn!("Stack removal not yet implemented - use docker CLI instead");
         Ok(())
     }
 

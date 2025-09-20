@@ -96,6 +96,13 @@ enum Commands {
         /// Manikin name or index
         manikin: String,
     },
+    
+    /// Check Docker environment and list running stacks
+    Status {
+        /// Show detailed information
+        #[arg(short, long)]
+        detailed: bool,
+    },
 }
 
 impl MegaDockerCli {
@@ -124,6 +131,9 @@ impl MegaDockerCli {
             }
             Commands::Info { ref manikin } => {
                 self.show_manikin_info(manikin.clone()).await
+            }
+            Commands::Status { detailed } => {
+                self.show_docker_status(detailed).await
             }
         }
     }
@@ -281,6 +291,69 @@ impl MegaDockerCli {
         }
         println!();
         println!("🧩 Mites: {}", manikin_info.mites.len());
+        
+        Ok(())
+    }
+
+    async fn show_docker_status(&self, detailed: bool) -> Result<()> {
+        use crate::docker::DockerManager;
+        
+        println!("🐳 Docker Environment Status");
+        
+        match DockerManager::new() {
+            Ok(docker) => {
+                // Check Docker availability
+                match docker.check_docker_availability().await {
+                    Ok(true) => println!("✅ Docker is running"),
+                    Ok(false) => {
+                        println!("❌ Docker is not available");
+                        return Ok(());
+                    }
+                    Err(e) => {
+                        println!("❌ Failed to check Docker: {}", e);
+                        return Ok(());
+                    }
+                }
+                
+                // Check Swarm mode
+                match docker.check_swarm_mode().await {
+                    Ok(true) => println!("✅ Docker Swarm is active"),
+                    Ok(false) => println!("⚠️  Docker Swarm is not initialized (run: docker swarm init)"),
+                    Err(e) => println!("❌ Failed to check Swarm: {}", e),
+                }
+                
+                // Check MegaDocker network
+                match docker.list_networks().await {
+                    Ok(networks) => {
+                        if networks.iter().any(|n| n == "megadocker") {
+                            println!("✅ MegaDocker network exists");
+                        } else {
+                            println!("⚠️  MegaDocker network not found");
+                        }
+                        
+                        if detailed {
+                            println!("\n📡 Available Networks:");
+                            for network in networks {
+                                println!("  • {}", network);
+                            }
+                        }
+                    }
+                    Err(e) => println!("❌ Failed to list networks: {}", e),
+                }
+                
+                // Show system info if detailed
+                if detailed {
+                    match docker.get_system_info().await {
+                        Ok(info) => println!("\n🔧 System Info: {}", info),
+                        Err(e) => println!("❌ Failed to get system info: {}", e),
+                    }
+                }
+            }
+            Err(e) => {
+                println!("❌ Failed to connect to Docker: {}", e);
+                println!("💡 Make sure Docker is running and you have permission to access it");
+            }
+        }
         
         Ok(())
     }
